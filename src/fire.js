@@ -13,7 +13,7 @@ var firebaseConfig = {
 // Initialize Firebase
 const fire = firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
-const provider = new firebase.auth.GoogleAuthProvider();
+const provider = new firebase.auth.GoogleAuthProvider().setCustomParameters({ hd: "iiitd.ac.in" });
 firebase.analytics();
 
 export default fire;

@@ -19,6 +19,17 @@ function HomePage() {
             })
     }
 
+    const signOut = () => {
+        auth
+            .signOut()
+            .then((result) => {
+                console.log(result);
+            })
+            .catch((error) => {
+                console.log(error.message);
+            })
+    }
+
     return (
         <div>
             {/* <p>Hello Pabi Kun</p> */}
@@ -27,6 +38,7 @@ function HomePage() {
                     <div className='signIn'>
                         <h1>LOGIN page</h1>
                         <Button onClick={signIn}>Sign in with Google</Button>
+                        <Button onClick={signOut}>Sign out</Button>
                     </div>
                 ) : (
                     <p>Hello Pabi Kun</p>
