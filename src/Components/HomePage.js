@@ -1,9 +1,13 @@
 import React from 'react';
+import { useStateValue } from '../StateProvider';
 
-function HomePage({userName}) {
+function HomePage() {
+
+    const [{user}] = useStateValue()
+
     return (
         <div>
-            <h1>Hello {userName}!!</h1>
+            <h1>Hello {user?.displayName}!!</h1>
         </div>
     )
 }
