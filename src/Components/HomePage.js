@@ -1,12 +1,3 @@
-<<<<<<< Updated upstream
-import React from 'react'
-
-function HomePage() {
-    return (
-        <div>
-            <p>Hello Faccho</p>
-        </div>
-=======
 import React from 'react';
 import firebase from 'firebase';
 import { useStateValue } from '../StateProvider';
@@ -61,7 +52,6 @@ function HomePage() {
         //     {/* <h1>Hello {userName}!!</h1> */}
         //     {/* <h1>Hello {firebase.auth().currentUser.displayName}!!</h1> */}            
         // </div>
->>>>>>> Stashed changes
     )
 }
 
