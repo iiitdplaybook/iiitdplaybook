@@ -5,10 +5,8 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import tanjiro from '../Assets/tanjiro.jpg'
-
 import Marquee from "react-marquee-slider";
 import times from "lodash/times";
-
 
 function HomePage() {
 
@@ -33,20 +31,19 @@ function HomePage() {
     //       ))}
     //     </Marquee>
     //   );
-      
+    
     return (
         <div className='homePage'>
             <Card className='homePageCard' variant="outlined">
                 <CardContent>
                     <Typography className='textCard' color="textSecondary" gutterBottom>
-                    change of College Life
+                        Phases of College Life
                     </Typography> 
                 </CardContent>
             </Card>
         </div>
 
-        
-
+  
         // <div>
         //     {/* <h1>Hello {user?.displayName}!!</h1> */}
         //     {/* <h1>Hello {userName}!!</h1> */}
