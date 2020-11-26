@@ -16,12 +16,7 @@ function Login() {
             .signInWithPopup(provider)
             .then((result) => {
                 console.log(result.user.displayName)
-                dispatch({
-                    type: actionTypes.SET_USER,
-                    user: result.user,
-                    isSignedIn: true,
-                    userName: firebase.auth().currentUser.displayName,
-                })
+                localStorage.setItem('isSignedIn',true)
             })
             .catch((error) => {
                 console.log(error.message);
