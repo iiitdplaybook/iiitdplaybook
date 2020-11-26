@@ -12,7 +12,12 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import HorizontalScroll from 'react-scroll-horizontal'
-import tanjiro from '../Assets/tanjiro.jpg'
+import { Slide, Fade } from 'react-slideshow-image';
+import whatsapp from '../Assets/whatsapp.png'
+import facebook from '../Assets/facebook.jpg'
+import instagram from '../Assets/instagram.jpg'
+import telegram from '../Assets/telegram.png'
+import 'react-slideshow-image/dist/styles.css'
 
 function TalkingToFriendsSeniors(props) {
     const { children, value, index, ...other } = props;
@@ -47,13 +52,22 @@ TalkingToFriendsSeniors.propTypes = {
       'aria-controls': `simple-tabpanel-${index}`,
     };
   }
-  
+    
   const useStyles = makeStyles((theme) => ({
     root: {
       flexGrow: 1,
       backgroundColor: theme.palette.background.paper,
     },
   }));
+
+  const properties = {
+    autoplay: true,
+    arrows: false
+  };
+
+  const style = {
+    textAlign: "center"
+  };
   
   export default function SimpleTabs() {
     const classes = useStyles();
@@ -68,13 +82,13 @@ TalkingToFriendsSeniors.propTypes = {
             <div className={classes.root}>
                 <Card className='homePageCard' variant="outlined">
                     <CardContent>
-                        <Paper position="static">
+                        {/* <Paper position="static">
                             <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" centered>
                                 <Tab label="Whatsapp" {...a11yProps(0)} />
                                 <Tab label="Instagram" {...a11yProps(1)} />
                                 <Tab label="Facebook" {...a11yProps(2)} />
-                                <Tab label="Telegram" {...a11yProps(2)} />
-                                <Tab label="Pata Nahi" {...a11yProps(2)} />
+                                <Tab label="Telegram" {...a11yProps(3)} />
+                                <Tab label="Pata Nahi" {...a11yProps(4)} />
                             </Tabs>
                         </Paper>
                         <TalkingToFriendsSeniors value={value} index={0}>
@@ -91,7 +105,31 @@ TalkingToFriendsSeniors.propTypes = {
                         </TalkingToFriendsSeniors>
                         <TalkingToFriendsSeniors value={value} index={4}>
                             Pata Nahi
-                        </TalkingToFriendsSeniors> 
+                        </TalkingToFriendsSeniors>  */}
+                        <div>
+                            <Fade {...properties}>
+                                <div style={style} className="each-fade">
+                                    <div>
+                                        <img src={whatsapp} alt='whatsapp'/>
+                                    </div>
+                                </div>
+                                <div style={style} className="each-fade">
+                                    <div>
+                                        <img src={facebook} alt='facebook'/>
+                                    </div>
+                                </div>
+                                <div style={style} className="each-fade">
+                                    <div>
+                                        <img src={instagram} alt='instagram'/>
+                                    </div>
+                                </div>
+                                <div style={style} className="each-fade">
+                                    <div>
+                                        <img src={telegram} alt='telegram'/>
+                                    </div>
+                                </div>
+                            </Fade>
+                        </div>
                     </CardContent>
                 </Card>
                 <Card className='homePageCard' variant="outlined">
