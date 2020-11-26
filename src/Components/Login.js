@@ -1,5 +1,6 @@
 import React from 'react'
 import './Login.css'
+import firebase from 'firebase';
 import {auth, provider} from '../fire';
 import {Button} from '@material-ui/core';
 import { useStateValue } from '../StateProvider';
@@ -10,29 +11,12 @@ function Login() {
     const [state, dispatch] = useStateValue()
 
     const signIn = () => {
+        auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
         auth
             .signInWithPopup(provider)
             .then((result) => {
-                console.log(result);
-                dispatch({
-                    type: actionTypes.SET_USER,
-                    user: result.user,
-                })
-            })
-            .catch((error) => {
-                console.log(error.message);
-            })
-    }
-
-    const signOut = () => {
-        auth
-            .signOut()
-            .then((result) => {
-                console.log(result);
-                dispatch({
-                    type: actionTypes.SET_USER,
-                    user: null,
-                })
+                console.log(result.user.displayName)
+                localStorage.setItem('isSignedIn',true)
             })
             .catch((error) => {
                 console.log(error.message);
@@ -40,10 +24,9 @@ function Login() {
     }
 
     return (
-        <div claasName='login'>
-            <h1>LOGIN page</h1>
+        <div className='login'>
+            <h1>Login page</h1>
             <Button onClick={signIn}>Sign in with Google</Button>
-            <Button onClick={signOut}>Sign out</Button>
         </div>
     )
 }

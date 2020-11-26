@@ -1,0 +1,22 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: antiquewhite;
+    padding: 10px;
+}
+
+.navbar__right {
+    display: flex;
+    align-items: center;
+    padding: 0px 30px;
+}
+
+.navbar__right > h4 {
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+.navbar__right > button {
+    margin-left: 15px;
+}
