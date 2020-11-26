@@ -18,6 +18,9 @@ import facebook from '../Assets/facebook.jpg'
 import instagram from '../Assets/instagram.jpg'
 import telegram from '../Assets/telegram.png'
 import 'react-slideshow-image/dist/styles.css'
+import ShareButton from 'react-web-share-button';
+import webShare from 'react-web-share-api';
+import { Button } from '@material-ui/core';
 
 function TalkingToFriendsSeniors(props) {
     const { children, value, index, ...other } = props;
@@ -68,6 +71,21 @@ TalkingToFriendsSeniors.propTypes = {
   const style = {
     textAlign: "center"
   };
+
+  const share = () => {
+    if (navigator.share) {
+        navigator.share({
+            title: "friendship text",
+            text: "Friendship is the new ____zone",
+            url: "https://iiitd-student-playbook.web.app/",
+        })
+        .then(() => console.log('Successful share'))
+        .catch((error) => console.log('Error sharing', error));
+    } 
+    else {
+        console.log("Web Share API is not supported in your browser.")
+    }
+  }
   
   export default function SimpleTabs() {
     const classes = useStyles();
@@ -134,9 +152,11 @@ TalkingToFriendsSeniors.propTypes = {
                 </Card>
                 <Card className='homePageCard' variant="outlined">
                     <CardContent>
-                    <Typography className='textCard' variant="h4" align='center'>
-                        "Friendship is the new ____zone"
-                    </Typography>  
+                        <Typography className='textCard' variant="h4" align='center'>
+                            "Friendship is the new ____zone"
+                        </Typography>  
+                        {/* <ShareButton title="My Great Page" text="Friendship is the new ____zone" url="" /> */}
+                        <Button onClick={share}>Share</Button>
                     </CardContent>
                 </Card>
             </div>
