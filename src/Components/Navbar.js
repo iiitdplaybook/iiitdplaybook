@@ -15,12 +15,7 @@ function Navbar() {
             .signOut()
             .then((result) => {
                 console.log(result);
-                dispatch({
-                    type: actionTypes.SET_USER,
-                    user: null,
-                    isSignedIn: false,
-                    userName: "null",
-                })
+                localStorage.removeItem('isSignedIn')
             })
             .catch((error) => {
                 console.log(error.message);
@@ -29,7 +24,7 @@ function Navbar() {
 
     return (
         <div className='navbar'>
-            {/* <Button onClick={signOut}>Sign out</Button> */}
+            <Button onClick={signOut}>Sign out</Button>
             <div className='navbar__left'>
                 <h3>Student Playbook</h3>
             </div>

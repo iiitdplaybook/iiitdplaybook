@@ -8,30 +8,37 @@ import Login from './Components/Login';
 import firebase from 'firebase';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import { useStateValue } from './StateProvider';
-import { actionTypes } from './reducer';
 
 function App() {
 
-  // const [state,dispatch] = useStateValue()
-  const [currentUser, setUser] = useState()
+  const [state,dispatch] = useStateValue()
 
-  // useEffect(() => {
-   
-  //   })
-  
-  firebase.auth().onAuthStateChanged(function(user) {
-    setUser(user)
-    console.log('kjsjk' + currentUser?.displayName)
-  })
+  useEffect(() => {
+    firebase.auth().onAuthStateChanged((authUser) => {
+      if (authUser) {
+        dispatch({
+          type: "SET_USER",
+          user: authUser,
+          isSignedIn: true,
+        });
+      } else {
+        dispatch({
+          type: "SET_USER",
+          user: null,
+          isSignedIn: false,
+        });
+      }
+    })
+  }, [])
 
   return (
     <div className="app">
       {/* <img src="login_bg.jpeg" alt='Random Image'/> */}
       <Router>
-        {/* {!currentUser? 
+        {!localStorage.getItem('isSignedIn')? 
           (
             <Login/>
-            ) : ( */}
+            ) : (
             <div>
               <Navbar/>
               <Switch>
@@ -46,7 +53,7 @@ function App() {
               </Switch>
               <Footer/>
             </div>
-        {/* )}  */}
+          )}
       </Router>
     </div>
   );
