@@ -20,11 +20,14 @@ import facebook from "../Assets/facebook.jpg";
 import instagram from "../Assets/instagram.jpg";
 import telegram from "../Assets/telegram.png";
 import wazzup from "../Assets/wazzup.jpg";
+import online from "../Assets/online.PNG";
+import offline from "../Assets/offline.PNG";
 import "react-slideshow-image/dist/styles.css";
 import ShareButton from "react-web-share-button";
 import webShare from "react-web-share-api";
 import { Button } from "@material-ui/core";
 import ReactCardFlip from 'react-card-flip';
+import Switch from "react-switch";
 
 function TalkingToFriendsSeniors(props) {
   const { children, value, index, ...other } = props;
@@ -107,7 +110,14 @@ export default function SimpleTabs() {
   return (
     <div>
         <div align='center'>
-            <Button onClick={handleClick}>FLIP</Button>
+            <Switch 
+                onChange={handleClick} 
+                checked={isFlipped}
+                offColor='#2e9e4c'
+                onColor='#2e9e4c'
+                checkedIcon={false}
+                uncheckedIcon={false}
+                />
         </div>
         <div className='mainDiv'>
             <ReactCardFlip className="mainCard" isFlipped={isFlipped} flipDirection="horizontal">
