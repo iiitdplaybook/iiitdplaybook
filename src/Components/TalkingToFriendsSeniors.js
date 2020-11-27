@@ -1,6 +1,6 @@
 /** @format */
 
-import React from "react";
+import React, {useState} from "react";
 import firebase from "firebase";
 import { useStateValue } from "../StateProvider";
 import PropTypes from "prop-types";
@@ -19,10 +19,12 @@ import whatsapp from "../Assets/whatsapp.png";
 import facebook from "../Assets/facebook.jpg";
 import instagram from "../Assets/instagram.jpg";
 import telegram from "../Assets/telegram.png";
+import wazzup from "../Assets/wazzup.jpg";
 import "react-slideshow-image/dist/styles.css";
 import ShareButton from "react-web-share-button";
 import webShare from "react-web-share-api";
 import { Button } from "@material-ui/core";
+import ReactCardFlip from 'react-card-flip';
 
 function TalkingToFriendsSeniors(props) {
   const { children, value, index, ...other } = props;
@@ -92,6 +94,11 @@ const share = () => {
 export default function SimpleTabs() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleClick = () => {
+      setIsFlipped(!isFlipped);
+  }
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -99,10 +106,16 @@ export default function SimpleTabs() {
 
   return (
     <div>
-      <div className={classes.root}>
-        <Card className="homePageCard" variant="outlined">
-          <CardContent>
-            {/* <Paper position="static">
+        <div align='center'>
+            <Button onClick={handleClick}>FLIP</Button>
+        </div>
+        <div className='mainDiv'>
+            <ReactCardFlip className="mainCard" isFlipped={isFlipped} flipDirection="horizontal">
+                {/* First component of ReactCardFlip is frontpage */}
+                <Card className='frontpage'>
+                    <Card className="socialMediaCard" variant="outlined">
+                    <CardContent>
+                        {/* <Paper position="static">
                             <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" centered>
                                 <Tab label="Whatsapp" {...a11yProps(0)} />
                                 <Tab label="Instagram" {...a11yProps(1)} />
@@ -126,42 +139,49 @@ export default function SimpleTabs() {
                         <TalkingToFriendsSeniors value={value} index={4}>
                             Pata Nahi
                         </TalkingToFriendsSeniors>  */}
-            <div>
-              <Fade {...properties}>
-                <div style={style} className="each-fade">
-                  <div>
-                    <img src={whatsapp} alt="whatsapp" />
-                  </div>
-                </div>
-                <div style={style} className="each-fade">
-                  <div>
-                    <img src={facebook} alt="facebook" />
-                  </div>
-                </div>
-                <div style={style} className="each-fade">
-                  <div>
-                    <img src={instagram} alt="instagram" />
-                  </div>
-                </div>
-                <div style={style} className="each-fade">
-                  <div>
-                    <img src={telegram} alt="telegram" />
-                  </div>
-                </div>
-              </Fade>
-            </div>
-          </CardContent>
-        </Card>
-        <Card className="homePageCard" variant="outlined">
-          <CardContent>
-            <Typography className="textCard" variant="h4" align="center">
-              "Friendship is the new ____zone"
-            </Typography>
-            {/* <ShareButton title="My Great Page" text="Friendship is the new ____zone" url="" /> */}
-            <Button onClick={share}>Share</Button>
-          </CardContent>
-        </Card>
-      </div>
+                        <div>
+                            <Fade {...properties}>
+                                <div style={style} className="each-fade">
+                                <div>
+                                    <img src={whatsapp} alt="whatsapp" />
+                                </div>
+                                </div>
+                                <div style={style} className="each-fade">
+                                <div>
+                                    <img src={facebook} alt="facebook" />
+                                </div>
+                                </div>
+                                <div style={style} className="each-fade">
+                                <div>
+                                    <img src={instagram} alt="instagram" />
+                                </div>
+                                </div>
+                                <div style={style} className="each-fade">
+                                <div>
+                                    <img src={telegram} alt="telegram" />
+                                </div>
+                                </div>
+                            </Fade>
+                        </div>
+                    </CardContent>
+                </Card>
+                    <Card className="shareTextCard" variant="outlined">
+                    <CardContent>
+                        <Typography className="textCard" variant="h4" align="center">
+                        "Friendship is the new ____zone"
+                        </Typography>
+                        <Button onClick={share}>Share</Button>
+                    </CardContent>
+                </Card>
+                </Card> 
+                {/* Second component of ReactCardFlip is backpage */} 
+                <Card className='backPage'>
+                    <div align='center'>
+                        <img src={wazzup} alt="wazzup" />
+                    </div>
+                </Card>
+            </ReactCardFlip>
+        </div>
     </div>
   );
 }
