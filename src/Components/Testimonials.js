@@ -95,8 +95,7 @@ const Reviews = ({ size, onStartPerformance, onEndPerformance }) => {
                 </Avatar>
                 <Content scale={scale}>
                   <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Index: {id}
+                    nigga {id}
                   </p>
                 </Content>
               </Review>
