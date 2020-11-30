@@ -3,3 +3,14 @@
 /* .vertical-timeline{
     background-color: white;
 } */
+
+.textCard{
+    align-content: center;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.year_style{
+    color: rgb(33, 150, 243);
+}
