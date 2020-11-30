@@ -7,6 +7,7 @@ import HomePage from "./Components/HomePage";
 import Footer from "./Components/Footer";
 import Testimonials from "./Components/Testimonials";
 import TalkingToFriendsSeniors from "./Components/TalkingToFriendsSeniors";
+import Supplies from "./Components/Supplies";
 import Login from "./Components/Login";
 import firebase from "firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -45,6 +46,7 @@ function App() {
             <Navbar />
             <Switch>
               <Route path="/explore" component={Explore} />
+              <Route path="/supplies" component={Supplies} />
               <Route path="/friends" component={TalkingToFriendsSeniors} />
               <Route path="/test" component={Testimonials} />
               <Route path="/">

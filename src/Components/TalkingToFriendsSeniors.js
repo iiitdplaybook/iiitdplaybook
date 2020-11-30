@@ -125,7 +125,7 @@ export default function SimpleTabs() {
                 <Card className='frontpage'>
                     <Card className="socialMediaCard" variant="outlined">
                     <CardContent>
-                        {/* <Paper position="static">
+                      {/* <Paper position="static">
                             <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" centered>
                                 <Tab label="Whatsapp" {...a11yProps(0)} />
                                 <Tab label="Instagram" {...a11yProps(1)} />
@@ -188,6 +188,7 @@ export default function SimpleTabs() {
                 <Card className='backPage'>
                     <div align='center'>
                         <img src={wazzup} alt="wazzup" />
+                        <h1>College khulne ke baad bataayenge 🙂</h1>
                     </div>
                 </Card>
             </ReactCardFlip>
