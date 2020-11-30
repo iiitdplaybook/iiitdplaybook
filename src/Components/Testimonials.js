@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useEffect, useState } from "react";
 import Marquee from "react-marquee-slider";
 import styled from "styled-components";
@@ -39,7 +41,7 @@ const Avatar = styled.div`
 const Content = styled.div`
   p {
     margin: 0;
-    color: #382F70;
+    color: #382f70;
     font-family: Helvetica, sans-serif;
     font-size: ${(props) => props.scale * 18}px;
     line-height: ${(props) => props.scale * 24}px;
@@ -48,15 +50,15 @@ const Content = styled.div`
   }
 `;
 
-const portraits = [
-  "https://randomuser.me/api/portraits/women/68.jpg",
-  "https://randomuser.me/api/portraits/men/75.jpg",
-  "https://randomuser.me/api/portraits/lego/3.jpg",
-  "https://randomuser.me/api/portraits/women/89.jpg",
-  "https://randomuser.me/api/portraits/men/26.jpg",
-];
+// const portraits = [
+//   "https://randomuser.me/api/portraits/women/68.jpg",
+//   "https://randomuser.me/api/portraits/men/75.jpg",
+//   "https://randomuser.me/api/portraits/lego/3.jpg",
+//   "https://randomuser.me/api/portraits/women/89.jpg",
+//   "https://randomuser.me/api/portraits/men/26.jpg",
+// ];
 
-const Reviews = ({ size, onStartPerformance, onEndPerformance }) => {
+const Reviews = ({ portraits, size, onStartPerformance, onEndPerformance }) => {
   const [key, setKey] = useState();
 
   useEffect(() => {
@@ -87,16 +89,14 @@ const Reviews = ({ size, onStartPerformance, onEndPerformance }) => {
           onInit={onStartPerformance}
           onFinish={onEndPerformance}
         >
-          {times(10, String).map((id) => (
+          {times(portraits.length, String).map((id) => (
             <Box key={`marquee-example-review-${id}`} scale={scale}>
               <Review scale={scale}>
                 <Avatar scale={scale}>
-                  <img src={portraits[id]} alt="" />
+                  <img src={portraits[id].pic} alt="" />
                 </Avatar>
                 <Content scale={scale}>
-                  <p>
-                    nigga {id}
-                  </p>
+                  <p>{portraits[id].text}</p>
                 </Content>
               </Review>
             </Box>
