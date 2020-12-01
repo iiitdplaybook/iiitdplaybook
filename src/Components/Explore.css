@@ -1,4 +1,14 @@
 /** @format */
+.explore__button {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.explore__button > button {
+    margin: 10px;
+}
+
 .explore__body {
     display: flex;
     justify-content: center;

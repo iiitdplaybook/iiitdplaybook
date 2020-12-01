@@ -26,7 +26,10 @@ function Login() {
   ];
 
   const portraits2 = [
+    { pic: yashwin, text: "Yashwin" },
     { pic: kshitij, text: "Kshitij" },
+    { pic: pabitra, text: "Pabitra" },
+    { pic: rahul, text: "Rahul" },
   ];
 
   const vel1 = 0;

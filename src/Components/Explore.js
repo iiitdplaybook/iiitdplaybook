@@ -1,20 +1,20 @@
 /** @format */
 
 import "./Explore.css";
-import React from "react";
+import React, { useState } from "react";
 import {
-    Button,
-    Card,
-    CardContent,
-    Typography,
-    CardActionArea,
-    CardMedia,
+  Button,
+  Card,
+  CardContent,
+  Typography,
+  CardActionArea,
+  CardMedia,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import Tabs from "./Tabs";
 import pabitra from "../Assets/pabitra.jpeg";
 
 function Explore() {
+    const [clickedButton, setClickedButton] = useState(1);
     const useStyles = makeStyles({
         root: {
             width: 200,
@@ -25,6 +25,19 @@ function Explore() {
         },
     });
 
+    const buttonStyles = makeStyles({
+        root: {
+            background: "linear-gradient(90deg,#1EB0F6 6.32%, #2BD4DF 100%)",
+            boxShadow: "0px 15px 20px -2px rgba(37, 197, 233, 0.25)",
+            borderRadius: "15px",
+            border: "none",
+            color: "white",
+        },
+        notRoot: {
+            borderRadius: "15px",
+        },
+    });
+    const buttonClass = buttonStyles();
     const classes = useStyles();
 
     const items = [];
@@ -47,13 +60,60 @@ function Explore() {
         );
     }
 
+    const changeS = (s) => {
+        setClickedButton(s);
+    };
+
     return (
         <div className="explore">
+            <div className="explore__button">
+                <Button
+                    onClick={() => changeS(1)}
+                    variant={clickedButton === 1 ? "contatined" : "outlined"}
+                    className={
+                        clickedButton === 1
+                            ? buttonClass.root
+                            : buttonClass.notRoot
+                    }
+                >
+                    All
+                </Button>
+                <Button
+                    onClick={() => changeS(2)}
+                    variant={clickedButton === 2 ? "contatined" : "outlined"}
+                    className={
+                        clickedButton === 2
+                            ? buttonClass.root
+                            : buttonClass.notRoot
+                    }
+                >
+                    Recommended
+                </Button>
+                <Button
+                    onClick={() => changeS(3)}
+                    variant={clickedButton === 3 ? "contatined" : "outlined"}
+                    className={
+                        clickedButton === 3
+                            ? buttonClass.root
+                            : buttonClass.notRoot
+                    }
+                >
+                    Favourites
+                </Button>
+            </div>
+
             <div className="explore__body">
-                <Tabs items={items} />
+                {clickedButton === 1 ? (
+                    <p>Pabitra</p>
+                ) : clickedButton === 2 ? (
+                    <p>Yashwin</p>
+                ) : (
+                    <p>Kshitij</p>
+                )}
+                {items}
             </div>
         </div>
     );
-}
+  }
 
 export default Explore;

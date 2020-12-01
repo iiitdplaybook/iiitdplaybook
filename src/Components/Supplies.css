@@ -1,0 +1,15 @@
+/** @format */
+.supplies__button {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+}
+
+.supplies__button > button {
+    margin: 10px;
+}
+
+.supplies__body {
+    display: flex;
+    justify-content: center;
+}
