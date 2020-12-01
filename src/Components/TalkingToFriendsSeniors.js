@@ -7,9 +7,6 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import AppBar from "@material-ui/core/AppBar";
-import Paper from "@material-ui/core/Paper";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
@@ -20,8 +17,6 @@ import facebook from "../Assets/facebook.jpg";
 import instagram from "../Assets/instagram.jpg";
 import telegram from "../Assets/telegram.png";
 import wazzup from "../Assets/wazzup.jpg";
-import online from "../Assets/online.PNG";
-import offline from "../Assets/offline.PNG";
 import "react-slideshow-image/dist/styles.css";
 import ShareButton from "react-web-share-button";
 import webShare from "react-web-share-api";
@@ -126,30 +121,6 @@ export default function SimpleTabs() {
                 <Card className='frontpage'>
                     <Card className="socialMediaCard" variant="outlined">
                         <CardContent>
-                    {/* <Paper position="static">
-                            <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" centered>
-                                <Tab label="Whatsapp" {...a11yProps(0)} />
-                                <Tab label="Instagram" {...a11yProps(1)} />
-                                <Tab label="Facebook" {...a11yProps(2)} />
-                                <Tab label="Telegram" {...a11yProps(3)} />
-                                <Tab label="Pata Nahi" {...a11yProps(4)} />
-                            </Tabs>
-                        </Paper>
-                        <TalkingToFriendsSeniors value={value} index={0}>
-                            Whatsapp
-                        </TalkingToFriendsSeniors>
-                        <TalkingToFriendsSeniors value={value} index={1}>
-                            Instagram
-                        </TalkingToFriendsSeniors>
-                        <TalkingToFriendsSeniors value={value} index={2}>
-                            Facebook
-                        </TalkingToFriendsSeniors>
-                        <TalkingToFriendsSeniors value={value} index={3}>
-                            Telegram
-                        </TalkingToFriendsSeniors>
-                        <TalkingToFriendsSeniors value={value} index={4}>
-                            Pata Nahi
-                        </TalkingToFriendsSeniors>  */}
                             <div>
                                 <Fade {...properties}>
                                     <div
