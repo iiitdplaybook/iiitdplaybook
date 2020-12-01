@@ -33,10 +33,12 @@ function Navbar() {
         <Button component={Link} to={"/explore"}>
           Explore
         </Button>
-        <Button component={Link} to={"/friends"}>
+        <Button component={Link} to={"/supplies"}>
           Supplies
         </Button>
-        <Button>Tools</Button>
+        <Button component={Link} to={"/friends"}>
+          Tools
+        </Button>
         <Button onClick={signOut}>Sign out</Button>
         <Avatar src={user?.photoURL} alt="User" />
       </div>
