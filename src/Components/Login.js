@@ -57,22 +57,23 @@ function Login() {
       <Button onClick={signIn}>Sign in with Google</Button>
       <div className="creators">
         <Card className={classes.root}>
-          <CardActionArea>
+          <CardActionArea target="_blank"
+              href="https://www.linkedin.com/in/yashwin-agrawal-6b28bb176/">
             <CardMedia
               className={classes.media}
               image={yashwin}
-              title="Contemplative Reptile"
+              title="Yashwin Agrawal"
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                Yashwin
+              <Typography gutterBottom variant="h6" component="h2">
+                Yashwin Agrawal
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
                 bad ass nigga
               </Typography>
             </CardContent>
           </CardActionArea>
-          <CardActions>
+          {/* <CardActions>
             <Button
               size="small"
               color="primary"
@@ -81,88 +82,61 @@ function Login() {
             >
               LinkedIn
             </Button>
-          </CardActions>
+          </CardActions> */}
         </Card>
         <Card className={classes.root}>
-          <CardActionArea>
+          <CardActionArea target="_blank"
+              href="https://www.linkedin.com/in/kshitij16/">
             <CardMedia
               className={classes.media}
               image={kshitij}
-              title="Contemplative Reptile"
+              title="Kshitij Agrawal"
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                Kshitij
+              <Typography gutterBottom variant="h6" component="h2">
+                Kshitij Agrawal
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
                 almost bad ass nigga
               </Typography>
             </CardContent>
           </CardActionArea>
-          <CardActions>
-            <Button
-              size="small"
-              color="primary"
-              target="_blank"
-              href="https://www.linkedin.com/in/kshitij16/"
-            >
-              LinkedIn
-            </Button>
-          </CardActions>
         </Card>
         <Card className={classes.root}>
-          <CardActionArea>
+          <CardActionArea target="_blank"
+              href="https://www.linkedin.com/in/pabitra-bansal-06039616a/">
             <CardMedia
               className={classes.media}
               image={pabitra}
-              title="Contemplative Reptile"
+              title="Pabitra Bansal"
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                Pabitra
+              <Typography gutterBottom variant="h6" component="h2">
+                Pabitra Bansal
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
                 cute ass nigga
               </Typography>
             </CardContent>
           </CardActionArea>
-          <CardActions>
-            <Button
-              size="small"
-              color="primary"
-              target="_blank"
-              href="https://www.linkedin.com/in/pabitra-bansal-06039616a/"
-            >
-              LinkedIn
-            </Button>
-          </CardActions>
         </Card>
         <Card className={classes.root}>
-          <CardActionArea>
+          <CardActionArea target="_blank"
+              href="https://www.linkedin.com/in/rahul-singh-7aa84697/">
             <CardMedia
               className={classes.media}
               image={rahul}
-              title="Contemplative Reptile"
+              title="Rahul Singh"
             />
             <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                Rahul
+              <Typography gutterBottom variant="h6" component="h2">
+                Rahul Singh
               </Typography>
               <Typography variant="body2" color="textSecondary" component="p">
                 god ass nigga
               </Typography>
             </CardContent>
           </CardActionArea>
-          <CardActions>
-            <Button
-              size="small"
-              color="primary"
-              target="_blank"
-              href="https://www.linkedin.com/in/rahul-singh-7aa84697/"
-            >
-              LinkedIn
-            </Button>
-          </CardActions>
         </Card>
       </div>
       <Testimonials portraits={portraits} />
