@@ -1,7 +1,7 @@
 /** @format */
 
 import "./App.css";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Navbar from "./Components/Navbar";
 import HomePage from "./Components/HomePage";
 import Footer from "./Components/Footer";
@@ -15,25 +15,25 @@ import { useStateValue } from "./StateProvider";
 import Explore from "./Components/Explore";
 
 function App() {
-  const [{}, dispatch] = useStateValue();
+    const [{}, dispatch] = useStateValue();
 
-  useEffect(() => {
-    firebase.auth().onAuthStateChanged((authUser) => {
-      if (authUser) {
-        dispatch({
-          type: "SET_USER",
-          user: authUser,
-          isSignedIn: true,
+    useEffect(() => {
+        firebase.auth().onAuthStateChanged((authUser) => {
+            if (authUser) {
+                dispatch({
+                    type: "SET_USER",
+                    user: authUser,
+                    isSignedIn: true,
+                });
+            } else {
+                dispatch({
+                    type: "SET_USER",
+                    user: null,
+                    isSignedIn: false,
+                });
+            }
         });
-      } else {
-        dispatch({
-          type: "SET_USER",
-          user: null,
-          isSignedIn: false,
-        });
-      }
-    });
-  }, []);
+    }, []);
 
   return (
     <div className="app">
