@@ -3,12 +3,12 @@
 import "./Explore.css";
 import React, { useState } from "react";
 import {
-    Button,
-    Card,
-    CardContent,
-    Typography,
-    CardActionArea,
-    CardMedia,
+  Button,
+  Card,
+  CardContent,
+  Typography,
+  CardActionArea,
+  CardMedia,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import pabitra from "../Assets/pabitra.jpeg";
@@ -114,6 +114,18 @@ function Explore() {
             </div>
         </div>
     );
+  }
+
+  return (
+    <div className="explore">
+      <div className="explore__buttons">
+        <Button>Favourites</Button>
+        <Button>Recommended</Button>
+        <Button>All</Button>
+      </div>
+      <div className="explore__cards">{items}</div>
+    </div>
+  );
 }
 
 export default Explore;

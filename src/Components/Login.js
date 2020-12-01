@@ -5,17 +5,12 @@ import "./Login.css";
 import firebase from "firebase";
 import { auth, provider } from "../fire";
 import { Button } from "@material-ui/core";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import Typography from "@material-ui/core/Typography";
-import CardActionArea from "@material-ui/core/CardActionArea";
-import CardActions from "@material-ui/core/CardActions";
-import CardMedia from "@material-ui/core/CardMedia";
 import { makeStyles } from "@material-ui/core/styles";
 import yashwin from "../Assets/yashwin.png";
 import kshitij from "../Assets/kshitij.jpg";
 import pabitra from "../Assets/pabitra.jpeg";
 import rahul from "../Assets/rahul.png";
+import logo from "../Assets/Logo.png";
 import Testimonials from "./Testimonials";
 
 function Login() {
@@ -24,7 +19,18 @@ function Login() {
     { pic: kshitij, text: "Kshitij" },
     { pic: pabitra, text: "Pabitra" },
     { pic: rahul, text: "Rahul" },
+    { pic: yashwin, text: "Yashwin" },
+    { pic: kshitij, text: "Kshitij" },
+    { pic: pabitra, text: "Pabitra" },
+    { pic: rahul, text: "Rahul" },
   ];
+
+  const portraits2 = [
+    { pic: kshitij, text: "Kshitij" },
+  ];
+
+  const vel1 = 0;
+  const vel2 = 25;
 
   const signIn = () => {
     auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
@@ -53,93 +59,24 @@ function Login() {
 
   return (
     <div className="login">
-      <h1>Login page</h1>
-      <Button onClick={signIn}>Sign in with Google</Button>
-      <div className="creators">
-        <Card className={classes.root}>
-          <CardActionArea target="_blank"
-              href="https://www.linkedin.com/in/yashwin-agrawal-6b28bb176/">
-            <CardMedia
-              className={classes.media}
-              image={yashwin}
-              title="Yashwin Agrawal"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h6" component="h2">
-                Yashwin Agrawal
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                bad ass nigga
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-          {/* <CardActions>
-            <Button
-              size="small"
-              color="primary"
-              target="_blank"
-              href="https://www.linkedin.com/in/yashwin-agrawal-6b28bb176/"
-            >
-              LinkedIn
-            </Button>
-          </CardActions> */}
-        </Card>
-        <Card className={classes.root}>
-          <CardActionArea target="_blank"
-              href="https://www.linkedin.com/in/kshitij16/">
-            <CardMedia
-              className={classes.media}
-              image={kshitij}
-              title="Kshitij Agrawal"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h6" component="h2">
-                Kshitij Agrawal
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                almost bad ass nigga
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-        <Card className={classes.root}>
-          <CardActionArea target="_blank"
-              href="https://www.linkedin.com/in/pabitra-bansal-06039616a/">
-            <CardMedia
-              className={classes.media}
-              image={pabitra}
-              title="Pabitra Bansal"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h6" component="h2">
-                Pabitra Bansal
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                cute ass nigga
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-        <Card className={classes.root}>
-          <CardActionArea target="_blank"
-              href="https://www.linkedin.com/in/rahul-singh-7aa84697/">
-            <CardMedia
-              className={classes.media}
-              image={rahul}
-              title="Rahul Singh"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h6" component="h2">
-                Rahul Singh
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                god ass nigga
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
+      <img id="logo" src={logo} />
+      <div className='login__heading'>
+        <h1>Hacking IIITD</h1>
+        <h5>For the students, by the students</h5>
       </div>
-      <Testimonials portraits={portraits} />
+      <div className='login__buttons'>
+        <Button id="signIn" onClick={signIn}>Sign in with Google</Button>
+        <Button id="guest">Join as Guest</Button>
+      </div>
+      <div className='login__creators'>
+        <Testimonials portraits={portraits2} vel={vel1} scaleFactor={1.5}/>
+        <Testimonials portraits={portraits2} vel={vel1} scaleFactor={1.5}/>
+        <Testimonials portraits={portraits2} vel={vel1} scaleFactor={1.5}/>
+        <Testimonials portraits={portraits2} vel={vel1} scaleFactor={1.5}/>
+      </div>
+      <div className='login__testimonials'>
+        <Testimonials id="contributors" portraits={portraits} vel={vel2} scaleFactor={1}/>
+      </div>
     </div>
   );
 }

@@ -12,6 +12,7 @@ import 'react-vertical-timeline-component/style.min.css';
 import "./HomePage.css";
 
 function HomePage() {
+
     const [{user, isSignedIn, userName}] = useStateValue()
 
     // const Reviews = () => (
