@@ -28,13 +28,15 @@ function Explore() {
     const buttonStyles = makeStyles({
         root: {
             background: "linear-gradient(90deg,#1EB0F6 6.32%, #2BD4DF 100%)",
-            boxShadow: "0px 15px 20px -2px rgba(37, 197, 233, 0.25)",
+            // boxShadow: "0px 10px 20px -2px rgba(37, 197, 233, 0.25)",
             borderRadius: "15px",
             border: "none",
             color: "white",
         },
         notRoot: {
             borderRadius: "15px",
+            background: "#f0f0f0",
+            border: "none",
         },
     });
     const buttonClass = buttonStyles();

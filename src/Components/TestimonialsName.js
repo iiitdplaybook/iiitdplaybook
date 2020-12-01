@@ -10,19 +10,18 @@ import FullWidth from "./FullWidth";
 const Height = styled.div`
   position: relative;
   width: 100%;
-  height: ${(props) => (props.height ? props.height + "px" : "auto")};
 `;
 
 const Box = styled.div`
-  padding: ${(props) => props.scale * 50}px;
+  padding: ${(props) => props.scale * 40}px;
 `;
 
 const Review = styled.div`
   width: ${(props) => props.scale * 225}px;
   display: flex;
-  padding: ${(props) => props.scale * 25}px;
+  padding: ${(props) => props.scale * 20}px;
   background: #fff;
-  border-radius: 4px;
+  border-radius: 65px;
   border-color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
   box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
 `;

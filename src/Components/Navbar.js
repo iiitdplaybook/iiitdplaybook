@@ -6,6 +6,7 @@ import { auth } from "../fire";
 import { Avatar, Button } from "@material-ui/core";
 import { useStateValue } from "../StateProvider";
 import { Link } from "react-router-dom";
+import logo from "../Assets/Logo.png";
 
 function Navbar() {
   const [{ user }] = useStateValue();
@@ -26,7 +27,7 @@ function Navbar() {
     <div className="navbar">
       <div className="navbar__left">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <h3>Student Playbook</h3>
+        <img id="logo" src={logo} />
         </Link>
       </div>
       <div className="navbar__right">

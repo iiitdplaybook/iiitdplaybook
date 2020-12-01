@@ -4,8 +4,8 @@ import styled from "styled-components";
 const FullWidth = styled.div`
   width: 100vw;
   position: relative;
-  left: 50%;
-  right: 50%;
+  left: 0%;
+  right: 0%;
   margin-left: -50vw;
   margin-right: -50vw;
 `;

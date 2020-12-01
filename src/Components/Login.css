@@ -19,23 +19,67 @@
     flex-direction: column;
 }
 
-.login__creators{
+.login__creators{    
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login__testimonials{
+    /* position: fixed;
+    bottom: 5%;
+    left:47%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nameList{
+    
 }
 
 .login > h1{
     /* margin-left: 25%;
     width: 50%; */
-    color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
+    background-color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
+    background-size: 100%;
+
+    background-color: red;
+
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
 }
 
 #signIn{
-    background: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
+    /* background: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%); */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 30s ease infinite;
     padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     color: white;
     transition: ease-in-out .3s;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 #signIn:hover{
@@ -46,6 +90,8 @@
     border-color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
     border-width: 5px;
     padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
@@ -56,6 +102,12 @@
     transform: scale(1.05);
 }
 
-#contributors{
-
-}
+@media only screen and (max-width: 500px) {
+    
+.login__testimonials{
+        position: fixed;
+        bottom: 3%;
+        left:38%;
+    }
+  }
+  
