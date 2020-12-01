@@ -118,14 +118,15 @@ export default function SimpleTabs() {
                 checkedIcon={false}
                 uncheckedIcon={false}
                 />
+
         </div>
         <div className='mainDiv'>
             <ReactCardFlip className="mainCard" isFlipped={isFlipped} flipDirection="horizontal">
                 {/* First component of ReactCardFlip is frontpage */}
                 <Card className='frontpage'>
                     <Card className="socialMediaCard" variant="outlined">
-                    <CardContent>
-                      {/* <Paper position="static">
+                        <CardContent>
+                    {/* <Paper position="static">
                             <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" centered>
                                 <Tab label="Whatsapp" {...a11yProps(0)} />
                                 <Tab label="Instagram" {...a11yProps(1)} />
@@ -149,41 +150,69 @@ export default function SimpleTabs() {
                         <TalkingToFriendsSeniors value={value} index={4}>
                             Pata Nahi
                         </TalkingToFriendsSeniors>  */}
-                        <div>
-                            <Fade {...properties}>
-                                <div style={style} className="each-fade">
-                                <div>
-                                    <img src={whatsapp} alt="whatsapp" />
-                                </div>
-                                </div>
-                                <div style={style} className="each-fade">
-                                <div>
-                                    <img src={facebook} alt="facebook" />
-                                </div>
-                                </div>
-                                <div style={style} className="each-fade">
-                                <div>
-                                    <img src={instagram} alt="instagram" />
-                                </div>
-                                </div>
-                                <div style={style} className="each-fade">
-                                <div>
-                                    <img src={telegram} alt="telegram" />
-                                </div>
-                                </div>
-                            </Fade>
-                        </div>
-                    </CardContent>
-                </Card>
+                            <div>
+                                <Fade {...properties}>
+                                    <div
+                                        style={style}
+                                        className="each-fade"
+                                    >
+                                        <div>
+                                            <img
+                                                src={whatsapp}
+                                                alt="whatsapp"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        style={style}
+                                        className="each-fade"
+                                    >
+                                        <div>
+                                            <img
+                                                src={facebook}
+                                                alt="facebook"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        style={style}
+                                        className="each-fade"
+                                    >
+                                        <div>
+                                            <img
+                                                src={instagram}
+                                                alt="instagram"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        style={style}
+                                        className="each-fade"
+                                    >
+                                        <div>
+                                            <img
+                                                src={telegram}
+                                                alt="telegram"
+                                            />
+                                        </div>
+                                    </div>
+                                </Fade>
+                            </div>
+                        </CardContent>
+                    </Card>
                     <Card className="shareTextCard" variant="outlined">
-                    <CardContent>
-                        <Typography className="textCard" variant="h4" align="center">
-                        "Friendship is the new ____zone"
-                        </Typography>
-                        <Button onClick={share}>Share</Button>
-                    </CardContent>
+                        <CardContent>
+                            <Typography
+                                className="textCard"
+                                variant="h4"
+                                align="center"
+                            >
+                                "Friendship is the new ____zone"
+                            </Typography>
+                            <Button onClick={share}>Share</Button>
+                        </CardContent>
+                    </Card>
                 </Card>
-                </Card> 
                 {/* Second component of ReactCardFlip is backpage */} 
                 <Card className='backPage'>
                     <div align='center'>
