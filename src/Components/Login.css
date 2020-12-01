@@ -19,8 +19,25 @@
     flex-direction: column;
 }
 
-.login__creators{
+.login__creators{    
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login__testimonials{
+    /* position: fixed;
+    bottom: 5%;
+    left:47%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.nameList{
+    
 }
 
 .login > h1{
@@ -41,6 +58,8 @@
 #signIn{
     background: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
     padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     color: white;
@@ -55,6 +74,8 @@
     border-color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
     border-width: 5px;
     padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
@@ -65,6 +86,12 @@
     transform: scale(1.05);
 }
 
-#contributors{
-
-}
+@media only screen and (max-width: 500px) {
+    
+.login__testimonials{
+        position: fixed;
+        bottom: 3%;
+        left:38%;
+    }
+  }
+  

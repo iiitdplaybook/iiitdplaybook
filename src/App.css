@@ -9,3 +9,11 @@
     margin: 2%;
     width: 7vw;
 }
+
+
+@media only screen and (max-width: 500px) {
+    #logo{
+        margin: 5%;
+        width: 20vw;
+    }
+}
