@@ -1,5 +1,5 @@
 /** @format */
-.explore__body {
-    display: flex;
-    justify-content: center;
+
+.explore__cards {
+  display: flex;
 }
