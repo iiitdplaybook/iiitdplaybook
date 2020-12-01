@@ -4,4 +4,10 @@
     background-image: url("login_bg.jpeg");
     height: 100vh;
     width: 100vw;
+    font-family: 'Poppins', sans-serif;    
+}
+
+#logo{
+    margin: 2%;
+    width: 7vw;
 }

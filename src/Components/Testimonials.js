@@ -18,7 +18,7 @@ const Box = styled.div`
 `;
 
 const Review = styled.div`
-  width: ${(props) => props.scale * 350}px;
+  width: ${(props) => props.scale * 225}px;
   display: flex;
   padding: ${(props) => props.scale * 25}px;
   background: #fff;
@@ -40,10 +40,10 @@ const Avatar = styled.div`
 
 const Content = styled.div`
   p {
-    margin: 0;
+    margin: 8px;
     color: #382f70;
     font-family: Helvetica, sans-serif;
-    font-size: ${(props) => props.scale * 18}px;
+    font-size: ${(props) => props.scale * 28}px;
     line-height: ${(props) => props.scale * 24}px;
     font-weight: 100;
     text-align: left;
@@ -58,14 +58,14 @@ const Content = styled.div`
 //   "https://randomuser.me/api/portraits/men/26.jpg",
 // ];
 
-const Reviews = ({ portraits, size, onStartPerformance, onEndPerformance }) => {
+const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndPerformance }) => {
   const [key, setKey] = useState();
 
   useEffect(() => {
     setKey();
   }, [size, setKey]);
 
-  let scale = 0.5;
+  let scale = 0.5*scaleFactor;
 
   if (size && size.width > 800) {
     scale = 0.65;
@@ -84,7 +84,7 @@ const Reviews = ({ portraits, size, onStartPerformance, onEndPerformance }) => {
       <Height height={200}>
         <Marquee
           key={key}
-          velocity={25}
+          velocity={vel}
           minScale={0.7}
           onInit={onStartPerformance}
           onFinish={onEndPerformance}
