@@ -1,0 +1,61 @@
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login__heading {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login__buttons{
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.login__creators{
+    display: flex;
+}
+
+.login > h1{
+    /* margin-left: 25%;
+    width: 50%; */
+    color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
+}
+
+#signIn{
+    background: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
+    padding: 1%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: white;
+    transition: ease-in-out .3s;
+}
+
+#signIn:hover{
+    transform: scale(1.05);
+}
+
+#guest{
+    border-color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
+    border-width: 5px;
+    padding: 1%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
+    transition: ease-in-out .3s;
+}
+
+#guest:hover{
+    transform: scale(1.05);
+}
+
+#contributors{
+
+}

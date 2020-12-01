@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useEffect, useState } from "react";
 import Marquee from "react-marquee-slider";
 import styled from "styled-components";
@@ -16,7 +18,7 @@ const Box = styled.div`
 `;
 
 const Review = styled.div`
-  width: ${(props) => props.scale * 350}px;
+  width: ${(props) => props.scale * 225}px;
   display: flex;
   padding: ${(props) => props.scale * 25}px;
   background: #fff;
@@ -38,32 +40,32 @@ const Avatar = styled.div`
 
 const Content = styled.div`
   p {
-    margin: 0;
-    color: #382F70;
+    margin: 8px;
+    color: #382f70;
     font-family: Helvetica, sans-serif;
-    font-size: ${(props) => props.scale * 18}px;
+    font-size: ${(props) => props.scale * 28}px;
     line-height: ${(props) => props.scale * 24}px;
     font-weight: 100;
     text-align: left;
   }
 `;
 
-const portraits = [
-  "https://randomuser.me/api/portraits/women/68.jpg",
-  "https://randomuser.me/api/portraits/men/75.jpg",
-  "https://randomuser.me/api/portraits/lego/3.jpg",
-  "https://randomuser.me/api/portraits/women/89.jpg",
-  "https://randomuser.me/api/portraits/men/26.jpg",
-];
+// const portraits = [
+//   "https://randomuser.me/api/portraits/women/68.jpg",
+//   "https://randomuser.me/api/portraits/men/75.jpg",
+//   "https://randomuser.me/api/portraits/lego/3.jpg",
+//   "https://randomuser.me/api/portraits/women/89.jpg",
+//   "https://randomuser.me/api/portraits/men/26.jpg",
+// ];
 
-const Reviews = ({ size, onStartPerformance, onEndPerformance }) => {
+const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndPerformance }) => {
   const [key, setKey] = useState();
 
   useEffect(() => {
     setKey();
   }, [size, setKey]);
 
-  let scale = 0.5;
+  let scale = 0.5*scaleFactor;
 
   if (size && size.width > 800) {
     scale = 0.65;
@@ -82,22 +84,19 @@ const Reviews = ({ size, onStartPerformance, onEndPerformance }) => {
       <Height height={200}>
         <Marquee
           key={key}
-          velocity={25}
+          velocity={vel}
           minScale={0.7}
           onInit={onStartPerformance}
           onFinish={onEndPerformance}
         >
-          {times(10, String).map((id) => (
+          {times(portraits.length, String).map((id) => (
             <Box key={`marquee-example-review-${id}`} scale={scale}>
               <Review scale={scale}>
                 <Avatar scale={scale}>
-                  <img src={portraits[id]} alt="" />
+                  <img src={portraits[id].pic} alt="" />
                 </Avatar>
                 <Content scale={scale}>
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                    incididunt ut labore et dolore magna aliqua. Index: {id}
-                  </p>
+                  <p>{portraits[id].text}</p>
                 </Content>
               </Review>
             </Box>
