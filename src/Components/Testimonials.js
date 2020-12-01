@@ -23,6 +23,7 @@ const Review = styled.div`
   padding: ${(props) => props.scale * 25}px;
   background: #fff;
   border-radius: 4px;
+  border-color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
   box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
 `;
 

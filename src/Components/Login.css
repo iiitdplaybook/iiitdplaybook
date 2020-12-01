@@ -26,7 +26,16 @@
 .login > h1{
     /* margin-left: 25%;
     width: 50%; */
-    color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
+    background-color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
+    background-size: 100%;
+
+    background-color: red;
+
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
 }
 
 #signIn{
