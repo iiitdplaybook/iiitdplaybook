@@ -116,16 +116,4 @@ function Explore() {
     );
   }
 
-  return (
-    <div className="explore">
-      <div className="explore__buttons">
-        <Button>Favourites</Button>
-        <Button>Recommended</Button>
-        <Button>All</Button>
-      </div>
-      <div className="explore__cards">{items}</div>
-    </div>
-  );
-}
-
 export default Explore;
