@@ -119,37 +119,37 @@ export default function SimpleTabs() {
                     uncheckedIcon={false}
                 />
 
-        </div>
-        <div className='mainDiv'>
-            <ReactCardFlip className="mainCard" isFlipped={isFlipped} flipDirection="horizontal">
-                {/* First component of ReactCardFlip is frontpage */}
-                <Card className='frontpage'>
-                    <Card className="socialMediaCard" variant="outlined">
-                    <CardContent>
-                      {/* <Paper position="static">
-                            <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" centered>
-                                <Tab label="Whatsapp" {...a11yProps(0)} />
-                                <Tab label="Instagram" {...a11yProps(1)} />
-                                <Tab label="Facebook" {...a11yProps(2)} />
-                                <Tab label="Telegram" {...a11yProps(3)} />
-                                <Tab label="Pata Nahi" {...a11yProps(4)} />
-                            </Tabs>
-                        </Paper>
-                        <TalkingToFriendsSeniors value={value} index={0}>
-                            Whatsapp
-                        </TalkingToFriendsSeniors>
-                        <TalkingToFriendsSeniors value={value} index={1}>
-                            Instagram
-                        </TalkingToFriendsSeniors>
-                        <TalkingToFriendsSeniors value={value} index={2}>
-                            Facebook
-                        </TalkingToFriendsSeniors>
-                        <TalkingToFriendsSeniors value={value} index={3}>
-                            Telegram
-                        </TalkingToFriendsSeniors>
-                        <TalkingToFriendsSeniors value={value} index={4}>
-                            Pata Nahi
-                        </TalkingToFriendsSeniors>  */}
+            </div>
+            <div className='mainDiv'>
+                <ReactCardFlip className="mainCard" isFlipped={isFlipped} flipDirection="horizontal">
+                    {/* First component of ReactCardFlip is frontpage */}
+                    <Card className='frontpage'>
+                        <Card className="socialMediaCard" variant="outlined">
+                            <CardContent>
+                        {/* <Paper position="static">
+                                <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" centered>
+                                    <Tab label="Whatsapp" {...a11yProps(0)} />
+                                    <Tab label="Instagram" {...a11yProps(1)} />
+                                    <Tab label="Facebook" {...a11yProps(2)} />
+                                    <Tab label="Telegram" {...a11yProps(3)} />
+                                    <Tab label="Pata Nahi" {...a11yProps(4)} />
+                                </Tabs>
+                            </Paper>
+                            <TalkingToFriendsSeniors value={value} index={0}>
+                                Whatsapp
+                            </TalkingToFriendsSeniors>
+                            <TalkingToFriendsSeniors value={value} index={1}>
+                                Instagram
+                            </TalkingToFriendsSeniors>
+                            <TalkingToFriendsSeniors value={value} index={2}>
+                                Facebook
+                            </TalkingToFriendsSeniors>
+                            <TalkingToFriendsSeniors value={value} index={3}>
+                                Telegram
+                            </TalkingToFriendsSeniors>
+                            <TalkingToFriendsSeniors value={value} index={4}>
+                                Pata Nahi
+                            </TalkingToFriendsSeniors>  */}
                                 <div>
                                     <Fade {...properties}>
                                         <div
@@ -213,31 +213,15 @@ export default function SimpleTabs() {
                             </CardContent>
                         </Card>
                     </Card>
-                    {/* Second component of ReactCardFlip is backpage */}
-                    <Card className="backPage">
-                        <div align="center">
+                    {/* Second component of ReactCardFlip is backpage */} 
+                    <Card className='backPage'>
+                        <div align='center'>
                             <img src={wazzup} alt="wazzup" />
+                            <h1>College khulne ke baad bataayenge 🙂</h1>
                         </div>
-
-                    </CardContent>
-                </Card>
-                    <Card className="shareTextCard" variant="outlined">
-                    <CardContent>
-                        <Typography className="textCard" variant="h4" align="center">
-                        "Friendship is the new ____zone"
-                        </Typography>
-                        <Button onClick={share}>Share</Button>
-                    </CardContent>
-                </Card>
-                </Card> 
-                {/* Second component of ReactCardFlip is backpage */} 
-                <Card className='backPage'>
-                    <div align='center'>
-                        <img src={wazzup} alt="wazzup" />
-                        <h1>College khulne ke baad bataayenge 🙂</h1>
-                    </div>
-                </Card>
-            </ReactCardFlip>
+                    </Card>
+                </ReactCardFlip>
+            </div>
         </div>
     );
 }
