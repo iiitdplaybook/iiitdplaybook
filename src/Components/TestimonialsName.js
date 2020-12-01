@@ -10,7 +10,6 @@ import FullWidth from "./FullWidth";
 const Height = styled.div`
   position: relative;
   width: 100%;
-  
 `;
 
 const Box = styled.div`

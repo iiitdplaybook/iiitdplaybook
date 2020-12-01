@@ -56,7 +56,10 @@
 }
 
 #signIn{
-    background: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
+    /* background: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%); */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 30s ease infinite;
     padding: 1%;
     padding-left: 3%;
     padding-right: 3%;
@@ -64,6 +67,19 @@
     font-weight: 600;
     color: white;
     transition: ease-in-out .3s;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 #signIn:hover{
