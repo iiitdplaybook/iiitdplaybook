@@ -3,13 +3,16 @@
     display: flex;
     justify-content: center;
     margin: 10px;
+    transition: ease-in-out .2s,
 }
 
 .supplies__button > button {
     margin: 10px;
+    transition: ease-in-out .2s,
 }
 
 .supplies__body {
     display: flex;
     justify-content: center;
+    transition: ease-in-out .2s,
 }
