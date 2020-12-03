@@ -17,12 +17,20 @@ import facebook from "../Assets/facebook.jpg";
 import instagram from "../Assets/instagram.jpg";
 import telegram from "../Assets/telegram.png";
 import wazzup from "../Assets/wazzup.jpg";
+import yashwin from "../Assets/yashwin.png";
+import kshitij from "../Assets/kshitij.jpg";
+import pabitra from "../Assets/pabitra.jpeg";
+import rahul from "../Assets/rahul.png";
 import "react-slideshow-image/dist/styles.css";
 import ShareButton from "react-web-share-button";
 import webShare from "react-web-share-api";
 import { Button } from "@material-ui/core";
 import ReactCardFlip from 'react-card-flip';
 import Switch from "react-switch";
+import { render } from "react-dom";
+import { motion, useAnimation } from "framer-motion";
+import { useScroll } from "react-use-gesture";
+import "./TalkingToFriendsSeniors.css";
 
 function TalkingToFriendsSeniors(props) {
   const { children, value, index, ...other } = props;
@@ -89,6 +97,25 @@ const share = () => {
   }
 };
 
+const clamp = (value, clampAt) => {
+  if (value > 0) {
+    return value > 30 ? 30 : value;
+  } else {
+    return value < -30 ? -30 : value;
+  }
+};
+
+const howToApproach = [
+	{ pic: kshitij, text: "Mail them" },
+    { pic: pabitra, text: "Tell them about yourself" },
+    { pic: rahul, text: "Message them on Whatsapp, Instagram, ..." },
+	{ pic: yashwin, text: "Play games with them during induction" },
+	{ pic: kshitij, text: "Go clubbing with them" },
+    { pic: pabitra, text: "Go to freshers interview" },
+    { pic: rahul, text: "Take part in events" },
+    { pic: yashwin, text: "Collaborate on projects" },
+];
+
 export default function SimpleTabs() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
@@ -101,6 +128,21 @@ export default function SimpleTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const controls = useAnimation();
+  const bind = useScroll(event => {
+    controls.start({
+		// scrollbarWidth: "none",
+		transform: `perspective(500px) rotateY(${
+			event.scrolling ? clamp(event.delta[0]) : 0
+		}deg)`
+    });
+  });
+
+  	const variants = {
+		hidden: { opacity: 0 },
+		visible: { opacity: 1 },
+  	}
 
   return (
     <div>
@@ -193,6 +235,28 @@ export default function SimpleTabs() {
                 </Card>
             </ReactCardFlip>
         </div>
+		<h2 className="heading_text">How to approach seniors?</h2>
+        <div className="container" {...bind()}>
+			{howToApproach.map(src => (
+			<motion.div
+				key={src}
+				variants={variants}
+				className="card"
+				style={{
+					backgroundImage: `url(${src.pic})`
+				}}
+				
+				animate={controls}
+			>
+				{/* <img
+					src={src.pic}
+					alt={src.text}
+				/> */}
+				<h3 className="card_text">{src.text}</h3>
+			</motion.div>
+			))}
+		</div>
+		<h2 className="heading_text">What to talk about?</h2>
     </div>
   );
 }
