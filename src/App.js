@@ -12,6 +12,8 @@ import firebase from "firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import Explore from "./Components/Explore";
+import TimeManagement from "./Components/TimeManagement/TimeManagement";
+import Tools from "./Components/Tools/Tools";
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -47,6 +49,8 @@ function App() {
               <Route path="/explore" component={Explore} />
               <Route path="/friends" component={TalkingToFriendsSeniors} />
               <Route path="/test" component={Testimonials} />
+              <Route path="/timemanagement" component={TimeManagement}/>
+              <Route path="/tools" component={Tools}/>
               <Route path="/">
                 <div className="app__body">
                   <HomePage />
