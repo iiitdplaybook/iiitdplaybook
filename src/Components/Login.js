@@ -13,6 +13,9 @@ import rahul from "../Assets/rahul.png";
 import logo from "../Assets/Logo.png";
 import Testimonials from "./TestimonialsName";
 import FadeIn from "./FadeIn"
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import blob from '../Assets/blob.json';
+
 
 function Login() {
   const contri = [
@@ -86,9 +89,18 @@ function Login() {
         <h5>For the students, by the students</h5>
       </div>
 
+    
+
       <div className='login__buttons'>
         <Button id="signIn" onClick={signIn}>Sign in with Google</Button>
         <Button id="guest">Join as a Guest</Button>
+        {/* <Player
+  autoplay
+  loop
+  src={blob}
+  style={{ height: '300px', width: '300px', zIndex: '-1' }}
+>
+</Player> */}
       </div>
       <div className='nameList'>
       <FadeIn delay={350} duration={1550}>

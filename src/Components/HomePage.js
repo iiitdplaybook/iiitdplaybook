@@ -54,11 +54,12 @@ function HomePage() {
                     // date="Start"
                     // icon={<StarIcon />}
                 />
+                
                 <VerticalTimelineElement
                     className="vertical-timeline-element--work"
                     contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                     contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                    // date="1st Year"
+                    date="Childhood"
                     // dateClassName="year_style"
                     iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                 >
