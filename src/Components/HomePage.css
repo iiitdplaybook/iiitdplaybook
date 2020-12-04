@@ -14,3 +14,35 @@
 .year_style{
     color: rgb(33, 150, 243);
 }
+
+.section_1 {
+    align-content: center;
+    position: relative;
+}
+
+.homePage_img {
+    -webkit-filter: brightness(50%);
+    filter:brightness(50%);
+}
+
+/* .centered {
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+.section_1_text {
+    position: absolute;
+    top: 30%;
+    left: 35%;
+    color: white;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+}
+
+.welcome_text {
+    color: white;
+    font-size: 100px;
+}

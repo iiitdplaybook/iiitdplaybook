@@ -1,0 +1,39 @@
+.container {
+    display: flex;
+    overflow-x: scroll;
+    width: 100%;
+    padding: 20px 0;
+    margin-top: 20px;
+}
+  
+.card {
+    flex-shrink: 0;
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    margin-left: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.heading_text {
+    margin-top: 20px;
+    margin-left: 10px;
+}
+
+.card_text {
+    color: white;
+    text-align: center;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}
+  
+  /* Hide scrollbar for IE, Edge add Firefox */
+.scrollbar-hidden {
+    -ms-overflow-style: none;
+    scrollbar-width: none; /* Firefox */
+}

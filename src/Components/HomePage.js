@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import tanjiro from '../Assets/tanjiro.jpg'
 import Marquee from "react-marquee-slider";
 import wazzup from "../Assets/wazzup.jpg";
+import landscape from "../Assets/landscape.jpg";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import "./HomePage.css";
@@ -37,6 +38,14 @@ function HomePage() {
     
     return (
         <div className='homePage'>
+            <div className='section_1'>
+                <img className='homePage_img' src={landscape}/>
+                {/* <h1 className='welcome_text'>Welcome!</h1> */}
+                <div className='section_1_text'>
+                    <h1 className='welcome_text'>Welcome!</h1>
+                </div>
+            </div>
+
             <div>
                 {/* <Card className='homePageCard' variant="outlined">
                     <CardContent>

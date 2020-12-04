@@ -7,9 +7,6 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import AppBar from "@material-ui/core/AppBar";
-import Paper from "@material-ui/core/Paper";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
@@ -20,14 +17,20 @@ import facebook from "../Assets/facebook.jpg";
 import instagram from "../Assets/instagram.jpg";
 import telegram from "../Assets/telegram.png";
 import wazzup from "../Assets/wazzup.jpg";
-import online from "../Assets/online.PNG";
-import offline from "../Assets/offline.PNG";
+import yashwin from "../Assets/yashwin.png";
+import kshitij from "../Assets/kshitij.jpg";
+import pabitra from "../Assets/pabitra.jpeg";
+import rahul from "../Assets/rahul.png";
 import "react-slideshow-image/dist/styles.css";
 import ShareButton from "react-web-share-button";
 import webShare from "react-web-share-api";
 import { Button } from "@material-ui/core";
 import ReactCardFlip from 'react-card-flip';
 import Switch from "react-switch";
+import { render } from "react-dom";
+import { motion, useAnimation } from "framer-motion";
+import { useScroll } from "react-use-gesture";
+import "./TalkingToFriendsSeniors.css";
 
 function TalkingToFriendsSeniors(props) {
   const { children, value, index, ...other } = props;
@@ -94,6 +97,25 @@ const share = () => {
   }
 };
 
+const clamp = (value, clampAt) => {
+  if (value > 0) {
+    return value > 30 ? 30 : value;
+  } else {
+    return value < -30 ? -30 : value;
+  }
+};
+
+const howToApproach = [
+	{ pic: kshitij, text: "Mail them" },
+    { pic: pabitra, text: "Tell them about yourself" },
+    { pic: rahul, text: "Message them on Whatsapp, Instagram, ..." },
+	{ pic: yashwin, text: "Play games with them during induction" },
+	{ pic: kshitij, text: "Go clubbing with them" },
+    { pic: pabitra, text: "Go to freshers interview" },
+    { pic: rahul, text: "Take part in events" },
+    { pic: yashwin, text: "Collaborate on projects" },
+];
+
 export default function SimpleTabs() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
@@ -106,6 +128,21 @@ export default function SimpleTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  const controls = useAnimation();
+  const bind = useScroll(event => {
+    controls.start({
+		scrollbarWidth: "2px",
+		transform: `perspective(500px) rotateY(${
+			event.scrolling ? clamp(event.delta[0]) : 0
+		}deg)`
+    });
+  });
+
+  	const variants = {
+		hidden: { opacity: 0 },
+		visible: { opacity: 1 },
+  	}
 
   return (
     <div>
@@ -126,30 +163,6 @@ export default function SimpleTabs() {
                 <Card className='frontpage'>
                     <Card className="socialMediaCard" variant="outlined">
                         <CardContent>
-                    {/* <Paper position="static">
-                            <Tabs value={value} onChange={handleChange} aria-label="simple tabs example" centered>
-                                <Tab label="Whatsapp" {...a11yProps(0)} />
-                                <Tab label="Instagram" {...a11yProps(1)} />
-                                <Tab label="Facebook" {...a11yProps(2)} />
-                                <Tab label="Telegram" {...a11yProps(3)} />
-                                <Tab label="Pata Nahi" {...a11yProps(4)} />
-                            </Tabs>
-                        </Paper>
-                        <TalkingToFriendsSeniors value={value} index={0}>
-                            Whatsapp
-                        </TalkingToFriendsSeniors>
-                        <TalkingToFriendsSeniors value={value} index={1}>
-                            Instagram
-                        </TalkingToFriendsSeniors>
-                        <TalkingToFriendsSeniors value={value} index={2}>
-                            Facebook
-                        </TalkingToFriendsSeniors>
-                        <TalkingToFriendsSeniors value={value} index={3}>
-                            Telegram
-                        </TalkingToFriendsSeniors>
-                        <TalkingToFriendsSeniors value={value} index={4}>
-                            Pata Nahi
-                        </TalkingToFriendsSeniors>  */}
                             <div>
                                 <Fade {...properties}>
                                     <div
@@ -222,6 +235,28 @@ export default function SimpleTabs() {
                 </Card>
             </ReactCardFlip>
         </div>
+		<h2 className="heading_text">How to approach seniors?</h2>
+        <div className="container" {...bind()}>
+			{howToApproach.map(src => (
+			<motion.div
+				key={src}
+        variants={variants}
+				className="card"
+				style={{
+					backgroundImage: `url(${src.pic})`
+				}}
+				
+				animate={controls}
+			>
+				{/* <img
+					src={src.pic}
+					alt={src.text}
+				/> */}
+				<h3 className="card_text">{src.text}</h3>
+			</motion.div>
+			))}
+		</div>
+		<h2 className="heading_text">What to talk about?</h2>
     </div>
   );
 }
