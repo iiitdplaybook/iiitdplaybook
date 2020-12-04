@@ -132,7 +132,7 @@ export default function SimpleTabs() {
   const controls = useAnimation();
   const bind = useScroll(event => {
     controls.start({
-		// scrollbarWidth: "none",
+		scrollbarWidth: "2px",
 		transform: `perspective(500px) rotateY(${
 			event.scrolling ? clamp(event.delta[0]) : 0
 		}deg)`
@@ -240,7 +240,7 @@ export default function SimpleTabs() {
 			{howToApproach.map(src => (
 			<motion.div
 				key={src}
-				variants={variants}
+        variants={variants}
 				className="card"
 				style={{
 					backgroundImage: `url(${src.pic})`
