@@ -46,7 +46,7 @@ function Login() {
   ];
 
   const portraits = [
-    { pic: kshitij, text: "Kshitij" },
+    { pic: kshitij, text: "Kshitij"},
     { pic: pabitra, text: "Pabitra" },
     { pic: rahul, text: "Rahul" },
     { pic: yashwin, text: "Yashwin" },

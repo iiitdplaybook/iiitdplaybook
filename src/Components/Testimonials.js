@@ -43,13 +43,26 @@ const Content = styled.div`
   p {
     margin: 8px;
     color: #382f70;
-    font-family: Helvetica, sans-serif;
+    font-family: Poppins, sans-serif;
     font-size: ${(props) => props.scale * 28}px;
     line-height: ${(props) => props.scale * 24}px;
     font-weight: 100;
     text-align: left;
   }
 `;
+
+const Name = styled.div`
+  p {
+    margin: 8px;
+    color: #382f70;
+    font-family: Poppins, sans-serif;
+    font-size: ${(props) => props.scale * 16}px;
+    line-height: ${(props) => props.scale * 24}px;
+    font-weight: 100;
+    text-align: left;
+  }
+`;
+
 
 // const portraits = [
 //   "https://randomuser.me/api/portraits/women/68.jpg",
@@ -96,6 +109,9 @@ const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndP
                 <Avatar scale={scale}>
                   <img src={portraits[id].pic} alt="" />
                 </Avatar>
+                <Name scale={scale}>
+                  <p>{portraits[id].name}</p>
+                </Name>
                 <Content scale={scale}>
                   <p>{portraits[id].text}</p>
                 </Content>

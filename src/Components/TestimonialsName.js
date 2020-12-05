@@ -42,7 +42,7 @@ const Content = styled.div`
   p {
     margin: 8px;
     color: #382f70;
-    font-family: Helvetica, sans-serif;
+    font-family: Poppins, sans-serif;
     font-size: ${(props) => props.scale * 28}px;
     line-height: ${(props) => props.scale * 24}px;
     font-weight: 100;
