@@ -4,7 +4,12 @@
     background-color: white;
 } */
 
+.timeline_section {
+    background-color: grey;
+}
+
 .textCard{
+    font-size: 70px;
     align-content: center;
     text-align: center;
     margin-top: 10px;
