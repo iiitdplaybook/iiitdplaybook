@@ -31,17 +31,17 @@ function Navbar() {
         </Link>
       </div>
       <div className="navbar__right">
-        <Button component={Link} to={"/explore"}>
+        <Button id='btn' component={Link} to={"/explore"}>
           Explore
         </Button>
-        <Button component={Link} to={"/supplies"}>
+        <Button id='btn'component={Link} to={"/supplies"}>
           Supplies
         </Button>
-        <Button component={Link} to={"/friends"}>
+        <Button id='btn' component={Link} to={"/friends"}>
           Tools
         </Button>
         <Button onClick={signOut}>Sign out</Button>
-        <Avatar src={user?.photoURL} alt="User" />
+        <Avatar id='pic' src={user?.photoURL} alt="User" />
       </div>
     </div>
   );

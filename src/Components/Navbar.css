@@ -8,7 +8,7 @@
 .navbar__right {
     display: flex;
     align-items: center;
-    padding: 0px 30px;
+    padding: 0px 10px;
  
 }
 
@@ -20,4 +20,27 @@
 .navbar__right > Button {
     margin-left: 15px;
     font-family: 'Poppins', sans-serif;    
+    transition: ease-in-out .2s;
+}
+
+.navbar__right > Button :hover {
+    transform: scale(1.03);
+}
+
+#btn{
+    font-family: 'Poppins', sans-serif;   
+    margin-left: 15px;
+    transition: ease-in-out .2s;
+}
+
+#btn:hover{
+    transform: scale(1.03);
+}
+
+#btn:nth-child(3){
+    margin-right: 25px;
+}
+
+#pic{
+    transform: scale(.7);
 }

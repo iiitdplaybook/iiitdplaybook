@@ -61,6 +61,7 @@ function HomePage() {
                 </Card> */}
                 <h1 className='textCard'>Phases of College Life</h1>
             </div>
+
             <div className='timeline_section'>
                 <VerticalTimeline className='timeline' layout='1-column-left'>
                     {/* <VerticalTimelineElement
@@ -139,6 +140,7 @@ function HomePage() {
                     /> */}
                 </VerticalTimeline>
             </div>
+
         </div>
 
     )
