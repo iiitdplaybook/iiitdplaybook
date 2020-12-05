@@ -1,15 +1,53 @@
 @import 'react-vertical-timeline-component/style.min.css';
 
+
+canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+  }
+
+.section_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* background-image: url('../Assets/landscape.jpg'); */
+    background-color: black;
+    height: 100vh;
+}
+
+.homePage_img {
+    -webkit-filter: brightness(50%);
+    filter:brightness(50%);
+}
+
+.welcome_text {
+    color: white;
+    font-size: 6em;
+}
+
+
 /* .vertical-timeline{
     background-color: white;
 } */
 
-.timeline_section {
-    background-color: grey;
+/* .timeline{
+    background: red;
+    width: 100vw;
+    margin-left: 4%;
+} */
+
+/* Line color change */
+.vertical-timeline::before{
+    background: rgb(33, 150, 243);
+    top: 2%;
+    bottom: 15%;
 }
 
+
 .textCard{
-    font-size: 70px;
+    font-size: 3.5em;
     align-content: center;
     text-align: center;
     margin-top: 10px;
@@ -20,34 +58,27 @@
     color: rgb(33, 150, 243);
 }
 
-.section_1 {
-    align-content: center;
-    position: relative;
-}
 
-.homePage_img {
-    -webkit-filter: brightness(50%);
-    filter:brightness(50%);
-}
+#stars_container{
+    height: 50vh;  
+    overflow: hidden;
+  }
 
-/* .centered {
-    color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
 
-.section_1_text {
-    position: absolute;
-    top: 30%;
-    left: 35%;
-    color: white;
-    /* padding-left: 20px;
-    padding-right: 20px; */
-}
+@media only screen and (max-width: 1170px) {
+    .vertical-timeline--1-column .vertical-timeline-element-icon {
+      width: 60px;
+      height: 60px;
+      left: 50%;
+      margin-left: -30px;
+    }
 
-.welcome_text {
-    color: white;
-    font-size: 100px;
-}
+    
+    .textCard{
+        font-size: 1.8em;
+    }
+
+    .welcome_text {
+        font-size: 3em;
+    }
+  }

@@ -31,6 +31,7 @@
     font-family: 'Poppins', sans-serif;   
     margin-left: 15px;
     transition: ease-in-out .2s;
+    vertical-align: middle;
 }
 
 #btn:hover{
@@ -43,4 +44,9 @@
 
 #pic{
     transform: scale(.7);
+}
+
+#navIcon{
+    margin-right: 5%;
+    fill: red;
 }

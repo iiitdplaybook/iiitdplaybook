@@ -7,6 +7,7 @@ import { Avatar, Button } from "@material-ui/core";
 import { useStateValue } from "../StateProvider";
 import { Link } from "react-router-dom";
 import logo from "../Assets/Logo.png";
+import exploreLogo from "../Assets/explore_logo.svg";
 
 function Navbar() {
   const [{ user }] = useStateValue();
@@ -32,7 +33,8 @@ function Navbar() {
       </div>
       <div className="navbar__right">
         <Button id='btn' component={Link} to={"/explore"}>
-          Explore
+        <img id="navIcon" src={exploreLogo}></img>
+        Explore
         </Button>
         <Button id='btn'component={Link} to={"/supplies"}>
           Supplies
