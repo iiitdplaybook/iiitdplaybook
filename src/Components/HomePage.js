@@ -7,10 +7,14 @@ import Typography from '@material-ui/core/Typography';
 import tanjiro from '../Assets/tanjiro.jpg'
 import Marquee from "react-marquee-slider";
 import wazzup from "../Assets/wazzup.jpg";
+import confused from "../Assets/college_student_confused.jpg";
+import exploring from "../Assets/exploring.jpg";
+import graduation from "../Assets/graduation.jpg";
 import landscape from "../Assets/landscape.jpg";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import "./HomePage.css";
+import { Button } from '@material-ui/core';
 
 function HomePage() {
 
@@ -57,79 +61,86 @@ function HomePage() {
                 </Card> */}
                 <h1 className='textCard'>Phases of College Life</h1>
             </div>
-            <VerticalTimeline className='timeline'>
-                <VerticalTimelineElement
-                    iconStyle={{ background: 'rgb(16, 204, 82)', color: 'rgb(0, 255, 0)' }}
-                    // date="Start"
-                    // icon={<StarIcon />}
-                />
-                
-                <VerticalTimelineElement
-                    className="vertical-timeline-element--work"
-                    contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                    date="Childhood"
-                    // dateClassName="year_style"
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                >
-                    <h3 className="vertical-timeline-element-title">Childhood</h3>
-                    {/* <p>You are here <br></br> Talk to people</p> */}
-                    <br></br>
-                    <ul>
-                        <li>You are here</li>
-                        <li>Talk to people</li>
-                        <li>Adapt, Learn, Notice</li>   
-                    </ul>
-                </VerticalTimelineElement>
-                <VerticalTimelineElement
-                    className="vertical-timeline-element--work"
-                    contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                    // date="2nd Year"
-                    // dateClassName="year_style"
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                >
-                    <h3 className="vertical-timeline-element-title">Exploring</h3>
-                    <p>Gain Exposure</p>
-                </VerticalTimelineElement>
-                <VerticalTimelineElement
-                    className="vertical-timeline-element--work"
-                    contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                    // date="3rd Year"
-                    // dateClassName="year_style"
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                >
-                    <h3 className="vertical-timeline-element-title">Defining Point</h3>
-                    <p>Finding your calling</p>
-                </VerticalTimelineElement>
-                <VerticalTimelineElement
-                    className="vertical-timeline-element--work"
-                    contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                    // date="4th Year"
-                    // dateClassName="year_style"
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                >
-                    <h3 className="vertical-timeline-element-title">Parting Out</h3>
-                    <p>Enjoying the last moments</p>
-                </VerticalTimelineElement>
-                <VerticalTimelineElement
-                    className="vertical-timeline-element--work"
-                    contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                    contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                    // date="Graduation"
-                    // dateClassName="year_style"
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                >
-                    <h3 className="vertical-timeline-element-title">Nostalgia</h3>
-                    <p>Look back to an amazing journey and bid farewell</p>
-                </VerticalTimelineElement>
-                <VerticalTimelineElement
-                    iconStyle={{ background: 'rgb(255, 0, 0)', color: 'rgb(255, 0, 0)' }}
-                    date="Death"
-                />
-            </VerticalTimeline>
+
+            <div className='timeline_section'>
+                <VerticalTimeline className='timeline' layout='1-column-left'>
+                    {/* <VerticalTimelineElement
+                        iconStyle={{ background: 'rgb(16, 204, 82)', color: 'rgb(0, 255, 0)' }}
+                        // date="Start"
+                        // icon={<StarIcon />}
+                    /> */}
+                    <VerticalTimelineElement
+                        className="vertical-timeline-element--work"
+                        contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                        contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                        // date="1st Year"
+                        // dateClassName="year_style"
+                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                    >
+                        <h1 className="vertical-timeline-element-title">Childhood</h1>
+                        {/* <p>You are here <br></br> Talk to people</p> */}
+                        <br></br>
+                        <ul>
+                            <li>You are here</li>
+                            <li>Talk to people</li>
+                            <li>Adapt, Learn, Notice</li>   
+                        </ul>
+                        <img src={confused}/>
+                    </VerticalTimelineElement>
+                    <VerticalTimelineElement
+                        className="vertical-timeline-element--work"
+                        contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                        contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                        // date="2nd Year"
+                        // dateClassName="year_style"
+                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                    >
+                        <h1 className="vertical-timeline-element-title">Exploring</h1>
+                        <p>Gain Exposure</p>
+                        <img src={exploring}/>
+                    </VerticalTimelineElement>
+                    <VerticalTimelineElement
+                        className="vertical-timeline-element--work"
+                        contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                        contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                        // date="3rd Year"
+                        // dateClassName="year_style"
+                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                    >
+                        <h1 className="vertical-timeline-element-title">Defining Point</h1>
+                        <p>Finding your calling</p>
+                    </VerticalTimelineElement>
+                    <VerticalTimelineElement
+                        className="vertical-timeline-element--work"
+                        contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                        contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                        // date="4th Year"
+                        // dateClassName="year_style"
+                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                    >
+                        <h1 className="vertical-timeline-element-title">Graduating</h1>
+                        <p>Enjoying the last moments</p>
+                        <img src={graduation}/>
+                    </VerticalTimelineElement>
+                    <VerticalTimelineElement
+                        className="vertical-timeline-element--work"
+                        contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                        contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                        // date="Graduation"
+                        // dateClassName="year_style"
+                        iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                    >
+                        <h1 className="vertical-timeline-element-title">Nostalgia</h1>
+                        <p>Let's take you down the memory lane</p>
+                        <Button>Ready for a ride?</Button>
+                    </VerticalTimelineElement>
+                    {/* <VerticalTimelineElement
+                        iconStyle={{ background: 'rgb(255, 0, 0)', color: 'rgb(255, 0, 0)' }}
+                        date="Death"
+                    /> */}
+                </VerticalTimeline>
+            </div>
+
         </div>
 
     )
