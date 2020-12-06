@@ -75,6 +75,11 @@ canvas {
     overflow: hidden;
   }
 
+.timeline_section .nostalgia_button {
+    background-color: gray;
+    /* border-color: white; */
+    color: white;
+}
 
 @media only screen and (max-width: 1170px) {
     .vertical-timeline--1-column .vertical-timeline-element-icon {
