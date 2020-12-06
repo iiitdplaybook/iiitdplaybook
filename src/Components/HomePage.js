@@ -12,6 +12,7 @@ import { Button } from '@material-ui/core';
 import Footer from './Footer'
 import Stars from './stars'
 import useScript from './useScript';
+import { Link } from "react-router-dom";
 
 function HomePage() {
 
@@ -124,7 +125,8 @@ function HomePage() {
                     </div>
                     <h1 className="vertical-timeline-element-title">Nostalgia</h1>
                     <p>Let's take you down the memory lane</p>
-                    <Button>Ready for a ride?</Button>
+                    
+                    <Button className='nostalgia_button'>Ready for a ride?</Button>
 
                     </VerticalTimelineElement>
                     {/* <VerticalTimelineElement
@@ -132,9 +134,8 @@ function HomePage() {
                         date="Death"
                     /> */}
                 </VerticalTimeline>
+                
             </div>
-
-            <Footer/>
         </div>
 
     )
