@@ -12,31 +12,34 @@ import { Button } from '@material-ui/core';
 import Footer from './Footer'
 import Stars from './stars'
 import useScript from './useScript';
+import colorScript from './color';
+import Clouds from './clouds';
 
 function HomePage() {
 
     const [{user, isSignedIn, userName}] = useStateValue()
 
     
-    // const MyComponent = () => {
-
-    //     return(
-    //         useScript('./color.js')
-    //         );
-    //     }
+    const MyComponent = () => {
+            useScript({colorScript})
+            return null;
+        }
 
     return (
         <div className='homePage'>
-            <div className='section_1' >
+            <div className='section_0' >
                 {/* <img className='homePage_img' src={landscape}/> */}
                 {/* <h1 className='welcome_text'>Welcome!</h1> */}
-                {/* <MyComponent><canvas id="c"></canvas></MyComponent> */}
-                <h1 className='welcome_text'>Welcome!</h1>
-                <script type="text/javascript" src="jquery-3.3.1.js"></script>
-
-                <script src="color.js"></script>
+                
+                {/* <canvas id="c"></canvas>
+                <MyComponent></MyComponent> */}
+                <div className='section_1' >
+                    <h1 className='welcome_text'>Welcome!</h1>
+                </div>
+                
+                
             </div>
-
+            
             <div>
                 {/* <Card className='homePageCard' variant="outlined">
                     <CardContent>
@@ -95,6 +98,7 @@ function HomePage() {
                         // dateClassName="year_style"
                         iconStyle={{ background: '#FBD69A', color: '#fff' }}
                     >
+                        <Clouds/>
                         <h1 className="vertical-timeline-element-title">Defining Point</h1>
                         <p>Finding your calling</p>
                         <img src={graduation}/>
@@ -134,7 +138,6 @@ function HomePage() {
                 </VerticalTimeline>
             </div>
 
-            <Footer/>
         </div>
 
     )

@@ -9,6 +9,7 @@
 #logo{
     margin: 2%;
     width: 7vw;
+    z-index: 500;
 }
 
 /* width */

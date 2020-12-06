@@ -4,27 +4,38 @@
 canvas {
     display: block;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
+    z-index: -1;
+    margin-top: 0;
   }
 
-.section_1 {
+  .section_0 {
+      height: 100h;
+      margin-top: 0%;
+      z-index: -1;
+  }
+
+  .section_1 {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     /* background-image: url('../Assets/landscape.jpg'); */
-    background-color: black;
     height: 100vh;
+    margin-top: -5%;
+    background-color: #e6e6e6;
+    z-index: 1;
 }
 
-.homePage_img {
+/* .homePage_img {
     -webkit-filter: brightness(50%);
     filter:brightness(50%);
-}
+} */
 
 .welcome_text {
     color: white;
     font-size: 6em;
+    z-index: 5;
 }
 
 
@@ -73,7 +84,6 @@ canvas {
       margin-left: -30px;
     }
 
-    
     .textCard{
         font-size: 1.8em;
     }
@@ -81,4 +91,10 @@ canvas {
     .welcome_text {
         font-size: 3em;
     }
+
+    canvas {
+        margin-top: -30%;
+        z-index: inherit;
+      }
+    
   }
