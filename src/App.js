@@ -49,7 +49,7 @@ function App() {
               <Route path="/explore" component={Explore} />
               <Route path="/supplies" component={Supplies} />
               <Route path="/nostalgia" component={Nostalgia} />
-              {/* <Route path="/friends" component={TalkingToFriendsSeniors} /> */}
+              <Route path="/friends" component={TalkingToFriendsSeniors} />
               <Route path="/test" component={Testimonials} />
               <Route path="/">
                 <div className="app__body">

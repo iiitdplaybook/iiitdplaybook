@@ -1,5 +1,7 @@
 @import 'react-vertical-timeline-component/style.min.css';
-
+body{
+    background: white;
+}
 
 canvas {
     display: block;
@@ -51,8 +53,9 @@ canvas {
 
 /* Line color change */
 .vertical-timeline::before{
-    background: rgb(33, 150, 243);
+    background: linear-gradient(#FFAFBC, #FFC2A1, #FBD69A , #034C90, #004e92, #000428);
     top: 2%;
+    height: 80%;
     bottom: 15%;
 }
 
@@ -61,8 +64,27 @@ canvas {
     font-size: 3.5em;
     align-content: center;
     text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 5%;
+    margin-bottom: 3%;
+     
+    background: -webkit-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+	background-size: 400% 400%;
+	animation: gradient 30s ease infinite;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 .year_style{
@@ -75,10 +97,22 @@ canvas {
     overflow: hidden;
   }
 
+#container{
+    height: 70vh;  
+    margin-top: -15%;
+    overflow: hidden;
+  }
+
 .timeline_section .nostalgia_button {
     background-color: gray;
     /* border-color: white; */
     color: white;
+}
+
+.TestiContainer{
+    width: 100%;
+    overflow: hidden;
+    margin-left: 0%;
 }
 
 @media only screen and (max-width: 1170px) {
@@ -87,6 +121,11 @@ canvas {
       height: 60px;
       left: 50%;
       margin-left: -30px;
+    }
+
+    .vertical-timeline::before{
+        background: linear-gradient(#FFAFBC, #FFC2A1, #FBD69A, #004e92, #000428);
+        height: 84%;
     }
 
     .textCard{

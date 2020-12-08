@@ -45,14 +45,6 @@ function Login() {
     { pic: rahul, text: "Rahul" },
   ];
 
-  const portraits = [
-    { pic: kshitij, text: "Kshitij"},
-    { pic: pabitra, text: "Pabitra" },
-    { pic: rahul, text: "Rahul" },
-    { pic: yashwin, text: "Yashwin" },
-  ];
-
-  const vel1 = 0;
   const vel2 = 25;
 
   const signIn = () => {
@@ -106,7 +98,34 @@ function Login() {
       <FadeIn delay={350} duration={1550}>
       <div className='login__creators'>
       <h5>Creators</h5>
-        <Testimonials portraits={portraits} vel={vel1} scaleFactor={1.5}/>
+        <div className='testi'>
+          <div className='creatorCard'>
+            <img src={kshitij}/>
+            <p>Kshitij Bhagwaan</p>
+            <a class="fa fa-twitter fa-lg" href="www.google.com"  target="_blank"></a>
+          </div>
+          
+          <div className='creatorCard'>
+            <img src={pabitra}/>
+            <p>Pabitra Bhakt</p>
+            <a class="fa fa-linkedin fa-lg" href="www.google.com"  target="_blank"></a>
+          </div>
+          
+          
+          <div className='creatorCard'>
+            <img src={rahul}/>
+            <p>Rahul Bhakt</p>
+            <a class="fa fa-twitter fa-lg" href="www.google.com"  target="_blank"></a>
+          </div>
+          
+          
+          <div className='creatorCard'>
+            <img src={yashwin}/>
+            <p>Yashwin Bhakt</p>
+            <a class="fa fa-twitter fa-lg" href="www.google.com"  target="_blank"></a>
+          </div>
+          
+        </div>
       </div>
       </FadeIn>
       <FadeIn delay={1250} duration={1550}>

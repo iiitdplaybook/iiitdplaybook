@@ -39,7 +39,7 @@ function Navbar() {
         <Button id='btn'component={Link} to={"/supplies"}>
           Supplies
         </Button>
-        <Button id='btn' component={Link} to={"/nostalgia"}>
+        <Button id='btn' component={Link} to={"/friends"}>
           Tools
         </Button>
         <Button onClick={signOut}>Sign out</Button>

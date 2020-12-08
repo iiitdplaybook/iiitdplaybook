@@ -21,6 +21,8 @@ const Review = styled.div`
   display: flex;
   padding: ${(props) => props.scale * 20}px;
   background: #fff;
+  // background: rgba(255,255,255,.2);
+  // backdrop-filter: blur(100px);
   border-radius: 65px;
   border-color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
   box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
@@ -84,7 +86,7 @@ const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndP
       <Height height={200}>
         <Marquee
           key={key}
-          velocity={vel}
+          velocity={vel/2}
           minScale={0.7}
           onInit={onStartPerformance}
           onFinish={onEndPerformance}
