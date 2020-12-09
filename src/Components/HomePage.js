@@ -165,14 +165,17 @@
                         >   
 
                         <div className="containerBox">
+                            
                             <div id="stars_container">
                                 <Stars/>
                             </div>
+                            <div className="contentBox">
                             <h1 className="vertical-timeline-element-title">Nostalgia</h1>
                             <p>Let's take you down the memory lane</p>
                             <Button className='nostalgia_button' component={Link} to={'/nostalgia'}>Ready for a ride?</Button>
                             <div className="TestiContainer">
                                 <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
+                            </div>
                             </div>
                         </div>
                         </VerticalTimelineElement>

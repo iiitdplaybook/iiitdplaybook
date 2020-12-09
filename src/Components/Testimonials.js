@@ -15,7 +15,7 @@ const Height = styled.div`
 `;
 
 const Box = styled.div`
-  padding: ${(props) => props.scale * 30}px;
+  padding: ${(props) => props.scale * 20}px;
   vertical-align: middle;
 `;
 
@@ -33,8 +33,8 @@ const Review = styled.div`
 
 const Avatar = styled.div`
   border-radius: 50%;
-  width: ${(props) => props.scale * 38}px;
-  height: ${(props) => props.scale * 38}px;
+  width: ${(props) => props.scale * 30}px;
+  height: ${(props) => props.scale * 30}px;
   overflow: hidden;
   flex-shrink: 0;
   margin-right: ${(props) => props.scale * 35}px;
@@ -57,7 +57,8 @@ const Content = styled.div`
 
 const Name = styled.div`
   p {
-    // margin: 8px;
+    margin: 8px;
+    margin-left: -12px;
     color: red;
     font-family: Poppins, sans-serif;
     font-size: ${(props) => props.scale * 16}px !important;

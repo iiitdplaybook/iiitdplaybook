@@ -103,6 +103,10 @@ canvas {
     overflow: hidden;
 }
 
+.contentBox{
+    /* margin-top: -20%; */
+}
+
 .timeline_section .nostalgia_button {
     background-color: gray;
     /* border-color: white; */
@@ -126,7 +130,7 @@ canvas {
 
     .vertical-timeline::before{
         background: linear-gradient(#FFAFBC, #FFC2A1, #FBD69A, #004e92, #000428);
-        height: 84%;
+        height: 82%;
     }
 
     .textCard{
