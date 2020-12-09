@@ -44,3 +44,23 @@
     font-weight: bolder;
     font-size: 1.5em;
 }
+
+.section .happiness_img {
+    width: 50%;
+    height: 70%;
+}
+
+.section > p{
+    color: white;
+    font-weight: bolder;
+    font-size: 1em;
+}
+
+.section .mai_merko_sab_ata_hai_mai_expert_hu_img{
+    width: 50%;
+    height: 50%;
+}
+
+.heirarchy {
+    justify-content: center;
+}
