@@ -15,7 +15,7 @@ import useScript from './useScript';
 
 import { Link } from "react-router-dom";
 
-import colorScript from './color';
+// import colorScript from './color';
 import Clouds from './clouds';
 import Testimonials from './Testimonials';
 import userProfile from '../Assets/user.png';
@@ -25,10 +25,10 @@ function HomePage() {
     const [{user, isSignedIn, userName}] = useStateValue()
 
     
-    const MyComponent = () => {
-            useScript({colorScript})
-            return null;
-        }
+    // const MyComponent = () => {
+    //         useScript({colorScript})
+    //         return null;
+    //     }
 
         const portraits = [
             { pic: userProfile, text: "Platea augue sociis erat nibh vestibulum tincidunt in. Nostra tortor nulla nam hendrerit class, aenean quam sagittis lectus pulvinar diam tristique suscipit semper torquent aptent ridiculus cras netus id vitae.", name: "username"},
