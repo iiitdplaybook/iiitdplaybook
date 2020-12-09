@@ -28,6 +28,7 @@ const Review = styled.div`
   min-height: 20vh;
   border-color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
   box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
+  overflow: hidden;
 `;
 
 const Avatar = styled.div`
@@ -44,7 +45,7 @@ const Avatar = styled.div`
 
 const Content = styled.div`
   p {
-    margin: 8px;
+    margin: 10px;
     color: #382f70;
     font-family: Poppins, sans-serif;
     font-size: ${(props) => props.scale * 15}px !important;
@@ -59,7 +60,7 @@ const Name = styled.div`
     // margin: 8px;
     color: red;
     font-family: Poppins, sans-serif;
-    font-size: ${(props) => props.scale * 12}px !important;
+    font-size: ${(props) => props.scale * 16}px !important;
     line-height: ${(props) => props.scale * 14}px;
     font-weight: 100;
     text-align: left;
@@ -113,9 +114,9 @@ const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndP
                 <Avatar scale={scale}>
                   <img src={portraits[id].pic} alt="" />
                 </Avatar>
-                {/* <Name scale={scale}>
+                <Name scale={scale}>
                   <p>{portraits[id].name}</p>
-                </Name> */}
+                </Name>
                 </div>
                 <Content scale={scale}>
                   <p>{portraits[id].text}</p>

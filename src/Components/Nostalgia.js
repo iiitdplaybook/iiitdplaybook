@@ -1,10 +1,13 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { useStateValue } from "../StateProvider";
 import "./Nostalgia.css";
 import Stars from "./stars";
 
+
 function Nostalgia() {
   const [{ user, isSignedIn, userName }] = useStateValue();
+
+  useEffect(() => { window.scrollTo(0, 0); console.log("aer"); }, []) 
 
   return (
     <div id="nostalgiaCont">
