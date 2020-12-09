@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import { useStateValue } from "../StateProvider";
 import "./Nostalgia.css";
 import Stars from "./stars";
@@ -8,8 +8,11 @@ import happiness from "../Assets/happiness.jpg";
 import abba_nahi_maanenge from "../Assets/abba_nahi_maanenge.jpg";
 import mai_merko_sab_ata_hai_mai_expert_hu from "../Assets/mai_merko_sab_ata_hai_mai_expert_hu.jpg";
 
+
 function Nostalgia() {
   const [{ user, isSignedIn, userName }] = useStateValue();
+
+  useEffect(() => { window.scrollTo(0, 0); console.log("aer"); }, []) 
 
   return (
     <div id="nostalgiaCont">

@@ -1,5 +1,6 @@
 #nostalgiaCont{
     background: linear-gradient(#000428, #00010B);
+    /* margin-top: -10%; */
 }
 
 #stars_container{
@@ -29,7 +30,7 @@
     border-radius: 10px;
     height: 100vh;
     background-color: rgba(255,255,255,.1);
-    backdrop-filter: blur(40px);
+    /* backdrop-filter: blur(40px); */
     margin-top: 5%;
     padding: 2%;
 }

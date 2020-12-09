@@ -97,11 +97,15 @@ canvas {
     overflow: hidden;
   }
 
-#container{
-    height: 70vh;  
-    margin-top: -15%;
+.containerBox{
+    /* height: 70vh;   */
+    /* margin-top: -15%; */
     overflow: hidden;
-  }
+}
+
+.contentBox{
+    /* margin-top: -20%; */
+}
 
 .timeline_section .nostalgia_button {
     background-color: gray;
@@ -111,9 +115,10 @@ canvas {
 
 .TestiContainer{
     width: 100%;
-    overflow: hidden;
-    margin-left: 0%;
+    /* overflow: hidden; */
+    margin-left: 50%;
 }
+
 
 @media only screen and (max-width: 1170px) {
     .vertical-timeline--1-column .vertical-timeline-element-icon {
@@ -125,7 +130,7 @@ canvas {
 
     .vertical-timeline::before{
         background: linear-gradient(#FFAFBC, #FFC2A1, #FBD69A, #004e92, #000428);
-        height: 84%;
+        height: 82%;
     }
 
     .textCard{
