@@ -11,28 +11,40 @@ import kshitij from "../Assets/kshitij.jpg";
 import pabitra from "../Assets/pabitra.jpeg";
 import rahul from "../Assets/rahul.png";
 import logo from "../Assets/Logo.png";
-import Testimonials from "./Testimonials";
+import Testimonials from "./TestimonialsName";
+import FadeIn from "./FadeIn"
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
+import blob from '../Assets/blob.json';
+
 
 function Login() {
-  const portraits = [
+  const contri = [
     { pic: yashwin, text: "Yashwin" },
     { pic: kshitij, text: "Kshitij" },
     { pic: pabitra, text: "Pabitra" },
     { pic: rahul, text: "Rahul" },
     { pic: yashwin, text: "Yashwin" },
     { pic: kshitij, text: "Kshitij" },
+    { pic: pabitra, text: "Pabitra" },
+    { pic: rahul, text: "Rahul" },
+    { pic: pabitra, text: "Pabitra" },
+    { pic: rahul, text: "Rahul" },
+    { pic: pabitra, text: "Pabitra" },
+    { pic: rahul, text: "Rahul" },
+    { pic: yashwin, text: "Yashwin" },
+    { pic: kshitij, text: "Kshitij" },
+    { pic: pabitra, text: "Pabitra" },
+    { pic: rahul, text: "Rahul" },
+    { pic: yashwin, text: "Yashwin" },
+    { pic: kshitij, text: "Kshitij" },
+    { pic: pabitra, text: "Pabitra" },
+    { pic: rahul, text: "Rahul" },
+    { pic: pabitra, text: "Pabitra" },
+    { pic: rahul, text: "Rahul" },
     { pic: pabitra, text: "Pabitra" },
     { pic: rahul, text: "Rahul" },
   ];
 
-  const portraits2 = [
-    { pic: yashwin, text: "Yashwin" },
-    { pic: kshitij, text: "Kshitij" },
-    { pic: pabitra, text: "Pabitra" },
-    { pic: rahul, text: "Rahul" },
-  ];
-
-  const vel1 = 0;
   const vel2 = 25;
 
   const signIn = () => {
@@ -63,22 +75,65 @@ function Login() {
   return (
     <div className="login">
       <img id="logo" src={logo} />
+      
       <div className='login__heading'>
         <h1>Hacking IIITD</h1>
         <h5>For the students, by the students</h5>
       </div>
+
+    
+
       <div className='login__buttons'>
         <Button id="signIn" onClick={signIn}>Sign in with Google</Button>
-        <Button id="guest">Join as Guest</Button>
+        <Button id="guest">Join as a Guest</Button>
+        {/* <Player
+  autoplay
+  loop
+  src={blob}
+  style={{ height: '300px', width: '300px', zIndex: '-1' }}
+>
+</Player> */}
       </div>
+      <div className='nameList'>
+      <FadeIn delay={350} duration={1550}>
       <div className='login__creators'>
-        <Testimonials portraits={portraits2} vel={vel1} scaleFactor={1.5}/>
-        <Testimonials portraits={portraits2} vel={vel1} scaleFactor={1.5}/>
-        <Testimonials portraits={portraits2} vel={vel1} scaleFactor={1.5}/>
-        <Testimonials portraits={portraits2} vel={vel1} scaleFactor={1.5}/>
+      <h5>Creators</h5>
+        <div className='testi'>
+          <div className='creatorCard'>
+            <img src={kshitij}/>
+            <p>Kshitij Bhagwaan</p>
+            <a class="fa fa-twitter fa-lg" href="www.google.com"  target="_blank"></a>
+          </div>
+          
+          <div className='creatorCard'>
+            <img src={pabitra}/>
+            <p>Pabitra Bhakt</p>
+            <a class="fa fa-linkedin fa-lg" href="www.google.com"  target="_blank"></a>
+          </div>
+          
+          
+          <div className='creatorCard'>
+            <img src={rahul}/>
+            <p>Rahul Bhakt</p>
+            <a class="fa fa-twitter fa-lg" href="www.google.com"  target="_blank"></a>
+          </div>
+          
+          
+          <div className='creatorCard'>
+            <img src={yashwin}/>
+            <p>Yashwin Bhakt</p>
+            <a class="fa fa-twitter fa-lg" href="www.google.com"  target="_blank"></a>
+          </div>
+          
+        </div>
       </div>
+      </FadeIn>
+      <FadeIn delay={1250} duration={1550}>
       <div className='login__testimonials'>
-        <Testimonials id="contributors" portraits={portraits} vel={vel2} scaleFactor={1}/>
+      <h5>Contributors</h5>
+        <Testimonials id="contributors" portraits={contri} vel={vel2} scaleFactor={1}/>
+      </div>
+      </FadeIn>
       </div>
     </div>
   );

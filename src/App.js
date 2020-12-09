@@ -13,6 +13,7 @@ import firebase from "firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import Explore from "./Components/Explore";
+import Nostalgia from "./Components/Nostalgia";
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -47,6 +48,7 @@ function App() {
             <Switch>
               <Route path="/explore" component={Explore} />
               <Route path="/supplies" component={Supplies} />
+              <Route path="/nostalgia" component={Nostalgia} />
               <Route path="/friends" component={TalkingToFriendsSeniors} />
               <Route path="/test" component={Testimonials} />
               <Route path="/">

@@ -6,6 +6,8 @@ import { auth } from "../fire";
 import { Avatar, Button } from "@material-ui/core";
 import { useStateValue } from "../StateProvider";
 import { Link } from "react-router-dom";
+import logo from "../Assets/Logo.png";
+import exploreLogo from "../Assets/explore_logo.svg";
 
 function Navbar() {
   const [{ user }] = useStateValue();
@@ -26,21 +28,22 @@ function Navbar() {
     <div className="navbar">
       <div className="navbar__left">
         <Link to="/" style={{ textDecoration: "none" }}>
-          <h3>Student Playbook</h3>
+        <img id="logo" src={logo} />
         </Link>
       </div>
       <div className="navbar__right">
-        <Button component={Link} to={"/explore"}>
-          Explore
+        <Button id='btn' component={Link} to={"/explore"}>
+        <img id="navIcon" src={exploreLogo}></img>
+        Explore
         </Button>
-        <Button component={Link} to={"/supplies"}>
+        <Button id='btn'component={Link} to={"/supplies"}>
           Supplies
         </Button>
-        <Button component={Link} to={"/friends"}>
+        <Button id='btn' component={Link} to={"/friends"}>
           Tools
         </Button>
         <Button onClick={signOut}>Sign out</Button>
-        <Avatar src={user?.photoURL} alt="User" />
+        <Avatar id='pic' src={user?.photoURL} alt="User" />
       </div>
     </div>
   );
