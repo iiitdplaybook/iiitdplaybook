@@ -21,6 +21,7 @@
     margin-left: 15px;
     font-family: 'Poppins', sans-serif;    
     transition: ease-in-out .2s;
+    /* filter: invert(); */
 }
 
 .navbar__right > Button :hover {
@@ -30,8 +31,10 @@
 #btn{
     font-family: 'Poppins', sans-serif;   
     margin-left: 15px;
+    font-weight: bold;
     transition: ease-in-out .2s;
     vertical-align: middle;
+    /* filter: invert(); */
 }
 
 #btn:hover{

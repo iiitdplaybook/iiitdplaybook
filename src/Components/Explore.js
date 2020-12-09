@@ -58,6 +58,19 @@ function Explore() {
                         </Typography>
                     </CardContent>
                 </CardActionArea>
+
+                <CardActionArea>
+                    <CardMedia
+                        className={classes.media}
+                        image={pabitra}
+                        title="Contemplative Reptile"
+                    />
+                    <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            Pabitra
+                        </Typography>
+                    </CardContent>
+                </CardActionArea>
             </Card>
         );
     }

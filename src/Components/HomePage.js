@@ -15,19 +15,31 @@ import useScript from './useScript';
 
 import { Link } from "react-router-dom";
 
-import colorScript from './color';
+// import colorScript from './color';
 import Clouds from './clouds';
-
+import Testimonials from './Testimonials';
+import userProfile from '../Assets/user.png';
 
 function HomePage() {
 
     const [{user, isSignedIn, userName}] = useStateValue()
 
     
-    const MyComponent = () => {
-            useScript({colorScript})
-            return null;
-        }
+    // const MyComponent = () => {
+    //         useScript({colorScript})
+    //         return null;
+    //     }
+
+        const portraits = [
+            { pic: userProfile, text: "Platea augue sociis erat nibh vestibulum tincidunt in. Nostra tortor nulla nam hendrerit class, aenean quam sagittis lectus pulvinar diam tristique suscipit semper torquent aptent ridiculus cras netus id vitae.", name: "username"},
+            { pic: userProfile, text: "Platea augue sociis erat nibh vestibulum tincidunt in. Nostra tortor nulla nam hendrerit class, aenean quam sagittis lectus pulvinar diam tristique suscipit semper torquent aptent ridiculus cras netus id vitae.", name: "username"},
+            { pic: userProfile, text: "Platea augue sociis erat nibh vestibulum tincidunt in. Nostra tortor nulla nam hendrerit class, aenean quam sagittis lectus pulvinar diam tristique suscipit semper torquent aptent ridiculus cras netus id vitae.", name: "username"},
+            { pic: userProfile, text: "Platea augue sociis erat nibh vestibulum tincidunt in. Nostra tortor nulla nam hendrerit class, aenean quam sagittis lectus pulvinar diam tristique suscipit semper torquent aptent ridiculus cras netus id vitae.", name: "username"},
+            { pic: userProfile, text: "Platea augue sociis erat nibh vestibulum tincidunt in. Nostra tortor nulla nam hendrerit class, aenean quam sagittis lectus pulvinar diam tristique suscipit semper torquent aptent ridiculus cras netus id vitae.", name: "username"},
+                    
+          ];
+        
+        const vel = 25;
 
     return (
         <div className='homePage'>
@@ -72,7 +84,7 @@ function HomePage() {
                         iconStyle={{ background: '#FFAFBC'   , color: '#fff' }}
                     >
 
-                        <h1 className="vertical-timeline-element-title">Childhood</h1>
+                        <h1 className="vertical-timeline-element-title">Baby steps</h1>
                         {/* <p>You are here <br></br> Talk to people</p> */}
                         <br></br>
                         <ul>
@@ -80,37 +92,53 @@ function HomePage() {
                             <li>Talk to people</li>
                             <li>Adapt, Learn, Notice</li>   
                         </ul>
+                        <Button className='nostalgia_button' component={Link} to={'/nostalgia'}>Ready for a ride?</Button>
                         <img src={confused}/>
+                        <img src={confused}/>
+                        <img src={confused}/>
+                        <div className="TestiContainer">
+                        <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
+                        </div>
                     </VerticalTimelineElement>
+
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: 'linear-gradient(#FFC2A1, #FBD69A )', color: '#fff'}}
-                        contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #FFC2A1' }}
                         // date="2nd Year"
                         // dateClassName="year_style"
                         iconStyle={{ background: '#FFC2A1', color: '#fff' }}
                     >
+                        <Clouds/>
+                        <div id="container">
                         <h1 className="vertical-timeline-element-title">Exploring</h1>
                         <p>Gain Exposure</p>
                         <img src={exploring}/>
+                        <div className="TestiContainer">
+                        <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
+                        </div>
+                        </div>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: 'linear-gradient(#FBD69A , #034C90)', color: '#fff' }}
-                        contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #FBD69A' }}
                         // date="3rd Year"
                         // dateClassName="year_style"
                         iconStyle={{ background: '#FBD69A', color: '#fff' }}
                     >
-                        <Clouds/>
+                        
                         <h1 className="vertical-timeline-element-title">Defining Point</h1>
                         <p>Finding your calling</p>
                         <img src={graduation}/>
+                        <div className="TestiContainer">
+                        <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
+                        </div>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: 'linear-gradient(#004e92, #000428)', color: '#fff' }}
-                        contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #004e92' }}
                         // date="4th Year"
                         // dateClassName="year_style"
                         iconStyle={{ background: '#004e92', color: ' #000428' }}
@@ -118,11 +146,14 @@ function HomePage() {
                         <h1 className="vertical-timeline-element-title">Graduating</h1>
                         <p>Enjoying the last moments</p>
                         <img src={graduation}/>
+                        <div className="TestiContainer">
+                        <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
+                        </div>
                     </VerticalTimelineElement>
                     <VerticalTimelineElement
                         className="vertical-timeline-element--work"
                         contentStyle={{ background: 'linear-gradient(#000428, #00010B)', color: '#fff' }}
-                        contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
+                        contentArrowStyle={{ borderRight: '7px solid  #000428' }}
                         // date="Graduation"
                         // dateClassName="year_style"
                         iconStyle={{ background: '#000428', color: '#fff' }}
@@ -133,8 +164,10 @@ function HomePage() {
                     <h1 className="vertical-timeline-element-title">Nostalgia</h1>
                     <p>Let's take you down the memory lane</p>
                     
-                    <Button className='nostalgia_button'>Ready for a ride?</Button>
-
+                    <Button className='nostalgia_button' component={Link} to={'/nostalgia'}>Ready for a ride?</Button>
+                    <div className="TestiContainer">
+                        <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
+                        </div>
                     </VerticalTimelineElement>
                     {/* <VerticalTimelineElement
                         iconStyle={{ background: 'rgb(255, 0, 0)', color: 'rgb(255, 0, 0)' }}

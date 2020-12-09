@@ -16,3 +16,7 @@
     justify-content: center;
     transition: ease-in-out .3s,
 }
+
+.CardActionArea{
+    margin-top: 10%;
+}
