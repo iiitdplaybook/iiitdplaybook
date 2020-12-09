@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import Marquee from "react-marquee-slider";
 import styled from "styled-components";
 import times from "lodash/times";
-import "./Testimonials.css";
 
 import FullWidth from "./FullWidth";
 
@@ -22,49 +21,50 @@ const Box = styled.div`
 const Review = styled.div`
   width: ${(props) => props.scale * 325}px;
   // display: flex;
-  padding: ${(props) => props.scale * 25}px;
+  padding: ${(props) => props.scale * 5}px;
   background: #fff;
   border-radius: 4px;
-  min-height: 20vh;
+  height: 30vh;
   border-color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
   box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
   overflow: hidden;
 `;
 
 const Avatar = styled.div`
-  border-radius: 50%;
-  width: ${(props) => props.scale * 30}px;
-  height: ${(props) => props.scale * 30}px;
+  border-radius: 4px;
+  width: 100%;
+  // height: ${(props) => props.scale * 40}px;
   overflow: hidden;
-  flex-shrink: 0;
-  margin-right: ${(props) => props.scale * 35}px;
-  img {
-    max-width: 100%;
+  min-height: 80%;
+  max-height: 80%;
+  background: red;
+  img{
+    // min-height: 100%;
+    min-width: 135%;
   }
 `;
 
-const Content = styled.div`
-  p {
-    margin: 10px;
-    color: #382f70;
-    font-family: Poppins, sans-serif;
-    font-size: ${(props) => props.scale * 15}px !important;
-    line-height: ${(props) => props.scale * 22}px;
-    font-weight: 100;
-    text-align: left;
-  }
-`;
+// const Content = styled.div`
+//   p {
+//     margin: 10px;
+//     color: #382f70;
+//     font-family: Poppins, sans-serif;
+//     font-size: ${(props) => props.scale * 15}px !important;
+//     line-height: ${(props) => props.scale * 22}px;
+//     font-weight: 100;
+//     text-align: left;
+//   }
+// `;
 
 const Name = styled.div`
   p {
-    margin: 8px;
-    margin-left: -12px;
+    margin: 16px;
     color: red;
     font-family: Poppins, sans-serif;
-    font-size: ${(props) => props.scale * 16}px !important;
+    font-size: ${(props) => props.scale * 20}px !important;
     line-height: ${(props) => props.scale * 14}px;
     font-weight: 100;
-    text-align: left;
+    text-align: center;
   }
 `;
 
@@ -100,7 +100,7 @@ const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndP
 
   return (
     <FullWidth>
-      <Height height={235}>
+      <Height height={300}>
         <Marquee
           key={key}
           velocity={vel}
@@ -111,17 +111,12 @@ const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndP
           {times(portraits.length, String).map((id) => (
             <Box key={`marquee-example-review-${id}`} scale={scale}>
               <Review scale={scale}>
-                <div id="containerHeader">
                 <Avatar scale={scale}>
                   <img src={portraits[id].pic} alt="" />
                 </Avatar>
                 <Name scale={scale}>
                   <p>{portraits[id].name}</p>
                 </Name>
-                </div>
-                <Content scale={scale}>
-                  <p>{portraits[id].text}</p>
-                </Content>
               </Review>
             </Box>
           ))}

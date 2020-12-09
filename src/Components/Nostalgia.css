@@ -31,12 +31,17 @@
     height: 100vh;
     background-color: rgba(255,255,255,.1);
     /* backdrop-filter: blur(40px); */
-    margin-top: 5%;
+    margin: 3%;
     padding: 2%;
+    overflow: hidden;
 }
 
 .section:nth-child(1){
     margin-top: 10%;
+}
+
+.section:nth-child(13){
+    height: 200vh;
 }
 
 .section > h2{
@@ -56,9 +61,12 @@
     font-size: 1em;
 }
 
-.section .mai_merko_sab_ata_hai_mai_expert_hu_img{
-    width: 50%;
-    height: 50%;
+.ImageTesti{
+    margin-left: 50%;
+}
+
+img{
+    width: 30%;
 }
 
 .heirarchy {

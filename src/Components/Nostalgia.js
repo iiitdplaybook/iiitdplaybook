@@ -8,11 +8,25 @@ import happiness from "../Assets/happiness.jpg";
 import abba_nahi_maanenge from "../Assets/abba_nahi_maanenge.jpg";
 import mai_merko_sab_ata_hai_mai_expert_hu from "../Assets/mai_merko_sab_ata_hai_mai_expert_hu.jpg";
 
+import Testimonials from './TestimonialsImage';
 
 function Nostalgia() {
   const [{ user, isSignedIn, userName }] = useStateValue();
 
   useEffect(() => { window.scrollTo(0, 0); console.log("aer"); }, []) 
+
+  const portraits = [
+    { pic: jubin, name: "18 January 2020"},
+    { pic: prateek, name: "18 January 2020"},
+    { pic: jubin, name: "19 January 2020"},
+    { pic: prateek, name: "19 January 2020"},
+    { pic: jubin, name: "18 January 2020"},
+    { pic: jubin, name: "19 January 2020"},
+    { pic: prateek, name: "19 January 2020"},
+    { pic: jubin, name: "18 January 2020"},
+    ];
+
+    const vel = 25;
 
   return (
     <div id="nostalgiaCont">
@@ -118,9 +132,12 @@ function Nostalgia() {
             <p>
                 Fresher to OC:
             </p>
-            <img classname='mai_merko_sab_ata_hai_mai_expert_hu_img' src={mai_merko_sab_ata_hai_mai_expert_hu} alt='expert'/>
-            <img classname='prateek_img' src={prateek}/>
-            <img classname='jubin_img' src={jubin} />
+            <div className="ImageTesti">
+            <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
+            </div>
+            <img id='mai_merko_sab_ata_hai_mai_expert_hu_img' src={mai_merko_sab_ata_hai_mai_expert_hu} alt='expert'/>
+            {/* <img classname='prateek_img' src={prateek}/> */}
+            {/* <img classname='jubin_img' src={jubin} /> */}
             <p>
                 OC to Fresher: 
                 <br></br>
