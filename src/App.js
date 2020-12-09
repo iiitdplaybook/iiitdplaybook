@@ -14,6 +14,8 @@ import { useStateValue } from "./StateProvider";
 import Explore from "./Components/Explore";
 import TimeManagement from "./Components/TimeManagement/TimeManagement";
 import Tools from "./Components/Tools/Tools";
+// import Nostalgia from "./Components/Nostalgia";
+import Cards from './Components/ExploreCards/ExploreCards';
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -48,6 +50,7 @@ function App() {
             <Switch>
               <Route path="/explore" component={Explore} />
               <Route path="/friends" component={TalkingToFriendsSeniors} />
+              {/* <Route path="/test_cards" component={Cards} /> */}
               <Route path="/test" component={Testimonials} />
               <Route path="/timemanagement" component={TimeManagement}/>
               <Route path="/tools" component={Tools}/>
