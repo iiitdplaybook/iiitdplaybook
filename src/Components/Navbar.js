@@ -62,7 +62,7 @@ function Navbar() {
           component={Link} 
           to={"/friends"} 
           startIcon={<SuppliesIcon />}
-          endIcon = {<FiberNewIcon style={{ color: blue[500] }}/>}>
+          endIcon = {<FiberNewIcon style={{ color: "black", padding: "2%" }}/>}>
           Supplies
         </Button>
         <Button onClick={signOut}>Sign out</Button>

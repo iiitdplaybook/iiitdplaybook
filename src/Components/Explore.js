@@ -41,50 +41,71 @@ function Explore() {
 
     // const classes = useStyles();
 
-    var exploreCardsInfo1 = {
+    var exploreCardsInfo1 = [{
         "gradientColor_1":"#2FB8FF",
         "gradientColor_2":"#95E8DC",
-        "title":"\nTime Management",
+        "title":"\Time Management",
         "n_testimonies":6,
         "reading_time":3,
         "image":imageTimeManagement,
-    };
+    }, {
+        "gradientColor_1":"#9F4EAD",
+        "gradientColor_2":"#EEB86D",
+        "title":"\nNostalgia",
+        "n_testimonies":6,
+        "reading_time":3,
+        "image":imageTimeManagement,
+    }, {
+        "gradientColor_1":"#9F7FE5",
+        "gradientColor_2":"#5497E3",
+        "title":"\nSomething else",
+        "n_testimonies":6,
+        "reading_time":3,
+        "image":imageTimeManagement,
+    }, {
+        "gradientColor_1":"#236FDC",
+        "gradientColor_2":"#4BBEFF",
+        "title":"\nHello",
+        "n_testimonies":6,
+        "reading_time":3,
+        "image":imageTimeManagement,
+    }];
 
-    var exploreCardsInfo2 = {
+    var exploreCardsInfo2 = [{
         "gradientColor_1":"#2FB8FF",
         "gradientColor_2":"#95E8DC",
         "title":"Not Time Management",
         "n_testimonies":6,
         "reading_time":3,
         "image":imageTimeManagement,
-    };
+    }];
 
-    var exploreCardsInfo3 = {
+    var exploreCardsInfo3 = [{
         "gradientColor_1":"#2FB8FF",
         "gradientColor_2":"#95E8DC",
-        "title":"\n\nHello",
+        "title":"\nHello",
         "n_testimonies":6,
         "reading_time":3,
         "image":imageTimeManagement,
-    };
+    }];
 
     const items = [];
     const items2 = [];
     const items3 = [];
 
-    for (let index = 0; index < 3; index++) {
-        items.push(
-            ExploreCards(exploreCardsInfo1)
-        );
-    }
-    for (let index = 0; index < 2; index++) {
-        items2.push(
-            ExploreCards(exploreCardsInfo2)
-        );
-    }
     for (let index = 0; index < 4; index++) {
+        items.push(
+            ExploreCards(exploreCardsInfo1[index])
+        );
+    }
+    for (let index = 0; index < 1; index++) {
+        items2.push(
+            ExploreCards(exploreCardsInfo2[index])
+        );
+    }
+    for (let index = 0; index < 1; index++) {
         items3.push(
-            ExploreCards(exploreCardsInfo3)
+            ExploreCards(exploreCardsInfo3[index])
         );
     }
     
