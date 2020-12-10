@@ -1,3 +1,6 @@
+
+/* @import 'react-vertical-timeline-component/style.min.css'; */
+
 @import 'react-vertical-timeline-component/style.min.css';
 body{
     background: white;
@@ -39,7 +42,6 @@ canvas {
     font-size: 6em;
     z-index: 5;
 }
-
 
 /* .vertical-timeline{
     background-color: white;

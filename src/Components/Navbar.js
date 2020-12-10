@@ -9,6 +9,21 @@ import { Link } from "react-router-dom";
 import logo from "../Assets/Logo.png";
 import exploreLogo from "../Assets/explore_logo.svg";
 
+// Icons
+import ExploreIcon from '@material-ui/icons/GridOn';
+import SuppliesIcon from '@material-ui/icons/LocalGroceryStore';
+import ToolsIcon from '@material-ui/icons/Build';
+import FiberNewIcon from '@material-ui/icons/FiberNew';
+
+
+import playbook_logo from '../Assets/playbook_logo_black.svg';
+import { blue } from "@material-ui/core/colors";
+// import playbook_logo from '../Assets/playbook_logo_blue.svg';
+
+//fonts
+
+
+
 function Navbar() {
   const [{ user }] = useStateValue();
 
@@ -24,9 +39,36 @@ function Navbar() {
       });
   };
 
+
   return (
     <div className="navbar">
       <div className="navbar__left">
+
+        <Link to="/">
+          <img src={playbook_logo} alt="Student Playbook Logo" />
+        </Link>
+      </div>
+      <div className="navbar__right">
+        <Button 
+          component={Link} 
+          to={"/explore"}
+          startIcon={<ExploreIcon />}>
+          Explore
+        </Button>
+        <Button 
+          component={Link} 
+          to={"/tools"}
+          startIcon={<ToolsIcon />}>
+          Tools
+        </Button>
+        <Button 
+          component={Link} 
+          to={"/friends"} 
+          startIcon={<SuppliesIcon />}
+          endIcon = {<FiberNewIcon style={{ color: blue[500] }}/>}>
+          Supplies
+        </Button>
+
         <Link to="/" style={{ textDecoration: "none" }}>
         <img id="logo" src={logo} />
         </Link>
@@ -42,6 +84,7 @@ function Navbar() {
         <Button id='btn' component={Link} to={"/friends"}>
           Tools
         </Button>
+
         <Button onClick={signOut}>Sign out</Button>
         <Avatar id='pic' src={user?.photoURL} alt="User" />
       </div>
