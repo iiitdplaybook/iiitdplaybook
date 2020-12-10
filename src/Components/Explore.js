@@ -3,24 +3,20 @@ import "./Explore.css";
 import React, { useState } from "react";
 import {
   Button,
+  GridList,
+  GridListTile,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import ExploreCards from "./ExploreCards/ExploreCards"
-import imageTimeManagement from "../Assets/SVG_for_cards/teamwork.svg";
+import itemsList from "./items"
 
 function Explore() {
     const [clickedButton, setClickedButton] = useState(1);
 
     const useStyles = makeStyles({
-        root: {
-            width: 200,
-            marginLeft: 50,
-        },
-        media: {
-            height: 250,
+        root:{
+            height:280
         },
     });
-
 
     const buttonStyles = makeStyles({
         root: {
@@ -37,83 +33,13 @@ function Explore() {
         },
     });
     const buttonClass = buttonStyles();
-
-    // const classes = useStyles();
-
-    var exploreCardsInfo1 = [{
-        "gradientColor_1":"#2FB8FF",
-        "gradientColor_2":"#95E8DC",
-        "title":"\Time Management",
-        "n_testimonies":6,
-        "reading_time":3,
-        "image":imageTimeManagement,
-    }, {
-        "gradientColor_1":"#9F4EAD",
-        "gradientColor_2":"#EEB86D",
-        "title":"\nNostalgia",
-        "n_testimonies":6,
-        "reading_time":3,
-        "image":imageTimeManagement,
-    }, {
-        "gradientColor_1":"#9F7FE5",
-        "gradientColor_2":"#5497E3",
-        "title":"\nSomething else",
-        "n_testimonies":6,
-        "reading_time":3,
-        "image":imageTimeManagement,
-    }, {
-        "gradientColor_1":"#236FDC",
-        "gradientColor_2":"#4BBEFF",
-        "title":"\nHello",
-        "n_testimonies":6,
-        "reading_time":3,
-        "image":imageTimeManagement,
-    }];
-
-    var exploreCardsInfo2 = [{
-        "gradientColor_1":"#2FB8FF",
-        "gradientColor_2":"#95E8DC",
-        "title":"Not Time Management",
-        "n_testimonies":6,
-        "reading_time":3,
-        "image":imageTimeManagement,
-    }];
-
-    var exploreCardsInfo3 = [{
-        "gradientColor_1":"#2FB8FF",
-        "gradientColor_2":"#95E8DC",
-        "title":"\nHello",
-        "n_testimonies":6,
-        "reading_time":3,
-        "image":imageTimeManagement,
-    }];
-
-    const items = [];
-    const items2 = [];
-    const items3 = [];
-
-    for (let index = 0; index < 4; index++) {
-        items.push(
-            ExploreCards(exploreCardsInfo1[index])
-        );
-    }
-    for (let index = 0; index < 1; index++) {
-        items2.push(
-            ExploreCards(exploreCardsInfo2[index])
-        );
-    }
-    for (let index = 0; index < 1; index++) {
-        items3.push(
-            ExploreCards(exploreCardsInfo3[index])
-        );
-    }
-    
-
-    const classes = useStyles();
+    const gridClass = useStyles();
 
     const changeS = (s) => {
         setClickedButton(s);
     };
+
+    const itemCards = itemsList();
 
     return (
         <div className="explore">
@@ -155,17 +81,17 @@ function Explore() {
 
             <div className="explore__body">
                 {clickedButton === 1 ? (
-
                     <div className="cardsDiv">
-                        {items}
+                        {itemCards["allCards"]}
                     </div>
+                    
                 ) : clickedButton === 2 ? (
                     <div className="cardsDiv">
-                        {items2}
+                        {itemCards["recommendedCards"]}
                     </div>
                 ) : (
                     <div className="cardsDiv">
-                        {items3}
+                        {itemCards["favCards"]}
                     </div>
                 )}
                 
@@ -173,16 +99,5 @@ function Explore() {
         </div>
     )
 }
-
-//   return (
-//     <div className="explore">
-//       <div className="explore__buttons">
-//         <Button>Favourites</Button>
-//         <Button>Recommended</Button>
-//         <Button>All</Button>
-//       </div>
-//       <div className="explore__cards">{items}</div>
-//     </div>
-//   );
 
 export default Explore

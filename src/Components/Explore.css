@@ -13,10 +13,9 @@
 }
 
 .explore__body {
-    display: flex;
-    justify-content: center;
     transition: ease-in-out .3s;
     font-family: 'Poppins', sans-serif;
+    margin: 5%;
 }
 
 .explore__body .MuiButton-label{
@@ -25,19 +24,24 @@
 }
 
 .CardActionArea{
-    margin-top: 10%;
+    margin-top: 1%;
 
 }
 
 .cardsDiv{
-    display: flex;
+    display: grid;
+    grid-gap: 5px;
     justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+    grid-template-rows: auto;
+    grid-auto-rows: 300px;
+    justify-items: center;
 }
 
-@media only screen and (max-width: 1000px) {
+/* @media only screen and (max-width: 1000px) {
 
     .cardsDiv{
         display: block !important;
     }
-}
+} */
 

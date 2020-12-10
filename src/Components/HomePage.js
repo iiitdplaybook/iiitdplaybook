@@ -19,6 +19,9 @@
     import Clouds from './clouds';
     import Testimonials from './Testimonials';
     import userProfile from '../Assets/user.png';
+    import imgQuestion from '../Assets/PhasesPics/question.svg';
+    import imgDefine from '../Assets/PhasesPics/define.svg';
+    import imgExplore from '../Assets/PhasesPics/explore.svg';
 
     function HomePage() {
 
@@ -31,6 +34,7 @@
         //     }
 
             const portraits = [
+                { pic: userProfile, text: "Platea augue sociis erat nibh vestibulum tincidunt in. Nostra tortor nulla nam hendrerit class, aenean quam sagittis lectus pulvinar diam tristique suscipit semper torquent aptent ridiculus cras netus id vitae.", name: "username"},
                 { pic: userProfile, text: "Platea augue sociis erat nibh vestibulum tincidunt in. Nostra tortor nulla nam hendrerit class, aenean quam sagittis lectus pulvinar diam tristique suscipit semper torquent aptent ridiculus cras netus id vitae.", name: "username"},
                 { pic: userProfile, text: "Platea augue sociis erat nibh vestibulum tincidunt in. Nostra tortor nulla nam hendrerit class, aenean quam sagittis lectus pulvinar diam tristique suscipit semper torquent aptent ridiculus cras netus id vitae.", name: "username"},
                 { pic: userProfile, text: "Platea augue sociis erat nibh vestibulum tincidunt in. Nostra tortor nulla nam hendrerit class, aenean quam sagittis lectus pulvinar diam tristique suscipit semper torquent aptent ridiculus cras netus id vitae.", name: "username"},
@@ -86,16 +90,16 @@
                             <div className="containerBox">
                                 <h1 className="vertical-timeline-element-title">Baby steps</h1>
                                 {/* <p>You are here <br></br> Talk to people</p> */}
-                                <br></br>
-                                <ul>
+                                You get the most time in your first year, literally do ANYTHING! 
+                                <br/>
+
+                                {/* <ul>
                                     <li>You are here</li>
                                     <li>Talk to people</li>
                                     <li>Adapt, Learn, Notice</li>   
-                                </ul>
-                                <Button className='nostalgia_button' component={Link} to={'/nostalgia'}>Ready for a ride?</Button>
-                                <img src={confused}/>
-                                <img src={confused}/>
-                                <img src={confused}/>
+                                </ul> */}
+                                {/* <Button className='nostalgia_button' component={Link} to={'/nostalgia'}>Ready for a ride?</Button> */}
+                                <img className="imgContainer" src={imgQuestion}/>                                
                                 <div className="TestiContainer">
                                     <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
                                 </div>
@@ -115,7 +119,7 @@
                             <Clouds/>
                             <h1 className="vertical-timeline-element-title">Exploring</h1>
                             <p>Gain Exposure</p>
-                            <img src={exploring}/>
+                            <img className="imgContainer" src={imgExplore}/>  
                             <div className="TestiContainer">
                             <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
                             </div>
@@ -132,7 +136,7 @@
                             <div className="containerBox">
                                 <h1 className="vertical-timeline-element-title">Defining Point</h1>
                                 <p>Finding your calling</p>
-                                <img src={graduation}/>
+                                <img className="imgContainer" src={imgDefine}/>  
                                 <div className="TestiContainer">
                                     <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
                                 </div>
@@ -149,7 +153,7 @@
                             <div className="containerBox">
                                 <h1 className="vertical-timeline-element-title">Graduating</h1>
                                 <p>Enjoying the last moments</p>
-                                <img src={graduation}/>
+                                <img className="imgContainer" src={graduation}/>
                                 <div className="TestiContainer">
                                     <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
                                 </div>

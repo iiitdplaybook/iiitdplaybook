@@ -56,7 +56,7 @@ canvas {
 /* Line color change */
 .vertical-timeline::before{
     background: linear-gradient(#FFAFBC, #FFC2A1, #FBD69A , #034C90, #004e92, #000428);
-    top: 2%;
+    top: 1%;
     height: 80%;
     bottom: 15%;
 }
@@ -102,7 +102,20 @@ canvas {
 .containerBox{
     /* height: 70vh;   */
     /* margin-top: -15%; */
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
+}
+
+.imgContainer{
+    max-width: 70%;
+    align-self: center;
+    margin-bottom: 4%;
+}
+
+.imgContainer:nth-child(9){
+    max-width: 90%;
+    background: red;
 }
 
 .contentBox{
@@ -132,7 +145,7 @@ canvas {
 
     .vertical-timeline::before{
         background: linear-gradient(#FFAFBC, #FFC2A1, #FBD69A, #004e92, #000428);
-        height: 82%;
+        height: 83%;
     }
 
     .textCard{
@@ -148,4 +161,8 @@ canvas {
         z-index: inherit;
       }
     
+    .imgContainer{
+        max-width: 100%;
+    }
+
   }

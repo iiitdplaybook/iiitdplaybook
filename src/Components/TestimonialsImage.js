@@ -37,10 +37,11 @@ const Avatar = styled.div`
   overflow: hidden;
   min-height: 80%;
   max-height: 80%;
-  background: red;
+  // background: red;
   img{
     // min-height: 100%;
     min-width: 135%;
+    margin-left: -10%;
   }
 `;
 
@@ -77,7 +78,7 @@ const Name = styled.div`
 //   "https://randomuser.me/api/portraits/men/26.jpg",
 // ];
 
-const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndPerformance }) => {
+const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndPerformance, direc}) => {
   const [key, setKey] = useState();
 
   useEffect(() => {
@@ -104,6 +105,7 @@ const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndP
         <Marquee
           key={key}
           velocity={vel}
+          direction={direc}
           minScale={0.7}
           onInit={onStartPerformance}
           onFinish={onEndPerformance}
