@@ -46,23 +46,25 @@ function Navbar() {
         </Link>
       </div>
       <div className="navbar__right">
-        <Button 
+        <Button  id='btn'  
           component={Link} 
           to={"/explore"}
-          startIcon={<ExploreIcon />}>
+          // startIcon={<ExploreIcon style={{ padding: "10%" }}/>}
+          >
           Explore
         </Button>
-        <Button 
+        <Button  id='btn' 
           component={Link} 
           to={"/tools"}
-          startIcon={<ToolsIcon />}>
+          // startIcon={<ToolsIcon style={{ padding: "10%" }}/>}
+          >
           Tools
         </Button>
-        <Button 
+        <Button  id='btn' 
           component={Link} 
           to={"/friends"} 
-          startIcon={<SuppliesIcon />}
-          endIcon = {<FiberNewIcon style={{ color: "black", padding: "2%" }}/>}>
+          // startIcon={<SuppliesIcon />}
+          endIcon = {<FiberNewIcon style={{ color: "#1EB0F6", padding: "2%", transform: "scale(1.3)" }}/>}>
           Supplies
         </Button>
         <Button onClick={signOut}>Sign out</Button>
