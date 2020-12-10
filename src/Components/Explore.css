@@ -1,11 +1,25 @@
 /** @format */
+.explore__button {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    transition: ease-in-out .2s,
+}
 
-.explore__cards {
-  display: flex;
+.explore__button > button {
+    margin: 10px;
+    transition: ease-in-out .2s,
+}
+
+.explore__body {
+    display: flex;
+    justify-content: center;
+    transition: ease-in-out .3s,
 }
 
 .CardActionArea{
     margin-top: 10%;
+
 }
 @media only screen and (max-width: 1000px) {
 
@@ -17,3 +31,6 @@
     display: flex;
     justify-content: center;
 }
+
+}
+

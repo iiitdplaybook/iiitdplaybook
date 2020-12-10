@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     background-color: rgb(255, 255, 255);
     padding: 10px;
     /* font-family: 'Poppins'; */
@@ -16,6 +17,7 @@
     align-items: center;
     padding: 0px 30px;
     /* font-family: 'Poppins'; */
+    padding: 0px 10px;
 }
 
 .navbar__right > h4 {
@@ -23,8 +25,41 @@
     margin-left: 15px;
 }
 
-.navbar__right > button {
+.navbar__right > Button {
     margin-left: 15px;
     padding: 0px 10px;
     /* font-family: 'Poppins'; */
+    font-family: 'Poppins', sans-serif;    
+    transition: ease-in-out .2s;
+    /* filter: invert(); */
+}
+
+.navbar__right > Button :hover {
+    transform: scale(1.03);
+}
+
+#btn{
+    font-family: 'Poppins', sans-serif;   
+    margin-left: 15px;
+    font-weight: bold;
+    transition: ease-in-out .2s;
+    vertical-align: middle;
+    /* filter: invert(); */
+}
+
+#btn:hover{
+    transform: scale(1.03);
+}
+
+#btn:nth-child(3){
+    margin-right: 25px;
+}
+
+#pic{
+    transform: scale(.7);
+}
+
+#navIcon{
+    margin-right: 5%;
+    fill: red;
 }

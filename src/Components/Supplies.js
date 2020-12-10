@@ -1,17 +1,20 @@
 /** @format */
 
-import "./Explore.css";
+import "./Supplies.css";
 import React, { useState } from "react";
 import {
   Button,
+  Card,
+  CardContent,
+  Typography,
+  CardActionArea,
+  CardMedia,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import ExploreCards from "./ExploreCards/ExploreCards"
-import imageTimeManagement from "../Assets/SVG_for_cards/teamwork.svg";
+import wazzup from "../Assets/wazzup.jpg";
 
-function Explore() {
+function Supplies() {
     const [clickedButton, setClickedButton] = useState(1);
-
     const useStyles = makeStyles({
         root: {
             width: 200,
@@ -21,7 +24,6 @@ function Explore() {
             height: 250,
         },
     });
-
 
     const buttonStyles = makeStyles({
         root: {
@@ -38,57 +40,6 @@ function Explore() {
         },
     });
     const buttonClass = buttonStyles();
-
-    // const classes = useStyles();
-
-    var exploreCardsInfo1 = {
-        "gradientColor_1":"#2FB8FF",
-        "gradientColor_2":"#95E8DC",
-        "title":"\nTime Management",
-        "n_testimonies":6,
-        "reading_time":3,
-        "image":imageTimeManagement,
-    };
-
-    var exploreCardsInfo2 = {
-        "gradientColor_1":"#2FB8FF",
-        "gradientColor_2":"#95E8DC",
-        "title":"Not Time Management",
-        "n_testimonies":6,
-        "reading_time":3,
-        "image":imageTimeManagement,
-    };
-
-    var exploreCardsInfo3 = {
-        "gradientColor_1":"#2FB8FF",
-        "gradientColor_2":"#95E8DC",
-        "title":"\n\nHello",
-        "n_testimonies":6,
-        "reading_time":3,
-        "image":imageTimeManagement,
-    };
-
-    const items = [];
-    const items2 = [];
-    const items3 = [];
-
-    for (let index = 0; index < 3; index++) {
-        items.push(
-            ExploreCards(exploreCardsInfo1)
-        );
-    }
-    for (let index = 0; index < 2; index++) {
-        items2.push(
-            ExploreCards(exploreCardsInfo2)
-        );
-    }
-    for (let index = 0; index < 4; index++) {
-        items3.push(
-            ExploreCards(exploreCardsInfo3)
-        );
-    }
-    
-
     const classes = useStyles();
 
     const items = [];
@@ -98,21 +49,8 @@ function Explore() {
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
-                        image={pabitra}
-                        title="Contemplative Reptile"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Pabitra
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image={pabitra}
-                        title="Contemplative Reptile"
+                        image={wazzup}
+                        title="Pabitra"
                     />
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="h2">
@@ -124,14 +62,13 @@ function Explore() {
         );
     }
 
-
     const changeS = (s) => {
         setClickedButton(s);
     };
 
     return (
-        <div className="explore">
-            <div className="explore__button">
+        <div className="supplies">
+            <div className="supplies__button">
                 <Button
                     onClick={() => changeS(1)}
                     variant={clickedButton === 1 ? "contatined" : "outlined"}
@@ -152,7 +89,7 @@ function Explore() {
                             : buttonClass.notRoot
                     }
                 >
-                    Recommended
+                    Stationary
                 </Button>
                 <Button
                     onClick={() => changeS(3)}
@@ -163,28 +100,45 @@ function Explore() {
                             : buttonClass.notRoot
                     }
                 >
-                    Favourites
+                    Laptops
+                </Button>
+                <Button
+                    onClick={() => changeS(4)}
+                    variant={clickedButton === 4 ? "contatined" : "outlined"}
+                    className={
+                        clickedButton === 4
+                            ? buttonClass.root
+                            : buttonClass.notRoot
+                    }
+                >
+                    Computer Accessories
+                </Button>
+                <Button
+                    onClick={() => changeS(5)}
+                    variant={clickedButton === 5 ? "contatined" : "outlined"}
+                    className={
+                        clickedButton === 5
+                            ? buttonClass.root
+                            : buttonClass.notRoot
+                    }
+                >
+                    Room Decor
+                </Button>
+                <Button
+                    onClick={() => changeS(6)}
+                    variant={clickedButton === 6 ? "contatined" : "outlined"}
+                    className={
+                        clickedButton === 6
+                            ? buttonClass.root
+                            : buttonClass.notRoot
+                    }
+                >
+                    Others
                 </Button>
             </div>
 
-            <div className="explore__body">
+            <div className="supplies__body">
                 {clickedButton === 1 ? (
-
-                    <div className="cardsDiv">
-                        {items}
-                    </div>
-                ) : clickedButton === 2 ? (
-                    <div className="cardsDiv">
-                        {items2}
-                    </div>
-                ) : (
-                    <div className="cardsDiv">
-                        {items3}
-                    </div>
-                )}
-                
-
-
                     <p>Pabitra</p>
                 ) : clickedButton === 2 ? (
                     <p>Yashwin</p>
@@ -192,23 +146,9 @@ function Explore() {
                     <p>Kshitij</p>
                 )}
                 {items}
-
             </div>
         </div>
     );
   }
 
-
-//   return (
-//     <div className="explore">
-//       <div className="explore__buttons">
-//         <Button>Favourites</Button>
-//         <Button>Recommended</Button>
-//         <Button>All</Button>
-//       </div>
-//       <div className="explore__cards">{items}</div>
-//     </div>
-//   );
-
-
-export default Explore;
+export default Supplies;

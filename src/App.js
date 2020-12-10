@@ -7,15 +7,19 @@ import HomePage from "./Components/HomePage";
 import Footer from "./Components/Footer";
 import Testimonials from "./Components/Testimonials";
 import TalkingToFriendsSeniors from "./Components/TalkingToFriendsSeniors";
+import Supplies from "./Components/Supplies";
 import Login from "./Components/Login";
 import firebase from "firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import Explore from "./Components/Explore";
+
 import TimeManagement from "./Components/TimeManagement/TimeManagement";
 import Tools from "./Components/Tools/Tools";
 // import Nostalgia from "./Components/Nostalgia";
 import Cards from './Components/ExploreCards/ExploreCards';
+
+import Nostalgia from "./Components/Nostalgia";
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -49,6 +53,8 @@ function App() {
             <Navbar />
             <Switch>
               <Route path="/explore" component={Explore} />
+              <Route path="/supplies" component={Supplies} />
+              <Route path="/nostalgia" component={Nostalgia} />
               <Route path="/friends" component={TalkingToFriendsSeniors} />
               {/* <Route path="/test_cards" component={Cards} /> */}
               <Route path="/test" component={Testimonials} />

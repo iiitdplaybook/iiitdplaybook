@@ -6,6 +6,8 @@ import { auth } from "../fire";
 import { Avatar, Button } from "@material-ui/core";
 import { useStateValue } from "../StateProvider";
 import { Link } from "react-router-dom";
+import logo from "../Assets/Logo.png";
+import exploreLogo from "../Assets/explore_logo.svg";
 
 // Icons
 import ExploreIcon from '@material-ui/icons/GridOn';
@@ -41,6 +43,7 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="navbar__left">
+
         <Link to="/">
           <img src={playbook_logo} alt="Student Playbook Logo" />
         </Link>
@@ -65,8 +68,25 @@ function Navbar() {
           endIcon = {<FiberNewIcon style={{ color: blue[500] }}/>}>
           Supplies
         </Button>
+
+        <Link to="/" style={{ textDecoration: "none" }}>
+        <img id="logo" src={logo} />
+        </Link>
+      </div>
+      <div className="navbar__right">
+        <Button id='btn' component={Link} to={"/explore"}>
+        <img id="navIcon" src={exploreLogo}></img>
+        Explore
+        </Button>
+        <Button id='btn'component={Link} to={"/supplies"}>
+          Supplies
+        </Button>
+        <Button id='btn' component={Link} to={"/friends"}>
+          Tools
+        </Button>
+
         <Button onClick={signOut}>Sign out</Button>
-        <Avatar src={user?.photoURL} alt="User" />
+        <Avatar id='pic' src={user?.photoURL} alt="User" />
       </div>
     </div>
   );
