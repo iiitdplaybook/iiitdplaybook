@@ -91,40 +91,6 @@ function Explore() {
 
     const classes = useStyles();
 
-    const items = [];
-    for (let index = 0; index < 5; index++) {
-        items.push(
-            <Card className={classes.root}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image={pabitra}
-                        title="Contemplative Reptile"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Pabitra
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image={pabitra}
-                        title="Contemplative Reptile"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Pabitra
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
-        );
-    }
-
-
     const changeS = (s) => {
         setClickedButton(s);
     };
@@ -183,21 +149,10 @@ function Explore() {
                     </div>
                 )}
                 
-
-
-                    <p>Pabitra</p>
-                ) : clickedButton === 2 ? (
-                    <p>Yashwin</p>
-                ) : (
-                    <p>Kshitij</p>
-                )}
-                {items}
-
             </div>
         </div>
-    );
-  }
-
+    )
+}
 
 //   return (
 //     <div className="explore">
@@ -210,5 +165,4 @@ function Explore() {
 //     </div>
 //   );
 
-
-export default Explore;
+export default Explore

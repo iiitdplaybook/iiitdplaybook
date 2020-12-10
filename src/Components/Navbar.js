@@ -22,8 +22,6 @@ import { blue } from "@material-ui/core/colors";
 
 //fonts
 
-
-
 function Navbar() {
   const [{ user }] = useStateValue();
 
@@ -43,9 +41,8 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="navbar__left">
-
-        <Link to="/">
-          <img src={playbook_logo} alt="Student Playbook Logo" />
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <img id="logo" src={logo} alt="Student Playbook"/>
         </Link>
       </div>
       <div className="navbar__right">
@@ -68,12 +65,10 @@ function Navbar() {
           endIcon = {<FiberNewIcon style={{ color: blue[500] }}/>}>
           Supplies
         </Button>
-
-        <Link to="/" style={{ textDecoration: "none" }}>
-        <img id="logo" src={logo} />
-        </Link>
+        <Button onClick={signOut}>Sign out</Button>
+        <Avatar id='pic' src={user?.photoURL} alt="User" />
       </div>
-      <div className="navbar__right">
+      {/* <div className="navbar__right">
         <Button id='btn' component={Link} to={"/explore"}>
         <img id="navIcon" src={exploreLogo}></img>
         Explore
@@ -87,7 +82,7 @@ function Navbar() {
 
         <Button onClick={signOut}>Sign out</Button>
         <Avatar id='pic' src={user?.photoURL} alt="User" />
-      </div>
+      </div> */}
     </div>
   );
 }

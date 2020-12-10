@@ -21,16 +21,16 @@
     margin-top: 10%;
 
 }
-@media only screen and (max-width: 1000px) {
 
-    .cardsDiv{
-        display: block !important;
-    }
-}
 .cardsDiv{
     display: flex;
     justify-content: center;
 }
 
+@media only screen and (max-width: 1000px) {
+
+    .cardsDiv{
+        display: block !important;
+    }
 }
 
