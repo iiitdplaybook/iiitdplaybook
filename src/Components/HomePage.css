@@ -32,6 +32,12 @@ canvas {
     z-index: 1;
 }
 
+.imgHero{
+    max-width: 40%;
+    align-self: center;
+    margin-bottom: -4%;
+}
+
 /* .homePage_img {
     -webkit-filter: brightness(50%);
     filter:brightness(50%);
@@ -57,7 +63,7 @@ canvas {
 .vertical-timeline::before{
     background: linear-gradient(#FFAFBC, #FFC2A1, #FBD69A , #034C90, #004e92, #000428);
     top: 1%;
-    height: 80%;
+    height: 83%;
     bottom: 15%;
 }
 
@@ -107,15 +113,40 @@ canvas {
     overflow: hidden;
 }
 
-.imgContainer{
-    max-width: 70%;
-    align-self: center;
-    margin-bottom: 4%;
+.vertical-timeline-element:nth-child(2) .containerBox{
+    /* height: 70vh;   */
+    margin-top: -14%;
+    /* background: red; */
 }
 
-.imgContainer:nth-child(9){
-    max-width: 90%;
-    background: red;
+.vertical-timeline-element:nth-child(5) .containerBox{
+    /* height: 70vh;   */
+    margin-top: -35%;
+    /* background: red; */
+}
+
+.imgContainer{
+    max-width: 40%;
+    align-self: center;
+    margin: 4%;
+}
+
+.vertical-timeline-element:nth-child(4) .imgContainer{
+    max-width: 30%;
+    margin-left: 50%;
+    margin-top: -15%;
+    margin-bottom: 2%;
+} 
+
+.vertical-timeline-element:nth-child(5) .imgContainer{
+    max-width: 50%;
+    margin-left: 45%;
+    margin-top: -10%;
+    margin-bottom: 1%;
+} 
+
+#firstSteps{
+    max-width: 100%;
 }
 
 .contentBox{
@@ -123,9 +154,16 @@ canvas {
 }
 
 .timeline_section .nostalgia_button {
-    background-color: gray;
+    background-color: whitesmoke;
+    position: absolute;
+    left: 2%;
+    bottom: 47%;
+    opacity: 1;
+    font-weight: 800;
     /* border-color: white; */
-    color: white;
+    color: black;
+    padding-left: 1%;
+    letter-spacing: 3px;
 }
 
 .TestiContainer{
@@ -165,4 +203,22 @@ canvas {
         max-width: 100%;
     }
 
+    .vertical-timeline-element:nth-child(2) .containerBox{
+        /* height: 70vh;   */
+        margin-top: -60%;
+        /* background: red; */
+    }
+    
+    .vertical-timeline-element:nth-child(5) .containerBox{
+        /* height: 70vh;   */
+        margin-top: -122%;
+        /* background: red; */
+    }
+
+    .vertical-timeline-element:nth-child(4) .imgContainer{
+        max-width: 80%;
+        margin-left: 7%;
+        margin-top: 0%;
+        margin-bottom: 2%;
+    } 
   }

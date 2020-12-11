@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import image_svg from "../../Assets/SVG_for_cards/teamwork.svg";
 
-function ExploreCards(exploreCardInfo){
+function SuppliesCards(supplyCardInfo){
     const cardHeight = 280
     const cardWidth = cardHeight*(2.1/3);
 
@@ -18,13 +18,12 @@ function ExploreCards(exploreCardInfo){
     var pathLink;
 
     if (exploreCardInfo["title"]){
-        gradientColor_1 = exploreCardInfo["gradientColor_1"];
-        gradientColor_2 = exploreCardInfo["gradientColor_2"];
-        title = exploreCardInfo["title"];
-        n_testimonies = exploreCardInfo["n_testimonies"];
-        reading_time = exploreCardInfo["reading_time"];
-        image = exploreCardInfo["image"];
-        pathLink = exploreCardInfo["pathLink"];
+        gradientColor_1 = supplyCardInfo["gradientColor_1"];
+        gradientColor_2 = supplyCardInfo["gradientColor_2"];
+        title = supplyCardInfo["title"];
+        description = supplyCardInfo["description"];
+        image = supplyCardInfo["image"];
+        pathLink = supplyCardInfo["pathLink"];
 
     }
     else{
@@ -88,7 +87,7 @@ function ExploreCards(exploreCardInfo){
                             {title}
                         </Typography>
                         <Typography className={classes.info} color="textSecondary">
-                            {n_testimonies} Testimonies | {reading_time} min
+                            {description}
                         </Typography>
                     </CardContent>
                 </CardActionArea>

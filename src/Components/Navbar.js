@@ -8,6 +8,7 @@ import { useStateValue } from "../StateProvider";
 import { Link } from "react-router-dom";
 import logo from "../Assets/Logo.png";
 import exploreLogo from "../Assets/explore_logo.svg";
+import Supplies from "./Supplies/Supplies";
 
 // Icons
 import ExploreIcon from '@material-ui/icons/GridOn';
@@ -62,7 +63,7 @@ function Navbar() {
         </Button>
         <Button  id='btn' 
           component={Link} 
-          to={"/friends"} 
+          to={"/supplies"} 
           // startIcon={<SuppliesIcon />}
           endIcon = {<FiberNewIcon style={{ color: "#1EB0F6", padding: "2%", transform: "scale(1.3)" }}/>}>
           Supplies

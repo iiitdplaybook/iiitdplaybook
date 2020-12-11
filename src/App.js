@@ -7,7 +7,7 @@ import HomePage from "./Components/HomePage";
 import Footer from "./Components/Footer";
 import Testimonials from "./Components/Testimonials";
 import TalkingToFriendsSeniors from "./Components/TalkingToFriendsSeniors";
-import Supplies from "./Components/Supplies";
+import Supplies from "./Components/Supplies/Supplies";
 import Login from "./Components/Login";
 import firebase from "firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -20,6 +20,7 @@ import Tools from "./Components/Tools/Tools";
 import Cards from './Components/ExploreCards/ExploreCards';
 
 import Nostalgia from "./Components/Nostalgia";
+// import Supplies from "./Components/Supplies/Supplies";
 
 function App() {
   const [{}, dispatch] = useStateValue();

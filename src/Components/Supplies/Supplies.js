@@ -11,14 +11,17 @@ import {
   CardMedia,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import wazzup from "../Assets/wazzup.jpg";
+import wazzup from "../../Assets/wazzup.jpg";
 
 function Supplies() {
     const [clickedButton, setClickedButton] = useState(1);
     const useStyles = makeStyles({
         root: {
+            background: "linear-gradient(90deg,#1EB0F6 6.32%, #2BD4DF 100%)",
+            borderRadius: "5px",
             width: 200,
             marginLeft: 50,
+
         },
         media: {
             height: 250,
@@ -54,7 +57,7 @@ function Supplies() {
                     />
                     <CardContent>
                         <Typography gutterBottom variant="h5" component="h2">
-                            Pabitra
+                            Supply {index}
                         </Typography>
                     </CardContent>
                 </CardActionArea>
@@ -68,6 +71,9 @@ function Supplies() {
 
     return (
         <div className="supplies">
+            <div>
+            {/* <iframe width="120px" height="240px" scrolling="no" frameBorder="no" title="calc" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=notapplicab0b-21&language=en_IN&marketplace=amazon&region=IN&placement=B011UK5DGY&asins=B011UK5DGY&linkId=3c1b2d86d77530607fa261a6f35f411a&show_border=true&link_opens_in_new_window=true"></iframe> */}
+            </div>
             <div className="supplies__button">
                 <Button
                     onClick={() => changeS(1)}
@@ -136,16 +142,22 @@ function Supplies() {
                     Others
                 </Button>
             </div>
-
-            <div className="supplies__body">
+            <div className="explore__body">
                 {clickedButton === 1 ? (
-                    <p>Pabitra</p>
+                    <div className="cardsDiv">
+                        {items}
+                    </div>
+                    
                 ) : clickedButton === 2 ? (
-                    <p>Yashwin</p>
+                    <div className="cardsDiv">
+                        {items}
+                    </div>
                 ) : (
-                    <p>Kshitij</p>
+                    <div className="cardsDiv">
+                        {items}
+                    </div>
                 )}
-                {items}
+                
             </div>
         </div>
     );
