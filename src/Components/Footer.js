@@ -6,7 +6,11 @@ function Footer() {
     
     return (
         <div id="bg">
-            Footer
+            <div className="lower">
+                <p>
+                IIITD Student Playbook &copy; 2021
+                </p>
+            </div>
         </div>
     )
 }

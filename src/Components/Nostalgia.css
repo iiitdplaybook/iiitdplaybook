@@ -1,6 +1,7 @@
 #nostalgiaCont{
     background: linear-gradient(#000428, #00010B);
     /* margin-top: -10%; */
+    padding-bottom: 4%;
 }
 
 #stars_container{
@@ -28,39 +29,65 @@
 
 .section{
     border-radius: 10px;
-    height: 100vh;
+    min-height: 100vh;
     background-color: rgba(255,255,255,.1);
     /* backdrop-filter: blur(40px); */
-    margin-top: 5%;
+    margin: 3%;
+    margin-right: 4%;
     padding: 2%;
+    overflow: hidden;
 }
 
-.section:nth-child(1){
+.section:nth-child(4){
     margin-top: 10%;
+}
+
+.section:nth-child(13){
+    /* height: 200vh; */
+    margin-bottom: 0%;
 }
 
 .section > h2{
     color: white;
     font-weight: bolder;
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 .section .happiness_img {
     width: 50%;
     height: 70%;
+    float: right;
 }
 
 .section > p{
     color: white;
-    font-weight: bolder;
+    font-weight: 500;
     font-size: 1em;
+    line-height: 25px;
 }
 
-.section .mai_merko_sab_ata_hai_mai_expert_hu_img{
-    width: 50%;
-    height: 50%;
+.ImageTesti{
+    margin-top: 2%;
+    margin-left: 50%;
+}
+
+.section img{
+    width: 30%;
+    border-radius: 10px;
+    margin-left: 3%;
+}
+
+#textcolor{
+    color: #2BD4DF;
+    font-weight: 700;
 }
 
 .heirarchy {
     justify-content: center;
+}
+
+@media only screen and (max-width: 1170px) {
+    .section:nth-child(4){
+        margin-top: 30%;
+    }
 }
