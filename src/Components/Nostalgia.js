@@ -253,10 +253,10 @@ function Nostalgia() {
             </p>
         </div>
         <div className='section'>
-            <h2>Cultural Fests</h2>
+            <h2>Cultural Fest</h2>
             <br></br>
             <p>
-                A day to remember :')
+                A day (mostly night) to remember :')
                 <br/><br/>
                 The only thing that you look forward to in the entire semester, FEST TIME. Even though there are 2 fests, everyone waits the entire year for just one of them, ODYSSEY, the cultural fest.
             </p>
@@ -288,7 +288,7 @@ function Nostalgia() {
                         <li>It’s all very open and friendly, Freshers even get an opportunity to organize their own event.</li>
                     </ul>
                 </p>
-            </p> */} */
+            </p> */} 
             
             {/* <p className='heirarchy'>
                 Heirarchy
