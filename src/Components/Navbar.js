@@ -56,14 +56,14 @@ function Navbar() {
         </Button>
         <Button  id='btn' 
           component={Link} 
-          to={"/tools"}
+          to={"/CommingSoonTools"}
           // startIcon={<ToolsIcon style={{ padding: "10%" }}/>}
           >
           Tools
         </Button>
         <Button  id='btn' 
           component={Link} 
-          to={"/supplies"} 
+          to={"/CommingSoonSupplies"} 
           // startIcon={<SuppliesIcon />}
           endIcon = {<FiberNewIcon style={{ color: "#1EB0F6", padding: "2%", transform: "scale(1.3)" }}/>}>
           Supplies
