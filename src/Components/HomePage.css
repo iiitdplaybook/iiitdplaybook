@@ -28,7 +28,7 @@ canvas {
     /* background-image: url('../Assets/landscape.jpg'); */
     height: 100vh;
     margin-top: -5%;
-    background-color: #e6e6e6;
+    background-color: white;
     z-index: 1;
 }
 
@@ -44,7 +44,7 @@ canvas {
 } */
 
 .welcome_text {
-    color: white;
+    color: #1EB0F6;
     font-size: 6em;
     z-index: 5;
 }
@@ -216,8 +216,22 @@ canvas {
     
     .vertical-timeline-element:nth-child(5) .containerBox{
         /* height: 70vh;   */
-        margin-top: -122%;
+        margin-top: -132%;
         /* background: red; */
+    }
+
+    .vertical-timeline-element:nth-child(5) .imgContainer{
+        max-width: 80%;
+        margin-left: 7%;
+        margin-top: 0%;
+        margin-bottom: 2%;
+    } 
+
+    .timeline_section .nostalgia_button {
+        background-color: whitesmoke;
+        position: relative;
+        left: 15%;
+        bottom: 37%;
     }
 
     .vertical-timeline-element:nth-child(4) .imgContainer{
