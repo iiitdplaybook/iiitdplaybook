@@ -37,9 +37,10 @@ const Avatar = styled.div`
   height: ${(props) => props.scale * 30}px;
   overflow: hidden;
   flex-shrink: 0;
-  margin-right: ${(props) => props.scale * 35}px;
+  // background: red;
+  margin-right: ${(props) => props.scale * 10}px;
   img {
-    max-width: 100%;
+    width: 100%;
   }
 `;
 
@@ -57,11 +58,12 @@ const Content = styled.div`
 
 const Name = styled.div`
   p {
-    margin: 8px;
-    margin-left: -12px;
+    margin: 6px;
+    // margin-left: -12px;
     color: red;
+    // background: black;
     font-family: Poppins, sans-serif;
-    font-size: ${(props) => props.scale * 16}px !important;
+    font-size: ${(props) => props.scale * 18}px !important;
     line-height: ${(props) => props.scale * 14}px;
     font-weight: 100;
     text-align: left;

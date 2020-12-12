@@ -12,10 +12,8 @@
     "firebase": "^8.1.1",
     "framer-motion": "^2.9.5",
     "lodash": "^4.17.20",
-
     "material-ui-icons": "^1.0.0-beta.36",
     "node-sass": "^5.0.0",
-
     "react": "^17.0.1",
     "react-card-flip": "^1.0.11",
     "react-card-scroll": "^2.2.4",

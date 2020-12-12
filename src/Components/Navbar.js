@@ -8,6 +8,7 @@ import { useStateValue } from "../StateProvider";
 import { Link } from "react-router-dom";
 import logo from "../Assets/Logo.png";
 import exploreLogo from "../Assets/explore_logo.svg";
+import Supplies from "./Supplies/Supplies";
 
 // Icons
 import ExploreIcon from '@material-ui/icons/GridOn';
@@ -21,8 +22,6 @@ import { blue } from "@material-ui/core/colors";
 // import playbook_logo from '../Assets/playbook_logo_blue.svg';
 
 //fonts
-
-
 
 function Navbar() {
   const [{ user }] = useStateValue();
@@ -43,37 +42,36 @@ function Navbar() {
   return (
     <div className="navbar">
       <div className="navbar__left">
-
-        <Link to="/">
-          <img src={playbook_logo} alt="Student Playbook Logo" />
+      <Link to="/" style={{ textDecoration: "none" }}>
+        <img id="logo" src={logo} alt="Student Playbook"/>
         </Link>
       </div>
       <div className="navbar__right">
-        <Button 
+        <Button  id='btn'  
           component={Link} 
           to={"/explore"}
-          startIcon={<ExploreIcon />}>
+          // startIcon={<ExploreIcon style={{ padding: "10%" }}/>}
+          >
           Explore
         </Button>
-        <Button 
+        <Button  id='btn' 
           component={Link} 
           to={"/tools"}
-          startIcon={<ToolsIcon />}>
+          // startIcon={<ToolsIcon style={{ padding: "10%" }}/>}
+          >
           Tools
         </Button>
-        <Button 
+        <Button  id='btn' 
           component={Link} 
-          to={"/friends"} 
-          startIcon={<SuppliesIcon />}
-          endIcon = {<FiberNewIcon style={{ color: blue[500] }}/>}>
+          to={"/supplies"} 
+          // startIcon={<SuppliesIcon />}
+          endIcon = {<FiberNewIcon style={{ color: "#1EB0F6", padding: "2%", transform: "scale(1.3)" }}/>}>
           Supplies
         </Button>
-
-        <Link to="/" style={{ textDecoration: "none" }}>
-        <img id="logo" src={logo} />
-        </Link>
+        <Button onClick={signOut}>Sign out</Button>
+        <Avatar id='pic' src={user?.photoURL} alt="User" />
       </div>
-      <div className="navbar__right">
+      {/* <div className="navbar__right">
         <Button id='btn' component={Link} to={"/explore"}>
         <img id="navIcon" src={exploreLogo}></img>
         Explore
@@ -87,7 +85,7 @@ function Navbar() {
 
         <Button onClick={signOut}>Sign out</Button>
         <Avatar id='pic' src={user?.photoURL} alt="User" />
-      </div>
+      </div> */}
     </div>
   );
 }

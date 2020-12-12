@@ -1,27 +1,22 @@
 /** @format */
-
 import "./Explore.css";
 import React, { useState } from "react";
 import {
   Button,
+  GridList,
+  GridListTile,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import ExploreCards from "./ExploreCards/ExploreCards"
-import imageTimeManagement from "../Assets/SVG_for_cards/teamwork.svg";
+import itemsList from "./items"
 
 function Explore() {
     const [clickedButton, setClickedButton] = useState(1);
 
     const useStyles = makeStyles({
-        root: {
-            width: 200,
-            marginLeft: 50,
-        },
-        media: {
-            height: 250,
+        root:{
+            height:280
         },
     });
-
 
     const buttonStyles = makeStyles({
         root: {
@@ -38,96 +33,13 @@ function Explore() {
         },
     });
     const buttonClass = buttonStyles();
-
-    // const classes = useStyles();
-
-    var exploreCardsInfo1 = {
-        "gradientColor_1":"#2FB8FF",
-        "gradientColor_2":"#95E8DC",
-        "title":"\nTime Management",
-        "n_testimonies":6,
-        "reading_time":3,
-        "image":imageTimeManagement,
-    };
-
-    var exploreCardsInfo2 = {
-        "gradientColor_1":"#2FB8FF",
-        "gradientColor_2":"#95E8DC",
-        "title":"Not Time Management",
-        "n_testimonies":6,
-        "reading_time":3,
-        "image":imageTimeManagement,
-    };
-
-    var exploreCardsInfo3 = {
-        "gradientColor_1":"#2FB8FF",
-        "gradientColor_2":"#95E8DC",
-        "title":"\n\nHello",
-        "n_testimonies":6,
-        "reading_time":3,
-        "image":imageTimeManagement,
-    };
-
-    const items = [];
-    const items2 = [];
-    const items3 = [];
-
-    for (let index = 0; index < 3; index++) {
-        items.push(
-            ExploreCards(exploreCardsInfo1)
-        );
-    }
-    for (let index = 0; index < 2; index++) {
-        items2.push(
-            ExploreCards(exploreCardsInfo2)
-        );
-    }
-    for (let index = 0; index < 4; index++) {
-        items3.push(
-            ExploreCards(exploreCardsInfo3)
-        );
-    }
-    
-
-    const classes = useStyles();
-
-    const items = [];
-    for (let index = 0; index < 5; index++) {
-        items.push(
-            <Card className={classes.root}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image={pabitra}
-                        title="Contemplative Reptile"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Pabitra
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image={pabitra}
-                        title="Contemplative Reptile"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Pabitra
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
-        );
-    }
-
+    const gridClass = useStyles();
 
     const changeS = (s) => {
         setClickedButton(s);
     };
+
+    const itemCards = itemsList();
 
     return (
         <div className="explore">
@@ -169,46 +81,23 @@ function Explore() {
 
             <div className="explore__body">
                 {clickedButton === 1 ? (
-
                     <div className="cardsDiv">
-                        {items}
+                        {itemCards["allCards"]}
                     </div>
+                    
                 ) : clickedButton === 2 ? (
                     <div className="cardsDiv">
-                        {items2}
+                        {itemCards["recommendedCards"]}
                     </div>
                 ) : (
                     <div className="cardsDiv">
-                        {items3}
+                        {itemCards["favCards"]}
                     </div>
                 )}
                 
-
-
-                    <p>Pabitra</p>
-                ) : clickedButton === 2 ? (
-                    <p>Yashwin</p>
-                ) : (
-                    <p>Kshitij</p>
-                )}
-                {items}
-
             </div>
         </div>
-    );
-  }
+    )
+}
 
-
-//   return (
-//     <div className="explore">
-//       <div className="explore__buttons">
-//         <Button>Favourites</Button>
-//         <Button>Recommended</Button>
-//         <Button>All</Button>
-//       </div>
-//       <div className="explore__cards">{items}</div>
-//     </div>
-//   );
-
-
-export default Explore;
+export default Explore
