@@ -165,10 +165,19 @@ a {
 
 @media only screen and (max-width: 500px) {
     
-.login__testimonials{
+    .login__testimonials{
         position: fixed;
         bottom: 3%;
         left:38%;
+    }
+
+    .login__creators{    
+        display: none;
+    }
+
+    .login__action{
+        position: relative;
+        top: 30%;
     }
   }
   
