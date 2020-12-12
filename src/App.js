@@ -13,11 +13,12 @@ import firebase from "firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import Explore from "./Components/Explore";
-
+import ComingSoonTools from "./Components/ComingSoon/ComingSoonTools";
+import ComingSoonSupplies from "./Components/ComingSoon/ComingSoonSupplies";
 import TimeManagement from "./Components/TimeManagement/TimeManagement";
 import Tools from "./Components/Tools/Tools";
 // import Nostalgia from "./Components/Nostalgia";
-import Cards from './Components/ExploreCards/ExploreCards';
+// import Cards from './Components/ExploreCards/ExploreCards';
 
 import Nostalgia from "./Components/Nostalgia";
 // import Supplies from "./Components/Supplies/Supplies";
@@ -57,10 +58,11 @@ function App() {
               <Route path="/supplies" component={Supplies} />
               <Route path="/nostalgia" component={Nostalgia} />
               <Route path="/friends" component={TalkingToFriendsSeniors} />
-              {/* <Route path="/test_cards" component={Cards} /> */}
               <Route path="/test" component={Testimonials} />
               <Route path="/timemanagement" component={TimeManagement}/>
               <Route path="/tools" component={Tools}/>
+              <Route path="/ComingSoonTools" component={ComingSoonTools}/>
+              <Route path="/ComingSoonSupplies" component={ComingSoonSupplies}/>
               <Route path="/">
                 <div className="app__body">
                   <HomePage />

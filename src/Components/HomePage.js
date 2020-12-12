@@ -150,10 +150,10 @@
                                 <h1 className="vertical-timeline-element-title">Defining Point</h1>
                                 <p>Finding your calling</p>
                                 <ul>
-                                <li>Ignore the future, deal with the present</li>
+                                <li>Live in the present</li>
                                 <li>Do not follow someone else’s dream</li>
                                 <li>Don’t confuse a job with a purpose</li>
-                                <li>Say yes to the things that intrigue you, instead of the ones that bore you.</li>
+                                <li>Say yes to the things that intrigue you.</li>
                                 </ul>
                                 <img className="imgContainer" src={imgDefine}/>  
                                 <div className="TestiContainer">
