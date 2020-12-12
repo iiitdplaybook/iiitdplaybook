@@ -1,13 +1,13 @@
 import React from "react";
 
-function CommingSoonSupplies(){
+function ComingSoonSupplies(){
     const description = "Supplies for college students";
     return(
         <div className='div'>
-            <h1 className='commingSoon'>Comming Soon</h1>
+            <h1 className='comingSoon'>Coming Soon</h1>
             <p className='description'>{description}</p>
         </div>
     );
 }
 
-export default CommingSoonSupplies;
+export default ComingSoonSupplies;

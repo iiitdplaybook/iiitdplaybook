@@ -13,8 +13,8 @@ import firebase from "firebase";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import Explore from "./Components/Explore";
-import CommingSoonTools from "./Components/ComingSoon/CommingSoonTools";
-import CommingSoonSupplies from "./Components/ComingSoon/CommingSoonSupplies";
+import ComingSoonTools from "./Components/ComingSoon/ComingSoonTools";
+import ComingSoonSupplies from "./Components/ComingSoon/ComingSoonSupplies";
 import TimeManagement from "./Components/TimeManagement/TimeManagement";
 import Tools from "./Components/Tools/Tools";
 // import Nostalgia from "./Components/Nostalgia";
@@ -61,8 +61,8 @@ function App() {
               <Route path="/test" component={Testimonials} />
               <Route path="/timemanagement" component={TimeManagement}/>
               <Route path="/tools" component={Tools}/>
-              <Route path="/CommingSoonTools" component={CommingSoonTools}/>
-              <Route path="/CommingSoonSupplies" component={CommingSoonSupplies}/>
+              <Route path="/ComingSoonTools" component={ComingSoonTools}/>
+              <Route path="/ComingSoonSupplies" component={ComingSoonSupplies}/>
               <Route path="/">
                 <div className="app__body">
                   <HomePage />
