@@ -166,6 +166,11 @@ canvas {
     letter-spacing: 3px;
 }
 
+.timeline_section .nostalgia_button:hover {
+    background-color: whitesmoke;
+    color: black;
+}
+
 .TestiContainer{
     width: 100%;
     /* overflow: hidden; */
