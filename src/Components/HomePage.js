@@ -13,6 +13,7 @@
     import Stars from './stars'
     import useScript from './useScript';
 
+    // import homeWallpaper from "../Assets/Home_wallpaper.png";
     import { Link } from "react-router-dom";
 
     // import colorScript from './color';
@@ -57,6 +58,7 @@
                     {/* <canvas id="c"></canvas>
                     <MyComponent></MyComponent> */}
                     <div className='section_1' >
+                        {/* <div id="particles-js"></div> */}
                         <h1 className='welcome_text'>Welcome!</h1>
                         <img className="imgHero" src={imgWelcome}/>                                
                     </div>

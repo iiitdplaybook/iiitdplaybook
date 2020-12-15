@@ -16,6 +16,7 @@ import FadeIn from "./FadeIn"
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import blob from '../Assets/blob.json';
 import userProfile from '../Assets/user.png';
+import { Link } from "react-router-dom";
 
 
 function Login() {
@@ -84,13 +85,13 @@ function Login() {
       
       <div className="login__action">
         <div className='login__heading'>
-          <h1>Hacking IIITD</h1>
+          <h1>Student Playbook</h1>
           <h5>For the students, by the students</h5>
         </div>
 
         <div className='login__buttons'>
-          <Button id="signIn" onClick={signIn}>Sign in with Google</Button>
-          <Button id="guest">Join as a Guest</Button>
+          <Button id="signIn" onClick={signIn}>Sign in with IIITD</Button>
+          <Button id="guest" component={Link} to={'/nostalgia'}>Join as a Guest</Button>
           {/* <Player
                 autoplay
                 loop
