@@ -49,10 +49,22 @@ function App() {
       {/* <img src="login_bg.jpeg" alt='Random Image'/> */}
       <Router>
         {!localStorage.getItem("isSignedIn") ? (
-          <Login />
+          <Switch>
+            <Route path="/supplies">
+              <Navbar loggedIn={false}/>
+              <Supplies/>
+              <Footer />
+            </Route>
+            <Route path="/nostalgia">
+              <Navbar loggedIn={false}/>
+              <Nostalgia/>
+              <Footer />
+            </Route>
+            <Route path="/" component={Login} />
+          </Switch>
         ) : (
           <div>
-            <Navbar />
+            <Navbar loggedIn={true}/>
             <Switch>
               <Route path="/explore" component={Explore} />
               <Route path="/supplies" component={Supplies} />

@@ -23,7 +23,7 @@ import { blue } from "@material-ui/core/colors";
 
 //fonts
 
-function Navbar() {
+function Navbar({loggedIn}) {
   const [{ user }] = useStateValue();
 
   const signOut = () => {
@@ -68,7 +68,7 @@ function Navbar() {
           endIcon = {<FiberNewIcon style={{ color: "#1EB0F6", padding: "2%", transform: "scale(1.3)" }}/>}>
           Supplies
         </Button>
-        <Button onClick={signOut}>Sign out</Button>
+        {loggedIn? (<Button onClick={signOut}>Sign out</Button>) : (<Button component={Link} to={'/'}>Sign in</Button>)}
         <Avatar id='pic' src={user?.photoURL} alt="User" />
       </div>
       {/* <div className="navbar__right">
