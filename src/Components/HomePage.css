@@ -1,3 +1,6 @@
+
+/* @import 'react-vertical-timeline-component/style.min.css'; */
+
 @import 'react-vertical-timeline-component/style.min.css';
 body{
     background: white;
@@ -23,10 +26,19 @@ canvas {
     align-items: center;
     flex-direction: column;
     /* background-image: url('../Assets/landscape.jpg'); */
-    height: 100vh;
+    height: 110vh;
     margin-top: -5%;
-    background-color: #e6e6e6;
+    background-image: url("../Assets/homewallpaper.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: white; */
     z-index: 1;
+}
+
+.imgHero{
+    max-width: 40%;
+    align-self: center;
+    margin-bottom: -4%;
 }
 
 /* .homePage_img {
@@ -40,7 +52,12 @@ canvas {
     z-index: 5;
 }
 
-
+#particles-js {
+    z-index: 500;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
 /* .vertical-timeline{
     background-color: white;
 } */
@@ -54,8 +71,8 @@ canvas {
 /* Line color change */
 .vertical-timeline::before{
     background: linear-gradient(#FFAFBC, #FFC2A1, #FBD69A , #034C90, #004e92, #000428);
-    top: 2%;
-    height: 80%;
+    top: 1%;
+    height: 83%;
     bottom: 15%;
 }
 
@@ -100,7 +117,45 @@ canvas {
 .containerBox{
     /* height: 70vh;   */
     /* margin-top: -15%; */
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
+}
+
+.vertical-timeline-element:nth-child(2) .containerBox{
+    /* height: 70vh;   */
+    margin-top: -14%;
+    /* background: red; */
+}
+
+.vertical-timeline-element:nth-child(5) .containerBox{
+    /* height: 70vh;   */
+    margin-top: -35%;
+    /* background: red; */
+}
+
+.imgContainer{
+    max-width: 40%;
+    align-self: center;
+    margin: 4%;
+}
+
+.vertical-timeline-element:nth-child(4) .imgContainer{
+    max-width: 30%;
+    margin-left: 50%;
+    margin-top: -15%;
+    margin-bottom: 2%;
+} 
+
+.vertical-timeline-element:nth-child(5) .imgContainer{
+    max-width: 50%;
+    margin-left: 45%;
+    margin-top: -10%;
+    margin-bottom: 1%;
+} 
+
+#firstSteps{
+    max-width: 100%;
 }
 
 .contentBox{
@@ -108,9 +163,21 @@ canvas {
 }
 
 .timeline_section .nostalgia_button {
-    background-color: gray;
+    background-color: whitesmoke;
+    position: absolute;
+    left: 2%;
+    bottom: 47%;
+    opacity: 1;
+    font-weight: 800;
     /* border-color: white; */
-    color: white;
+    color: black;
+    padding-left: 1%;
+    letter-spacing: 3px;
+}
+
+.timeline_section .nostalgia_button:hover {
+    background-color: whitesmoke;
+    color: black;
 }
 
 .TestiContainer{
@@ -130,7 +197,7 @@ canvas {
 
     .vertical-timeline::before{
         background: linear-gradient(#FFAFBC, #FFC2A1, #FBD69A, #004e92, #000428);
-        height: 82%;
+        height: 83%;
     }
 
     .textCard{
@@ -146,4 +213,40 @@ canvas {
         z-index: inherit;
       }
     
+    .imgContainer{
+        max-width: 100%;
+    }
+
+    .vertical-timeline-element:nth-child(2) .containerBox{
+        /* height: 70vh;   */
+        margin-top: -60%;
+        /* background: red; */
+    }
+    
+    .vertical-timeline-element:nth-child(5) .containerBox{
+        /* height: 70vh;   */
+        margin-top: -132%;
+        /* background: red; */
+    }
+
+    .vertical-timeline-element:nth-child(5) .imgContainer{
+        max-width: 80%;
+        margin-left: 7%;
+        margin-top: 0%;
+        margin-bottom: 2%;
+    } 
+
+    .timeline_section .nostalgia_button {
+        background-color: whitesmoke;
+        position: relative;
+        left: 15%;
+        bottom: 37%;
+    }
+
+    .vertical-timeline-element:nth-child(4) .imgContainer{
+        max-width: 80%;
+        margin-left: 7%;
+        margin-top: 0%;
+        margin-bottom: 2%;
+    } 
   }

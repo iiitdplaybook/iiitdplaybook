@@ -1,27 +1,20 @@
 /** @format */
-
 import "./Explore.css";
 import React, { useState } from "react";
 import {
   Button,
-  Card,
-  CardContent,
-  Typography,
-  CardActionArea,
-  CardMedia,
+  GridList,
+  GridListTile,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import pabitra from "../Assets/pabitra.jpeg";
+import itemsList from "./items"
 
 function Explore() {
     const [clickedButton, setClickedButton] = useState(1);
+
     const useStyles = makeStyles({
-        root: {
-            width: 200,
-            marginLeft: 50,
-        },
-        media: {
-            height: 250,
+        root:{
+            height:280
         },
     });
 
@@ -40,44 +33,13 @@ function Explore() {
         },
     });
     const buttonClass = buttonStyles();
-    const classes = useStyles();
-
-    const items = [];
-    for (let index = 0; index < 5; index++) {
-        items.push(
-            <Card className={classes.root}>
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image={pabitra}
-                        title="Contemplative Reptile"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Pabitra
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-
-                <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image={pabitra}
-                        title="Contemplative Reptile"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Pabitra
-                        </Typography>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
-        );
-    }
+    const gridClass = useStyles();
 
     const changeS = (s) => {
         setClickedButton(s);
     };
+
+    const itemCards = itemsList();
 
     return (
         <div className="explore">
@@ -119,16 +81,23 @@ function Explore() {
 
             <div className="explore__body">
                 {clickedButton === 1 ? (
-                    <p>Pabitra</p>
+                    <div className="cardsDiv">
+                        {itemCards["allCards"]}
+                    </div>
+                    
                 ) : clickedButton === 2 ? (
-                    <p>Yashwin</p>
+                    <div className="cardsDiv">
+                        {itemCards["recommendedCards"]}
+                    </div>
                 ) : (
-                    <p>Kshitij</p>
+                    <div className="cardsDiv">
+                        {itemCards["favCards"]}
+                    </div>
                 )}
-                {items}
+                
             </div>
         </div>
-    );
-  }
+    )
+}
 
-export default Explore;
+export default Explore

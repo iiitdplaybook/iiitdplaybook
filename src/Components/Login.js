@@ -15,34 +15,38 @@ import Testimonials from "./TestimonialsName";
 import FadeIn from "./FadeIn"
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import blob from '../Assets/blob.json';
+import userProfile from '../Assets/user.png';
+import { Link } from "react-router-dom";
 
 
 function Login() {
   const contri = [
-    { pic: yashwin, text: "Yashwin" },
-    { pic: kshitij, text: "Kshitij" },
-    { pic: pabitra, text: "Pabitra" },
-    { pic: rahul, text: "Rahul" },
-    { pic: yashwin, text: "Yashwin" },
-    { pic: kshitij, text: "Kshitij" },
-    { pic: pabitra, text: "Pabitra" },
-    { pic: rahul, text: "Rahul" },
-    { pic: pabitra, text: "Pabitra" },
-    { pic: rahul, text: "Rahul" },
-    { pic: pabitra, text: "Pabitra" },
-    { pic: rahul, text: "Rahul" },
-    { pic: yashwin, text: "Yashwin" },
-    { pic: kshitij, text: "Kshitij" },
-    { pic: pabitra, text: "Pabitra" },
-    { pic: rahul, text: "Rahul" },
-    { pic: yashwin, text: "Yashwin" },
-    { pic: kshitij, text: "Kshitij" },
-    { pic: pabitra, text: "Pabitra" },
-    { pic: rahul, text: "Rahul" },
-    { pic: pabitra, text: "Pabitra" },
-    { pic: rahul, text: "Rahul" },
-    { pic: pabitra, text: "Pabitra" },
-    { pic: rahul, text: "Rahul" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+    { pic: userProfile, text: "Name" },
+   
   ];
 
   const vel2 = 25;
@@ -74,55 +78,59 @@ function Login() {
 
   return (
     <div className="login">
-      <img id="logo" src={logo} />
       
-      <div className='login__heading'>
-        <h1>Hacking IIITD</h1>
-        <h5>For the students, by the students</h5>
+      <div className="login__logo">
+        <img id="logo" src={logo} />
+      </div>
+      
+      <div className="login__action">
+        <div className='login__heading'>
+          <h1>Student Playbook</h1>
+          <h5>For the students, by the students</h5>
+        </div>
+
+        <div className='login__buttons'>
+          <Button id="signIn" onClick={signIn}>Sign in with IIITD</Button>
+          <Button id="guest" component={Link} to={'/nostalgia'}>Join as a Guest</Button>
+          {/* <Player
+                autoplay
+                loop
+                src={blob}
+                style={{ height: '300px', width: '300px', zIndex: '-1' }}
+              >
+              </Player> */}
+        </div>
       </div>
 
-    
-
-      <div className='login__buttons'>
-        <Button id="signIn" onClick={signIn}>Sign in with Google</Button>
-        <Button id="guest">Join as a Guest</Button>
-        {/* <Player
-  autoplay
-  loop
-  src={blob}
-  style={{ height: '300px', width: '300px', zIndex: '-1' }}
->
-</Player> */}
-      </div>
-      <div className='nameList'>
+      <div className='login__nameList'>
       <FadeIn delay={350} duration={1550}>
       <div className='login__creators'>
       <h5>Creators</h5>
         <div className='testi'>
           <div className='creatorCard'>
             <img src={kshitij}/>
-            <p>Kshitij Bhagwaan</p>
-            <a class="fa fa-twitter fa-lg" href="www.google.com"  target="_blank"></a>
+            <p>Kshitij Agrawal</p>
+            <a class="fa fa-linkedin fa-lg" href="https://www.linkedin.com/in/kshitij16/"  target="_blank"></a>
           </div>
           
           <div className='creatorCard'>
             <img src={pabitra}/>
-            <p>Pabitra Bhakt</p>
-            <a class="fa fa-linkedin fa-lg" href="www.google.com"  target="_blank"></a>
+            <p>Pabitra Bansal</p>
+            <a class="fa fa-linkedin fa-lg" href="https://www.linkedin.com/in/pabitra-bansal-06039616a/"  target="_blank"></a>
           </div>
           
           
           <div className='creatorCard'>
             <img src={rahul}/>
-            <p>Rahul Bhakt</p>
-            <a class="fa fa-twitter fa-lg" href="www.google.com"  target="_blank"></a>
+            <p>Rahul Singh</p>
+            <a class="fa fa-linkedin fa-lg" href="https://www.linkedin.com/in/rahul-singh-7aa84697/"  target="_blank"></a>
           </div>
           
           
           <div className='creatorCard'>
             <img src={yashwin}/>
-            <p>Yashwin Bhakt</p>
-            <a class="fa fa-twitter fa-lg" href="www.google.com"  target="_blank"></a>
+            <p>Yashwin Agrawal</p>
+            <a class="fa fa-linkedin fa-lg" href="https://www.linkedin.com/in/yashwin-agrawal-6b28bb176/"  target="_blank"></a>
           </div>
           
         </div>
