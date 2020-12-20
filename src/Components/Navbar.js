@@ -91,6 +91,7 @@ function Navbar({loggedIn, colorStatus}) {
         </Button>
         {loggedIn? (<Button onClick={signOut} color='primary'>Sign out</Button>) : (<Button component={Link} color='primary' to={'/'}>Sign in</Button>)}
         <Avatar id='pic' src={user?.photoURL} alt="User" />
+        {/* <p>{user?.name}</p> */}
         </ThemeProvider>
       </div>
       {/* <div className="navbar__right">
