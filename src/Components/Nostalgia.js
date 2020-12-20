@@ -31,6 +31,7 @@ import glow2 from "../Assets/NostalgiaPics/glow2.gif";
 import canteen1 from "../Assets/NostalgiaPics/canteen.PNG";
 import canteen2 from "../Assets/NostalgiaPics/canteen_2.jpg";
 import imgInduction from "../Assets/NostalgiaPics/induction.PNG";
+import Navbar from "./Navbar";
 
 function Nostalgia() {
   const [{ user, isSignedIn, userName }] = useStateValue();
@@ -53,7 +54,10 @@ function Nostalgia() {
     const db = "counterclockwise";
 
   return (
+    <div>
+    <Navbar loggedIn={false} colorStatus={false}/>
     <div id="nostalgiaCont">
+        
         <div id="stars_container">
         <Stars/>
         </div>
@@ -301,6 +305,7 @@ function Nostalgia() {
                 <p>Ngl, tum kaam karoge toh mazaa aayega</p>
             </p> */}
         </div>
+    </div>
     </div>
   )
 }

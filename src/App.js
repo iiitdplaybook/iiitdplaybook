@@ -56,7 +56,7 @@ function App() {
               <Footer />
             </Route>
             <Route path="/nostalgia">
-              {/* <Navbar loggedIn={false}/> */}
+              {/* <Navbar loggedIn={false} colorStatus={false}/> */}
               <Nostalgia/>
               <Footer />
             </Route>

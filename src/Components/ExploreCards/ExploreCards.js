@@ -7,7 +7,7 @@ import image_svg from "../../Assets/SVG_for_cards/teamwork.svg";
 
 function ExploreCards(exploreCardInfo){
     const cardHeight = 280
-    const cardWidth = cardHeight*(2.1/3);
+    const cardWidth = cardHeight*(2.4/3);
 
     var gradientColor_1;
     var gradientColor_2;
@@ -56,8 +56,9 @@ function ExploreCards(exploreCardInfo){
         },
         media: {
             maxWidth:cardWidth,
-            minHeight:100,
+            minHeight:120,
             margin: '10%',
+            marginBottom: '0%',            
         },
         title: {
             fontSize: 20,
@@ -70,6 +71,7 @@ function ExploreCards(exploreCardInfo){
             fontSize: 12,
             textAlign: "center",
             margin: "5%",
+            color: "#e6e6e6"
         },
     });
     const classes = useStyles();

@@ -1,5 +1,14 @@
 // import React from "react";
-import imageTimeManagement from "../Assets/SVG_for_cards/teamwork.svg";
+import imageTimeManagement from "../Assets/SVG_for_cards/timeManagement.svg";
+import imageNostalgia from "../Assets/SVG_for_cards/nostalgia.svg";
+import imageOnlinesem from "../Assets/SVG_for_cards/onlineSem.svg";
+import imagePlacements from "../Assets/SVG_for_cards/placements.svg";
+import imageClubs from "../Assets/SVG_for_cards/clubs.svg";
+import imageProfproject from "../Assets/SVG_for_cards/teamwork.svg";
+import imageResources from "../Assets/SVG_for_cards/resources2.svg";
+import imageQuery from "../Assets/SVG_for_cards/query.svg";
+import imageNetwork from "../Assets/SVG_for_cards/network.svg";
+
 import ExploreCards from "./ExploreCards/ExploreCards"
 
 function items(){
@@ -29,7 +38,7 @@ function items(){
         "title":"\nNostalgia",
         "n_testimonies":6,
         "reading_time":10,
-        "image":imageTimeManagement,
+        "image":imageNostalgia,
         "pathLink":"nostalgia",
     },{
         "gradientColor_1":color3,
@@ -45,7 +54,7 @@ function items(){
         "title":"\nOnline Sem Tips",
         "n_testimonies":6,
         "reading_time":3,
-        "image":imageTimeManagement,
+        "image":imageOnlinesem,
         "pathLink":"explore",
     }, {
         "gradientColor_1":color7,
@@ -53,7 +62,7 @@ function items(){
         "title":"\nPlacements",
         "n_testimonies":6,
         "reading_time":3,
-        "image":imageTimeManagement,
+        "image":imagePlacements,
         "pathLink":"explore",
     }, {
         "gradientColor_1":color7,
@@ -61,7 +70,7 @@ function items(){
         "title":"\nClubs",
         "n_testimonies":6,
         "reading_time":3,
-        "image":imageTimeManagement,
+        "image":imageClubs,
         "pathLink":"explore",
     }, {
         "gradientColor_1":color7,
@@ -69,7 +78,7 @@ function items(){
         "title":"Projects With Professors",
         "n_testimonies":6,
         "reading_time":3,
-        "image":imageTimeManagement,
+        "image":imageProfproject,
         "pathLink":"explore",
     }, {
         "gradientColor_1":color7,
@@ -77,15 +86,15 @@ function items(){
         "title":"Good College Resources",
         "n_testimonies":6,
         "reading_time":3,
-        "image":imageTimeManagement,
+        "image":imageResources,
         "pathLink":"explore",
     }, {
         "gradientColor_1":color7,
         "gradientColor_2":color8,
-        "title":"Resolving Queries",
+        "title":"\nResolving Queries",
         "n_testimonies":6,
         "reading_time":3,
-        "image":imageTimeManagement,
+        "image":imageQuery,
         "pathLink":"explore",
     }, {
         "gradientColor_1":color7,
@@ -93,7 +102,7 @@ function items(){
         "title":"\nNetworking",
         "n_testimonies":6,
         "reading_time":3,
-        "image":imageTimeManagement,
+        "image":imageNetwork,
         "pathLink":"explore",
     }, {
         "gradientColor_1":color7,
