@@ -6,7 +6,8 @@ import { auth } from "../fire";
 import { Avatar, Button } from "@material-ui/core";
 import { useStateValue } from "../StateProvider";
 import { Link } from "react-router-dom";
-import logo from "../Assets/Logo.png";
+import logoWhite from "../Assets/SVG/Asset1.svg";
+import logoColored from "../Assets/SVG/Asset2.svg";
 import exploreLogo from "../Assets/explore_logo.svg";
 import Supplies from "./Supplies/Supplies";
 
@@ -23,7 +24,7 @@ import { blue } from "@material-ui/core/colors";
 
 //fonts
 
-function Navbar({loggedIn}) {
+function Navbar({loggedIn}, {colorStatus}) {
   const [{ user }] = useStateValue();
 
   const signOut = () => {
@@ -43,7 +44,7 @@ function Navbar({loggedIn}) {
     <div className="navbar">
       <div className="navbar__left">
       <Link to="/" style={{ textDecoration: "none" }}>
-        <img id="logo" src={logo} alt="Student Playbook"/>
+      {colorStatus? (<img id="logo" src={logoColored} alt="Student Playbook"/>) : (<img id="logo" src={logoWhite} alt="Student Playbook"/>)}
         </Link>
       </div>
       <div className="navbar__right">

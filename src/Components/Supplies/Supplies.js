@@ -12,7 +12,7 @@ import {
   CardMedia,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import wazzup from "../../Assets/wazzup.jpg";
+import wazzup from "../../Assets/Amazon/lamp1.jpg";
 import Iframe from 'react-iframe'
 import ProductCard from 'react-ui-cards'
 
@@ -47,10 +47,10 @@ function Supplies() {
     const [clickedButton, setClickedButton] = useState(1);
     const useStyles = makeStyles({
         root: {
-            background: "linear-gradient(90deg,#1EB0F6 6.32%, #2BD4DF 100%)",
+            background: "#fff",
             borderRadius: "5px",
-            width: 200,
-            marginLeft: 50,
+            width: 250,
+            marginLeft: 10,
 
         },
         media: {
@@ -86,8 +86,8 @@ function Supplies() {
                         title="Pabitra"
                     />
                     <CardContent>
-                        <Typography gutterBottom variant="h5" component="h2">
-                            Supply {index}
+                        <Typography gutterBottom variant="h6" component="h2">
+                        Rechargeable LED Touch Desk Lamp {index}
                         </Typography>
                     </CardContent>
                 </CardActionArea>

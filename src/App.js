@@ -51,12 +51,12 @@ function App() {
         {!localStorage.getItem("isSignedIn") ? (
           <Switch>
             <Route path="/supplies">
-              <Navbar loggedIn={false}/>
+              {/* <Navbar loggedIn={false}/> */}
               <Supplies/>
               <Footer />
             </Route>
             <Route path="/nostalgia">
-              <Navbar loggedIn={false}/>
+              {/* <Navbar loggedIn={false}/> */}
               <Nostalgia/>
               <Footer />
             </Route>
@@ -64,7 +64,7 @@ function App() {
           </Switch>
         ) : (
           <div>
-            <Navbar loggedIn={true}/>
+            {/* <Navbar loggedIn={true}/> */}
             <Switch>
               <Route path="/explore" component={Explore} />
               <Route path="/supplies" component={Supplies} />

@@ -3,7 +3,6 @@ import { useStateValue } from "../StateProvider";
 import "./Nostalgia.css";
 import Stars from "./stars";
 
-import happiness from "../Assets/happiness.png";
 import happiness_1 from "../Assets/NostalgiaPics/happiness_1.jpg";
 import happiness_2 from "../Assets/NostalgiaPics/happiness_2.jpg";
 import happiness_3 from "../Assets/NostalgiaPics/happiness_3.jpg";

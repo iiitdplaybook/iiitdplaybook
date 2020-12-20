@@ -9,6 +9,7 @@
     import 'react-vertical-timeline-component/style.min.css';
     import "./HomePage.css";
     import { Button } from '@material-ui/core';
+    import Navbar from "./Navbar";
     import Footer from './Footer'
     import Stars from './stars'
     import useScript from './useScript';
@@ -51,6 +52,7 @@
 
         return (
             <div className='homePage'>
+                <Navbar loggedIn={true} colorStatus={false}/>
                 <div className='section_0' >
                     {/* <img className='homePage_img' src={landscape}/> */}
                     {/* <h1 className='welcome_text'>Welcome!</h1> */}
