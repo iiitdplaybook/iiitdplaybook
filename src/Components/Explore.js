@@ -8,6 +8,7 @@ import {
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import itemsList from "./items"
+import Navbar from "./Navbar";
 
 function Explore() {
     const [clickedButton, setClickedButton] = useState(1);
@@ -43,6 +44,7 @@ function Explore() {
 
     return (
         <div className="explore">
+            <Navbar loggedIn={true} colorStatus={true}/>
             <div className="explore__button">
                 <Button
                     onClick={() => changeS(1)}

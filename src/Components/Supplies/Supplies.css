@@ -16,3 +16,7 @@
     justify-content: center;
     transition: ease-in-out .2s,
 }
+
+.MuiCardMedia-root{
+    background-size: contain !important;    
+}

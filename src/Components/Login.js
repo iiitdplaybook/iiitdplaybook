@@ -90,7 +90,7 @@ function Login() {
         </div>
 
         <div className='login__buttons'>
-          <Button id="signIn" onClick={signIn}>Sign in with IIITD</Button>
+          <Button id="signIn" onClick={signIn}>Sign in with IIITD Mail</Button>
           <Button id="guest" component={Link} to={'/nostalgia'}>Join as a Guest</Button>
           {/* <Player
                 autoplay
