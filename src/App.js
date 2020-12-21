@@ -40,12 +40,14 @@ function App() {
           type: "SET_USER",
           user: authUser,
           isSignedIn: true,
+          userName: authUser.displayName,
         });
       } else {
         dispatch({
           type: "SET_USER",
           user: null,
           isSignedIn: false,
+          userName: "",
         });
       }
     });

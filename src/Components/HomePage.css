@@ -27,7 +27,7 @@ canvas {
     flex-direction: column;
     /* background-image: url('../Assets/landscape.jpg'); */
     height: 110vh;
-    margin-top: -5%;
+    margin-top: -15vh;
     background-image: url("../Assets/homewallpaper.svg");
     background-repeat: no-repeat;
     background-size: cover;

@@ -1,6 +1,6 @@
 #nostalgiaCont{
     background: linear-gradient(#000428, #00010B);
-    margin-top: -10%;
+    margin-top: -15vh;
     padding-bottom: 4%;
 }
 
@@ -138,6 +138,10 @@
 
 @media only screen and (max-width: 1170px) {
     
+    #nostalgiaCont{
+        /* margin-top: -25%; */
+    }
+
     .section{
         padding: 4%;
     }

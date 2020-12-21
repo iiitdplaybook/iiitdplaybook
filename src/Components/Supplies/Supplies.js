@@ -181,28 +181,28 @@ function Supplies() {
             </div>
             <div className="explore__body">
                 {clickedButton === 1 ? (
-                    <div className="cardsDiv">
+                    <div className="cardsDiv_supply">
                         {itemCards["allCards"]}
                     </div>
                     
                 ) : clickedButton === 2 ? (
-                    <div className="cardsDiv">
+                    <div className="cardsDiv_supply">
                         {itemCards["stationaryCards"]}
                     </div>
                 ) : clickedButton === 3 ? (
-                    <div className="cardsDiv">
+                    <div className="cardsDiv_supply">
                         {itemCards["laptopsCards"]}
                     </div>
                 ) : clickedButton === 4 ? (
-                    <div className="cardsDiv">
+                    <div className="cardsDiv_supply">
                         {itemCards["techotherCards"]}
                     </div>
                 ) : clickedButton === 5 ? (
-                    <div className="cardsDiv">
+                    <div className="cardsDiv_supply">
                         {itemCards["roomCards"]}
                     </div>
                 ) : (
-                    <div className="cardsDiv">
+                    <div className="cardsDiv_supply">
                         {itemCards["otherCards"]}
                     </div>
                 )}

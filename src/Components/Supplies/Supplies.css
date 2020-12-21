@@ -20,3 +20,14 @@
 .MuiCardMedia-root{
     background-size: contain !important;    
 }
+
+.cardsDiv_supply{
+    display: grid;
+    grid-gap: 5px;
+    grid-row-gap: 40px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+    grid-template-rows: auto;
+    grid-auto-rows: 300px !important;
+    justify-items: center;
+}
