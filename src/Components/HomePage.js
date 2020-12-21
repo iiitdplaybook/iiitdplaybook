@@ -9,6 +9,7 @@
     import 'react-vertical-timeline-component/style.min.css';
     import "./HomePage.css";
     import { Button } from '@material-ui/core';
+    import Navbar from "./Navbar";
     import Footer from './Footer'
     import Stars from './stars'
     import useScript from './useScript';
@@ -51,6 +52,7 @@
 
         return (
             <div className='homePage'>
+                <Navbar loggedIn={true} colorStatus={false}/>
                 <div className='section_0' >
                     {/* <img className='homePage_img' src={landscape}/> */}
                     {/* <h1 className='welcome_text'>Welcome!</h1> */}
@@ -59,8 +61,9 @@
                     <MyComponent></MyComponent> */}
                     <div className='section_1' >
                         {/* <div id="particles-js"></div> */}
-                        <h1 className='welcome_text'>Welcome!</h1>
-                        <img className="imgHero" src={imgWelcome}/>                                
+                        <h1 className='welcome_text'>Hello (name)</h1>
+                        <h4 style={{textAlign: 'center', marginLeft: '20%', marginRight: '20%', color: '#e6e6e6'}}>Welcome to the only guide to hack college. The playbook provides you with multiple strategies that other students use, their experiences and stories, tools you can use to help you along the way and much more!</h4>
+                        {/* <img className="imgHero" src={imgWelcome}/>                                 */}
                     </div>
                     
                     

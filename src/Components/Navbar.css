@@ -41,14 +41,19 @@
 #btn{
     font-family: 'Poppins', sans-serif;   
     margin-left: 15px;
-    font-weight: bold;
+    font-weight: 600;
     transition: ease-in-out .2s;
     vertical-align: middle;
+    
     /* filter: invert(); */
+    border-radius: 0px;
 }
 
 #btn:hover{
-    transform: scale(1.03);
+    transform: scale(1.05);
+    background: none;
+    border-bottom: 2px solid #fff;
+    border-radius: 0px;
 }
 
 #btn:nth-child(3){

@@ -1,6 +1,6 @@
 #nostalgiaCont{
     background: linear-gradient(#000428, #00010B);
-    /* margin-top: -10%; */
+    margin-top: -10%;
     padding-bottom: 4%;
 }
 
@@ -13,7 +13,7 @@
     text-align: center;
     align-content: center;
     color: white;
-    margin-top: -15%;
+    margin-top: -10%;
     font-size: 2.5em;
     font-weight: bolder;
 }
