@@ -1,4 +1,6 @@
-Website link: https://iiitd-student-playbook.firebaseapp.com/
+# Website link
+
+Check out our website: https://iiitd-student-playbook.firebaseapp.com/
 
 
 # Getting Started with Create React App
