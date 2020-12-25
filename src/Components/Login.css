@@ -1,7 +1,6 @@
 .login {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     background: white;
     /* background-image: url("../Assets/bg.jpg");
     background-size: cover; */
@@ -12,11 +11,20 @@
     margin-top: -1%;
 } */
 
+.login__action{
+    position: relative;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
 .login__heading {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    text-align: center;
 
     /* background: -webkit-linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%); */
     color:red;
@@ -27,7 +35,8 @@
     background-clip: text;
     text-fill-color: transparent;
 	background-size: 400% 400%;
-	animation: gradient 30s ease infinite;
+    animation: gradient 30s ease infinite;
+    font-size: 2em;
 }
 
 .login__buttons{
@@ -36,6 +45,12 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.login__nameList{
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
 }
 
 .login__creators{    
@@ -150,10 +165,19 @@ a {
 
 @media only screen and (max-width: 500px) {
     
-.login__testimonials{
+    .login__testimonials{
         position: fixed;
         bottom: 3%;
         left:38%;
+    }
+
+    .login__creators{    
+        display: none;
+    }
+
+    .login__action{
+        position: relative;
+        top: 30%;
     }
   }
   

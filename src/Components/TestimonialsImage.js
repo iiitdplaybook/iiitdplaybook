@@ -105,7 +105,6 @@ const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndP
         <Marquee
           key={key}
           velocity={vel}
-          direction={direc}
           minScale={0.7}
           onInit={onStartPerformance}
           onFinish={onEndPerformance}

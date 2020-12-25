@@ -1,0 +1,16 @@
+.div{
+    text-align: center;
+}
+
+.comingSoon{
+    font-family: "Poppins";
+    font-size: 10vw;
+    margin-top: 10vh;
+    margin-bottom: 5vh;
+}
+.description{
+    font-family: "Poppins";
+    font-size: 2vw;
+    margin-bottom: calc(25% - 10vh);
+
+}
