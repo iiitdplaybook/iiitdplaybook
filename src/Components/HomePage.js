@@ -27,6 +27,7 @@
     import imgExplore from '../Assets/PhasesPics/explore2.svg';
     import imgGraduate from '../Assets/PhasesPics/graduate2.svg';
     import imgNostalgia from '../Assets/PhasesPics/nostalgia2.svg';
+    import FadeIn from "./FadeIn"
 
     function HomePage() {
 
@@ -38,12 +39,12 @@
         //     }
 
             const portraits = [
-                { pic: userProfile, text: "Platea augue sociis erat nibh vestibulum tincidunt in. Nostra tortor nulla nam hendrerit class, aenean quam sagittis lectus pulvinar diam tristique suscipit semper torquent aptent ridiculus cras netus id vitae.", name: "username"},
-                { pic: userProfile, text: "Platea augue sociis erat nibh vestibulum tincidunt in. Nostra tortor nulla nam hendrerit class, aenean quam sagittis lectus pulvinar diam tristique suscipit semper torquent aptent ridiculus cras netus id vitae.", name: "username"},
-                { pic: userProfile, text: "Platea augue sociis erat nibh vestibulum tincidunt in. Nostra tortor nulla nam hendrerit class, aenean quam sagittis lectus pulvinar diam tristique suscipit semper torquent aptent ridiculus cras netus id vitae.", name: "username"},
-                { pic: userProfile, text: "Platea augue sociis erat nibh vestibulum tincidunt in. Nostra tortor nulla nam hendrerit class, aenean quam sagittis lectus pulvinar diam tristique suscipit semper torquent aptent ridiculus cras netus id vitae.", name: "username"},
-                { pic: userProfile, text: "Platea augue sociis erat nibh vestibulum tincidunt in. Nostra tortor nulla nam hendrerit class, aenean quam sagittis lectus pulvinar diam tristique suscipit semper torquent aptent ridiculus cras netus id vitae.", name: "username"},
-                { pic: userProfile, text: "Platea augue sociis erat nibh vestibulum tincidunt in. Nostra tortor nulla nam hendrerit class, aenean quam sagittis lectus pulvinar diam tristique suscipit semper torquent aptent ridiculus cras netus id vitae.", name: "username"},
+                { pic: userProfile, text: "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics", name: "Medhavi"},
+                { pic: userProfile, text: "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.", name: "Sonali"},
+                { pic: userProfile, text: "I was not there for induction, so all I have experienced is the horror of deadlines and evaluations.", name: "Anunay"},
+                { pic: userProfile, text: "Initial college life was very fun-filled. With lots of amazing activities in college and meeting new people and getting to know them was a really nice experience. 24*7 canteen and no hostel curfew timings are really great things that make you feel free.", name: "Shubhi"},
+                { pic: userProfile, text: "When I first entered college I felt intimidated and like I didn't belong here, with a little anxiety about how people would be. But it took absolutely no time to shatter all my doubts and find this wonderful set of people and a room filled with opportunities. It was a different kind of environment that I was looking forward to being in.", name: "Muskan"},
+                { pic: userProfile, text: ".", name: "username"},
                         
             ];
             
@@ -60,8 +61,10 @@
                     <MyComponent></MyComponent> */}
                     <div className='section_1' >
                         {/* <div id="particles-js"></div> */}
+                        
                         <h1 className='welcome_text'>Hello {userName.split(" ")[0]}</h1>
                         <h4 style={{textAlign: 'center', marginLeft: '20%', marginRight: '20%', color: '#e6e6e6'}}>Welcome to the only guide to hack college. The playbook provides you with multiple strategies that other students use, their experiences and stories, tools you can use to help you along the way and much more!</h4>
+                            
                         {/* <img className="imgHero" src={imgWelcome}/>                                 */}
                     </div>
                     
@@ -91,9 +94,10 @@
                             className="vertical-timeline-element--work"
                             contentStyle={{background: 'linear-gradient(#FFAFBC, #FFC2A1)', color: '#fff' }}
                             contentArrowStyle={{ borderRight: '7px solid  #FFAFBC' }}
+                            animate={'false'}
                             // date="1st Year"
                             // dateClassName="year_style"
-                            iconStyle={{ background: '#FFAFBC'   , color: '#fff' }}
+                            iconStyle={{ background: '#FFAFBC', color: '#fff' }}
                         >
                             <div className="containerBox">
                                 <h1 className="vertical-timeline-element-title">Baby steps</h1>

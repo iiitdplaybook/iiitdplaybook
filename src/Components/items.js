@@ -13,17 +13,42 @@ import ExploreCards from "./ExploreCards/ExploreCards"
 
 function items(){
 
-    const color1 = "#9F4EAD";
-    const color2 = "#EEB86D";
+    // bottom left - color1
+    // top right - color2
 
-    const color3 = "#2FB8FF";
-    const color4 = "#95E8DC";
+    const color1 = "#9F4EAD"; //purple
+    const color2 = "#EEB86D"; //yellow
 
-    const color5 = "#9F7FE5";
-    const color6 = "#5497E3";
+    const color3 = "#2FB8FF"; //sea blue
+    const color4 = "#95E8DC"; //sea green
+
+    const color5 = "#9F7FE5"; //purple
+    const color6 = "#5497E3"; //blue
     
-    const color7 = "#236FDC";
-    const color8 = "#4BBEFF";
+    const color7 = "#236FDC"; //dark blue
+    const color8 = "#4BBEFF"; //light blue
+
+    const color9 = "#4A90F3"; //blue
+    const color10 = "#7EF29D"; //green
+
+    const color11 = "#412FAF"; //dark blue
+    const color12 = "#50C1E8"; //light blue
+
+    const color13 = "#181C33"; //blackish
+    const color14 = "#4F4181"; //blackish purple
+
+    const color15 = "#2587A6"; //dark turquoise
+    const color16 = "#6FF7E8"; //light turquoise
+
+    const color17 = "#F57F36"; //light yellow
+    const color18 = "#FFD78A"; //dark yellow
+
+    const color19 = "#BD5D94"; //pink
+    const color20 = "#17086E"; //dark blue
+
+    const color21 = "#5C0DB1"; //dark purple
+    const color22 = "#DBCCFF"; //light purple
+
 
     
     const itemslist = {
@@ -65,49 +90,57 @@ function items(){
         "image":imagePlacements,
         "pathLink":"explore",
     }, {
-        "gradientColor_1":color7,
-        "gradientColor_2":color8,
+        "gradientColor_1":color9,
+        "gradientColor_2":color10,
         "title":"\nClubs",
         "n_testimonies":6,
         "reading_time":3,
         "image":imageClubs,
         "pathLink":"explore",
     }, {
-        "gradientColor_1":color7,
-        "gradientColor_2":color8,
+        "gradientColor_1":color11,
+        "gradientColor_2":color12,
         "title":"Projects With Professors",
         "n_testimonies":6,
         "reading_time":3,
         "image":imageProfproject,
         "pathLink":"explore",
     }, {
-        "gradientColor_1":color7,
-        "gradientColor_2":color8,
+        "gradientColor_1":color13,
+        "gradientColor_2":color14,
         "title":"Good College Resources",
         "n_testimonies":6,
         "reading_time":3,
         "image":imageResources,
         "pathLink":"explore",
     }, {
-        "gradientColor_1":color7,
-        "gradientColor_2":color8,
+        "gradientColor_1":color17,
+        "gradientColor_2":color18,
         "title":"\nResolving Queries",
         "n_testimonies":6,
         "reading_time":3,
         "image":imageQuery,
         "pathLink":"explore",
     }, {
-        "gradientColor_1":color7,
-        "gradientColor_2":color8,
+        "gradientColor_1":color15,
+        "gradientColor_2":color16,
         "title":"\nNetworking",
         "n_testimonies":6,
         "reading_time":3,
         "image":imageNetwork,
         "pathLink":"explore",
     }, {
-        "gradientColor_1":color7,
-        "gradientColor_2":color8,
+        "gradientColor_1":color19,
+        "gradientColor_2":color20,
         "title":"\nEnterntainment",
+        "n_testimonies":6,
+        "reading_time":3,
+        "image":imageTimeManagement,
+        "pathLink":"explore",
+    }, {
+        "gradientColor_1":color21,
+        "gradientColor_2":color22,
+        "title":"Talking to Friends or Seniors",
         "n_testimonies":6,
         "reading_time":3,
         "image":imageTimeManagement,
@@ -120,7 +153,7 @@ function items(){
         "title":"\nNostalgia",
         "n_testimonies":6,
         "reading_time":3,
-        "image":imageTimeManagement,
+        "image":imageNostalgia,
         "pathLink":"nostalgia",
     }];
 
@@ -130,7 +163,7 @@ function items(){
         "title":"\nNostalgia",
         "n_testimonies":6,
         "reading_time":3,
-        "image":imageTimeManagement,
+        "image":imageNostalgia,
         "pathLink":"nostalgia",
     }];
 

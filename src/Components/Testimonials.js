@@ -11,7 +11,7 @@ import FullWidth from "./FullWidth";
 const Height = styled.div`
   position: relative;
   width: 100%;
-  height: ${(props) => (props.height ? props.height + "px" : "auto")};
+  min-height: ${(props) => (props.height ? props.height + "px" : "auto")};
 `;
 
 const Box = styled.div`
@@ -109,6 +109,7 @@ const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndP
           minScale={0.7}
           onInit={onStartPerformance}
           onFinish={onEndPerformance}
+          
         >
           {times(portraits.length, String).map((id) => (
             <Box key={`marquee-example-review-${id}`} scale={scale}>

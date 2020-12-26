@@ -198,7 +198,7 @@ canvas {
 
     .vertical-timeline::before{
         background: linear-gradient(#FFAFBC, #FFC2A1, #FBD69A, #004e92, #000428);
-        height: 83%;
+        min-height: fit-content ;
     }
 
     .textCard{
@@ -215,7 +215,7 @@ canvas {
       }
     
     .imgContainer{
-        max-width: 100%;
+        max-width: 70%;
     }
 
     .vertical-timeline-element:nth-child(2) .containerBox{
@@ -226,7 +226,7 @@ canvas {
     
     .vertical-timeline-element:nth-child(5) .containerBox{
         /* height: 70vh;   */
-        margin-top: -132%;
+        /* margin-top: -132%; */
         /* background: red; */
     }
 
