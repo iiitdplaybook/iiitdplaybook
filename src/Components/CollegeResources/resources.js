@@ -1,6 +1,7 @@
 /** @format */
 
 import "../Supplies/Supplies.css";
+import "./resources.css";
 import React, { useState } from "react";
 import {
   Button,
@@ -112,6 +113,7 @@ function Resources() {
             <h2 style={{textAlign: 'center', margin: '4%'}}>A collection of resources that students use in college</h2>
 
             <div className="supplies__button">
+                
                 <Button
                     onClick={() => changeS(1)}
                     variant={clickedButton === 1 ? "contatined" : "outlined"}
@@ -121,7 +123,7 @@ function Resources() {
                             : buttonClass.notRoot
                     }
                 >
-                    All
+                    Chrome Extensions
                 </Button>
                 <Button
                     onClick={() => changeS(2)}
@@ -132,7 +134,7 @@ function Resources() {
                             : buttonClass.notRoot
                     }
                 >
-                    Chrome Extensions
+                    Coding
                 </Button>
                 <Button
                     onClick={() => changeS(3)}
@@ -143,7 +145,7 @@ function Resources() {
                             : buttonClass.notRoot
                     }
                 >
-                    Coding
+                    Networking
                 </Button>
                 <Button
                     onClick={() => changeS(4)}
@@ -154,7 +156,7 @@ function Resources() {
                             : buttonClass.notRoot
                     }
                 >
-                    Networking
+                    Design
                 </Button>
                 <Button
                     onClick={() => changeS(5)}
@@ -165,39 +167,35 @@ function Resources() {
                             : buttonClass.notRoot
                     }
                 >
-                    Design
-                </Button>
-                <Button
-                    onClick={() => changeS(6)}
-                    variant={clickedButton === 6 ? "contatined" : "outlined"}
-                    className={
-                        clickedButton === 6
-                            ? buttonClass.root
-                            : buttonClass.notRoot
-                    }
-                >
                     Misc
                 </Button>
             </div>
             <div className="explore__body">
                 {clickedButton === 1 ? (
                     <div className="cardsDiv_resources">
-                        {itemCards["allCards"]}
-                    </div>
-                    
-                ) : clickedButton === 2 ? (
-                    <div className="cardsDiv_resources">
                         {itemCards["chromeCards"]}
+                    </div>
+                ) : clickedButton === 2 ? (
+                    <div className="resourceBox">
+                        <h3>Youtubers to follow</h3><br/>
+                        <div className="resourceBox_Inner">
+                        <div className="cardsDiv_resources2">    
+                            {itemCards["codingCards_YT"]}
+                        </div>
+                        </div>
+                        <br/><br/>
+                        <h3>Platforms to use</h3><br/>
+                        <div className="resourceBox_Inner">
+                        <div className="cardsDiv_resources">    
+                            {itemCards["codingCards"]}
+                        </div>
+                        </div>
                     </div>
                 ) : clickedButton === 3 ? (
                     <div className="cardsDiv_resources">
-                        {itemCards["codingCards"]}
-                    </div>
-                ) : clickedButton === 4 ? (
-                    <div className="cardsDiv_resources">
                         {itemCards["networkingCards"]}
                     </div>
-                ) : clickedButton === 5 ? (
+                ) : clickedButton === 4 ? (
                     <div className="cardsDiv_resources">
                         {itemCards["designCards"]}
                     </div>

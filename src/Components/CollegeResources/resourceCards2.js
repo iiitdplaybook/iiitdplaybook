@@ -7,7 +7,7 @@ import image_svg from "../../Assets/SVG_for_cards/teamwork.svg";
 
 function SuppliesCards(supplyCardInfo){
     const cardHeight = 280
-    const cardWidth = cardHeight*(2.5/3);
+    const cardWidth = cardHeight*(5/3);
 
     var gradientColor_1;
     var gradientColor_2;
@@ -53,24 +53,40 @@ function SuppliesCards(supplyCardInfo){
             margin:"0%",
         },
         media: {
-            maxWidth:cardWidth,
-            minHeight:150,
+            minWidth:cardWidth/3,
+            maxWidth:cardWidth/3,
+            minHeight: cardHeight,
             // maxHeight:100,
-            margin: '10%',
-            marginBottom: '2%',
+            background: 'red',
+            borderRadius: '10px',
+            margin: '5%',
             
         },
         title: {
             fontSize: 15,
             fontFamily: 'Poppins',
             fontWeight:"bold",
-            textAlign: "center",
+            textAlign: "left",
             color: "#141414",
         },
         info:{
             fontSize: 12,
             textAlign: "center",
-            margin: "5%",
+            marginTop: "5%",
+        },
+        cardContainer:{
+            height: cardHeight,
+            width: cardWidth,
+            display: "flex",
+            flexDirection: "row",
+        },
+        contentContainer:{
+            height: cardHeight,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: 'flex-start',
+            width:'40%',
+            overflowY: 'scroll',
         },
     });
     const classes = useStyles();
@@ -79,13 +95,52 @@ function SuppliesCards(supplyCardInfo){
             <Card className={classes.root}>
                 <a href={pathLink} target="_blank" style={{margin: '0%'}}>
                 {/* <Link className={classes.link} href={pathLink} > */}
+                
                 <CardActionArea className={classes.actionArea}>
+                    <div className={classes.cardContainer}>
                     <CardMedia
                         className={classes.media}
                         image={image}
                         title={title}
                     />
-                    <CardContent>
+                    <CardContent className={classes.contentContainer}>
+                        <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
+                            {title}
+                        </Typography>
+                        <Typography className={classes.info} color="textSecondary">
+                            {description}
+                        </Typography>
+
+                        <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
+                            {title}
+                        </Typography>
+                        <Typography className={classes.info} color="textSecondary">
+                            {description}
+                        </Typography>
+                        <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
+                            {title}
+                        </Typography>
+                        <Typography className={classes.info} color="textSecondary">
+                            {description}
+                        </Typography>
+                        <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
+                            {title}
+                        </Typography>
+                        <Typography className={classes.info} color="textSecondary">
+                            {description}
+                        </Typography>
+                        <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
+                            {title}
+                        </Typography>
+                        <Typography className={classes.info} color="textSecondary">
+                            {description}
+                        </Typography>
+                        <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
+                            {title}
+                        </Typography>
+                        <Typography className={classes.info} color="textSecondary">
+                            {description}
+                        </Typography>
                         <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
                             {title}
                         </Typography>
@@ -93,6 +148,7 @@ function SuppliesCards(supplyCardInfo){
                             {description}
                         </Typography>
                     </CardContent>
+                    </div>
                 </CardActionArea>
                 </a>
                 {/* </Link> */}

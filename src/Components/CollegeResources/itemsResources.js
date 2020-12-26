@@ -1,6 +1,8 @@
 // import React from "react";
 import addItem from "../../Assets/SVG_for_cards/addItem.svg";
 import ResourceCards from "./resourceCards"
+import ResourceCards_Mix from "./resourceCards2"
+import ExploreCards from "../ExploreCards/ExploreCards"
 
 function items(){
 
@@ -8,9 +10,9 @@ function items(){
     const color2 = "#fafafa";
     
     const itemslist = {
-        "allCards":[],
         "chromeCards":[],
         "codingCards":[],
+        "codingCards_YT":[],
         "networkingCards":[],
         "designCards":[],
         "otherCards":[]
@@ -19,9 +21,9 @@ function items(){
     const chromeCards = [{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"\nPost It Notes",
+        "title":"Post It Notes",
         "description": "Bought by design students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/719gxnixAXL._SL1500_.jpg",
+        "image":"",
         "pathLink":"nostalgia",
     }, {
         "gradientColor_1":color1,
@@ -98,7 +100,7 @@ function items(){
     const codingCards = [{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"\nAcer Nitro 5",
+        "title":"Acer Nitro 5",
         "description": "Bought by 105 students",
         "image":"https://images-na.ssl-images-amazon.com/images/I/71Pp8PLPNAL._SL1500_.jpg",
         "pathLink":"nostalgia",
@@ -322,10 +324,8 @@ function items(){
         "pathLink":"https://amzn.to/39F3mnp",
     }];
 
-    const allCards1 = networkingCards.concat(codingCards);
-    const allCards2 = allCards1.concat(designCards);
-    const allCards3 = allCards2.concat(chromeCards);
-    const allCards = allCards3.concat(otherCards);
+    // const allCards1 = networkingCards.concat(codingCards);
+    
 
     const addCard = [{
         "gradientColor_1":color1,
@@ -336,14 +336,14 @@ function items(){
         "pathLink":"https://forms.gle/VmLxhSCpmdo1Fjy59",
     }];
 
-    for (let index = 0; index < allCards.length; index++) {
-        itemslist["allCards"].push(
-            ResourceCards(allCards[index])
-        );
-    }
-    itemslist["allCards"].push(
-        ResourceCards(addCard[0])
-    );
+    // for (let index = 0; index < allCards.length; index++) {
+    //     itemslist["allCards"].push(
+    //         ResourceCards(allCards[index])
+    //     );
+    // }
+    // itemslist["allCards"].push(
+    //     ResourceCards(addCard[0])
+    // );
     for (let index=0; index<chromeCards.length;index++){
         itemslist["chromeCards"].push(
             ResourceCards(chromeCards[index])
@@ -352,6 +352,16 @@ function items(){
     }
     itemslist["chromeCards"].push(
         ResourceCards(addCard[0])
+    );
+
+    for (let index=0; index<2;index++){
+        itemslist["codingCards_YT"].push(
+            ResourceCards_Mix(codingCards[index])
+        );
+       
+    }
+    itemslist["codingCards_YT"].push(
+        ExploreCards(addCard[0])
     );
     for (let index=0; index<codingCards.length;index++){
         itemslist["codingCards"].push(

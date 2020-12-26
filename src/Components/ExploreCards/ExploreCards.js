@@ -53,7 +53,8 @@ function ExploreCards(exploreCardInfo){
             
         },
         actionArea:{
-
+            width: cardWidth,
+            height: cardHeight,
         },
         link:{
             margin:"0%",

@@ -57,7 +57,7 @@ export default function TimeManagement() {
           bullet: {
             display: 'inline-block',
             margin: '0 1%',
-            fontFamily: 'Poppins',
+            fontFamily: 'Poppins', 
           },
           title: {
             fontSize: 20,

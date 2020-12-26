@@ -81,6 +81,7 @@ const Name = styled.div`
 //   "https://randomuser.me/api/portraits/men/26.jpg",
 // ];
 
+
 const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndPerformance }) => {
   const [key, setKey] = useState();
 
@@ -101,11 +102,6 @@ const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndP
   if (size && size.width > 1400) {
     scale = 1;
   }
-
-  const db = firebase.firestore();
-  var snapshot = db.collection('Testimonies');
-  console.log('getting snapshot');
-
   return (
     <FullWidth>
       <Height height={235}>
@@ -118,21 +114,23 @@ const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndP
           
         >
           {times(portraits.length, String).map((id) => (
+            // testimonies_data[id].isApproved?
             <Box key={`marquee-example-review-${id}`} scale={scale}>
               <Review scale={scale}>
                 <div id="containerHeader">
                 <Avatar scale={scale}>
-                  <img src={portraits[id].pic} alt="" />
+                  <img src={portraits[id].UserAvatar} alt="" />
                 </Avatar>
                 <Name scale={scale}>
-                  <p>{portraits[id].name}</p>
+                  <p>{portraits[id].Name}</p>
                 </Name>
                 </div>
                 <Content scale={scale}>
-                  <p>{portraits[id].text}</p>
+                  <p>{portraits[id].Text}</p>
                 </Content>
               </Review>
             </Box>
+            // :null
           ))}
         </Marquee>
       </Height>

@@ -23,6 +23,26 @@
     font-weight: 800;
 } */
 
+.resourceBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.resourceBox_Inner{
+    display: flex;
+    flex-direction: inherit;
+    width: 100%;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.resourceBox_Inner::-webkit-scrollbar {
+    display: none;
+}
+
 .CardActionArea{
     margin-top: 1%;
 
@@ -33,16 +53,28 @@
     grid-gap: 5px;
     grid-row-gap: 40px;
     justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(32em, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(26em, 1fr));
     grid-template-rows: auto;
     grid-auto-rows: 300px !important;
     justify-items: center;
 }
 
-/* @media only screen and (max-width: 1000px) {
+.cardsDiv_resources2{
+    display: grid;
+    grid-gap: 5px;
+    grid-row-gap: 40px;
+    justify-content: center;
+    /* grid-template-columns: repeat(auto-fill, minmax(28em, 1fr)); */
+    grid-template-columns: 500px 500px auto;
+    grid-template-rows: auto;
+    grid-auto-rows: 300px !important;
+    justify-items: center;
+}
 
-    .cardsDiv{
-        display: block !important;
+@media only screen and (max-width: 1250px) {
+
+    .cardsDiv_resources2{
+        grid-template-columns: repeat(auto-fill, minmax(28em, 1fr));
     }
-} */
+}
 
