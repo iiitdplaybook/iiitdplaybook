@@ -6,8 +6,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import image_svg from "../../Assets/SVG_for_cards/teamwork.svg";
 
 function SuppliesCards(supplyCardInfo){
-    const cardHeight = 280
-    const cardWidth = cardHeight*(4.5/3);
+    const cardHeight = 120
+    const cardWidth = cardHeight*(6/3);
 
     var gradientColor_1;
     var gradientColor_2;
@@ -57,7 +57,6 @@ function SuppliesCards(supplyCardInfo){
             maxWidth:cardWidth/3,
             minHeight: cardHeight*(5/6),
             // maxHeight:100,
-
             borderRadius: '10px',
             margin: '5%', 
         },
@@ -67,10 +66,11 @@ function SuppliesCards(supplyCardInfo){
             fontWeight:"bold",
             textAlign: "left",
             color: "#141414",
+            marginTop: "5%",
         },
         info:{
             fontSize: 12,
-            textAlign: "center",
+            textAlign: "left",
             marginTop: "5%",
         },
         cardContainer:{

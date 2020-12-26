@@ -2,6 +2,7 @@
 import addItem from "../../Assets/SVG_for_cards/addItem.svg";
 import ResourceCards from "./resourceCards"
 import ResourceCards_Mix from "./resourceCards2"
+import ResourceCards_Small from "./resourceCards3"
 import ExploreCards from "../ExploreCards/ExploreCards"
 
 function items(){
@@ -10,7 +11,9 @@ function items(){
     const color2 = "#fafafa";
     
     const itemslist = {
-        "chromeCards":[],
+        "chromeCards_pers":[],
+        "chromeCards_acad":[],
+        "chromeCards_cool":[],
         "codingCards":[],
         "codingCards_YT":[],
         "networkingCards":[],
@@ -18,83 +21,102 @@ function items(){
         "otherCards":[]
     };
 
-    const chromeCards = [{
+    const chromeCards_pers = [{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Post It Notes",
-        "description": "Bought by design students",
-        "image":"",
-        "pathLink":"nostalgia",
+        "title":"Momentum",
+        "description": "Motivate yourself everytime you browse",
+        "image":"https://lh3.googleusercontent.com/8aCEKfSlr6Ytgq0TCzt7mlnAeo9qNos8VYyWEaXh3OBm9prFlTgCATha0mAzmvd0VluuxSltQl0U-CJ0U-YkJyRXVg=w128-h128-e365-rj-sc0x00ffffff",
+        "pathLink":"https://chrome.google.com/webstore/detail/momentum/laookkfknpbbblfpciffpaejjkokdgca?hl=en",
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Luxor 5 Subject Exercise Book (250 pages)",
-        "description": "Bought by 10 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/71rMIAkfNsL._SL1280_.jpg",
-        "pathLink":"https://amzn.to/33GTGFf",
+        "title":"Dark Reader",
+        "description": "Convert any website to dark mode",
+        "image":"https://lh3.googleusercontent.com/XckGUdCyM2j40QXiyrEyFZAO6XMBSBPr67OEWV3jSgWipq4e9DFE-XLA7aAJ4JQatAGIwXSVw_Or_7M_ne0PirpZQg=w128-h128-e365-rj-sc0x00ffffff",
+        "pathLink":"https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh?hl=en",
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Luxor 5 Subject Notebook (300 pages)",
+        "title":"Luxor ",
         "description": "Bought by 10 students",
         "image":"https://images-na.ssl-images-amazon.com/images/I/51HMBe9-5RL.jpg",
         "pathLink":"https://amzn.to/2Vvsm8m",
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Classmate 6 Subject Spiral Binding Notebook",
+        "title":"Classmate",
         "description": "Bought by almost everyone",
         "image":"https://images-na.ssl-images-amazon.com/images/I/71WZfAOB9gL._SL1100_.jpg",
         "pathLink":"https://amzn.to/3g6FCKj",
+    }];
+
+    const chromeCards_acad = [{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Zotero",
+        "description": "Get reference format of any research paper",
+        "image":"https://lh3.googleusercontent.com/guA2wpxQkD_QSBXAP-AZTwbhzXkioLbKPv5-5qT8Ixdf2TjXBASKQODEfommzYh1fnXibcJg-PI2o-WgUbORRHA0=w128-h128-e365-rj-sc0x00ffffff",
+        "pathLink":"https://chrome.google.com/webstore/detail/zotero-connector/ekhagklcjbdpajgpjgmbionohlpdbjgc?hl=en",
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Luxor 6 Subject Spiral Premium Notebook",
-        "description": "Bought by 15 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/71tnM2LRTIL._SL1280_.jpg",
-        "pathLink":"https://amzn.to/3g79Qww",
+        "title":"Grammarly",
+        "description": "To check you're atisundar englis",
+        "image":"https://lh3.googleusercontent.com/fgIyyEUt5FrH1Vd8K0psbk4fni3WVxgpXazIw_SiHvQYfG7_TqI4XcyZVnVtHudFAu71dTWBlMJ1dTJCj6JOAU1n2g=w128-h128-e365-rj-sc0x00ffffff",
+        "pathLink":"https://chrome.google.com/webstore/detail/grammarly-for-chrome/kbfnbcaeplbcioakkpcpgfkobkghlhen?hl=en",
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Classic Plain notebook",
+        "title":"Luxor ",
         "description": "Bought by 10 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/91DHOv07HDL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/36CX1Y1",
-    },{
+        "image":"https://images-na.ssl-images-amazon.com/images/I/51HMBe9-5RL.jpg",
+        "pathLink":"https://amzn.to/2Vvsm8m",
+    }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Cello Finegrip Ball Pen set ",
+        "title":"Classmate ",
         "description": "Bought by almost everyone",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/71BxH9BTM2L._SL1500_.jpg",
-        "pathLink":"https://amzn.to/2JC3ZmV",
+        "image":"https://images-na.ssl-images-amazon.com/images/I/71WZfAOB9gL._SL1100_.jpg",
+        "pathLink":"https://amzn.to/3g6FCKj",
+    }];
+
+    
+    const chromeCards_cool = [{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Session buddy",
+        "description": "Save your 1000+ tabs for later",
+        "image":"https://lh3.googleusercontent.com/gzdoa9Uydnuw3G_YKBh0Ua8oFMItgG1NmIDUYKi5W-G4V6A5ACkG_5ffBf1dmUXgOVFKwnShADh0-GLYhHlyXnGQ=w128-h128-e365-rj-sc0x00ffffff",
+        "pathLink":"https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko?hl=en",
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Cello Butterflow ball pen set",
-        "description": "Bought by almost everyone",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/61TxXDiHKbL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/3lAXOwS",
+        "title":"Volume master",
+        "description": "Control the volume of a tab",
+        "image":"https://lh3.googleusercontent.com/KVGRNfHgQNl3RtCAnq4bTHM23198SfyCES7LnrxnSp21B5xQ2WKRLpIMxaPSYYH0Xp99auk5OQQ6QHjpOL3OvqUi=w128-h128-e365-rj-sc0x00ffffff",
+        "pathLink":"https://chrome.google.com/webstore/detail/volume-master/jghecgabfgfdldnmbfkhmffcabddioke?hl=en",
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Cello Maxriter Ball Pen Set",
-        "description": "Bought by good handwriting students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/81esZ5d2ifL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/39CURcF",
+        "title":"Instapaper",
+        "description": "Save anything to read later, anywhere",
+        "image":"https://lh3.googleusercontent.com/IrEEzh3gjTtGATjxqDQb2CC6f7RiC0D5IpJn9V7OK0Gl07UrwPUq80NaCRCzqReiHc-oMwvDCIJKUz1Q8sWtQbIR=w128-h128-e365-rj-sc0x00ffffff",
+        "pathLink":"https://chrome.google.com/webstore/detail/instapaper/ldjkgaaoikpmhmkelcgkgacicjfbofhh?hl=en",
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Reynolds Trimax Liquid Gel Pens",
-        "description": "Bought by fancy students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/81TkraQtsXL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/33IpzgS",
+        "title":"Adblocker",
+        "description": "No more ads. No more!",
+        "image":"https://lh3.googleusercontent.com/xboK30Q-eBfJBr5ipEcJ4A_QpET20mujleS4fvGf7DAFM-K20WqcNx0rurGbbxQAlfYCitNz7DbF-Mehla1M7Rd9=w128-h128-e365-rj-sc0x00ffffff",
+        "pathLink":"https://chrome.google.com/webstore/detail/adblocker-for-chrome-noad/alplpnakfeabeiebipdmaenpmbgknjce?hl=en",
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Printer rim (500 sheets)",
-        "description": "Bought by 25 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/816vukIX-KL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/3mDUUZh",
+        "title":"Email Tracker",
+        "description": "Track your sent mails",
+        "image":"https://lh3.googleusercontent.com/-Qbe0s3I6huZBX4FZbwghJS-NQhR92K0HFmkcz9XxzDYrEjLq4Ig_xKbDk-Jrh2JhSZA5kwJYC74NXcWFEIDeBHH=w128-h128-e365-rj-sc0x00ffffff",
+        "pathLink":"https://chrome.google.com/webstore/detail/email-tracker-for-gmail-m/ndnaehgpjlnokgebbaldlmgkapkpjkkb?hl=en",
     }];
 
     const codingCards = [{
@@ -109,8 +131,8 @@ function items(){
         "gradientColor_2":color2,
         "title":"Lenovo Legion gaming laptop",
         "description": "Bought by 105 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/61p3lA4N3uL._SL1000_.jpg",
-        "pathLink":"nostalgia",
+        "image":"https://yt3.ggpht.com/ytc/AAUvwnglVjQeNSAVO9GgKkrjIbCO_y0rOx7Yxx-2bv9r_A=s176-c-k-c0x00ffffff-no-rj",
+        "pathLink":"https://www.youtube.com/user/thenewboston",
     }];
 
     const networkingCards = [{
@@ -344,15 +366,22 @@ function items(){
     // itemslist["allCards"].push(
     //     ResourceCards(addCard[0])
     // );
-    for (let index=0; index<chromeCards.length;index++){
-        itemslist["chromeCards"].push(
-            ResourceCards(chromeCards[index])
+    for (let index=0; index<chromeCards_pers.length;index++){
+        itemslist["chromeCards_pers"].push(
+            ResourceCards_Small(chromeCards_pers[index])
         );
-       
     }
-    itemslist["chromeCards"].push(
-        ResourceCards(addCard[0])
-    );
+    for (let index=0; index<chromeCards_acad.length;index++){
+        itemslist["chromeCards_acad"].push(
+            ResourceCards_Small(chromeCards_acad[index])
+        );
+    }
+    for (let index=0; index<chromeCards_cool.length;index++){
+        itemslist["chromeCards_cool"].push(
+            ResourceCards_Small(chromeCards_cool[index])
+        );
+    }
+
 
     for (let index=0; index<2;index++){
         itemslist["codingCards_YT"].push(

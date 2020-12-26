@@ -71,6 +71,18 @@
     justify-items: center;
 }
 
+.cardsDiv_resources3{
+    display: grid;
+    grid-gap: 5px;
+    grid-row-gap: 40px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+    /* grid-template-columns: 500px 500px auto; */
+    grid-template-rows: auto;
+    grid-auto-rows:inherit;
+    justify-items: center;
+}
+
 @media only screen and (max-width: 1250px) {
 
     .cardsDiv_resources2{

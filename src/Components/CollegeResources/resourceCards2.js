@@ -57,7 +57,6 @@ function SuppliesCards(supplyCardInfo){
             maxWidth:cardWidth/3,
             minHeight: cardHeight,
             // maxHeight:100,
-            background: 'red',
             borderRadius: '10px',
             margin: '5%',
             

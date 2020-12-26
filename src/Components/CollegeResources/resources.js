@@ -172,8 +172,27 @@ function Resources() {
             </div>
             <div className="explore__body">
                 {clickedButton === 1 ? (
-                    <div className="cardsDiv_resources">
-                        {itemCards["chromeCards"]}
+                    <div className="resourceBox">
+                    <h3>Personalisation</h3><br/>
+                        <div className="resourceBox_Inner">
+                            <div className="cardsDiv_resources3">
+                            {itemCards["chromeCards_pers"]}
+                            </div>
+                        </div>
+                        <br/><br/>
+                        <h3>The cool ones</h3><br/>
+                        <div className="resourceBox_Inner">
+                            <div className="cardsDiv_resources3">
+                                {itemCards["chromeCards_cool"]}
+                            </div>
+                        </div>
+                        <br/><br/>
+                        <h3>Academics</h3><br/>
+                        <div className="resourceBox_Inner">
+                            <div className="cardsDiv_resources3">
+                                {itemCards["chromeCards_acad"]}
+                            </div>
+                        </div>
                     </div>
                 ) : clickedButton === 2 ? (
                     <div className="resourceBox">
