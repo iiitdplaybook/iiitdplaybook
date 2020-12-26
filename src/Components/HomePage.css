@@ -26,11 +26,11 @@ canvas {
     align-items: center;
     flex-direction: column;
     /* background-image: url('../Assets/landscape.jpg'); */
-    height: 110vh;
+    height: 120vh;
     margin-top: -15vh;
     background-image: url("../Assets/homewallpaper.svg");
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     /* background-color: white; */
     z-index: 1;
 }
