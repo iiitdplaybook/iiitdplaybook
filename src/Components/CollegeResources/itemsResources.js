@@ -38,6 +38,13 @@ function items(){
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
+        "title":"Design Tips",
+        "description": "Get trending articles about design",
+        "image":"https://lh3.googleusercontent.com/cNaP6bUftOYtzZ9jwQfoNAPoC2CvB5qq-cdtaTX5Hd7ztnqq0JofOMrnaoRb-XZtTqOZEVXmdm-72PxCZ67ocRDQvA=w128-h128-e365-rj-sc0x00ffffff",
+        "pathLink":"https://chrome.google.com/webstore/detail/productdesigntips/jfkbdlhcdoooljpkfjfllhlgeejhabbb?hl=en",
+    }, {
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
         "title":"Luxor ",
         "description": "Bought by 10 students",
         "image":"https://images-na.ssl-images-amazon.com/images/I/51HMBe9-5RL.jpg",
@@ -45,10 +52,10 @@ function items(){
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Classmate",
-        "description": "Bought by almost everyone",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/71WZfAOB9gL._SL1100_.jpg",
-        "pathLink":"https://amzn.to/3g6FCKj",
+        "title":"Visualize value",
+        "description": "Minimalistic valuable content",
+        "image":"https://lh3.googleusercontent.com/CPw74EtQycIqpckaM7FZsiIVJvy_gkB4Dw0eg2zSElRuV5Zn5hi6IoGbSltrklTnB8Fmtlcmow=w128-h128-e365-rj-sc0x00ffffff",
+        "pathLink":"https://chrome.google.com/webstore/detail/visualize-value/ejblinjidfhnpkjbphoendgjjnhmfoee",
     }];
 
     const chromeCards_acad = [{
@@ -68,10 +75,10 @@ function items(){
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Luxor ",
-        "description": "Bought by 10 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/51HMBe9-5RL.jpg",
-        "pathLink":"https://amzn.to/2Vvsm8m",
+        "title":"Design Tips",
+        "description": "Get trending articles about design",
+        "image":"https://lh3.googleusercontent.com/cNaP6bUftOYtzZ9jwQfoNAPoC2CvB5qq-cdtaTX5Hd7ztnqq0JofOMrnaoRb-XZtTqOZEVXmdm-72PxCZ67ocRDQvA=w128-h128-e365-rj-sc0x00ffffff",
+        "pathLink":"https://chrome.google.com/webstore/detail/productdesigntips/jfkbdlhcdoooljpkfjfllhlgeejhabbb?hl=en",
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
