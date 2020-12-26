@@ -21,7 +21,7 @@
     import Clouds from './clouds';
     import Testimonials from './Testimonials';
     import userProfile from '../Assets/user.png';
-    import imgWelcome from '../Assets/PhasesPics/welcome.svg';
+    import imgWelcome from '../Assets/homewallpaper.svg';
     import imgQuestion from '../Assets/PhasesPics/question.svg';
     import imgDefine from '../Assets/PhasesPics/define.svg';
     import imgExplore from '../Assets/PhasesPics/explore2.svg';
@@ -48,7 +48,7 @@
                         
             ];
             
-            const vel = 25;
+            const vel = 10;
 
         return (
             <div className='homePage'>
@@ -61,13 +61,11 @@
                     <MyComponent></MyComponent> */}
                     <div className='section_1' >
                         {/* <div id="particles-js"></div> */}
-                        
                         <h1 className='welcome_text'>Hello {userName.split(" ")[0]}</h1>
                         <h4 style={{textAlign: 'center', marginLeft: '20%', marginRight: '20%', color: '#e6e6e6'}}>Welcome to the only guide to hack college. The playbook provides you with multiple strategies that other students use, their experiences and stories, tools you can use to help you along the way and much more!</h4>
-                            
-                        {/* <img className="imgHero" src={imgWelcome}/>                                 */}
+                       
                     </div>
-                    
+                    {/* <img className="imgHero" src={imgWelcome}/>                                 */}
                     
                 </div>
                 
@@ -100,6 +98,7 @@
                             iconStyle={{ background: '#FFAFBC', color: '#fff' }}
                         >
                             <div className="containerBox">
+                                <div className="containerBox_content">
                                 <h1 className="vertical-timeline-element-title">Baby steps</h1>
                                 {/* <p>You are here <br></br> Talk to people</p> */}
                                 You get the most time in your first year, to do literally ANYTHING! 
@@ -112,6 +111,7 @@
                                 </ul> */}
                                 {/* <Button className='nostalgia_button' component={Link} to={'/nostalgia'}>Ready for a ride?</Button> */}
                                 <img id="firstSteps" className="imgContainer" src={imgQuestion}/>                                
+                                </div>
                                 <div className="TestiContainer">
                                     <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
                                 </div>
@@ -129,6 +129,7 @@
                             
                             <Clouds/>
                             <div className="containerBox">
+                            <div className="containerBox_content">
                             <h1 className="vertical-timeline-element-title">Exploring</h1>
                             <p>
                             <ul>
@@ -141,6 +142,7 @@
                             </ul>
                             </p>
                             <img className="imgContainer" src={imgExplore}/>  
+                            </div>
                             <div className="TestiContainer">
                             <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
                             </div>
@@ -155,6 +157,7 @@
                             iconStyle={{ background: '#FBD69A', color: '#fff' }}
                         >
                             <div className="containerBox">
+                            <div className="containerBox_content">
                                 <h1 className="vertical-timeline-element-title">Defining Point</h1>
                                 <p>Finding your calling</p>
                                 <ul>
@@ -164,6 +167,7 @@
                                 <li>Say yes to the things that intrigue you.</li>
                                 </ul>
                                 <img className="imgContainer" src={imgDefine}/>  
+                                </div>
                                 <div className="TestiContainer">
                                     <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
                                 </div>
@@ -178,6 +182,7 @@
                             iconStyle={{ background: '#004e92', color: ' #000428' }}
                         >
                             <div className="containerBox">
+                            <div className="containerBox_content">
                                 <h1 className="vertical-timeline-element-title">Graduating</h1>
                                 <p>Enjoying the last moments</p>
                                 <ul>
@@ -187,6 +192,7 @@
                                 <li>Be True To You</li>
                                 </ul>
                                 <img className="imgContainer" src={imgGraduate}/>
+                                </div>
                                 <div className="TestiContainer">
                                     <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
                                 </div>
@@ -205,13 +211,14 @@
                                 <Stars/>
                             </div>
                         <div className="containerBox">
-                            
+                        <div className="containerBox_content">
                             <div className="contentBox">
                             <h1 className="vertical-timeline-element-title">Nostalgia</h1>
                             <p>Let's take you down the memory lane</p>
                             
                             <Button className='nostalgia_button' component={Link} to={'/nostalgia'}>Let's dive in ></Button>
                             <img className="imgContainer" src={imgNostalgia}/>
+                            </div>
                             <div className="TestiContainer">
                                 <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
                             </div>

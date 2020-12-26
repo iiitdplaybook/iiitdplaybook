@@ -16,6 +16,7 @@ function ExploreCards(exploreCardInfo){
     var reading_time;
     var image;
     var pathLink;
+    var opacity;
 
     if (exploreCardInfo["title"]){
         gradientColor_1 = exploreCardInfo["gradientColor_1"];
@@ -25,6 +26,7 @@ function ExploreCards(exploreCardInfo){
         reading_time = exploreCardInfo["reading_time"];
         image = exploreCardInfo["image"];
         pathLink = exploreCardInfo["pathLink"];
+        opacity = exploreCardInfo["opacity"];
 
     }
     else{
@@ -35,6 +37,7 @@ function ExploreCards(exploreCardInfo){
         reading_time = "N.A.";
         image = image_svg;
         pathLink = "explore";
+        opacity = "1";
     }
 
     const useStyles = makeStyles({
@@ -45,6 +48,7 @@ function ExploreCards(exploreCardInfo){
             // minHeight:cardHeight,
             background:`linear-gradient(45deg, ${gradientColor_1}, ${gradientColor_2})`,
             borderRadius:10,
+            opacity: `${opacity}`,
             // marginBottom: "10%",
             
         },

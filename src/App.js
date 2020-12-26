@@ -4,6 +4,7 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 // import Navbar from "./Components/Navbar";
 import HomePage from "./Components/HomePage";
+import TestimoniesForm from "./Components/Forms/TestimoniesForm";
 import Footer from "./Components/Footer";
 import Testimonials from "./Components/Testimonials";
 import TalkingToFriendsSeniors from "./Components/TalkingToFriendsSeniors";
@@ -94,6 +95,7 @@ function App() {
               <Route path="/timemanagement" component={TimeManagement}/>
               <Route path="/tools" component={Tools}/>
               <Route path="/ComingSoonTools" component={ComingSoonTools}/>
+              <Route path="/contribute/testimonies" component={TestimoniesForm} />
               <Route path="/">
                 <div className="app__body">
                   <HomePage />

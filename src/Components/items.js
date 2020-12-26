@@ -65,6 +65,7 @@ function items(){
         "reading_time":10,
         "image":imageNostalgia,
         "pathLink":"nostalgia",
+        "opacity":1,
     },{
         "gradientColor_1":color3,
         "gradientColor_2":color4,
@@ -72,7 +73,8 @@ function items(){
         "n_testimonies":6,
         "reading_time":3,
         "image":imageTimeManagement,
-        "pathLink":"explore",
+        "pathLink":"timemanagement",
+        "opacity":1,
     },{
         "gradientColor_1":color5,
         "gradientColor_2":color6,
@@ -81,6 +83,7 @@ function items(){
         "reading_time":3,
         "image":imageOnlinesem,
         "pathLink":"explore",
+        "opacity":.5,
     }, {
         "gradientColor_1":color7,
         "gradientColor_2":color8,
@@ -89,6 +92,7 @@ function items(){
         "reading_time":3,
         "image":imagePlacements,
         "pathLink":"explore",
+        "opacity":.5,
     }, {
         "gradientColor_1":color9,
         "gradientColor_2":color10,
@@ -97,6 +101,7 @@ function items(){
         "reading_time":3,
         "image":imageClubs,
         "pathLink":"explore",
+        "opacity":.5,
     }, {
         "gradientColor_1":color11,
         "gradientColor_2":color12,
@@ -105,22 +110,25 @@ function items(){
         "reading_time":3,
         "image":imageProfproject,
         "pathLink":"explore",
+        "opacity":.5,
     }, {
         "gradientColor_1":color13,
         "gradientColor_2":color14,
-        "title":"Good College Resources",
+        "title":"Resources for college",
         "n_testimonies":6,
         "reading_time":3,
         "image":imageResources,
         "pathLink":"explore",
+        "opacity":.5,
     }, {
         "gradientColor_1":color17,
         "gradientColor_2":color18,
-        "title":"\nResolving Queries",
+        "title":"Resolving \nQueries",
         "n_testimonies":6,
         "reading_time":3,
         "image":imageQuery,
         "pathLink":"explore",
+        "opacity":.5,
     }, {
         "gradientColor_1":color15,
         "gradientColor_2":color16,
@@ -129,6 +137,7 @@ function items(){
         "reading_time":3,
         "image":imageNetwork,
         "pathLink":"explore",
+        "opacity":.5,
     }, {
         "gradientColor_1":color19,
         "gradientColor_2":color20,
@@ -137,6 +146,7 @@ function items(){
         "reading_time":3,
         "image":imageTimeManagement,
         "pathLink":"explore",
+        "opacity":.5,
     }, {
         "gradientColor_1":color21,
         "gradientColor_2":color22,
@@ -145,6 +155,7 @@ function items(){
         "reading_time":3,
         "image":imageTimeManagement,
         "pathLink":"explore",
+        "opacity":.5,
     }];
 
     const recommendedCards = [{
@@ -155,6 +166,7 @@ function items(){
         "reading_time":3,
         "image":imageNostalgia,
         "pathLink":"nostalgia",
+        "opacity":1,
     }];
 
     const favCards = [{
@@ -165,6 +177,7 @@ function items(){
         "reading_time":3,
         "image":imageNostalgia,
         "pathLink":"nostalgia",
+        "opacity":1,
     }];
 
     for (let index = 0; index < allCards.length; index++) {
