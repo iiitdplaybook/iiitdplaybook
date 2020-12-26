@@ -7,6 +7,8 @@ import times from "lodash/times";
 import "./Testimonials.css";
 
 import FullWidth from "./FullWidth";
+// Firebase
+import firebase from "firebase";
 
 const Height = styled.div`
   position: relative;
@@ -99,6 +101,10 @@ const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndP
   if (size && size.width > 1400) {
     scale = 1;
   }
+
+  const db = firebase.firestore();
+  var snapshot = db.collection('Testimonies');
+  console.log('getting snapshot');
 
   return (
     <FullWidth>

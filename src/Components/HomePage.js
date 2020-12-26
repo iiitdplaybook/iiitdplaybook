@@ -27,7 +27,8 @@
     import imgExplore from '../Assets/PhasesPics/explore2.svg';
     import imgGraduate from '../Assets/PhasesPics/graduate2.svg';
     import imgNostalgia from '../Assets/PhasesPics/nostalgia2.svg';
-    import FadeIn from "./FadeIn"
+    import FadeIn from "./FadeIn";
+    
 
     function HomePage() {
 

@@ -1,26 +1,44 @@
 import firebase from 'firebase';
-import firestore from 'firebase/firestore';
-import fire from '../../fire.js';
 import React from 'react';
 import Navbar from "../Navbar";
 
+const state = {
+    "UserAvatar": "https://www.gstatic.com/stadia/gamers/avatars/xxhdpi/avatar_53.png",
+    "Name":"Rahul Singh",
+    "Text":"",
+    "isApproved":false
+};
+
 
 export default function TestimoniesForm(){
+
+    function updateTestimonies(event){
+        state.Testimonies = event.target.value
+        console.log(`updated testies ${state.Testimonies}`)
+    }
+    function submitForm(event){
+        event.preventDefault();
+        const db = firebase.firestore();
+        console.log("Sending to Firebase");
+        db.collection("Testimonies").add(state);
+    }
+
+
+    
     return(
         <div>
             <Navbar loggedIn={true} colorStatus={true}/>
-            <form>
-                <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                />
+            <form onSubmit={submitForm}>
                 <input
                     type="text"
                     name="testimonies"
                     placeholder="testimonies"
+                    // onChange={updateTestimonies}
                 />
-                <button type="submit">Submit</button>
+                <button
+                type="submit">
+                    Submit
+                </button>
             </form>
         </div>
     );

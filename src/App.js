@@ -20,7 +20,7 @@ import TimeManagement from "./Components/TimeManagement/TimeManagement";
 import Tools from "./Components/Tools/Tools";
 // import Nostalgia from "./Components/Nostalgia";
 // import Cards from './Components/ExploreCards/ExploreCards';
-
+import Resources from "./Components/CollegeResources/resources";
 import Nostalgia from "./Components/Nostalgia";
 import LoadingScreen from "./Components/loading";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
@@ -95,6 +95,7 @@ function App() {
               <Route path="/timemanagement" component={TimeManagement}/>
               <Route path="/tools" component={Tools}/>
               <Route path="/ComingSoonTools" component={ComingSoonTools}/>
+              <Route path="/resources" component={Resources}/>
               <Route path="/contribute/testimonies" component={TestimoniesForm} />
               <Route path="/">
                 <div className="app__body">

@@ -49,7 +49,7 @@ function items(){
     const color21 = "#5C0DB1"; //dark purple
     const color22 = "#DBCCFF"; //light purple
 
-
+    const opac = .3;
     
     const itemslist = {
         "allCards":[],
@@ -83,7 +83,7 @@ function items(){
         "reading_time":3,
         "image":imageOnlinesem,
         "pathLink":"explore",
-        "opacity":.5,
+        "opacity":opac,
     }, {
         "gradientColor_1":color7,
         "gradientColor_2":color8,
@@ -92,7 +92,7 @@ function items(){
         "reading_time":3,
         "image":imagePlacements,
         "pathLink":"explore",
-        "opacity":.5,
+        "opacity":opac,
     }, {
         "gradientColor_1":color9,
         "gradientColor_2":color10,
@@ -101,7 +101,7 @@ function items(){
         "reading_time":3,
         "image":imageClubs,
         "pathLink":"explore",
-        "opacity":.5,
+        "opacity":opac,
     }, {
         "gradientColor_1":color11,
         "gradientColor_2":color12,
@@ -110,7 +110,7 @@ function items(){
         "reading_time":3,
         "image":imageProfproject,
         "pathLink":"explore",
-        "opacity":.5,
+        "opacity":opac,
     }, {
         "gradientColor_1":color13,
         "gradientColor_2":color14,
@@ -118,8 +118,8 @@ function items(){
         "n_testimonies":6,
         "reading_time":3,
         "image":imageResources,
-        "pathLink":"explore",
-        "opacity":.5,
+        "pathLink":"resources",
+        "opacity":1,
     }, {
         "gradientColor_1":color17,
         "gradientColor_2":color18,
@@ -128,7 +128,7 @@ function items(){
         "reading_time":3,
         "image":imageQuery,
         "pathLink":"explore",
-        "opacity":.5,
+        "opacity":opac,
     }, {
         "gradientColor_1":color15,
         "gradientColor_2":color16,
@@ -137,7 +137,7 @@ function items(){
         "reading_time":3,
         "image":imageNetwork,
         "pathLink":"explore",
-        "opacity":.5,
+        "opacity":opac,
     }, {
         "gradientColor_1":color19,
         "gradientColor_2":color20,
@@ -146,7 +146,7 @@ function items(){
         "reading_time":3,
         "image":imageTimeManagement,
         "pathLink":"explore",
-        "opacity":.5,
+        "opacity":opac,
     }, {
         "gradientColor_1":color21,
         "gradientColor_2":color22,
@@ -155,7 +155,7 @@ function items(){
         "reading_time":3,
         "image":imageTimeManagement,
         "pathLink":"explore",
-        "opacity":.5,
+        "opacity":opac,
     }];
 
     const recommendedCards = [{

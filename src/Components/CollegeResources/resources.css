@@ -1,0 +1,48 @@
+/** @format */
+/* .explore__button {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    transition: ease-in-out .2s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.explore__button > button {
+    margin: 10px;
+    transition: ease-in-out .2s,
+}
+
+.explore__body {
+    transition: ease-in-out .3s;
+    font-family: 'Poppins', sans-serif;
+    margin: 5%;
+}
+
+.explore__body .MuiButton-label{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+} */
+
+.CardActionArea{
+    margin-top: 1%;
+
+}
+
+.cardsDiv_resources{
+    display: grid;
+    grid-gap: 5px;
+    grid-row-gap: 40px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(32em, 1fr));
+    grid-template-rows: auto;
+    grid-auto-rows: 300px !important;
+    justify-items: center;
+}
+
+/* @media only screen and (max-width: 1000px) {
+
+    .cardsDiv{
+        display: block !important;
+    }
+} */
+
