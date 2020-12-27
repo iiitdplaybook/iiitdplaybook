@@ -55,7 +55,7 @@ function Nostalgia() {
 
   return (
     <div>
-    <Navbar loggedIn={false} colorStatus={false}/>
+    <Navbar loggedIn={localStorage.getItem("isSignedIn")} colorStatus={false}/>
     <div id="nostalgiaCont">
         
         <div id="stars_container">
