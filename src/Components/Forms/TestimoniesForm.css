@@ -1,0 +1,26 @@
+.formdiv{
+    text-align: center;
+    align-content: center;
+}
+.formlabel{
+    font-size: 2.5vw !important;
+    text-align: center;
+    align-content: center;
+}
+.radio{
+    text-align: center;
+    align-content: center;
+}
+.helperlabel{
+    text-align: center !important;
+    align-content: center !important;
+}
+.nameLabel{
+    width: 80% !important
+}
+.testimonials{
+    width: 80% !important;
+}
+.button{
+    margin: 3% !important;
+}
