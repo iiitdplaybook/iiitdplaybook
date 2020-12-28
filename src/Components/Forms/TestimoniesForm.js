@@ -106,7 +106,7 @@ export default function TestimoniesForm(){
                     <br/>
                     <TextField
                     id="outlined-textarea"
-                    label="Your Testimonials"
+                    label="Your Testimony"
                     placeholder="Share your Insights with others"
                     multiline
                     variant="outlined"

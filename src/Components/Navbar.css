@@ -40,6 +40,7 @@
 #btn{
     font-family: 'Poppins', sans-serif;   
     margin-left: 15px;
+    /* margin-right: 0%; */
     font-weight: 600;
     transition: ease-in-out .2s;
     vertical-align: middle;
