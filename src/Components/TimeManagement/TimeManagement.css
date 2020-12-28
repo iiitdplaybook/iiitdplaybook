@@ -1,0 +1,35 @@
+.timeManagement {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeManagement__back {
+    display: flex;
+    flex-direction: column;
+}
+
+.timeManagement__back__heading {
+    display: flex;
+    justify-content: center;
+    margin: 5% 0%;
+}
+
+.timeManagement__back__testimonies__buttons {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    transition: ease-in-out .2s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.timeManagement__back__testimonies__buttons > button {
+    margin: 10px;
+    transition: ease-in-out .2s,
+}
+
+.timeManagement__back__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2% 0%
+}

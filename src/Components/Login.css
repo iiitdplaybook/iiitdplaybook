@@ -32,8 +32,6 @@
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    background-clip: text;
-    text-fill-color: transparent;
 	background-size: 400% 400%;
     animation: gradient 30s ease infinite;
     font-size: 2em;
@@ -165,14 +163,31 @@ a {
 
 @media only screen and (max-width: 500px) {
     
-    .login__testimonials{
-        position: fixed;
-        bottom: 3%;
-        left:38%;
+    .login__heading{
+        font-size: 1em;
     }
 
-    .login__creators{    
+    .login__testimonials{
         display: none;
+        /* position: fixed;
+        bottom: 3%;
+        left:38%; */
+    }
+
+    /* .login__creators{    
+        display: none;
+    } */
+
+    .testi .creatorCard p{
+        display: none;
+    }
+
+    .testi .creatorCard a{
+        display: none;
+    }
+
+    .testi .creatorCard img{
+        margin-right: -15px;    
     }
 
     .login__action{
