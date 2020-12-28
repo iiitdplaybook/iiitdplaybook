@@ -52,7 +52,7 @@ export default function TestimoniesForm(){
         state.UserAvatar = firebase.auth().currentUser.photoURL;
         const db = firebase.firestore();
         console.log("Sending to Firebase");
-        // db.collection("Testimonies").add(state);
+        db.collection("Testimonies").add(state);
         notify();
         settestimonies('');
     }
