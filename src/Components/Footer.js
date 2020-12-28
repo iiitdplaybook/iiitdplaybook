@@ -6,6 +6,7 @@ import yashwin from "../Assets/yashwin.png";
 import kshitij from "../Assets/kshitij.jpg";
 import pabitra from "../Assets/pabitra.jpeg";
 import rahul from "../Assets/rahul.png";
+// import { Link } from "react-router-dom";
 
 function Footer() {
     
@@ -13,8 +14,13 @@ function Footer() {
         <div id="bg">
             <div className="upper">
                 <p>Want to contribute? It can as small as 2 lines or big as 2 pages. Your contribution matters</p>
-                <Button className='form_button' href='https://forms.gle/3Ynuz1rLDudMRYpf7' target='_blank'>I'll contribute</Button>
-
+                {/* <Button className='form_button' href='https://forms.gle/3Ynuz1rLDudMRYpf7' target='_blank'>I'll contribute</Button> */}
+                <Button  id='form_button' 
+                  component={Link} 
+                  color='primary'
+                  to={"/contribute/testimonies"}>
+                  I'll Contribute
+                </Button>
                 <div className='testi2'>
           <div className='creatorCard'>
             <img src={kshitij}/>
