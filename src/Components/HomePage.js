@@ -31,26 +31,13 @@ import FadeIn from "./FadeIn";
 import {useState, useEffect} from "react";
 
 
-// var testimonies_data={
-//     "UserAvatar": "https://www.gstatic.com/stadia/gamers/avatars/xxhdpi/avatar_53.png",
-//     "Name":"Rahul Singh",
-//     "Text":"",
-//     "isApproved":false
-// };
-var count=0;
-
 function HomePage() {
 
     const [{user, isSignedIn, userName}] = useStateValue()
     const [portraits, setportraits] = useState(
         []
     )
-    // {
-    //     "UserAvatar": "https://www.gstatic.com/stadia/gamers/avatars/xxhdpi/avatar_53.png",
-    //     "Name":"Rahul Singh",
-    //     "Text":"Hello My Name is Rahul Singh",
-    //     "isApproved":false
-    // }
+
 
     function getFirestore(){
         return firebase.firestore()
@@ -62,28 +49,13 @@ function HomePage() {
             const data = snapshot.docs.map(doc => doc.data());
             setportraits(data);
         });
-        // const data = snapshot.docs.map(doc => doc.data());
-        // setportraits(data);
+        
         return () => {
             console.log('cleanup');
             unsub();
         }
     }, []);
 
-    // async function getTestimonies(){
-    //     console.log('getting snapshot');
-    //     var snapshot = await firebase.firestore().collection('Testimonies').get()
-    //     // console.log(snapshot);
-    //     var data = snapshot.docs.map(doc => doc.data());
-    //     // console.log(data)
-    //     testimonies_dataChanged(data)
-    //     return data
-    // }
-
-    // const MyComponent = () => {
-    //         useScript({colorScript})
-    //         return null;
-    //     }
 
     // const portraits = 
     //     [
@@ -95,15 +67,9 @@ function HomePage() {
     //         { UserAvatar: userProfile, Text: ".", Name: "username"},
     //     ];
 
-    // var portraits = getTestimonies();
         
     const vel = 20;
     
-    // if(count%1000==0){var portraits = getTestimonies();}
-
-    // console.log('testiessssss')
-    // console.log(testimonies_data)
-    count+=1;
     return (
         <div className='homePage'>
             <Navbar loggedIn={true} colorStatus={false}/>

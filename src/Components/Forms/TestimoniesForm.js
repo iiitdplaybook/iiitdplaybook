@@ -14,6 +14,10 @@ import FormLabel from '@material-ui/core/FormLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import Button from '@material-ui/core/Button';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 const state = {
     "UserAvatar": "https://www.gstatic.com/stadia/gamers/avatars/xxhdpi/avatar_53.png",
     "Name":"Rahul Singh",
@@ -34,6 +38,10 @@ const useStyles = makeStyles((theme) => ({
 
 export default function TestimoniesForm(){
 
+    toast.configure();
+    const notify = () => toast.info("Testimony Submitted \nfor Review", {
+        draggablePercent: 30
+      });
     const [{user, isSignedIn, userName}] = useStateValue()
 
     function submitForm(event){
@@ -44,7 +52,8 @@ export default function TestimoniesForm(){
         state.UserAvatar = firebase.auth().currentUser.photoURL;
         const db = firebase.firestore();
         console.log("Sending to Firebase");
-        db.collection("Testimonies").add(state);
+        // db.collection("Testimonies").add(state);
+        notify();
         settestimonies('');
     }
 
@@ -70,7 +79,8 @@ export default function TestimoniesForm(){
                     <FormControl component="fieldset">
                     {/* <FormLabel className='formlabel' component="legend">For which part would you like to give your testimonies?</FormLabel> */}
                     <RadioGroup className='radio' aria-label="testimonies" name="testimonies1" value={value} onChange={handleChange}>
-                        <FormControlLabel value="Clubs" control={<Radio />} label="Clubs" />
+                        <FormControlLabel className='radioButtonLeft' value="General" control={<Radio />} label="General" />
+                        <FormControlLabel className='radioButtonRight' value="Clubs" control={<Radio />} label="Clubs" />
                         <FormControlLabel value="Time Management" control={<Radio />} label="Time Management" />
                         <FormControlLabel value="Online Semester Tips" control={<Radio />} label="Online Semester Tips" />
                         <FormControlLabel value="Academics" control={<Radio />} label="Academics" />
