@@ -174,9 +174,17 @@ export default function TestimoniesForm(){
                     />
                     <br/>
                     <TextField
+                    disabled
+                    label=""
+                    value={"Write About: " + hint}
+                    className='nameLabel'
+                    color="secondary"
+                    />
+                    <br/>
+                    <TextField
                     id="outlined-textarea"
                     label={`Your Testimony  (${word_count}/400)`}
-                    placeholder={hint}
+                    placeholder={defaultHint}
                     multiline
                     variant="outlined"
                     className='testimonials'
