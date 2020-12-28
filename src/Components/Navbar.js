@@ -84,11 +84,18 @@ function Navbar({loggedIn, colorStatus}) {
         <Button  id='btn' 
           component={Link} 
           color='primary'
+          to={"/contribute/testimonies"}>
+          Contribute
+        </Button>
+        <Button  id='btn' 
+          component={Link} 
+          color='primary'
           to={"/supplies"} 
           // startIcon={<SuppliesIcon />}
           endIcon = {<FiberNewIcon style={{ color:'primary', padding: "2%", transform: "scale(1.3)" }}/>}>
           Supplies
         </Button>
+        
         {loggedIn? (<Button onClick={signOut} color='primary'>Sign out</Button>) : (<Button component={Link} color='primary' to={'/'}>Sign in</Button>)}
         <Avatar id='pic' src={user?.photoURL} alt="User" />
         {/* <p>{user?.name}</p> */}

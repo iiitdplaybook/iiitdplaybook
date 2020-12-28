@@ -28,61 +28,48 @@ import imgExplore from '../Assets/PhasesPics/explore2.svg';
 import imgGraduate from '../Assets/PhasesPics/graduate2.svg';
 import imgNostalgia from '../Assets/PhasesPics/nostalgia2.svg';
 import FadeIn from "./FadeIn";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 
-
-// var testimonies_data={
-//     "UserAvatar": "https://www.gstatic.com/stadia/gamers/avatars/xxhdpi/avatar_53.png",
-//     "Name":"Rahul Singh",
-//     "Text":"",
-//     "isApproved":false
-// };
-var count=0;
 
 function HomePage() {
 
     const [{user, isSignedIn, userName}] = useStateValue()
-    const [portraits, testimonies_dataChanged] = useState(
-        [{
-            "UserAvatar": "https://www.gstatic.com/stadia/gamers/avatars/xxhdpi/avatar_53.png",
-            "Name":"Rahul Singh",
-            "Text":"Hello My Name is Rahul Singh",
-            "isApproved":false
-        }]
+    const [portraits, setportraits] = useState(
+        []
     )
 
-    async function getTestimonies(){
-        console.log('getting snapshot');
-        var snapshot = await firebase.firestore().collection('Testimonies').get()
-        // console.log(snapshot);
-        var data = snapshot.docs.map(doc => doc.data());
-        // console.log(data)
-        testimonies_dataChanged(data)
-        return data
+
+    function getFirestore(){
+        return firebase.firestore()
     }
 
-    // const MyComponent = () => {
-    //         useScript({colorScript})
-    //         return null;
-    //     }
-
-        // const portraits = [
-        //     { UserAvatar: userProfile, Text: "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics", Name: "Medhavi"},
-        //     { UserAvatar: userProfile, Text: "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.", Name: "Sonali"},
-        //     { UserAvatar: userProfile, Text: "I was not there for induction, so all I have experienced is the horror of deadlines and evaluations.", Name: "Anunay"},
-        //     { UserAvatar: userProfile, Text: "Initial college life was very fun-filled. With lots of amazing activities in college and meeting new people and getting to know them was a really nice experience. 24*7 canteen and no hostel curfew timings are really great things that make you feel free.", Name: "Shubhi"},
-        //     { UserAvatar: userProfile, Text: "When I first entered college I felt intimidated and like I didn't belong here, with a little anxiety about how people would be. But it took absolutely no time to shatter all my doubts and find this wonderful set of people and a room filled with opportunities. It was a different kind of environment that I was looking forward to being in.", Name: "Muskan"},
-        //     { UserAvatar: userProfile, Text: ".", Name: "username"},
-                    
-        // ];
+    useEffect(() => {
+        console.log('effect');
+        const unsub = getFirestore().collection('Testimonies').where("isApproved", "==", true).onSnapshot(snapshot =>{
+            const data = snapshot.docs.map(doc => doc.data());
+            setportraits(data);
+        });
         
-        const vel = 10;
-    
-    if(count%100==0){getTestimonies()}
+        return () => {
+            console.log('cleanup');
+            unsub();
+        }
+    }, []);
 
-    // console.log('testiessssss')
-    // console.log(testimonies_data)
-    count+=1;
+
+    // const portraits = 
+    //     [
+    //         { UserAvatar: userProfile, Text: "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics", Name: "Medhavi"},
+    //         { UserAvatar: userProfile, Text: "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.", Name: "Sonali"},
+    //         { UserAvatar: userProfile, Text: "I was not there for induction, so all I have experienced is the horror of deadlines and evaluations.", Name: "Anunay"},
+    //         { UserAvatar: userProfile, Text: "Initial college life was very fun-filled. With lots of amazing activities in college and meeting new people and getting to know them was a really nice experience. 24*7 canteen and no hostel curfew timings are really great things that make you feel free.", Name: "Shubhi"},
+    //         { UserAvatar: userProfile, Text: "When I first entered college I felt intimidated and like I didn't belong here, with a little anxiety about how people would be. But it took absolutely no time to shatter all my doubts and find this wonderful set of people and a room filled with opportunities. It was a different kind of environment that I was looking forward to being in.", Name: "Muskan"},
+    //         { UserAvatar: userProfile, Text: ".", Name: "username"},
+    //     ];
+
+        
+    const vel = 20;
+    
     return (
         <div className='homePage'>
             <Navbar loggedIn={true} colorStatus={false}/>
@@ -169,8 +156,8 @@ function HomePage() {
                             <li>Consume content (Podcasts, youtube videos, read books, follow people)</li>
                             <li>Hackathons</li>
                             <li>Network with people outside college</li>
-                            <li>Network with people within college (Relationships > Networking)</li>
-                            <li>Earn > Travel > Repeat (as much as you can)</li>
+                            <li>Network with people within college (Relationships {'>'} Networking)</li>
+                            <li>Earn {'>'} Travel {'>'} Repeat (as much as you can)</li>
                             <li>Learn how to google</li>
                         </ul>
                         </p>
@@ -249,7 +236,7 @@ function HomePage() {
                         <h1 className="vertical-timeline-element-title">Nostalgia</h1>
                         <p>Let's take you down the memory lane</p>
                         
-                        <Button className='nostalgia_button' component={Link} to={'/nostalgia'}>Let's dive in ></Button>
+                        <Button className='nostalgia_button' component={Link} to={'/nostalgia'}>Let's dive in {'>'}</Button>
                         <img className="imgContainer" src={imgNostalgia}/>
                         </div>
                         <div className="TestiContainer">
