@@ -72,7 +72,7 @@ function HomePage() {
     
     return (
         <div className='homePage'>
-            <Navbar loggedIn={true} colorStatus={false}/>
+            <Navbar loggedIn={true} colorStatus={false} stickyCond={true}/>
             <div className='section_0' >
                 {/* <img className='homePage_img' src={landscape}/> */}
                 {/* <h1 className='welcome_text'>Welcome!</h1> */}
@@ -82,7 +82,7 @@ function HomePage() {
                 <div className='section_1' >
                     {/* <div id="particles-js"></div> */}
                     <h1 className='welcome_text'>Hello {userName.split(" ")[0]}</h1>
-                    <h4 style={{textAlign: 'center', marginLeft: '20%', marginRight: '20%', color: '#e6e6e6'}}>Welcome to the only guide to hack college. The playbook provides you with multiple strategies that other students use, their experiences and stories, tools you can use to help you along the way and much more!</h4>
+                    <h4 style={{textAlign: 'center', marginLeft: '20%', marginRight: '20%', color: '#e6e6e6'}}>Welcome to the only guide to hack IIITD. The playbook provides you with multiple strategies that other students use, their experiences and stories, tools you can use to help you along the way and much more!</h4>
                     
                 </div>
                 {/* <img className="imgHero" src={imgWelcome}/>                                 */}
@@ -236,7 +236,7 @@ function HomePage() {
                         <h1 className="vertical-timeline-element-title">Nostalgia</h1>
                         <p>Let's take you down the memory lane</p>
                         
-                        <Button className='nostalgia_button' component={Link} to={'/nostalgia'}>Let's dive in {'>'}</Button>
+                        {/* <Button className='nostalgia_button' component={Link} to={'/nostalgia'}>Let's dive in {'>'}</Button> */}
                         <img className="imgContainer" src={imgNostalgia}/>
                         </div>
                         <div className="TestiContainer">
