@@ -13,6 +13,7 @@ import exploreLogo from "../Assets/explore_logo.svg";
 import Supplies from "./Supplies/Supplies";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 // Icons
+import Icon from '@material-ui/core/Icon';
 import ExploreIcon from '@material-ui/icons/GridOn';
 import SuppliesIcon from '@material-ui/icons/LocalGroceryStore';
 import ToolsIcon from '@material-ui/icons/Build';
@@ -103,7 +104,13 @@ function Navbar({loggedIn, colorStatus, stickyCond}) {
         </Button>
         
         {loggedIn? (<Button onClick={signOut} color='primary'>Sign out</Button>) : (<Button component={Link} color='primary' to={'/'}>Sign in</Button>)}
-        <Avatar id='pic' src={user?.photoURL} alt="User" />
+        <Icon
+        component={Link}
+        to={"/supplies"}>
+          <Avatar id='pic' src={user?.photoURL} alt="User" />
+        </Icon>
+        {/* <Avatar id='pic' src={user?.photoURL} alt="User" /> */}
+        
         {/* <p>{user?.name}</p> */}
         </ThemeProvider>
       </div>
@@ -167,7 +174,12 @@ function Navbar({loggedIn, colorStatus, stickyCond}) {
         </Button>
         
         {loggedIn? (<Button onClick={signOut} color='primary'>Sign out</Button>) : (<Button component={Link} color='primary' to={'/'}>Sign in</Button>)}
-        <Avatar id='pic' src={user?.photoURL} alt="User" />
+        <Icon
+        component={Link}
+        to={"/supplies"}>
+          <Avatar id='pic' src={user?.photoURL} alt="User" />
+        </Icon>
+        {/* <Avatar id='pic' src={user?.photoURL} alt="User"/> */}
         {/* <p>{user?.name}</p> */}
         </ThemeProvider>
       </div>

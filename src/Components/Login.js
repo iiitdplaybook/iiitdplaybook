@@ -3,6 +3,7 @@
 import React from "react";
 import "./Login.css";
 import firebase from "firebase";
+import fire from '../fire';
 import { auth, provider } from "../fire";
 import { Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
@@ -21,34 +22,49 @@ import { Link } from "react-router-dom";
 
 
 function Login() {
-  const contri = [
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
-    { pic: userProfile, text: "Name" },
+  // const contri = [
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
+  //   { pic: userProfile, text: "Name" },
    
-  ];
+  // ];
+
+  const [contri, setcontri] = React.useState([]);
+
+  React.useEffect(()=>{
+    const unsub = fire.firestore().collection('Testimonies').where("isApproved", "==", true).onSnapshot(snapshot =>{
+        const data = snapshot.docs.map(doc => {return ({text:doc.data().Name.split(" ")[0], pic:doc.data().UserAvatar})});
+        if (data!=null){
+          setcontri(data)
+        }
+        
+    });
+    return () => {
+        unsub();
+    }
+  });
 
   const vel2 = 25;
 
