@@ -36,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
         width: '25ch',
       },
+      marginTop: '3%',
+      fontFamily: "Poppins, sans-serif"
+
     },
   }));
   
@@ -127,20 +130,30 @@ export default function TestimoniesForm(){
                     <h1 className='formlabel'>For which part would you like to give your testimonies?</h1>
                     <FormControl component="fieldset">
                     {/* <FormLabel className='formlabel' component="legend">For which part would you like to give your testimonies?</FormLabel> */}
-                    <RadioGroup className='radio' aria-label="testimonies" name="testimonies1" value={value} onChange={handleChange}>
-                        <FormControlLabel className='radioButtonLeft' value="General" control={<Radio />} label="General" />
-                        <FormControlLabel value="Phases of College" control={<Radio />} label="Phases of College" />
-                        <FormControlLabel className='radioButtonRight' value="Clubs" control={<Radio />} label="Clubs" />
-                        <FormControlLabel value="Time Management" control={<Radio />} label="Time Management" />
-                        <FormControlLabel value="Online Semester Tips" control={<Radio />} label="Online Semester Tips" />
-                        <FormControlLabel value="Academics" control={<Radio />} label="Academics" />
-                        <FormControlLabel value="Competitive Programming" control={<Radio />} label="Competitive Programming" />
-                        <FormControlLabel value="Hackathons" control={<Radio />} label="Hackathons" />
-                        <FormControlLabel value="Research" control={<Radio />} label="Research" />
-                        <FormControlLabel value="Placements" control={<Radio />} label="Placements" />
-                        <FormControlLabel value="Images and Experiences" control={<Radio />} label="Images and Experiences" />
-                    </RadioGroup>
-                    <FormHelperText className='helperlabel'>Choose one of the following and submit, you can submit the form again for filling for another section</FormHelperText>
+                    <FormHelperText className='helperlabel'>Choose one of the following and submit. You can submit the form again if you want to contribute for another section</FormHelperText>
+                    <div class="row">
+                        <div class="column">
+                            <RadioGroup className='radio' aria-label="testimonies" name="testimonies1" value={value} onChange={handleChange}>
+                                <FormControlLabel className='radioButtonLeft' value="General" control={<Radio />} label="General" />
+                                <FormControlLabel value="Phases of College" control={<Radio />} label="Phases of College" />
+                                <FormControlLabel className='radioButtonRight' value="Clubs" control={<Radio />} label="Clubs" />
+                                <FormControlLabel value="Time Management" control={<Radio />} label="Time Management" />
+                                <FormControlLabel value="Online Semester Tips" control={<Radio />} label="Online Semester Tips" />
+                                <FormControlLabel value="Academics" control={<Radio />} label="Academics" />
+                            </RadioGroup>
+                        </div>
+                        <div class="column">
+                            <RadioGroup className='radio' aria-label="testimonies" name="testimonies1" value={value} onChange={handleChange}>
+                            
+                                <FormControlLabel value="Competitive Programming" control={<Radio />} label="Competitive Programming" />
+                                <FormControlLabel value="Hackathons" control={<Radio />} label="Hackathons" />
+                                <FormControlLabel value="Research" control={<Radio />} label="Research" />
+                                <FormControlLabel value="Placements" control={<Radio />} label="Placements" />
+                                <FormControlLabel value="Images and Experiences" control={<Radio />} label="Experiences/Stories" />
+                                <FormControlLabel value="Images" control={<Radio />} label="Images" />
+                            </RadioGroup>
+                        </div>
+                    </div>                    
                     </FormControl>
                     <br/>
                     <br/>
@@ -172,14 +185,12 @@ export default function TestimoniesForm(){
                     className='nameLabel'
                     color="secondary"
                     />
-                    <br/>
-                    <TextField
-                    disabled
+                    <br/><br/>
+                    <FormLabel
                     label=""
-                    value={"Write About: " + hint}
-                    className='nameLabel'
+                    className='nameLabel2'
                     color="secondary"
-                    />
+                    >{"Write About: " + hint}</FormLabel>
                     <br/>
                     <TextField
                     id="outlined-textarea"
@@ -195,8 +206,8 @@ export default function TestimoniesForm(){
                     <br/>
                     <p>Disclaimer: Your ID's profile picture will be displayed along with Name and your Testimony</p>
                     <br/>
-                    <Button className='button' variant="contained" color="secondary" onClick={(word_count<=400)?submitForm:showError}>
-                        Submit
+                    <Button className='button' size='lg' variant="contained" color="secondary" onClick={(word_count<=400)?submitForm:showError}>
+                      <span className="span2">submit</span>
                     </Button>
                 </div>
             </form>

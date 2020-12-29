@@ -109,7 +109,7 @@ function Supplies() {
     return (
         <div className="supplies">
             <Navbar loggedIn={true} colorStatus={true}/>
-            <h2 style={{textAlign: 'center', margin: '4%'}}>A collection of things that students use in college</h2>
+            <h2 className='supplies_heading' style={{textAlign: 'center', margin: '4%'}}>A collection of things that students use in college</h2>
 
             <div className="supplies__button">
                 <Button

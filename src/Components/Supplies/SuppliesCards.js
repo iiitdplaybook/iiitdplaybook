@@ -58,7 +58,6 @@ function SuppliesCards(supplyCardInfo){
             // maxHeight:100,
             margin: '10%',
             marginBottom: '2%',
-            
         },
         title: {
             fontSize: 15,

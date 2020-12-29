@@ -19,6 +19,7 @@ import userProfile from '../Assets/user.png';
 import { Link } from "react-router-dom";
 
 
+
 function Login() {
   const contri = [
     { pic: userProfile, text: "Name" },
@@ -76,9 +77,9 @@ function Login() {
 
   const classes = useStyles();
 
+
   return (
     <div className="login">
-      
       <div className="login__logo">
         <img id="logo" src={logo} />
       </div>
