@@ -145,21 +145,16 @@ export default function TimeManagement() {
                 <Button onClick={toggleFav} style={{ marginLeft: "auto" }} >{isFavText}</Button>
             </div> */}
             <Navbar loggedIn={true} colorStatus={true}/>
-            
-            {/* <div align='center'>
-                <Switch 
-                    onChange={handleClick} 
-                    checked={isFlipped}
-                    offColor='#2e9e4c'
-                    onColor='#2e9e4c'
-                    checkedIcon={false}
-                    uncheckedIcon={false}
-                />
-            </div> */}
-                <ReactCardFlip>
-                <Card>
+        
+            <ReactCardFlip className="mainCard" isFlipped={isFlipped} flipDirection="horizontal">
+                <Card className='frontpage'>
+                    <div className='mainDiv'>
+                        <Button className='reverseButton' variant="contained" onClick={handleClick}>
+                            UNO Reverse
+                        </Button>
+                    </div>
                 </Card>
-                <Card>
+                <Card className='backpage'>
                     <div className='timeManagement__back'>
                         <div className='timeManagement__back__heading'>
                             <h1>GUIDE TO BECOMING A PRODUCTIVITY NINJA</h1>
@@ -346,6 +341,11 @@ export default function TimeManagement() {
                                 </CardContent>
                             </Card>
                         </div>             
+                    </div>
+                    <div className='button_div'>
+                        <Button className='reverseButton' variant="contained" onClick={handleClick}>
+                            UNO Reverse
+                        </Button>
                     </div>
                 </Card>
             </ReactCardFlip>

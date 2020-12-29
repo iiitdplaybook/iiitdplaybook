@@ -197,6 +197,7 @@ function items(){
     const codingCards = [{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
+
         "title":"HackerRank",
         "description": "Your first significant other",
         "image":"https://www.hackerrank.com/wp-content/uploads/2018/08/hackerrank_logo.png",
