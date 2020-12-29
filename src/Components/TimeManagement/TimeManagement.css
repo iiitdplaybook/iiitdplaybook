@@ -200,3 +200,12 @@
 .square:hover p{
   font-size: 0.75em;
 }
+
+.mainDiv {
+  width: max-content;
+  height: 110em;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

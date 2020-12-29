@@ -147,20 +147,64 @@ function items(){
         "pathLink":"https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en",
     }];
 
-    const codingCards = [{
+    const codingCards_YT = [{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Acer Nitro 5",
-        "description": "Bought by 105 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/71Pp8PLPNAL._SL1500_.jpg",
-        "pathLink":"nostalgia",
+        "title":"CodeChef",
+        "description": "A Platform for Aspiring Programmers",
+        "image":"https://miro.medium.com/max/333/1*1W0-bbmt4iiEpp_pPrS0VQ.png",
+        "pathLink":"https://www.codechef.com/",
     },{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Lenovo Legion gaming laptop",
-        "description": "Bought by 105 students",
-        "image":"https://yt3.ggpht.com/ytc/AAUvwnglVjQeNSAVO9GgKkrjIbCO_y0rOx7Yxx-2bv9r_A=s176-c-k-c0x00ffffff-no-rj",
-        "pathLink":"https://www.youtube.com/user/thenewboston",
+        "title":"InterviewBit",
+        "description": "A platform to help you enhance your skills, expand your knowledge and prepare for technical interviews.",
+        "image":"https://image.winudf.com/v2/image/Y29tLlNvZnRUZWNocy5Db2RlRm9yY2VzX2ljb25fMF9jOTA3NjNhMA/icon.png?w=170&fakeurl=1",
+        "pathLink":"https://leetcode.com/",
+    }];
+
+    const codingCards = [{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"CodeChef",
+        "description": "A Platform for Aspiring Programmers",
+        "image":"https://miro.medium.com/max/333/1*1W0-bbmt4iiEpp_pPrS0VQ.png",
+        "pathLink":"https://www.codechef.com/",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Codeforces",
+        "description": "Codeforces is a website that hosts competitive programming contests.",
+        "image":"https://image.winudf.com/v2/image/Y29tLlNvZnRUZWNocy5Db2RlRm9yY2VzX2ljb25fMF9jOTA3NjNhMA/icon.png?w=170&fakeurl=1",
+        "pathLink":"https://codeforces.com/",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"HackerRank",
+        "description": "Matching developers with great companies.",
+        "image":"https://pathrise-website-guide-wp.s3.us-west-1.amazonaws.com/guides/wp-content/uploads/2019/05/22174532/hackerrank-logo.jpg",
+        "pathLink":"https://www.hackerrank.com/",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"GeeksforGeeks",
+        "description": "A computer science portal for geeks",
+        "image":"https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200x200-min.png",
+        "pathLink":"https://www.geeksforgeeks.org/",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"LeetCode",
+        "description": "Codeforces is a website that hosts competitive programming contests.",
+        "image":"https://miro.medium.com/max/1200/0*zuhXdNAIUoxEem4-.jpeg",
+        "pathLink":"https://codeforces.com/",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"InterviewBit",
+        "description": "A platform to help you enhance your skills, expand your knowledge and prepare for technical interviews.",
+        "image":"https://image.winudf.com/v2/image/Y29tLlNvZnRUZWNocy5Db2RlRm9yY2VzX2ljb25fMF9jOTA3NjNhMA/icon.png?w=170&fakeurl=1",
+        "pathLink":"https://leetcode.com/",
     }];
 
     const networkingCards = [{
