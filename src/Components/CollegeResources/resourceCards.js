@@ -65,7 +65,7 @@ function SuppliesCards(supplyCardInfo){
             fontSize: 15,
             fontFamily: 'Poppins',
             fontWeight:"bold",
-            textAlign: "left",
+            textAlign: "center",
             color: "#141414",
         },
         info:{
@@ -83,8 +83,8 @@ function SuppliesCards(supplyCardInfo){
             height: cardHeight,
             display: "flex",
             flexDirection: "column",
-            alignItems: 'flex-start',
             width:'40%',
+            justifyContent: 'center',
         },
     });
     const classes = useStyles();

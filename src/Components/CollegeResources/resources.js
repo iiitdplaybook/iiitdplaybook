@@ -158,7 +158,7 @@ function Resources() {
                 >
                     Design
                 </Button>
-                <Button
+                {/* <Button
                     onClick={() => changeS(5)}
                     variant={clickedButton === 5 ? "contatined" : "outlined"}
                     className={
@@ -168,7 +168,7 @@ function Resources() {
                     }
                 >
                     Misc
-                </Button>
+                </Button> */}
             </div>
             <div className="explore__body">
                 {clickedButton === 1 ? (
@@ -211,19 +211,24 @@ function Resources() {
                         </div>
                     </div>
                 ) : clickedButton === 3 ? (
-                    <div className="cardsDiv_resources3">
-                        {itemCards["networkingCards"]}
-                    </div>
-                ) : clickedButton === 4 ? (
                     <div className="cardsDiv_resources">
-                        {itemCards["designCards"]}
+                        {itemCards["networkingCards"]}
                     </div>
                 ) : (
                     <div className="cardsDiv_resources">
-                        {itemCards["otherCards"]}
+                        {itemCards["designCards"]}
                     </div>
-                )}
-                
+                )
+                // ) : clickedButton === 4 ? (
+                //     <div className="cardsDiv_resources">
+                //         {itemCards["designCards"]}
+                //     </div>
+                // ) : (
+                //     <div className="cardsDiv_resources">
+                //         {itemCards["otherCards"]}
+                //     </div>
+                // )
+            }
             </div>
         </div>
     );

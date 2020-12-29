@@ -25,6 +25,7 @@ import FiberNewIcon from '@material-ui/icons/NewReleases';
 
 import playbook_logo from '../Assets/playbook_logo_black.svg';
 import { white, black } from "@material-ui/core/colors";
+import firebase from "firebase";
 // import playbook_logo from '../Assets/playbook_logo_blue.svg';
 
 //fonts
@@ -108,6 +109,8 @@ function Navbar({loggedIn, colorStatus, stickyCond}) {
   });
 
   function launchPopper(){
+    const authData = firebase.auth.currentUser
+    // const userData = firebase.firestore().collection('users').doc(authData.uid).get()
     return (
       <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
         {({ TransitionProps, placement }) => (
@@ -119,7 +122,7 @@ function Navbar({loggedIn, colorStatus, stickyCond}) {
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                   <MenuItem>
-                    userName
+                    name
                   </MenuItem>
                   {loggedIn? (<MenuItem id="signBtn" onClick={signOut} color='primary'>Sign out</MenuItem>) : (<MenuItem id="signBtn" component={Link} color='primary' to={'/'}>Sign in</MenuItem>)}
                 </MenuList>
