@@ -6,6 +6,7 @@
 .timeManagement__back {
     display: flex;
     flex-direction: column;
+    height: fit-content;
 }
 
 .timeManagement__back__heading {
@@ -202,10 +203,24 @@
 }
 
 .mainDiv {
-  width: max-content;
-  height: 110em;
+  width: 90%;
+  height: fit-content;
+  padding: 5%;
   vertical-align: middle;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: black;
+}
+
+.button_div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10%;
+  margin-top: 5%;
+}
+
+.memeImage{
+  border-radius: 10px;
 }

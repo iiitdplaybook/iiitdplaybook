@@ -244,95 +244,39 @@ function items(){
     const networkingCards = [{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
+        "title":"Women In Tech IIITD (WiT)",
+        "description": "WiT is the tech society of IIITD managed by women. The aim is to provide the alumni and seniors a chance to share amazing opportunities with students.",
+        "image":"https://cdn5.telesco.pe/file/A92l1iFm48PMisyxb26W-PmOiMW14zNCzrPEw_arnt__j11T93c3AqmSCJ1EyRmyuFewCum1vvL0uk8kw0WM5IDQ7q_EXTBIeSdQjaWgzgOx8UfpV-m-b9FnnwCqAIykZwbUvfJqgXVoI9zM1-cLTlfT7D9w5kTo56jAp1VJk0hRxMyV0TdO-GQr4FJ8NVcfUQfkjnq9fsuPeptVZJxe5q18uzlm9Q8v-acvSispuUoeDDncszU-U4RoxyXnSb84-elU6ADpsr_QtBpWK6NQpH-8WbAcsib_Z_RyQuDsv41N58gefC9feFgVkLiTB4Nzo5o7rxszAXMKCoshmSn3KA.jpg",
+        "pathLink":"http://wit.iiitd.edu.in/",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
         "title":"Cold Email Tips To Land Your Dream Job",
         "description": "Learn how to send effective cold-emails to recruiters which will get you interviews for your dream jobs",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/6181jZehG7L._SL1500_.jpg",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLsmwRbmPWUfcOOAAMVnLYsdalUxU5BASL_g&usqp=CAU",
         "pathLink":"https://gallery.mailchimp.com/11fa1ee9c20a64044db2d61ba/files/fb9665b4-5a23-4d17-ab6e-64287cb66ad8/Cold_Email_Tips_To_Land_Your_Dream_Job.pdf",
-    }, {
+    },{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Waterproof Gaming Mouse Pad",
-        "description": "Bought by 5 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/71f9uIMJsNL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/2IcuC1y",
-    }, {
+        "title":"Byld",
+        "description": "Byld is the software development club of IIIT-Delhi. We’re a bunch of students who love building apps and hacks using various tools and technologies.",
+        "image":"https://byld.iiitd.edu.in/byld-website/assets/images/transparentSmall.png",
+        "pathLink":"",
+    },{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"OnePlus Bullets wireless earphones",
-        "description": "Bought by 105 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/61DKcGr12OL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/37Alv3r",
-    }, {
+        "title":"Lean In IIITD",
+        "description": "We help women achieve their ambitions and work to create an equal world.",
+        "image":"https://instagram.fkwi1-2.fna.fbcdn.net/v/t51.2885-19/s320x320/118364078_796367157840384_9093164501332894747_n.jpg?_nc_ht=instagram.fkwi1-2.fna.fbcdn.net&_nc_ohc=Sex0p1Re-0YAX9fl45e&tp=1&oh=9a2fa0f8d9b6d98e1e7cc54f5795b0b7&oe=6014A4D4",
+        "pathLink":"http://t.me/leaniniiitd",
+    },{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"boAt Rockerz Bluetooh earphones",
-        "description": "Bought by 10 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/61ku39qVEzL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/3lAZCpE",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"Infinity JBL wireless earphones",
-        "description": "Bought by 5 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/619OijH9HnL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/33D2QT6",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"boAt Rockerz Bluetooth headphones",
-        "description": "Bought by 15 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/61ihz46SLOL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/2VwOmQp",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"Logitech B170 Wireless Mouse",
-        "description": "Bought by 10 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/51kdFjyPRAL._SL1500_.jpg",
-        "pathLink":"https://www.amazon.in/Logitech-B170-Wireless-Mouse-Black/dp/B01J0XWYKQ/ref=zg_bs_computers_3?_encoding=UTF8&psc=1&refRID=4VA3HBJTP2WGVP0EAQJR&smid=A14CZOWI0VEHLG",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"Logitech Light Sync Gaming Mouse",
-        "description": "Bought by gaming students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/61UxfXTUyvL._SL1500_.jpg",
-        "pathLink":"https://www.amazon.in/Logitech-G102-Customizable-Lighting-Programmable/dp/B08LT9BMPP/ref=sr_1_4_mod_primary_lightning_deal?dchild=1&keywords=gaming+mouse&qid=1608469670&s=computers&sbo=Tc8eqSFhUl4VwMzbE4fw%2Fw%3D%3D&smid=A14CZOWI0VEHLG&sr=1-4",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"Keyboard",
-        "description": "Bought by 15 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/61ihz46SLOL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/2VwOmQp",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"ADDMAX multi-plug extension board",
-        "description": "Bought by 15 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/81okyQFxdiL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/37AlRXP",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"boAt Stone 170 5W Bluetooth Speaker ",
-        "description": "Bought by 4 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/61Mq3HQ5MqL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/3mABHI0",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"JBL GO Portable Wireless Bluetooth Speaker",
-        "description": "Bought by 15 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/71nwG2LuLsL._SL1200_.jpg",
-        "pathLink":"https://amzn.to/3ohJefm",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"JBL Waterproof Portable Bluetooth Speaker",
-        "description": "Bought by 10 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/81DRhqE04BL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/3qolPe6",
-    }];
+        "title":"Cold Email Tips To Land Your Dream Job",
+        "description": "Learn how to send effective cold-emails to recruiters which will get you interviews for your dream jobs",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLsmwRbmPWUfcOOAAMVnLYsdalUxU5BASL_g&usqp=CAU",
+        "pathLink":"https://gallery.mailchimp.com/11fa1ee9c20a64044db2d61ba/files/fb9665b4-5a23-4d17-ab6e-64287cb66ad8/Cold_Email_Tips_To_Land_Your_Dream_Job.pdf",
+    },];
 
     const designCards = [{
         "gradientColor_1":color1,
@@ -507,22 +451,21 @@ function items(){
  
     for (let index=0; index<networkingCards.length;index++){
         itemslist["networkingCards"].push(
-            ResourceCards(networkingCards[index])
+            ResourceCards_Small(networkingCards[index])
         );
-        
     }
-    itemslist["networkingCards"].push(
-        ResourceCards(addCard[0])
-    );
+    // itemslist["networkingCards"].push(
+    //     ResourceCards_Small(addCard[0])
+    // );
     for (let index=0; index<designCards.length;index++){
         itemslist["designCards"].push(
             ResourceCards(designCards[index])
         );
         
     }
-    itemslist["designCards"].push(
-        ResourceCards(addCard[0])
-    );
+    // itemslist["designCards"].push(
+    //     ResourceCards(addCard[0])
+    // );
     for (let index=0; index<otherCards.length;index++){
         itemslist["otherCards"].push(
             ResourceCards(otherCards[index])

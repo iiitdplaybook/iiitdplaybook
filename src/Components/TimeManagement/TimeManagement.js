@@ -211,6 +211,7 @@ export default function TimeManagement() {
                                     </ul>
                                 </TabPanel>
                                 <TabPanel value={value} index={4}>
+
                                     <h3>Engage</h3>
                                     <ul>
                                     <li>Now actually DO IT :)</li>
@@ -330,13 +331,14 @@ export default function TimeManagement() {
                                     </Typography>
                                     <br/>
                                     <Typography  className={cardClass.bullet}>
-                                        - Divide inbox into tabs: Primary, Social, Promotions
+                                        &#x25CF; Divide inbox into tabs: Primary, Social, Promotions
                                         <br/>
-                                        - Add label: Google Classroom, Coding, Internship/Placement, Project, Urgent, etc.(your choice)
+                                        &#x25CF; Add label: Google Classroom, Coding, Internship/Placement, Project, Urgent, etc.(your choice)
                                         <br/>
-                                        - Do this on the VERY FIRST day! You won't be able to come back to this situation
+                                        &#x25CF; Do this on the VERY FIRST day! You won't be able to come back to this situation <br/>(@Freshers you have a chance!)
+                                        <img className="memeImage" src="https://memegenerator.net/img/instances/47021039.jpg"></img>
                                         <br/>
-                                        - Add a mail tracker
+                                        &#x25CF; Add a mail tracker
                                     </Typography>
                                 </CardContent>
                             </Card>

@@ -3,7 +3,9 @@
 import React from "react";
 import "./Navbar.css";
 import { auth } from "../fire";
-import { Avatar, Button } from "@material-ui/core";
+import { Avatar, Button, 
+  Menu, MenuItem, ClickAwayListener, Grow, Paper, Popper, MenuList } from "@material-ui/core";
+import { makeStyles } from '@material-ui/core/styles';
 import { useStateValue } from "../StateProvider";
 import { Link } from "react-router-dom";
 import Sticky from 'react-sticky-el';
@@ -27,8 +29,55 @@ import { white, black } from "@material-ui/core/colors";
 
 //fonts
 
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+  },
+  paper: {
+    marginRight: theme.spacing(2),
+  },
+}));
+
 function Navbar({loggedIn, colorStatus, stickyCond}) {
   const [{ user }] = useStateValue();
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const classes = useStyles();
+  const [open, setOpen] = React.useState(false);
+  const anchorRef = React.useRef(null);
+
+  const handleToggle = () => {
+    setOpen((prevOpen) => !prevOpen);
+  };
+
+  const handleClose = (event) => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  function handleListKeyDown(event) {
+    if (event.key === 'Tab') {
+      event.preventDefault();
+      setOpen(false);
+    }
+  }
+
+  // return focus to the button when we transitioned from !open -> open
+  const prevOpen = React.useRef(open);
+
+  React.useEffect(() => {
+    if (prevOpen.current === true && open === false) {
+      anchorRef.current.focus();
+    }
+
+    prevOpen.current = open;
+  }, [open]);
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
 
   const signOut = () => {
     auth
@@ -58,6 +107,30 @@ function Navbar({loggedIn, colorStatus, stickyCond}) {
     },
   });
 
+  function launchPopper(){
+    return (
+      <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+        {({ TransitionProps, placement }) => (
+          <Grow
+            {...TransitionProps}
+            style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+          >
+            <Paper>
+              <ClickAwayListener onClickAway={handleClose}>
+                <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
+                  <MenuItem>
+                    userName
+                  </MenuItem>
+                  {loggedIn? (<MenuItem id="signBtn" onClick={signOut} color='primary'>Sign out</MenuItem>) : (<MenuItem id="signBtn" component={Link} color='primary' to={'/'}>Sign in</MenuItem>)}
+                </MenuList>
+              </ClickAwayListener>
+            </Paper>
+          </Grow>
+        )}
+      </Popper>
+    );
+  }
+
   return (
     <>
     {stickyCond? (
@@ -70,65 +143,50 @@ function Navbar({loggedIn, colorStatus, stickyCond}) {
       </div>
       <div className="navbar__right">
       
-      <ThemeProvider theme={colorStatus? (themeBlack) : (themeWhite)}>
-        <Button  id='btn'  
-          component={Link} 
-          color='primary'
-          to={"/explore"}
-          startIcon={<ExploreIcon style={{ color:'primary', padding: "10%" }}/>}
-          >
-          <div className='removeText'>Explore</div>
-        </Button>
-        <Button  id='btn' 
-          component={Link} 
-          color='primary'
-          to={"/ComingSoonTools"}
-          startIcon={<ToolsIcon style={{  color:'primary', padding: "10%" }}/>}
-          >
-          <div className='removeText'>Tools</div>
-        </Button>
-        <Button  id='btn' 
-          component={Link} 
-          color='primary'
-          to={"/contribute/testimonies"}
-          startIcon={<ContributeIcon style={{ color:'primary', padding: "10%" }}/>}>
-          <div className='removeText'>Contribute</div>
-        </Button>
-        <Button  id='btn' 
-          component={Link} 
-          color='primary'
-          to={"/supplies"} 
-          // startIcon={<SuppliesIcon />}
-          startIcon = {<FiberNewIcon style={{ color:'primary', padding: "2%", transform: "scale(1.3)" }}/>}>
-          <div className='removeText'>Supplies</div>
-        </Button>
+        <ThemeProvider theme={colorStatus? (themeBlack) : (themeWhite)}>
+          <Button  id='btn'  
+            component={Link} 
+            color='primary'
+            to={"/explore"}
+            startIcon={<ExploreIcon style={{ color:'primary', padding: "10%" }}/>}
+            >
+            <div className='removeText'>Explore</div>
+          </Button>
+          <Button  id='btn' 
+            component={Link} 
+            color='primary'
+            to={"/ComingSoonTools"}
+            startIcon={<ToolsIcon style={{  color:'primary', padding: "10%" }}/>}
+            >
+            <div className='removeText'>Tools</div>
+          </Button>
+          <Button  id='btn' 
+            component={Link} 
+            color='primary'
+            to={"/contribute/testimonies"}
+            startIcon={<ContributeIcon style={{ color:'primary', padding: "10%" }}/>}>
+            <div className='removeText'>Contribute</div>
+          </Button>
+          <Button  id='btn' 
+            component={Link} 
+            color='primary'
+            to={"/supplies"} 
+            startIcon = {<FiberNewIcon style={{ color:'primary', padding: "2%", transform: "scale(1.3)" }}/>}>
+            <div className='removeText'>Supplies</div>
+          </Button>
+
+          <Icon
+            classname='userIcon'
+            ref={anchorRef}
+            aria-controls={open ? 'menu-list-grow' : undefined}
+            aria-haspopup="true"
+            onClick={handleToggle}>
+            <Avatar id='pic' src={user?.photoURL} alt="User" />
+          </Icon> 
         
-        {loggedIn? (<Button onClick={signOut} color='primary'>Sign out</Button>) : (<Button component={Link} color='primary' to={'/'}>Sign in</Button>)}
-        <Icon
-        component={Link}
-        to={"/supplies"}>
-          <Avatar id='pic' src={user?.photoURL} alt="User" />
-        </Icon>
-        {/* <Avatar id='pic' src={user?.photoURL} alt="User" /> */}
-        
-        {/* <p>{user?.name}</p> */}
+          {launchPopper()}
         </ThemeProvider>
       </div>
-      {/* <div className="navbar__right">
-        <Button id='btn' component={Link} to={"/explore"}>
-        <img id="navIcon" src={exploreLogo}></img>
-        Explore
-        </Button>
-        <Button id='btn'component={Link} to={"/supplies"}>
-          Supplies
-        </Button>
-        <Button id='btn' component={Link} to={"/friends"}>
-          Tools
-        </Button>
-
-        <Button onClick={signOut}>Sign out</Button>
-        <Avatar id='pic' src={user?.photoURL} alt="User" />
-      </div> */}
     </div>
     </Sticky>
     ) : (
@@ -140,64 +198,51 @@ function Navbar({loggedIn, colorStatus, stickyCond}) {
       </div>
       <div className="navbar__right">
       
-      <ThemeProvider theme={colorStatus? (themeBlack) : (themeWhite)}>
-        <Button  id='btn'  
-          component={Link} 
-          color='primary'
-          to={"/explore"}
-          startIcon={<ExploreIcon style={{ color:'primary', padding: "10%" }}/>}
-          >
-          <div className='removeText'>Explore</div>
-        </Button>
-        <Button  id='btn' 
-          component={Link} 
-          color='primary'
-          to={"/ComingSoonTools"}
-          startIcon={<ToolsIcon style={{  color:'primary', padding: "10%" }}/>}
-          >
-          Tools
-        </Button>
-        <Button  id='btn' 
-          component={Link} 
-          color='primary'
-          to={"/contribute/testimonies"}
-          startIcon={<ContributeIcon style={{ color:'primary', padding: "10%" }}/>}>
-          Contribute
-        </Button>
-        <Button  id='btn' 
-          component={Link} 
-          color='primary'
-          to={"/supplies"} 
-          // startIcon={<SuppliesIcon />}
-          startIcon = {<FiberNewIcon style={{ color:'primary', padding: "2%", transform: "scale(1.3)" }}/>}>
-          Supplies
-        </Button>
+        <ThemeProvider theme={colorStatus? (themeBlack) : (themeWhite)}>
+          <Button  id='btn'  
+            component={Link} 
+            color='primary'
+            to={"/explore"}
+            startIcon={<ExploreIcon style={{ color:'primary', padding: "10%" }}/>}
+            >
+            <div className='removeText'>Explore</div>
+          </Button>
+          <Button  id='btn' 
+            component={Link} 
+            color='primary'
+            to={"/ComingSoonTools"}
+            startIcon={<ToolsIcon style={{  color:'primary', padding: "10%" }}/>}
+            >
+            <div className='removeText'>Tools</div>
+          </Button>
+          <Button  id='btn' 
+            component={Link} 
+            color='primary'
+            to={"/contribute/testimonies"}
+            startIcon={<ContributeIcon style={{ color:'primary', padding: "10%" }}/>}>
+            <div className='removeText'>Contribute</div>
+          </Button>
+          <Button  id='btn' 
+            component={Link} 
+            color='primary'
+            to={"/supplies"} 
+            // startIcon={<SuppliesIcon />}
+            startIcon = {<FiberNewIcon style={{ color:'primary', padding: "2%", transform: "scale(1.3)" }}/>}>
+            <div className='removeText'>Supplies</div>
+          </Button>
+
+          <Icon
+            classname='userIcon'
+            ref={anchorRef}
+            aria-controls={open ? 'menu-list-grow' : undefined}
+            aria-haspopup="true"
+            onClick={handleToggle}>
+            <Avatar id='pic' src={user?.photoURL} alt="User" />
+          </Icon> 
         
-        {loggedIn? (<Button onClick={signOut} color='primary'>Sign out</Button>) : (<Button component={Link} color='primary' to={'/'}>Sign in</Button>)}
-        <Icon
-        component={Link}
-        to={"/supplies"}>
-          <Avatar id='pic' src={user?.photoURL} alt="User" />
-        </Icon>
-        {/* <Avatar id='pic' src={user?.photoURL} alt="User"/> */}
-        {/* <p>{user?.name}</p> */}
+          {launchPopper()}
         </ThemeProvider>
       </div>
-      {/* <div className="navbar__right">
-        <Button id='btn' component={Link} to={"/explore"}>
-        <img id="navIcon" src={exploreLogo}></img>
-        Explore
-        </Button>
-        <Button id='btn'component={Link} to={"/supplies"}>
-          Supplies
-        </Button>
-        <Button id='btn' component={Link} to={"/friends"}>
-          Tools
-        </Button>
-
-        <Button onClick={signOut}>Sign out</Button>
-        <Avatar id='pic' src={user?.photoURL} alt="User" />
-      </div> */}
     </div>
     )}
     </>

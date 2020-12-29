@@ -30,6 +30,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "react-scroll-horizontal": "^1.6.6",
+    "react-simple-dropdown": "^3.2.3",
     "react-slideshow-image": "^3.4.1",
     "react-sticky-el": "^2.0.5",
     "react-switch": "^5.0.1",
