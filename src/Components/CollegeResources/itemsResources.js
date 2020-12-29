@@ -45,10 +45,10 @@ function items(){
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Luxor ",
-        "description": "Bought by 10 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/51HMBe9-5RL.jpg",
-        "pathLink":"https://amzn.to/2Vvsm8m",
+        "title":"Google Calendar ",
+        "description": "Quick overview of your day",
+        "image":"https://lh3.googleusercontent.com/pnuOSzZ1nswi2STE1VCLPj6rzbHAu79tFlsidFy-1aXhgNE98MHlVuXM-uMwp7toGL5yZ72jeG6bi3mvgU-p-vS5iA=w128-h128-e365-rj-sc0x00ffffff",
+        "pathLink":"https://chrome.google.com/webstore/detail/google-calendar/gmbgaklkmjakoegficnlkhebmhkjfich",
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
@@ -56,6 +56,13 @@ function items(){
         "description": "Minimalistic valuable content",
         "image":"https://lh3.googleusercontent.com/CPw74EtQycIqpckaM7FZsiIVJvy_gkB4Dw0eg2zSElRuV5Zn5hi6IoGbSltrklTnB8Fmtlcmow=w128-h128-e365-rj-sc0x00ffffff",
         "pathLink":"https://chrome.google.com/webstore/detail/visualize-value/ejblinjidfhnpkjbphoendgjjnhmfoee",
+    }, {
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Todoist",
+        "description": "Organize your work and life",
+        "image":"https://lh3.googleusercontent.com/zqKRvf52hI5Yk6N5C8k6NJnDT7bsEW6whE3wf1UqfpES79AtnrO2ykLgqwciE-bca6QghdXNFJDYe_9xO6iYsvK7=w128-h128-e365-rj-sc0x00ffffff",
+        "pathLink":"https://chrome.google.com/webstore/detail/todoist-for-chrome/jldhpllghnbhlbpcmnajkpdmadaolakh?hl=en",
     }];
 
     const chromeCards_acad = [{
@@ -79,13 +86,6 @@ function items(){
         "description": "Get trending articles about design",
         "image":"https://lh3.googleusercontent.com/cNaP6bUftOYtzZ9jwQfoNAPoC2CvB5qq-cdtaTX5Hd7ztnqq0JofOMrnaoRb-XZtTqOZEVXmdm-72PxCZ67ocRDQvA=w128-h128-e365-rj-sc0x00ffffff",
         "pathLink":"https://chrome.google.com/webstore/detail/productdesigntips/jfkbdlhcdoooljpkfjfllhlgeejhabbb?hl=en",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"Classmate ",
-        "description": "Bought by almost everyone",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/71WZfAOB9gL._SL1100_.jpg",
-        "pathLink":"https://amzn.to/3g6FCKj",
     }];
 
     
@@ -124,6 +124,27 @@ function items(){
         "description": "Track your sent mails",
         "image":"https://lh3.googleusercontent.com/-Qbe0s3I6huZBX4FZbwghJS-NQhR92K0HFmkcz9XxzDYrEjLq4Ig_xKbDk-Jrh2JhSZA5kwJYC74NXcWFEIDeBHH=w128-h128-e365-rj-sc0x00ffffff",
         "pathLink":"https://chrome.google.com/webstore/detail/email-tracker-for-gmail-m/ndnaehgpjlnokgebbaldlmgkapkpjkkb?hl=en",
+    }, {
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"GoFull Page",
+        "description": "Full page screen capture ",
+        "image":"https://lh3.googleusercontent.com/xkq24Y-hSgJHCOs7hskeMNfZatMQYRmybkMY8gGrzHTYVJiQR_2un6xgg9cXY93ShVNU5LdC7n5fddtbQxeNIV0hma8=w128-h128-e365-rj-sc0x00ffffff",
+        "pathLink":"https://chrome.google.com/webstore/detail/gofullpage-full-page-scre/fdpohaocaechififmbbbbbknoalclacl?hl=en",
+    }, {
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Fonts Ninja",
+        "description": "Identity fonts from any website",
+        "image":"https://lh3.googleusercontent.com/FFs5IGsMq5As7MBo1TfKPWs5bAzCJsnXwtW1BrgOp6VuQUVRR3zYbocoPkYYfrayeO20VomUy8LJZ2TAInCIAEQO=w128-h128-e365-rj-sc0x00ffffff",
+        "pathLink":"https://chrome.google.com/webstore/detail/fonts-ninja/eljapbgkmlngdpckoiiibecpemleclhh",
+    }, {
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"ColorPick Eyedropper",
+        "description": "Identity color from any website",
+        "image":"https://lh3.googleusercontent.com/AMn3fHR239GKDCbY0qffgLBZVq1NxYUZ66AhU9AJfgKVlpfzu8-L9C3njXq9TtlMDTRmHshBw0HPAkPQdEjd0Ci1hQ=w128-h128-e365-rj-sc0x00ffffff",
+        "pathLink":"https://chrome.google.com/webstore/detail/colorpick-eyedropper/ohcpnigalekghcmgcdcenkpelffpdolg?hl=en",
     }];
 
     const codingCards = [{

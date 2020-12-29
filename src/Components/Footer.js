@@ -15,11 +15,12 @@ function Footer() {
             <div className="upper">
                 <p>Want to contribute? It can as small as 2 lines or big as 2 pages. Your contribution matters</p>
                 {/* <Button className='form_button' href='https://forms.gle/3Ynuz1rLDudMRYpf7' target='_blank'>I'll contribute</Button> */}
-                <Button  id='form_button' 
+                <Button 
+                  className='button2' 
                   component={Link} 
-                  color='primary'
+                  
                   to={"/contribute/testimonies"}>
-                  I'll Contribute
+                  <span className='span2'>YES! I'd like to contribute</span>
                 </Button>
                 <div className='testi2'>
           <div className='creatorCard'>

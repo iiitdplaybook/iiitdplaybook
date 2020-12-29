@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
 import image_svg from "../../Assets/SVG_for_cards/teamwork.svg";
+import "./ExploreCards.css";
+import Tilt from 'react-parallax-tilt';
 
 function ExploreCards(exploreCardInfo){
     const cardHeight = 280
@@ -81,15 +83,17 @@ function ExploreCards(exploreCardInfo){
     });
     const classes = useStyles();
     return(
-        
+        <Tilt>
             <Card className={classes.root}>
                 <Link className={classes.link} to={`/${pathLink}`}>
                 <CardActionArea className={classes.actionArea}>
+                
                     <CardMedia
                         className={classes.media}
                         image={image}
                         title={title}
                     />
+                    
                     <CardContent>
                         <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
                             {title}
@@ -101,6 +105,7 @@ function ExploreCards(exploreCardInfo){
                 </CardActionArea>
                 </Link>
             </Card>
+        </Tilt>
        
     );
 }

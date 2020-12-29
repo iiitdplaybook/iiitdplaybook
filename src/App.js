@@ -25,6 +25,8 @@ import Nostalgia from "./Components/Nostalgia";
 import LoadingScreen from "./Components/loading";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 // import Supplies from "./Components/Supplies/Supplies";
+import {isMobile} from 'react-device-detect';
+import ScrollToTop from './Components/ScrollToTop'
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -62,13 +64,37 @@ function App() {
     },
   });
 
+  function ifisMobile(){
+    if(isMobile) {
+      console.log(`isMobile: ${isMobile}`)
+      return(
+      <div className='popup'>
+        <p>Hello bish, you using phone so get the fuck off. Use laptop</p>
+      </div>
+    )}
+    else return null
+  }
+  // React.useEffect(()=>{
+  //   ifisMobile
+  // })
+
   return (
     <>
     <ThemeProvider theme={themeMain}>
     {loading === false ? (
     <div className="app">
       {/* <img src="login_bg.jpeg" alt='Random Image'/> */}
+      {/* {console.log(`isMobile: ${isMobile}`)} */}
+      {ifisMobile()}
+      <div class="popup">
+        <div class="modal_content">
+          <span class="close">&times;</span>
+          <p>I'm A Pop Up!!!</p>
+        </div>
+      </div>
+      {/* {isMobile?<div></div>} */}
       <Router>
+        <ScrollToTop/>
         {!localStorage.getItem("isSignedIn") ? (
           <Switch>
             <Route path="/supplies">

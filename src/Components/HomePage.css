@@ -81,6 +81,11 @@ canvas {
 } */
 
 /* Line color change */
+.vertical-timeline{
+    z-index: -1;
+    border-radius: 25px;
+}
+
 .vertical-timeline::before{
     background: linear-gradient(#FFAFBC, #FFC2A1, #FBD69A , #034C90, #004e92, #000428);
     top: 1%;
@@ -138,6 +143,10 @@ canvas {
     padding:1em;
 }
 
+.vertical-timeline-element{
+    border-radius: 25px;
+}
+
 .vertical-timeline-element-content{
     padding: 0;
 }
@@ -147,7 +156,7 @@ canvas {
     margin-top: -14%;
     /* background: red; */
 }
-
+    
 .vertical-timeline-element:nth-child(5) .containerBox{
     /* height: 70vh;   */
     margin-top: -35%;
@@ -182,6 +191,9 @@ canvas {
     /* margin-top: -20%; */
 }
 
+.timeline_section{
+    z-index: 700;
+}
 
 .timeline_section .nostalgia_button {
     background-color: whitesmoke;
@@ -238,6 +250,7 @@ canvas {
         max-width: 70%;
     }
 
+    
     .vertical-timeline-element:nth-child(2) .containerBox{
         /* height: 70vh;   */
         /* margin-top: -60%; */
@@ -262,6 +275,7 @@ canvas {
         position: relative;
         left: 15%;
         bottom: 37%;
+        z-index: 999 !important;
     }
 
     .vertical-timeline-element:nth-child(4) .imgContainer{

@@ -94,6 +94,42 @@
     height: 100%;
 }
 
+.button2{
+    width: 25%;
+    margin: 1% !important;
+    background-color: #000;
+    /* -webkit-background-clip: text; */
+    /* -webkit-text-fill-color: transparent; */
+	 
+}
+
+
+.button2 .span2 {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button2 .span2:after {
+    content: '\263B';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -25px;
+    transition: 0.5s;
+  }
+  
+  .button2:hover .span2 {
+    padding-right: 25px;
+  }
+  
+  .button2:hover .span2:after {
+    opacity: 1;
+    right: 0;
+  }
+
+
 @media only screen and (max-width: 1100px) {
     .removeText{
         display: none;

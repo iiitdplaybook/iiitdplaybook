@@ -12,6 +12,10 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import FormHelperText from '@material-ui/core/FormHelperText';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
+
 import Button from '@material-ui/core/Button';
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -32,6 +36,9 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
         width: '25ch',
       },
+      marginTop: '3%',
+      fontFamily: "Poppins, sans-serif"
+
     },
   }));
   
@@ -44,9 +51,16 @@ export default function TestimoniesForm(){
       });
     const [{user, isSignedIn, userName}] = useStateValue()
 
+    // const [userName, setUserName] = React.useState('');
+
     function submitForm(event){
         event.preventDefault();
-        state.Topic=value;
+        if(value=="Phases of College") {
+            state.Topic=value+' - '+PoC_Value; 
+        }
+        else{
+            state.Topic=value;
+        }
         state.Name=userName;
         state.Text=testimonies;
         state.UserAvatar = firebase.auth().currentUser.photoURL;
@@ -57,6 +71,10 @@ export default function TestimoniesForm(){
         settestimonies('');
     }
 
+    function showError(){
+        toast.error("Exceeded Word Limit in Testimonies")
+    }
+
     const classes = useStyles();
 
     const [value, setValue] = React.useState('General');
@@ -64,11 +82,45 @@ export default function TestimoniesForm(){
     const handleChange = (event) => {
         setValue(event.target.value);
     };
+    React.useEffect(
+        ()=>{
+            if(value==="Clubs"){
+                setHint(clubHint);
+            }
+            else if(value==="Time Management"){
+                setHint(timeManagementHint);
+            }
+            else if(value==="Online Semester Tips"){
+                setHint(onlineSemHint);
+            }
+            else {
+                setHint(defaultHint)
+            }
+        });
+
 
     const [testimonies, settestimonies] = React.useState('');
     const handleTestieChange = (event) =>{
         settestimonies(event.target.value)
     };
+
+    const [PoC_Value, setPoC_Value] = React.useState('');
+    const PoC_ValueChange = (event)=>{
+        setPoC_Value(event.target.value)
+    }
+
+    const [hint, setHint] = React.useState("Share your Insights with others");
+    const [word_count, setword_count] = React.useState(0);
+
+    React.useEffect(()=>{
+        // console.log('word entry')
+        setword_count(testimonies.length)
+    }, [testimonies])
+
+    const defaultHint = "Share your Insights with others"
+    const clubHint = "Which club are you a part of? Which club helped you grow as person? In what ways did the club help?"
+    const timeManagementHint = "What are your tried and tested techniques to be more productive? How do you manage time? How do you balance life/fun and deadlines?"
+    const onlineSemHint = "Any tips for the online semester? How are you coping with the online semester? Any stories or feelings that you'd like share?"
 
     return(
         <div>
@@ -78,20 +130,50 @@ export default function TestimoniesForm(){
                     <h1 className='formlabel'>For which part would you like to give your testimonies?</h1>
                     <FormControl component="fieldset">
                     {/* <FormLabel className='formlabel' component="legend">For which part would you like to give your testimonies?</FormLabel> */}
-                    <RadioGroup className='radio' aria-label="testimonies" name="testimonies1" value={value} onChange={handleChange}>
-                        <FormControlLabel className='radioButtonLeft' value="General" control={<Radio />} label="General" />
-                        <FormControlLabel className='radioButtonRight' value="Clubs" control={<Radio />} label="Clubs" />
-                        <FormControlLabel value="Time Management" control={<Radio />} label="Time Management" />
-                        <FormControlLabel value="Online Semester Tips" control={<Radio />} label="Online Semester Tips" />
-                        <FormControlLabel value="Academics" control={<Radio />} label="Academics" />
-                        <FormControlLabel value="Competitive Programming" control={<Radio />} label="Competitive Programming" />
-                        <FormControlLabel value="Hackathons" control={<Radio />} label="Hackathons" />
-                        <FormControlLabel value="Research" control={<Radio />} label="Research" />
-                        <FormControlLabel value="Placements" control={<Radio />} label="Placements" />
-                        <FormControlLabel value="Images and Experiences" control={<Radio />} label="Images and Experiences" />
-                    </RadioGroup>
-                    <FormHelperText className='helperlabel'>Choose one of the following and submit, you can submit the form again for filling for another section</FormHelperText>
+                    <FormHelperText className='helperlabel'>Choose one of the following and submit. You can submit the form again if you want to contribute for another section</FormHelperText>
+                    <div class="row">
+                        <div class="column">
+                            <RadioGroup className='radio' aria-label="testimonies" name="testimonies1" value={value} onChange={handleChange}>
+                                <FormControlLabel className='radioButtonLeft' value="General" control={<Radio />} label="General" />
+                                <FormControlLabel value="Phases of College" control={<Radio />} label="Phases of College" />
+                                <FormControlLabel className='radioButtonRight' value="Clubs" control={<Radio />} label="Clubs" />
+                                <FormControlLabel value="Time Management" control={<Radio />} label="Time Management" />
+                                <FormControlLabel value="Online Semester Tips" control={<Radio />} label="Online Semester Tips" />
+                                <FormControlLabel value="Academics" control={<Radio />} label="Academics" />
+                            </RadioGroup>
+                        </div>
+                        <div class="column">
+                            <RadioGroup className='radio' aria-label="testimonies" name="testimonies1" value={value} onChange={handleChange}>
+                            
+                                <FormControlLabel value="Competitive Programming" control={<Radio />} label="Competitive Programming" />
+                                <FormControlLabel value="Hackathons" control={<Radio />} label="Hackathons" />
+                                <FormControlLabel value="Research" control={<Radio />} label="Research" />
+                                <FormControlLabel value="Placements" control={<Radio />} label="Placements" />
+                                <FormControlLabel value="Images and Experiences" control={<Radio />} label="Experiences/Stories" />
+                                <FormControlLabel value="Images" control={<Radio />} label="Images" />
+                            </RadioGroup>
+                        </div>
+                    </div>                    
                     </FormControl>
+                    <br/>
+                    <br/>
+                    <br/>
+                    {(value==="Phases of College")?
+                    <FormControl className='nameLabel' color="secondary">
+                        <InputLabel id="demo-simple-select-filled-label">Phases of College</InputLabel>
+                        <Select
+                        labelId="demo-simple-select-filled-label"
+                        id="demo-simple-select-filled"
+                        value={PoC_Value}
+                        onChange={PoC_ValueChange}>
+                            <MenuItem value="Baby Steps">Baby Steps</MenuItem>
+                            <MenuItem value='Exploring'>Exploring</MenuItem>
+                            <MenuItem value='Defining Point'>Defining Point</MenuItem>
+                            <MenuItem value='Graduating'>Graduating</MenuItem>
+                            <MenuItem value='Nostalgia'>Nostalgia</MenuItem>
+                        </Select>
+                    </FormControl>
+                    :null}
                     <br/>
                     <br/>
                     <TextField
@@ -103,11 +185,17 @@ export default function TestimoniesForm(){
                     className='nameLabel'
                     color="secondary"
                     />
+                    <br/><br/>
+                    <FormLabel
+                    label=""
+                    className='nameLabel2'
+                    color="secondary"
+                    >{"Write About: " + hint}</FormLabel>
                     <br/>
                     <TextField
                     id="outlined-textarea"
-                    label="Your Testimony"
-                    placeholder="Share your Insights with others"
+                    label={`Your Testimony  (${word_count}/400)`}
+                    placeholder={defaultHint}
                     multiline
                     variant="outlined"
                     className='testimonials'
@@ -118,8 +206,8 @@ export default function TestimoniesForm(){
                     <br/>
                     <p>Disclaimer: Your ID's profile picture will be displayed along with Name and your Testimony</p>
                     <br/>
-                    <Button className='button' variant="contained" color="secondary" onClick={submitForm}>
-                        Submit
+                    <Button className='button' size='lg' variant="contained" color="secondary" onClick={(word_count<=400)?submitForm:showError}>
+                      <span className="span2">submit</span>
                     </Button>
                 </div>
             </form>
