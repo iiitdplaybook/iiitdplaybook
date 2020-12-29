@@ -10,6 +10,10 @@
     /* font-family: 'Poppins'; */
 }
 
+.MuiButton-label{
+    min-width: 150%;
+}
+
 .explore:hover {
     color: blue;
 }
