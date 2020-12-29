@@ -285,3 +285,11 @@ canvas {
         margin-bottom: 2%;
     } 
   }
+
+  @media only screen and (max-width: 600px) {
+  .vertical-timeline::before{
+    
+    height: 79%;
+    
+}
+  }

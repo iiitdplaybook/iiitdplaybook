@@ -1,5 +1,6 @@
 .navbar {
     display: flex;
+    height: 50px;
     align-items: center;
     justify-content: space-between;
     /* background-color: rgba(0, 0, 0,.4); */
@@ -90,6 +91,26 @@
     .removeText{
         display: none;
     }
+
+    
+    #btn{
+        margin-left: -15px;
+        
+    }
+
+    #btn:nth-child(1){
+        margin-left: 20px;
+    }
+
+    #btn:nth-child(4){
+        margin-right: 2px;
+    }
+    
+    .navbar__right > Button {
+        margin-left: 1px;
+        
+    }
+
 }
 
 .userIcon:hover {

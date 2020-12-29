@@ -107,4 +107,10 @@
     .column{
         width: 100%;
     }
+
+    
+    .MuiFormHelperText-root.helperlabel{
+        margin: 7%;
+    }
+
 }
