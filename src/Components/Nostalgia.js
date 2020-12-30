@@ -33,6 +33,9 @@ import canteen2 from "../Assets/NostalgiaPics/canteen_2.jpg";
 import imgInduction from "../Assets/NostalgiaPics/induction.PNG";
 import Navbar from "./Navbar";
 
+import ScrollAnimation from 'react-animate-on-scroll';
+import Fade from 'react-reveal/Fade';
+
 function Nostalgia() {
   const [{ user, isSignedIn, userName }] = useStateValue();
 
@@ -64,7 +67,8 @@ function Nostalgia() {
 
         <h1 className='heading_text'>Down the memory lane</h1>
         <h5 className='heading_desc'>Remember the time when...</h5>
-
+        
+        <Fade duration={2000}>
         <div className='section'>
             <h2>The Early Days</h2>
             <br></br>
@@ -85,6 +89,7 @@ function Nostalgia() {
                     Your browser does not support the video tag.
                     </video>
                     <img src={glow2}/>
+                    
                     <img src={imgInduction}/>
                 </div>
                 <br></br>But then ofcourse, there are some perks such as no more boring uniforms, no more seating arrangements and phone and eating allowed in class. 
@@ -94,11 +99,11 @@ function Nostalgia() {
                 You are carefree, play pool, attend club activities, watch netflix, and hang out with friends all day. 
                 No sign of deadlines(the calm before the storm &#128520;).
                 <br/><br/>
-
-               
-
             </p>
         </div>
+        </Fade>
+
+        <Fade duration={2000}>
         <div className='section'>
             <h2>The 11:59 Struggle</h2>
             <br></br>
@@ -119,6 +124,9 @@ function Nostalgia() {
 
             </p>
         </div>
+        </Fade>
+
+        <Fade duration={2000}>
         <div className='section'>
         <h2>3AM Maggi</h2>
         <br></br>
@@ -137,14 +145,9 @@ function Nostalgia() {
             </p>
             
         </div>
-        {/* <div className='section'>
-            <h2>Wind Point</h2>
-            <p>
-                Sab kuch toh ud jayega, bas tumhari deadlines rhe jayengi
-                <br></br>
-                100 kmph windspeed 
-            </p>
-        </div> */}
+        </Fade>
+
+        <Fade duration={2000}>
         <div className='section'>
             <h2>BCR</h2>
             <br></br>
@@ -163,15 +166,9 @@ function Nostalgia() {
                 </div>
             </div>
         </div>
-        {/* <div className='section'>
-            <h2>Goa Trip</h2>
-            <img classname='abba_nahi_maanenge_img' src={abba_nahi_maanenge}/>
-            <p>
-                4th year tak bhi nahi hone wali.
-                <br></br>
-                Abba nahi manenge
-            </p>
-        </div> */}
+        </Fade>
+
+        <Fade duration={2000}>
         <div className='section'>
             <h2>Ravi's Tapri</h2>
             <br></br>
@@ -193,6 +190,9 @@ function Nostalgia() {
                 </p>
             </div>
         </div>
+        </Fade>
+
+        <Fade duration={2000}>
         <div className='section'>
             <h2>Exam Season Blues</h2>
             <br></br>
@@ -219,6 +219,9 @@ function Nostalgia() {
 
             </div>
         </div>
+        </Fade>
+
+        <Fade duration={2000}>
         <div className='section'>
         <h2>The Old Acad Lawn</h2>
         <br></br>
@@ -235,6 +238,9 @@ function Nostalgia() {
                 </p>
             </div>
         </div>
+        </Fade>
+        
+        <Fade duration={2000}>
         <div className='section'>
         <h2>The Delhi <strike>Safar</strike> Suffer</h2>
         <br></br>
@@ -255,6 +261,9 @@ function Nostalgia() {
             </div>
             </p>
         </div>
+        </Fade>
+        
+        <Fade duration={2000}>
         <div className='section'>
             <h2>Cultural Fest</h2>
             <br></br>
@@ -305,6 +314,8 @@ function Nostalgia() {
                 <p>Ngl, tum kaam karoge toh mazaa aayega</p>
             </p> */}
         </div>
+        </Fade>
+
     </div>
     </div>
   )

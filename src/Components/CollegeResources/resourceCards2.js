@@ -7,20 +7,24 @@ import image_svg from "../../Assets/SVG_for_cards/teamwork.svg";
 
 function SuppliesCards(supplyCardInfo){
     const cardHeight = 280
-    const cardWidth = cardHeight*(5/3);
+    const cardWidth = cardHeight*(3/2);
 
     var gradientColor_1;
     var gradientColor_2;
+    var channelName;
     var title;
     var description;
+    var link;
     var image;
     var pathLink;
 
-    if (supplyCardInfo["title"]){
+    if (supplyCardInfo["channelName"]){
         gradientColor_1 = supplyCardInfo["gradientColor_1"];
         gradientColor_2 = supplyCardInfo["gradientColor_2"];
+        channelName = supplyCardInfo["channelName"];
         title = supplyCardInfo["title"];
         description = supplyCardInfo["description"];
+        link = supplyCardInfo["link"];
         image = supplyCardInfo["image"];
         pathLink = supplyCardInfo["pathLink"];
 
@@ -28,8 +32,10 @@ function SuppliesCards(supplyCardInfo){
     else{
         gradientColor_1 = "#e66465";
         gradientColor_2 = "#9198e5";
+        channelName = "No Name";
         title = "No Title";
         description = "N.A";
+        link = "explore;"
         image = image_svg;
         pathLink = "explore";
     }
@@ -46,8 +52,13 @@ function SuppliesCards(supplyCardInfo){
             
         },
         actionArea:{
-            width: cardWidth,
+            minWidth: cardWidth/2.5,
+            width: 'fit-content',
             height: cardHeight,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
         },
         a:{
             margin:"0%",
@@ -55,18 +66,26 @@ function SuppliesCards(supplyCardInfo){
         media: {
             minWidth:cardWidth/3,
             maxWidth:cardWidth/3,
-            minHeight: cardHeight,
+            minHeight: cardHeight/3,
             // maxHeight:100,
             borderRadius: '10px',
             margin: '5%',
             
         },
-        title: {
-            fontSize: 15,
+        channelName: {
+            fontSize: 16,
             fontFamily: 'Poppins',
             fontWeight:"bold",
+            textAlign: "center",
+            color: "#141414",
+        },
+        title: {
+            fontSize: 14,
+            fontFamily: 'Poppins',
+            fontWeight: 550,
             textAlign: "left",
             color: "#141414",
+            padding: '2%',
         },
         info:{
             fontSize: 12,
@@ -80,30 +99,55 @@ function SuppliesCards(supplyCardInfo){
             flexDirection: "row",
         },
         contentContainer:{
-            height: cardHeight,
             display: "flex",
             flexDirection: "column",
-            alignItems: 'flex-start',
-            width:'40%',
+            justifyContent: 'center',
+            width:'50%',
             overflowY: 'scroll',
-        },
+            '&::-webkit-scrollbar': {
+                display: 'none',
+              }
+            },
     });
     const classes = useStyles();
+
+    var playList = [] 
+    for (let index=0; index<title.length;index++)
+    {
+        playList.push(
+            <div>
+                <a  href={link[index]} target="_blank" style={{margin: '0%'}}>
+                    <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
+                        {title[index]}
+                    </Typography>
+                </a>
+                {/* <Typography className={classes.info} color="textSecondary">
+                    {description[index]}
+                </Typography> */}
+            </div>
+        )
+    }
+
     return(
         
             <Card className={classes.root}>
-                <a href={pathLink} target="_blank" style={{margin: '0%'}}>
-                {/* <Link className={classes.link} href={pathLink} > */}
-                
-                <CardActionArea className={classes.actionArea}>
-                    <div className={classes.cardContainer}>
-                    <CardMedia
-                        className={classes.media}
-                        image={image}
-                        title={title}
-                    />
+                <div className={classes.cardContainer}>
+                    <a href={pathLink} target="_blank" style={{margin: '0%'}}>
+                    {/* <Link className={classes.link} href={pathLink} > */}
+                        <CardActionArea className={classes.actionArea}>
+                            <Typography className={classes.channelName} style={{whiteSpace: 'pre-line'}}>
+                                {channelName}
+                            </Typography>
+                            <CardMedia
+                                className={classes.media}
+                                image={image}
+                                title={channelName}
+                            />
+                        </CardActionArea>
+                    </a>
                     <CardContent className={classes.contentContainer}>
-                        <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
+                        {playList}
+                        {/* <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
                             {title}
                         </Typography>
                         <Typography className={classes.info} color="textSecondary">
@@ -145,12 +189,9 @@ function SuppliesCards(supplyCardInfo){
                         </Typography>
                         <Typography className={classes.info} color="textSecondary">
                             {description}
-                        </Typography>
+                        </Typography> */}
                     </CardContent>
                     </div>
-                </CardActionArea>
-                </a>
-                {/* </Link> */}
             </Card>
        
     );

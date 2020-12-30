@@ -26,13 +26,14 @@ import LoadingScreen from "./Components/loading";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 // import Supplies from "./Components/Supplies/Supplies";
 import {isMobile} from 'react-device-detect';
+import ScrollToTop from './Components/ScrollToTop'
 
 function App() {
   const [{}, dispatch] = useStateValue();
   const [loading, setLoading] = useState(true)
     
   useEffect(() => {
-    setTimeout(() => setLoading(false), 1000)
+    setTimeout(() => setLoading(false), 4000)
   }, [])
 
   useEffect(() => {
@@ -93,6 +94,7 @@ function App() {
       </div>
       {/* {isMobile?<div></div>} */}
       <Router>
+        <ScrollToTop/>
         {!localStorage.getItem("isSignedIn") ? (
           <Switch>
             <Route path="/supplies">

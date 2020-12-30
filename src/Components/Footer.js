@@ -23,32 +23,46 @@ function Footer() {
                   <span className='span2'>YES! I'd like to contribute</span>
                 </Button>
                 <div className='testi2'>
+          
+        <a className="defaultClick" href="https://www.instagram.com/okkshitij/"  target="_blank">
           <div className='creatorCard'>
             <img src={kshitij}/>
             <p>Kshitij <div className='removeText'>&nbsp;Agrawal</div></p>
             <a class="fa fa-linkedin fa-lg" href="https://www.linkedin.com/in/kshitij16/"  target="_blank"></a>
+            <a class="fa fa-instagram fa-lg" href="https://www.instagram.com/okkshitij/"  target="_blank"></a>
           </div>
+          </a>
           
+          <a className="defaultClick" href="https://www.instagram.com/pabitrabansal/"  target="_blank">
           <div className='creatorCard'>
             <img src={pabitra}/>
             <p>Pabitra <div className='removeText'>&nbsp;Bansal</div> </p>
             <a class="fa fa-linkedin fa-lg" href="https://www.linkedin.com/in/pabitra-bansal-06039616a/"  target="_blank"></a>
+            <a class="fa fa-instagram fa-lg" href="https://www.instagram.com/pabitrabansal/"  target="_blank"></a>
+
           </div>
+          </a>
           
-          
+          <a className="defaultClick" href="https://www.instagram.com/am.i.a.normie.now/"  target="_blank">
           <div className='creatorCard'>
             <img src={rahul}/>
             <p>Rahul <div className='removeText'>&nbsp;Singh</div> </p>
             <a class="fa fa-linkedin fa-lg" href="https://www.linkedin.com/in/rahul-singh-7aa84697/"  target="_blank"></a>
+            <a class="fa fa-instagram fa-lg" href="https://www.instagram.com/am.i.a.normie.now/"  target="_blank"></a>
+
           </div>
+          </a>
           
-          
+          <a className="defaultClick" href="https://www.instagram.com/yashwin_1/"  target="_blank">
           <div className='creatorCard'>
             <img src={yashwin}/>
             <p>Yashwin <div className='removeText'>&nbsp;Agrawal</div> </p>
             <a class="fa fa-linkedin fa-lg" href="https://www.linkedin.com/in/yashwin-agrawal-6b28bb176/"  target="_blank"></a>
+            <a class="fa fa-instagram fa-lg" href="https://www.instagram.com/yashwin_1/"  target="_blank"></a>
+
           </div>
-          
+          </a>
+
         </div>
             </div>
             <div className="lower">

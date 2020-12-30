@@ -156,7 +156,7 @@ canvas {
     margin-top: -14%;
     /* background: red; */
 }
-
+    
 .vertical-timeline-element:nth-child(5) .containerBox{
     /* height: 70vh;   */
     margin-top: -35%;
@@ -284,4 +284,12 @@ canvas {
         margin-top: 0%;
         margin-bottom: 2%;
     } 
+  }
+
+  @media only screen and (max-width: 600px) {
+  .vertical-timeline::before{
+    
+    height: 79%;
+    
+}
   }

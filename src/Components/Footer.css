@@ -21,6 +21,9 @@
     text-align: center;
 }
 
+.defaultClick{
+    opacity: 1;
+}
 
 .testi2{
     display: flex;
@@ -45,7 +48,7 @@
     margin: 2%;
     display: flex;
     padding: 12px;
-    padding-right: 25px;
+    padding-right: 40px;
     background: rgba(255,255,255,.4);
     /* // background: rgba(255,255,255,.2); */
     /* // backdrop-filter: blur(100px); */
@@ -148,5 +151,23 @@
     .testi2 .creatorCard img{
         margin-right: -15px;    
     }
+
     
+.testi2 .creatorCard{
+
+    padding-right: 27px;
+}
+
+.button2 .span2 {
+    min-width: 350%;
+    margin-bottom: 25%;
+  }
+
+  .upper{
+      margin-top: 8%;
+  }
+
+  .lower{
+      margin-top: 5%;
+  }
 }

@@ -14,6 +14,7 @@ import Footer from './Footer'
 import Stars from './stars'
 import useScript from './useScript';
 import Tilt from 'react-parallax-tilt';
+import ParticleAnim from './ParticleAnim/ParticleAnim';
 
 // import homeWallpaper from "../Assets/Home_wallpaper.png";
 import { Link } from "react-router-dom";
@@ -75,16 +76,19 @@ function HomePage() {
         <div className='homePage'>
             <Navbar loggedIn={true} colorStatus={false} stickyCond={true}/>
             <div className='section_0' >
+                
                 {/* <img className='homePage_img' src={landscape}/> */}
                 {/* <h1 className='welcome_text'>Welcome!</h1> */}
                 
                 {/* <canvas id="c"></canvas>
                 <MyComponent></MyComponent> */}
+                <ParticleAnim/>
+
                 <div className='section_1' >
                     {/* <div id="particles-js"></div> */}
+                    
                     <Tilt     trackOnWindow={true} perspective={500}><h1 className='welcome_text'>Hello {userName.split(" ")[0]}</h1></Tilt>
                     <h4 style={{textAlign: 'center', marginLeft: '20%', marginRight: '20%', color: '#e6e6e6'}}>Welcome to the only guide to hack IIITD. The playbook provides you with multiple strategies that other students use, their experiences and stories, tools you can use to help you along the way and much more!</h4>
-                    
                 </div>
                 {/* <img className="imgHero" src={imgWelcome}/>                                 */}
                 

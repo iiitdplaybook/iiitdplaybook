@@ -108,7 +108,8 @@ function Supplies() {
 
     return (
         <div className="supplies">
-            <Navbar loggedIn={true} colorStatus={true}/>
+            <Navbar loggedIn={localStorage.getItem("isSignedIn")} colorStatus={true}/>
+            {/* {!localStorage.getItem("isSignedIn") ? (<Navbar loggedIn={true} colorStatus={true}/>) : ()} */}
             <h2 className='supplies_heading' style={{textAlign: 'center', margin: '4%'}}>A collection of things that students use in college</h2>
 
             <div className="supplies__button">

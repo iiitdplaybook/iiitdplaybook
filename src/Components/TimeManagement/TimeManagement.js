@@ -18,12 +18,15 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import ReactCardFlip from 'react-card-flip';
 import Switch from "react-switch";
+import CardsAnim from '../CardsAnim/CardsAnim';
+import { useStateValue } from '../../StateProvider';
 
 var isFav = false;
 
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
-  
+    
     return (
       <div
         role="tabpanel"
@@ -63,12 +66,15 @@ function TabPanel(props) {
       alignSelf: "start",
     },
     tabs: {
-      borderRight: `1px solid ${theme.palette.divider}`,
+      borderRight: `4px solid ${theme.palette.divider}`,
+    //   borderColor: `#008877`,
     },
   }));
 
 export default function TimeManagement() {
     // const [isFavText, setIsFavText] = useState("Add to Favourites");
+
+    const [{user, isSignedIn, userName}] = useStateValue()
 
     // function toggleFav(){
     //     isFav = isFav?false:true;
@@ -145,261 +151,230 @@ export default function TimeManagement() {
                 <Button onClick={toggleFav} style={{ marginLeft: "auto" }} >{isFavText}</Button>
             </div> */}
             <Navbar loggedIn={true} colorStatus={true}/>
-            
-            <div align='center'>
-                <Switch 
-                    onChange={handleClick} 
-                    checked={isFlipped}
-                    offColor='#2e9e4c'
-                    onColor='#2e9e4c'
-                    checkedIcon={false}
-                    uncheckedIcon={false}
-                    />
+        
+            <ReactCardFlip className="mainCard" isFlipped={isFlipped} flipDirection="horizontal">
+                <Card className='frontpage'>
+                    <div className='mainDiv' style={{visibility: !isFlipped ? 'visible' : 'hidden' }} >
 
-            </div>
-
-            <div className='timeManagement__back'>
-                <div className='timeManagement__back__heading'>
-                    <h1>GUIDE TO BECOMING A PRODUCTIVITY NINJA</h1>
-                </div>
-
-                {/* <div className='timeManagement__back__testimonies'>
-                    <div className='timeManagement__back__testimonies__buttons'>
-                        <Button
-                            onClick={() => changeS(1)}
-                            variant={clickedButton === 1 ? "contatined" : "outlined"}
-                            className={
-                                clickedButton === 1
-                                    ? buttonClass.root
-                                    : buttonClass.notRoot
-                            }
-                        >
-                            All
-                        </Button>
-                        <Button
-                            onClick={() => changeS(2)}
-                            variant={clickedButton === 2 ? "contatined" : "outlined"}
-                            className={
-                                clickedButton === 2
-                                    ? buttonClass.root
-                                    : buttonClass.notRoot
-                            }
-                        >
-                            Recommended
-                        </Button>
-                        <Button
-                            onClick={() => changeS(3)}
-                            variant={clickedButton === 3 ? "contatined" : "outlined"}
-                            className={
-                                clickedButton === 3
-                                    ? buttonClass.root
-                                    : buttonClass.notRoot
-                            }
-                        >
-                            Favourites
-                        </Button>
-                    </div>
-
-                    <div className='timeManagement__back__testimonies__text'>
-                        {clickedButton === 1 ? (
-                            <div className="cardsDiv">
-                                {itemCards["allCards"]}
-                            </div>
+                        <div id='cardsBox'>
+                            <h2 style={{textAlign: 'center', margin: '2%', marginTop: '5%'}}>This is where the "fun" begins </h2>
+                            <h4 style={{textAlign: 'center', margin: '0%', fontWeight: '500'}}>Here's the deck of cards that IIITD has in store for YOU <br/><i>(Flick left/right to see other cards)</i> </h4>
+                            <CardsAnim/>
+                        </div>
+                    
+                        <div id='cardsBox2'>
+                            <h2 style={{textAlign: 'center', margin: '2%', marginTop: '0%'}}>But don't worry, we have a special card saved just for you! </h2>
+                            <h2 style={{textAlign: 'center', margin: '2%', marginTop: '0%'}}>It's your turn {userName.split(" ")[0]}<h2 className='textCard'>&#x25BE;Play your card&#x25BE;</h2></h2>
+                            <h4 style={{textAlign: 'center', margin: '0%', fontWeight: '500'}}><i>(Click on the card below)</i> </h4>
+                                <Button className='reverseButton' id='unoReverse' variant="contained" onClick={handleClick}>
+                                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5ef95353-9f74-45ba-a400-5494417ca165/ddmcdqs-ecd2b865-fa25-4550-adf0-f5962af5484f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNWVmOTUzNTMtOWY3NC00NWJhLWE0MDAtNTQ5NDQxN2NhMTY1XC9kZG1jZHFzLWVjZDJiODY1LWZhMjUtNDU1MC1hZGYwLWY1OTYyYWY1NDg0Zi5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.JASe6g-Qonkdhm7GQ5H-qEyH-bM7sh6lPp60apDiUUo" height="300px"></img>
+                                    {/* <p>Play my card</p> */}
+                                </Button>
                             
-                        ) : clickedButton === 2 ? (
-                            <div className="cardsDiv">
-                                {itemCards["recommendedCards"]}
-                            </div>
-                        ) : (
-                            <div className="cardsDiv">
-                                {itemCards["favCards"]}
-                            </div>
-                        )}
+                        </div>
                     </div>
-                </div> */}
+                </Card>
+                <Card className='backpage'>
+                    <div className='timeManagement__back'>
+                        <div className='timeManagement__back__heading'>
+                            <h1>GUIDE TO BECOMING A PRODUCTIVITY NINJA</h1>
+                        </div>
 
-                <div className='timeManagement__back__content'>
-                    <h2>CCORE (Capture, Clarify, Organize, Reflect, Engage)</h2>
+                        <div className='timeManagement__back__content'>
+                            <h2>CCORE (Capture, Clarify, Organize, Reflect, Engage)</h2>
 
-                    <div className={classes.root}>
-                        <Tabs
-                            orientation="vertical"
-                            variant="scrollable"
-                            // indicatorColor="#000"
-                            value={value}
-                            onChange={handleChange}
-                            aria-label="Vertical tabs example"
-                            className={classes.tabs}
-                        >
-                            <Tab label="Capture" {...a11yProps(0)} />
-                            <Tab label="Clarify" {...a11yProps(1)} />
-                            <Tab label="Organize" {...a11yProps(2)} />
-                            <Tab label="Reflect" {...a11yProps(3)} />
-                            <Tab label="Engage" {...a11yProps(4)} />
-                        </Tabs>
-                        <TabPanel value={value} index={0}>
-                            <h3>Capture</h3>
-                            <ul>
-                                <li>Your mind is for generating ideas, not storing them. When you use your brain as a to-do list, you start feeling overwhelmed, stressed or less productive. 
-                                <br/>You need a system to off-load your thoughts/tasks, so just simply write it down.</li>
-                                <li>Apps - Things (App store), Notion</li>
-                            </ul>
-                            <br></br>
-                            Note - Use a centralised system and use it for everything. Don’t keep switching applications. Capture EVERY. SINGLE. THING. 100%.
-                        </TabPanel>
-                        <TabPanel value={value} index={1}>
-                            <h3>Clarify</h3>
-                            <ul>
-                                <li>Procrastination comes from not clearly defining your next steps.</li>
-                                <li>Not your generic to-do list -`&gt;` define clearly. (photo about before after, phone list screenshot)</li>
-                                <li>Convert to-do lists into action words</li>
-                            </ul>
-                        </TabPanel>
-                        <TabPanel value={value} index={2}>
-                            <h3>Organize</h3>
-                            <ul>
-                                <li>Google chrome, create folder, helps a ton. “Design” “Job” “college” etc.</li>
-                                <li>Evernote/Notion</li>
-                            </ul>
-                        </TabPanel>
-                        <TabPanel value={value} index={3}>
-                            <h3>Reflect</h3>
-                            <ul>
-                                <li>Montly/Weekly reviews</li>
-                            </ul>
-                        </TabPanel>
-                        <TabPanel value={value} index={4}>
-                            <h3>Engage</h3>
-                            <ul>
-                            <li>Now actually DO IT :)</li>
-                            <li>Browse through the list in front of you, choose and just do it.</li>
-                            </ul>
-                        </TabPanel>
-                    </div>
-                </div>
+                            <div className={classes.root}>
+                                <Tabs
+                                    orientation="vertical"
+                                    variant="scrollable"
+                                    indicatorColor='#616161'
+                                    value={value}
+                                    onChange={handleChange}
+                                    aria-label="Vertical tabs example"
+                                    className={classes.tabs}
+                                >
+                                    <Tab label="Capture" {...a11yProps(0)} />
+                                    <Tab label="Clarify" {...a11yProps(1)} />
+                                    <Tab label="Organize" {...a11yProps(2)} />
+                                    <Tab label="Reflect" {...a11yProps(3)} />
+                                    <Tab label="Engage" {...a11yProps(4)} />
+                                </Tabs>
+                                <TabPanel value={value} index={0}>
+                                    <h3>Capture</h3>
+                                    <br/>
+                                    <ul>
+                                        <li>Your mind is for generating ideas, not storing them. When you use your brain as a to-do list, you start feeling overwhelmed, stressed or less productive. 
+                                        <br/>You need a system to off-load your thoughts/tasks, so just simply write it down.</li>
+                                        <li>Apps - Things (App store), Notion</li>
+                                    </ul>
+                                    <br></br>
+                                    Note - Use a centralised system and use it for everything. Don’t keep switching applications. Capture EVERY. SINGLE. THING. 100%.
+                                </TabPanel>
+                                <TabPanel value={value} index={1}>
+                                    <h3>Clarify</h3>
+                                    <br/>
+                                    <ul>
+                                        <li>Procrastination comes from not clearly defining your next steps.</li>
+                                        <li>Not your generic to-do list -`&gt;` define clearly. (photo about before after, phone list screenshot)</li>
+                                        <li>Convert to-do lists into action words</li>
+                                    </ul>
+                                </TabPanel>
+                                <TabPanel value={value} index={2}>
+                                    <h3>Organize</h3>
+                                    <br/>
+                                    <ul>
+                                        <li>Google chrome, create folder, helps a ton. “Design” “Job” “college” etc.</li>
+                                        <li>Evernote/Notion</li>
+                                    </ul>
+                                </TabPanel>
+                                <TabPanel value={value} index={3}>
+                                    <h3>Reflect</h3>
+                                    <br/>
+                                    <ul>
+                                        <li>Montly/Weekly reviews</li>
+                                    </ul>
+                                </TabPanel>
+                                <TabPanel value={value} index={4}>
+                                    <h3>Engage</h3>
+                                    <br/>
+                                    <ul>
+                                    <li>Now actually DO IT :)</li>
+                                    <li>Browse through the list in front of you, choose and just do it.</li>
+                                    </ul>
+                                </TabPanel>
+                            </div>
+                        </div>
 
-                <div className='timeManagement__back__content'> 
-                    <Card className={cardClass.root}>
-                        <CardContent>
-                            <Typography className={cardClass.title}>
-                                Tackle Small Tasks First
-                            </Typography>
-                            <br/>
-                            <Typography  className={cardClass.bullet}>
-                                - Less than 2 mins task? Do it now!
-                                <br/>
-                                - Prioritize your list by what can be done in a few minutes and what will take longer to complete.
-                                <br/>
-                            </Typography>
-                            <br/><br/>
-                            <Typography className={cardClass.title}>
-                                Only Do One Thing at a Time
-                            </Typography>
-                            <br/>
-                            <Typography  className={cardClass.bullet}>
-                                - Turn off any devices that you can. And no matter what, don’t switch to another task until the one before it is complete.
-                                <br/>
-                                - This may be a hard habit to break, but it’s worth it.
-                                <br/>
-                            </Typography>
-                        </CardContent>
-                    </Card>
-                </div>
-
-                <div className='timeManagement__back__content'> 
-                    <h2>The Eisenhower Decision Matrix</h2>
-
-                    <div className="grid-wrapper">
-                        <div className="grid-row">
-                            <div className="square-wrapper">
-                                <div className="square green">
-                                    <div className='mainText'> 
-                                        <h2>Do</h2>
-                                        <p>Do it now</p>
-                                    </div>
-                                    <div className='hiddenText'>
+                        <div className='timeManagement__back__content'> 
+                            <Card className={cardClass.root}>
+                                <CardContent>
+                                    <Typography className={cardClass.title}>
+                                        Tackle Small Tasks First
+                                    </Typography>
+                                    <br/>
+                                    <Typography  className={cardClass.bullet}>
+                                        - Less than 2 mins task? Do it now!
                                         <br/>
-                                        <ul>
-                                            <li>Quadrant 1 tasks are both urgent and important.</li>
-                                            <li>They’re tasks that require our immediate attention and also work towards fulfilling our long-term goals and missions in life.</li>
-                                            <li>Quadrant 1 tasks typically consist of crises, problems, or deadlines.</li>
-                                        </ul>
+                                        - Prioritize your list by what can be done in a few minutes and what will take longer to complete.
+                                        <br/>
+                                    </Typography>
+                                    <br/><br/>
+                                    <Typography className={cardClass.title}>
+                                        Only Do One Thing at a Time
+                                    </Typography>
+                                    <br/>
+                                    <Typography  className={cardClass.bullet}>
+                                        - Turn off any devices that you can. And no matter what, don’t switch to another task until the one before it is complete.
+                                        <br/>
+                                        - This may be a hard habit to break, but it’s worth it.
+                                        <br/>
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </div>
+
+                        <div className='timeManagement__back__content'> 
+                            <h2>The Eisenhower Decision Matrix</h2>
+
+                            <div className="grid-wrapper">
+                                <div className="grid-row">
+                                    <div className="square-wrapper">
+                                        <div className="square green">
+                                            <div className='mainText'> 
+                                                <h2>Do</h2>
+                                                <p>Do it now</p>
+                                            </div>
+                                            <div className='hiddenText'>
+                                                <br/>
+                                                <ul>
+                                                    <li>Quadrant 1 tasks are both urgent and important.</li>
+                                                    <li>They’re tasks that require our immediate attention and also work towards fulfilling our long-term goals and missions in life.</li>
+                                                    <li>Quadrant 1 tasks typically consist of crises, problems, or deadlines.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="square-wrapper">
+                                        <div className="square blue">
+                                            <div className='mainText'>
+                                                <h2>Decide</h2>
+                                                <p>Schedule a time to do it</p>
+                                            </div>
+                                            <div className='hiddenText'>
+                                                <br/>
+                                                <ul>
+                                                    <li>Quadrant 2 tasks are the activities that don’t have a pressing deadline, but nonetheless help you achieve your important personal, school, and work goals as well as help you fulfill your overall mission as a person.</li>
+                                                    <li>Q2 tasks are typically centered around strengthening relationships, planning for the future, and improving yourself.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div className="square-wrapper">
-                                <div className="square blue">
-                                    <div className='mainText'>
-                                        <h2>Decide</h2>
-                                        <p>Schedule a time to do it</p>
+                                <div className="grid-row">
+                                    <div className="square-wrapper">
+                                        <div className="square red">
+                                            <div className='mainText'>
+                                                <h2>Delegate</h2>
+                                                <p>Who can do it for you?</p>
+                                            </div>
+                                            <div className='hiddenText'>
+                                                <br/>
+                                                <ul>
+                                                    <li>Quadrant 3 tasks are activities that require our attention now (urgent), but don’t help us achieve our goals or fulfill our mission (not important).</li>
+                                                    <li>Most Q3 tasks are interruptions from other people and often involve helping them meet their own goals and fulfill their own priorities.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div className='hiddenText'>
-                                        <br/>
-                                        <ul>
-                                            <li>Quadrant 2 tasks are the activities that don’t have a pressing deadline, but nonetheless help you achieve your important personal, school, and work goals as well as help you fulfill your overall mission as a person.</li>
-                                            <li>Q2 tasks are typically centered around strengthening relationships, planning for the future, and improving yourself.</li>
-                                        </ul>
+                                    <div className="square-wrapper">
+                                        <div className="square grey">
+                                            <div className='mainText'>
+                                                <h2>Delete</h2>
+                                                <p>Eliminate it</p>
+                                            </div>
+                                            <div className='hiddenText'>
+                                                <br/>
+                                                <ul>
+                                                    <li>Quadrant 4 activities aren’t urgent and aren’t important.</li>
+                                                    <li>They’re what I like to call “dicking around” activities. Q4 activities aren’t pressing nor do they help you achieve long-term goals or fulfill your mission as a man.</li>
+                                                    <li>They’re primarily distractions.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="grid-row">
-                            <div className="square-wrapper">
-                                <div className="square red">
-                                    <div className='mainText'>
-                                        <h2>Delegate</h2>
-                                        <p>Who can do it for you?</p>
-                                    </div>
-                                    <div className='hiddenText'>
-                                        <br/>
-                                        <ul>
-                                            <li>Quadrant 3 tasks are activities that require our attention now (urgent), but don’t help us achieve our goals or fulfill our mission (not important).</li>
-                                            <li>Most Q3 tasks are interruptions from other people and often involve helping them meet their own goals and fulfill their own priorities.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="square-wrapper">
-                                <div className="square grey">
-                                    <div className='mainText'>
-                                        <h2>Delete</h2>
-                                        <p>Eliminate it</p>
-                                    </div>
-                                    <div className='hiddenText'>
-                                        <br/>
-                                        <ul>
-                                            <li>Quadrant 4 activities aren’t urgent and aren’t important.</li>
-                                            <li>They’re what I like to call “dicking around” activities. Q4 activities aren’t pressing nor do they help you achieve long-term goals or fulfill your mission as a man.</li>
-                                            <li>They’re primarily distractions.</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <div className='timeManagement__back__content'>
-                    <h2>Special Tips</h2>
-                    <Card className={cardClass.root}>
-                        <CardContent>
-                            <Typography className={cardClass.title}>
-                                Reach Inbox Zero
-                            </Typography>
-                            <br/>
-                            <Typography  className={cardClass.bullet}>
-                                - Divide inbox into tabs: Primary, Social, Promotions
-                                <br/>
-                                - Add label: Google Classroom, Coding, Internship/Placement, Project, Urgent, etc.(your choice)
-                                <br/>
-                                - Do this on the VERY FIRST day! You won't be able to come back to this situation
-                                <br/>
-                                - Add a mail tracker
-                            </Typography>
-                        </CardContent>
-                    </Card>
-                </div>             
-            </div>
+                        <div className='timeManagement__back__content'>
+                            <h2>Special Tips</h2>
+                            <Card className={cardClass.root}>
+                                <CardContent>
+                                    <Typography className={cardClass.title}>
+                                        Reach Inbox Zero
+                                    </Typography>
+                                    <br/>
+                                    <Typography  className={cardClass.bullet}>
+                                        &#x25CF; Divide inbox into tabs: Primary, Social, Promotions
+                                        <br/>
+                                        &#x25CF; Add label: Google Classroom, Coding, Internship/Placement, Project, Urgent, etc.(your choice)
+                                        <br/>
+                                        &#x25CF; Do this on the VERY FIRST day! You won't be able to come back to this situation <br/>(@Freshers you have a chance!)
+                                        <img className="memeImage" src="https://memegenerator.net/img/instances/47021039.jpg"></img>
+                                        <br/>
+                                        &#x25CF; Add a mail tracker
+                                    </Typography>
+                                </CardContent>
+                            </Card>
+                        </div>             
+                    </div>
+                    <div className='button_div'>
+                        <Button className='reverseButton' variant="contained" onClick={handleClick}>
+                            UNO Reverse
+                        </Button>
+                    </div>
+                </Card>
+            </ReactCardFlip>
         </div>        
     );
-}
+}                                   
