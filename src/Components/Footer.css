@@ -14,8 +14,9 @@
 
 .buymeacoffeelogo{
     height: 20px;
+    margin-right: 1%;
 }
-.pateronlogo{
+/* .pateronlogo{
     height: 20px;
 }
 .supportUsButtons{
@@ -23,7 +24,11 @@
     justify-content: center;
     align-items: center;
 }
-
+ */
+#supportBtn{
+    margin-top: 1%;
+    width: 500px;
+}
 .upper{
     color: #fff;
     display: flex;
