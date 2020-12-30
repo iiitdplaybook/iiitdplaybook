@@ -21,7 +21,6 @@ import Button from '@material-ui/core/Button';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
 const state = {
     "UserAvatar": "https://www.gstatic.com/stadia/gamers/avatars/xxhdpi/avatar_53.png",
     "Name":"Rahul Singh",
@@ -121,13 +120,14 @@ export default function TestimoniesForm(){
     const clubHint = "Which club are you a part of? Which club helped you grow as person? In what ways did the club help?"
     const timeManagementHint = "What are your tried and tested techniques to be more productive? How do you manage time? How do you balance life/fun and deadlines?"
     const onlineSemHint = "Any tips for the online semester? How are you coping with the online semester? Any stories or feelings that you'd like share?"
-
+    
     return(
         <div>
             <Navbar loggedIn={true} colorStatus={true}/>
             <form className={classes.root} noValidate autoComplete="off">
                 <div className="formdiv">
-                    <h1 className='formlabel'>For which part would you like to give your testimonies?</h1>
+                {/* <h2 className='formlabel'>So {userName.split(" ")[0]},</h2> */}
+                <h1 className='formlabel'>For which part would you like to share your testimonies?</h1>
                     <FormControl component="fieldset">
                     {/* <FormLabel className='formlabel' component="legend">For which part would you like to give your testimonies?</FormLabel> */}
                     <FormHelperText className='helperlabel'>Choose one of the following and submit. You can submit the form again if you want to contribute for another section</FormHelperText>

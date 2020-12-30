@@ -68,6 +68,24 @@ function Login() {
 
   const vel2 = 25;
 
+  function loadUser(user){
+    const firestoreUser = firebase.firestore().collection('users').doc(user.uid)
+    const data = firestoreUser.get().then(function(doc) {
+      if(!doc.exists){
+        const userData={
+          uid: user.uid,
+          displayName : user.displayName,
+          email: user.email,
+          UserAvatar: user.photoURL
+        }
+        firestoreUser.set(userData).then(function() {
+            console.log("Document successfully written!");
+        });
+        
+      }
+    });
+  }
+
   const signIn = () => {
     auth.setPersistence(firebase.auth.Auth.Persistence.LOCAL);
     auth
@@ -75,10 +93,12 @@ function Login() {
       .then((result) => {
         console.log(result.user.displayName);
         localStorage.setItem("isSignedIn", true);
+        loadUser(result.user);
       })
       .catch((error) => {
         console.log(error.message);
       });
+    
   };
 
   const useStyles = makeStyles({

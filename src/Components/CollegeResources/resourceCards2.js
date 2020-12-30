@@ -99,10 +99,9 @@ function SuppliesCards(supplyCardInfo){
             flexDirection: "row",
         },
         contentContainer:{
-            height: cardHeight,
             display: "flex",
             flexDirection: "column",
-            alignItems: 'flex-start',
+            justifyContent: 'center',
             width:'50%',
             overflowY: 'scroll',
             '&::-webkit-scrollbar': {

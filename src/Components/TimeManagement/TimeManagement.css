@@ -6,6 +6,7 @@
 .timeManagement__back {
     display: flex;
     flex-direction: column;
+    height: fit-content;
 }
 
 .timeManagement__back__heading {
@@ -202,10 +203,55 @@
 }
 
 .mainDiv {
-  width: max-content;
-  height: 110em;
-  vertical-align: middle;
+  width: 100%;
+  height: 150em;
+  /* padding: 5%; */
+  /* vertical-align: middle; */
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  background-color: white;
+}
+
+.reverseButton {
+  align-self: flex-end;
+}
+
+#unoReverse {
+  background: white;
+  align-self: center;
+}
+
+.button_div{
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10%;
+  margin-top: 5%;
+}
+
+.button_div:nth-child(1){
+  background-color: black;
+  margin-top: 45%;
+}
+
+
+.memeImage{
+  border-radius: 10px;
+}
+
+#cardsBox2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: white;
+  /* position: fixed; */
+  /* overscroll-behavior-y: contain; */
+  overflow: hidden;
+  width: 100%;
+  height: 30%;
+  visibility: ;
+  /* cursor: url('https://uploads.codesandbox.io/uploads/user/b3e56831-8b98-4fee-b941-0e27f39883ab/Ad1_-cursor.png') 39 39, auto; */
 }

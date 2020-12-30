@@ -18,12 +18,15 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import ReactCardFlip from 'react-card-flip';
 import Switch from "react-switch";
+import CardsAnim from '../CardsAnim/CardsAnim';
+import { useStateValue } from '../../StateProvider';
 
 var isFav = false;
 
+
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
-  
+    
     return (
       <div
         role="tabpanel"
@@ -63,12 +66,15 @@ function TabPanel(props) {
       alignSelf: "start",
     },
     tabs: {
-      borderRight: `1px solid ${theme.palette.divider}`,
+      borderRight: `4px solid ${theme.palette.divider}`,
+    //   borderColor: `#008877`,
     },
   }));
 
 export default function TimeManagement() {
     // const [isFavText, setIsFavText] = useState("Add to Favourites");
+
+    const [{user, isSignedIn, userName}] = useStateValue()
 
     // function toggleFav(){
     //     isFav = isFav?false:true;
@@ -148,10 +154,24 @@ export default function TimeManagement() {
         
             <ReactCardFlip className="mainCard" isFlipped={isFlipped} flipDirection="horizontal">
                 <Card className='frontpage'>
-                    <div className='mainDiv'>
-                        <Button className='reverseButton' variant="contained" onClick={handleClick}>
-                            UNO Reverse
-                        </Button>
+                    <div className='mainDiv' style={{visibility: !isFlipped ? 'visible' : 'hidden' }} >
+
+                        <div id='cardsBox'>
+                            <h2 style={{textAlign: 'center', margin: '2%', marginTop: '5%'}}>This is where the "fun" begins </h2>
+                            <h4 style={{textAlign: 'center', margin: '0%', fontWeight: '500'}}>Here's the deck of cards that IIITD has in store for YOU <br/><i>(Flick left/right to see other cards)</i> </h4>
+                            <CardsAnim/>
+                        </div>
+                    
+                        <div id='cardsBox2'>
+                            <h2 style={{textAlign: 'center', margin: '2%', marginTop: '0%'}}>But don't worry, we have a special card saved just for you! </h2>
+                            <h2 style={{textAlign: 'center', margin: '2%', marginTop: '0%'}}>It's your turn {userName.split(" ")[0]}<h2 className='textCard'>&#x25BE;Play your card&#x25BE;</h2></h2>
+                            <h4 style={{textAlign: 'center', margin: '0%', fontWeight: '500'}}><i>(Click on the card below)</i> </h4>
+                                <Button className='reverseButton' id='unoReverse' variant="contained" onClick={handleClick}>
+                                    <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5ef95353-9f74-45ba-a400-5494417ca165/ddmcdqs-ecd2b865-fa25-4550-adf0-f5962af5484f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNWVmOTUzNTMtOWY3NC00NWJhLWE0MDAtNTQ5NDQxN2NhMTY1XC9kZG1jZHFzLWVjZDJiODY1LWZhMjUtNDU1MC1hZGYwLWY1OTYyYWY1NDg0Zi5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.JASe6g-Qonkdhm7GQ5H-qEyH-bM7sh6lPp60apDiUUo" height="300px"></img>
+                                    {/* <p>Play my card</p> */}
+                                </Button>
+                            
+                        </div>
                     </div>
                 </Card>
                 <Card className='backpage'>
@@ -167,7 +187,7 @@ export default function TimeManagement() {
                                 <Tabs
                                     orientation="vertical"
                                     variant="scrollable"
-                                    // indicatorColor="#000"
+                                    indicatorColor='#616161'
                                     value={value}
                                     onChange={handleChange}
                                     aria-label="Vertical tabs example"
@@ -181,6 +201,7 @@ export default function TimeManagement() {
                                 </Tabs>
                                 <TabPanel value={value} index={0}>
                                     <h3>Capture</h3>
+                                    <br/>
                                     <ul>
                                         <li>Your mind is for generating ideas, not storing them. When you use your brain as a to-do list, you start feeling overwhelmed, stressed or less productive. 
                                         <br/>You need a system to off-load your thoughts/tasks, so just simply write it down.</li>
@@ -191,6 +212,7 @@ export default function TimeManagement() {
                                 </TabPanel>
                                 <TabPanel value={value} index={1}>
                                     <h3>Clarify</h3>
+                                    <br/>
                                     <ul>
                                         <li>Procrastination comes from not clearly defining your next steps.</li>
                                         <li>Not your generic to-do list -`&gt;` define clearly. (photo about before after, phone list screenshot)</li>
@@ -199,6 +221,7 @@ export default function TimeManagement() {
                                 </TabPanel>
                                 <TabPanel value={value} index={2}>
                                     <h3>Organize</h3>
+                                    <br/>
                                     <ul>
                                         <li>Google chrome, create folder, helps a ton. “Design” “Job” “college” etc.</li>
                                         <li>Evernote/Notion</li>
@@ -206,12 +229,14 @@ export default function TimeManagement() {
                                 </TabPanel>
                                 <TabPanel value={value} index={3}>
                                     <h3>Reflect</h3>
+                                    <br/>
                                     <ul>
                                         <li>Montly/Weekly reviews</li>
                                     </ul>
                                 </TabPanel>
                                 <TabPanel value={value} index={4}>
                                     <h3>Engage</h3>
+                                    <br/>
                                     <ul>
                                     <li>Now actually DO IT :)</li>
                                     <li>Browse through the list in front of you, choose and just do it.</li>
@@ -330,13 +355,14 @@ export default function TimeManagement() {
                                     </Typography>
                                     <br/>
                                     <Typography  className={cardClass.bullet}>
-                                        - Divide inbox into tabs: Primary, Social, Promotions
+                                        &#x25CF; Divide inbox into tabs: Primary, Social, Promotions
                                         <br/>
-                                        - Add label: Google Classroom, Coding, Internship/Placement, Project, Urgent, etc.(your choice)
+                                        &#x25CF; Add label: Google Classroom, Coding, Internship/Placement, Project, Urgent, etc.(your choice)
                                         <br/>
-                                        - Do this on the VERY FIRST day! You won't be able to come back to this situation
+                                        &#x25CF; Do this on the VERY FIRST day! You won't be able to come back to this situation <br/>(@Freshers you have a chance!)
+                                        <img className="memeImage" src="https://memegenerator.net/img/instances/47021039.jpg"></img>
                                         <br/>
-                                        - Add a mail tracker
+                                        &#x25CF; Add a mail tracker
                                     </Typography>
                                 </CardContent>
                             </Card>

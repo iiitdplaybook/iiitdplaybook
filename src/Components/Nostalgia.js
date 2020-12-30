@@ -68,7 +68,7 @@ function Nostalgia() {
         <h1 className='heading_text'>Down the memory lane</h1>
         <h5 className='heading_desc'>Remember the time when...</h5>
         
-        <Fade duration={2500}>
+        <Fade duration={2000}>
         <div className='section'>
             <h2>The Early Days</h2>
             <br></br>
@@ -103,7 +103,7 @@ function Nostalgia() {
         </div>
         </Fade>
 
-        <Fade duration={2500}>
+        <Fade duration={2000}>
         <div className='section'>
             <h2>The 11:59 Struggle</h2>
             <br></br>
@@ -126,7 +126,7 @@ function Nostalgia() {
         </div>
         </Fade>
 
-        <Fade duration={2500}>
+        <Fade duration={2000}>
         <div className='section'>
         <h2>3AM Maggi</h2>
         <br></br>
@@ -147,7 +147,7 @@ function Nostalgia() {
         </div>
         </Fade>
 
-        <Fade duration={2500}>
+        <Fade duration={2000}>
         <div className='section'>
             <h2>BCR</h2>
             <br></br>
@@ -168,7 +168,7 @@ function Nostalgia() {
         </div>
         </Fade>
 
-        <Fade duration={2500}>
+        <Fade duration={2000}>
         <div className='section'>
             <h2>Ravi's Tapri</h2>
             <br></br>
@@ -192,7 +192,7 @@ function Nostalgia() {
         </div>
         </Fade>
 
-        <Fade duration={2500}>
+        <Fade duration={2000}>
         <div className='section'>
             <h2>Exam Season Blues</h2>
             <br></br>
@@ -221,7 +221,7 @@ function Nostalgia() {
         </div>
         </Fade>
 
-        <Fade duration={2500}>
+        <Fade duration={2000}>
         <div className='section'>
         <h2>The Old Acad Lawn</h2>
         <br></br>
@@ -240,7 +240,7 @@ function Nostalgia() {
         </div>
         </Fade>
         
-        <Fade duration={2500}>
+        <Fade duration={2000}>
         <div className='section'>
         <h2>The Delhi <strike>Safar</strike> Suffer</h2>
         <br></br>
@@ -263,7 +263,7 @@ function Nostalgia() {
         </div>
         </Fade>
         
-        <Fade duration={2500}>
+        <Fade duration={2000}>
         <div className='section'>
             <h2>Cultural Fest</h2>
             <br></br>

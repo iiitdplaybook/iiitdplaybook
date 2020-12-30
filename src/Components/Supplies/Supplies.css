@@ -31,3 +31,14 @@
     grid-auto-rows: 300px !important;
     justify-items: center;
 }
+
+@media only screen and (max-width: 600px) {
+
+    .supplies__button    .MuiButton-label{
+        font-size: .7em;
+    }
+
+.supplies__button{
+    width: fit-content;
+}
+}

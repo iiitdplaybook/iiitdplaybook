@@ -244,110 +244,54 @@ function items(){
     const networkingCards = [{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
+        "title":"Women In Tech IIITD (WiT)",
+        "description": "WiT is the tech society of IIITD managed by women. The aim is to provide the alumni and seniors a chance to share amazing opportunities with students.",
+        "image":"https://cdn5.telesco.pe/file/A92l1iFm48PMisyxb26W-PmOiMW14zNCzrPEw_arnt__j11T93c3AqmSCJ1EyRmyuFewCum1vvL0uk8kw0WM5IDQ7q_EXTBIeSdQjaWgzgOx8UfpV-m-b9FnnwCqAIykZwbUvfJqgXVoI9zM1-cLTlfT7D9w5kTo56jAp1VJk0hRxMyV0TdO-GQr4FJ8NVcfUQfkjnq9fsuPeptVZJxe5q18uzlm9Q8v-acvSispuUoeDDncszU-U4RoxyXnSb84-elU6ADpsr_QtBpWK6NQpH-8WbAcsib_Z_RyQuDsv41N58gefC9feFgVkLiTB4Nzo5o7rxszAXMKCoshmSn3KA.jpg",
+        "pathLink":"http://wit.iiitd.edu.in/",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
         "title":"Cold Email Tips To Land Your Dream Job",
         "description": "Learn how to send effective cold-emails to recruiters which will get you interviews for your dream jobs",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/6181jZehG7L._SL1500_.jpg",
+        "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLsmwRbmPWUfcOOAAMVnLYsdalUxU5BASL_g&usqp=CAU",
         "pathLink":"https://gallery.mailchimp.com/11fa1ee9c20a64044db2d61ba/files/fb9665b4-5a23-4d17-ab6e-64287cb66ad8/Cold_Email_Tips_To_Land_Your_Dream_Job.pdf",
-    }, {
+    },{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Waterproof Gaming Mouse Pad",
-        "description": "Bought by 5 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/71f9uIMJsNL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/2IcuC1y",
-    }, {
+        "title":"Byld",
+        "description": "Byld is the software development club of IIIT-Delhi. We’re a bunch of students who love building apps and hacks using various tools and technologies.",
+        "image":"https://byld.iiitd.edu.in/byld-website/assets/images/transparentSmall.png",
+        "pathLink":"",
+    },{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"OnePlus Bullets wireless earphones",
-        "description": "Bought by 105 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/61DKcGr12OL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/37Alv3r",
-    }, {
+        "title":"Lean In IIITD",
+        "description": "We help women achieve their ambitions and work to create an equal world.",
+        "image":"https://instagram.fkwi1-2.fna.fbcdn.net/v/t51.2885-19/s320x320/118364078_796367157840384_9093164501332894747_n.jpg?_nc_ht=instagram.fkwi1-2.fna.fbcdn.net&_nc_ohc=Sex0p1Re-0YAX9fl45e&tp=1&oh=9a2fa0f8d9b6d98e1e7cc54f5795b0b7&oe=6014A4D4",
+        "pathLink":"http://t.me/leaniniiitd",
+    },{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"boAt Rockerz Bluetooh earphones",
-        "description": "Bought by 10 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/61ku39qVEzL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/3lAZCpE",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"Infinity JBL wireless earphones",
-        "description": "Bought by 5 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/619OijH9HnL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/33D2QT6",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"boAt Rockerz Bluetooth headphones",
-        "description": "Bought by 15 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/61ihz46SLOL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/2VwOmQp",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"Logitech B170 Wireless Mouse",
-        "description": "Bought by 10 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/51kdFjyPRAL._SL1500_.jpg",
-        "pathLink":"https://www.amazon.in/Logitech-B170-Wireless-Mouse-Black/dp/B01J0XWYKQ/ref=zg_bs_computers_3?_encoding=UTF8&psc=1&refRID=4VA3HBJTP2WGVP0EAQJR&smid=A14CZOWI0VEHLG",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"Logitech Light Sync Gaming Mouse",
-        "description": "Bought by gaming students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/61UxfXTUyvL._SL1500_.jpg",
-        "pathLink":"https://www.amazon.in/Logitech-G102-Customizable-Lighting-Programmable/dp/B08LT9BMPP/ref=sr_1_4_mod_primary_lightning_deal?dchild=1&keywords=gaming+mouse&qid=1608469670&s=computers&sbo=Tc8eqSFhUl4VwMzbE4fw%2Fw%3D%3D&smid=A14CZOWI0VEHLG&sr=1-4",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"Keyboard",
-        "description": "Bought by 15 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/61ihz46SLOL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/2VwOmQp",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"ADDMAX multi-plug extension board",
-        "description": "Bought by 15 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/81okyQFxdiL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/37AlRXP",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"boAt Stone 170 5W Bluetooth Speaker ",
-        "description": "Bought by 4 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/61Mq3HQ5MqL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/3mABHI0",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"JBL GO Portable Wireless Bluetooth Speaker",
-        "description": "Bought by 15 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/71nwG2LuLsL._SL1200_.jpg",
-        "pathLink":"https://amzn.to/3ohJefm",
-    }, {
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"JBL Waterproof Portable Bluetooth Speaker",
-        "description": "Bought by 10 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/81DRhqE04BL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/3qolPe6",
-    }];
+        "title":"LinkedIn",
+        "description": "Connect the world’s professionals to make them more productive and successful.",
+        "image":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAMAAABHPGVmAAAAaVBMVEUAd7X///8AcLEEebb7/f4Debb9/v79/v8DeLY8l8Y7lsYAbbCcyuKlz+WQxN+Lwd0KfbiDvdvl8fcAc7O+3OwgiL6x1ehFnMlytNZqsNQZhLzF4O7w9/tSo81gqtGp0ebc7PUsjsJ8udngaOvIAAADg0lEQVRoge2abZeqIBCAGV7EjXItKjc1y/7/j7xD7m5AWHdD+uScs3s8kDzOIMwMDoGrSJ4lEC6H0ckVkUEiyeQPBC+ar+pjcqm+GsQMEAntUSuaQJQ+toZC8F+7U4KJBMKE6ltUwkAqJUgiEapCAJGwpSwVgxBGtyAJh4NKCVEH4AStRZNZC+1F0V5orgXN00FyukBzZekh2XsgbzFXCMIGSQlhTCsjegrMCEQQVXfF8rOrFYm3YxjCdFnw6zbdFkJHr6AgROjdGYAbATjXOlaXEISRcgN88GEZh3NJIuclBBF0BfzXr3EoYve1ACTXPViuOAO+izRYAMLUxVLEqBK7RQcggp48yHJ6SG5cjAWRsI/0A0FN9g6Ew2p6TZhae+a6pDDXwn67UKt++rcL3+Gts072sW4gDOn5L4VjRBa7rwT3LkarDMNvmeEf8EV0tDSyC9O++dZku4uPyEb8CdO6KrbNtvjQOt5rjXnGnGGkrKmibALfP+7jBQ6fs0lCvnHIn4Tlj2KBsTkJX4cGYgLH1yiD8n+A/LcgACevrHe7ujRXQYXCEFHaIsLNZjgMnMrjstm0nLebZnXodSi6Cbvfz3Zzk3Y97I/ozOxmE2Dkql5vnCS0OQbe+WAgoZbOjcUPpLBbeU0I7dprZi4xlZYyM8ENNP3d6h2DcPkj/Ab5vDVjkllrgg/DpfNA+HN59D3DKMTahW3ILbxoa3Ru/D75x59Uni6vQ3hZOL7N8j9+ePMqRMLmACNnGHce6FUItrcgA4ThCdwU9HUIjDLuVImAjB/4+EFnjCZXba6xv/SU8oLOOEhmvQgu5GRPShQER25Pl667nFrXeBmc7ZUSA8FxLyU1mSWtTw7Fm5S4ia/Ud5KsnVtM34dlrwiIxNkV31ZhhG1sXTh01sy/DkG7W55SqC9npcLXJBBvHEzPLFU4rCeBgBeHs7MDKaaA4A5ZWggvdXKzs5chGTSOn2XKTZlX02jiJnnGOU8O8ZO8u146CWTpQdYzZIbMkBkyQ2bIDJkhA+QmDsRqDkCs3tXTqH4FtiyDxx6BkMiW/ZO4K6eH/eom+27oy2nnNB+8DPfo9j5JgswBk/PVnj1sfnzTKMScPVpf7fMnzU97JzqDfCxvhMxfsf8Ake8pX3hLIUbqkhJtSkpSF8ccTXGMKSXqk5f5vKVg6Xpkkbz06j1FZJC6HO4fbRVnSvd35FUAAAAASUVORK5CYII=",
+        "pathLink":"https://www.linkedin.com/",
+    },];
 
     const designCards = [{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
         "title":"DesignHub - IIITD Design community",
-        "description": "Showcase and discover the latest work from top online portfolios by creative professionals.",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/71mI4aUUQYL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/3lwV0AB",
+        "description": "IIITD's design community to create a positive design culture amongst students.",
+        "image":"https://instagram.fkwi6-1.fna.fbcdn.net/v/t51.2885-19/s320x320/132294221_752715192262986_5766191329215450894_n.jpg?_nc_ht=instagram.fkwi6-1.fna.fbcdn.net&_nc_ohc=ACPOXJxw-jQAX__b5AW&tp=1&oh=15fa5393f28c5bcbf1850dc75be48aee&oe=601472B9",
+        "pathLink":"https://discord.com/invite/FU2KTtJ",
     },{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
         "title":"Behance",
         "description": "Showcase and discover the latest work from top online portfolios by creative professionals.",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/51VohtD1dnL._SL1080_.jpg",
-        "pathLink":"https://amzn.to/3g6eOtE",
+        "image":"data:image/jpeg;base64,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",
+        "pathLink":"https://www.behance.net/",
     },{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
@@ -355,37 +299,7 @@ function items(){
         "description": "Shots from popular and up and coming designers in the Dribbble community.",
         "image":"https://i.pinimg.com/originals/ed/64/b8/ed64b813c2f084721ca65048978f7bb9.gif",
         "pathLink":"https://dribbble.com/",
-    },{
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"Photo Clip Lights Indoor Decoration",
-        "description": "Bought by 50 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/51JaxAi8puL.jpg",
-        "pathLink":"https://amzn.to/3g36g6E",
-    },{
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"Decorative Fairy Lights",
-        "description": "Bought by 45 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/615qNo%2BAe0L._SL1000_.jpg",
-        "pathLink":"https://amzn.to/37wQWvh",
-    },{
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"Artificial Plants Bonsai Potted shrubs",
-        "description": "Bought by 50 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/81vSA24EfCL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/37A2fTo",
-    },{
-        "gradientColor_1":color1,
-        "gradientColor_2":color2,
-        "title":"Artificial Plant pot",
-        "description": "Bought by 30 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/71s%2B-MlydaL._SL1001_.jpg",
-        "pathLink":"https://amzn.to/2L0224l",
-    }
-    
-    ];
+    }];
 
     const otherCards = [{
         "gradientColor_1":color1,
@@ -509,20 +423,19 @@ function items(){
         itemslist["networkingCards"].push(
             ResourceCards(networkingCards[index])
         );
-        
     }
-    itemslist["networkingCards"].push(
-        ResourceCards(addCard[0])
-    );
+    // itemslist["networkingCards"].push(
+    //     ResourceCards_Small(addCard[0])
+    // );
     for (let index=0; index<designCards.length;index++){
         itemslist["designCards"].push(
             ResourceCards(designCards[index])
         );
         
     }
-    itemslist["designCards"].push(
-        ResourceCards(addCard[0])
-    );
+    // itemslist["designCards"].push(
+    //     ResourceCards(addCard[0])
+    // );
     for (let index=0; index<otherCards.length;index++){
         itemslist["otherCards"].push(
             ResourceCards(otherCards[index])

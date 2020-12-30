@@ -46,3 +46,13 @@
     }
 } */
 
+@media only screen and (max-width: 600px) {
+
+    .explore__button    .MuiButton-label{
+        font-size: .7em;
+    }
+
+    .explore__body{
+        margin-bottom: 20%;
+    }
+}

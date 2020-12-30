@@ -158,7 +158,7 @@ function Resources() {
                 >
                     Design
                 </Button>
-                <Button
+                {/* <Button
                     onClick={() => changeS(5)}
                     variant={clickedButton === 5 ? "contatined" : "outlined"}
                     className={
@@ -168,7 +168,7 @@ function Resources() {
                     }
                 >
                     Misc
-                </Button>
+                </Button> */}
             </div>
             <div className="explore__body">
                 {clickedButton === 1 ? (
@@ -196,17 +196,17 @@ function Resources() {
                     </div>
                 ) : clickedButton === 2 ? (
                     <div className="resourceBox">
+                        <h3>Platforms to use</h3><br/>
+                        <div className="resourceBox_Inner">
+                        <div className="cardsDiv_resources3">    
+                            {itemCards["codingCards"]}
+                        </div>
+                        </div>
+                        <br/><br/>
                         <h3>Youtubers to follow</h3><br/>
                         <div className="resourceBox_Inner">
                         <div className="cardsDiv_resources2">    
                             {itemCards["codingCards_YT"]}
-                        </div>
-                        </div>
-                        <br/><br/>
-                        <h3>Platforms to use</h3><br/>
-                        <div className="resourceBox_Inner">
-                        <div className="cardsDiv_resources">    
-                            {itemCards["codingCards"]}
                         </div>
                         </div>
                     </div>
@@ -214,16 +214,21 @@ function Resources() {
                     <div className="cardsDiv_resources">
                         {itemCards["networkingCards"]}
                     </div>
-                ) : clickedButton === 4 ? (
+                ) : (
                     <div className="cardsDiv_resources">
                         {itemCards["designCards"]}
                     </div>
-                ) : (
-                    <div className="cardsDiv_resources">
-                        {itemCards["otherCards"]}
-                    </div>
-                )}
-                
+                )
+                // ) : clickedButton === 4 ? (
+                //     <div className="cardsDiv_resources">
+                //         {itemCards["designCards"]}
+                //     </div>
+                // ) : (
+                //     <div className="cardsDiv_resources">
+                //         {itemCards["otherCards"]}
+                //     </div>
+                // )
+            }
             </div>
         </div>
     );
