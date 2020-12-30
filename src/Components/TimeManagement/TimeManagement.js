@@ -18,11 +18,18 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import ReactCardFlip from 'react-card-flip';
 import Switch from "react-switch";
-import CardsAnim from '../CardsAnim/CardsAnim';
+
 import { useStateValue } from '../../StateProvider';
+import dog from '../../Assets/cardPics/dogFire.png';
+import tear from '../../Assets/cardPics/tearSmile.png';
+import plag from '../../Assets/cardPics/plag.png';
+import dark from '../../Assets/cardPics/darkSide.png';
 
 import todoNew from '../../Assets/todoNew.jpg';
 import todoOld from '../../Assets/todoOld.jpg';
+
+import Cards,{ Card as CardDeck } from 'react-swipe-card'
+import TinderCard from '../CardSwipe/CardSwipe'
 
 var isFav = false;
 
@@ -154,6 +161,14 @@ export default function TimeManagement() {
 
     const itemCards = itemsList();
 
+    const cardsImage = [
+        tear,
+        dog,
+        dark,
+        plag,
+        'https://image.freepik.com/free-vector/deadline-concept-business-man-sinking-sand-watch_48369-18371.jpg'
+      ]
+
     return(
         <div className='timeManagement'>
             {/* <div style={{display: 'flex', justifyContent: 'flex-end'}}>
@@ -168,7 +183,30 @@ export default function TimeManagement() {
                         <div id='cardsBox'>
                             <h2 style={{textAlign: 'center', margin: '2%', marginTop: '5%'}}>This is where the "fun" begins </h2>
                             <h4 style={{textAlign: 'center', margin: '0%', fontWeight: '500'}}>Here's the deck of cards that IIITD has in store for YOU <br/><i>(Flick left/right to see other cards)</i> </h4>
-                            <CardsAnim/>
+                            {/* <CardsAnim/> */}
+                            {/* <Cards className='master-root'>
+                                {cardsImage.map(item => 
+                                <CardDeck >
+                                    <img src={item}/>
+                                </CardDeck>
+                                )}
+                            </Cards> */}
+                            <TinderCard/>
+                            {/* <TinderCard style={{transform: 'rotate(-20deg)'}} preventSwipe={['left', 'right']}>
+                                <img src={tear}/>
+                            </TinderCard>
+                            <TinderCard preventSwipe={['left', 'right']}>
+                                <img src={dog}/>
+                            </TinderCard>
+                            <TinderCard preventSwipe={['left', 'right']}>
+                                <img src={dark}/>
+                            </TinderCard>
+                            <TinderCard preventSwipe={['left', 'right']}>
+                                <img src={plag}/>
+                            </TinderCard>
+                            <TinderCard preventSwipe={['left', 'right']}>
+''                                <img src='https://image.freepik.com/free-vector/deadline-concept-business-man-sinking-sand-watch_48369-18371.jpg'/>
+                            </TinderCard> */}
                         </div>
                     
                         <div id='cardsBox2'>
@@ -300,19 +338,6 @@ export default function TimeManagement() {
                             <img className='matrix_image_col' src='https://cdn.discordapp.com/attachments/782980728207310849/793886812040462376/Capture7.PNG'/>
                             <img className='matrix_image_row' src='https://cdn.discordapp.com/attachments/782980728207310849/793890179508469770/Capture6.PNG'/>
                             <div className="grid-wrapper">
-                                {/* <div className='grid-head-row'>
-                                    <div className='grid-head-row-wrapper'>
-                                        <p>Urgent</p>
-                                    </div>
-                                    <div className='grid-head-row-wrapper'>
-                                        <p>Less Urgent</p>
-                                    </div>
-                                </div> */}
-                                {/* <div className='grid-head-column'>
-                                    <div className='grid-head-column-wrapper'>
-                                        <p>Important</p>
-                                    </div>
-                                </div> */}
                                 <div className="grid-row">
                                     <div className="square-wrapper">
                                         <div className="square green">

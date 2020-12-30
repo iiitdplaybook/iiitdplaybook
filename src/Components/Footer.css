@@ -12,6 +12,23 @@
     padding-bottom: 1%;
 }
 
+.buymeacoffeelogo{
+    height: 20px;
+    margin-right: 1%;
+}
+/* .pateronlogo{
+    height: 20px;
+}
+.supportUsButtons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ */
+#supportBtn{
+    margin-top: 1%;
+    width: 500px;
+}
 .upper{
     color: #fff;
     display: flex;

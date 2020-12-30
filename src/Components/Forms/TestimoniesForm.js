@@ -131,7 +131,7 @@ export default function TestimoniesForm(){
             else if(value==="Placements"){
                 setHint(placementHint);
             }
-            else if(value==="Images and Experiences"){
+            else if(value==="Experiences/Stories"){
                 setHint(experienceStoryHint);
             }
             else if(value==="Images"){
@@ -205,13 +205,24 @@ export default function TestimoniesForm(){
                                 <FormControlLabel value="Hackathons" control={<Radio />} label="Hackathons" />
                                 <FormControlLabel value="Research" control={<Radio />} label="Research" />
                                 <FormControlLabel value="Placements" control={<Radio />} label="Placements" />
-                                <FormControlLabel value="Images and Experiences" control={<Radio />} label="Experiences/Stories" />
+                                <FormControlLabel value="Experiences/Stories" control={<Radio />} label="Experiences/Stories" />
                                 <FormControlLabel value="Images" control={<Radio />} label="Images" />
                             </RadioGroup>
                         </div>
                     </div>                    
                     </FormControl>
                     <br/>
+                    <br/>
+                    <br/>
+                    <TextField
+                    disabled
+                    id="outlined-disabled"
+                    label="Name"
+                    defaultValue={userName}
+                    variant="outlined"
+                    className='nameLabel'
+                    color="secondary"
+                    />
                     <br/>
                     <br/>
                     {(value==="Phases of College")?
@@ -232,33 +243,28 @@ export default function TestimoniesForm(){
                     :null}
                     <br/>
                     <br/>
-                    <TextField
-                    disabled
-                    id="outlined-disabled"
-                    label="Name"
-                    defaultValue={userName}
-                    variant="outlined"
-                    className='nameLabel'
-                    color="secondary"
-                    />
-                    <br/><br/>
-                    <FormLabel
-                    label=""
-                    className='nameLabel2'
-                    color="secondary"
-                    >{"Write About: " + hint}</FormLabel>
-                    <br/>
-                    <TextField
-                    id="outlined-textarea"
-                    label={`Your Testimony  (${word_count}/400)`}
-                    placeholder={defaultHint}
-                    multiline
-                    variant="outlined"
-                    className='testimonials'
-                    color="secondary"
-                    value={testimonies}
-                    onChange={handleTestieChange}
-                    />
+                    {(value==="Images")?
+                    <ImgUpload/>:
+                    <div>
+                        <FormLabel
+                        label=""
+                        className='nameLabel2'
+                        color="secondary"
+                        >{"Write About: " + hint}</FormLabel>
+                        <br/>
+                        <TextField
+                        id="outlined-textarea"
+                        label={`Your Testimony  (${word_count}/400)`}
+                        placeholder={defaultHint}
+                        multiline
+                        variant="outlined"
+                        className='testimonials'
+                        color="secondary"
+                        value={testimonies}
+                        onChange={handleTestieChange}
+                        />
+                    </div>
+                    }
                     <br/>
                     <p>Disclaimer: Your ID's profile picture will be displayed along with Name and your Testimony</p>
                     <br/>
@@ -269,7 +275,7 @@ export default function TestimoniesForm(){
             </form>
             {/* TODO
             add preventDefault thing */}
-            <ImgUpload/>
+            
         </div>
     );
 }
