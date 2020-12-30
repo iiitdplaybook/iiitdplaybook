@@ -67,12 +67,38 @@
 .timeManagement__back__content .inner_box.hover {  width: 90%; }
 .timeManagement__back__content .inner_box.sliding {  width: 10%; }
 
-.grid-wrapper {
-  background-color: #FFFFFF;
+.grid-head-row{
+  margin-top: 5%;
   width: 35em;
-  height: 35em;
-  margin-top: 5px;
+  height: 1em;
 }
+
+.grid-head-row-wrapper{
+  float: left;
+  width: 17.2em;
+  height: 1em;
+  text-align: center;
+  align-content: center;
+}
+
+.grid-head-column{
+  float: left;
+  width: 1.3em;
+  height: 1.4em;
+  background-color: #23a6d5;
+  transform: rotate(-90deg);
+}
+
+.matrix_image_col{
+  float: left;
+  margin-left: -40%;
+  transform: rotate(-90deg) translate(-50%, -80%) scaleX(0.8);
+}
+
+.matrix_image_row{
+  transform: scaleX(0.8);
+}
+
 .grid-row {
   height: 15em;
 }
@@ -166,17 +192,17 @@
 
 .square.blue {
   /* background: linear-gradient(45deg, #89f7fe, #66a6ff); */
-  background-color: #89f7fe;
+  background-color: #b0edff;
   text-align: center;
 }
 .square.red {
   /* background: linear-gradient(-45deg,#ff758c, #ff7eb3); */
-  background-color: #ff758c;
+  background-color: #ffb0b0;
   text-align: center;
 }
 .square.grey {
   /* background: linear-gradient(45deg,#868f96, #596164); */
-  background-color: #868f96;
+  background-color: #c2c2c2;
   text-align: center;
 }
 
@@ -280,4 +306,15 @@ animation: gradient 30s ease infinite;
 	100% {
 		background-position: 0% 50%;
 	}
+}
+
+#inboxCard{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  background: black;
+  color: white;
+}
+
+.removeAfterDone{
+  transform: rotate(90deg);
+  transform: rotate(-90deg);
 }

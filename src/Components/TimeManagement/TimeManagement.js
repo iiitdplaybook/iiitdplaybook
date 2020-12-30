@@ -172,7 +172,7 @@ export default function TimeManagement() {
                         </div>
                     
                         <div id='cardsBox2'>
-                            <h2 style={{textAlign: 'center', margin: '2%', marginTop: '0%'}}>But don't worry, we have a special card saved just for you! </h2>
+                            <h2 style={{textAlign: 'center', margin: '2%', marginTop: '0%'}}>But don't worry, we have a special card to reverse your situation! </h2>
                             <h2 style={{textAlign: 'center', margin: '2%', marginTop: '0%'}}>It's your turn {userName.split(" ")[0]}<h2 className='textCard'>&#x25BE;Play your card&#x25BE;</h2></h2>
                             <h4 style={{textAlign: 'center', margin: '0%', fontWeight: '500'}}><i>(Click on the card below)</i> </h4>
                                 <Button className='reverseButton' id='unoReverse' variant="contained" onClick={handleClick}>
@@ -191,7 +191,7 @@ export default function TimeManagement() {
                         </div>
 
                         <div className='timeManagement__back__content' style={{zIndex: '50'}}>
-                            <h2>CCORE (Capture, Clarify, Organize, Reflect, Engage)</h2>
+                            <h2 style={{margin: '1%'}}>CCORE (Capture, Clarify, Organize, Reflect, Engage)</h2>
 
                             <div className={classes.root}>
                                 <Tabs
@@ -294,10 +294,25 @@ export default function TimeManagement() {
                             </Card>
                         </div>
 
-                        <div className='timeManagement__back__content'> 
+                        <div className='timeManagement__back__content' style={{marginTop: '0%'}}> 
                             <h2>The Eisenhower Decision Matrix</h2>
                             <h6 style={{fontWeight: '500'}}><i>(Hover for more information)</i></h6>
+                            <img className='matrix_image_col' src='https://cdn.discordapp.com/attachments/782980728207310849/793886812040462376/Capture7.PNG'/>
+                            <img className='matrix_image_row' src='https://cdn.discordapp.com/attachments/782980728207310849/793890179508469770/Capture6.PNG'/>
                             <div className="grid-wrapper">
+                                {/* <div className='grid-head-row'>
+                                    <div className='grid-head-row-wrapper'>
+                                        <p>Urgent</p>
+                                    </div>
+                                    <div className='grid-head-row-wrapper'>
+                                        <p>Less Urgent</p>
+                                    </div>
+                                </div> */}
+                                {/* <div className='grid-head-column'>
+                                    <div className='grid-head-column-wrapper'>
+                                        <p>Important</p>
+                                    </div>
+                                </div> */}
                                 <div className="grid-row">
                                     <div className="square-wrapper">
                                         <div className="square green">
@@ -334,6 +349,7 @@ export default function TimeManagement() {
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div className="grid-row">
                                     <div className="square-wrapper">
                                         <div className="square red">
@@ -373,8 +389,8 @@ export default function TimeManagement() {
                         </div>
 
                         <div className='timeManagement__back__content' >
-                            <h2 className="textCard" style={{marginTop: '0%'}}>Special Tips</h2>
-                            <Card className={cardClass.root}>
+                            <h2 className="textCard" style={{marginTop: '0%'}}>&#x25D6;Special Tips&#x25D7;</h2>
+                            <Card className={cardClass.root} id="inboxCard">
                                 <CardContent>
                                     <Typography className={cardClass.title}>
                                         Reach Inbox Zero
@@ -396,7 +412,7 @@ export default function TimeManagement() {
                     </div>
                     <div className='button_div'>
                         <Button className='reverseButton' variant="contained" onClick={handleClick}>
-                            UNO Reverse
+                            I don't belong here 
                         </Button>
                     </div>
                 </Card>

@@ -27,7 +27,8 @@ const state = {
     "Name":"Rahul Singh",
     "Text":"",
     "Topic":"",
-    "isApproved":false
+    "isApproved":false,
+    "timestamp":Date.now()
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -67,6 +68,7 @@ export default function TestimoniesForm(){
         state.Name=userName;
         state.Text=testimonies;
         state.UserAvatar = firebase.auth().currentUser.photoURL;
+        state.timestamp = firebase.firestore.Timestamp.now()
         const db = firebase.firestore();
         console.log("Sending to Firebase");
         db.collection("Testimonies").add(state);

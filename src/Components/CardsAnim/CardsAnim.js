@@ -6,11 +6,12 @@ import './CardsAnim.css'
 import dog from '../../Assets/cardPics/dogFire.png'
 import tear from '../../Assets/cardPics/tearSmile.png'
 import plag from '../../Assets/cardPics/plag.png'
+import dark from '../../Assets/cardPics/darkSide.png'
 
 const cards = [
   tear,
   dog,
-  'https://i.gifer.com/7syv.gif',
+  dark,
   plag,
   'https://image.freepik.com/free-vector/deadline-concept-business-man-sinking-sand-watch_48369-18371.jpg'
 ]
