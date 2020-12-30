@@ -15,8 +15,6 @@ import logo from "../Assets/Logo.png";
 import Testimonials from "./TestimonialsName";
 import FadeIn from "./FadeIn"
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
-import blob from '../Assets/blob.json';
-import userProfile from '../Assets/user.png';
 import { Link } from "react-router-dom";
 
 
@@ -122,8 +120,9 @@ function Login() {
       
       <div className="login__action">
         <div className='login__heading'>
-          <h1>Student Playbook</h1>
-          <h5>For the students, by the students</h5>
+        
+          <h1 className='textCard2'>Student Playbook</h1>
+          <h5 className='textCard3'>For the students, by the students</h5>
         </div>
 
         <div className='login__buttons'>

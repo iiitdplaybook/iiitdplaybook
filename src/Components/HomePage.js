@@ -1,18 +1,12 @@
 import React from 'react';
 import firebase from 'firebase';
 import { useStateValue } from '../StateProvider';
-import wazzup from "../Assets/wazzup.jpg";
-import confused from "../Assets/college_student_confused.jpg";
-import exploring from "../Assets/exploring.jpg";
-import graduation from "../Assets/graduation.jpg";
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import "./HomePage.css";
 import { Button } from '@material-ui/core';
 import Navbar from "./Navbar";
-import Footer from './Footer'
 import Stars from './stars'
-import useScript from './useScript';
 import Tilt from 'react-parallax-tilt';
 import ParticleAnim from './ParticleAnim/ParticleAnim';
 
@@ -84,6 +78,11 @@ function HomePage() {
         return () => {
             console.log('cleanup');
             unsub1();
+            unsub2();
+            unsub3();
+            unsub4();
+            unsub5();
+
         }
     }, []);
 

@@ -123,6 +123,41 @@ function items(){
         "description": "Bought by 25 students",
         "image":"https://images-na.ssl-images-amazon.com/images/I/61p3lA4N3uL._SL1000_.jpg",
         "pathLink":"https://amzn.to/2WWf19Z",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Dell Inspiron 5370",
+        "description": "Bought by 25 students",
+        "image":"https://images-na.ssl-images-amazon.com/images/I/71zqXTOew2L._SL1500_.jpg",
+        "pathLink":"https://amzn.to/3hwvIm4",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Lenovo Ideapad S340",
+        "description": "Bought by 25 students",
+        "image":"https://images-na.ssl-images-amazon.com/images/I/81nEs%2Bl5UgL._SL1500_.jpg",
+        "pathLink":"https://amzn.to/2LbaLRa",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Asus Vivabook 14",
+        "description": "Bought by 25 students",
+        "image":"https://images-na.ssl-images-amazon.com/images/I/41uA9S02hvL.jpg",
+        "pathLink":"https://amzn.to/2KNnFoS",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Surface Laptop 3",
+        "description": "Bought by 25 students",
+        "image":"https://images-na.ssl-images-amazon.com/images/I/61cuElU6PaL._SX425_.jpg",
+        "pathLink":"https://amzn.to/34SG4Y8",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"More Coding Laptops",
+        "description": "Get the best laptops",
+        "image":"https://www.naijatechguide.com/wp-content/uploads/2019/02/12_09_2018-laptops_18418669.jpg",
+        "pathLink":"https://amzn.to/2JBYyF2",
     }];
 
     const techotherCards = [{
@@ -215,6 +250,13 @@ function items(){
         "title":"JBL Waterproof Portable Bluetooth Speaker",
         "description": "Bought by 10 students",
         "image":"https://images-na.ssl-images-amazon.com/images/I/81DRhqE04BL._SL1500_.jpg",
+        "pathLink":"https://amzn.to/3qolPe6",
+    }, {
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Gadget Storage Bag",
+        "description": "Bought by 20 students",
+        "image":"https://images-na.ssl-images-amazon.com/images/I/51YaYwZwkJL.jpg",
         "pathLink":"https://amzn.to/3qolPe6",
     }];
 
@@ -320,6 +362,13 @@ function items(){
         "description": "Bought by 3 students",
         "image":"https://images-na.ssl-images-amazon.com/images/I/614x3s4PWXL.jpg",
         "pathLink":"https://amzn.to/3owRSa7",
+    }, {
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Laptop stand",
+        "description": "Bought by 10 students",
+        "image":"https://images-na.ssl-images-amazon.com/images/I/71Zf9uUp%2BGL._SL1500_.jpg",
+        "pathLink":"https://amzn.to/37Xzhye",
     },{
         "gradientColor_1":color1,
         "gradientColor_2":color2,

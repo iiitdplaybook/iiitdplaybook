@@ -30,14 +30,14 @@
     text-align: center;
 
     /* background: -webkit-linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%); */
-    color:red;
+    /* color:red;
     background: -webkit-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 	background-size: 400% 400%;
     animation: gradient 30s ease infinite;
-    font-size: 2em;
+    font-size: 2em; */
 }
 
 .login__buttons{
@@ -162,6 +162,26 @@ a {
 
 #guest:hover{
     transform: scale(1.05);
+}
+
+.textCard2{
+    background: -webkit-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+	background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+    font-size: 4.5em;
+}
+
+.textCard3{
+    background: -webkit-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+	background-size: 400% 400%;
+    animation: gradient 30s ease infinite;
+    font-size: 1.5em;
 }
 
 @media only screen and (max-width: 500px) {

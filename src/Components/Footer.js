@@ -22,6 +22,11 @@ function Footer() {
                   to={"/contribute/testimonies"}>
                   <span className='span2'>YES! I'd like to contribute</span>
                 </Button>
+                {/* <div> */}
+                  {/* <Button>
+                    <img className="buymeacoffeelogo" src={"https://bmc-dev.s3.us-east-2.amazonaws.com/assets/icons/bmc_icon_black.png"}/> {("Buy us a Coffee").strike()}
+                  </Button> */}
+                {/* {<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="iiitdplaybook" data-color="#5F7FFF" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>}                </div> */}
                 <div className='testi2'>
           
         <a className="defaultClick" href="https://www.instagram.com/okkshitij/"  target="_blank">
@@ -64,8 +69,9 @@ function Footer() {
           </a>
 
         </div>
-            </div>
+      </div>
             <div className="lower">
+            {/* <a href="https://www.buymeacoffee.com/iiitdplaybook" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style={{height: '60px !important',width: '217px !important'}}/></a> */}
                 <p>
                 IIITD Student Playbook &copy; 2021
                 </p>
