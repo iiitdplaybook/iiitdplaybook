@@ -122,7 +122,7 @@ function Login() {
       
       <div className="login__action">
         <div className='login__heading'>
-          <h1>Student Playbook</h1>
+          <h1 className='textCard'>Student Playbook</h1>
           <h5>For the students, by the students</h5>
         </div>
 
