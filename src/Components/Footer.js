@@ -22,11 +22,16 @@ function Footer() {
                   to={"/contribute/testimonies"}>
                   <span className='span2'>YES! I'd like to contribute</span>
                 </Button>
-                {/* <div> */}
-                  {/* <Button>
-                    <img className="buymeacoffeelogo" src={"https://bmc-dev.s3.us-east-2.amazonaws.com/assets/icons/bmc_icon_black.png"}/> {("Buy us a Coffee").strike()}
-                  </Button> */}
-                {/* {<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="iiitdplaybook" data-color="#5F7FFF" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>}                </div> */}
+                <p>Support Us</p>
+                <div className="supportUsButtons">
+                  <Button target="_blank" href="https://www.buymeacoffee.com/iiitdplaybook">
+                    <img className="buymeacoffeelogo" src={"https://bmc-dev.s3.us-east-2.amazonaws.com/assets/icons/bmc_icon_black.png"}/> Buy me a coffee
+                  </Button>
+                  <Button target="_blank" href="https://www.patreon.com/iiitdplaybook">
+                    <img className="pateronlogo" src={"https://cdn.vox-cdn.com/thumbor/a3z1idZDuso6ksgW6pDOZwCRJDw=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/9833961/patreon.jpg"}/>Patreon
+                  </Button>
+                {/* {<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="iiitdplaybook" data-color="#5F7FFF" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>}                 */}
+                </div>
                 <div className='testi2'>
           
         <a className="defaultClick" href="https://www.instagram.com/okkshitij/"  target="_blank">
