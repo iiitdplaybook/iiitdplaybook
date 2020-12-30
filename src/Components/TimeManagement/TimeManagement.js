@@ -21,6 +21,9 @@ import Switch from "react-switch";
 import CardsAnim from '../CardsAnim/CardsAnim';
 import { useStateValue } from '../../StateProvider';
 
+import todoNew from '../../Assets/todoNew.jpg';
+import todoOld from '../../Assets/todoOld.jpg';
+
 var isFav = false;
 
 
@@ -59,14 +62,15 @@ function TabPanel(props) {
   
   const useStyles = makeStyles((theme) => ({
     root: {
-      flexGrow: 1,
+    //   flexGrow: 1,
       backgroundColor: theme.palette.background.paper,
       display: 'flex',
       height: 240,
       alignSelf: "start",
     },
     tabs: {
-      borderRight: `4px solid ${theme.palette.divider}`,
+      borderRight: `1px solid ${theme.palette.divider}`,
+      minWidth: 'fit-content',
     //   borderColor: `#008877`,
     },
   }));
@@ -94,6 +98,11 @@ export default function TimeManagement() {
 
     const handleClick = () => {
         setIsFlipped(!isFlipped);
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+          });
     }
 
     const handleChange = (event, newValue) => {
@@ -163,7 +172,7 @@ export default function TimeManagement() {
                         </div>
                     
                         <div id='cardsBox2'>
-                            <h2 style={{textAlign: 'center', margin: '2%', marginTop: '0%'}}>But don't worry, we have a special card saved just for you! </h2>
+                            <h2 style={{textAlign: 'center', margin: '2%', marginTop: '0%'}}>But don't worry, we have a special card to reverse your situation! </h2>
                             <h2 style={{textAlign: 'center', margin: '2%', marginTop: '0%'}}>It's your turn {userName.split(" ")[0]}<h2 className='textCard'>&#x25BE;Play your card&#x25BE;</h2></h2>
                             <h4 style={{textAlign: 'center', margin: '0%', fontWeight: '500'}}><i>(Click on the card below)</i> </h4>
                                 <Button className='reverseButton' id='unoReverse' variant="contained" onClick={handleClick}>
@@ -177,17 +186,18 @@ export default function TimeManagement() {
                 <Card className='backpage'>
                     <div className='timeManagement__back'>
                         <div className='timeManagement__back__heading'>
-                            <h1>GUIDE TO BECOMING A PRODUCTIVITY NINJA</h1>
+                            <h1 style={{zIndex: '50'}}>GUIDE TO BECOMING A PRODUCTIVITY NINJA</h1>
+                            <img src="https://cdn.dribbble.com/users/1175431/screenshots/5483835/2018-10-30__1_.gif" height="10%" style={{position: 'absolute', zIndex: '0', marginTop: '-2%'}}></img>
                         </div>
 
-                        <div className='timeManagement__back__content'>
-                            <h2>CCORE (Capture, Clarify, Organize, Reflect, Engage)</h2>
+                        <div className='timeManagement__back__content' style={{zIndex: '50'}}>
+                            <h2 style={{margin: '1%'}}>CCORE (Capture, Clarify, Organize, Reflect, Engage)</h2>
 
                             <div className={classes.root}>
                                 <Tabs
                                     orientation="vertical"
                                     variant="scrollable"
-                                    indicatorColor='#616161'
+                                    // indicatorColor='#616161'
                                     value={value}
                                     onChange={handleChange}
                                     aria-label="Vertical tabs example"
@@ -199,64 +209,75 @@ export default function TimeManagement() {
                                     <Tab label="Reflect" {...a11yProps(3)} />
                                     <Tab label="Engage" {...a11yProps(4)} />
                                 </Tabs>
-                                <TabPanel value={value} index={0}>
+                                <TabPanel value={value} index={0} style={{marginTop: '-15px'}}>
                                     <h3>Capture</h3>
                                     <br/>
                                     <ul>
-                                        <li>Your mind is for generating ideas, not storing them. When you use your brain as a to-do list, you start feeling overwhelmed, stressed or less productive. 
-                                        <br/>You need a system to off-load your thoughts/tasks, so just simply write it down.</li>
-                                        <li>Apps - Things (App store), Notion</li>
+                                        <li>Your mind is for generating ideas, not storing them. When you use your brain as a to-do list, you start feeling overwhelmed, stressed or less productive.</li>
+                                        <li>You need a system to off-load your thoughts/tasks, so just simply write it down.</li>
+                                        <li>Tools - Notepad, Voice Recorder, Email Inboxes</li>
+                                        <li>Apps - Things (App store), Notion, OneNote</li>
                                     </ul>
-                                    <br></br>
+                                    <br/>
                                     Note - Use a centralised system and use it for everything. Don’t keep switching applications. Capture EVERY. SINGLE. THING. 100%.
                                 </TabPanel>
-                                <TabPanel value={value} index={1}>
+                                <TabPanel value={value} index={1} style={{marginTop: '-15px'}}>
                                     <h3>Clarify</h3>
                                     <br/>
                                     <ul>
                                         <li>Procrastination comes from not clearly defining your next steps.</li>
-                                        <li>Not your generic to-do list -`&gt;` define clearly. (photo about before after, phone list screenshot)</li>
+                                        <li>Not your generic to-do list -&gt; define clearly.</li>
+                                        {/* <img className="memeImage" src={todoNew}></img> */}
+                                        {/* <img className="memeImage" src={todoOld}></img> */}
                                         <li>Convert to-do lists into action words</li>
                                     </ul>
                                 </TabPanel>
-                                <TabPanel value={value} index={2}>
+                                <TabPanel value={value} index={2} style={{marginTop: '-15px'}}>
                                     <h3>Organize</h3>
                                     <br/>
+                                    <p>You'll need:</p>
                                     <ul>
-                                        <li>Google chrome, create folder, helps a ton. “Design” “Job” “college” etc.</li>
-                                        <li>Evernote/Notion</li>
+                                        <li>A calendar</li>
+                                        <li>A reminder list for projects.</li>
+                                        <li>Storage or files for project support materials.</li>
+                                        <li>Reminder lists for your deferred and project next actions.</li>
+                                        <li>A reminder list for those actions you are waiting for from others.</li>
+                                        <li>A someday/maybe list for items to consider acting on in the future.</li>
+                                        {/* <li>Google chrome, create folder, helps a ton. “Design” “Job” “college” etc.</li>
+                                        <li>Evernote/Notion</li> */}
                                     </ul>
                                 </TabPanel>
-                                <TabPanel value={value} index={3}>
+                                <TabPanel value={value} index={3} style={{marginTop: '-15px'}}>
                                     <h3>Reflect</h3>
                                     <br/>
                                     <ul>
-                                        <li>Montly/Weekly reviews</li>
+                                        <li>Cultivate the habit of doing a monthly/weekly review</li>
+                                        <li>It's where you afford yourself the opportunity to review the "whole picture" of your integrated life (both personal and work), 
+                                            <br/>your commitments made, and things for future consideration.</li>                                        
                                     </ul>
                                 </TabPanel>
-                                <TabPanel value={value} index={4}>
+                                <TabPanel value={value} index={4} style={{marginTop: '-15px'}}>
                                     <h3>Engage</h3>
                                     <br/>
-                                    <ul>
-                                    <li>Now actually DO IT :)</li>
-                                    <li>Browse through the list in front of you, choose and just do it.</li>
-                                    </ul>
+                                    <p>Browse through the list in front of you, choose and...</p>
+                                    <img src='https://www.vectorkhazana.com/assets/images/products/Nike-Just-Do-It.jpg'
+                                        style = {{width: '40%', height: '40%', marginLeft: '30%'}}/>
                                 </TabPanel>
                             </div>
                         </div>
 
-                        <div className='timeManagement__back__content'> 
-                            <Card className={cardClass.root}>
+                        <div className='timeManagement__back__content' > 
+                            <Card className={cardClass.root} style={{backgroundColor: 'black', color: 'white'}}>
                                 <CardContent>
                                     <Typography className={cardClass.title}>
                                         Tackle Small Tasks First
                                     </Typography>
                                     <br/>
                                     <Typography  className={cardClass.bullet}>
-                                        - Less than 2 mins task? Do it now!
-                                        <br/>
-                                        - Prioritize your list by what can be done in a few minutes and what will take longer to complete.
-                                        <br/>
+                                        <ul>
+                                            <li>Less than 2 mins task? Do it now!</li>
+                                            <li>Prioritize your list by what can be done in a few minutes and what will take longer to complete.</li>          
+                                        </ul>
                                     </Typography>
                                     <br/><br/>
                                     <Typography className={cardClass.title}>
@@ -264,19 +285,34 @@ export default function TimeManagement() {
                                     </Typography>
                                     <br/>
                                     <Typography  className={cardClass.bullet}>
-                                        - Turn off any devices that you can. And no matter what, don’t switch to another task until the one before it is complete.
-                                        <br/>
-                                        - This may be a hard habit to break, but it’s worth it.
-                                        <br/>
+                                        <ul>
+                                            <li>This may be a hard habit to break, but it’s worth it.</li>
+                                            <li>Turn off any devices that you can. And no matter what, don’t switch to another task until the one before it is complete.</li>
+                                        </ul>
                                     </Typography>
                                 </CardContent>
                             </Card>
                         </div>
 
-                        <div className='timeManagement__back__content'> 
+                        <div className='timeManagement__back__content' style={{marginTop: '0%'}}> 
                             <h2>The Eisenhower Decision Matrix</h2>
-
+                            <h6 style={{fontWeight: '500'}}><i>(Hover for more information)</i></h6>
+                            <img className='matrix_image_col' src='https://cdn.discordapp.com/attachments/782980728207310849/793886812040462376/Capture7.PNG'/>
+                            <img className='matrix_image_row' src='https://cdn.discordapp.com/attachments/782980728207310849/793890179508469770/Capture6.PNG'/>
                             <div className="grid-wrapper">
+                                {/* <div className='grid-head-row'>
+                                    <div className='grid-head-row-wrapper'>
+                                        <p>Urgent</p>
+                                    </div>
+                                    <div className='grid-head-row-wrapper'>
+                                        <p>Less Urgent</p>
+                                    </div>
+                                </div> */}
+                                {/* <div className='grid-head-column'>
+                                    <div className='grid-head-column-wrapper'>
+                                        <p>Important</p>
+                                    </div>
+                                </div> */}
                                 <div className="grid-row">
                                     <div className="square-wrapper">
                                         <div className="square green">
@@ -287,9 +323,11 @@ export default function TimeManagement() {
                                             <div className='hiddenText'>
                                                 <br/>
                                                 <ul>
-                                                    <li>Quadrant 1 tasks are both urgent and important.</li>
+                                                    <li>Tasks that are both urgent and important.</li>
+                                                    <li>These tasks typically consist of crises, problems, or deadlines.</li>
+                                                    <li>These tasks are important for your life and career and need to be done today or tomorrow at the latest.</li>
+                                                    <li>You could use a timer to help you concentrate while trying to get as much of them done as possible.</li>
                                                     <li>They’re tasks that require our immediate attention and also work towards fulfilling our long-term goals and missions in life.</li>
-                                                    <li>Quadrant 1 tasks typically consist of crises, problems, or deadlines.</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -303,13 +341,15 @@ export default function TimeManagement() {
                                             <div className='hiddenText'>
                                                 <br/>
                                                 <ul>
-                                                    <li>Quadrant 2 tasks are the activities that don’t have a pressing deadline, but nonetheless help you achieve your important personal, school, and work goals as well as help you fulfill your overall mission as a person.</li>
-                                                    <li>Q2 tasks are typically centered around strengthening relationships, planning for the future, and improving yourself.</li>
+                                                    <li>Tasks that don’t have a pressing deadline, but nonetheless help you achieve your important personal, school, and work goals as well as help you fulfill your overall mission as a person.</li>
+                                                    <li>These tasks are typically centered around strengthening relationships, planning for the future, and improving yourself.</li>
+                                                    <li>You should list tasks you need to put in your calendar here.</li>
                                                 </ul>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div className="grid-row">
                                     <div className="square-wrapper">
                                         <div className="square red">
@@ -320,8 +360,9 @@ export default function TimeManagement() {
                                             <div className='hiddenText'>
                                                 <br/>
                                                 <ul>
-                                                    <li>Quadrant 3 tasks are activities that require our attention now (urgent), but don’t help us achieve our goals or fulfill our mission (not important).</li>
-                                                    <li>Most Q3 tasks are interruptions from other people and often involve helping them meet their own goals and fulfill their own priorities.</li>
+                                                    <li>Tasks that require our attention now (urgent), but don’t help us achieve our goals or fulfill our mission (not important).</li>
+                                                    <li>Most of these tasks are interruptions from other people and often involve helping them meet their own goals and fulfill their own priorities.</li>
+                                                    <li>Keep track of delegated tasks by e-mail, telephone or within a meeting to check back on their progress later.</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -335,9 +376,10 @@ export default function TimeManagement() {
                                             <div className='hiddenText'>
                                                 <br/>
                                                 <ul>
-                                                    <li>Quadrant 4 activities aren’t urgent and aren’t important.</li>
-                                                    <li>They’re what I like to call “dicking around” activities. Q4 activities aren’t pressing nor do they help you achieve long-term goals or fulfill your mission as a man.</li>
+                                                    <li>Tasks that aren’t urgent and aren’t important.</li>
+                                                    <li>These activities aren’t pressing nor do they help you achieve long-term goals or fulfill your mission as a man.</li>
                                                     <li>They’re primarily distractions.</li>
+                                                    <li>Discover and stop bad habits, like surfing the internet without a reason or gaming too long, these give you an excuse for not being able to deal with important tasks</li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -346,9 +388,9 @@ export default function TimeManagement() {
                             </div>
                         </div>
 
-                        <div className='timeManagement__back__content'>
-                            <h2>Special Tips</h2>
-                            <Card className={cardClass.root}>
+                        <div className='timeManagement__back__content' >
+                            <h2 className="textCard" style={{marginTop: '0%'}}>&#x25D6;Special Tips&#x25D7;</h2>
+                            <Card className={cardClass.root} id="inboxCard">
                                 <CardContent>
                                     <Typography className={cardClass.title}>
                                         Reach Inbox Zero
@@ -359,7 +401,7 @@ export default function TimeManagement() {
                                         <br/>
                                         &#x25CF; Add label: Google Classroom, Coding, Internship/Placement, Project, Urgent, etc.(your choice)
                                         <br/>
-                                        &#x25CF; Do this on the VERY FIRST day! You won't be able to come back to this situation <br/>(@Freshers you have a chance!)
+                                        &#x25CF; Do this on the VERY FIRST day! You won't be able to come back to this situation (@Freshers you have a chance!)
                                         <img className="memeImage" src="https://memegenerator.net/img/instances/47021039.jpg"></img>
                                         <br/>
                                         &#x25CF; Add a mail tracker
@@ -370,7 +412,7 @@ export default function TimeManagement() {
                     </div>
                     <div className='button_div'>
                         <Button className='reverseButton' variant="contained" onClick={handleClick}>
-                            UNO Reverse
+                            I don't belong here 
                         </Button>
                     </div>
                 </Card>

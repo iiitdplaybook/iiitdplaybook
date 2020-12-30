@@ -83,6 +83,14 @@
     justify-items: center;
 }
 
+#linkCard{ 
+    transition: ease-out .2s;
+}
+
+#linkCard:hover{ 
+    transform: scale(1.1);
+}
+
 @media only screen and (max-width: 1250px) {
 
     .cardsDiv_resources2{

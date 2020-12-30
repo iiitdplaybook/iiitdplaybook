@@ -1,16 +1,19 @@
-import { render } from 'react-dom'
+
 import React, { useState } from 'react'
-import { useSprings, animated, interpolate } from 'react-spring'
+import { useSprings, animated, to as interpolate } from 'react-spring'
 import { useDrag } from 'react-use-gesture'
 import './CardsAnim.css'
+import dog from '../../Assets/cardPics/dogFire.png'
+import tear from '../../Assets/cardPics/tearSmile.png'
+import plag from '../../Assets/cardPics/plag.png'
+import dark from '../../Assets/cardPics/darkSide.png'
 
 const cards = [
-  'https://www.ultraboardgames.com/uno/gfx/wild4.jpg',
-  'https://upload.wikimedia.org/wikipedia/en/5/53/RWS_Tarot_16_Tower.jpg',
-  'https://upload.wikimedia.org/wikipedia/en/9/9b/RWS_Tarot_07_Chariot.jpg',
-  'https://upload.wikimedia.org/wikipedia/en/d/db/RWS_Tarot_06_Lovers.jpg',
-  'https://upload.wikimedia.org/wikipedia/en/thumb/8/88/RWS_Tarot_02_High_Priestess.jpg/690px-RWS_Tarot_02_High_Priestess.jpg',
-  'https://upload.wikimedia.org/wikipedia/en/d/de/RWS_Tarot_01_Magician.jpg'
+  tear,
+  dog,
+  dark,
+  plag,
+  'https://image.freepik.com/free-vector/deadline-concept-business-man-sinking-sand-watch_48369-18371.jpg'
 ]
 
 // These two are just helpers, they curate spring data, values that are later being interpolated into css

@@ -39,6 +39,19 @@ function HomePage() {
     const [portraits, setportraits] = useState(
         []
     )
+    const [exploring, setexploring] = useState(
+        []
+    )
+    const [definingPoint, setdefiningPoint] = useState(
+        []
+    )
+    const [graduating, setgraduating] = useState(
+        []
+    )
+    const [nostalgia, setnostalgia] = useState(
+        []
+    )
+    
 
 
     function getFirestore(){
@@ -47,14 +60,30 @@ function HomePage() {
 
     useEffect(() => {
         console.log('effect');
-        const unsub = getFirestore().collection('Testimonies').where("isApproved", "==", true).onSnapshot(snapshot =>{
+        const unsub1 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Baby Steps').onSnapshot(snapshot =>{
             const data = snapshot.docs.map(doc => doc.data());
             setportraits(data);
+        });
+        const unsub2 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Exploring').onSnapshot(snapshot =>{
+            const data = snapshot.docs.map(doc => doc.data());
+            setexploring(data);
+        });
+        const unsub3 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Defining Point').onSnapshot(snapshot =>{
+            const data = snapshot.docs.map(doc => doc.data());
+            setdefiningPoint(data);
+        });
+        const unsub4 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Graduating').onSnapshot(snapshot =>{
+            const data = snapshot.docs.map(doc => doc.data());
+            setgraduating(data);
+        });
+        const unsub5 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Nostalgia').onSnapshot(snapshot =>{
+            const data = snapshot.docs.map(doc => doc.data());
+            setnostalgia(data);
         });
         
         return () => {
             console.log('cleanup');
-            unsub();
+            unsub1();
         }
     }, []);
 
@@ -169,7 +198,7 @@ function HomePage() {
                         <img className="imgContainer" src={imgExplore}/>  
                         </div>
                         <div className="TestiContainer">
-                        <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
+                        <Testimonials portraits={exploring} vel={vel} scaleFactor={1.5}/>
                         </div>
                         </div>
                     </VerticalTimelineElement>
@@ -194,7 +223,7 @@ function HomePage() {
                             <img className="imgContainer" src={imgDefine}/>  
                             </div>
                             <div className="TestiContainer">
-                                <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
+                                <Testimonials portraits={definingPoint} vel={vel} scaleFactor={1.5}/>
                             </div>
                         </div>
                     </VerticalTimelineElement>
@@ -219,7 +248,7 @@ function HomePage() {
                             <img className="imgContainer" src={imgGraduate}/>
                             </div>
                             <div className="TestiContainer">
-                                <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
+                                <Testimonials portraits={graduating} vel={vel} scaleFactor={1.5}/>
                             </div>
                         </div>
                     </VerticalTimelineElement>
@@ -245,7 +274,7 @@ function HomePage() {
                         <img className="imgContainer" src={imgNostalgia}/>
                         </div>
                         <div className="TestiContainer">
-                            <Testimonials portraits={portraits} vel={vel} scaleFactor={1.5}/>
+                            <Testimonials portraits={nostalgia} vel={vel} scaleFactor={1.5}/>
                         </div>
                         </div>
                     </div>

@@ -36,9 +36,22 @@
 
     .supplies__button    .MuiButton-label{
         font-size: .7em;
+        margin-left: 30%;
+        margin-right: 30%;
     }
 
-.supplies__button{
-    width: fit-content;
-}
+    .supplies__button{
+        overflow-y: scroll !important;
+        justify-content: unset !important;
+        /* min-width: 100px; */
+        /* padding-left: 10%; */
+    }
+
+    .supplies__button > button {
+        min-width: fit-content;
+    }
+
+    .supplies__button::-webkit-scrollbar {
+        display: none;
+    }
 }

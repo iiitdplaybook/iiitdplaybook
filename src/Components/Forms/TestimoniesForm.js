@@ -20,13 +20,15 @@ import Button from '@material-ui/core/Button';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import ImgUpload from './ImgUpload';
 
 const state = {
     "UserAvatar": "https://www.gstatic.com/stadia/gamers/avatars/xxhdpi/avatar_53.png",
     "Name":"Rahul Singh",
     "Text":"",
     "Topic":"",
-    "isApproved":false
+    "isApproved":false,
+    "timestamp":Date.now()
 };
 
 const useStyles = makeStyles((theme) => ({
@@ -41,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
   
+var storage = firebase.storage();
+var storageRef = storage.ref();
+var imagesRef = storageRef.child('ContributionImages');
 
 export default function TestimoniesForm(){
 
@@ -63,6 +68,7 @@ export default function TestimoniesForm(){
         state.Name=userName;
         state.Text=testimonies;
         state.UserAvatar = firebase.auth().currentUser.photoURL;
+        state.timestamp = firebase.firestore.Timestamp.now()
         const db = firebase.firestore();
         console.log("Sending to Firebase");
         db.collection("Testimonies").add(state);
@@ -86,11 +92,50 @@ export default function TestimoniesForm(){
             if(value==="Clubs"){
                 setHint(clubHint);
             }
+            else if(value==="General"){
+                setHint(defaultHint);
+            }
+            else if(value==="Phases of College" && PoC_Value==="Baby Steps"){
+                setHint(babyStepsHint);
+            }
+            else if(value==="Phases of College" && PoC_Value==="Exploring"){
+                setHint(exploringHint);
+            }
+            else if(value==="Phases of College" && PoC_Value==="Defining Point"){
+                setHint(definingHint);
+            }
+            else if(value==="Phases of College" && PoC_Value==="Graduating"){
+                setHint(graduatingHint);
+            }
+            else if(value==="Phases of College" && PoC_Value==="Nostalgia"){
+                setHint(nostalgiaHint);
+            }
             else if(value==="Time Management"){
                 setHint(timeManagementHint);
             }
             else if(value==="Online Semester Tips"){
                 setHint(onlineSemHint);
+            }
+            else if(value==="Academics"){
+                setHint(academicsHint);
+            }
+            else if(value==="Competitive Programming"){
+                setHint(cpHint);
+            }
+            else if(value==="Hackathons"){
+                setHint(hackathonsHint);
+            }
+            else if(value==="Research"){
+                setHint(researchHint);
+            }
+            else if(value==="Placements"){
+                setHint(placementHint);
+            }
+            else if(value==="Images and Experiences"){
+                setHint(experienceStoryHint);
+            }
+            else if(value==="Images"){
+                setHint(imageHint);
             }
             else {
                 setHint(defaultHint)
@@ -120,7 +165,19 @@ export default function TestimoniesForm(){
     const clubHint = "Which club are you a part of? Which club helped you grow as person? In what ways did the club help?"
     const timeManagementHint = "What are your tried and tested techniques to be more productive? How do you manage time? How do you balance life/fun and deadlines?"
     const onlineSemHint = "Any tips for the online semester? How are you coping with the online semester? Any stories or feelings that you'd like share?"
-    
+    const babyStepsHint = "How was your experience when you first entered college?"
+    const exploringHint = "How did you start exploring/experimenting/trying out new things?"
+    const definingHint = "How did you find your calling/what you wanted to do in life?"
+    const graduatingHint = "How was your experience when you graduated?"
+    const nostalgiaHint = "When you look back to your college life after graduating what do you feel most nostalgic about?"
+    const academicsHint = "How to get the most out of a course? How to plan well to get the best possible grades? How much GPA is considered good?"
+    const cpHint = "How to start? (Good time to start, how to distribute your time, what all to study, how to practice etc.)"
+    const hackathonsHint = "How to start taking part in hackathons? Where to find hackathons? Pros and cons of taking part in a hackathon"
+    const researchHint = "How to get a research project? How much work does it require? Why should / shouldn't one go for research?"
+    const placementHint = "What to keep in mind while preparing? Any interview tips? Any good resources?"
+    const experienceStoryHint = "Any crazy or fun experiences and stories that you would like to share? "
+    const imageHint = "Any images from college you would like to share? (or drive link to the images)"
+
     return(
         <div>
             <Navbar loggedIn={true} colorStatus={true}/>
@@ -144,7 +201,6 @@ export default function TestimoniesForm(){
                         </div>
                         <div class="column">
                             <RadioGroup className='radio' aria-label="testimonies" name="testimonies1" value={value} onChange={handleChange}>
-                            
                                 <FormControlLabel value="Competitive Programming" control={<Radio />} label="Competitive Programming" />
                                 <FormControlLabel value="Hackathons" control={<Radio />} label="Hackathons" />
                                 <FormControlLabel value="Research" control={<Radio />} label="Research" />
@@ -211,6 +267,9 @@ export default function TestimoniesForm(){
                     </Button>
                 </div>
             </form>
+            {/* TODO
+            add preventDefault thing */}
+            <ImgUpload/>
         </div>
     );
 }
