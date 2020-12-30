@@ -167,6 +167,24 @@ function items(){
         "image":imageNostalgia,
         "pathLink":"nostalgia",
         "opacity":1,
+    },{
+        "gradientColor_1":color3,
+        "gradientColor_2":color4,
+        "title":"Time Management",
+        "n_testimonies":6,
+        "reading_time":3,
+        "image":imageTimeManagement,
+        "pathLink":"timemanagement",
+        "opacity":1,
+    },{
+        "gradientColor_1":color13,
+        "gradientColor_2":color14,
+        "title":"Resources for college",
+        "n_testimonies":6,
+        "reading_time":3,
+        "image":imageResources,
+        "pathLink":"resources",
+        "opacity":1,
     }];
 
     const favCards = [{

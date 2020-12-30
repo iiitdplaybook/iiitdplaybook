@@ -115,7 +115,7 @@ function SuppliesCards(supplyCardInfo){
     for (let index=0; index<title.length;index++)
     {
         playList.push(
-            <div>
+            <div id="linkCard" style={{borderBottom: '1px solid #E6E6E6'}}> 
                 <a  href={link[index]} target="_blank" style={{margin: '0%'}}>
                     <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
                         {title[index]}
