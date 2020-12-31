@@ -4,6 +4,7 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 // import Navbar from "./Components/Navbar";
 import HomePage from "./Components/HomePage";
+import TestimoniesForm from "./Components/Forms/TestimoniesForm";
 import Footer from "./Components/Footer";
 import Testimonials from "./Components/Testimonials";
 import TalkingToFriendsSeniors from "./Components/TalkingToFriendsSeniors";
@@ -19,18 +20,20 @@ import TimeManagement from "./Components/TimeManagement/TimeManagement";
 import Tools from "./Components/Tools/Tools";
 // import Nostalgia from "./Components/Nostalgia";
 // import Cards from './Components/ExploreCards/ExploreCards';
-
+import Resources from "./Components/CollegeResources/resources";
 import Nostalgia from "./Components/Nostalgia";
 import LoadingScreen from "./Components/loading";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 // import Supplies from "./Components/Supplies/Supplies";
+import {isMobile} from 'react-device-detect';
+import ScrollToTop from './Components/ScrollToTop'
 
 function App() {
   const [{}, dispatch] = useStateValue();
   const [loading, setLoading] = useState(true)
     
   useEffect(() => {
-    setTimeout(() => setLoading(false), 6000)
+    setTimeout(() => setLoading(false), 4000)
   }, [])
 
   useEffect(() => {
@@ -40,12 +43,14 @@ function App() {
           type: "SET_USER",
           user: authUser,
           isSignedIn: true,
+          userName: authUser.displayName,
         });
       } else {
         dispatch({
           type: "SET_USER",
           user: null,
           isSignedIn: false,
+          userName: "",
         });
       }
     });
@@ -59,13 +64,37 @@ function App() {
     },
   });
 
+  function ifisMobile(){
+    if(isMobile) {
+      console.log(`isMobile: ${isMobile}`)
+      return(
+      <div className='popup'>
+        <p>Hello bish, you using phone so get the fuck off. Use laptop</p>
+      </div>
+    )}
+    else return null
+  }
+  // React.useEffect(()=>{
+  //   ifisMobile
+  // })
+
   return (
     <>
     <ThemeProvider theme={themeMain}>
     {loading === false ? (
     <div className="app">
       {/* <img src="login_bg.jpeg" alt='Random Image'/> */}
+      {/* {console.log(`isMobile: ${isMobile}`)} */}
+      {ifisMobile()}
+      <div class="popup">
+        <div class="modal_content">
+          <span class="close">&times;</span>
+          <p>I'm A Pop Up!!!</p>
+        </div>
+      </div>
+      {/* {isMobile?<div></div>} */}
       <Router>
+        <ScrollToTop/>
         {!localStorage.getItem("isSignedIn") ? (
           <Switch>
             <Route path="/supplies">
@@ -92,6 +121,8 @@ function App() {
               <Route path="/timemanagement" component={TimeManagement}/>
               <Route path="/tools" component={Tools}/>
               <Route path="/ComingSoonTools" component={ComingSoonTools}/>
+              <Route path="/resources" component={Resources}/>
+              <Route path="/contribute/testimonies" component={TestimoniesForm} />
               <Route path="/">
                 <div className="app__body">
                   <HomePage />

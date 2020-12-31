@@ -46,7 +46,8 @@ function SuppliesCards(supplyCardInfo){
             
         },
         actionArea:{
-
+            width: cardWidth,
+            height: cardHeight,
         },
         a:{
             margin:"0%",
@@ -57,7 +58,6 @@ function SuppliesCards(supplyCardInfo){
             // maxHeight:100,
             margin: '10%',
             marginBottom: '2%',
-            
         },
         title: {
             fontSize: 15,

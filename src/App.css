@@ -1,3 +1,11 @@
+.popup{
+  display: none;
+  position: fixed;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+
 .app{
     background-image: url('login_bg.jpeg');
     /* height: 100vh; */

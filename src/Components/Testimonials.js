@@ -7,11 +7,13 @@ import times from "lodash/times";
 import "./Testimonials.css";
 
 import FullWidth from "./FullWidth";
+// Firebase
+import firebase from "firebase";
 
 const Height = styled.div`
   position: relative;
   width: 100%;
-  height: ${(props) => (props.height ? props.height + "px" : "auto")};
+  min-height: ${(props) => (props.height ? props.height + "px" : "auto")};
 `;
 
 const Box = styled.div`
@@ -25,7 +27,7 @@ const Review = styled.div`
   padding: ${(props) => props.scale * 25}px;
   background: #fff;
   border-radius: 4px;
-  min-height: 20vh;
+  min-height: 35vh;
   border-color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
   box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
   overflow: hidden;
@@ -79,6 +81,7 @@ const Name = styled.div`
 //   "https://randomuser.me/api/portraits/men/26.jpg",
 // ];
 
+
 const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndPerformance }) => {
   const [key, setKey] = useState();
 
@@ -99,7 +102,6 @@ const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndP
   if (size && size.width > 1400) {
     scale = 1;
   }
-
   return (
     <FullWidth>
       <Height height={235}>
@@ -109,23 +111,26 @@ const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndP
           minScale={0.7}
           onInit={onStartPerformance}
           onFinish={onEndPerformance}
+          
         >
           {times(portraits.length, String).map((id) => (
+            // testimonies_data[id].isApproved?
             <Box key={`marquee-example-review-${id}`} scale={scale}>
               <Review scale={scale}>
                 <div id="containerHeader">
                 <Avatar scale={scale}>
-                  <img src={portraits[id].pic} alt="" />
+                  <img src={portraits[id].UserAvatar} alt="" />
                 </Avatar>
                 <Name scale={scale}>
-                  <p>{portraits[id].name}</p>
+                  <p>{portraits[id].Name}</p>
                 </Name>
                 </div>
                 <Content scale={scale}>
-                  <p>{portraits[id].text}</p>
+                  <p>{portraits[id].Text}</p>
                 </Content>
               </Review>
             </Box>
+            // :null
           ))}
         </Marquee>
       </Height>

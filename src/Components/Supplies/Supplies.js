@@ -108,8 +108,9 @@ function Supplies() {
 
     return (
         <div className="supplies">
-            <Navbar loggedIn={true} colorStatus={true}/>
-            <h2 style={{textAlign: 'center', margin: '4%'}}>A collection of things that students use in college</h2>
+            <Navbar loggedIn={localStorage.getItem("isSignedIn")} colorStatus={true}/>
+            {/* {!localStorage.getItem("isSignedIn") ? (<Navbar loggedIn={true} colorStatus={true}/>) : ()} */}
+            <h2 className='supplies_heading' style={{textAlign: 'center', margin: '4%'}}>A collection of things that students use in college</h2>
 
             <div className="supplies__button">
                 <Button
@@ -181,28 +182,28 @@ function Supplies() {
             </div>
             <div className="explore__body">
                 {clickedButton === 1 ? (
-                    <div className="cardsDiv">
+                    <div className="cardsDiv_supply">
                         {itemCards["allCards"]}
                     </div>
                     
                 ) : clickedButton === 2 ? (
-                    <div className="cardsDiv">
+                    <div className="cardsDiv_supply">
                         {itemCards["stationaryCards"]}
                     </div>
                 ) : clickedButton === 3 ? (
-                    <div className="cardsDiv">
+                    <div className="cardsDiv_supply">
                         {itemCards["laptopsCards"]}
                     </div>
                 ) : clickedButton === 4 ? (
-                    <div className="cardsDiv">
+                    <div className="cardsDiv_supply">
                         {itemCards["techotherCards"]}
                     </div>
                 ) : clickedButton === 5 ? (
-                    <div className="cardsDiv">
+                    <div className="cardsDiv_supply">
                         {itemCards["roomCards"]}
                     </div>
                 ) : (
-                    <div className="cardsDiv">
+                    <div className="cardsDiv_supply">
                         {itemCards["otherCards"]}
                     </div>
                 )}
