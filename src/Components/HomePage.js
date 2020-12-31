@@ -104,7 +104,6 @@ function HomePage() {
     //         { UserAvatar: userProfile, Text: "I was not there for induction, so all I have experienced is the horror of deadlines and evaluations.", Name: "Anunay"},
     //         { UserAvatar: userProfile, Text: "Initial college life was very fun-filled. With lots of amazing activities in college and meeting new people and getting to know them was a really nice experience. 24*7 canteen and no hostel curfew timings are really great things that make you feel free.", Name: "Shubhi"},
     //         { UserAvatar: userProfile, Text: "When I first entered college I felt intimidated and like I didn't belong here, with a little anxiety about how people would be. But it took absolutely no time to shatter all my doubts and find this wonderful set of people and a room filled with opportunities. It was a different kind of environment that I was looking forward to being in.", Name: "Muskan"},
-    //         // { UserAvatar: userProfile, Text: ".", Name: "username"},
     //     ];
 
         
