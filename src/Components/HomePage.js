@@ -30,9 +30,9 @@ import {useState, useEffect} from "react";
 function HomePage() {
 
     const [{user, isSignedIn, userName}] = useStateValue()
-    const [portraits, setportraits] = useState(
-        []
-    )
+    // const [portraits, setportraits] = useState(
+    //     []
+    // )
     const [exploring, setexploring] = useState(
         []
     )
@@ -52,51 +52,75 @@ function HomePage() {
         return firebase.firestore()
     }
 
-    useEffect(() => {
-        console.log('effect');
-        const unsub1 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Baby Steps').onSnapshot(snapshot =>{
-            const data = snapshot.docs.map(doc => doc.data());
-            setportraits(data);
-        });
-        const unsub2 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Exploring').onSnapshot(snapshot =>{
-            const data = snapshot.docs.map(doc => doc.data());
-            setexploring(data);
-        });
-        const unsub3 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Defining Point').onSnapshot(snapshot =>{
-            const data = snapshot.docs.map(doc => doc.data());
-            setdefiningPoint(data);
-        });
-        const unsub4 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Graduating').onSnapshot(snapshot =>{
-            const data = snapshot.docs.map(doc => doc.data());
-            setgraduating(data);
-        });
-        const unsub5 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Nostalgia').onSnapshot(snapshot =>{
-            const data = snapshot.docs.map(doc => doc.data());
-            setnostalgia(data);
-        });
+    // useEffect(() => {
+    //     console.log('effect');
+    //     const unsub1 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Baby Steps').onSnapshot(snapshot =>{
+    //         const data = snapshot.docs.map(doc => doc.data());
+    //         setportraits(data);
+    //     });
+    //     const unsub2 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Exploring').onSnapshot(snapshot =>{
+    //         const data = snapshot.docs.map(doc => doc.data());
+    //         setexploring(data);
+    //     });
+    //     const unsub3 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Defining Point').onSnapshot(snapshot =>{
+    //         const data = snapshot.docs.map(doc => doc.data());
+    //         setdefiningPoint(data);
+    //     });
+    //     const unsub4 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Graduating').onSnapshot(snapshot =>{
+    //         const data = snapshot.docs.map(doc => doc.data());
+    //         setgraduating(data);
+    //     });
+    //     const unsub5 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Nostalgia').onSnapshot(snapshot =>{
+    //         const data = snapshot.docs.map(doc => doc.data());
+    //         setnostalgia(data);
+    //     });
         
-        return () => {
-            console.log('cleanup');
-            unsub1();
-            unsub2();
-            unsub3();
-            unsub4();
-            unsub5();
+    //     return () => {
+    //         console.log('cleanup');
+    //         unsub1();
+    //         unsub2();
+    //         unsub3();
+    //         unsub4();
+    //         unsub5();
 
-        }
-    }, []);
+    //     }
+    // }, []);
+
+    // function getTestimonies(){
+    //     const unsub1 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Baby Steps').onSnapshot(snapshot =>{
+    //         const data = snapshot.docs.map(doc => doc.data());
+    //         setportraits(data);
+    //     });
+    //     const unsub2 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Exploring').onSnapshot(snapshot =>{
+    //         const data = snapshot.docs.map(doc => doc.data());
+    //         setexploring(data);
+    //     });
+    //     const unsub3 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Defining Point').onSnapshot(snapshot =>{
+    //         const data = snapshot.docs.map(doc => doc.data());
+    //         setdefiningPoint(data);
+    //     });
+    //     const unsub4 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Graduating').onSnapshot(snapshot =>{
+    //         const data = snapshot.docs.map(doc => doc.data());
+    //         setgraduating(data);
+    //     });
+    //     const unsub5 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Nostalgia').onSnapshot(snapshot =>{
+    //         const data = snapshot.docs.map(doc => doc.data());
+    //         setnostalgia(data);
+    //     });
+    // }
 
 
-    // const portraits = 
-    //     [
-    //         { UserAvatar: userProfile, Text: "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics", Name: "Medhavi"},
-    //         { UserAvatar: userProfile, Text: "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.", Name: "Sonali"},
-    //         { UserAvatar: userProfile, Text: "I was not there for induction, so all I have experienced is the horror of deadlines and evaluations.", Name: "Anunay"},
-    //         { UserAvatar: userProfile, Text: "Initial college life was very fun-filled. With lots of amazing activities in college and meeting new people and getting to know them was a really nice experience. 24*7 canteen and no hostel curfew timings are really great things that make you feel free.", Name: "Shubhi"},
-    //         { UserAvatar: userProfile, Text: "When I first entered college I felt intimidated and like I didn't belong here, with a little anxiety about how people would be. But it took absolutely no time to shatter all my doubts and find this wonderful set of people and a room filled with opportunities. It was a different kind of environment that I was looking forward to being in.", Name: "Muskan"},
-    //         { UserAvatar: userProfile, Text: ".", Name: "username"},
-    //     ];
+    const portraits = 
+        [
+            { UserAvatar: userProfile, Text: "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics", Name: "Medhavi"},
+            { UserAvatar: userProfile, Text: "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.", Name: "Sonali"},
+            { UserAvatar: userProfile, Text: "I was not there for induction, so all I have experienced is the horror of deadlines and evaluations.", Name: "Anunay"},
+            { UserAvatar: userProfile, Text: "Initial college life was very fun-filled. With lots of amazing activities in college and meeting new people and getting to know them was a really nice experience. 24*7 canteen and no hostel curfew timings are really great things that make you feel free.", Name: "Shubhi"},
+            { UserAvatar: userProfile, Text: "When I first entered college I felt intimidated and like I didn't belong here, with a little anxiety about how people would be. But it took absolutely no time to shatter all my doubts and find this wonderful set of people and a room filled with opportunities. It was a different kind of environment that I was looking forward to being in.", Name: "Muskan"},
+            // { UserAvatar: userProfile, Text: ".", Name: "username"},
+        ];
 
+    // testimonimalsGetFirestore();
         
     const vel = 20;
     

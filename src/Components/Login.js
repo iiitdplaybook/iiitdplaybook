@@ -51,18 +51,18 @@ function Login() {
 
   const [contri, setcontri] = React.useState([]);
 
-  React.useEffect(()=>{
-    const unsub = fire.firestore().collection('Testimonies').where("isApproved", "==", true).onSnapshot(snapshot =>{
-        const data = snapshot.docs.map(doc => {return ({text:doc.data().Name.split(" ")[0], pic:doc.data().UserAvatar})});
-        if (data!=null){
-          setcontri(data)
-        }
+  // React.useEffect(()=>{
+  //   const unsub = fire.firestore().collection('Testimonies').where("isApproved", "==", true).onSnapshot(snapshot =>{
+  //       const data = snapshot.docs.map(doc => {return ({text:doc.data().Name.split(" ")[0], pic:doc.data().UserAvatar})});
+  //       if (data!=null){
+  //         setcontri(data)
+  //       }
         
-    });
-    return () => {
-        unsub();
-    }
-  });
+  //   });
+  //   return () => {
+  //       unsub();
+  //   }
+  // });
 
   const vel2 = 25;
 

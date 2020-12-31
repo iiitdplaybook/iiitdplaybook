@@ -122,7 +122,7 @@ function Navbar({loggedIn, colorStatus, stickyCond}) {
               <ClickAwayListener onClickAway={handleClose}>
                 <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
                   <MenuItem>
-                    name
+                    {user?.displayName}
                   </MenuItem>
                   {loggedIn? (<MenuItem id="signBtn" onClick={signOut} color='primary'>Sign out</MenuItem>) : (<MenuItem id="signBtn" component={Link} color='primary' to={'/'}>Sign in</MenuItem>)}
                 </MenuList>
