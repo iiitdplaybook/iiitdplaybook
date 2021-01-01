@@ -141,7 +141,7 @@ function items(){
     }, {
         "gradientColor_1":color19,
         "gradientColor_2":color20,
-        "title":"\nEnterntainment",
+        "title":"\nEntertainment",
         "n_testimonies":6,
         "reading_time":3,
         "image":imageTimeManagement,
