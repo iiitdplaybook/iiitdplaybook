@@ -22,7 +22,7 @@ function items(){
         "title":"\nPost It Notes",
         "description": "Bought by design students",
         "image":"https://images-na.ssl-images-amazon.com/images/I/719gxnixAXL._SL1500_.jpg",
-        "pathLink":"nostalgia",
+        "pathLink":"https://amzn.to/3hv73hu",
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
@@ -93,22 +93,71 @@ function items(){
         "description": "Bought by 25 students",
         "image":"https://images-na.ssl-images-amazon.com/images/I/816vukIX-KL._SL1500_.jpg",
         "pathLink":"https://amzn.to/3mDUUZh",
+    }, {
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Dotted notebook (A5 size)",
+        "description": "Bought by design students",
+        "image":"https://images-na.ssl-images-amazon.com/images/I/51Z32bCyGxL._SL1390_.jpg",
+        "pathLink":"https://amzn.to/3hwaq7K",
+    }, {
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Luxor Black marker",
+        "description": "Bought by 124 students",
+        "image":"https://images-na.ssl-images-amazon.com/images/I/617Cq4Vz4UL._SL1280_.jpg",
+        "pathLink":"https://amzn.to/34WbUDi",
     }];
 
     const laptopsCards = [{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
         "title":"\nAcer Nitro 5",
-        "description": "Bought by 105 students",
+        "description": "Bought by 35 students",
         "image":"https://images-na.ssl-images-amazon.com/images/I/71Pp8PLPNAL._SL1500_.jpg",
-        "pathLink":"nostalgia",
+        "pathLink":"https://amzn.to/3n0GUZ8",
     },{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
         "title":"Lenovo Legion gaming laptop",
-        "description": "Bought by 105 students",
+        "description": "Bought by 25 students",
         "image":"https://images-na.ssl-images-amazon.com/images/I/61p3lA4N3uL._SL1000_.jpg",
-        "pathLink":"nostalgia",
+        "pathLink":"https://amzn.to/2WWf19Z",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Dell Inspiron 5370",
+        "description": "Bought by 25 students",
+        "image":"https://images-na.ssl-images-amazon.com/images/I/71zqXTOew2L._SL1500_.jpg",
+        "pathLink":"https://amzn.to/3hwvIm4",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Lenovo Ideapad S340",
+        "description": "Bought by 25 students",
+        "image":"https://images-na.ssl-images-amazon.com/images/I/81nEs%2Bl5UgL._SL1500_.jpg",
+        "pathLink":"https://amzn.to/2LbaLRa",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Asus Vivabook 14",
+        "description": "Bought by 25 students",
+        "image":"https://images-na.ssl-images-amazon.com/images/I/41uA9S02hvL.jpg",
+        "pathLink":"https://amzn.to/2KNnFoS",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Surface Laptop 3",
+        "description": "Bought by 25 students",
+        "image":"https://images-na.ssl-images-amazon.com/images/I/61cuElU6PaL._SX425_.jpg",
+        "pathLink":"https://amzn.to/34SG4Y8",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"More Coding Laptops",
+        "description": "Get the best laptops",
+        "image":"https://www.naijatechguide.com/wp-content/uploads/2019/02/12_09_2018-laptops_18418669.jpg",
+        "pathLink":"https://amzn.to/2JBYyF2",
     }];
 
     const techotherCards = [{
@@ -164,16 +213,16 @@ function items(){
         "gradientColor_1":color1,
         "gradientColor_2":color2,
         "title":"Logitech Light Sync Gaming Mouse",
-        "description": "Bought by gaming students",
+        "description": "Bought by gamers",
         "image":"https://images-na.ssl-images-amazon.com/images/I/61UxfXTUyvL._SL1500_.jpg",
-        "pathLink":"https://www.amazon.in/Logitech-G102-Customizable-Lighting-Programmable/dp/B08LT9BMPP/ref=sr_1_4_mod_primary_lightning_deal?dchild=1&keywords=gaming+mouse&qid=1608469670&s=computers&sbo=Tc8eqSFhUl4VwMzbE4fw%2Fw%3D%3D&smid=A14CZOWI0VEHLG&sr=1-4",
+        "pathLink":"https://amzn.to/3htHs8y",
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
-        "title":"Keyboard",
+        "title":"Gaming Keyboard",
         "description": "Bought by 15 students",
-        "image":"https://images-na.ssl-images-amazon.com/images/I/61ihz46SLOL._SL1500_.jpg",
-        "pathLink":"https://amzn.to/2VwOmQp",
+        "image":"https://images-na.ssl-images-amazon.com/images/I/81Km9%2BgySSL._SL1500_.jpg",
+        "pathLink":"https://amzn.to/3o1OILA",
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,
@@ -201,6 +250,13 @@ function items(){
         "title":"JBL Waterproof Portable Bluetooth Speaker",
         "description": "Bought by 10 students",
         "image":"https://images-na.ssl-images-amazon.com/images/I/81DRhqE04BL._SL1500_.jpg",
+        "pathLink":"https://amzn.to/3qolPe6",
+    }, {
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Gadget Storage Bag",
+        "description": "Bought by 20 students",
+        "image":"https://images-na.ssl-images-amazon.com/images/I/51YaYwZwkJL.jpg",
         "pathLink":"https://amzn.to/3qolPe6",
     }];
 
@@ -306,6 +362,13 @@ function items(){
         "description": "Bought by 3 students",
         "image":"https://images-na.ssl-images-amazon.com/images/I/614x3s4PWXL.jpg",
         "pathLink":"https://amzn.to/3owRSa7",
+    }, {
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Laptop stand",
+        "description": "Bought by 10 students",
+        "image":"https://images-na.ssl-images-amazon.com/images/I/71Zf9uUp%2BGL._SL1500_.jpg",
+        "pathLink":"https://amzn.to/37Xzhye",
     },{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
@@ -322,7 +385,16 @@ function items(){
         "pathLink":"https://amzn.to/39F3mnp",
     }];
 
-    const allCards1 = techotherCards.concat(laptopsCards);
+    const jokeCard = [{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Crocin Pain Relief Tablet",
+        "description": "Bought by everyone",
+        "image":"https://i-cf5.gskstatic.com/content/dam/cf-consumer-healthcare/panadol/en_in/adult/productshots/crocinpainrelief/Crocin%20Pain%20Relief-Web%20Banner_455x455.png",
+        "pathLink":"https://www.netmeds.com/prescriptions/crocin-pain-relief-tablet-15-s",
+    }]
+    const allCards0 = jokeCard.concat(techotherCards);
+    const allCards1 = allCards0.concat(laptopsCards);
     const allCards2 = allCards1.concat(roomCards);
     const allCards3 = allCards2.concat(stationaryCards);
     const allCards = allCards3.concat(otherCards);

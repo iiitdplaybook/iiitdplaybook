@@ -1,11 +1,18 @@
 .navbar {
     display: flex;
+    height: 50px;
     align-items: center;
     justify-content: space-between;
-
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgba(0, 0, 0,.4); */
+    /* background-image: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,.5));; */
     padding: 10px;
+    z-index: 999;
+    fill-opacity: blur(18px);
     /* font-family: 'Poppins'; */
+}
+
+#signBtn{
+    min-width: fit-content;
 }
 
 .explore:hover {
@@ -40,7 +47,8 @@
 
 #btn{
     font-family: 'Poppins', sans-serif;   
-    margin-left: 15px;
+    margin-left: 30px;
+    /* margin-right: 0%; */
     font-weight: 600;
     transition: ease-in-out .2s;
     vertical-align: middle;
@@ -56,15 +64,63 @@
     border-radius: 0px;
 }
 
-#btn:nth-child(3){
+#btn:nth-child(4){
     margin-right: 25px;
 }
 
+/* .userIcon{
+    width: 1.7em;
+    height: 1.7em;
+} */
+
 #pic{
-    transform: scale(.7);
+    width: fit-content;
+    height: fit-content;
+    /* width: 1.5em;
+    height: 1.5em; */
+    /* transform: translate(-10%, -10%); */
 }
 
 #navIcon{
     margin-right: 5%;
     fill: red;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .removeText{
+        display: none;
+    }
+
+    
+    #btn{
+        margin-left: -15px;
+        
+    }
+
+    #btn:nth-child(1){
+        margin-left: 20px;
+    }
+
+    #btn:nth-child(4){
+        margin-right: 2px;
+    }
+    
+    .navbar__right > Button {
+        margin-left: 1px;
+        
+    }
+
+}
+
+.userIcon:hover {
+    cursor: pointer;
+}
+
+#pic:hover {
+    cursor: pointer;
+}
+
+#simple-menu{
+    margin-right: 10px;
 }

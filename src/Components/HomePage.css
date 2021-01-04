@@ -15,9 +15,13 @@ canvas {
   }
 
   .section_0 {
-      height: 100h;
+      height: 110vh;
       margin-top: 0%;
       z-index: -1;
+      position: relative;
+      background-image: url("../Assets/homewallpaper.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .section_1 {
@@ -26,19 +30,27 @@ canvas {
     align-items: center;
     flex-direction: column;
     /* background-image: url('../Assets/landscape.jpg'); */
-    height: 110vh;
-    margin-top: -5%;
-    background-image: url("../Assets/homewallpaper.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
+    min-height: 110vh;
+    /* position: relative; */
+    /* width: 100vw; */
+    margin-top: -15vh;
+    /* background-image: url("../Assets/homewallpaper.svg"); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
     /* background-color: white; */
     z-index: 1;
 }
 
-.imgHero{
-    max-width: 40%;
-    align-self: center;
-    margin-bottom: -4%;
+.section_0 .imgHero{
+    /* min-width: 100%; */
+    /* min-height: 100%; */
+    /* align-self: center; */
+    /* position: absolute; */
+    /* top: 0; */
+    /* left:0; */
+    /* margin-top: -10%; */
+    /* z-index: -1; */
+    /* margin-bottom: -4%; */
 }
 
 /* .homePage_img {
@@ -69,6 +81,11 @@ canvas {
 } */
 
 /* Line color change */
+.vertical-timeline{
+    z-index: -1;
+    border-radius: 25px;
+}
+
 .vertical-timeline::before{
     background: linear-gradient(#FFAFBC, #FFC2A1, #FBD69A , #034C90, #004e92, #000428);
     top: 1%;
@@ -122,12 +139,24 @@ canvas {
     overflow: hidden;
 }
 
+.containerBox_content{
+    padding:1em;
+}
+
+.vertical-timeline-element{
+    border-radius: 25px;
+}
+
+.vertical-timeline-element-content{
+    padding: 0;
+}
+
 .vertical-timeline-element:nth-child(2) .containerBox{
     /* height: 70vh;   */
     margin-top: -14%;
     /* background: red; */
 }
-
+    
 .vertical-timeline-element:nth-child(5) .containerBox{
     /* height: 70vh;   */
     margin-top: -35%;
@@ -160,6 +189,10 @@ canvas {
 
 .contentBox{
     /* margin-top: -20%; */
+}
+
+.timeline_section{
+    z-index: 700;
 }
 
 .timeline_section .nostalgia_button {
@@ -197,7 +230,7 @@ canvas {
 
     .vertical-timeline::before{
         background: linear-gradient(#FFAFBC, #FFC2A1, #FBD69A, #004e92, #000428);
-        height: 83%;
+        min-height: fit-content ;
     }
 
     .textCard{
@@ -214,18 +247,19 @@ canvas {
       }
     
     .imgContainer{
-        max-width: 100%;
+        max-width: 70%;
     }
 
+    
     .vertical-timeline-element:nth-child(2) .containerBox{
         /* height: 70vh;   */
-        margin-top: -60%;
+        /* margin-top: -60%; */
         /* background: red; */
     }
     
     .vertical-timeline-element:nth-child(5) .containerBox{
         /* height: 70vh;   */
-        margin-top: -132%;
+        /* margin-top: -132%; */
         /* background: red; */
     }
 
@@ -241,6 +275,7 @@ canvas {
         position: relative;
         left: 15%;
         bottom: 37%;
+        z-index: 999 !important;
     }
 
     .vertical-timeline-element:nth-child(4) .imgContainer{
@@ -249,4 +284,12 @@ canvas {
         margin-top: 0%;
         margin-bottom: 2%;
     } 
+  }
+
+  @media only screen and (max-width: 600px) {
+  .vertical-timeline::before{
+    
+    height: 79%;
+    
+}
   }

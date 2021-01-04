@@ -1,0 +1,101 @@
+/** @format */
+/* .explore__button {
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    transition: ease-in-out .2s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.explore__button > button {
+    margin: 10px;
+    transition: ease-in-out .2s,
+}
+
+.explore__body {
+    transition: ease-in-out .3s;
+    font-family: 'Poppins', sans-serif;
+    margin: 5%;
+}
+
+.explore__body .MuiButton-label{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+} */
+
+.resourceBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.resourceBox_Inner{
+    display: flex;
+    flex-direction: inherit;
+    width: 100%;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.resourceBox_Inner::-webkit-scrollbar {
+    display: none;
+}
+
+.CardActionArea{
+    margin-top: 1%;
+
+}
+
+
+.cardsDiv_resources{
+    display: grid;
+    grid-gap: 5px;
+    grid-row-gap: 40px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(22em, 1fr));
+    grid-template-rows: auto;
+    grid-auto-rows: 300px !important;
+    justify-items: center;
+}
+
+.cardsDiv_resources2{
+    display: grid;
+    grid-gap: 5px;
+    grid-row-gap: 40px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(28em, 1fr));
+    /* grid-template-columns: 500px 500px auto; */
+    grid-template-rows: auto;
+    grid-auto-rows: 300px !important;
+    justify-items: center;
+}
+
+.cardsDiv_resources3{
+    display: grid;
+    grid-gap: 5px;
+    grid-row-gap: 40px;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+    /* grid-template-columns: 500px 500px auto; */
+    grid-template-rows: auto;
+    grid-auto-rows:inherit;
+    justify-items: center;
+}
+
+#linkCard{ 
+    transition: ease-out .2s;
+}
+
+#linkCard:hover{ 
+    transform: scale(1.1);
+}
+
+@media only screen and (max-width: 1250px) {
+
+    .cardsDiv_resources2{
+        grid-template-columns: repeat(auto-fill, minmax(28em, 1fr));
+    }
+}
+

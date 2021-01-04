@@ -3,3 +3,7 @@
     height: 5%;
     margin-left: 3%;
 }
+
+.Marquee:hover{
+    animation-play-state: paused !important;
+}

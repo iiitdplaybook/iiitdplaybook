@@ -3,7 +3,7 @@ import { auth } from "./fire"
 export const initialState = {
     user: null,
     isSignedIn: false,
-    userName: "fuck"
+    userName: ""
 }
 
 export const actionTypes = {
