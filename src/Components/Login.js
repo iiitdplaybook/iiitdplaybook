@@ -24,29 +24,6 @@ function Login() {
   //   { pic: userProfile, text: "Name" },
   //   { pic: userProfile, text: "Name" },
   //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-  //   { pic: userProfile, text: "Name" },
-   
   // ];
 
   const [contri, setcontri] = React.useState([]);
@@ -128,7 +105,8 @@ function Login() {
         <div className='login__buttons'>
           <Button id="signIn" onClick={signIn}>Sign in with IIITD Mail</Button>
           <Button id="guest" component={Link} to={'/nostalgia'}>Join as a Guest</Button>
-          {/* <Player
+          {/* Don't delete
+              <Player
                 autoplay
                 loop
                 src={blob}

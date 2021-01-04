@@ -17,34 +17,6 @@ import ProductCard from 'react-ui-cards'
 import itemsList from "./itemsSupplies"
 import Navbar from "../Navbar";
 
-
-// function showLink(){
-//     let body = '<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ac&ref=tf_til&ad_type=product_link&tracking_id=dharamshala-21&marketplace=amazon&region=IN&placement=B00TIK8956&asins=B00TIK8956&linkId=828142b5d41469575d79b2f5dd5886b1&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff"></iframe>'
-//     return (
-//         <div>
-//             <div  dangerouslySetInnerHTML={{__html: body}} />
-//         </div>
-//     )
-// }
-// function render() {
-//     let style = {
-//       width: '160px',
-//       height: '600px'
-//     };
-//     return (
-//         <iframe
-//         title="Amazon Connected Home"
-//         style={style}
-//         marginWidth="0"
-//         marginHeight="0"
-//         scrolling="no"
-//         frameBorder="0"
-//         //src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ss&ref=as_ss_li_til&ad_type=product_link&tracking_id=notapplicab0b-21&language=en_IN&marketplace=amazon&region=IN&placement=B01GO1633Q&asins=B01GO1633Q&linkId=0cebf7cafed9a4ba45db73eec780c696&show_border=true&link_opens_in_new_window=true"
-//         src="https://www.youtube.com"
-//       />
-//     )
-// }
-
 function Supplies() {
     const [clickedButton, setClickedButton] = useState(1);
     const useStyles = makeStyles({
@@ -77,39 +49,16 @@ function Supplies() {
     const buttonClass = buttonStyles();
     const classes = useStyles();
 
-    // const items = [];
     const itemCards = itemsList();
-
-    // for (let index = 0; index < 5; index++) {
-    //     items.push(
-    //         <Card className={classes.root}>
-    //             <CardActionArea>
-    //                 <CardMedia
-    //                     className={classes.media}
-    //                     image={wazzup}
-    //                     title="Pabitra"
-    //                 />
-    //                 <CardContent>
-    //                     <Typography gutterBottom variant="h6" component="h2">
-    //                     Rechargeable LED Touch Desk Lamp {index}
-    //                     </Typography>
-    //                 </CardContent>
-    //             </CardActionArea>
-    //         </Card>
-    //     );
-    // }
 
     const changeS = (s) => {
         setClickedButton(s);
     };
 
 
-    // const body = '<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//ws-in.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&OneJS=1&Operation=GetAdHtml&MarketPlace=IN&source=ac&ref=tf_til&ad_type=product_link&tracking_id=dharamshala-21&marketplace=amazon&region=IN&placement=B00TIK8956&asins=B00TIK8956&linkId=828142b5d41469575d79b2f5dd5886b1&show_border=true&link_opens_in_new_window=true&price_color=333333&title_color=0066c0&bg_color=ffffff"></iframe>'
-
     return (
         <div className="supplies">
             <Navbar loggedIn={localStorage.getItem("isSignedIn")} colorStatus={true}/>
-            {/* {!localStorage.getItem("isSignedIn") ? (<Navbar loggedIn={true} colorStatus={true}/>) : ()} */}
             <h2 className='supplies_heading' style={{textAlign: 'center', margin: '4%'}}>A collection of things that students use in college</h2>
 
             <div className="supplies__button">

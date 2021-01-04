@@ -1,4 +1,3 @@
-// import React from "react";
 import addItem from "../../Assets/SVG_for_cards/addItem.svg";
 import SupplyCards from "./SuppliesCards"
 

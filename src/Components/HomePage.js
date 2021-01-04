@@ -10,20 +10,14 @@ import Stars from './stars'
 import Tilt from 'react-parallax-tilt';
 import ParticleAnim from './ParticleAnim/ParticleAnim';
 
-// import homeWallpaper from "../Assets/Home_wallpaper.png";
-import { Link } from "react-router-dom";
-
-// import colorScript from './color';
 import Clouds from './clouds';
 import Testimonials from './Testimonials';
-import userProfile from '../Assets/user.png';
 import imgWelcome from '../Assets/homewallpaper.svg';
 import imgQuestion from '../Assets/PhasesPics/question.svg';
 import imgDefine from '../Assets/PhasesPics/define.svg';
 import imgExplore from '../Assets/PhasesPics/explore2.svg';
 import imgGraduate from '../Assets/PhasesPics/graduate2.svg';
 import imgNostalgia from '../Assets/PhasesPics/nostalgia2.svg';
-import FadeIn from "./FadeIn";
 import {useState, useEffect} from "react";
 
 
