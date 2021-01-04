@@ -76,9 +76,9 @@ function Nostalgia() {
                 Oh the sweet, naive, happy days!
                 <br/><br/>
                 The journey begins with a series of similar questions - <br/>
-                "Where is the college located?" “Govind puri se left?” "Goving puri?" 
+                "Where is the college located?" “Govind puri se left?” "Govind puri?" 
                 <br/>The pain in explaining to others, “Nhi IIT nhi, ek I aur aayega”, and “Nhi IP ka college nahi hai”. 
-                However, the biggest heartbreak dawns upon us is that SOTY IS A LIE. In fact, we soon realise that "BAS ABHI PADHLE, FIR TOH MAZE HI MAZE HAI" is the BIGGEST lie!
+                However, the biggest heartbreak is that SOTY IS A LIE. In fact, we soon realise that "BAS ABHI PADHLE, FIR TOH MAZE HI MAZE HAI" is the BIGGEST lie!
                 <br/><br/>
                 First day in college, waking up on your own, all dressed up and excited for the most amazing time you’ll ever have in this college, the INDUCTION. Exploring clubs, treasure hunts, karaoke nights, dj nights, night olympics, being introduced to mafia by your seniors and playing it all night. Letting loose all the pent up tension from the past two years in the matter of 1 week, the most amazing and exciting week.
                 
@@ -109,7 +109,7 @@ function Nostalgia() {
             <br></br>
             <p>
             And the calm finally fades away, slowly, one deadline at a time. Before you know it, you have 4 deadlines and 3 quizzes, and you keep wondering, how did this happen overnight?? 
-            As the panic starts to kick in, you start to work - looking through the lecture slides to find when the hell did the professor teach this? And you realize that he didn’t :| 
+            As the panic starts to kick in, you begin to work - looking through the lecture slides to find when the hell did the professor teach this? And you realize that he didn’t :| 
             <br/><br/>
             <div className='section_media_2'>
             {/* <img classname='happiness_img' src={happiness}/> */}
@@ -120,7 +120,7 @@ function Nostalgia() {
             This is when your first best friend comes to the rescue, “GOOGLE”. Scrolling through hundreds of websites, talking to a dozen friends you somehow manage to reach the finishing line. 
             Now, the moment of truth, you run your code… ERROR. Time for the second best friend, “STACK OVERFLOW”. After 527 bugs, you fianlly get your code functioning and submit just in time.
             <br/><br/>
-            Nothing beats that sigh of relief after hitting the “Turn In” button on Google Classroom, just minutes before the deadly “11:59 pm” mark. A tear trickled down your cheek as you closed your laptop and lied down on your bed, feeling on top of the world. This is when you begin to feel hungry.
+            Nothing beats that sigh of relief after hitting the “Turn In” button on Google Classroom, just minutes before the deadly “11:59 pm” mark. A tear trickled down your cheek as you closed your laptop and lay down on your bed, feeling on top of the world. This is when you begin to feel hungry.
 
             </p>
         </div>
@@ -134,7 +134,7 @@ function Nostalgia() {
             Kuch khaane chalte hain...
             <br/><br/>
             Happy and starving, you walk towards the canteen with your entire gang, realizing on the way that , “Apne college mein bhi couples exist karte hain?” The moment you reach, you say, “Bhaiya bohot bhook lag rahi h, sabse jaldi kya mil sakta h?”. 
-            The obvious response to which is, “MAGGI”. Then starts the wait game. This is when you realize, that it does not take 2 minutes to prepare maggi, but a millenia. “Bhaiya 2 minute ho gaye, maggi kab aayegi?”. “Bhaiya 20 minute ho gaye, maggi kab aayegi?”. “Bhaiya subah ho gayi, maggi kab aayegi???” 
+            The obvious response to which is, “MAGGI”. Then starts the wait game. This is when you realize, that it does not take 2 minutes to prepare maggi, but a millennia. “Bhaiya 2 minute ho gaye, maggi kab aayegi?”. “Bhaiya 20 minute ho gaye, maggi kab aayegi?”. “Bhaiya subah ho gayi, maggi kab aayegi???” 
             After waiting forever, you finally get your food and you enjoy it with the most interesting and crazy late night conversations, followed by a walk around the campus, feeling free and relaxed (for some time at least).
             <br></br>
             <br></br>
@@ -230,10 +230,10 @@ function Nostalgia() {
                 <img src={old_acad_lawn}/>
                 </div>
                 
-                <p className='para_text'>Delhi air pollution.
+                <p className='para_text'>
                 The best place to enjoy the warm sun on a cold day, the old acad lawn. 
                 From professors to students, everyone loves sitting on the grass here and enjoying the sun. 
-                Feels good to connect to nature and admire the lovely colourful flowers all around (better with a cup of chai or coffee). 
+                Feels good to connect to nature and admire the lovely colorful flowers all around (better with a cup of chai or coffee). 
                 A place which is always open and can be used for relaxation whether it is a quick nap between classes or after lunch, whether it is hanging out with friends while bunking classes (don’t bunk classes :)) or just listening to some mellow music, this place always helps in finding some peace of mind.
                 </p>
             </div>
@@ -247,11 +247,11 @@ function Nostalgia() {
             <p className='para_text'>Delhi air pollution.
             Living in the midst of a state with the highest air pollution, one has still got to relax and travel to have fun. 
             Ordering food is always an option, but sometimes a walk with your friends really cheers you up, be it to Everest for chinese or Sonu ka Dhaba. 
-            Not forgetting one the most visited places by IIITD students, Epicuria (takes more than a simple walk), along with its neighbour, Kalkaji, for some street food as well as good restaurants.
+            Not forgetting one the most visited places by IIITD students, Epicuria (takes more than a simple walk), along with its neighbor, Kalkaji, for some street food as well as good restaurants.
             <br></br>
             Festivals and ending of the exam season mark a time of partying, leading you straight towards Hauz Khas and Satya Niketan, not too far either. 
             <br></br>
-            Still feel like travelling? Tasveer photo walks are always there for rescue, which are not just limited to Delhi. 
+            Still feel like traveling? Tasveer photo walks are always there for rescue, which are not just limited to Delhi. 
             And the biggest travel of all, the trip at the end of the semester, be it to Goa or Manali (Kasol too, if you know, you know), the best time to relax and let out all the stress and tension, feeling truly free.
             <br></br>
             <br></br>

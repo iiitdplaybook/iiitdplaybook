@@ -10,6 +10,16 @@ var firebaseConfig = {
     appId: "1:557827916584:web:679950ab0a34089436461d",
     measurementId: "G-5BBSPSTEEE"
   };
+
+// firebaseConfig = {
+//   apiKey: "AIzaSyB4Dh-q8PPvW-oQGjLo97VEmSAfsjRLAJk",
+//   authDomain: "iiitd-playbook-testing.firebaseapp.com",
+//   projectId: "iiitd-playbook-testing",
+//   storageBucket: "iiitd-playbook-testing.appspot.com",
+//   messagingSenderId: "519422920935",
+//   appId: "1:519422920935:web:3351648e10724e9d373a42",
+//   measurementId: "G-FT1VNCWVW3"
+// };
 // Initialize Firebase
 const fire = firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
@@ -19,11 +29,11 @@ firebase.analytics();
 firebase.firestore().enablePersistence()
   .catch(function(err) {
       if (err.code == 'failed-precondition') {
-          // Multiple tabs open, persistence can only be enabled
+          console.log("Multiple tabs open, persistence can only be enabled")
           // in one tab at a a time.
           // ...
       } else if (err.code == 'unimplemented') {
-          // The current browser does not support all of the
+          console.log("The current browser does not support all of the")
           // features required to enable persistence
           // ...
       }

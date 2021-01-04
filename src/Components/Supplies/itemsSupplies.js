@@ -21,7 +21,7 @@ function items(){
         "title":"\nPost It Notes",
         "description": "Bought by design students",
         "image":"https://images-na.ssl-images-amazon.com/images/I/719gxnixAXL._SL1500_.jpg",
-        "pathLink":"nostalgia",
+        "pathLink":"https://amzn.to/3hv73hu",
     }, {
         "gradientColor_1":color1,
         "gradientColor_2":color2,

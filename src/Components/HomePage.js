@@ -39,46 +39,56 @@ function HomePage() {
     const [nostalgia, setnostalgia] = useState(
         []
     )
-    
 
+    const getTestimonies = async()=>{
+        const babysteps = firebase.firestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Baby Steps')
+        const expl = firebase.firestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Exploring')
+        const defp = firebase.firestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Defining Point')
+        const grad = firebase.firestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Graduating')
+        const nost = firebase.firestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Nostalgia')
+        
+        const document1 = await babysteps.get();
+        const document2 = await expl.get();
+        const document3 = await defp.get();
+        const document4 = await grad.get();
+        const document5 = await nost.get();
 
-    function getFirestore(){
-        return firebase.firestore()
+        var temp1 = []
+        var temp2 = []
+        var temp3 = definingPoint
+        var temp4 = graduating
+        var temp5 = nostalgia
+
+        document1.docs.forEach(item=>{
+            temp1.push(item.data())
+        })
+        document2.docs.forEach(item=>{
+            temp2.push(item.data())
+        })
+        document3.docs.forEach(item=>{
+            temp3.push(item.data())
+        })
+        document4.docs.forEach(item=>{
+            temp4.push(item.data())
+        })
+        document5.docs.forEach(item=>{
+            temp5.push(item.data())
+        })
+
+        setportraits(temp1)
+        setexploring(temp2)
+        setdefiningPoint(temp3)
+        setgraduating(temp4)
+        setnostalgia(temp5)
     }
 
-    useEffect(() => {
-        console.log('effect');
-        const unsub1 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Baby Steps').onSnapshot(snapshot =>{
-            const data = snapshot.docs.map(doc => doc.data());
-            setportraits(data);
-        });
-        const unsub2 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Exploring').onSnapshot(snapshot =>{
-            const data = snapshot.docs.map(doc => doc.data());
-            setexploring(data);
-        });
-        const unsub3 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Defining Point').onSnapshot(snapshot =>{
-            const data = snapshot.docs.map(doc => doc.data());
-            setdefiningPoint(data);
-        });
-        const unsub4 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Graduating').onSnapshot(snapshot =>{
-            const data = snapshot.docs.map(doc => doc.data());
-            setgraduating(data);
-        });
-        const unsub5 = getFirestore().collection('Testimonies').where("isApproved", "==", true).where('Topic', "==", 'Phases of College - Nostalgia').onSnapshot(snapshot =>{
-            const data = snapshot.docs.map(doc => doc.data());
-            setnostalgia(data);
-        });
-        
-        return () => {
-            console.log('cleanup');
-            unsub1();
-            unsub2();
-            unsub3();
-            unsub4();
-            unsub5();
-
+    useEffect(()=>{
+        console.log('get testimonies - effect')
+        getTestimonies();
+        return()=>{
+            console.log("get testimonies - cleanup")
         }
-    }, []);
+    }, [])
 
 
     // const portraits = 
@@ -88,7 +98,6 @@ function HomePage() {
     //         { UserAvatar: userProfile, Text: "I was not there for induction, so all I have experienced is the horror of deadlines and evaluations.", Name: "Anunay"},
     //         { UserAvatar: userProfile, Text: "Initial college life was very fun-filled. With lots of amazing activities in college and meeting new people and getting to know them was a really nice experience. 24*7 canteen and no hostel curfew timings are really great things that make you feel free.", Name: "Shubhi"},
     //         { UserAvatar: userProfile, Text: "When I first entered college I felt intimidated and like I didn't belong here, with a little anxiety about how people would be. But it took absolutely no time to shatter all my doubts and find this wonderful set of people and a room filled with opportunities. It was a different kind of environment that I was looking forward to being in.", Name: "Muskan"},
-    //         { UserAvatar: userProfile, Text: ".", Name: "username"},
     //     ];
 
         
