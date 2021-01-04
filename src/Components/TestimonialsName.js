@@ -52,14 +52,6 @@ const Content = styled.div`
   }
 `;
 
-// const portraits = [
-//   "https://randomuser.me/api/portraits/women/68.jpg",
-//   "https://randomuser.me/api/portraits/men/75.jpg",
-//   "https://randomuser.me/api/portraits/lego/3.jpg",
-//   "https://randomuser.me/api/portraits/women/89.jpg",
-//   "https://randomuser.me/api/portraits/men/26.jpg",
-// ];
-
 const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndPerformance }) => {
   const [key, setKey] = useState();
 

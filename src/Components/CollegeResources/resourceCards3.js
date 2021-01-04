@@ -1,7 +1,5 @@
 import React from 'react';
 import {Card, CardActionArea, CardActions, CardContent, Button, Typography, CardMedia} from '@material-ui/core';
-import { Link } from 'react-router-dom';
-
 import { makeStyles } from '@material-ui/core/styles';
 import image_svg from "../../Assets/SVG_for_cards/teamwork.svg";
 
@@ -39,11 +37,8 @@ function SuppliesCards(supplyCardInfo){
             maxWidth:cardWidth,
             minWidth:cardWidth,
             maxHeight:cardHeight,
-            // minHeight:cardHeight,
             background:`linear-gradient(45deg, ${gradientColor_1}, ${gradientColor_2})`,
             borderRadius:10,
-            // marginBottom: "10%",
-            
         },
         actionArea:{
             width: cardWidth,
@@ -56,7 +51,6 @@ function SuppliesCards(supplyCardInfo){
             minWidth:cardWidth/3,
             maxWidth:cardWidth/3,
             minHeight: cardHeight*(5/6),
-            // maxHeight:100,
             borderRadius: '10px',
             margin: '5%', 
         },
@@ -89,32 +83,27 @@ function SuppliesCards(supplyCardInfo){
     });
     const classes = useStyles();
     return(
-        
-            <Card className={classes.root}>
-                <a href={pathLink} target="_blank" style={{margin: '0%'}}>
-                {/* <Link className={classes.link} href={pathLink} > */}
-                
-                <CardActionArea className={classes.actionArea}>
-                    <div className={classes.cardContainer}>
-                    <CardMedia
-                        className={classes.media}
-                        image={image}
-                        title={title}
-                    />
-                    <CardContent className={classes.contentContainer}>
-                        <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
-                            {title}
-                        </Typography>
-                        <Typography className={classes.info} color="textSecondary">
-                            {description}
-                        </Typography>
-                    </CardContent>
-                    </div>
-                </CardActionArea>
-                </a>
-                {/* </Link> */}
-            </Card>
-       
+        <Card className={classes.root}>
+            <a href={pathLink} target="_blank" style={{margin: '0%'}}>                
+            <CardActionArea className={classes.actionArea}>
+                <div className={classes.cardContainer}>
+                <CardMedia
+                    className={classes.media}
+                    image={image}
+                    title={title}
+                />
+                <CardContent className={classes.contentContainer}>
+                    <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
+                        {title}
+                    </Typography>
+                    <Typography className={classes.info} color="textSecondary">
+                        {description}
+                    </Typography>
+                </CardContent>
+                </div>
+            </CardActionArea>
+            </a>
+        </Card>
     );
 }
 

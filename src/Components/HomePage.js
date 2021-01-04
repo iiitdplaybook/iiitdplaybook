@@ -4,7 +4,6 @@ import { useStateValue } from '../StateProvider';
 import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import "./HomePage.css";
-import { Button } from '@material-ui/core';
 import Navbar from "./Navbar";
 import Stars from './stars'
 import Tilt from 'react-parallax-tilt';

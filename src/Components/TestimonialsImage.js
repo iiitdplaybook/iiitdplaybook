@@ -45,18 +45,6 @@ const Avatar = styled.div`
   }
 `;
 
-// const Content = styled.div`
-//   p {
-//     margin: 10px;
-//     color: #382f70;
-//     font-family: Poppins, sans-serif;
-//     font-size: ${(props) => props.scale * 15}px !important;
-//     line-height: ${(props) => props.scale * 22}px;
-//     font-weight: 100;
-//     text-align: left;
-//   }
-// `;
-
 const Name = styled.div`
   p {
     margin: 16px;
@@ -68,15 +56,6 @@ const Name = styled.div`
     text-align: center;
   }
 `;
-
-
-// const portraits = [
-//   "https://randomuser.me/api/portraits/women/68.jpg",
-//   "https://randomuser.me/api/portraits/men/75.jpg",
-//   "https://randomuser.me/api/portraits/lego/3.jpg",
-//   "https://randomuser.me/api/portraits/women/89.jpg",
-//   "https://randomuser.me/api/portraits/men/26.jpg",
-// ];
 
 const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndPerformance, direc}) => {
   const [key, setKey] = useState();

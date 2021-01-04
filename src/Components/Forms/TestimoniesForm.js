@@ -55,8 +55,6 @@ export default function TestimoniesForm(){
       });
     const [{user, isSignedIn, userName}] = useStateValue()
 
-    // const [userName, setUserName] = React.useState('');
-
     function submitForm(event){
         event.preventDefault();
         if(value=="Phases of College") {
@@ -157,7 +155,6 @@ export default function TestimoniesForm(){
     const [word_count, setword_count] = React.useState(0);
 
     React.useEffect(()=>{
-        // console.log('word entry')
         setword_count(testimonies.length)
     }, [testimonies])
 
@@ -183,10 +180,8 @@ export default function TestimoniesForm(){
             <Navbar loggedIn={true} colorStatus={true}/>
             <form className={classes.root} noValidate autoComplete="off">
                 <div className="formdiv">
-                {/* <h2 className='formlabel'>So {userName.split(" ")[0]},</h2> */}
                 <h1 className='formlabel'>For which part would you like to share your testimonies?</h1>
                     <FormControl component="fieldset">
-                    {/* <FormLabel className='formlabel' component="legend">For which part would you like to give your testimonies?</FormLabel> */}
                     <FormHelperText className='helperlabel'>Choose one of the following and submit. You can submit the form again if you want to contribute for another section</FormHelperText>
                     <div class="row">
                         <div class="column">
@@ -273,9 +268,7 @@ export default function TestimoniesForm(){
                     </Button>
                 </div>
             </form>
-            {/* TODO
-            add preventDefault thing */}
-            
+
         </div>
     );
 }

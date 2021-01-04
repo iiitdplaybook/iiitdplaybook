@@ -48,6 +48,3 @@ export default function CardsAnim() {
     </animated.div>
   ))
 }
-
-// render(<Deck />, document.getElementById('animContainer'))
-

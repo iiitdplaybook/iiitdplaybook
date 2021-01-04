@@ -66,10 +66,7 @@
 }
 
 .section_media{
-    /* max-width: 100%;
-    align-self: center;
-    justify-content: center;
-    display: flex; */
+    
     display: grid;
     grid-gap: 10%;
     justify-content: center;
@@ -81,10 +78,7 @@
 }
 
 .section_media_2{
-    /* max-width: 100%;
-    align-self: center;
-    justify-content: center;
-    display: flex; */
+    
     display: grid;
     grid-gap: 10%;
     justify-content: center;
@@ -95,11 +89,6 @@
     margin-bottom: 3em;
 }
 
-.section .happiness_img {
-    /* width: 50%; */
-    /* height: 70%; */
-    /* float: right; */
-}
 
 .section > p{
     color: rgb(221, 221, 221);

@@ -28,7 +28,6 @@ import dark from '../../Assets/cardPics/darkSide.png';
 import todoNew from '../../Assets/todoNew.jpg';
 import todoOld from '../../Assets/todoOld.jpg';
 
-import Cards,{ Card as CardDeck } from 'react-swipe-card'
 import TinderCard from '../CardSwipe/CardSwipe'
 
 var isFav = false;
@@ -183,30 +182,7 @@ export default function TimeManagement() {
                         <div id='cardsBox'>
                             <h2 style={{textAlign: 'center', margin: '2%', marginTop: '5%'}}>This is where the "fun" begins </h2>
                             <h4 style={{textAlign: 'center', margin: '0%', fontWeight: '500'}}>Here's the deck of cards that IIITD has in store for YOU <br/><i>(Flick left/right to see other cards)</i> </h4>
-                            {/* <CardsAnim/> */}
-                            {/* <Cards className='master-root'>
-                                {cardsImage.map(item => 
-                                <CardDeck >
-                                    <img src={item}/>
-                                </CardDeck>
-                                )}
-                            </Cards> */}
                             <TinderCard/>
-                            {/* <TinderCard style={{transform: 'rotate(-20deg)'}} preventSwipe={['left', 'right']}>
-                                <img src={tear}/>
-                            </TinderCard>
-                            <TinderCard preventSwipe={['left', 'right']}>
-                                <img src={dog}/>
-                            </TinderCard>
-                            <TinderCard preventSwipe={['left', 'right']}>
-                                <img src={dark}/>
-                            </TinderCard>
-                            <TinderCard preventSwipe={['left', 'right']}>
-                                <img src={plag}/>
-                            </TinderCard>
-                            <TinderCard preventSwipe={['left', 'right']}>
-''                                <img src='https://image.freepik.com/free-vector/deadline-concept-business-man-sinking-sand-watch_48369-18371.jpg'/>
-                            </TinderCard> */}
                         </div>
                     
                         <div id='cardsBox2'>
@@ -215,7 +191,6 @@ export default function TimeManagement() {
                             <h4 style={{textAlign: 'center', margin: '0%', fontWeight: '500'}}><i>(Click on the card below)</i> </h4>
                                 <Button className='reverseButton' id='unoReverse' variant="contained" onClick={handleClick}>
                                     <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5ef95353-9f74-45ba-a400-5494417ca165/ddmcdqs-ecd2b865-fa25-4550-adf0-f5962af5484f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNWVmOTUzNTMtOWY3NC00NWJhLWE0MDAtNTQ5NDQxN2NhMTY1XC9kZG1jZHFzLWVjZDJiODY1LWZhMjUtNDU1MC1hZGYwLWY1OTYyYWY1NDg0Zi5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.JASe6g-Qonkdhm7GQ5H-qEyH-bM7sh6lPp60apDiUUo" height="300px"></img>
-                                    {/* <p>Play my card</p> */}
                                 </Button>
                             
                         </div>
@@ -235,7 +210,6 @@ export default function TimeManagement() {
                                 <Tabs
                                     orientation="vertical"
                                     variant="scrollable"
-                                    // indicatorColor='#616161'
                                     value={value}
                                     onChange={handleChange}
                                     aria-label="Vertical tabs example"
@@ -265,8 +239,6 @@ export default function TimeManagement() {
                                     <ul>
                                         <li>Procrastination comes from not clearly defining your next steps.</li>
                                         <li>Not your generic to-do list -&gt; define clearly.</li>
-                                        {/* <img className="memeImage" src={todoNew}></img> */}
-                                        {/* <img className="memeImage" src={todoOld}></img> */}
                                         <li>Convert to-do lists into action words</li>
                                     </ul>
                                 </TabPanel>
@@ -281,8 +253,6 @@ export default function TimeManagement() {
                                         <li>Reminder lists for your deferred and project next actions.</li>
                                         <li>A reminder list for those actions you are waiting for from others.</li>
                                         <li>A someday/maybe list for items to consider acting on in the future.</li>
-                                        {/* <li>Google chrome, create folder, helps a ton. “Design” “Job” “college” etc.</li>
-                                        <li>Evernote/Notion</li> */}
                                     </ul>
                                 </TabPanel>
                                 <TabPanel value={value} index={3} style={{marginTop: '-15px'}}>

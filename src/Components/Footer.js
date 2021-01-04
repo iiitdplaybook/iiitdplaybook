@@ -6,7 +6,6 @@ import yashwin from "../Assets/yashwin.png";
 import kshitij from "../Assets/kshitij.jpg";
 import pabitra from "../Assets/pabitra.jpeg";
 import rahul from "../Assets/rahul.png";
-// import { Link } from "react-router-dom";
 
 function Footer() {
     
@@ -14,7 +13,7 @@ function Footer() {
         <div id="bg">
             <div className="upper">
                 <p>Want to contribute? It can as small as 2 lines or big as 2 pages. Your contribution matters</p>
-                {/* <Button className='form_button' href='https://forms.gle/3Ynuz1rLDudMRYpf7' target='_blank'>I'll contribute</Button> */}
+                
                 <Button 
                   className='button2' 
                   component={Link} 
@@ -27,9 +26,7 @@ function Footer() {
                   <Button id="supportBtn" target="_blank" href="https://www.buymeacoffee.com/iiitdplaybook">
                     <img className="buymeacoffeelogo" src={"https://bmc-dev.s3.us-east-2.amazonaws.com/assets/icons/bmc_icon_black.png"}/> Buy me a coffee
                   </Button>
-                  {/* <Button id="supportBtn" target="_blank" href="https://www.patreon.com/iiitdplaybook">
-                    <img className="pateronlogo" src={"https://cdn.vox-cdn.com/thumbor/a3z1idZDuso6ksgW6pDOZwCRJDw=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/9833961/patreon.jpg"}/>Patreon
-                  </Button> */}
+                  
                 {/* {<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="iiitdplaybook" data-color="#5F7FFF" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>}                 */}
                 </div>
                 <div className='testi2'>
