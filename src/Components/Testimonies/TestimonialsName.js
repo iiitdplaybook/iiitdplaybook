@@ -5,66 +5,68 @@ import Marquee from "react-marquee-slider";
 import styled from "styled-components";
 import times from "lodash/times";
 
-import FullWidth from "./FullWidth";
+import FullWidth from "./../FullWidth";
 
 const Height = styled.div`
   position: relative;
   width: 100%;
-  height: ${(props) => (props.height ? props.height + "px" : "auto")};
 `;
 
 const Box = styled.div`
-  padding: ${(props) => props.scale * 20}px;
-  vertical-align: middle;
+  padding: ${(props) => props.scale * 40}px;
 `;
 
 const Review = styled.div`
-  width: ${(props) => props.scale * 325}px;
-  // display: flex;
-  padding: ${(props) => props.scale * 5}px;
+  width: ${(props) => props.scale * 225}px;
+  display: flex;
+  padding: ${(props) => props.scale * 20}px;
   background: #fff;
-  border-radius: 4px;
-  height: 30vh;
-  border-color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
+  // background: rgba(255,255,255,.2);
+  // backdrop-filter: blur(100px);
+  border-radius: 65px;
+  border-color: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%);
   box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
-  overflow: hidden;
 `;
 
 const Avatar = styled.div`
-  border-radius: 4px;
-  width: 100%;
-  // height: ${(props) => props.scale * 40}px;
+  border-radius: 50%;
+  width: ${(props) => props.scale * 58}px;
+  height: ${(props) => props.scale * 58}px;
   overflow: hidden;
-  min-height: 80%;
-  max-height: 80%;
-  // background: red;
-  img{
-    // min-height: 100%;
-    min-width: 135%;
-    margin-left: -10%;
+  flex-shrink: 0;
+  margin-right: ${(props) => props.scale * 15}px;
+  img {
+    max-width: 100%;
   }
 `;
 
-const Name = styled.div`
+const Content = styled.div`
   p {
-    margin: 16px;
-    color: red;
+    margin: 8px;
+    color: #382f70;
     font-family: Poppins, sans-serif;
-    font-size: ${(props) => props.scale * 20}px !important;
-    line-height: ${(props) => props.scale * 14}px;
+    font-size: ${(props) => props.scale * 28}px;
+    line-height: ${(props) => props.scale * 24}px;
     font-weight: 100;
-    text-align: center;
+    text-align: left;
   }
 `;
 
-const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndPerformance, direc}) => {
+const Reviews = ({
+  portraits,
+  vel,
+  scaleFactor,
+  size,
+  onStartPerformance,
+  onEndPerformance,
+}) => {
   const [key, setKey] = useState();
 
   useEffect(() => {
     setKey();
   }, [size, setKey]);
 
-  let scale = 0.5*scaleFactor;
+  let scale = 0.5 * scaleFactor;
 
   if (size && size.width > 800) {
     scale = 0.65;
@@ -80,10 +82,10 @@ const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndP
 
   return (
     <FullWidth>
-      <Height height={300}>
+      <Height height={200}>
         <Marquee
           key={key}
-          velocity={vel}
+          velocity={vel / 2}
           minScale={0.7}
           onInit={onStartPerformance}
           onFinish={onEndPerformance}
@@ -94,9 +96,9 @@ const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndP
                 <Avatar scale={scale}>
                   <img src={portraits[id].pic} alt="" />
                 </Avatar>
-                <Name scale={scale}>
-                  <p>{portraits[id].name}</p>
-                </Name>
+                <Content scale={scale}>
+                  <p>{portraits[id].text}</p>
+                </Content>
               </Review>
             </Box>
           ))}
