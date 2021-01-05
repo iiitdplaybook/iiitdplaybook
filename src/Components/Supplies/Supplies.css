@@ -43,8 +43,6 @@
     .supplies__button{
         overflow-y: scroll !important;
         justify-content: unset !important;
-        /* min-width: 100px; */
-        /* padding-left: 10%; */
     }
 
     .supplies__button > button {

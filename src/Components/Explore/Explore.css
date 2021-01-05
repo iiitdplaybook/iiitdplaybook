@@ -39,13 +39,6 @@
     justify-items: center;
 }
 
-/* @media only screen and (max-width: 1000px) {
-
-    .cardsDiv{
-        display: block !important;
-    }
-} */
-
 @media only screen and (max-width: 600px) {
 
     .explore__button    .MuiButton-label{

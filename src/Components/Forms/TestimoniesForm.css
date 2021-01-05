@@ -20,7 +20,6 @@
     font-family: Poppins, sans-serif !important;
 }
 .formlabel{
-    /* font-size: 2.5vw !important; */
     text-align: center;
     align-content: center;
 }
@@ -53,8 +52,6 @@
     margin: 3% !important;
     background: -webkit-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    /* -webkit-background-clip: text; */
-    /* -webkit-text-fill-color: transparent; */
 	background-size: 400% 400%;
     animation: gradient 30s ease infinite;
 }
@@ -95,7 +92,6 @@
     width: 50%;
   }
   
-  /* Clear floats after the columns */
   .row:after {
     content: "";
     display: table;

@@ -1,6 +1,5 @@
 import React from 'react'
 import "./clouds.css";
-import svg from "../Assets/Cloud.svg";
 
 
 function Clouds() {

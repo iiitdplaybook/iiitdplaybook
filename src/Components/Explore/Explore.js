@@ -7,8 +7,8 @@ import {
   GridListTile,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import itemsList from "./items"
-import Navbar from "./Navbar";
+import itemsList from "./../items"
+import Navbar from "./../Navbar";
 
 function Explore() {
     const [clickedButton, setClickedButton] = useState(1);

@@ -47,11 +47,9 @@ function ExploreCards(exploreCardInfo){
             maxWidth:cardWidth,
             minWidth:cardWidth,
             maxHeight:cardHeight,
-            // minHeight:cardHeight,
             background:`linear-gradient(45deg, ${gradientColor_1}, ${gradientColor_2})`,
             borderRadius:10,
             opacity: `${opacity}`,
-            // marginBottom: "10%",
             
         },
         actionArea:{
