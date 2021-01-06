@@ -11,18 +11,24 @@ function Footer() {
   return (
     <div id="bg">
       <div className="upper">
-        <p>
-          Want to contribute? It can as small as 2 lines or big as 2 pages. Your
-          contribution matters
-        </p>
+        {localStorage.getItem("isSignedIn") ? (
+          <>
+            <p>
+              Want to contribute? It can as small as 2 lines or big as 2 pages.
+              Your contribution matters
+            </p>
 
-        <Button
-          className="button2"
-          component={Link}
-          to={"/contribute/testimonies"}
-        >
-          <span className="span2">YES! I'd like to contribute</span>
-        </Button>
+            <Button
+              className="button2"
+              component={Link}
+              to={"/contribute/testimonies"}
+            >
+              <span className="span2">YES! I'd like to contribute</span>
+            </Button>
+          </>
+        ) : (
+          <></>
+        )}
         <p>Support Us</p>
         <div className="supportUsButtons">
           <Button

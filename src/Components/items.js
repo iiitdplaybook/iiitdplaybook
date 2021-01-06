@@ -49,6 +49,7 @@ function items() {
   const color22 = "#DBCCFF"; //light purple
 
   const opac = 0.3;
+  const guestVar = !localStorage.getItem("isSignedIn");
 
   const itemslist = {
     allCards: [],
@@ -66,6 +67,7 @@ function items() {
       image: imageNostalgia,
       pathLink: "nostalgia",
       opacity: 1,
+      guestFilter: false,
     },
     {
       gradientColor_1: color3,
@@ -76,6 +78,7 @@ function items() {
       image: imageTimeManagement,
       pathLink: "timemanagement",
       opacity: 1,
+      guestFilter: guestVar,
     },
     {
       gradientColor_1: color5,
@@ -86,6 +89,7 @@ function items() {
       image: imageOnlinesem,
       pathLink: "explore",
       opacity: opac,
+      guestFilter: guestVar,
     },
     {
       gradientColor_1: color7,
@@ -96,6 +100,7 @@ function items() {
       image: imagePlacements,
       pathLink: "explore",
       opacity: opac,
+      guestFilter: guestVar,
     },
     {
       gradientColor_1: color9,
@@ -106,6 +111,7 @@ function items() {
       image: imageClubs,
       pathLink: "explore",
       opacity: opac,
+      guestFilter: guestVar,
     },
     {
       gradientColor_1: color11,
@@ -116,6 +122,7 @@ function items() {
       image: imageProfproject,
       pathLink: "explore",
       opacity: opac,
+      guestFilter: guestVar,
     },
     {
       gradientColor_1: color13,
@@ -126,6 +133,7 @@ function items() {
       image: imageResources,
       pathLink: "resources",
       opacity: 1,
+      guestFilter: guestVar,
     },
     {
       gradientColor_1: color17,
@@ -136,6 +144,7 @@ function items() {
       image: imageQuery,
       pathLink: "explore",
       opacity: opac,
+      guestFilter: guestVar,
     },
     {
       gradientColor_1: color15,
@@ -146,6 +155,7 @@ function items() {
       image: imageNetwork,
       pathLink: "explore",
       opacity: opac,
+      guestFilter: guestVar,
     },
     {
       gradientColor_1: color19,
@@ -156,6 +166,7 @@ function items() {
       image: imageTimeManagement,
       pathLink: "explore",
       opacity: opac,
+      guestFilter: guestVar,
     },
     {
       gradientColor_1: color21,
@@ -166,6 +177,7 @@ function items() {
       image: imageTimeManagement,
       pathLink: "explore",
       opacity: opac,
+      guestFilter: guestVar,
     },
   ];
 
@@ -179,6 +191,7 @@ function items() {
       image: imageNostalgia,
       pathLink: "nostalgia",
       opacity: 1,
+      guestFilter: false,
     },
     {
       gradientColor_1: color3,
@@ -189,6 +202,7 @@ function items() {
       image: imageTimeManagement,
       pathLink: "timemanagement",
       opacity: 1,
+      guestFilter: guestVar,
     },
     {
       gradientColor_1: color13,
@@ -199,6 +213,7 @@ function items() {
       image: imageResources,
       pathLink: "resources",
       opacity: 1,
+      guestFilter: guestVar,
     },
   ];
 
@@ -212,6 +227,7 @@ function items() {
       image: imageNostalgia,
       pathLink: "nostalgia",
       opacity: 1,
+      guestFilter: false,
     },
   ];
 

@@ -27,6 +27,9 @@ import ToolsIcon from "@material-ui/icons/Build";
 import ContributeIcon from "@material-ui/icons/Group";
 import FiberNewIcon from "@material-ui/icons/Storefront";
 import firebase from "firebase";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -74,15 +77,28 @@ function Navbar({ loggedIn, colorStatus, stickyCond }) {
     prevOpen.current = open;
   }, [open]);
 
+  toast.configure();
+  const notify = () =>
+    toast.info("Sign in with IIITD mail to access", {
+      draggablePercent: 30,
+      autoClose: 2500,
+    });
+
+  function showError() {
+    toast.error("Sign in with IIITD mail to access");
+  }
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
+  let history = useHistory();
   const signOut = () => {
     auth
       .signOut()
       .then((result) => {
         localStorage.removeItem("isSignedIn");
+        history.push("/login");
       })
       .catch((error) => {});
   };
@@ -129,7 +145,8 @@ function Navbar({ loggedIn, colorStatus, stickyCond }) {
                   onKeyDown={handleListKeyDown}
                 >
                   <MenuItem>{user?.displayName}</MenuItem>
-                  {loggedIn ? (
+                  {/* {loggedIn ? ( */}
+                  {localStorage.getItem("isSignedIn") ? (
                     <MenuItem id="signBtn" onClick={signOut} color="primary">
                       Sign out
                     </MenuItem>
@@ -138,7 +155,7 @@ function Navbar({ loggedIn, colorStatus, stickyCond }) {
                       id="signBtn"
                       component={Link}
                       color="primary"
-                      to={"/"}
+                      to={"/login"}
                     >
                       Sign in
                     </MenuItem>
@@ -164,7 +181,7 @@ function Navbar({ loggedIn, colorStatus, stickyCond }) {
             }}
           >
             <div className="navbar__left">
-              <Link to="/" style={{ textDecoration: "none" }}>
+              <Link to="/homepage" style={{ textDecoration: "none" }}>
                 {colorStatus ? (
                   <img id="logo" src={logoColored} alt="Student Playbook" />
                 ) : (
@@ -174,6 +191,36 @@ function Navbar({ loggedIn, colorStatus, stickyCond }) {
             </div>
             <div className="navbar__right">
               <ThemeProvider theme={colorStatus ? themeBlack : themeWhite}>
+                {/* {loggedIn ? (
+                  <Button
+                    id="btn"
+                    component={Link}
+                    color="primary"
+                    to={"/explore"}
+                    startIcon={
+                      <ExploreIcon
+                        style={{ color: "primary", padding: "10%" }}
+                      />
+                    }
+                  >
+                    <div className="removeText">Explore</div>
+                  </Button>
+                ) : (
+                  <Button
+                    id="btn"
+                    component={Link}
+                    color="primary"
+                    to={"/explore"}
+                    style={{ color: "red" }}
+                    startIcon={
+                      <ExploreIcon
+                        style={{ color: "primary", padding: "10%" }}
+                      />
+                    }
+                  >
+                    <div className="removeText">Explore</div>
+                  </Button>
+                )} */}
                 <Button
                   id="btn"
                   component={Link}
@@ -185,7 +232,34 @@ function Navbar({ loggedIn, colorStatus, stickyCond }) {
                 >
                   <div className="removeText">Explore</div>
                 </Button>
-                <Button
+                {!localStorage.getItem("isSignedIn") ? (
+                  <Button
+                    id="btn"
+                    // component={Link}
+                    color="primary"
+                    onClick={notify}
+                    // to={"/ComingSoonTools"}
+                    style={{ opacity: ".5" }}
+                    startIcon={
+                      <ToolsIcon style={{ color: "primary", padding: "10%" }} />
+                    }
+                  >
+                    <div className="removeText">Tools</div>
+                  </Button>
+                ) : (
+                  <Button
+                    id="btn"
+                    component={Link}
+                    color="primary"
+                    to={"/ComingSoonTools"}
+                    startIcon={
+                      <ToolsIcon style={{ color: "primary", padding: "10%" }} />
+                    }
+                  >
+                    <div className="removeText">Tools</div>
+                  </Button>
+                )}
+                {/* <Button
                   id="btn"
                   component={Link}
                   color="primary"
@@ -195,12 +269,45 @@ function Navbar({ loggedIn, colorStatus, stickyCond }) {
                   }
                 >
                   <div className="removeText">Tools</div>
-                </Button>
-                <Button
+                </Button> */}
+                {!localStorage.getItem("isSignedIn") ? (
+                  <Button
+                    id="btn"
+                    color="primary"
+                    // component={Link}
+                    // to={"/contribute/testimonies"}
+                    onClick={notify}
+                    style={{ opacity: ".5" }}
+                    startIcon={
+                      <ContributeIcon
+                        style={{ color: "primary", padding: "10%" }}
+                      />
+                    }
+                  >
+                    <div className="removeText">Contribute</div>
+                  </Button>
+                ) : (
+                  <Button
+                    id="btn"
+                    color="primary"
+                    component={Link}
+                    to={"/contribute/testimonies"}
+                    // onClick={notify}
+                    startIcon={
+                      <ContributeIcon
+                        style={{ color: "primary", padding: "10%" }}
+                      />
+                    }
+                  >
+                    <div className="removeText">Contribute</div>
+                  </Button>
+                )}
+                {/* <Button
                   id="btn"
-                  component={Link}
+                  // component={Link}
                   color="primary"
-                  to={"/contribute/testimonies"}
+                  // to={"/contribute/testimonies"}
+                  onClick={notify}
                   startIcon={
                     <ContributeIcon
                       style={{ color: "primary", padding: "10%" }}
@@ -208,7 +315,7 @@ function Navbar({ loggedIn, colorStatus, stickyCond }) {
                   }
                 >
                   <div className="removeText">Contribute</div>
-                </Button>
+                </Button> */}
                 <Button
                   id="btn"
                   component={Link}
@@ -227,15 +334,26 @@ function Navbar({ loggedIn, colorStatus, stickyCond }) {
                   <div className="removeText">Supplies</div>
                 </Button>
 
-                <Icon
-                  className="userIcon"
-                  ref={anchorRef}
-                  aria-controls={open ? "menu-list-grow" : undefined}
-                  aria-haspopup="true"
-                  onClick={handleToggle}
-                >
-                  <Avatar id="pic" src={user?.photoURL} alt="User" />
-                </Icon>
+                {localStorage.getItem("isSignedIn") ? (
+                  <Icon
+                    className="userIcon"
+                    ref={anchorRef}
+                    aria-controls={open ? "menu-list-grow" : undefined}
+                    aria-haspopup="true"
+                    onClick={handleToggle}
+                  >
+                    <Avatar id="pic" src={user?.photoURL} alt="User" />
+                  </Icon>
+                ) : (
+                  <Button
+                    id="btn"
+                    component={Link}
+                    to={"/login"}
+                    color="primary"
+                  >
+                    Sign In
+                  </Button>
+                )}
 
                 {launchPopper()}
               </ThemeProvider>
@@ -245,7 +363,7 @@ function Navbar({ loggedIn, colorStatus, stickyCond }) {
       ) : (
         <div className="navbar">
           <div className="navbar__left">
-            <Link to="/" style={{ textDecoration: "none" }}>
+            <Link to="/homepage" style={{ textDecoration: "none" }}>
               {colorStatus ? (
                 <img id="logo" src={logoColored} alt="Student Playbook" />
               ) : (
@@ -266,7 +384,34 @@ function Navbar({ loggedIn, colorStatus, stickyCond }) {
               >
                 <div className="removeText">Explore</div>
               </Button>
-              <Button
+              {!localStorage.getItem("isSignedIn") ? (
+                <Button
+                  id="btn"
+                  // component={Link}
+                  color="primary"
+                  onClick={notify}
+                  style={{ opacity: ".5" }}
+                  // to={"/ComingSoonTools"}
+                  startIcon={
+                    <ToolsIcon style={{ color: "primary", padding: "10%" }} />
+                  }
+                >
+                  <div className="removeText">Tools</div>
+                </Button>
+              ) : (
+                <Button
+                  id="btn"
+                  component={Link}
+                  color="primary"
+                  to={"/ComingSoonTools"}
+                  startIcon={
+                    <ToolsIcon style={{ color: "primary", padding: "10%" }} />
+                  }
+                >
+                  <div className="removeText">Tools</div>
+                </Button>
+              )}
+              {/* <Button
                 id="btn"
                 component={Link}
                 color="primary"
@@ -276,8 +421,40 @@ function Navbar({ loggedIn, colorStatus, stickyCond }) {
                 }
               >
                 <div className="removeText">Tools</div>
-              </Button>
-              <Button
+              </Button> */}
+              {!localStorage.getItem("isSignedIn") ? (
+                <Button
+                  id="btn"
+                  color="primary"
+                  // component={Link}
+                  // to={"/contribute/testimonies"}
+                  onClick={notify}
+                  style={{ opacity: ".5" }}
+                  startIcon={
+                    <ContributeIcon
+                      style={{ color: "primary", padding: "10%" }}
+                    />
+                  }
+                >
+                  <div className="removeText">Contribute</div>
+                </Button>
+              ) : (
+                <Button
+                  id="btn"
+                  color="primary"
+                  component={Link}
+                  to={"/contribute/testimonies"}
+                  // onClick={notify}
+                  startIcon={
+                    <ContributeIcon
+                      style={{ color: "primary", padding: "10%" }}
+                    />
+                  }
+                >
+                  <div className="removeText">Contribute</div>
+                </Button>
+              )}
+              {/* <Button
                 id="btn"
                 component={Link}
                 color="primary"
@@ -289,7 +466,7 @@ function Navbar({ loggedIn, colorStatus, stickyCond }) {
                 }
               >
                 <div className="removeText">Contribute</div>
-              </Button>
+              </Button> */}
               <Button
                 id="btn"
                 component={Link}
@@ -309,15 +486,21 @@ function Navbar({ loggedIn, colorStatus, stickyCond }) {
                 <div className="removeText">Supplies</div>
               </Button>
 
-              <Icon
-                className="userIcon"
-                ref={anchorRef}
-                aria-controls={open ? "menu-list-grow" : undefined}
-                aria-haspopup="true"
-                onClick={handleToggle}
-              >
-                <Avatar id="pic" src={user?.photoURL} alt="User" />
-              </Icon>
+              {localStorage.getItem("isSignedIn") ? (
+                <Icon
+                  className="userIcon"
+                  ref={anchorRef}
+                  aria-controls={open ? "menu-list-grow" : undefined}
+                  aria-haspopup="true"
+                  onClick={handleToggle}
+                >
+                  <Avatar id="pic" src={user?.photoURL} alt="User" />
+                </Icon>
+              ) : (
+                <Button id="btn" component={Link} to={"/login"} color="primary">
+                  Sign In
+                </Button>
+              )}
 
               {launchPopper()}
             </ThemeProvider>

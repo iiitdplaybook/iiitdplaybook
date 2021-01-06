@@ -22,6 +22,9 @@ import imgGraduate from "../Assets/PhasesPics/graduate2.svg";
 import imgNostalgia from "../Assets/PhasesPics/nostalgia2.svg";
 import { useState, useEffect } from "react";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function HomePage() {
   const [{ user, isSignedIn, userName }] = useStateValue();
   const [portraits, setportraits] = useState([]);
