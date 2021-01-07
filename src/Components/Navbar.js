@@ -3,43 +3,44 @@
 import React from "react";
 import "./Navbar.css";
 import { auth } from "../fire";
-import { Avatar, Button, 
-  Menu, MenuItem, ClickAwayListener, Grow, Paper, Popper, MenuList } from "@material-ui/core";
-import { makeStyles } from '@material-ui/core/styles';
+import {
+  Avatar,
+  Button,
+  MenuItem,
+  ClickAwayListener,
+  Grow,
+  Paper,
+  Popper,
+  MenuList,
+} from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
 import { useStateValue } from "../StateProvider";
 import { Link } from "react-router-dom";
-import Sticky from 'react-sticky-el';
+import Sticky from "react-sticky-el";
 import logoWhite from "../Assets/SVG/Asset1.svg";
 import logoColored from "../Assets/SVG/Asset2.svg";
-import exploreLogo from "../Assets/explore_logo.svg";
-import Supplies from "./Supplies/Supplies";
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 // Icons
-import Icon from '@material-ui/core/Icon';
-import ExploreIcon from '@material-ui/icons/GridOn';
-import SuppliesIcon from '@material-ui/icons/LocalGroceryStore';
-import ToolsIcon from '@material-ui/icons/Build';
-import ContributeIcon from '@material-ui/icons/Group';
-import FiberNewIcon from '@material-ui/icons/NewReleases';
-
-
-import playbook_logo from '../Assets/playbook_logo_black.svg';
-import { white, black } from "@material-ui/core/colors";
+import Icon from "@material-ui/core/Icon";
+import ExploreIcon from "@material-ui/icons/GridOn";
+import ToolsIcon from "@material-ui/icons/Build";
+import ContributeIcon from "@material-ui/icons/Group";
+import FiberNewIcon from "@material-ui/icons/Storefront";
 import firebase from "firebase";
-// import playbook_logo from '../Assets/playbook_logo_blue.svg';
-
-//fonts
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    display: 'flex',
+    display: "flex",
   },
   paper: {
     marginRight: theme.spacing(2),
   },
 }));
 
-function Navbar({loggedIn, colorStatus, stickyCond}) {
+function Navbar({ loggedIn, colorStatus, stickyCond }) {
   const [{ user }] = useStateValue();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const classes = useStyles();
@@ -59,7 +60,7 @@ function Navbar({loggedIn, colorStatus, stickyCond}) {
   };
 
   function handleListKeyDown(event) {
-    if (event.key === 'Tab') {
+    if (event.key === "Tab") {
       event.preventDefault();
       setOpen(false);
     }
@@ -76,26 +77,36 @@ function Navbar({loggedIn, colorStatus, stickyCond}) {
     prevOpen.current = open;
   }, [open]);
 
+  toast.configure();
+  const notify = () =>
+    toast.info("Sign in with IIITD mail to access", {
+      draggablePercent: 30,
+      autoClose: 2500,
+    });
+
+  function showError() {
+    toast.error("Sign in with IIITD mail to access");
+  }
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
+  let history = useHistory();
   const signOut = () => {
     auth
       .signOut()
       .then((result) => {
-        console.log(result);
         localStorage.removeItem("isSignedIn");
+        history.push("/login");
       })
-      .catch((error) => {
-        console.log(error.message);
-      });
+      .catch((error) => {});
   };
-  
+
   const themeWhite = createMuiTheme({
     palette: {
       primary: {
-        main: '#fff',
+        main: "#fff",
       },
     },
   });
@@ -103,28 +114,52 @@ function Navbar({loggedIn, colorStatus, stickyCond}) {
   const themeBlack = createMuiTheme({
     palette: {
       primary: {
-        main: '#141414',
+        main: "#141414",
       },
     },
   });
 
-  function launchPopper(){
-    const authData = firebase.auth.currentUser
-    // const userData = firebase.firestore().collection('users').doc(authData.uid).get()
+  function launchPopper() {
+    const authData = firebase.auth.currentUser;
     return (
-      <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
+      <Popper
+        open={open}
+        anchorEl={anchorRef.current}
+        role={undefined}
+        transition
+        disablePortal
+      >
         {({ TransitionProps, placement }) => (
           <Grow
             {...TransitionProps}
-            style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
+            style={{
+              transformOrigin:
+                placement === "bottom" ? "center top" : "center bottom",
+            }}
           >
             <Paper>
               <ClickAwayListener onClickAway={handleClose}>
-                <MenuList autoFocusItem={open} id="menu-list-grow" onKeyDown={handleListKeyDown}>
-                  <MenuItem>
-                    {user?.displayName}
-                  </MenuItem>
-                  {loggedIn? (<MenuItem id="signBtn" onClick={signOut} color='primary'>Sign out</MenuItem>) : (<MenuItem id="signBtn" component={Link} color='primary' to={'/'}>Sign in</MenuItem>)}
+                <MenuList
+                  autoFocusItem={open}
+                  id="menu-list-grow"
+                  onKeyDown={handleListKeyDown}
+                >
+                  <MenuItem>{user?.displayName}</MenuItem>
+                  {/* {loggedIn ? ( */}
+                  {localStorage.getItem("isSignedIn") ? (
+                    <MenuItem id="signBtn" onClick={signOut} color="primary">
+                      Sign out
+                    </MenuItem>
+                  ) : (
+                    <MenuItem
+                      id="signBtn"
+                      component={Link}
+                      color="primary"
+                      to={"/login"}
+                    >
+                      Sign in
+                    </MenuItem>
+                  )}
                 </MenuList>
               </ClickAwayListener>
             </Paper>
@@ -136,118 +171,342 @@ function Navbar({loggedIn, colorStatus, stickyCond}) {
 
   return (
     <>
-    {stickyCond? (
-    <Sticky>
-    <div className="navbar" style={{backgroundImage: 'linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,.5))'}}>
-      <div className="navbar__left">
-      <Link to="/" style={{ textDecoration: "none" }}>
-      {colorStatus? (<img id="logo" src={logoColored} alt="Student Playbook"/>) : (<img id="logo" src={logoWhite} alt="Student Playbook"/>)}
-        </Link>
-      </div>
-      <div className="navbar__right">
-      
-        <ThemeProvider theme={colorStatus? (themeBlack) : (themeWhite)}>
-          <Button  id='btn'  
-            component={Link} 
-            color='primary'
-            to={"/explore"}
-            startIcon={<ExploreIcon style={{ color:'primary', padding: "10%" }}/>}
-            >
-            <div className='removeText'>Explore</div>
-          </Button>
-          <Button  id='btn' 
-            component={Link} 
-            color='primary'
-            to={"/ComingSoonTools"}
-            startIcon={<ToolsIcon style={{  color:'primary', padding: "10%" }}/>}
-            >
-            <div className='removeText'>Tools</div>
-          </Button>
-          <Button  id='btn' 
-            component={Link} 
-            color='primary'
-            to={"/contribute/testimonies"}
-            startIcon={<ContributeIcon style={{ color:'primary', padding: "10%" }}/>}>
-            <div className='removeText'>Contribute</div>
-          </Button>
-          <Button  id='btn' 
-            component={Link} 
-            color='primary'
-            to={"/supplies"} 
-            startIcon = {<FiberNewIcon style={{ color:'primary', padding: "2%", transform: "scale(1.3)" }}/>}>
-            <div className='removeText'>Supplies</div>
-          </Button>
+      {stickyCond ? (
+        <Sticky>
+          <div
+            className="navbar"
+            style={{
+              backgroundImage:
+                "linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,.5))",
+            }}
+          >
+            <div className="navbar__left">
+              <Link to="/homepage" style={{ textDecoration: "none" }}>
+                {colorStatus ? (
+                  <img id="logo" src={logoColored} alt="Student Playbook" />
+                ) : (
+                  <img id="logo" src={logoWhite} alt="Student Playbook" />
+                )}
+              </Link>
+            </div>
+            <div className="navbar__right">
+              <ThemeProvider theme={colorStatus ? themeBlack : themeWhite}>
+                {/* {loggedIn ? (
+                  <Button
+                    id="btn"
+                    component={Link}
+                    color="primary"
+                    to={"/explore"}
+                    startIcon={
+                      <ExploreIcon
+                        style={{ color: "primary", padding: "10%" }}
+                      />
+                    }
+                  >
+                    <div className="removeText">Explore</div>
+                  </Button>
+                ) : (
+                  <Button
+                    id="btn"
+                    component={Link}
+                    color="primary"
+                    to={"/explore"}
+                    style={{ color: "red" }}
+                    startIcon={
+                      <ExploreIcon
+                        style={{ color: "primary", padding: "10%" }}
+                      />
+                    }
+                  >
+                    <div className="removeText">Explore</div>
+                  </Button>
+                )} */}
+                <Button
+                  id="btn"
+                  component={Link}
+                  color="primary"
+                  to={"/explore"}
+                  startIcon={
+                    <ExploreIcon style={{ color: "primary", padding: "10%" }} />
+                  }
+                >
+                  <div className="removeText">Explore</div>
+                </Button>
+                {!localStorage.getItem("isSignedIn") ? (
+                  <Button
+                    id="btn"
+                    // component={Link}
+                    color="primary"
+                    onClick={notify}
+                    // to={"/ComingSoonTools"}
+                    style={{ opacity: ".5" }}
+                    startIcon={
+                      <ToolsIcon style={{ color: "primary", padding: "10%" }} />
+                    }
+                  >
+                    <div className="removeText">Tools</div>
+                  </Button>
+                ) : (
+                  <Button
+                    id="btn"
+                    component={Link}
+                    color="primary"
+                    to={"/ComingSoonTools"}
+                    startIcon={
+                      <ToolsIcon style={{ color: "primary", padding: "10%" }} />
+                    }
+                  >
+                    <div className="removeText">Tools</div>
+                  </Button>
+                )}
+                {/* <Button
+                  id="btn"
+                  component={Link}
+                  color="primary"
+                  to={"/ComingSoonTools"}
+                  startIcon={
+                    <ToolsIcon style={{ color: "primary", padding: "10%" }} />
+                  }
+                >
+                  <div className="removeText">Tools</div>
+                </Button> */}
+                {!localStorage.getItem("isSignedIn") ? (
+                  <Button
+                    id="btn"
+                    color="primary"
+                    // component={Link}
+                    // to={"/contribute/testimonies"}
+                    onClick={notify}
+                    style={{ opacity: ".5" }}
+                    startIcon={
+                      <ContributeIcon
+                        style={{ color: "primary", padding: "10%" }}
+                      />
+                    }
+                  >
+                    <div className="removeText">Contribute</div>
+                  </Button>
+                ) : (
+                  <Button
+                    id="btn"
+                    color="primary"
+                    component={Link}
+                    to={"/contribute/testimonies"}
+                    // onClick={notify}
+                    startIcon={
+                      <ContributeIcon
+                        style={{ color: "primary", padding: "10%" }}
+                      />
+                    }
+                  >
+                    <div className="removeText">Contribute</div>
+                  </Button>
+                )}
+                {/* <Button
+                  id="btn"
+                  // component={Link}
+                  color="primary"
+                  // to={"/contribute/testimonies"}
+                  onClick={notify}
+                  startIcon={
+                    <ContributeIcon
+                      style={{ color: "primary", padding: "10%" }}
+                    />
+                  }
+                >
+                  <div className="removeText">Contribute</div>
+                </Button> */}
+                <Button
+                  id="btn"
+                  component={Link}
+                  color="primary"
+                  to={"/supplies"}
+                  startIcon={
+                    <FiberNewIcon
+                      style={{
+                        color: "primary",
+                        padding: "2%",
+                        transform: "scale(1.3)",
+                      }}
+                    />
+                  }
+                >
+                  <div className="removeText">Supplies</div>
+                </Button>
 
-          <Icon
-            classname='userIcon'
-            ref={anchorRef}
-            aria-controls={open ? 'menu-list-grow' : undefined}
-            aria-haspopup="true"
-            onClick={handleToggle}>
-            <Avatar id='pic' src={user?.photoURL} alt="User" />
-          </Icon> 
-        
-          {launchPopper()}
-        </ThemeProvider>
-      </div>
-    </div>
-    </Sticky>
-    ) : (
-      <div className="navbar">
-      <div className="navbar__left">
-      <Link to="/" style={{ textDecoration: "none" }}>
-      {colorStatus? (<img id="logo" src={logoColored} alt="Student Playbook"/>) : (<img id="logo" src={logoWhite} alt="Student Playbook"/>)}
-        </Link>
-      </div>
-      <div className="navbar__right">
-      
-        <ThemeProvider theme={colorStatus? (themeBlack) : (themeWhite)}>
-          <Button  id='btn'  
-            component={Link} 
-            color='primary'
-            to={"/explore"}
-            startIcon={<ExploreIcon style={{ color:'primary', padding: "10%" }}/>}
-            >
-            <div className='removeText'>Explore</div>
-          </Button>
-          <Button  id='btn' 
-            component={Link} 
-            color='primary'
-            to={"/ComingSoonTools"}
-            startIcon={<ToolsIcon style={{  color:'primary', padding: "10%" }}/>}
-            >
-            <div className='removeText'>Tools</div>
-          </Button>
-          <Button  id='btn' 
-            component={Link} 
-            color='primary'
-            to={"/contribute/testimonies"}
-            startIcon={<ContributeIcon style={{ color:'primary', padding: "10%" }}/>}>
-            <div className='removeText'>Contribute</div>
-          </Button>
-          <Button  id='btn' 
-            component={Link} 
-            color='primary'
-            to={"/supplies"} 
-            // startIcon={<SuppliesIcon />}
-            startIcon = {<FiberNewIcon style={{ color:'primary', padding: "2%", transform: "scale(1.3)" }}/>}>
-            <div className='removeText'>Supplies</div>
-          </Button>
+                {localStorage.getItem("isSignedIn") ? (
+                  <Icon
+                    className="userIcon"
+                    ref={anchorRef}
+                    aria-controls={open ? "menu-list-grow" : undefined}
+                    aria-haspopup="true"
+                    onClick={handleToggle}
+                  >
+                    <Avatar id="pic" src={user?.photoURL} alt="User" />
+                  </Icon>
+                ) : (
+                  <Button
+                    id="btn"
+                    component={Link}
+                    to={"/login"}
+                    color="primary"
+                  >
+                    Sign In
+                  </Button>
+                )}
 
-          <Icon
-            classname='userIcon'
-            ref={anchorRef}
-            aria-controls={open ? 'menu-list-grow' : undefined}
-            aria-haspopup="true"
-            onClick={handleToggle}>
-            <Avatar id='pic' src={user?.photoURL} alt="User" />
-          </Icon> 
-        
-          {launchPopper()}
-        </ThemeProvider>
-      </div>
-    </div>
-    )}
+                {launchPopper()}
+              </ThemeProvider>
+            </div>
+          </div>
+        </Sticky>
+      ) : (
+        <div className="navbar">
+          <div className="navbar__left">
+            <Link to="/homepage" style={{ textDecoration: "none" }}>
+              {colorStatus ? (
+                <img id="logo" src={logoColored} alt="Student Playbook" />
+              ) : (
+                <img id="logo" src={logoWhite} alt="Student Playbook" />
+              )}
+            </Link>
+          </div>
+          <div className="navbar__right">
+            <ThemeProvider theme={colorStatus ? themeBlack : themeWhite}>
+              <Button
+                id="btn"
+                component={Link}
+                color="primary"
+                to={"/explore"}
+                startIcon={
+                  <ExploreIcon style={{ color: "primary", padding: "10%" }} />
+                }
+              >
+                <div className="removeText">Explore</div>
+              </Button>
+              {!localStorage.getItem("isSignedIn") ? (
+                <Button
+                  id="btn"
+                  // component={Link}
+                  color="primary"
+                  onClick={notify}
+                  style={{ opacity: ".5" }}
+                  // to={"/ComingSoonTools"}
+                  startIcon={
+                    <ToolsIcon style={{ color: "primary", padding: "10%" }} />
+                  }
+                >
+                  <div className="removeText">Tools</div>
+                </Button>
+              ) : (
+                <Button
+                  id="btn"
+                  component={Link}
+                  color="primary"
+                  to={"/ComingSoonTools"}
+                  startIcon={
+                    <ToolsIcon style={{ color: "primary", padding: "10%" }} />
+                  }
+                >
+                  <div className="removeText">Tools</div>
+                </Button>
+              )}
+              {/* <Button
+                id="btn"
+                component={Link}
+                color="primary"
+                to={"/ComingSoonTools"}
+                startIcon={
+                  <ToolsIcon style={{ color: "primary", padding: "10%" }} />
+                }
+              >
+                <div className="removeText">Tools</div>
+              </Button> */}
+              {!localStorage.getItem("isSignedIn") ? (
+                <Button
+                  id="btn"
+                  color="primary"
+                  // component={Link}
+                  // to={"/contribute/testimonies"}
+                  onClick={notify}
+                  style={{ opacity: ".5" }}
+                  startIcon={
+                    <ContributeIcon
+                      style={{ color: "primary", padding: "10%" }}
+                    />
+                  }
+                >
+                  <div className="removeText">Contribute</div>
+                </Button>
+              ) : (
+                <Button
+                  id="btn"
+                  color="primary"
+                  component={Link}
+                  to={"/contribute/testimonies"}
+                  // onClick={notify}
+                  startIcon={
+                    <ContributeIcon
+                      style={{ color: "primary", padding: "10%" }}
+                    />
+                  }
+                >
+                  <div className="removeText">Contribute</div>
+                </Button>
+              )}
+              {/* <Button
+                id="btn"
+                component={Link}
+                color="primary"
+                to={"/contribute/testimonies"}
+                startIcon={
+                  <ContributeIcon
+                    style={{ color: "primary", padding: "10%" }}
+                  />
+                }
+              >
+                <div className="removeText">Contribute</div>
+              </Button> */}
+              <Button
+                id="btn"
+                component={Link}
+                color="primary"
+                to={"/supplies"}
+                // startIcon={<SuppliesIcon />}
+                startIcon={
+                  <FiberNewIcon
+                    style={{
+                      color: "primary",
+                      padding: "2%",
+                      transform: "scale(1.3)",
+                    }}
+                  />
+                }
+              >
+                <div className="removeText">Supplies</div>
+              </Button>
+
+              {localStorage.getItem("isSignedIn") ? (
+                <Icon
+                  className="userIcon"
+                  ref={anchorRef}
+                  aria-controls={open ? "menu-list-grow" : undefined}
+                  aria-haspopup="true"
+                  onClick={handleToggle}
+                >
+                  <Avatar id="pic" src={user?.photoURL} alt="User" />
+                </Icon>
+              ) : (
+                <Button id="btn" component={Link} to={"/login"} color="primary">
+                  Sign In
+                </Button>
+              )}
+
+              {launchPopper()}
+            </ThemeProvider>
+          </div>
+        </div>
+      )}
     </>
   );
 }

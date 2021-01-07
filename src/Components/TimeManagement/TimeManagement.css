@@ -177,7 +177,6 @@
 }
 
 .square.green {
-  /* background: linear-gradient(45deg,#B7F8DB, #50A7C2); */
   background-color: #B7F8DB;
 }
 
@@ -191,17 +190,14 @@
 }
 
 .square.blue {
-  /* background: linear-gradient(45deg, #89f7fe, #66a6ff); */
   background-color: #b0edff;
   text-align: center;
 }
 .square.red {
-  /* background: linear-gradient(-45deg,#ff758c, #ff7eb3); */
   background-color: #ffb0b0;
   text-align: center;
 }
 .square.grey {
-  /* background: linear-gradient(45deg,#868f96, #596164); */
   background-color: #c2c2c2;
   text-align: center;
 }
@@ -231,11 +227,8 @@
 .mainDiv {
   width: 100%;
   height: 150em;
-  /* padding: 5%; */
-  /* vertical-align: middle; */
   display: flex;
   flex-direction: column;
-  /* justify-content: center; */
   align-items: center;
   background-color: white;
 }
@@ -279,8 +272,6 @@
   align-items: center;
   flex-direction: column;
   background: white;
-  /* position: fixed; */
-  /* overscroll-behavior-y: contain; */
   overflow: hidden;
   width: 100%;
   height: 30%;

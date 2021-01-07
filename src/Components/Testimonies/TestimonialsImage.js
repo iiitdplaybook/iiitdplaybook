@@ -5,7 +5,7 @@ import Marquee from "react-marquee-slider";
 import styled from "styled-components";
 import times from "lodash/times";
 
-import FullWidth from "./FullWidth";
+import FullWidth from "./../FullWidth";
 
 const Height = styled.div`
   position: relative;
@@ -25,7 +25,7 @@ const Review = styled.div`
   background: #fff;
   border-radius: 4px;
   height: 30vh;
-  border-color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
+  border-color: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%);
   box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
   overflow: hidden;
 `;
@@ -38,24 +38,12 @@ const Avatar = styled.div`
   min-height: 80%;
   max-height: 80%;
   // background: red;
-  img{
+  img {
     // min-height: 100%;
     min-width: 135%;
     margin-left: -10%;
   }
 `;
-
-// const Content = styled.div`
-//   p {
-//     margin: 10px;
-//     color: #382f70;
-//     font-family: Poppins, sans-serif;
-//     font-size: ${(props) => props.scale * 15}px !important;
-//     line-height: ${(props) => props.scale * 22}px;
-//     font-weight: 100;
-//     text-align: left;
-//   }
-// `;
 
 const Name = styled.div`
   p {
@@ -69,23 +57,22 @@ const Name = styled.div`
   }
 `;
 
-
-// const portraits = [
-//   "https://randomuser.me/api/portraits/women/68.jpg",
-//   "https://randomuser.me/api/portraits/men/75.jpg",
-//   "https://randomuser.me/api/portraits/lego/3.jpg",
-//   "https://randomuser.me/api/portraits/women/89.jpg",
-//   "https://randomuser.me/api/portraits/men/26.jpg",
-// ];
-
-const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndPerformance, direc}) => {
+const Reviews = ({
+  portraits,
+  vel,
+  scaleFactor,
+  size,
+  onStartPerformance,
+  onEndPerformance,
+  direc,
+}) => {
   const [key, setKey] = useState();
 
   useEffect(() => {
     setKey();
   }, [size, setKey]);
 
-  let scale = 0.5*scaleFactor;
+  let scale = 0.5 * scaleFactor;
 
   if (size && size.width > 800) {
     scale = 0.65;

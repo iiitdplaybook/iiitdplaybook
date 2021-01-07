@@ -1,6 +1,5 @@
 import React from 'react';
 import {Card, CardActionArea, CardActions, CardContent, Button, Typography, CardMedia} from '@material-ui/core';
-import { Link } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
 import image_svg from "../../Assets/SVG_for_cards/teamwork.svg";
@@ -39,10 +38,8 @@ function SuppliesCards(supplyCardInfo){
             maxWidth:cardWidth,
             minWidth:cardWidth,
             maxHeight:cardHeight,
-            // minHeight:cardHeight,
             background:`linear-gradient(45deg, ${gradientColor_1}, ${gradientColor_2})`,
             borderRadius:10,
-            // marginBottom: "10%",
             
         },
         actionArea:{
@@ -55,7 +52,6 @@ function SuppliesCards(supplyCardInfo){
         media: {
             maxWidth:cardWidth,
             minHeight:150,
-            // maxHeight:100,
             margin: '10%',
             marginBottom: '2%',
         },
@@ -77,7 +73,6 @@ function SuppliesCards(supplyCardInfo){
         
             <Card className={classes.root}>
                 <a href={pathLink} target="_blank" style={{margin: '0%'}}>
-                {/* <Link className={classes.link} href={pathLink} > */}
                 <CardActionArea className={classes.actionArea}>
                     <CardMedia
                         className={classes.media}
@@ -94,7 +89,6 @@ function SuppliesCards(supplyCardInfo){
                     </CardContent>
                 </CardActionArea>
                 </a>
-                {/* </Link> */}
             </Card>
        
     );
