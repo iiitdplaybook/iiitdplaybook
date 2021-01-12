@@ -15,6 +15,7 @@ import Testimonials from "../Testimonies/TestimonialsName";
 import FadeIn from "./../FadeIn";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function Login() {
   // const contri = [
@@ -39,6 +40,7 @@ function Login() {
   // });
 
   const vel2 = 25;
+  let history = useHistory();
 
   function loadUser(user) {
     const firestoreUser = firebase
@@ -65,6 +67,7 @@ function Login() {
       .then((result) => {
         localStorage.setItem("isSignedIn", true);
         loadUser(result.user);
+        history.push("/homepage");
       })
       .catch((error) => {});
   };
@@ -97,8 +100,9 @@ function Login() {
           <Button id="signIn" onClick={signIn}>
             Sign in with IIITD Mail
           </Button>
-          <Button id="guest" component={Link} to={"/nostalgia"}>
-            Join as a Guest
+          <Button id="guest" component={Link} to={"/homepage"}>
+            {/* <Button id="guest" component={Link} to={"/"}> */}
+            Take a Sneak Peek
           </Button>
           {/* Don't delete
               <Player
@@ -115,46 +119,98 @@ function Login() {
         <FadeIn delay={350} duration={1550}>
           <div className="login__creators">
             <h5>Creators</h5>
-            <div className="testi">
-              <div className="creatorCard">
-                <img src={kshitij} />
-                <p>Kshitij Agrawal</p>
-                <a
-                  className="fa fa-linkedin fa-lg"
-                  href="https://www.linkedin.com/in/kshitij16/"
-                  target="_blank"
-                ></a>
-              </div>
+            <div className="testi2">
+              <a
+                className="defaultClick"
+                href="https://www.instagram.com/okkshitij/"
+                target="_blank"
+              >
+                <div className="creatorCard">
+                  <img src={kshitij} />
+                  <p>
+                    Kshitij <div className="removeText">&nbsp;Agrawal</div>
+                  </p>
+                  <a
+                    className="fa fa-linkedin fa-lg"
+                    href="https://www.linkedin.com/in/kshitij16/"
+                    target="_blank"
+                  ></a>
+                  <a
+                    className="fa fa-instagram fa-lg"
+                    href="https://www.instagram.com/okkshitij/"
+                    target="_blank"
+                  ></a>
+                </div>
+              </a>
 
-              <div className="creatorCard">
-                <img src={pabitra} />
-                <p>Pabitra Bansal</p>
-                <a
-                  className="fa fa-linkedin fa-lg"
-                  href="https://www.linkedin.com/in/pabitra-bansal-06039616a/"
-                  target="_blank"
-                ></a>
-              </div>
+              <a
+                className="defaultClick"
+                href="https://www.instagram.com/pabitrabansal/"
+                target="_blank"
+              >
+                <div className="creatorCard">
+                  <img src={pabitra} />
+                  <p>
+                    Pabitra <div className="removeText">&nbsp;Bansal</div>{" "}
+                  </p>
+                  <a
+                    className="fa fa-linkedin fa-lg"
+                    href="https://www.linkedin.com/in/pabitra-bansal-06039616a/"
+                    target="_blank"
+                  ></a>
+                  <a
+                    className="fa fa-instagram fa-lg"
+                    href="https://www.instagram.com/pabitrabansal/"
+                    target="_blank"
+                  ></a>
+                </div>
+              </a>
 
-              <div className="creatorCard">
-                <img src={rahul} />
-                <p>Rahul Singh</p>
-                <a
-                  className="fa fa-linkedin fa-lg"
-                  href="https://www.linkedin.com/in/rahul-singh-7aa84697/"
-                  target="_blank"
-                ></a>
-              </div>
+              <a
+                className="defaultClick"
+                href="https://www.instagram.com/am.i.a.normie.now/"
+                target="_blank"
+              >
+                <div className="creatorCard">
+                  <img src={rahul} />
+                  <p>
+                    Rahul <div className="removeText">&nbsp;Singh</div>{" "}
+                  </p>
+                  <a
+                    className="fa fa-linkedin fa-lg"
+                    href="https://www.linkedin.com/in/rahul-singh-7aa84697/"
+                    target="_blank"
+                  ></a>
+                  <a
+                    className="fa fa-instagram fa-lg"
+                    href="https://www.instagram.com/am.i.a.normie.now/"
+                    target="_blank"
+                  ></a>
+                </div>
+              </a>
 
-              <div className="creatorCard">
-                <img src={yashwin} />
-                <p>Yashwin Agrawal</p>
-                <a
-                  className="fa fa-linkedin fa-lg"
-                  href="https://www.linkedin.com/in/yashwin-agrawal-6b28bb176/"
-                  target="_blank"
-                ></a>
-              </div>
+              <a
+                className="defaultClick"
+                href="https://www.instagram.com/yashwin_1/"
+                target="_blank"
+              >
+                <div className="creatorCard">
+                  <img src={yashwin} />
+                  <p>
+                    Yashwin <div className="removeText">&nbsp;Agrawal</div>{" "}
+                  </p>
+                  <a
+                    className="fa fa-linkedin fa-lg"
+                    href="https://www.linkedin.com/in/yashwin-agrawal-6b28bb176/"
+                    target="_blank"
+                  ></a>
+                  <a
+                    className="fa fa-instagram fa-lg"
+                    href="https://www.instagram.com/yashwin_1/"
+                    target="_blank"
+                  ></a>
+                </div>
+              </a>
             </div>
           </div>
         </FadeIn>

@@ -23,9 +23,22 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { isMobile } from "react-device-detect";
 import ScrollToTop from "./Components/ScrollToTop";
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   const [{}, dispatch] = useStateValue();
   const [loading, setLoading] = useState(true);
+
+  toast.configure();
+  const notify = () =>
+    toast.info("Sign in with IIITD mail to access", {
+      draggablePercent: 30,
+    });
+
+  function showError() {
+    toast.error("Sign in with IIITD mail to access");
+  }
 
   useEffect(() => {
     setTimeout(() => setLoading(false), 4000);
@@ -84,17 +97,36 @@ function App() {
             <Router>
               <ScrollToTop />
               {!localStorage.getItem("isSignedIn") ? (
-                <Switch>
-                  <Route path="/supplies">
-                    <Supplies />
-                    <Footer />
-                  </Route>
-                  <Route path="/nostalgia">
-                    <Nostalgia />
-                    <Footer />
-                  </Route>
-                  <Route path="/" component={Login} />
-                </Switch>
+                <div>
+                  <Switch>
+                    {/* <Route path="/supplies" component={Supplies} /> */}
+                    <Route path="/supplies">
+                      <Supplies />
+                      <Footer />
+                    </Route>
+                    <Route path="/nostalgia">
+                      <Nostalgia />
+                      <Footer />
+                    </Route>
+                    <Route path="/explore">
+                      <Explore />
+                      <Footer />
+                    </Route>
+                    <Route path="/contribute/testimonies">
+                      <TestimoniesForm />
+                      <Footer />
+                    </Route>
+                    <Route path="/homepage">
+                      <div className="app__body">
+                        <HomePage />
+                        <Footer />
+                      </div>
+                    </Route>
+                    <Route path="/">
+                      <Login />
+                    </Route>
+                  </Switch>
+                </div>
               ) : (
                 <div>
                   <Switch>
