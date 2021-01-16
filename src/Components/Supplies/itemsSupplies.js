@@ -198,6 +198,26 @@ function items() {
       image: "https://images-na.ssl-images-amazon.com/images/I/4183T-j2kWL.jpg",
       pathLink: "https://amzn.to/2XhLGqJ",
     },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "Uniball Air Micro Pen Combo Set",
+      description: "Bought by 10 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/61kj0R5IbCL._SL1372_.jpg",
+      pathLink:
+        "https://www.amazon.in/Uniball-Micro-Combo-Black-Blue/dp/B07JFDPFZN/ref=sr_1_1?dchild=1&keywords=uniball&qid=1609954637&sr=8-1",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "Uni-ball Eye Ball Point Pen",
+      description: "Bought by 10 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/71QOsM3dP-L._SL1500_.jpg",
+      pathLink:
+        "https://www.amazon.in/Uni-ball-Eye-Ball-Point-Pen/dp/B07H7CHPZ9/ref=sr_1_2?dchild=1&keywords=uniball&qid=1609954637&sr=8-2",
+    },
   ];
 
   const booksCards = [
@@ -223,7 +243,7 @@ function items() {
       gradientColor_1: color1,
       gradientColor_2: color2,
       title: "Rich Dad, Poor Dad",
-      description: "Bought by 35 students",
+      description: "Bought by 300 students",
       image:
         "https://images-na.ssl-images-amazon.com/images/I/51wOOMQ+F3L._SY344_BO1,204,203,200_.jpg",
       pathLink: "https://amzn.to/2LaCwK3",
@@ -232,10 +252,55 @@ function items() {
       gradientColor_1: color1,
       gradientColor_2: color2,
       title: "Feck Perfuction",
-      description: "Bought by 35 students",
+      description: "Bought by 20 students",
       image:
         "https://images-na.ssl-images-amazon.com/images/I/41qIe0kf-aL._SX373_BO1,204,203,200_.jpg",
       pathLink: "https://amzn.to/3970UUV",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "4 hour work week",
+      description: "Bought by 100 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/51u1MBMfhmL._SX314_BO1,204,203,200_.jpg",
+      pathLink: "https://amzn.to/38DwB9g",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "Atomic habits",
+      description: "Bought by 50 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/51-nXsSRfZL._SX328_BO1,204,203,200_.jpg",
+      pathLink: "https://amzn.to/3qdW9zV",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "Attitude Is Everything",
+      description: "Bought by 300 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/41F8ATXoMOL._SX317_BO1,204,203,200_.jpg",
+      pathLink: "https://amzn.to/3btTuhs",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "Think like a Monk",
+      description: "Bought by 150 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/41gVhoPaE5L._SX323_BO1,204,203,200_.jpg",
+      pathLink: "https://amzn.to/2Ke6AEm",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "The Alchemist",
+      description: "Bought by 150 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/410llGwMZGL._SX328_BO1,204,203,200_.jpg",
+      pathLink: "https://amzn.to/2LLYnYt",
     },
   ];
 
