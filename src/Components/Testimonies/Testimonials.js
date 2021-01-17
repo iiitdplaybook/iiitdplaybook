@@ -67,13 +67,23 @@ export default function AutoPlay({ portraits }) {
     }
   `;
 
-  const slidesNum = Math.min(5, portraits.length);
+  const slidesNum =
+    window.innerWidth < 600
+      ? Math.min(1, portraits.length)
+      : Math.min(5, portraits.length);
+
+  const slidesScroll =
+    window.innerWidth < 600
+      ? Math.min(1, portraits.length)
+      : Math.min(5, portraits.length);
+
+  // var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
   const settings = {
     dots: true,
     infinite: true,
     slidesToShow: slidesNum,
-    slidesToScroll: 5,
+    slidesToScroll: slidesScroll,
     autoplay: true,
     autoplaySpeed: 2000,
     cssEase: "ease-in-out",
@@ -89,6 +99,7 @@ export default function AutoPlay({ portraits }) {
         {times(portraits.length, String).map((id) => (
           // testimonies_data[id].isApproved?
           <div>
+            {console.log("size", window.innerWidth)}
             <Box key={`marquee-example-review-${id}`} scale={scale}>
               <Review scale={scale}>
                 <div id="containerHeader">

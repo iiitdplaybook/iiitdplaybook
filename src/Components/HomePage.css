@@ -67,7 +67,7 @@ canvas {
     #000428
   );
   top: 1%;
-  height: 83%;
+  height: 86%;
   bottom: 15%;
 }
 
@@ -210,7 +210,7 @@ canvas {
 
   .vertical-timeline::before {
     background: linear-gradient(#ffafbc, #ffc2a1, #fbd69a, #004e92, #000428);
-    min-height: fit-content;
+    height: 82%;
   }
 
   .textCard {
