@@ -25,6 +25,9 @@ import { useState, useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+// import PeopleText from "./Testimonies/TestimonialsText";
+import userProfile from "../Assets/user.png";
+
 function HomePage() {
   const [{ user, isSignedIn, userName }] = useStateValue();
   const [portraits, setportraits] = useState([]);
@@ -98,6 +101,7 @@ function HomePage() {
     });
 
     setportraits(temp1);
+    // console.log("length", temp1.length);
     setexploring(temp2);
     setdefiningPoint(temp3);
     setgraduating(temp4);
@@ -109,14 +113,56 @@ function HomePage() {
     return () => {};
   }, []);
   // Don't delete below
-  // const portraits =
-  //     [
-  //         { UserAvatar: userProfile, Text: "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics", Name: "Medhavi"},
-  //         { UserAvatar: userProfile, Text: "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.", Name: "Sonali"},
-  //         { UserAvatar: userProfile, Text: "I was not there for induction, so all I have experienced is the horror of deadlines and evaluations.", Name: "Anunay"},
-  //         { UserAvatar: userProfile, Text: "Initial college life was very fun-filled. With lots of amazing activities in college and meeting new people and getting to know them was a really nice experience. 24*7 canteen and no hostel curfew timings are really great things that make you feel free.", Name: "Shubhi"},
-  //         { UserAvatar: userProfile, Text: "When I first entered college I felt intimidated and like I didn't belong here, with a little anxiety about how people would be. But it took absolutely no time to shatter all my doubts and find this wonderful set of people and a room filled with opportunities. It was a different kind of environment that I was looking forward to being in.", Name: "Muskan"},
-  //     ];
+  const portraits2 = [
+    {
+      UserAvatar: userProfile,
+      Text:
+        "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics",
+      Name: "Medhavi",
+    },
+    {
+      UserAvatar: userProfile,
+      Text:
+        "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.",
+      Name: "Sonali",
+    },
+    {
+      UserAvatar: userProfile,
+      Text:
+        "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics",
+      Name: "Medhavi",
+    },
+    {
+      UserAvatar: userProfile,
+      Text:
+        "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.",
+      Name: "Sonali",
+    },
+    {
+      UserAvatar: userProfile,
+      Text:
+        "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics",
+      Name: "Medhavi",
+    },
+    {
+      UserAvatar: userProfile,
+      Text:
+        "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.",
+      Name: "Sonali",
+    },
+    {
+      UserAvatar: userProfile,
+      Text:
+        "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics",
+      Name: "Medhavi",
+    },
+    {
+      UserAvatar: userProfile,
+      Text:
+        "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.",
+      Name: "Sonali",
+    },
+  ];
 
   const vel = 20;
 
@@ -175,13 +221,10 @@ function HomePage() {
                   src={imgQuestion}
                 />
               </div>
-              <div className="TestiContainer">
-                <Testimonials
-                  portraits={portraits}
-                  vel={vel}
-                  scaleFactor={1.5}
-                />
-              </div>
+              {/* {console.log("length port", portraits.length)}
+              <PeopleText portraits={portraits2}></PeopleText> */}
+
+              <Testimonials portraits={portraits2} />
             </div>
           </VerticalTimelineElement>
 
@@ -216,13 +259,7 @@ function HomePage() {
                 </ul>
                 <img className="imgContainer" src={imgExplore} />
               </div>
-              <div className="TestiContainer">
-                <Testimonials
-                  portraits={exploring}
-                  vel={vel}
-                  scaleFactor={1.5}
-                />
-              </div>
+              <Testimonials portraits={exploring} />
             </div>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -248,13 +285,8 @@ function HomePage() {
                 </ul>
                 <img className="imgContainer" src={imgDefine} />
               </div>
-              <div className="TestiContainer">
-                <Testimonials
-                  portraits={definingPoint}
-                  vel={vel}
-                  scaleFactor={1.5}
-                />
-              </div>
+
+              <Testimonials portraits={definingPoint} />
             </div>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -278,13 +310,8 @@ function HomePage() {
                 </ul>
                 <img className="imgContainer" src={imgGraduate} />
               </div>
-              <div className="TestiContainer">
-                <Testimonials
-                  portraits={graduating}
-                  vel={vel}
-                  scaleFactor={1.5}
-                />
-              </div>
+
+              <Testimonials portraits={graduating} />
             </div>
           </VerticalTimelineElement>
           <VerticalTimelineElement
@@ -308,13 +335,8 @@ function HomePage() {
                   {/* <Button className='nostalgia_button' component={Link} to={'/nostalgia'}>Let's dive in {'>'}</Button> */}
                   <img className="imgContainer" src={imgNostalgia} />
                 </div>
-                <div className="TestiContainer">
-                  <Testimonials
-                    portraits={nostalgia}
-                    vel={vel}
-                    scaleFactor={1.5}
-                  />
-                </div>
+
+                <Testimonials portraits={nostalgia} />
               </div>
             </div>
           </VerticalTimelineElement>
