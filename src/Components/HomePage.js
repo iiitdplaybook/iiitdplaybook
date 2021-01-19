@@ -37,83 +37,175 @@ function HomePage() {
   const [nostalgia, setnostalgia] = useState([]);
 
   const getTestimonies = async () => {
-    const babysteps = firebase
-      .firestore()
-      .collection("Testimonies")
-      .where("isApproved", "==", true)
-      .where("Topic", "==", "Phases of College - Baby Steps");
-    const expl = firebase
-      .firestore()
-      .collection("Testimonies")
-      .where("isApproved", "==", true)
-      .where("Topic", "==", "Phases of College - Exploring");
-    const defp = firebase
-      .firestore()
-      .collection("Testimonies")
-      .where("isApproved", "==", true)
-      .where("Topic", "==", "Phases of College - Defining Point");
-    const grad = firebase
-      .firestore()
-      .collection("Testimonies")
-      .where("isApproved", "==", true)
-      .where("Topic", "==", "Phases of College - Graduating");
-    const nost = firebase
-      .firestore()
-      .collection("Testimonies")
-      .where("isApproved", "==", true)
-      .where("Topic", "==", "Phases of College - Nostalgia");
+    // const babysteps = firebase
+    //   .firestore()
+    //   .collection("Testimonies")
+    //   .where("isApproved", "==", true)
+    //   .where("Topic", "==", "Phases of College - Baby Steps");
+    // const expl = firebase
+    //   .firestore()
+    //   .collection("Testimonies")
+    //   .where("isApproved", "==", true)
+    //   .where("Topic", "==", "Phases of College - Exploring");
+    // const defp = firebase
+    //   .firestore()
+    //   .collection("Testimonies")
+    //   .where("isApproved", "==", true)
+    //   .where("Topic", "==", "Phases of College - Defining Point");
+    // const grad = firebase
+    //   .firestore()
+    //   .collection("Testimonies")
+    //   .where("isApproved", "==", true)
+    //   .where("Topic", "==", "Phases of College - Graduating");
+    // const nost = firebase
+    //   .firestore()
+    //   .collection("Testimonies")
+    //   .where("isApproved", "==", true)
+    //   .where("Topic", "==", "Phases of College - Nostalgia");
 
-    let document1 = await babysteps.get({ source: "cache" });
-    if (!document1.exists) {
-      document1 = await babysteps.get({ source: "server" });
-      console.log("server");
-    } else {
-      console.log("cache");
-    }
+    // let document1 = await babysteps.get({ source: "cache" });
+    // if (!document1.exists) {
+    //   document1 = await babysteps.get({ source: "server" });
+    //   console.log("server");
+    // } else {
+    //   console.log("cache");
+    // }
 
-    const document2 = await expl.get();
-    const document3 = await defp.get();
-    const document4 = await grad.get();
-    const document5 = await nost.get();
+    // const document2 = await expl.get();
+    // const document3 = await defp.get();
+    // const document4 = await grad.get();
+    // const document5 = await nost.get();
 
     // document1.set("Cache-Control", "public, max-age=300, s-maxage=600");
 
     var temp1 = [];
     var temp2 = [];
-    var temp3 = definingPoint;
-    var temp4 = graduating;
-    var temp5 = nostalgia;
+    var temp3 = [];
+    var temp4 = [];
+    var temp5 = [];
+    // var temp3 = definingPoint;
+    // var temp4 = graduating;
+    // var temp5 = nostalgia;
 
-    document1.docs.forEach((item) => {
-      temp1.push(item.data());
+    /////////////////////////////////////////////////////////////////////////////////////////////
+    var babyStepRef = firebase.database().ref('Testimonies/Phases of College - Baby Steps');
+    await babyStepRef.once('value', (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+        if (childSnapshot.val().isApproved == true){
+          var name = childSnapshot.val().Name;
+          var text = childSnapshot.val().Text;
+          var dict = {};
+          dict.UserAvatar = userProfile;
+          dict.Text = text;
+          dict.Name = name;
+          dict.Topic = "Phases of College - Baby Steps";
+          dict.isApproved = true;
+          temp1.push(dict);
+        }
+      });
     });
-    document2.docs.forEach((item) => {
-      temp2.push(item.data());
+
+    var exploringRef = firebase.database().ref('Testimonies/Phases of College - Exploring');
+    await exploringRef.once('value', (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+        if (childSnapshot.val().isApproved == true){
+          var name = childSnapshot.val().Name;
+          var text = childSnapshot.val().Text;
+          var dict = {};
+          dict.UserAvatar = userProfile;
+          dict.Text = text;
+          dict.Name = name;
+          dict.Topic = "Phases of College - Exploring";
+          dict.isApproved = true;
+          temp2.push(dict);
+        }
+      });
     });
-    document3.docs.forEach((item) => {
-      temp3.push(item.data());
+
+    var definingptRef = firebase.database().ref('Testimonies/Phases of College - Defining Point');
+    await definingptRef.once('value', (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+        if (childSnapshot.val().isApproved == true){
+          var name = childSnapshot.val().Name;
+          var text = childSnapshot.val().Text;
+          var dict = {};
+          dict.UserAvatar = userProfile;
+          dict.Text = text;
+          dict.Name = name;
+          dict.Topic = "Phases of College - Defining Point";
+          dict.isApproved = true;
+          temp3.push(dict);
+        }
+      });
     });
-    document4.docs.forEach((item) => {
-      temp4.push(item.data());
+
+    var graduatingRef = firebase.database().ref('Testimonies/Phases of College - Graduating');
+    await graduatingRef.once('value', (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+        if (childSnapshot.val().isApproved == true){
+          var name = childSnapshot.val().Name;
+          var text = childSnapshot.val().Text;
+          var dict = {};
+          dict.UserAvatar = userProfile;
+          dict.Text = text;
+          dict.Name = name;
+          dict.Topic = "Phases of College - Graduating";
+          dict.isApproved = true;
+          temp4.push(dict);
+        }
+      });
     });
-    document5.docs.forEach((item) => {
-      temp5.push(item.data());
+
+    var nostalgiaRef = firebase.database().ref('Testimonies/Phases of College - Nostalgia');
+    await nostalgiaRef.once('value', (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+        if (childSnapshot.val().isApproved == true){
+          var name = childSnapshot.val().Name;
+          var text = childSnapshot.val().Text;
+          var dict = {};
+          dict.UserAvatar = userProfile;
+          dict.Text = text;
+          dict.Name = name;
+          dict.Topic = "Phases of College - Nostalgia";
+          dict.isApproved = true;
+          temp5.push(dict);
+        }
+      });
     });
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////
+
+    // document1.docs.forEach((item) => {
+    //   temp1.push(item.data());
+    // });
+    // document2.docs.forEach((item) => {
+    //   temp2.push(item.data());
+    // });
+    // document3.docs.forEach((item) => {
+    //   temp3.push(item.data());
+    // });
+    // document4.docs.forEach((item) => {
+    //   temp4.push(item.data());
+    // });
+    // document5.docs.forEach((item) => {
+    //   temp5.push(item.data());
+    // });
 
     setportraits(temp1);
-    // console.log("length", temp1.length);
     setexploring(temp2);
     setdefiningPoint(temp3);
     setgraduating(temp4);
     setnostalgia(temp5);
   };
 
+  
+
   useEffect(() => {
     getTestimonies();
     return () => {};
   }, []);
   // Don't delete below
-  const portraits2 = [
+  var portraits2 = [
     {
       UserAvatar: userProfile,
       Text:
@@ -163,6 +255,7 @@ function HomePage() {
       Name: "Sonali",
     },
   ];
+  
 
   const vel = 20;
 
@@ -224,7 +317,7 @@ function HomePage() {
               {/* {console.log("length port", portraits.length)}
               <PeopleText portraits={portraits2}></PeopleText> */}
 
-              <Testimonials portraits={portraits2} />
+              <Testimonials portraits={portraits} />
             </div>
           </VerticalTimelineElement>
 
