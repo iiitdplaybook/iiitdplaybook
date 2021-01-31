@@ -1,32 +1,32 @@
-import React from "react";
-import firebase from "firebase";
-import { useStateValue } from "../StateProvider";
+import React from 'react';
+import firebase from 'firebase';
+import { useStateValue } from '../StateProvider';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
-import "./HomePage.css";
-import Navbar from "./Navbar";
-import Stars from "./stars";
-import Tilt from "react-parallax-tilt";
-import ParticleAnim from "./ParticleAnim/ParticleAnim";
+} from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import './HomePage.css';
+import Navbar from './Navbar';
+import Stars from './stars';
+import Tilt from 'react-parallax-tilt';
+import ParticleAnim from './ParticleAnim/ParticleAnim';
 
-import Clouds from "./Clouds/clouds";
-import Testimonials from "./Testimonies/Testimonials";
+import Clouds from './Clouds/clouds';
+import Testimonials from './Testimonies/Testimonials';
 // import imgWelcome from "../Assets/homewallpaper.svg";
-import imgQuestion from "../Assets/PhasesPics/question.svg";
-import imgDefine from "../Assets/PhasesPics/define.svg";
-import imgExplore from "../Assets/PhasesPics/explore2.svg";
-import imgGraduate from "../Assets/PhasesPics/graduate2.svg";
-import imgNostalgia from "../Assets/PhasesPics/nostalgia2.svg";
-import { useState, useEffect } from "react";
+import imgQuestion from '../Assets/PhasesPics/question.svg';
+import imgDefine from '../Assets/PhasesPics/define.svg';
+import imgExplore from '../Assets/PhasesPics/explore2.svg';
+import imgGraduate from '../Assets/PhasesPics/graduate2.svg';
+import imgNostalgia from '../Assets/PhasesPics/nostalgia2.svg';
+import { useState, useEffect } from 'react';
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // import PeopleText from "./Testimonies/TestimonialsText";
-import userProfile from "../Assets/user.png";
+import userProfile from '../Assets/user.png';
 
 function HomePage() {
   const [{ user, isSignedIn, userName }] = useStateValue();
@@ -88,91 +88,101 @@ function HomePage() {
     // var temp5 = nostalgia;
 
     /////////////////////////////////////////////////////////////////////////////////////////////
-    var babyStepRef = firebase.database().ref('Testimonies/Phases of College - Baby Steps');
+    var babyStepRef = firebase
+      .database()
+      .ref('Testimonies/Phases of College - Baby Steps');
     await babyStepRef.once('value', (snapshot) => {
       snapshot.forEach((childSnapshot) => {
-        if (childSnapshot.val().isApproved == true){
+        if (childSnapshot.val().isApproved === true) {
           var name = childSnapshot.val().Name;
           var text = childSnapshot.val().Text;
           var dict = {};
           dict.UserAvatar = userProfile;
           dict.Text = text;
           dict.Name = name;
-          dict.Topic = "Phases of College - Baby Steps";
+          dict.Topic = 'Phases of College - Baby Steps';
           dict.isApproved = true;
           temp1.push(dict);
         }
       });
     });
 
-    var exploringRef = firebase.database().ref('Testimonies/Phases of College - Exploring');
+    var exploringRef = firebase
+      .database()
+      .ref('Testimonies/Phases of College - Exploring');
     await exploringRef.once('value', (snapshot) => {
       snapshot.forEach((childSnapshot) => {
-        if (childSnapshot.val().isApproved == true){
+        if (childSnapshot.val().isApproved === true) {
           var name = childSnapshot.val().Name;
           var text = childSnapshot.val().Text;
           var dict = {};
           dict.UserAvatar = userProfile;
           dict.Text = text;
           dict.Name = name;
-          dict.Topic = "Phases of College - Exploring";
+          dict.Topic = 'Phases of College - Exploring';
           dict.isApproved = true;
           temp2.push(dict);
         }
       });
     });
 
-    var definingptRef = firebase.database().ref('Testimonies/Phases of College - Defining Point');
+    var definingptRef = firebase
+      .database()
+      .ref('Testimonies/Phases of College - Defining Point');
     await definingptRef.once('value', (snapshot) => {
       snapshot.forEach((childSnapshot) => {
-        if (childSnapshot.val().isApproved == true){
+        if (childSnapshot.val().isApproved === true) {
           var name = childSnapshot.val().Name;
           var text = childSnapshot.val().Text;
           var dict = {};
           dict.UserAvatar = userProfile;
           dict.Text = text;
           dict.Name = name;
-          dict.Topic = "Phases of College - Defining Point";
+          dict.Topic = 'Phases of College - Defining Point';
           dict.isApproved = true;
           temp3.push(dict);
         }
       });
     });
 
-    var graduatingRef = firebase.database().ref('Testimonies/Phases of College - Graduating');
+    var graduatingRef = firebase
+      .database()
+      .ref('Testimonies/Phases of College - Graduating');
     await graduatingRef.once('value', (snapshot) => {
       snapshot.forEach((childSnapshot) => {
-        if (childSnapshot.val().isApproved == true){
+        if (childSnapshot.val().isApproved === true) {
           var name = childSnapshot.val().Name;
           var text = childSnapshot.val().Text;
           var dict = {};
           dict.UserAvatar = userProfile;
           dict.Text = text;
           dict.Name = name;
-          dict.Topic = "Phases of College - Graduating";
+          dict.Topic = 'Phases of College - Graduating';
           dict.isApproved = true;
           temp4.push(dict);
         }
       });
     });
 
-    var nostalgiaRef = firebase.database().ref('Testimonies/Phases of College - Nostalgia');
+    var nostalgiaRef = firebase
+      .database()
+      .ref('Testimonies/Phases of College - Nostalgia');
     await nostalgiaRef.once('value', (snapshot) => {
       snapshot.forEach((childSnapshot) => {
-        if (childSnapshot.val().isApproved == true){
+        if (childSnapshot.val().isApproved === true) {
           var name = childSnapshot.val().Name;
           var text = childSnapshot.val().Text;
           var dict = {};
           dict.UserAvatar = userProfile;
           dict.Text = text;
           dict.Name = name;
-          dict.Topic = "Phases of College - Nostalgia";
+          dict.Topic = 'Phases of College - Nostalgia';
           dict.isApproved = true;
           temp5.push(dict);
         }
       });
     });
-    
+
     /////////////////////////////////////////////////////////////////////////////////////////////
 
     // document1.docs.forEach((item) => {
@@ -198,8 +208,6 @@ function HomePage() {
     setnostalgia(temp5);
   };
 
-  
-
   useEffect(() => {
     getTestimonies();
     return () => {};
@@ -209,53 +217,52 @@ function HomePage() {
     {
       UserAvatar: userProfile,
       Text:
-        "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics",
-      Name: "Medhavi",
+        'Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics',
+      Name: 'Medhavi',
     },
     {
       UserAvatar: userProfile,
       Text:
-        "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.",
-      Name: "Sonali",
+        'Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.',
+      Name: 'Sonali',
     },
     {
       UserAvatar: userProfile,
       Text:
-        "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics",
-      Name: "Medhavi",
+        'Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics',
+      Name: 'Medhavi',
     },
     {
       UserAvatar: userProfile,
       Text:
-        "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.",
-      Name: "Sonali",
+        'Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.',
+      Name: 'Sonali',
     },
     {
       UserAvatar: userProfile,
       Text:
-        "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics",
-      Name: "Medhavi",
+        'Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics',
+      Name: 'Medhavi',
     },
     {
       UserAvatar: userProfile,
       Text:
-        "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.",
-      Name: "Sonali",
+        'Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.',
+      Name: 'Sonali',
     },
     {
       UserAvatar: userProfile,
       Text:
-        "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics",
-      Name: "Medhavi",
+        'Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics',
+      Name: 'Medhavi',
     },
     {
       UserAvatar: userProfile,
       Text:
-        "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.",
-      Name: "Sonali",
+        'Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.',
+      Name: 'Sonali',
     },
   ];
-  
 
   const vel = 20;
 
@@ -267,14 +274,14 @@ function HomePage() {
 
         <div className="section_1">
           <Tilt trackOnWindow={true} perspective={500}>
-            <h1 className="welcome_text">Hello {userName.split(" ")[0]}</h1>
+            <h1 className="welcome_text">Hello {userName.split(' ')[0]}</h1>
           </Tilt>
           <h4
             style={{
-              textAlign: "center",
-              marginLeft: "20%",
-              marginRight: "20%",
-              color: "#e6e6e6",
+              textAlign: 'center',
+              marginLeft: '20%',
+              marginRight: '20%',
+              color: '#e6e6e6',
             }}
           >
             Welcome to the only guide to hack IIITD. The playbook provides you
@@ -295,12 +302,12 @@ function HomePage() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{
-              background: "linear-gradient(#FFAFBC, #FFC2A1)",
-              color: "#fff",
+              background: 'linear-gradient(#FFAFBC, #FFC2A1)',
+              color: '#fff',
             }}
-            contentArrowStyle={{ borderRight: "7px solid  #FFAFBC" }}
-            animate={"false"}
-            iconStyle={{ background: "#FFAFBC", color: "#fff" }}
+            contentArrowStyle={{ borderRight: '7px solid  #FFAFBC' }}
+            animate={'false'}
+            iconStyle={{ background: '#FFAFBC', color: '#fff' }}
           >
             <div className="containerBox">
               <div className="containerBox_content">
@@ -324,11 +331,11 @@ function HomePage() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{
-              background: "linear-gradient(#FFC2A1, #FBD69A )",
-              color: "#fff",
+              background: 'linear-gradient(#FFC2A1, #FBD69A )',
+              color: '#fff',
             }}
-            contentArrowStyle={{ borderRight: "7px solid  #FFC2A1" }}
-            iconStyle={{ background: "#FFC2A1", color: "#fff" }}
+            contentArrowStyle={{ borderRight: '7px solid  #FFC2A1' }}
+            iconStyle={{ background: '#FFC2A1', color: '#fff' }}
           >
             <Clouds />
             <div className="containerBox">
@@ -342,11 +349,11 @@ function HomePage() {
                   <li>Hackathons</li>
                   <li>Network with people outside college</li>
                   <li>
-                    Network with people within college (Relationships {">"}{" "}
+                    Network with people within college (Relationships {'>'}{' '}
                     Networking)
                   </li>
                   <li>
-                    Earn {">"} Travel {">"} Repeat (as much as you can)
+                    Earn {'>'} Travel {'>'} Repeat (as much as you can)
                   </li>
                   <li>Learn how to google</li>
                 </ul>
@@ -358,11 +365,11 @@ function HomePage() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{
-              background: "linear-gradient(#FBD69A , #034C90)",
-              color: "#fff",
+              background: 'linear-gradient(#FBD69A , #034C90)',
+              color: '#fff',
             }}
-            contentArrowStyle={{ borderRight: "7px solid  #FBD69A" }}
-            iconStyle={{ background: "#FBD69A", color: "#fff" }}
+            contentArrowStyle={{ borderRight: '7px solid  #FBD69A' }}
+            iconStyle={{ background: '#FBD69A', color: '#fff' }}
           >
             <div className="containerBox">
               <div className="containerBox_content">
@@ -385,11 +392,11 @@ function HomePage() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{
-              background: "linear-gradient(#004e92, #000428)",
-              color: "#fff",
+              background: 'linear-gradient(#004e92, #000428)',
+              color: '#fff',
             }}
-            contentArrowStyle={{ borderRight: "7px solid  #004e92" }}
-            iconStyle={{ background: "#004e92", color: " #000428" }}
+            contentArrowStyle={{ borderRight: '7px solid  #004e92' }}
+            iconStyle={{ background: '#004e92', color: ' #000428' }}
           >
             <div className="containerBox">
               <div className="containerBox_content">
@@ -410,11 +417,11 @@ function HomePage() {
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
             contentStyle={{
-              background: "linear-gradient(#000428, #00010B)",
-              color: "#fff",
+              background: 'linear-gradient(#000428, #00010B)',
+              color: '#fff',
             }}
-            contentArrowStyle={{ borderRight: "7px solid  #000428" }}
-            iconStyle={{ background: "#000428", color: "#fff" }}
+            contentArrowStyle={{ borderRight: '7px solid  #000428' }}
+            iconStyle={{ background: '#000428', color: '#fff' }}
           >
             <div id="stars_container">
               <Stars />
