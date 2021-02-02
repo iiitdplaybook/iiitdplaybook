@@ -1,50 +1,59 @@
-import React, { useState } from "react";
-import fire from "../../fire";
+import React, { useState } from 'react';
+import fire from '../../fire';
 
 export default function ReactFirebaseFileUpload() {
-  const [image, setImage] = useState(null);
-  const [url, setUrl] = useState("");
+  const [files, setFiles] = useState([]);
+  const [url, setUrl] = useState('');
   const [progress, setProgress] = useState(0);
 
   const storage = fire.storage();
 
   const handleChange = (e) => {
-    if (e.target.files[0]) {
-      setImage(e.target.files[0]);
+    // For uploading multiple images at once. Reference: https://bit.ly/3cxgkVP
+    for (let i = 0; i < e.target.files.length; i++) {
+      const newFile = e.target.files[i];
+      newFile['id'] = Math.random(); // id property for each image
+      setFiles((prevState) => [...prevState, newFile]);
     }
   };
 
-  const handleUpload = () => {
-    const uploadTask = storage
-      .ref(`ContributionImages/${image.name}`)
-      .put(image);
-    uploadTask.on(
-      "state_changed",
-      (snapshot) => {
-        const progress = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        );
-        setProgress(progress);
-      },
-      (error) => {},
-      () => {
-        storage
-          .ref("ContributionImages")
-          .child(image.name)
-          .getDownloadURL()
-          .then((url) => {
-            setUrl(url);
-          });
-        setProgress(0);
-      }
-    );
+  const handleUpload = (e) => {
+    e.preventDefault(); // prevent page refreshing
+    const promises = [];
+    files.forEach((file) => {
+      const uploadTask = storage
+        .ref()
+        .child(`ContributionImages/${file.name}`)
+        .put(file);
+      promises.push(uploadTask);
+      uploadTask.on(
+        'state_changed',
+        (snapshot) => {
+          const progress =
+            Math.round(snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setProgress(progress);
+        },
+        (error) => {
+          console.log(error.code);
+        },
+        async () => {
+          const downloadURL = await uploadTask.snapshot.ref.getDownloadURL();
+          // do something with the url
+          setUrl(downloadURL);
+          setProgress(0);
+        }
+      );
+    });
+    Promise.all(promises)
+      .then(() => alert('All files uploaded'))
+      .catch((err) => console.log(err.code));
   };
 
   return (
     <div>
-      <progress value={progress} max="100" />
+      <progress value={progress} max='100' />
       <br />
-      <input type="file" onChange={handleChange} />
+      <input type='file' multiple onChange={handleChange} />
       <button onClick={handleUpload}>Upload</button>
     </div>
   );
