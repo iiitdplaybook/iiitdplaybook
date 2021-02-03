@@ -5,8 +5,7 @@ import Marquee from "react-marquee-slider";
 import styled from "styled-components";
 import times from "lodash/times";
 import "./Testimonials.css";
-
-import FullWidth from "./FullWidth";
+import FullWidth from "./../FullWidth";
 // Firebase
 import firebase from "firebase";
 
@@ -28,7 +27,7 @@ const Review = styled.div`
   background: #fff;
   border-radius: 4px;
   min-height: 35vh;
-  border-color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
+  border-color: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%);
   box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
   overflow: hidden;
 `;
@@ -72,7 +71,6 @@ const Name = styled.div`
   }
 `;
 
-
 // const portraits = [
 //   "https://randomuser.me/api/portraits/women/68.jpg",
 //   "https://randomuser.me/api/portraits/men/75.jpg",
@@ -81,15 +79,21 @@ const Name = styled.div`
 //   "https://randomuser.me/api/portraits/men/26.jpg",
 // ];
 
-
-const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndPerformance }) => {
+const Reviews = ({
+  portraits,
+  vel,
+  scaleFactor,
+  size,
+  onStartPerformance,
+  onEndPerformance,
+}) => {
   const [key, setKey] = useState();
 
   useEffect(() => {
     setKey();
   }, [size, setKey]);
 
-  let scale = 0.5*scaleFactor;
+  let scale = 0.5 * scaleFactor;
 
   if (size && size.width > 800) {
     scale = 0.65;
@@ -111,19 +115,18 @@ const Reviews = ({ portraits, vel, scaleFactor, size, onStartPerformance, onEndP
           minScale={0.7}
           onInit={onStartPerformance}
           onFinish={onEndPerformance}
-          
         >
           {times(portraits.length, String).map((id) => (
             // testimonies_data[id].isApproved?
             <Box key={`marquee-example-review-${id}`} scale={scale}>
               <Review scale={scale}>
                 <div id="containerHeader">
-                <Avatar scale={scale}>
-                  <img src={portraits[id].UserAvatar} alt="" />
-                </Avatar>
-                <Name scale={scale}>
-                  <p>{portraits[id].Name}</p>
-                </Name>
+                  <Avatar scale={scale}>
+                    <img src={portraits[id].UserAvatar} alt="" />
+                  </Avatar>
+                  <Name scale={scale}>
+                    <p>{portraits[id].Name}</p>
+                  </Name>
                 </div>
                 <Content scale={scale}>
                   <p>{portraits[id].Text}</p>

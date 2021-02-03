@@ -1,9 +1,9 @@
-// import React from "react";
-import addItem from "../../Assets/SVG_for_cards/addItem.svg";
 import ResourceCards from "./resourceCards"
 import ResourceCards_Mix from "./resourceCards2"
 import ResourceCards_Small from "./resourceCards3"
 import ExploreCards from "../ExploreCards/ExploreCards"
+
+const addItem = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/SVG_for_cards/addItem.svg";
 
 function items(){
 
@@ -366,9 +366,6 @@ function items(){
         "pathLink":"https://amzn.to/39F3mnp",
     }];
 
-    // const allCards1 = networkingCards.concat(codingCards);
-    
-
     const addCard = [{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
@@ -378,14 +375,6 @@ function items(){
         "pathLink":"https://forms.gle/VmLxhSCpmdo1Fjy59",
     }];
 
-    // for (let index = 0; index < allCards.length; index++) {
-    //     itemslist["allCards"].push(
-    //         ResourceCards(allCards[index])
-    //     );
-    // }
-    // itemslist["allCards"].push(
-    //     ResourceCards(addCard[0])
-    // );
     for (let index=0; index<chromeCards_pers.length;index++){
         itemslist["chromeCards_pers"].push(
             ResourceCards_Small(chromeCards_pers[index])
@@ -409,14 +398,11 @@ function items(){
         );
        
     }
-    // itemslist["codingCards_YT"].push(
-    //     ExploreCards(addCard[0])
-    // );
+
     for (let index=0; index<codingCards.length;index++){
         itemslist["codingCards"].push(
             ResourceCards_Small(codingCards[index])
         );
-       
     }
  
     for (let index=0; index<networkingCards.length;index++){
@@ -424,18 +410,14 @@ function items(){
             ResourceCards(networkingCards[index])
         );
     }
-    // itemslist["networkingCards"].push(
-    //     ResourceCards_Small(addCard[0])
-    // );
+
     for (let index=0; index<designCards.length;index++){
         itemslist["designCards"].push(
             ResourceCards(designCards[index])
         );
         
     }
-    // itemslist["designCards"].push(
-    //     ResourceCards(addCard[0])
-    // );
+
     for (let index=0; index<otherCards.length;index++){
         itemslist["otherCards"].push(
             ResourceCards(otherCards[index])

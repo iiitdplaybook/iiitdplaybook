@@ -1,9 +1,8 @@
 import React from 'react';
 import {Card, CardActionArea, CardActions, CardContent, Button, Typography, CardMedia} from '@material-ui/core';
-import { Link } from 'react-router-dom';
-
 import { makeStyles } from '@material-ui/core/styles';
-import image_svg from "../../Assets/SVG_for_cards/teamwork.svg";
+
+const image_svg = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/SVG_for_cards/teamwork.svg";
 
 function SuppliesCards(supplyCardInfo){
     const cardHeight = 280
@@ -45,10 +44,8 @@ function SuppliesCards(supplyCardInfo){
             maxWidth:cardWidth,
             minWidth:cardWidth,
             maxHeight:cardHeight,
-            // minHeight:cardHeight,
             background:`linear-gradient(45deg, ${gradientColor_1}, ${gradientColor_2})`,
             borderRadius:10,
-            // marginBottom: "10%",
             
         },
         actionArea:{
@@ -67,7 +64,6 @@ function SuppliesCards(supplyCardInfo){
             minWidth:cardWidth/3,
             maxWidth:cardWidth/3,
             minHeight: cardHeight/3,
-            // maxHeight:100,
             borderRadius: '10px',
             margin: '5%',
             
@@ -121,79 +117,30 @@ function SuppliesCards(supplyCardInfo){
                         {title[index]}
                     </Typography>
                 </a>
-                {/* <Typography className={classes.info} color="textSecondary">
-                    {description[index]}
-                </Typography> */}
             </div>
         )
     }
 
     return(
-        
-            <Card className={classes.root}>
-                <div className={classes.cardContainer}>
-                    <a href={pathLink} target="_blank" style={{margin: '0%'}}>
-                    {/* <Link className={classes.link} href={pathLink} > */}
-                        <CardActionArea className={classes.actionArea}>
-                            <Typography className={classes.channelName} style={{whiteSpace: 'pre-line'}}>
-                                {channelName}
-                            </Typography>
-                            <CardMedia
-                                className={classes.media}
-                                image={image}
-                                title={channelName}
-                            />
-                        </CardActionArea>
-                    </a>
-                    <CardContent className={classes.contentContainer}>
-                        {playList}
-                        {/* <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
-                            {title}
+        <Card className={classes.root}>
+            <div className={classes.cardContainer}>
+                <a href={pathLink} target="_blank" style={{margin: '0%'}}>
+                    <CardActionArea className={classes.actionArea}>
+                        <Typography className={classes.channelName} style={{whiteSpace: 'pre-line'}}>
+                            {channelName}
                         </Typography>
-                        <Typography className={classes.info} color="textSecondary">
-                            {description}
-                        </Typography>
-
-                        <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
-                            {title}
-                        </Typography>
-                        <Typography className={classes.info} color="textSecondary">
-                            {description}
-                        </Typography>
-                        <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
-                            {title}
-                        </Typography>
-                        <Typography className={classes.info} color="textSecondary">
-                            {description}
-                        </Typography>
-                        <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
-                            {title}
-                        </Typography>
-                        <Typography className={classes.info} color="textSecondary">
-                            {description}
-                        </Typography>
-                        <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
-                            {title}
-                        </Typography>
-                        <Typography className={classes.info} color="textSecondary">
-                            {description}
-                        </Typography>
-                        <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
-                            {title}
-                        </Typography>
-                        <Typography className={classes.info} color="textSecondary">
-                            {description}
-                        </Typography>
-                        <Typography className={classes.title} style={{whiteSpace: 'pre-line'}}>
-                            {title}
-                        </Typography>
-                        <Typography className={classes.info} color="textSecondary">
-                            {description}
-                        </Typography> */}
-                    </CardContent>
-                    </div>
-            </Card>
-       
+                        <CardMedia
+                            className={classes.media}
+                            image={image}
+                            title={channelName}
+                        />
+                    </CardActionArea>
+                </a>
+                <CardContent className={classes.contentContainer}>
+                    {playList}
+                </CardContent>
+                </div>
+        </Card>
     );
 }
 
