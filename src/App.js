@@ -15,7 +15,7 @@ import LoadingScreen from './Components/loading';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { isMobile } from 'react-device-detect';
 import ScrollToTop from './Components/ScrollToTop';
-import Spinner from './Components/Spinner/Spinner';
+import Spinner from './Components/loading';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
