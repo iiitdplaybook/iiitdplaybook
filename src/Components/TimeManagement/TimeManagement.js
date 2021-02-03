@@ -15,12 +15,12 @@ import Typography from "@material-ui/core/Typography";
 import ReactCardFlip from "react-card-flip";
 
 import { useStateValue } from "../../StateProvider";
-import dog from "../../Assets/cardPics/dogFire.png";
-import tear from "../../Assets/cardPics/tearSmile.png";
-import plag from "../../Assets/cardPics/plag.png";
-import dark from "../../Assets/cardPics/darkSide.png";
-
 import TinderCard from "../CardSwipe/CardSwipe";
+
+const dog = 'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/cardPics/dogFire.png';
+const tear = 'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/cardPics/tearSmile.png';
+const plag = 'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/cardPics/plag.png';
+const dark = 'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/cardPics/darkSide.png';
 
 var isFav = false;
 

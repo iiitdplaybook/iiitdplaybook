@@ -11,7 +11,6 @@ import {
 import { Link } from "react-router-dom";
 
 import { makeStyles } from "@material-ui/core/styles";
-import image_svg from "../../Assets/SVG_for_cards/teamwork.svg";
 import "./ExploreCards.css";
 import Tilt from "react-parallax-tilt";
 
@@ -55,7 +54,7 @@ function ExploreCards(exploreCardInfo) {
     title = "No Title";
     n_testimonies = "N.A.";
     reading_time = "N.A.";
-    image = image_svg;
+    image = 'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/TimeManagement.svg';;
     pathLink = "explore";
     opacity = "1";
     guestFilter = false;

@@ -2,8 +2,9 @@
 
 import React from "react";
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
-import blob from '../Assets/blob.json';
-import beat from '../Assets/beat.json';
+
+const blob = 'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/blob.json';
+const beat = 'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/beat.json';
 
 function Loading() {
 

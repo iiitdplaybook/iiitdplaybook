@@ -3,10 +3,11 @@ import React, { useState } from 'react'
 import { useSprings, animated, to as interpolate } from 'react-spring'
 import { useDrag } from 'react-use-gesture'
 import './CardsAnim.css'
-import dog from '../../Assets/cardPics/dogFire.png'
-import tear from '../../Assets/cardPics/tearSmile.png'
-import plag from '../../Assets/cardPics/plag.png'
-import dark from '../../Assets/cardPics/darkSide.png'
+
+const dog = 'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/cardPics/dogFire.png';
+const tear = 'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/cardPics/tearSmile.png';
+const plag = 'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/cardPics/plag.png';
+const dark = 'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/cardPics/darkSide.png';
 
 const cards = [
   tear,

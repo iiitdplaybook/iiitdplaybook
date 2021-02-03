@@ -15,15 +15,17 @@ import ParticleAnim from "./ParticleAnim/ParticleAnim";
 import Clouds from "./Clouds/clouds";
 import Testimonials from "./Testimonies/Testimonials";
 // import imgWelcome from "../Assets/homewallpaper.svg";
-import imgQuestion from "../Assets/PhasesPics/question.svg";
-import imgDefine from "../Assets/PhasesPics/define.svg";
-import imgExplore from "../Assets/PhasesPics/explore2.svg";
-import imgGraduate from "../Assets/PhasesPics/graduate2.svg";
-import imgNostalgia from "../Assets/PhasesPics/nostalgia2.svg";
 import { useState, useEffect } from "react";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+const imgQuestion = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/PhasesPics/question.svg";
+const imgDefine = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/PhasesPics/define.svg";
+const imgExplore = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/PhasesPics/explore2.svg";
+const imgGraduate = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/PhasesPics/graduate2.svg";
+const imgNostalgia = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/PhasesPics/nostalgia2.svg";
+
 
 function HomePage() {
   const [{ user, isSignedIn, userName }] = useStateValue();
