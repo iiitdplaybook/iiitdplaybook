@@ -6,16 +6,17 @@ import fire from "../../fire";
 import { auth, provider } from "../../fire";
 import { Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import yashwin from "../../Assets/yashwin.png";
-import kshitij from "../../Assets/kshitij.jpg";
-import pabitra from "../../Assets/pabitra.jpeg";
-import rahul from "../../Assets/rahul.png";
-import logo from "../../Assets/Logo.png";
 import Testimonials from "../Testimonies/TestimonialsName";
 import FadeIn from "./../FadeIn";
 import { Player, Controls } from "@lottiefiles/react-lottie-player";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+
+const yashwin = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/yashwin.png";
+const kshitij = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/kshitij.jpg";
+const pabitra = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/pabitra.jpeg";
+const rahul = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/rahul.png";
+const logo = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/Logo.png";
 
 function Login() {
   // const contri = [

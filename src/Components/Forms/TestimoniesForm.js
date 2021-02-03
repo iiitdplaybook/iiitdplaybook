@@ -74,9 +74,9 @@ export default function TestimoniesForm() {
     var len = 0;
     firebase.database().ref('Testimonies/' + topic).once("value", function(snapshot) {
       len = snapshot.numChildren()+1;
+      firebase.database().ref('Testimonies/' + topic + "/" + len).set(state);
     })
 
-    firebase.database().ref('Testimonies/' + topic + "/" + len).set(state);
     notify();
     settestimonies("");
   }
