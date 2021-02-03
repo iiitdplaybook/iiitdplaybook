@@ -2,7 +2,8 @@ import React from 'react';
 import {Card, CardActionArea, CardActions, CardContent, Button, Typography, CardMedia} from '@material-ui/core';
 
 import { makeStyles } from '@material-ui/core/styles';
-import image_svg from "../../Assets/SVG_for_cards/teamwork.svg";
+
+const image_svg = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/SVG_for_cards/teamwork.svg";
 
 function SuppliesCards(supplyCardInfo){
     const cardHeight = 280

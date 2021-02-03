@@ -1,5 +1,6 @@
-import addItem from "../../Assets/SVG_for_cards/addItem.svg";
 import SupplyCards from "./SuppliesCards";
+
+const addItem = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/SVG_for_cards/addItem.svg";
 
 function items() {
   const color1 = "#fff";

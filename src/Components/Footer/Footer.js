@@ -2,10 +2,11 @@ import React from "react";
 import "./Footer.css";
 import { Button } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import yashwin from "../../Assets/yashwin.png";
-import kshitij from "../../Assets/kshitij.jpg";
-import pabitra from "../../Assets/pabitra.jpeg";
-import rahul from "../../Assets/rahul.png";
+
+const yashwin = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/yashwin.png";
+const kshitij = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/kshitij.jpg";
+const pabitra = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/pabitra.jpeg";
+const rahul = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/rahul.png";
 
 function Footer() {
   return (

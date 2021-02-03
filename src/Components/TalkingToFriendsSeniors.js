@@ -12,13 +12,6 @@ import Typography from "@material-ui/core/Typography";
 import Box from "@material-ui/core/Box";
 import HorizontalScroll from "react-scroll-horizontal";
 import { Slide, Fade } from "react-slideshow-image";
-import facebook from "../Assets/facebook.jpg";
-import instagram from "../Assets/instagram.jpg";
-import telegram from "../Assets/telegram.png";
-import yashwin from "../Assets/yashwin.png";
-import kshitij from "../Assets/kshitij.jpg";
-import pabitra from "../Assets/pabitra.jpeg";
-import rahul from "../Assets/rahul.png";
 import "react-slideshow-image/dist/styles.css";
 import ShareButton from "react-web-share-button";
 import webShare from "react-web-share-api";
@@ -29,6 +22,14 @@ import { render } from "react-dom";
 import { motion, useAnimation } from "framer-motion";
 import { useScroll } from "react-use-gesture";
 import "./TalkingToFriendsSeniors.css";
+
+const facebook = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/facebook.jpg";
+const instagram = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/instagram.jpg";
+const telegram = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/telegram.png";
+const yashwin = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/yashwin.png";
+const kshitij = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/kshitij.jpg";
+const pabitra = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/pabitra.jpeg";
+const rahul = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/rahul.png";
 
 function TalkingToFriendsSeniors(props) {
   const { children, value, index, ...other } = props;

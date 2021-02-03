@@ -57,17 +57,26 @@ export default function TestimoniesForm() {
 
   function submitForm(event) {
     event.preventDefault();
+    var topic = "";
     if (value == "Phases of College") {
       state.Topic = value + " - " + PoC_Value;
+      topic = value + " - " + PoC_Value;
     } else {
       state.Topic = value;
+      topic = value;
     }
     state.Name = userName;
     state.Text = testimonies;
     state.UserAvatar = firebase.auth().currentUser.photoURL;
     state.timestamp = firebase.firestore.Timestamp.now();
-    const db = firebase.firestore();
-    db.collection("Testimonies").add(state);
+    // const db = firebase.firestore();
+    // db.collection("Testimonies").add(state);
+    var len = 0;
+    firebase.database().ref('Testimonies/' + topic).once("value", function(snapshot) {
+      len = snapshot.numChildren()+1;
+      firebase.database().ref('Testimonies/' + topic + "/" + len).set(state);
+    })
+
     notify();
     settestimonies("");
   }
