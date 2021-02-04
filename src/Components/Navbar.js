@@ -16,9 +16,13 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import { useStateValue } from "../StateProvider";
 import { Link } from "react-router-dom";
+
 // import Sticky from "react-sticky-el";
-import logoWhite from "../Assets/SVG/Asset1.svg";
-import logoColored from "../Assets/SVG/Asset2.svg";
+// import logoWhite from "../Assets/SVG/Asset1.svg";
+// import logoColored from "../Assets/SVG/Asset2.svg";
+
+// import Sticky from "react-sticky-el";
+
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 // Icons
 import Icon from "@material-ui/core/Icon";
@@ -30,6 +34,9 @@ import firebase from "firebase";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useHistory } from "react-router-dom";
+
+const logoWhite = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/SVG/Asset1.svg";
+const logoColored = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/SVG/Asset2.svg";
 
 const useStyles = makeStyles((theme) => ({
   root: {

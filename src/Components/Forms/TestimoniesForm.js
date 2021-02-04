@@ -1,66 +1,68 @@
-import firebase from "firebase";
-import React from "react";
-import Navbar from "../Navbar";
-import { makeStyles } from "@material-ui/core/styles";
-import { useStateValue } from "../../StateProvider";
-import "./TestimoniesForm.css";
+import firebase from 'firebase';
+import React from 'react';
+import { useState } from 'react';
+import Navbar from '../Navbar';
+import { makeStyles } from '@material-ui/core/styles';
+import { useStateValue } from '../../StateProvider';
+import './TestimoniesForm.css';
 // Material UI for Form
-import TextField from "@material-ui/core/TextField";
-import Radio from "@material-ui/core/Radio";
-import RadioGroup from "@material-ui/core/RadioGroup";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
-import FormControl from "@material-ui/core/FormControl";
-import FormLabel from "@material-ui/core/FormLabel";
-import FormHelperText from "@material-ui/core/FormHelperText";
-import InputLabel from "@material-ui/core/InputLabel";
-import MenuItem from "@material-ui/core/MenuItem";
-import Select from "@material-ui/core/Select";
+import TextField from '@material-ui/core/TextField';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import Select from '@material-ui/core/Select';
 
-import Button from "@material-ui/core/Button";
+import Button from '@material-ui/core/Button';
 
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import ImgUpload from "./ImgUpload";
+import { ToastContainer, toast } from 'react-toastify';
+// import { handleUpload } from './ImgUpload';
+import 'react-toastify/dist/ReactToastify.css';
+import ImgUpload from './ImgUpload';
 
 const state = {
   UserAvatar:
-    "https://www.gstatic.com/stadia/gamers/avatars/xxhdpi/avatar_53.png",
-  Name: "Rahul Singh",
-  Text: "",
-  Topic: "",
+    'https://www.gstatic.com/stadia/gamers/avatars/xxhdpi/avatar_53.png',
+  Name: 'Rahul Singh',
+  Text: '',
+  Topic: '',
   isApproved: false,
   timestamp: Date.now(),
 };
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    "& .MuiTextField-root": {
+    '& .MuiTextField-root': {
       margin: theme.spacing(1),
-      width: "25ch",
+      width: '25ch',
     },
-    marginTop: "3%",
-    fontFamily: "Poppins, sans-serif",
+    marginTop: '3%',
+    fontFamily: 'Poppins, sans-serif',
   },
 }));
 
-var storage = firebase.storage();
-var storageRef = storage.ref();
-var imagesRef = storageRef.child("ContributionImages");
-
 export default function TestimoniesForm() {
+  const [files, setFiles] = useState([]);
+  const [url, setUrl] = useState('');
   toast.configure();
   const notify = () =>
-    toast.info("Testimony Submitted \nfor Review", {
+    toast.info('Testimony Submitted \nfor Review', {
       draggablePercent: 30,
     });
   const [{ user, isSignedIn, userName }] = useStateValue();
 
   function submitForm(event) {
     event.preventDefault();
-    var topic = "";
-    if (value == "Phases of College") {
-      state.Topic = value + " - " + PoC_Value;
-      topic = value + " - " + PoC_Value;
+    let topic = '';
+    if (value === 'Phases of College') {
+      state.Topic = value + ' - ' + PoC_Value;
+      topic = value + ' - ' + PoC_Value;
+    } else if (value === 'Images') {
+      handleUpload(files);
     } else {
       state.Topic = value;
       topic = value;
@@ -71,209 +73,246 @@ export default function TestimoniesForm() {
     state.timestamp = firebase.firestore.Timestamp.now();
     // const db = firebase.firestore();
     // db.collection("Testimonies").add(state);
-    var len = 0;
-    firebase.database().ref('Testimonies/' + topic).once("value", function(snapshot) {
-      len = snapshot.numChildren()+1;
-    })
+    let len = 0;
+    firebase
+      .database()
+      .ref('Testimonies/' + topic)
+      .once('value', function (snapshot) {
+        len = snapshot.numChildren() + 1;
+      });
 
-    firebase.database().ref('Testimonies/' + topic + "/" + len).set(state);
+    firebase
+      .database()
+      .ref('Testimonies/' + topic + '/' + len)
+      .set(state);
     notify();
-    settestimonies("");
+    settestimonies('');
   }
 
+  const [progress, setProgress] = useState(0);
+
+  const handleUpload = (files) => {
+    const storage = firebase.storage();
+    const promises = [];
+    files.forEach((file) => {
+      const uploadTask = storage
+        .ref()
+        .child(`ContributionImages/${file.name}`)
+        .put(file);
+      promises.push(uploadTask);
+      uploadTask.on(
+        'state_changed',
+        (snapshot) => {
+          const progress =
+            Math.round(snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          setProgress(progress);
+        },
+        (error) => {
+          console.log(error.code);
+        },
+        async () => {
+          const downloadURL = await uploadTask.snapshot.ref.getDownloadURL();
+          // do something with the url
+          setUrl(downloadURL);
+          setProgress(0);
+        }
+      );
+    });
+  };
+
   function showError() {
-    toast.error("Exceeded Word Limit in Testimonies");
+    toast.error('Exceeded Word Limit in Testimonies');
   }
 
   const classes = useStyles();
 
-  const [value, setValue] = React.useState("General");
+  const [value, setValue] = useState('General');
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
   React.useEffect(() => {
-    if (value === "Clubs") {
+    if (value === 'Clubs') {
       setHint(clubHint);
-    } else if (value === "General") {
+    } else if (value === 'General') {
       setHint(defaultHint);
-    } else if (value === "Phases of College" && PoC_Value === "Baby Steps") {
+    } else if (value === 'Phases of College' && PoC_Value === 'Baby Steps') {
       setHint(babyStepsHint);
-    } else if (value === "Phases of College" && PoC_Value === "Exploring") {
+    } else if (value === 'Phases of College' && PoC_Value === 'Exploring') {
       setHint(exploringHint);
     } else if (
-      value === "Phases of College" &&
-      PoC_Value === "Defining Point"
+      value === 'Phases of College' &&
+      PoC_Value === 'Defining Point'
     ) {
       setHint(definingHint);
-    } else if (value === "Phases of College" && PoC_Value === "Graduating") {
+    } else if (value === 'Phases of College' && PoC_Value === 'Graduating') {
       setHint(graduatingHint);
-    } else if (value === "Phases of College" && PoC_Value === "Nostalgia") {
+    } else if (value === 'Phases of College' && PoC_Value === 'Nostalgia') {
       setHint(nostalgiaHint);
-    } else if (value === "Time Management") {
+    } else if (value === 'Time Management') {
       setHint(timeManagementHint);
-    } else if (value === "Online Semester Tips") {
+    } else if (value === 'Online Semester Tips') {
       setHint(onlineSemHint);
-    } else if (value === "Academics") {
+    } else if (value === 'Academics') {
       setHint(academicsHint);
-    } else if (value === "Competitive Programming") {
+    } else if (value === 'Competitive Programming') {
       setHint(cpHint);
-    } else if (value === "Hackathons") {
+    } else if (value === 'Hackathons') {
       setHint(hackathonsHint);
-    } else if (value === "Research") {
+    } else if (value === 'Research') {
       setHint(researchHint);
-    } else if (value === "Placements") {
+    } else if (value === 'Placements') {
       setHint(placementHint);
-    } else if (value === "Experiences/Stories") {
+    } else if (value === 'Experiences/Stories') {
       setHint(experienceStoryHint);
-    } else if (value === "Images") {
+    } else if (value === 'Images') {
       setHint(imageHint);
     } else {
       setHint(defaultHint);
     }
   });
 
-  const [testimonies, settestimonies] = React.useState("");
+  const [testimonies, settestimonies] = useState('');
   const handleTestieChange = (event) => {
     settestimonies(event.target.value);
   };
 
-  const [PoC_Value, setPoC_Value] = React.useState("");
+  const [PoC_Value, setPoC_Value] = useState('');
   const PoC_ValueChange = (event) => {
     setPoC_Value(event.target.value);
   };
 
-  const [hint, setHint] = React.useState("Share your Insights with others");
-  const [word_count, setword_count] = React.useState(0);
+  const [hint, setHint] = useState('Share your Insights with others');
+  const [word_count, setword_count] = useState(0);
 
   React.useEffect(() => {
     setword_count(testimonies.length);
   }, [testimonies]);
 
-  const defaultHint = "Share your Insights with others";
+  const defaultHint = 'Share your Insights with others';
   const clubHint =
-    "Which club are you a part of? Which club helped you grow as person? In what ways did the club help?";
+    'Which club are you a part of? Which club helped you grow as person? In what ways did the club help?';
   const timeManagementHint =
-    "What are your tried and tested techniques to be more productive? How do you manage time? How do you balance life/fun and deadlines?";
+    'What are your tried and tested techniques to be more productive? How do you manage time? How do you balance life/fun and deadlines?';
   const onlineSemHint =
     "Any tips for the online semester? How are you coping with the online semester? Any stories or feelings that you'd like share?";
   const babyStepsHint =
-    "How was your experience when you first entered college?";
+    'How was your experience when you first entered college?';
   const exploringHint =
-    "How did you start exploring/experimenting/trying out new things?";
+    'How did you start exploring/experimenting/trying out new things?';
   const definingHint =
-    "How did you find your calling/what you wanted to do in life?";
-  const graduatingHint = "How was your experience when you graduated?";
+    'How did you find your calling/what you wanted to do in life?';
+  const graduatingHint = 'How was your experience when you graduated?';
   const nostalgiaHint =
-    "When you look back to your college life after graduating what do you feel most nostalgic about?";
+    'When you look back to your college life after graduating what do you feel most nostalgic about?';
   const academicsHint =
-    "How to get the most out of a course? How to plan well to get the best possible grades? How much GPA is considered good?";
+    'How to get the most out of a course? How to plan well to get the best possible grades? How much GPA is considered good?';
   const cpHint =
-    "How to start? (Good time to start, how to distribute your time, what all to study, how to practice etc.)";
+    'How to start? (Good time to start, how to distribute your time, what all to study, how to practice etc.)';
   const hackathonsHint =
-    "How to start taking part in hackathons? Where to find hackathons? Pros and cons of taking part in a hackathon";
+    'How to start taking part in hackathons? Where to find hackathons? Pros and cons of taking part in a hackathon';
   const researchHint =
     "How to get a research project? How much work does it require? Why should / shouldn't one go for research?";
   const placementHint =
-    "What to keep in mind while preparing? Any interview tips? Any good resources?";
+    'What to keep in mind while preparing? Any interview tips? Any good resources?';
   const experienceStoryHint =
-    "Any crazy or fun experiences and stories that you would like to share? ";
+    'Any crazy or fun experiences and stories that you would like to share? ';
   const imageHint =
-    "Any images from college you would like to share? (or drive link to the images)";
+    'Any images from college you would like to share? (or drive link to the images)';
 
   return (
     <div>
       <Navbar loggedIn={true} colorStatus={true} />
-      <form className={classes.root} noValidate autoComplete="off">
-        <div className="formdiv">
-          <h1 className="formlabel">
+      <form className={classes.root} noValidate autoComplete='off'>
+        <div className='formdiv'>
+          <h1 className='formlabel'>
             For which part would you like to share your testimonies?
           </h1>
-          <FormControl component="fieldset">
-            <FormHelperText className="helperlabel">
+          <FormControl component='fieldset'>
+            <FormHelperText className='helperlabel'>
               Choose one of the following and submit. You can submit the form
               again if you want to contribute for another section
             </FormHelperText>
-            <div className="row">
-              <div className="column">
+            <div className='row'>
+              <div className='column'>
                 <RadioGroup
-                  className="radio"
-                  aria-label="testimonies"
-                  name="testimonies1"
+                  className='radio'
+                  aria-label='testimonies'
+                  name='testimonies1'
                   value={value}
                   onChange={handleChange}
                 >
                   <FormControlLabel
-                    className="radioButtonLeft"
-                    value="General"
+                    className='radioButtonLeft'
+                    value='General'
                     control={<Radio />}
-                    label="General"
+                    label='General'
                   />
                   <FormControlLabel
-                    value="Phases of College"
+                    value='Phases of College'
                     control={<Radio />}
-                    label="Phases of College"
+                    label='Phases of College'
                   />
                   <FormControlLabel
-                    className="radioButtonRight"
-                    value="Clubs"
+                    className='radioButtonRight'
+                    value='Clubs'
                     control={<Radio />}
-                    label="Clubs"
+                    label='Clubs'
                   />
                   <FormControlLabel
-                    value="Time Management"
+                    value='Time Management'
                     control={<Radio />}
-                    label="Time Management"
+                    label='Time Management'
                   />
                   <FormControlLabel
-                    value="Online Semester Tips"
+                    value='Online Semester Tips'
                     control={<Radio />}
-                    label="Online Semester Tips"
+                    label='Online Semester Tips'
                   />
                   <FormControlLabel
-                    value="Academics"
+                    value='Academics'
                     control={<Radio />}
-                    label="Academics"
+                    label='Academics'
                   />
                 </RadioGroup>
               </div>
-              <div className="column">
+              <div className='column'>
                 <RadioGroup
-                  className="radio"
-                  aria-label="testimonies"
-                  name="testimonies1"
+                  className='radio'
+                  aria-label='testimonies'
+                  name='testimonies1'
                   value={value}
                   onChange={handleChange}
                 >
                   <FormControlLabel
-                    value="Competitive Programming"
+                    value='Competitive Programming'
                     control={<Radio />}
-                    label="Competitive Programming"
+                    label='Competitive Programming'
                   />
                   <FormControlLabel
-                    value="Hackathons"
+                    value='Hackathons'
                     control={<Radio />}
-                    label="Hackathons"
+                    label='Hackathons'
                   />
                   <FormControlLabel
-                    value="Research"
+                    value='Research'
                     control={<Radio />}
-                    label="Research"
+                    label='Research'
                   />
                   <FormControlLabel
-                    value="Placements"
+                    value='Placements'
                     control={<Radio />}
-                    label="Placements"
+                    label='Placements'
                   />
                   <FormControlLabel
-                    value="Experiences/Stories"
+                    value='Experiences/Stories'
                     control={<Radio />}
-                    label="Experiences/Stories"
+                    label='Experiences/Stories'
                   />
                   <FormControlLabel
-                    value="Images"
+                    value='Images'
                     control={<Radio />}
-                    label="Images"
+                    label='Images'
                   />
                 </RadioGroup>
               </div>
@@ -284,52 +323,55 @@ export default function TestimoniesForm() {
           <br />
           <TextField
             disabled
-            id="outlined-disabled"
-            label="Name"
+            id='outlined-disabled'
+            label='Name'
             defaultValue={userName}
-            variant="outlined"
-            className="nameLabel"
-            color="secondary"
+            variant='outlined'
+            className='nameLabel'
+            color='secondary'
           />
           <br />
           <br />
-          {value === "Phases of College" ? (
-            <FormControl className="nameLabel" color="secondary">
-              <InputLabel id="demo-simple-select-filled-label">
+          {value === 'Phases of College' ? (
+            <FormControl className='nameLabel' color='secondary'>
+              <InputLabel id='demo-simple-select-filled-label'>
                 Phases of College
               </InputLabel>
               <Select
-                labelId="demo-simple-select-filled-label"
-                id="demo-simple-select-filled"
+                labelId='demo-simple-select-filled-label'
+                id='demo-simple-select-filled'
                 value={PoC_Value}
                 onChange={PoC_ValueChange}
               >
-                <MenuItem value="Baby Steps">Baby Steps</MenuItem>
-                <MenuItem value="Exploring">Exploring</MenuItem>
-                <MenuItem value="Defining Point">Defining Point</MenuItem>
-                <MenuItem value="Graduating">Graduating</MenuItem>
-                <MenuItem value="Nostalgia">Nostalgia</MenuItem>
+                <MenuItem value='Baby Steps'>Baby Steps</MenuItem>
+                <MenuItem value='Exploring'>Exploring</MenuItem>
+                <MenuItem value='Defining Point'>Defining Point</MenuItem>
+                <MenuItem value='Graduating'>Graduating</MenuItem>
+                <MenuItem value='Nostalgia'>Nostalgia</MenuItem>
               </Select>
             </FormControl>
           ) : null}
           <br />
           <br />
-          {value === "Images" ? (
-            <ImgUpload />
+          {value === 'Images' ? (
+            <div class='image_upload'>
+              <progress value={progress} max='100' />
+              <ImgUpload files={files} setFiles={setFiles} />
+            </div>
           ) : (
             <div>
-              <FormLabel label="" className="nameLabel2" color="secondary">
-                {"Write About: " + hint}
+              <FormLabel label='' className='nameLabel2' color='secondary'>
+                {'Write About: ' + hint}
               </FormLabel>
               <br />
               <TextField
-                id="outlined-textarea"
+                id='outlined-textarea'
                 label={`Your Testimony  (${word_count}/400)`}
                 placeholder={defaultHint}
                 multiline
-                variant="outlined"
-                className="testimonials"
-                color="secondary"
+                variant='outlined'
+                className='testimonials'
+                color='secondary'
                 value={testimonies}
                 onChange={handleTestieChange}
               />
@@ -342,13 +384,13 @@ export default function TestimoniesForm() {
           </p>
           <br />
           <Button
-            className="button"
-            size="lg"
-            variant="contained"
-            color="secondary"
+            className='button'
+            size='lg'
+            variant='contained'
+            color='secondary'
             onClick={word_count <= 400 ? submitForm : showError}
           >
-            <span className="span2">submit</span>
+            <span className='span2'>submit</span>
           </Button>
         </div>
       </form>
