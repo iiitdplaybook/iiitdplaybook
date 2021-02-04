@@ -2,39 +2,37 @@ import React, { useState, useEffect } from "react";
 import { useStateValue } from "../StateProvider";
 import "./Nostalgia.css";
 import Stars from "./stars";
-
-import happiness_1 from "../Assets/NostalgiaPics/happiness_1.jpg";
-import happiness_2 from "../Assets/NostalgiaPics/happiness_2.jpg";
-import happiness_3 from "../Assets/NostalgiaPics/happiness_3.jpg";
-import old_acad_lawn from "../Assets/NostalgiaPics/old_acad_lawn_3.PNG";
-import bcr from "../Assets/NostalgiaPics/bcr.PNG";
-import canteen from "../Assets/NostalgiaPics/canteen.PNG";
-import canteen_2 from "../Assets/NostalgiaPics/canteen_2.jpg";
-import epicuria from "../Assets/NostalgiaPics/epicuria.jpg";
-import chai_addaa from "../Assets/NostalgiaPics/chai_addaa.jpg";
-import library from "../Assets/NostalgiaPics/library.jpg";
-import hkv from "../Assets/NostalgiaPics/hkv.jpg";
-import abba_nahi_maanenge from "../Assets/abba_nahi_maanenge.jpg";
-import mai_merko_sab_ata_hai_mai_expert_hu from "../Assets/mai_merko_sab_ata_hai_mai_expert_hu.jpg";
-
 import Testimonials from "./Testimonies/TestimonialsImage";
-
-import prateek from "../Assets/NostalgiaPics/prateek.jpg";
-import jubin from "../Assets/NostalgiaPics/jubin.jpg";
-import image1 from "../Assets/NostalgiaPics/DSC_001.JPG";
-import image2 from "../Assets/NostalgiaPics/DSC_002.JPG";
-import image3 from "../Assets/NostalgiaPics/DSC_003.JPG";
-import image4 from "../Assets/NostalgiaPics/DSC_004.JPG";
-
-import glow1 from "../Assets/NostalgiaPics/glow1.mp4";
-import glow2 from "../Assets/NostalgiaPics/glow2.gif";
-import canteen1 from "../Assets/NostalgiaPics/canteen.PNG";
-import canteen2 from "../Assets/NostalgiaPics/canteen_2.jpg";
-import imgInduction from "../Assets/NostalgiaPics/induction.PNG";
 import Navbar from "./Navbar";
-
 import ScrollAnimation from "react-animate-on-scroll";
 import Fade from "react-reveal/Fade";
+
+const happiness_1 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/happiness_1.jpg";
+const happiness_2 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/happiness_2.jpg";
+const happiness_3 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/happiness_3.jpg";
+const old_acad_lawn = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/old_acad_lawn_3.PNG";
+const bcr = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/bcr.PNG";
+const canteen = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/canteen.PNG";
+const canteen_2 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/canteen_2.jpg";
+const epicuria = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/epicuria.jpg";
+const chai_addaa = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/chai_addaa.jpg";
+const library = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/library.jpg";
+const hkv = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/hkv.jpg";
+const abba_nahi_maanenge = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/abba_nahi_maanenge.jpg";
+const mai_merko_sab_ata_hai_mai_expert_hu = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/mai_merko_sab_ata_hai_mai_expert_hu.jpg";
+
+const prateek = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/prateek.jpg";
+const jubin = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/jubin.jpg";
+const image1 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/DSC_001.JPG";
+const image2 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/DSC_002.JPG";
+const image3 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/DSC_003.JPG";
+const image4 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/DSC_004.JPG";
+
+const glow1 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/glow1.mp4";
+const glow2 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/glow2.gif";
+const canteen1 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/canteen.PNG";
+const canteen2 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/canteen_2.jpg";
+const imgInduction = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/induction.PNG";
 
 function Nostalgia() {
   const [{ user, isSignedIn, userName }] = useStateValue();
