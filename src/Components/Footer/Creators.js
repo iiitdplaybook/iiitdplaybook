@@ -1,12 +1,27 @@
 import React from 'react';
-import creatorData from './creators.json';
+import firebase from '../../fire';
 
 function Creators() {
+  const [creatorData, setCreatorData] = React.useState([]);
+
+  const fetchCreatorData = async () => {
+    const creatorRef = firebase.database().ref('Creators');
+    const snapshot = await creatorRef.once('value');
+    return Object.values(snapshot.val());
+  };
+
+  React.useEffect(async () => {
+    const data = await fetchCreatorData();
+    setCreatorData(data);
+    return () => {};
+  }, []);
+
   return (
     <>
-      {creatorData.map((creator) => (
+      {creatorData.map((creator, index) => (
         <a
           className='defaultClick'
+          key={index}
           href={creator.defaultLink}
           target='_blank'
           rel='noreferrer'
