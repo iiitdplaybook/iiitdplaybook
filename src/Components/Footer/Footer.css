@@ -8,6 +8,11 @@
   padding-bottom: 1%;
 }
 
+.sectionHeading {
+  margin-top: 25px;
+  font-weight: bolder;
+}
+
 .buymeacoffeelogo {
   height: 20px;
   margin-right: 1%;
@@ -28,6 +33,13 @@
 
 .defaultClick {
   opacity: 1;
+}
+
+.team {
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center;
 }
 
 .creators {
@@ -55,8 +67,6 @@
   padding: 12px;
   padding-right: 40px;
   background: rgba(255, 255, 255, 0.4);
-  /* // background: rgba(255,255,255,.2); */
-  /* // backdrop-filter: blur(100px); */
   border-radius: 65px;
   border-color: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%);
   box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
@@ -72,6 +82,63 @@
 }
 
 .creators .creatorCard p {
+  /* margin: 5px; */
+  color: #382f70;
+  font-family: Poppins, sans-serif;
+  font-size: 0.9em;
+  font-weight: 100;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+
+.team .teamName {
+  font-size: 0.7em !important;
+}
+
+.memberCard {
+  margin: 15px !important;
+}
+
+.memberText {
+  padding: 10px auto;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.team .memberCard a {
+  text-decoration: none;
+  color: #141414;
+  opacity: 0.8;
+  transition: ease-out 0.4s;
+}
+
+.team .memberCard a:hover {
+  transform: scale(1.2);
+}
+
+.team .memberCard {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  padding-right: 40px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 65px;
+  border-color: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%);
+  box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
+}
+
+.team .memberCard img {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  flex-shrink: 0;
+  /* max-width: 100%; */
+}
+
+.team .memberCard p {
   /* margin: 5px; */
   color: #382f70;
   font-family: Poppins, sans-serif;
@@ -105,8 +172,6 @@
   width: 25%;
   margin: 1% !important;
   background-color: #000;
-  /* -webkit-background-clip: text; */
-  /* -webkit-text-fill-color: transparent; */
 }
 
 .button2 .span2 {

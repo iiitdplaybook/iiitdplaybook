@@ -1,0 +1,56 @@
+[
+  {
+    "firstName": "Ananya",
+    "lastName": "Lohani",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/AnanyaLohani.jpg",
+    "defaultLink": "https://www.ananyalohani.me/",
+    "linkedin": "https://www.linkedin.com/in/ananyalohani/",
+    "instagram": "https://www.instagram.com/ananyalohani_/",
+    "team": "Web Dev"
+  },
+  {
+    "firstName": "Sumanyu",
+    "lastName": "Bhatia",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/SumanyuBhatia.jpg",
+    "defaultLink": "https://www.linkedin.com/in/sumanyubhatia",
+    "linkedin": "https://www.linkedin.com/in/sumanyubhatia",
+    "instagram": "https://www.instagram.com/sumanyubhatia",
+    "team": "Web Dev"
+  },
+  {
+    "firstName": "Aflah",
+    "lastName": "Khan",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/AflahKhan.png",
+    "defaultLink": "https://www.linkedin.com/in/mohammad-aflah-khan/",
+    "linkedin": "https://www.linkedin.com/in/mohammad-aflah-khan/",
+    "instagram": "https://www.instagram.com/life_levelling/",
+    "team": "Web Dev"
+  },
+  {
+    "firstName": "Sumanyu",
+    "lastName": "Bhatia",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/SumanyuBhatia.jpg",
+    "defaultLink": "https://www.linkedin.com/in/sumanyubhatia",
+    "linkedin": "https://www.linkedin.com/in/sumanyubhatia",
+    "instagram": "https://www.instagram.com/sumanyubhatia",
+    "team": "Web Dev"
+  },
+  {
+    "firstName": "Sumanyu",
+    "lastName": "Bhatia",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/SumanyuBhatia.jpg",
+    "defaultLink": "https://www.linkedin.com/in/sumanyubhatia",
+    "linkedin": "https://www.linkedin.com/in/sumanyubhatia",
+    "instagram": "https://www.instagram.com/sumanyubhatia",
+    "team": "Web Dev"
+  },
+  {
+    "firstName": "Sumanyu",
+    "lastName": "Bhatia",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/SumanyuBhatia.jpg",
+    "defaultLink": "https://www.linkedin.com/in/sumanyubhatia",
+    "linkedin": "https://www.linkedin.com/in/sumanyubhatia",
+    "instagram": "https://www.instagram.com/sumanyubhatia",
+    "team": "Web Dev"
+  }
+]
