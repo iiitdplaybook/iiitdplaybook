@@ -13,21 +13,17 @@ function Creators() {
         >
           <div className='creatorCard'>
             <img src={creator.image} alt={creator.firstName} />
-            <p>
-              {creator.firstName + ' '}
-              <div className='removeText'>&nbsp;{creator.lastName}</div>{' '}
-            </p>
+            <div className='memberText'>
+              <p>
+                {creator.firstName + ' '}
+                <div className='removeText'>&nbsp;{creator.lastName}</div>{' '}
+              </p>
+              <p className='teamName'>Creator</p>
+            </div>
             {/* eslint-disable-next-line */}
             <a
               className='fa fa-linkedin fa-lg'
               href={creator.linkedin}
-              target='_blank'
-              rel='noreferrer'
-            ></a>
-            {/* eslint-disable-next-line */}
-            <a
-              className='fa fa-instagram fa-lg'
-              href={creator.instagram}
               target='_blank'
               rel='noreferrer'
             ></a>

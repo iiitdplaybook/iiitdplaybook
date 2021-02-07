@@ -43,11 +43,9 @@ function Footer() {
             Buy me a coffee
           </Button>
         </div>
-        <p className='sectionHeading'>Creators</p>
         <div className='creators'>
           <Creators />
         </div>
-        <p className='sectionHeading'>Team</p>
         <div className='team'>
           <TeamMembers />
         </div>

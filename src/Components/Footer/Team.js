@@ -21,18 +21,12 @@ function TeamMembers() {
                   <div className='removeText'>
                     &nbsp;{memberData[id].lastName}
                   </div>{' '}
-                  <br />
                 </p>
                 <p className='teamName'>{memberData[id].team}</p>
               </div>
               <a
                 className='fa fa-linkedin fa-lg'
                 href={memberData[id].linkedin}
-                target='_blank'
-              ></a>
-              <a
-                className='fa fa-instagram fa-lg'
-                href={memberData[id].instagram}
                 target='_blank'
               ></a>
             </div>
