@@ -1,0 +1,34 @@
+[
+  {
+    "firstName": "Kshitij",
+    "lastName": "Agrawal",
+    "image": "",
+    "defaultLink": "https://www.instagram.com/okkshitij/",
+    "linkedin": "https://www.linkedin.com/in/kshitij16/",
+    "instagram": "https://www.instagram.com/okkshitij/"
+  },
+  {
+    "firstName": "Pabitra",
+    "lastName": "Bansal",
+    "image": "",
+    "defaultLink": "https://www.instagram.com/pabitrabansal/",
+    "linkedin": "https://www.linkedin.com/in/pabitra-bansal-06039616a/",
+    "instagram": "https://www.instagram.com/pabitrabansal/"
+  },
+  {
+    "firstName": "Rahul",
+    "lastName": "Singh",
+    "image": "",
+    "defaultLink": "https://www.instagram.com/am.i.a.normie.now/",
+    "linkedin": "https://www.linkedin.com/in/rahul-singh-7aa84697/",
+    "instagram": "https://www.instagram.com/am.i.a.normie.now/"
+  },
+  {
+    "firstName": "Yashwin",
+    "lastName": "Agrawal",
+    "image": "",
+    "defaultLink": "https://www.instagram.com/yashwin_1/",
+    "linkedin": "https://www.linkedin.com/in/yashwin-agrawal-6b28bb176/",
+    "instagram": "https://www.instagram.com/yashwin_1/"
+  }
+]
