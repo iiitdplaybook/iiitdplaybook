@@ -15,9 +15,11 @@ import ParticleAnim from './ParticleAnim/ParticleAnim';
 import Clouds from './Clouds/clouds';
 import Testimonials from './Testimonies/Testimonials';
 // import imgWelcome from "../Assets/homewallpaper.svg";
+
 import { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 
 const imgQuestion =
   'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/PhasesPics/question.svg';
@@ -169,7 +171,7 @@ function HomePage() {
         }
       });
     });
-
+    
     let nostalgiaRef = firebase
       .database()
       .ref('Testimonies/Phases of College - Nostalgia');
