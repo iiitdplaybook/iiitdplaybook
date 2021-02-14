@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@fullpage/react-fullpage": "^0.1.18",
     "@lottiefiles/react-lottie-player": "^2.2.1",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.11.2",
@@ -52,7 +53,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

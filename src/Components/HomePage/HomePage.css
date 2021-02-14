@@ -1,4 +1,4 @@
-@import "react-vertical-timeline-component/style.min.css";
+@import 'react-vertical-timeline-component/style.min.css';
 body {
   background: white;
 }
@@ -16,7 +16,7 @@ canvas {
   margin-top: 0%;
   z-index: -1;
   position: relative;
-  background-image: url("../Assets/homewallpaper.svg");
+  background-image: url('../../Assets/homewallpaper.svg');
   background-repeat: no-repeat;
   background-size: cover;
 }

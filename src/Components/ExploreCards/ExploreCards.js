@@ -15,7 +15,7 @@ import './ExploreCards.css';
 import Tilt from 'react-parallax-tilt';
 
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import '../../../node_modules/react-toastify/dist/ReactToastify.css';
 
 function ExploreCards(exploreCardInfo) {
   toast.configure();

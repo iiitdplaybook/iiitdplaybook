@@ -1,19 +1,19 @@
 import React from 'react';
 import firebase from 'firebase';
-import { useStateValue } from '../StateProvider';
+import { useStateValue } from '../../StateProvider';
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import './HomePage.css';
-import Navbar from './Navbar';
-import Stars from './stars';
+import Navbar from '../Navbar/Navbar';
+import Stars from '../Stars/stars';
 import Tilt from 'react-parallax-tilt';
-import ParticleAnim from './ParticleAnim/ParticleAnim';
+import ParticleAnim from '../ParticleAnim/ParticleAnim';
 
-import Clouds from './Clouds/clouds';
-import Testimonials from './Testimonies/Testimonials';
+import Clouds from '../Clouds/clouds';
+import Testimonials from '../Testimonies/Testimonials';
 // import imgWelcome from "../Assets/homewallpaper.svg";
 import { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';

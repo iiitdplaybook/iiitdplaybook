@@ -1,16 +1,16 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
-import Marquee from "react-marquee-slider";
-import styled from "styled-components";
-import times from "lodash/times";
+import React, { useEffect, useState } from 'react';
+import Marquee from 'react-marquee-slider';
+import styled from 'styled-components';
+import times from 'lodash/times';
 
-import FullWidth from "./../FullWidth";
+import FullWidth from '../Utils/FullWidth';
 
 const Height = styled.div`
   position: relative;
   width: 100%;
-  height: ${(props) => (props.height ? props.height + "px" : "auto")};
+  height: ${(props) => (props.height ? props.height + 'px' : 'auto')};
 `;
 
 const Box = styled.div`
@@ -100,7 +100,7 @@ const Reviews = ({
             <Box key={`marquee-example-review-${id}`} scale={scale}>
               <Review scale={scale}>
                 <Avatar scale={scale}>
-                  <img src={portraits[id].pic} alt="" />
+                  <img src={portraits[id].pic} alt='' />
                 </Avatar>
                 <Name scale={scale}>
                   <p>{portraits[id].name}</p>

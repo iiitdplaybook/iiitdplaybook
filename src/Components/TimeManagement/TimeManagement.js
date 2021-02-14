@@ -1,10 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
-import Navbar from '../Navbar';
+import Navbar from '../Navbar/Navbar';
 import './TimeManagement.css';
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import itemsList from '../items';
+import itemsList from '../Utils/items';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import PropTypes from 'prop-types';

@@ -9,7 +9,7 @@ import { auth, provider } from '../../fire';
 import { Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Testimonials from '../Testimonies/TestimonialsName';
-import FadeIn from './../FadeIn';
+import FadeIn from './../Utils/FadeIn';
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
