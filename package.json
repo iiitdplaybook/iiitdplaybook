@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ap.cx/react-fullpage": "^0.2.0",
     "@fullpage/react-fullpage": "^0.1.18",
     "@lottiefiles/react-lottie-player": "^2.2.1",
     "@material-ui/core": "^4.11.0",
@@ -10,6 +11,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/react": "^17.0.2",
     "dotenv": "^8.2.0",
     "firebase": "^8.1.1",
     "framer-motion": "^2.9.5",

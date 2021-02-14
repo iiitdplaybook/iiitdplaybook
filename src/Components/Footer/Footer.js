@@ -7,7 +7,7 @@ import TeamMembers from './Team';
 
 function Footer() {
   return (
-    <div id='bg'>
+    <div id='footer'>
       <div className='upper'>
         {localStorage.getItem('isSignedIn') ? (
           <>
