@@ -88,6 +88,10 @@ export default function AutoPlay({ portraits }) {
     autoplaySpeed: 2000,
     cssEase: 'ease-in-out',
     pauseOnHover: true,
+    arrows: window.innerWidth > 600 ? true : false,
+    centerMode: true,
+    centerPadding: '70px',
+    adaptiveHeight: true,
   };
 
   const scale = 0.5;

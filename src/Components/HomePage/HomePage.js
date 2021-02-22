@@ -228,15 +228,13 @@ function HomePage() {
   //   },
   // ];
 
-  const vel = 20;
-
   return (
     <>
       <Navbar loggedIn={true} colorStatus={false} stickyCond={true} />
       <ReactFullpage
-        scrollingSpeed={700}
-        scrollBar={true}
-        navigation={true}
+        fitToSection={false}
+        scrollingSpeed={1000}
+        navigation={window.innerWidth > 600 ? true : false}
         navigationPosition='left'
         navigationTooltips={[
           'Welcome',
@@ -248,11 +246,9 @@ function HomePage() {
           'Nostalgia',
         ]}
         bigSectionsDestination='top'
-        fixedElements='#footer'
-        normalScrollElements='#footer'
-        fitToSection='false'
-        recordHistory='false'
-        fadingEffect='true'
+        recordHistory={false}
+        touchSensitivity={10}
+        fadingEffect={true}
         render={({ state, fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper>
@@ -286,108 +282,122 @@ function HomePage() {
               </div>
               {/* BABY STEPS */}
               <div className='section baby-steps'>
-                <img
-                  className='section-image'
-                  src={babyStepsImg}
-                  alt='Baby Steps'
-                />
-                <div className='section-container'>
-                  <h1 className='section-title'>Baby Steps</h1>
-                  <p className='section-text'>
-                    You get the most time in your first year, to do literally
-                    ANYTHING!
-                  </p>
+                <div className='section-wrapper'>
+                  <img
+                    className='section-image'
+                    src={babyStepsImg}
+                    alt='Baby Steps'
+                  />
+                  <div className='section-container'>
+                    <h1 className='section-title'>Baby Steps</h1>
+                    <p className='section-text'>
+                      You get the most time in your first year, to do literally
+                      ANYTHING!
+                    </p>
+                  </div>
+                  <Testimonials portraits={portraits} />
                 </div>
-                <Testimonials portraits={portraits} />
               </div>
               {/* EXPLORING */}
               <div className='section exploring'>
-                <img
-                  className='section-image'
-                  src={exploringImg}
-                  alt='Baby Steps'
-                />
-                <div className='section-container'>
-                  <h1 className='section-title'>Exploring</h1>
-                  <p className='section-text'>
-                    <ul>
-                      <li>
-                        Consume content (Podcasts, youtube videos, read books,
-                        follow people)
-                      </li>
-                      <li>Hackathons</li>
-                      <li>Network with people outside college</li>
-                      <li>
-                        Network with people within college (Relationships {'>'}{' '}
-                        Networking)
-                      </li>
-                      <li>
-                        Earn {'>'} Travel {'>'} Repeat (as much as you can)
-                      </li>
-                      <li>Learn how to google</li>
-                    </ul>
-                  </p>
+                <div className='section-wrapper'>
+                  <img
+                    className='section-image'
+                    src={exploringImg}
+                    alt='Exploring'
+                  />
+                  <div className='section-container'>
+                    <h1 className='section-title'>Exploring</h1>
+                    <p className='section-text'>
+                      <ul>
+                        <li>
+                          Consume content (Podcasts, youtube videos, read books,
+                          follow people)
+                        </li>
+                        <li>Hackathons</li>
+                        <li>Network with people outside college</li>
+                        <li>
+                          Network with people within college (Relationships{' '}
+                          {'>'} Networking)
+                        </li>
+                        <li>
+                          Earn {'>'} Travel {'>'} Repeat (as much as you can)
+                        </li>
+                        <li>Learn how to google</li>
+                      </ul>
+                    </p>
+                  </div>
+                  <Testimonials portraits={exploring} />
                 </div>
-                <Testimonials portraits={exploring} />
               </div>
               {/* DEFINING POINT */}
               <div className='section defining-point'>
-                <img
-                  className='section-image'
-                  src={definingImg}
-                  alt='Baby Steps'
-                />
-                <div className='section-container'>
-                  <h1 className='section-title'>Defining Point</h1>
-                  <p className='section-text'>
-                    Finding your calling <br />
-                    <ul>
-                      <li>Live in the present</li>
-                      <li>Do not follow someone else’s dream</li>
-                      <li>Don’t confuse a job with a purpose</li>
-                      <li>Say yes to the things that intrigue you.</li>
-                    </ul>
-                  </p>
+                <div className='section-wrapper'>
+                  <img
+                    className='section-image'
+                    src={definingImg}
+                    alt='Defining Point'
+                  />
+                  <div className='section-container'>
+                    <h1 className='section-title'>Defining Point</h1>
+                    <p className='section-text'>
+                      <ul>
+                        <li>Finding your calling</li>
+                        <li>Live in the present</li>
+                        <li>Do not follow someone else’s dream</li>
+                        <li>Don’t confuse a job with a purpose</li>
+                        <li>Say yes to the things that intrigue you.</li>
+                      </ul>
+                    </p>
+                  </div>
+                  <Testimonials portraits={definingPoint} />
                 </div>
-                <Testimonials portraits={definingPoint} />
               </div>
               {/* GRADUATION */}
               <div className='section graduation'>
-                <img
-                  className='section-image'
-                  src={graduationImg}
-                  alt='Baby Steps'
-                />
-                <div className='section-container'>
-                  <h1 className='section-title'>Graduation</h1>
-                  <p className='section-text'>
-                    Enjoying the last moments <br />
-                    <ul>
-                      <li>Your Degree Means Little; Experience Trounces All</li>
-                      <li>Invest In Evergreen Assets</li>
-                      <li>Remember, Your First Job Isn’t Your Last</li>
-                      <li>Be True To You</li>
-                    </ul>
-                  </p>
+                <div className='section-wrapper'>
+                  <img
+                    className='section-image'
+                    src={graduationImg}
+                    alt='Graduation'
+                  />
+                  <div className='section-container'>
+                    <h1 className='section-title'>Graduation</h1>
+                    <p className='section-text'>
+                      <ul>
+                        <li>Enjoying the last moments</li>
+                        <li>
+                          Your Degree Means Little; Experience Trounces All
+                        </li>
+                        <li>Invest In Evergreen Assets</li>
+                        <li>Remember, Your First Job Isn’t Your Last</li>
+                        <li>Be True To You</li>
+                      </ul>
+                    </p>
+                  </div>
+                  <Testimonials portraits={graduating} />
                 </div>
-                <Testimonials portraits={graduating} />
               </div>
               {/* NOSTALGIA */}
               <div className='section nostalgia'>
-                <img
-                  className='section-image'
-                  src={nostalgiaImg}
-                  alt='Baby Steps'
-                />
-                <div className='section-container'>
-                  <h1 className='section-title'>Nostalgia</h1>
-                  <p className='section-text'>
-                    Let's take you down the memory lane
-                  </p>
+                <div className='section-wrapper'>
+                  <img
+                    className='section-image'
+                    src={nostalgiaImg}
+                    alt='Nostalgia'
+                  />
+                  <div className='section-container'>
+                    <h1 className='section-title'>Nostalgia</h1>
+                    <p className='section-text'>
+                      Let's take you down the memory lane
+                    </p>
+                  </div>
+                  <Testimonials portraits={nostalgia} />
                 </div>
-                <Testimonials portraits={nostalgia} />
               </div>
-              {/* <Footer /> */}
+              <div className='section fp-auto-height'>
+                <Footer />
+              </div>
             </ReactFullpage.Wrapper>
           );
         }}
