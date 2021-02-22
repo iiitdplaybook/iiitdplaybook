@@ -16,6 +16,7 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import ParticleAnim from '../ParticleAnim/ParticleAnim';
 import Tilt from 'react-parallax-tilt';
 import Footer from '../Footer/Footer';
+import PhasesOfCollege from './PhasesOfCollege';
 
 const babyStepsImg =
   'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/homepage_illustrations/baby_steps.png';
@@ -278,7 +279,7 @@ function HomePage() {
                 {/* <img className="imgHero" src={imgWelcome}/>                                 */}
               </div>
               <div className='section phases-of-college'>
-                <h1 className='textCard'>Phases of College Life</h1>
+                <PhasesOfCollege />
               </div>
               {/* BABY STEPS */}
               <div className='section baby-steps'>

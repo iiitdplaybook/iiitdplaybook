@@ -51,26 +51,6 @@ canvas {
   height: 100%;
 }
 
-.textCard {
-  font-size: 3.5em;
-  align-content: center;
-  text-align: center;
-  margin-top: 5%;
-  margin-bottom: 3%;
-
-  background: -webkit-linear-gradient(
-    -45deg,
-    #ee7752,
-    #e73c7e,
-    #23a6d5,
-    #23d5ab
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 400% 400%;
-  animation: gradient 30s ease infinite;
-}
-
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
   background: #fff !important;
@@ -186,10 +166,6 @@ canvas {
 }
 
 @media only screen and (max-width: 1170px) {
-  .textCard {
-    font-size: 1.8em;
-  }
-
   .welcome_text {
     font-size: 3em;
   }
