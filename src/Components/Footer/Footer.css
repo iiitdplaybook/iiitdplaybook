@@ -46,6 +46,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 50% !important;
 }
 
 .creators .creatorCard a {
@@ -207,12 +208,13 @@
   }
 }
 
-@media only screen and (max-width: 500px) {
-  .creators .creatorCard p {
-    display: none;
+@media only screen and (max-width: 600px) {
+  .creators {
+    flex-wrap: wrap;
+    width: 100% !important;
   }
 
-  .creators .creatorCard a {
+  .creators .creatorCard p {
     display: none;
   }
 
@@ -221,7 +223,8 @@
   }
 
   .creators .creatorCard {
-    padding-right: 27px;
+    padding: 12px !important;
+    padding-right: 25px !important;
   }
 
   .button2 .span2 {
@@ -235,5 +238,10 @@
 
   .lower {
     margin-top: 5%;
+  }
+
+  .team .memberCard {
+    padding: 12px !important;
+    padding-right: 25px !important;
   }
 }
