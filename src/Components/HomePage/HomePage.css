@@ -51,9 +51,16 @@ canvas {
   height: 100%;
 }
 
-#fp-nav ul li a span,
-.fp-slidesNav ul li a span {
+#fp-nav ul li a span {
   background: #fff !important;
+}
+
+.fp-viewing-1 #fp-nav ul li a span {
+  background: #23a6d5 !important;
+}
+
+.fp-viewing-1 #fp-nav ul li .fp-tooltip {
+  color: #23a6d5 !important;
 }
 
 .section {

@@ -30,27 +30,41 @@ function PhasesOfCollege() {
     },
   ];
 
+  function randomAngle() {
+    let angle = -15 + Math.random() * 30;
+    return angle + 'deg';
+  }
+
   return (
     <div className='college-phases'>
       <div className='items'>
         {itemList.map((item, index) => {
-          console.log(index);
           if (index === Math.floor(itemList.length / 2))
             return (
               <>
                 <h1 className='textCard'>Phases of College Life</h1>
-                <div className='item'>
+                <div key={index} className='item'>
                   <img
                     className='phases-image'
                     src={item.img}
                     alt={item.title}
+                    style={{
+                      transform: 'rotate(' + randomAngle() + ')',
+                    }}
                   />
                 </div>
               </>
             );
           return (
-            <div className='item'>
-              <img className='phases-image' src={item.img} alt={item.title} />
+            <div key={index} className='item'>
+              <img
+                className='phases-image'
+                src={item.img}
+                alt={item.title}
+                style={{
+                  transform: 'rotate(' + randomAngle() + ')',
+                }}
+              />
             </div>
           );
         })}
