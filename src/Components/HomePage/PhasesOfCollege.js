@@ -11,7 +11,7 @@ function PhasesOfCollege() {
     {
       title: 'dandiya',
       img:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/college_phases/library.jpeg',
+        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/college_phases/dandiya.jpg',
     },
     {
       title: 'holi',
