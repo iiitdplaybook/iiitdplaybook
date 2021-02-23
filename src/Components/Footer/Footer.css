@@ -8,6 +8,28 @@
   padding-bottom: 1%;
 }
 
+#footer-login {
+  background: #fff;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 2%;
+  padding-bottom: 1%;
+}
+
+.supportUsButtons-login {
+  display: none;
+}
+
+.support-us-text-login {
+  display: none;
+}
+
+.lower-login {
+  display: none;
+}
+
 .memberText {
   padding: 10px auto !important;
   margin-left: 10px !important;
@@ -125,7 +147,7 @@
   justify-content: space-around;
   align-items: center;
   padding: 12px;
-  padding-right: 20px;
+  padding-right: 40px !important;
   background: rgba(255, 255, 255, 0.4);
   border-radius: 65px;
   border-color: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%);

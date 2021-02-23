@@ -13,6 +13,7 @@ import FadeIn from './../Utils/FadeIn';
 import { Player, Controls } from '@lottiefiles/react-lottie-player';
 import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom';
+import Footer from '../Footer/Footer';
 
 const logo =
   'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/Logo.png';
@@ -113,19 +114,6 @@ function Login() {
               >
               </Player> */}
         </div>
-      </div>
-
-      <div className='login__nameList'>
-        <FadeIn delay={350} duration={1550}>
-          <div className='login__creators creators'>
-            <Creators />
-          </div>
-        </FadeIn>
-        <FadeIn delay={1250} duration={1550}>
-          <div className='login__team team'>
-            <TeamMembers />
-          </div>
-        </FadeIn>
       </div>
     </div>
   );

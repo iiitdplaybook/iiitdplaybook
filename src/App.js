@@ -148,13 +148,13 @@ function App() {
                       <Suspense fallback={<Spinner />}>
                         <div className='app__body'>
                           <HomePage />
-                          {/* <Footer /> */}
                         </div>
                       </Suspense>
                     </Route>
                     <Route path='/'>
                       <Suspense fallback={<Spinner />}>
                         <Login />
+                        <Footer page='login' />
                       </Suspense>
                     </Route>
                   </Switch>

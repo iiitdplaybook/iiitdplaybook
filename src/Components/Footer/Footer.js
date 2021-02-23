@@ -5,9 +5,9 @@ import { Button } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import TeamMembers from './Team';
 
-function Footer() {
+function Footer({ page }) {
   return (
-    <div id='footer'>
+    <div id={page === 'login' ? 'footer-login' : 'footer'}>
       <div className='upper'>
         {localStorage.getItem('isSignedIn') ? (
           <>
@@ -27,8 +27,18 @@ function Footer() {
         ) : (
           <></>
         )}
-        <p>Support Us</p>
-        <div className='supportUsButtons'>
+        <p
+          className={
+            page === 'login' ? 'support-us-text-login' : 'support-us-text'
+          }
+        >
+          Support Us
+        </p>
+        <div
+          className={
+            page === 'login' ? 'supportUsButtons-login' : 'supportUsButtons'
+          }
+        >
           <Button
             id='supportBtn'
             target='_blank'
@@ -50,7 +60,7 @@ function Footer() {
           <TeamMembers />
         </div>
       </div>
-      <div className='lower'>
+      <div className={page === 'login' ? 'lower-login' : 'lower'}>
         <p>IIITD Student Playbook &copy; 2021</p>
       </div>
     </div>

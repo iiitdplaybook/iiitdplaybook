@@ -21,7 +21,7 @@ function TeamMembers() {
 
   return (
     memberData.length && (
-      <Marquee>
+      <Marquee velocity={20}>
         {times(memberData.length, Number).map((id, index) => (
           <div key={index}>
             <a
