@@ -30,53 +30,6 @@ function PhasesOfCollege() {
     },
   ];
 
-  useEffect(() => {
-    const items = [],
-      point = document.querySelector('.phases-svg').createSVGPoint();
-
-    function getCoordinates(e, svg) {
-      point.x = e.clientX;
-      point.y = e.clientY;
-      return point.matrixTransform(svg.getScreenCTM().inverse());
-    }
-
-    function Item(config) {
-      Object.keys(config).forEach(function (item) {
-        this[item] = config[item];
-      }, this);
-
-      this.el.addEventListener('mousemove', this.mouseMoveHandler.bind(this));
-      this.el.addEventListener('touchmove', this.touchMoveHandler.bind(this));
-    }
-
-    Item.prototype = {
-      update: function update(c) {
-        this.clip.setAttribute('cx', c.x);
-        this.clip.setAttribute('cy', c.y);
-      },
-      mouseMoveHandler: function mouseMoveHandler(e) {
-        this.update(getCoordinates(e, this.svg));
-      },
-      touchMoveHandler: function touchMoveHandler(e) {
-        e.preventDefault();
-        const touch = e.targetTouches[0];
-        if (touch) return this.update(getCoordinates(touch, this.svg));
-      },
-    };
-
-    [].slice
-      .call(document.querySelectorAll('.item'), 0)
-      .forEach(function (item, index) {
-        items.push(
-          new Item({
-            el: item,
-            svg: item.querySelector('.phases-svg'),
-            clip: document.querySelector('#clip-' + index + ' circle'),
-          })
-        );
-      });
-  });
-
   return (
     <div className='college-phases'>
       <div className='items'>
@@ -87,49 +40,17 @@ function PhasesOfCollege() {
               <>
                 <h1 className='textCard'>Phases of College Life</h1>
                 <div className='item'>
-                  <svg
-                    className='phases-svg'
-                    preserveAspectRatio='xMidYMid slice'
-                    viewBox='0 0 300 200'
-                  >
-                    <defs>
-                      <clipPath id={'clip-' + index}>
-                        <circle cx='0' cy='0' r='150px'></circle>
-                      </clipPath>
-                    </defs>
-                    <g clip-path={'url(#clip-' + index + ')'}>
-                      <image
-                        height='100%'
-                        preserveAspectRatio='xMinYMin slice'
-                        width='100%'
-                        xlinkHref={item.img}
-                      ></image>
-                    </g>
-                  </svg>
+                  <img
+                    className='phases-image'
+                    src={item.img}
+                    alt={item.title}
+                  />
                 </div>
               </>
             );
           return (
             <div className='item'>
-              <svg
-                className='phases-svg'
-                preserveAspectRatio='xMidYMid slice'
-                viewBox='0 0 300 200'
-              >
-                <defs>
-                  <clipPath id={'clip-' + index}>
-                    <circle cx='0' cy='0' r='150px'></circle>
-                  </clipPath>
-                </defs>
-                <g clip-path={'url(#clip-' + index + ')'}>
-                  <image
-                    height='100%'
-                    preserveAspectRatio='xMinYMin slice'
-                    width='100%'
-                    xlinkHref={item.img}
-                  ></image>
-                </g>
-              </svg>
+              <img className='phases-image' src={item.img} alt={item.title} />
             </div>
           );
         })}
