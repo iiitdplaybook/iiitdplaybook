@@ -1,112 +1,126 @@
-.MuiFormLabel-root{
-   font-family: Poppins, sans-serif !important;
+.MuiFormLabel-root {
+  font-family: Poppins, sans-serif !important;
 }
 
-.MuiInputBase-input{
-    font-family: Poppins, sans-serif !important;
+.MuiInputBase-input {
+  font-family: Poppins, sans-serif !important;
 }
 
-.MuiFormHelperText-root{
-    font-family: Poppins, sans-serif !important;
+.MuiFormHelperText-root {
+  font-family: Poppins, sans-serif !important;
 }
 
-.MuiTypography-root{
-    font-family: Poppins, sans-serif !important;
+.MuiTypography-root {
+  font-family: Poppins, sans-serif !important;
 }
 
-.formdiv{
-    text-align: center;
-    align-content: center;
-    font-family: Poppins, sans-serif !important;
+.formdiv {
+  text-align: center;
+  align-content: center;
+  font-family: Poppins, sans-serif !important;
 }
-.formlabel{
-    text-align: center;
-    align-content: center;
-}
-
-.radio{
-    text-align: center;
-    align-content: center;
-    margin-top: 7%;
-    font-family: Poppins, sans-serif !important;
-
-}
-.helperlabel{
-    text-align: center !important;
-    align-content: center !important;
-}
-.nameLabel{
-    width: 80% !important
-}
-.nameLabel2{
-    width: 50% !important;
-    
+.formlabel {
+  text-align: center;
+  align-content: center;
 }
 
-
-.testimonials{
-    width: 80% !important;
+.radio {
+  text-align: center;
+  align-content: center;
+  margin-top: 7%;
+  font-family: Poppins, sans-serif !important;
 }
-.button{
-    width: 25%;
-    margin: 3% !important;
-    background: -webkit-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-    animation: gradient 30s ease infinite;
+.helperlabel {
+  text-align: center !important;
+  align-content: center !important;
+}
+.nameLabel {
+  width: 80% !important;
+}
+.nameLabel2 {
+  width: 50% !important;
 }
 
+.testimonials {
+  width: 80% !important;
+}
+.button {
+  width: 25%;
+  margin: 3% !important;
+  background: -webkit-linear-gradient(
+    -45deg,
+    #ee7752,
+    #e73c7e,
+    #23a6d5,
+    #23d5ab
+  );
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+}
 
 .button .span2 {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-  .button .span2:after {
-    content: '\27A4';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -25px;
-    transition: 0.5s;
-  }
-  
-  .button:hover .span2 {
-    padding-right: 25px;
-  }
-  
-  .button:hover .span2:after {
-    opacity: 1;
-    right: 0;
-  }
-
-.radioButtonLeft{
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
 }
-.radioButtonRight{
+
+.button .span2:after {
+  content: '\27A4';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -25px;
+  transition: 0.5s;
+}
+
+.button:hover .span2 {
+  padding-right: 25px;
+}
+
+.button:hover .span2:after {
+  opacity: 1;
+  right: 0;
+}
+
+.radioButtonLeft {
+}
+.radioButtonRight {
+}
+
+.image_upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image_upload > progress {
+  margin: 10px;
+  padding: 10px;
+}
+
+.image-input {
+  margin-left: 60px;
 }
 
 .column {
-    float: left;
-    width: 50%;
-  }
-  
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
+  float: left;
+  width: 50%;
+}
 
-  
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
 @media only screen and (max-width: 500px) {
-    .column{
-        width: 100%;
-    }
+  .column {
+    width: 100%;
+  }
 
-    
-    .MuiFormHelperText-root.helperlabel{
-        margin: 7%;
-    }
-
+  .MuiFormHelperText-root.helperlabel {
+    margin: 7%;
+  }
 }
