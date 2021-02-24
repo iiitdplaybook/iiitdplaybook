@@ -1,51 +1,17 @@
-import React, { useState } from "react";
-import fire from "../../fire";
+import './TestimoniesForm.css';
 
-export default function ReactFirebaseFileUpload() {
-  const [image, setImage] = useState(null);
-  const [url, setUrl] = useState("");
-  const [progress, setProgress] = useState(0);
-
-  const storage = fire.storage();
-
+const RenderImgComponent = ({ files, setFiles }) => {
   const handleChange = (e) => {
-    if (e.target.files[0]) {
-      setImage(e.target.files[0]);
+    // For uploading multiple images at once. Reference: https://bit.ly/3cxgkVP
+    for (let i = 0; i < e.target.files.length; i++) {
+      const newFile = e.target.files[i];
+      setFiles((prevState) => [...prevState, newFile]);
     }
   };
 
-  const handleUpload = () => {
-    const uploadTask = storage
-      .ref(`ContributionImages/${image.name}`)
-      .put(image);
-    uploadTask.on(
-      "state_changed",
-      (snapshot) => {
-        const progress = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        );
-        setProgress(progress);
-      },
-      (error) => {},
-      () => {
-        storage
-          .ref("ContributionImages")
-          .child(image.name)
-          .getDownloadURL()
-          .then((url) => {
-            setUrl(url);
-          });
-        setProgress(0);
-      }
-    );
-  };
-
   return (
-    <div>
-      <progress value={progress} max="100" />
-      <br />
-      <input type="file" onChange={handleChange} />
-      <button onClick={handleUpload}>Upload</button>
-    </div>
+    <input type='file' class='image-input' multiple onChange={handleChange} />
   );
-}
+};
+
+export default RenderImgComponent;
