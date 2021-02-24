@@ -73,7 +73,7 @@ export default function TestimoniesForm() {
     // db.collection("Testimonies").add(state);
     var len = 0;
     firebase.database().ref('Testimonies/' + topic).once("value", function(snapshot) {
-      len = snapshot.numChildren()+1;
+      len = snapshot.numChildren();
       firebase.database().ref('Testimonies/' + topic + "/" + len).set(state);
     })
 
