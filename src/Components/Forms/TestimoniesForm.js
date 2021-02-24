@@ -197,12 +197,13 @@ export default function TestimoniesForm() {
   const onlineSemHint =
     "Any tips for the online semester? How are you coping with the online semester? Any stories or feelings that you'd like share?";
   const babyStepsHint =
-    'How was your experience when you first entered college?';
+    "How was your experience when you first entered college? How did you make friends/connect with people?";
   const exploringHint =
-    'How did you start exploring/experimenting/trying out new things?';
+    "How did you start exploring/experimenting/trying out new things? What was something your discovered or got to know about yourself?";
   const definingHint =
-    'How did you find your calling/what you wanted to do in life?';
-  const graduatingHint = 'How was your experience when you graduated?';
+    "How did you find your calling/what you wanted to do in life? What did you do during this phase? Any tips?";
+  const graduatingHint = 
+     "How was your experience when you graduated? What is something you learned in college? Hindsight thoughts? What is something you missed out on? What are you looking forward to after college?";
   const nostalgiaHint =
     'When you look back to your college life after graduating what do you feel most nostalgic about?';
   const academicsHint =
