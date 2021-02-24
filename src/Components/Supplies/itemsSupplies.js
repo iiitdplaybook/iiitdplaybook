@@ -9,6 +9,8 @@ function items() {
   const itemslist = {
     allCards: [],
     stationaryCards: [],
+    designCards: [],
+    booksCards: [],
     laptopsCards: [],
     techotherCards: [],
     roomCards: [],
@@ -117,6 +119,18 @@ function items() {
     {
       gradientColor_1: color1,
       gradientColor_2: color2,
+      title: "Luxor Black marker",
+      description: "Bought by 124 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/617Cq4Vz4UL._SL1280_.jpg",
+      pathLink: "https://amzn.to/34WbUDi",
+    },
+  ];
+
+  const designCards = [
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
       title: "Dotted notebook (A5 size)",
       description: "Bought by design students",
       image:
@@ -126,11 +140,168 @@ function items() {
     {
       gradientColor_1: color1,
       gradientColor_2: color2,
-      title: "Luxor Black marker",
-      description: "Bought by 124 students",
+      title: "A4 sketchbook",
+      description: "Bought by 35 students",
       image:
-        "https://images-na.ssl-images-amazon.com/images/I/617Cq4Vz4UL._SL1280_.jpg",
-      pathLink: "https://amzn.to/34WbUDi",
+        "https://images-na.ssl-images-amazon.com/images/I/91wM8-%2BC2iL._SL1500_.jpg",
+      pathLink: "https://amzn.to/3omXe7P",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "A3 sketchbook",
+      description: "Bought by 35 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/91gaXd5OW-L._SL1500_.jpg",
+      pathLink: "https://amzn.to/3hRJXBZ",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "T-scale",
+      description: "Bought by 35 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/61wZyVXmxDL._SL1500_.jpg",
+      pathLink: "https://amzn.to/3s9PZmn",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "Drawing board",
+      description: "Bought by 35 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/71OADD0DhFL._SL1500_.jpg",
+      pathLink: "https://amzn.to/38mvkUg",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "Sakura micron pen",
+      description: "Bought by 35 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/71ywzwfNM4L._SL1272_.jpg",
+      pathLink: "https://amzn.to/3hR6oHB",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "Sakura micron pen (pack 8)",
+      description: "Bought by 35 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/91zhq28cjwL._SL1500_.jpg",
+      pathLink: "https://amzn.to/2KZTmLV",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "Copic multipliers",
+      description: "Bought by 35 students",
+      image: "https://images-na.ssl-images-amazon.com/images/I/4183T-j2kWL.jpg",
+      pathLink: "https://amzn.to/2XhLGqJ",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "Uniball Air Micro Pen Combo Set",
+      description: "Bought by 10 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/61kj0R5IbCL._SL1372_.jpg",
+      pathLink:
+        "https://www.amazon.in/Uniball-Micro-Combo-Black-Blue/dp/B07JFDPFZN/ref=sr_1_1?dchild=1&keywords=uniball&qid=1609954637&sr=8-1",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "Uni-ball Eye Ball Point Pen",
+      description: "Bought by 10 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/71QOsM3dP-L._SL1500_.jpg",
+      pathLink:
+        "https://www.amazon.in/Uni-ball-Eye-Ball-Point-Pen/dp/B07H7CHPZ9/ref=sr_1_2?dchild=1&keywords=uniball&qid=1609954637&sr=8-2",
+    },
+  ];
+
+  const booksCards = [
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "The Third Door",
+      description: "Bought by 35 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/41pT1F4h6dL._SX329_BO1,204,203,200_.jpg",
+      pathLink: "https://amzn.to/39cPzTg",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "Ikigai",
+      description: "Bought by 35 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/51T8OXMiB5L._SX356_BO1,204,203,200_.jpg",
+      pathLink: "https://amzn.to/2MHx7e4",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "Rich Dad, Poor Dad",
+      description: "Bought by 300 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/51wOOMQ+F3L._SY344_BO1,204,203,200_.jpg",
+      pathLink: "https://amzn.to/2LaCwK3",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "Feck Perfuction",
+      description: "Bought by 20 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/41qIe0kf-aL._SX373_BO1,204,203,200_.jpg",
+      pathLink: "https://amzn.to/3970UUV",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "4 hour work week",
+      description: "Bought by 100 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/51u1MBMfhmL._SX314_BO1,204,203,200_.jpg",
+      pathLink: "https://amzn.to/38DwB9g",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "Atomic habits",
+      description: "Bought by 50 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/51-nXsSRfZL._SX328_BO1,204,203,200_.jpg",
+      pathLink: "https://amzn.to/3qdW9zV",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "Attitude Is Everything",
+      description: "Bought by 300 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/41F8ATXoMOL._SX317_BO1,204,203,200_.jpg",
+      pathLink: "https://amzn.to/3btTuhs",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "Think like a Monk",
+      description: "Bought by 150 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/41gVhoPaE5L._SX323_BO1,204,203,200_.jpg",
+      pathLink: "https://amzn.to/2Ke6AEm",
+    },
+    {
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      title: "The Alchemist",
+      description: "Bought by 150 students",
+      image:
+        "https://images-na.ssl-images-amazon.com/images/I/410llGwMZGL._SX328_BO1,204,203,200_.jpg",
+      pathLink: "https://amzn.to/2LLYnYt",
     },
   ];
 
@@ -312,11 +483,11 @@ function items() {
     {
       gradientColor_1: color1,
       gradientColor_2: color2,
-      title: "JBL Waterproof Portable Bluetooth Speaker",
-      description: "Bought by 10 students",
+      title: "Kindle",
+      description: "Bought by 15 students",
       image:
-        "https://images-na.ssl-images-amazon.com/images/I/81DRhqE04BL._SL1500_.jpg",
-      pathLink: "https://amzn.to/3qolPe6",
+        "https://images-na.ssl-images-amazon.com/images/I/61DCWZlmnOL._SL1000_.jpg",
+      pathLink: "https://amzn.to/3hOkedA",
     },
     {
       gradientColor_1: color1,
@@ -509,7 +680,9 @@ function items() {
   const allCards1 = allCards0.concat(laptopsCards);
   const allCards2 = allCards1.concat(roomCards);
   const allCards3 = allCards2.concat(stationaryCards);
-  const allCards = allCards3.concat(otherCards);
+  const allCards4 = allCards3.concat(designCards);
+  const allCards5 = allCards4.concat(booksCards);
+  const allCards = allCards5.concat(otherCards);
 
   const addCard = [
     {
@@ -526,26 +699,42 @@ function items() {
     itemslist["allCards"].push(SupplyCards(allCards[index]));
   }
   itemslist["allCards"].push(SupplyCards(addCard[0]));
+
   for (let index = 0; index < stationaryCards.length; index++) {
     itemslist["stationaryCards"].push(SupplyCards(stationaryCards[index]));
   }
   itemslist["stationaryCards"].push(SupplyCards(addCard[0]));
+
+  for (let index = 0; index < designCards.length; index++) {
+    itemslist["designCards"].push(SupplyCards(designCards[index]));
+  }
+  itemslist["designCards"].push(SupplyCards(addCard[0]));
+
+  for (let index = 0; index < booksCards.length; index++) {
+    itemslist["booksCards"].push(SupplyCards(booksCards[index]));
+  }
+  itemslist["booksCards"].push(SupplyCards(addCard[0]));
+
   for (let index = 0; index < laptopsCards.length; index++) {
     itemslist["laptopsCards"].push(SupplyCards(laptopsCards[index]));
   }
   itemslist["laptopsCards"].push(SupplyCards(addCard[0]));
+
   for (let index = 0; index < techotherCards.length; index++) {
     itemslist["techotherCards"].push(SupplyCards(techotherCards[index]));
   }
   itemslist["techotherCards"].push(SupplyCards(addCard[0]));
+
   for (let index = 0; index < roomCards.length; index++) {
     itemslist["roomCards"].push(SupplyCards(roomCards[index]));
   }
   itemslist["roomCards"].push(SupplyCards(addCard[0]));
+
   for (let index = 0; index < otherCards.length; index++) {
     itemslist["otherCards"].push(SupplyCards(otherCards[index]));
   }
   itemslist["otherCards"].push(SupplyCards(addCard[0]));
+
   return itemslist;
 }
 
