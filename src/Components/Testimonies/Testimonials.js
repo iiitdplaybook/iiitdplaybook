@@ -17,7 +17,7 @@ export default function AutoPlay({ portraits }) {
   `;
 
   const Review = styled.div`
-    width: ${(props) => props.scale * 375}px;
+    width: ${(props) => props.scale * 440}px;
     // display: flex;
     padding: ${(props) => props.scale * 25}px;
     background: #fff;
@@ -70,12 +70,12 @@ export default function AutoPlay({ portraits }) {
   const slidesNum =
     window.innerWidth < 600
       ? Math.min(1, portraits.length)
-      : Math.min(5, portraits.length);
+      : Math.min(4, portraits.length);
 
   const slidesScroll =
     window.innerWidth < 600
       ? Math.min(1, portraits.length)
-      : Math.min(5, portraits.length);
+      : Math.min(4, portraits.length);
 
   // var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
