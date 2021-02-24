@@ -83,7 +83,7 @@ function Supplies() {
             clickedButton === 3 ? buttonClass.root : buttonClass.notRoot
           }
         >
-          Laptops
+          Design
         </Button>
         <Button
           onClick={() => changeS(4)}
@@ -92,7 +92,7 @@ function Supplies() {
             clickedButton === 4 ? buttonClass.root : buttonClass.notRoot
           }
         >
-          Tech Accessories
+          Books
         </Button>
         <Button
           onClick={() => changeS(5)}
@@ -101,13 +101,31 @@ function Supplies() {
             clickedButton === 5 ? buttonClass.root : buttonClass.notRoot
           }
         >
-          Room Decor
+          Laptops
         </Button>
         <Button
           onClick={() => changeS(6)}
           variant={clickedButton === 6 ? "contatined" : "outlined"}
           className={
             clickedButton === 6 ? buttonClass.root : buttonClass.notRoot
+          }
+        >
+          Tech Accessories
+        </Button>
+        <Button
+          onClick={() => changeS(7)}
+          variant={clickedButton === 7 ? "contatined" : "outlined"}
+          className={
+            clickedButton === 7 ? buttonClass.root : buttonClass.notRoot
+          }
+        >
+          Room Decor
+        </Button>
+        <Button
+          onClick={() => changeS(8)}
+          variant={clickedButton === 8 ? "contatined" : "outlined"}
+          className={
+            clickedButton === 8 ? buttonClass.root : buttonClass.notRoot
           }
         >
           Others
@@ -119,10 +137,14 @@ function Supplies() {
         ) : clickedButton === 2 ? (
           <div className="cardsDiv_supply">{itemCards["stationaryCards"]}</div>
         ) : clickedButton === 3 ? (
-          <div className="cardsDiv_supply">{itemCards["laptopsCards"]}</div>
+          <div className="cardsDiv_supply">{itemCards["designCards"]}</div>
         ) : clickedButton === 4 ? (
-          <div className="cardsDiv_supply">{itemCards["techotherCards"]}</div>
+          <div className="cardsDiv_supply">{itemCards["booksCards"]}</div>
         ) : clickedButton === 5 ? (
+          <div className="cardsDiv_supply">{itemCards["laptopsCards"]}</div>
+        ) : clickedButton === 6 ? (
+          <div className="cardsDiv_supply">{itemCards["techotherCards"]}</div>
+        ) : clickedButton === 7 ? (
           <div className="cardsDiv_supply">{itemCards["roomCards"]}</div>
         ) : (
           <div className="cardsDiv_supply">{itemCards["otherCards"]}</div>

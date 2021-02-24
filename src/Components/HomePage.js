@@ -62,11 +62,20 @@ function HomePage() {
       .where("isApproved", "==", true)
       .where("Topic", "==", "Phases of College - Nostalgia");
 
-    const document1 = await babysteps.get();
+    let document1 = await babysteps.get({ source: "cache" });
+    if (!document1.exists) {
+      document1 = await babysteps.get({ source: "server" });
+      console.log("server");
+    } else {
+      console.log("cache");
+    }
+
     const document2 = await expl.get();
     const document3 = await defp.get();
     const document4 = await grad.get();
     const document5 = await nost.get();
+
+    // document1.set("Cache-Control", "public, max-age=300, s-maxage=600");
 
     var temp1 = [];
     var temp2 = [];
