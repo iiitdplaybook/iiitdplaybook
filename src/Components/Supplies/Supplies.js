@@ -1,14 +1,81 @@
 /** @format */
 
 import "./Supplies.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import firebase from 'firebase';
 import { Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import itemsList from "./itemsSupplies";
 import Navbar from "../Navbar";
+import SupplyCard from "./SupplyCard";
 
 function Supplies() {
   const [clickedButton, setClickedButton] = useState(1);
+  // const [allCards, setAll] = useState([]);
+  const [stationaryCards, setStationary] = useState([]);
+  // const [designCards, setDesign] = useState([]);
+  // const [booksCards, setBook] = useState([]);
+  // const [laptopsCards, setLaptop] = useState([]);
+  // const [techotherCards, setTech] = useState([]);
+  // const [roomCards, setRoom] = useState([]);
+  // const [otherCards, setOther] = useState([]);
+
+  const getSupplies = async () => {
+
+    // var tempAll = [];
+    var tempStationary = [];
+    // var tempDesign = [];
+    // var tempBook = [];
+    // var tempLaptop = [];
+    // var tempTech = [];
+    // var tempRoom = [];
+    // var tempOther = [];
+   
+    // var allCardsRef = firebase
+    //   .database()
+    //   .ref('Supplies/All');
+    // await allCardsRef.once('value', (snapshot) => {
+    //   snapshot.forEach((childSnapshot) => {
+    //     if (childSnapshot.val().isApproved === true) {
+    //       var title= childSnapshot.val().title;
+    //       var desc = childSnapshot.val().desc;
+    //       var image = childSnapshot.val().image
+    //       var path = childSnapshot.val().path
+    //       var dict = {};
+    //       dict.Title = title;
+    //       dict.Desc = desc;
+    //       dict.Image = image;
+    //       dict.Path = path;
+    //       tempAll.push(dict);
+    //     }
+    //   });
+    // });
+
+    var stationaryRef = firebase
+      .database()
+      .ref('Supplies/Stationary');
+    await stationaryRef.once('value', (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+          var title= childSnapshot.val().title;
+          var desc = childSnapshot.val().desc;
+          var image = childSnapshot.val().image
+          var path = childSnapshot.val().path
+          var dict = {};
+          dict.Title = title;
+          dict.Desc = desc;
+          dict.Image = image;
+          dict.Path = path;
+          tempStationary.push(dict);
+      });
+    });
+    setStationary(tempStationary);
+  };
+
+  useEffect(() => {
+    getSupplies();
+    return () => {};
+  }, [])
+
   const useStyles = makeStyles({
     root: {
       background: "#fff",
@@ -135,7 +202,8 @@ function Supplies() {
         {clickedButton === 1 ? (
           <div className="cardsDiv_supply">{itemCards["allCards"]}</div>
         ) : clickedButton === 2 ? (
-          <div className="cardsDiv_supply">{itemCards["stationaryCards"]}</div>
+          // <div className="cardsDiv_supply">{itemCards["stationaryCards"]}</div>
+          <div className="cardsDiv_supply"><SupplyCard supplyCardList={stationaryCards} /></div>
         ) : clickedButton === 3 ? (
           <div className="cardsDiv_supply">{itemCards["designCards"]}</div>
         ) : clickedButton === 4 ? (
