@@ -40,8 +40,9 @@ canvas {
 
 .welcome_text {
   color: white;
-  font-size: 6em;
+  font-size: 5em;
   z-index: 5;
+  text-align: center;
 }
 
 #particles-js {

@@ -34,6 +34,53 @@ function HomePage() {
   const [definingPoint, setdefiningPoint] = useState([]);
   const [graduating, setgraduating] = useState([]);
   const [nostalgia, setnostalgia] = useState([]);
+  const [randi, setRandi] = useState(0);
+
+  const greetingList = [
+    ["Hello ", ""],
+    ['Kabhi Padhliya Kar ',""],
+    ["Did you turn in ","?"],
+    ["Don't Sleep ",""],
+    ["Stop Procastinating ",""],//5
+    ["run(",".py)"],//6
+    ["Don't Cheat ",""],//7
+    ["How you doin' ","?"],//8
+    ["Padhlo ",""],//9
+    ["Hakuna Matata ",""],//10
+    ["Touché ",", Touché"],//11
+    ["C'est la vie ",""],//12
+    ["Dream Big ",""],//13
+  ]
+  // const greetingPrefix = [
+  //   'Hello',//1
+  //   'Kabhi Padhliya Kar',//2
+  //   "Did you turn in?",//3
+  //   "Don't Sleep",//4
+  //   "Stop Procastinating",//5
+  //   "run(",//6
+  //   "Don't Cheat",//7
+  //   "How you doing?",//8
+  //   "Padhlo",//9
+  //   "Hakuna Matata",//10
+  //   "Touché",//11
+  //   "C'est la vie",//12
+  //   "Dream Big",//13
+  // ];
+  // const greetingSuffix = [
+  //   "",//1
+  //   "",//2
+  //   "",//3
+  //   "",//4
+  //   "",//5
+  //   ".py)",//6
+  //   " ;)",//7
+  //   "",//8
+  //   "",//9
+  //   "",//10
+  //   ", Touché",//11
+  //   "",//12
+  //   "",//13
+  // ];
 
   const getTestimonies = async () => {
     // const babysteps = firebase
@@ -214,6 +261,7 @@ function HomePage() {
 
   useEffect(() => {
     getTestimonies();
+    setRandi(Math.floor(Math.random() * Math.floor(greetingList.length)));
     return () => {};
   }, []);
   // Don't delete below
@@ -272,6 +320,7 @@ function HomePage() {
 
   const vel = 20;
 
+
   return (
     <div className="homePage">
       <Navbar loggedIn={true} colorStatus={false} stickyCond={true} />
@@ -280,7 +329,7 @@ function HomePage() {
 
         <div className="section_1">
           <Tilt trackOnWindow={true} perspective={500}>
-            <h1 className="welcome_text">Hello {userName.split(' ')[0]}</h1>
+            <h1 className="welcome_text">{greetingList[randi][0]}{userName.split(' ')[0]}{greetingList[randi][1]}</h1>
           </Tilt>
           <h4
             style={{
