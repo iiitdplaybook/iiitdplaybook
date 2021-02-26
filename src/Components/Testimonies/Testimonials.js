@@ -1,14 +1,14 @@
-import React, { Component } from "react";
-import Slider from "react-slick";
-import styled from "styled-components";
-import "./Testimonials.css";
-import times from "lodash/times";
+import React, { Component } from 'react';
+import Slider from 'react-slick';
+import styled from 'styled-components';
+import './Testimonials.css';
+import times from 'lodash/times';
 
 export default function AutoPlay({ portraits }) {
   const Height = styled.div`
     position: relative;
     width: 100%;
-    min-height: ${(props) => (props.height ? props.height + "px" : "auto")};
+    min-height: ${(props) => (props.height ? props.height + 'px' : 'auto')};
   `;
 
   const Box = styled.div`
@@ -77,7 +77,7 @@ export default function AutoPlay({ portraits }) {
       ? Math.min(1, portraits.length)
       : Math.min(4, portraits.length);
 
-  // var width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+  // let width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
   const settings = {
     dots: true,
@@ -86,25 +86,29 @@ export default function AutoPlay({ portraits }) {
     slidesToScroll: slidesScroll,
     autoplay: true,
     autoplaySpeed: 2000,
-    cssEase: "ease-in-out",
+    cssEase: 'ease-in-out',
     pauseOnHover: true,
+    arrows: window.innerWidth > 600 ? true : false,
+    centerMode: true,
+    centerPadding: '70px',
+    adaptiveHeight: true,
   };
 
   const scale = 0.5;
 
   return (
-    <div style={{ margin: "5%" }}>
+    <div style={{ margin: '5%' }}>
       {/* <h2>Auto Play</h2> */}
       <Slider {...settings}>
-        {times(portraits.length, String).map((id) => (
+        {times(portraits.length, String).map((id, index) => (
           // testimonies_data[id].isApproved?
-          <div>
-            {console.log("size", window.innerWidth)}
+          <div key={index}>
+            {console.log('size', window.innerWidth)}
             <Box key={`marquee-example-review-${id}`} scale={scale}>
               <Review scale={scale}>
-                <div id="containerHeader">
+                <div id='containerHeader'>
                   <Avatar scale={scale}>
-                    <img src={portraits[id].UserAvatar} alt="" />
+                    <img src={portraits[id].UserAvatar} alt='' />
                   </Avatar>
                   <Name scale={scale}>
                     <p>{portraits[id].Name}</p>

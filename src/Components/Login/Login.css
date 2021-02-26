@@ -2,14 +2,20 @@
   display: flex;
   flex-direction: column;
   background: white;
-  /* background-image: url("../Assets/bg.jpg");
-    background-size: cover; */
-  height: 100vh;
+  height: 60vh;
+}
+
+h5 {
+  text-align: center;
+}
+
+.defaultClick {
+  opacity: 1;
 }
 
 .login__action {
   position: relative;
-  top: 25%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
@@ -46,23 +52,6 @@
   bottom: 0;
 }
 
-.login__creators {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.login__testimonials {
-  /* position: fixed;
-    bottom: 5%;
-    left:47%; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 .testi {
   display: flex;
   align-items: center;
@@ -76,38 +65,6 @@ a {
   margin: 3%;
 }
 
-.creatorCard {
-  width: 20vw;
-  margin: 2%;
-  display: flex;
-  padding: 12px;
-  background: #fff;
-  /* // background: rgba(255,255,255,.2); */
-  /* // backdrop-filter: blur(100px); */
-  border-radius: 65px;
-  border-color: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%);
-  box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
-}
-
-.creatorCard img {
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
-  overflow: hidden;
-  flex-shrink: 0;
-  margin-right: 15px;
-  /* max-width: 100%; */
-}
-
-.creatorCard p {
-  margin: 5px;
-  color: #382f70;
-  font-family: Poppins, sans-serif;
-  font-size: 1em;
-  font-weight: 100;
-  text-align: left;
-}
-
 #signIn {
   /* background: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%); */
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -116,7 +73,7 @@ a {
   padding: 1%;
   padding-left: 3%;
   padding-right: 3%;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   color: white;
   transition: ease-in-out 0.3s;
@@ -144,7 +101,7 @@ a {
   padding: 1%;
   padding-left: 3%;
   padding-right: 3%;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 600;
   color: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%);
   transition: ease-in-out 0.3s;
@@ -202,7 +159,7 @@ a {
         display: none;
     } */
 
-  .testi .creatorCard p {
+  /* .testi .creatorCard p {
     display: none;
   }
 
@@ -212,7 +169,7 @@ a {
 
   .testi .creatorCard img {
     margin-right: -15px;
-  }
+  } */
 
   .login__action {
     position: relative;

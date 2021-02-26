@@ -2,7 +2,7 @@
 
 import './App.css';
 import React, { Suspense, useEffect, useState } from 'react';
-import HomePage from './Components/HomePage';
+import HomePage from './Components/HomePage/HomePage';
 import Footer from './Components/Footer/Footer';
 import Login from './Components/Login/Login';
 
@@ -10,14 +10,14 @@ import firebase from 'firebase';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useStateValue } from './StateProvider';
 
-import LoadingScreen from './Components/loading';
+import LoadingScreen from './Components/Utils/loading';
 
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { isMobile } from 'react-device-detect';
-import ScrollToTop from './Components/ScrollToTop';
-import Spinner from './Components/loading';
+import ScrollToTop from './Components/Utils/ScrollToTop';
+import Spinner from './Components/Utils/loading';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import '../node_modules/react-toastify/dist/ReactToastify.css';
 
 function App() {
   const [{}, dispatch] = useStateValue();
@@ -30,7 +30,7 @@ function App() {
     import('./Components/Testimonies/Testimonials')
   );
   const TalkingToFriendsSeniors = React.lazy(() =>
-    import('./Components/TalkingToFriendsSeniors')
+    import('./Components/TalkingToFriendsSeniors/TalkingToFriendsSeniors')
   );
   const Supplies = React.lazy(() => import('./Components/Supplies/Supplies'));
   const Explore = React.lazy(() => import('./Components/Explore/Explore'));
@@ -46,7 +46,9 @@ function App() {
   const Resources = React.lazy(() =>
     import('./Components/CollegeResources/resources')
   );
-  const Nostalgia = React.lazy(() => import('./Components/Nostalgia'));
+  const Nostalgia = React.lazy(() =>
+    import('./Components/Nostalgia/Nostalgia')
+  );
 
   toast.configure();
   const notify = () =>
@@ -59,7 +61,7 @@ function App() {
   }
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 4000);
+    setTimeout(() => setLoading(false), 10);
   }, []);
 
   useEffect(() => {
@@ -93,7 +95,7 @@ function App() {
   function ifisMobile() {
     if (isMobile) {
       return (
-        <div className="popup">
+        <div className='popup'>
           <p>Hello, you are using phone so get off. Use laptop</p>
         </div>
       );
@@ -104,11 +106,11 @@ function App() {
     <>
       <ThemeProvider theme={themeMain}>
         {loading === false ? (
-          <div className="app">
+          <div className='app'>
             {ifisMobile()}
-            <div className="popup">
-              <div className="modal_content">
-                <span className="close">&times;</span>
+            <div className='popup'>
+              <div className='modal_content'>
+                <span className='close'>&times;</span>
                 <p>I'm A Pop Up!!!</p>
               </div>
             </div>
@@ -118,35 +120,35 @@ function App() {
                 <div>
                   <Switch>
                     {/* <Route path="/supplies" component={Supplies} /> */}
-                    <Route path="/supplies">
+                    <Route path='/supplies'>
                       <Suspense fallback={<Spinner />}>
                         <Supplies />
                         <Footer />
                       </Suspense>
                     </Route>
-                    <Route path="/nostalgia">
+                    <Route path='/nostalgia'>
                       <Suspense fallback={<Spinner />}>
                         <Nostalgia />
                         <Footer />
                       </Suspense>
                     </Route>
-                    <Route path="/explore">
+                    <Route path='/explore'>
                       <Suspense fallback={<Spinner />}>
                         <Explore />
                         <Footer />
                       </Suspense>
                     </Route>
-                    <Route path="/homepage">
+                    <Route path='/homepage'>
                       <Suspense fallback={<Spinner />}>
-                        <div className="app__body">
+                        <div className='app__body'>
                           <HomePage />
-                          <Footer />
                         </div>
                       </Suspense>
                     </Route>
-                    <Route path="/">
+                    <Route path='/'>
                       <Suspense fallback={<Spinner />}>
                         <Login />
+                        <Footer page='login' />
                       </Suspense>
                     </Route>
                   </Switch>
@@ -154,59 +156,59 @@ function App() {
               ) : (
                 <div>
                   <Switch>
-                    <Route path="/explore">
+                    <Route path='/explore'>
                       <Suspense fallback={<Spinner />}>
                         <Explore />
                       </Suspense>
                     </Route>
-                    <Route path="/supplies">
+                    <Route path='/supplies'>
                       <Suspense fallback={<Spinner />}>
                         <Supplies />
                       </Suspense>
                     </Route>
-                    <Route path="/nostalgia">
+                    <Route path='/nostalgia'>
                       <Suspense fallback={<Spinner />}>
                         <Nostalgia />
                       </Suspense>
                     </Route>
-                    <Route path="/friends">
+                    <Route path='/friends'>
                       <Suspense fallback={<Spinner />}>
                         <TalkingToFriendsSeniors />
                       </Suspense>
                     </Route>
-                    <Route path="/test">
+                    <Route path='/test'>
                       <Suspense fallback={<Spinner />}>
                         <Testimonials />
                       </Suspense>
                     </Route>
-                    <Route path="/timemanagement">
+                    <Route path='/timemanagement'>
                       <Suspense fallback={<Spinner />}>
                         <TimeManagement />
                       </Suspense>
                     </Route>
-                    <Route path="/tools">
+                    <Route path='/tools'>
                       <Suspense fallback={<Spinner />}>
                         <Tools />
                       </Suspense>
                     </Route>
-                    <Route path="/ComingSoonTools">
+                    <Route path='/ComingSoonTools'>
                       <Suspense fallback={<Spinner />}>
                         <ComingSoonTools />
                       </Suspense>
                     </Route>
-                    <Route path="/resources">
+                    <Route path='/resources'>
                       <Suspense fallback={<Spinner />}>
                         <Resources />
                       </Suspense>
                     </Route>
-                    <Route path="/contribute/testimonies">
+                    <Route path='/contribute/testimonies'>
                       <Suspense fallback={<Spinner />}>
                         <TestimoniesForm />
                       </Suspense>
                     </Route>
-                    <Route path="/">
+                    <Route path='/'>
                       <Suspense fallback={<Spinner />}>
-                        <div className="app__body">
+                        <div className='app__body'>
                           <HomePage />
                         </div>
                       </Suspense>
