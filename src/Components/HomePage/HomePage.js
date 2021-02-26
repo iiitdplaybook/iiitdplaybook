@@ -38,6 +38,23 @@ function HomePage() {
   const [definingPoint, setdefiningPoint] = useState([]);
   const [graduating, setgraduating] = useState([]);
   const [nostalgia, setnostalgia] = useState([]);
+  const [randi, setRandi] = useState(0);
+
+  const greetingList = [
+    ["Hello ", ""],
+    ['Kabhi Padhliya Kar ',""],
+    ["Did you turn in ","?"],
+    ["Don't Sleep ",""],
+    ["Stop Procastinating ",""],//5
+    ["run(",".py)"],//6
+    ["Don't Cheat ",""],//7
+    ["How you doin' ","?"],//8
+    ["Padhlo ",""],//9
+    ["Hakuna Matata ",""],//10
+    ["Touché ",", Touché"],//11
+    ["C'est la vie ",""],//12
+    ["Dream Big ",""],//13
+  ]
 
   const getTestimonies = async () => {
     let temp1 = [];
@@ -177,6 +194,7 @@ function HomePage() {
 
   useEffect(() => {
     getTestimonies();
+    setRandi(Math.floor(Math.random() * Math.floor(greetingList.length)));
     return () => {};
   }, []);
   // Don't delete below
@@ -261,7 +279,7 @@ function HomePage() {
                 <div className='section_1'>
                   <Tilt trackOnWindow={true} perspective={500}>
                     <h1 className='welcome_text'>
-                      Hello {userName.split(' ')[0]}
+                      {greetingList[randi][0]}{userName.split(' ')[0]}{greetingList[randi][1]}
                     </h1>
                   </Tilt>
                   <h4
