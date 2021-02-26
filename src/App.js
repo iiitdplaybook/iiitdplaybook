@@ -138,12 +138,6 @@ function App() {
                         <Footer />
                       </Suspense>
                     </Route>
-                    <Route path='/contribute/testimonies'>
-                      <Suspense fallback={<Spinner />}>
-                        <TestimoniesForm />
-                        <Footer />
-                      </Suspense>
-                    </Route>
                     <Route path='/homepage'>
                       <Suspense fallback={<Spinner />}>
                         <div className='app__body'>

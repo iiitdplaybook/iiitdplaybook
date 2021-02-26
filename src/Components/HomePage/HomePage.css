@@ -82,6 +82,7 @@ canvas {
 
 .section-image {
   max-width: 27vw;
+  max-height: 18vw;
   padding-left: 8rem;
   padding-top: 7rem;
 }
