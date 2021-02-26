@@ -301,6 +301,7 @@ function HomePage() {
               </div>
               {/* EXPLORING */}
               <div className='section exploring'>
+                <Clouds/>
                 <div className='section-wrapper'>
                   <img
                     className='section-image'
