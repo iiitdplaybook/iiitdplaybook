@@ -8,55 +8,55 @@ import ScrollAnimation from 'react-animate-on-scroll';
 import Fade from 'react-reveal/Fade';
 
 const happiness_1 =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/happiness_1.jpg';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/happiness_1.jpg';
 const happiness_2 =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/happiness_2.jpg';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/happiness_2.jpg';
 const happiness_3 =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/happiness_3.jpg';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/happiness_3.jpg';
 const old_acad_lawn =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/old_acad_lawn_3.PNG';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/old_acad_lawn_3.PNG';
 const bcr =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/bcr.PNG';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/bcr.PNG';
 const canteen =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/canteen.PNG';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/canteen.PNG';
 const canteen_2 =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/canteen_2.jpg';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/canteen_2.jpg';
 const epicuria =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/epicuria.jpg';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/epicuria.jpg';
 const chai_addaa =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/chai_addaa.jpg';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/chai_addaa.jpg';
 const library =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/library.jpg';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/library.jpg';
 const hkv =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/hkv.jpg';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/hkv.jpg';
 const abba_nahi_maanenge =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/abba_nahi_maanenge.jpg';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/abba_nahi_maanenge.jpg';
 const mai_merko_sab_ata_hai_mai_expert_hu =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/mai_merko_sab_ata_hai_mai_expert_hu.jpg';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/mai_merko_sab_ata_hai_mai_expert_hu.jpg';
 
 const prateek =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/prateek.jpg';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/prateek.jpg';
 const jubin =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/jubin.jpg';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/jubin.jpg';
 const image1 =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/DSC_001.JPG';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/DSC_001.JPG';
 const image2 =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/DSC_002.JPG';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/DSC_002.JPG';
 const image3 =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/DSC_003.JPG';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/DSC_003.JPG';
 const image4 =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/DSC_004.JPG';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/DSC_004.JPG';
 
 const glow1 =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/glow1.mp4';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/glow1.mp4';
 const glow2 =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/glow2.gif';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/glow2.gif';
 const canteen1 =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/canteen.PNG';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/canteen.PNG';
 const canteen2 =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/canteen_2.jpg';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/canteen_2.jpg';
 const imgInduction =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/induction.PNG';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/induction.PNG';
 
 function Nostalgia() {
   const [{ user, isSignedIn, userName }] = useStateValue();

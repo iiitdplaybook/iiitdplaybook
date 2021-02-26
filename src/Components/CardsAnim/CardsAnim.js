@@ -4,10 +4,10 @@ import { useSprings, animated, to as interpolate } from 'react-spring'
 import { useDrag } from 'react-use-gesture'
 import './CardsAnim.css'
 
-const dog = 'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/cardPics/dogFire.png';
-const tear = 'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/cardPics/tearSmile.png';
-const plag = 'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/cardPics/plag.png';
-const dark = 'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/cardPics/darkSide.png';
+const dog = 'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/cardPics/dogFire.png';
+const tear = 'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/cardPics/tearSmile.png';
+const plag = 'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/cardPics/plag.png';
+const dark = 'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/cardPics/darkSide.png';
 
 const cards = [
   tear,

@@ -11,7 +11,7 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 
 const image_svg =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/SVG_for_cards/teamwork.svg';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/SVG_for_cards/teamwork.svg';
 
 function SuppliesCards(supplyCardInfo) {
   const cardHeight = 120;

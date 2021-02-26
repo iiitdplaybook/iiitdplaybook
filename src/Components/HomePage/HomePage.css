@@ -58,6 +58,7 @@ canvas {
   color: white;
   font-size: 5em;
   z-index: 5;
+  text-align: center;
 }
 
 #particles-js {
@@ -234,15 +235,16 @@ canvas {
   .section-title {
     text-align: center;
     margin-top: 0rem;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     padding-right: 0rem;
     margin-bottom: 1rem;
   }
 
   .section-image {
     max-width: 60vw;
+    max-height: 9vh;
     padding-left: 0rem;
-    padding-top: 5rem;
+    padding-top: 4rem;
     padding-bottom: 2rem;
     text-align: center;
     align-self: center;
@@ -254,11 +256,11 @@ canvas {
     padding-right: 0 !important; */
     /* Testing for Phone */
     text-align: center !important; 
-    font-size: 2vh;
+    font-size: 1.5vh;
     padding-right: 0 !important;
     align-self: center;
     width: fit-content;
-    padding: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   .section-container {
@@ -295,6 +297,6 @@ canvas {
 
   .defining-point .section-image {
     max-width: 50vw;
-    margin-left: 5rem;
+    margin-left: 0rem;
   }
 }

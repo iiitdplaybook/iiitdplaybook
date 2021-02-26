@@ -6,27 +6,27 @@ function PhasesOfCollege() {
     {
       title: 'brewbakes',
       img:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/college_phases/brewbakes.jpeg',
+        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/college_phases/brewbakes.jpeg',
     },
     {
-      title: 'dandiya',
+      title: 'graduation',
       img:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/college_phases/dandiya.jpg',
+        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/college_phases/graduation.gif',
     },
     {
       title: 'holi',
       img:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/college_phases/holi.jpeg',
+        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/college_phases/holi.jpeg',
     },
     {
       title: 'library',
       img:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/college_phases/library.jpeg',
+        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/college_phases/library.jpeg',
     },
     {
-      title: 'seminar',
+      title: 'dandiya',
       img:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/college_phases/seminar.jpeg',
+        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/college_phases/dandiya.jpg',
     },
   ];
 
