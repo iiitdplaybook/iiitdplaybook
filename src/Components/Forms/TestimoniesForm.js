@@ -1,7 +1,7 @@
 import firebase from 'firebase';
 import React from 'react';
 import { useState } from 'react';
-import Navbar from '../Navbar';
+import Navbar from '../Navbar/Navbar';
 import { makeStyles } from '@material-ui/core/styles';
 import { useStateValue } from '../../StateProvider';
 import './TestimoniesForm.css';
@@ -21,7 +21,7 @@ import Button from '@material-ui/core/Button';
 
 import { ToastContainer, toast } from 'react-toastify';
 // import { handleUpload } from './ImgUpload';
-import 'react-toastify/dist/ReactToastify.css';
+import '../../../node_modules/react-toastify/dist/ReactToastify.css';
 import ImgUpload from './ImgUpload';
 
 const state = {

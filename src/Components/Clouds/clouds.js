@@ -20,7 +20,7 @@ function Clouds() {
         
         </div>
 
-       <svg id='Cloud'></svg>
+       {/* <svg id='Cloud'></svg> */}
  </div>
     )
 }
