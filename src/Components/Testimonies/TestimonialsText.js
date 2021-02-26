@@ -1,18 +1,18 @@
 /** @format */
 
-import React, { useEffect, useState } from "react";
-import Marquee from "react-marquee-slider";
-import styled from "styled-components";
-import times from "lodash/times";
-import "./Testimonials.css";
-import FullWidth from "./../FullWidth";
+import React, { useEffect, useState } from 'react';
+import Marquee from 'react-marquee-slider';
+import styled from 'styled-components';
+import times from 'lodash/times';
+import './Testimonials.css';
+import FullWidth from '../Utils/FullWidth';
 // Firebase
-import firebase from "firebase";
+import firebase from 'firebase';
 
 const Height = styled.div`
   position: relative;
   width: 100%;
-  min-height: ${(props) => (props.height ? props.height + "px" : "auto")};
+  min-height: ${(props) => (props.height ? props.height + 'px' : 'auto')};
 `;
 
 const Box = styled.div`
@@ -120,9 +120,9 @@ const Reviews = ({
             // testimonies_data[id].isApproved?
             <Box key={`marquee-example-review-${id}`} scale={scale}>
               <Review scale={scale}>
-                <div id="containerHeader">
+                <div id='containerHeader'>
                   <Avatar scale={scale}>
-                    <img src={portraits[id].UserAvatar} alt="" />
+                    <img src={portraits[id].UserAvatar} alt='' />
                   </Avatar>
                   <Name scale={scale}>
                     <p>{portraits[id].Name}</p>

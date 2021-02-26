@@ -1,178 +1,269 @@
-#bg{
-    background: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
-    position: relative;
-    left:0;
-    bottom:0;
-    right:0;
-    padding: 2%;
-    padding-bottom: 1%;
+#footer {
+  background: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%);
+  position: relative;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 2%;
+  padding-bottom: 1%;
 }
 
-.buymeacoffeelogo{
-    height: 20px;
-    margin-right: 1%;
+#footer-login {
+  background: #fff;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 2%;
+  padding-bottom: 1%;
 }
 
-#supportBtn{
-    margin-top: 1%;
-    width: 500px;
-}
-.upper{
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
+.supportUsButtons-login {
+  display: none;
 }
 
-.defaultClick{
-    opacity: 1;
+.support-us-text-login {
+  display: none;
 }
 
-.testi2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.lower-login {
+  display: none;
 }
 
-.testi2 .creatorCard a{
-    text-decoration: none;
-    color: #141414;
-    opacity: .8;
-    margin: 4%;
-    transition: ease-out .4s;
+.memberText {
+  padding: 10px auto !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
 }
 
-.testi2 .creatorCard a:hover{
-    transform: scale(1.2);
+.buymeacoffeelogo {
+  height: 20px;
+  margin-right: 1%;
 }
 
-.testi2 .creatorCard{
-    width: fit-content;
-    margin: 2%;
-    display: flex;
-    padding: 12px;
-    padding-right: 40px;
-    background: rgba(255,255,255,.4);
-    /* // background: rgba(255,255,255,.2); */
-    /* // backdrop-filter: blur(100px); */
-    border-radius: 65px;
-    border-color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
-    box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
+#supportBtn {
+  margin-top: 1%;
+  width: 500px;
+}
+.upper {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
 }
 
-.testi2 .creatorCard img{
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    overflow: hidden;
-    flex-shrink: 0;
-    /* max-width: 100%; */
+.defaultClick {
+  opacity: 1;
 }
 
-.testi2 .creatorCard p{
-    /* margin: 5px; */
-    color: #382f70;
-    font-family: Poppins, sans-serif;
-    font-size: .9em;
-    font-weight: 100;
-    text-align: left;
-    display: flex;
-    flex-direction: row;
+.team {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.form_button{
-    background: white;
-    color: black;
+.creators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50% !important;
 }
 
-.lower p{
-    color: #fff;
-    bottom: 0;
+.creators .creatorCard a {
+  text-decoration: none;
+  color: #141414;
+  opacity: 0.8;
+  margin-right: -10px;
+  transition: ease-out 0.4s;
 }
 
-.lower{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2%;
-    height: 100%;
+.creators .creatorCard a:hover {
+  transform: scale(1.2);
 }
 
-.button2{
-    width: 25%;
-    margin: 1% !important;
-    background-color: #000;
-    /* -webkit-background-clip: text; */
-    /* -webkit-text-fill-color: transparent; */
-	 
+.creators .creatorCard {
+  width: fit-content;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 12px 40px 12px 12px;
+  /* padding-right: 40px;
+  padding-top: -10px;
+  padding-bottom: -10px; */
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 65px;
+  border-color: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%);
+  box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
 }
 
+.creators .creatorCard img {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-right: 0;
+  /* max-width: 100%; */
+}
+
+.creators .creatorCard p {
+  margin: 0px;
+  color: #382f70;
+  font-family: Poppins, sans-serif;
+  font-size: 0.9em;
+  font-weight: 100;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+
+.teamName {
+  font-size: 0.7em !important;
+}
+
+.memberCard {
+  margin: 15px !important;
+}
+
+.team .memberCard a {
+  text-decoration: none;
+  color: #141414;
+  opacity: 0.8;
+  margin-right: -12px;
+  transition: ease-out 0.4s;
+}
+
+.team .memberCard a:hover {
+  transform: scale(1.2);
+}
+
+.team .memberCard {
+  width: fit-content;
+  min-width: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px;
+  padding-right: 40px !important;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 65px;
+  border-color: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%);
+  box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
+}
+
+.team .memberCard img {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  flex-shrink: 0;
+  /* max-width: 100%; */
+}
+
+.team .memberCard p {
+  /* margin: 5px; */
+  color: #382f70;
+  font-family: Poppins, sans-serif;
+  font-size: 0.9em;
+  font-weight: 100;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+
+.form_button {
+  background: white;
+  color: black;
+}
+
+.lower p {
+  color: #fff;
+  bottom: 0;
+}
+
+.lower {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2%;
+  height: 100%;
+}
+
+.button2 {
+  width: 25%;
+  margin: 1% !important;
+  background-color: #000;
+}
 
 .button2 .span2 {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-  .button2 .span2:after {
-    content: '\263B';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -25px;
-    transition: 0.5s;
-  }
-  
-  .button2:hover .span2 {
-    padding-right: 25px;
-  }
-  
-  .button2:hover .span2:after {
-    opacity: 1;
-    right: 0;
-  }
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
 
+.button2 .span2:after {
+  content: '\263B';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -25px;
+  transition: 0.5s;
+}
+
+.button2:hover .span2 {
+  padding-right: 25px;
+}
+
+.button2:hover .span2:after {
+  opacity: 1;
+  right: 0;
+}
 
 @media only screen and (max-width: 1100px) {
-    .removeText{
-        display: none;
-    }
+  .removeText {
+    display: none;
+  }
 }
 
-@media only screen and (max-width: 500px) {
-    .testi2 .creatorCard p{
-        display: none;
-    }
+@media only screen and (max-width: 600px) {
+  .creators {
+    flex-wrap: wrap;
+    width: 100% !important;
+  }
 
-    .testi2 .creatorCard a{
-        display: none;
-    }
+  .creators .creatorCard p {
+    display: none;
+  }
 
-    .testi2 .creatorCard img{
-        margin-right: -15px;    
-    }
+  .creators .creatorCard img {
+    margin-right: -15px;
+  }
 
-    
-.testi2 .creatorCard{
+  .creators .creatorCard {
+    padding: 12px !important;
+    padding-right: 25px !important;
+  }
 
-    padding-right: 27px;
-}
-
-.button2 .span2 {
+  .button2 .span2 {
     min-width: 350%;
     margin-bottom: 25%;
   }
 
-  .upper{
-      margin-top: 8%;
+  .upper {
+    margin-top: 8%;
   }
 
-  .lower{
-      margin-top: 5%;
+  .lower {
+    margin-top: 5%;
+  }
+
+  .team .memberCard {
+    padding: 12px !important;
+    padding-right: 25px !important;
   }
 }

@@ -1,38 +1,62 @@
-import React, { useState, useEffect } from "react";
-import { useStateValue } from "../StateProvider";
-import "./Nostalgia.css";
-import Stars from "./stars";
-import Testimonials from "./Testimonies/TestimonialsImage";
-import Navbar from "./Navbar";
-import ScrollAnimation from "react-animate-on-scroll";
-import Fade from "react-reveal/Fade";
+import React, { useState, useEffect } from 'react';
+import { useStateValue } from '../../StateProvider';
+import './Nostalgia.css';
+import Stars from '../Stars/stars';
+import Testimonials from '../Testimonies/TestimonialsImage';
+import Navbar from '../Navbar/Navbar';
+import ScrollAnimation from 'react-animate-on-scroll';
+import Fade from 'react-reveal/Fade';
 
-const happiness_1 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/happiness_1.jpg";
-const happiness_2 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/happiness_2.jpg";
-const happiness_3 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/happiness_3.jpg";
-const old_acad_lawn = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/old_acad_lawn_3.PNG";
-const bcr = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/bcr.PNG";
-const canteen = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/canteen.PNG";
-const canteen_2 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/canteen_2.jpg";
-const epicuria = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/epicuria.jpg";
-const chai_addaa = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/chai_addaa.jpg";
-const library = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/library.jpg";
-const hkv = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/hkv.jpg";
-const abba_nahi_maanenge = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/abba_nahi_maanenge.jpg";
-const mai_merko_sab_ata_hai_mai_expert_hu = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/mai_merko_sab_ata_hai_mai_expert_hu.jpg";
+const happiness_1 =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/happiness_1.jpg';
+const happiness_2 =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/happiness_2.jpg';
+const happiness_3 =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/happiness_3.jpg';
+const old_acad_lawn =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/old_acad_lawn_3.PNG';
+const bcr =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/bcr.PNG';
+const canteen =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/canteen.PNG';
+const canteen_2 =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/canteen_2.jpg';
+const epicuria =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/epicuria.jpg';
+const chai_addaa =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/chai_addaa.jpg';
+const library =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/library.jpg';
+const hkv =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/hkv.jpg';
+const abba_nahi_maanenge =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/abba_nahi_maanenge.jpg';
+const mai_merko_sab_ata_hai_mai_expert_hu =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/mai_merko_sab_ata_hai_mai_expert_hu.jpg';
 
-const prateek = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/prateek.jpg";
-const jubin = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/jubin.jpg";
-const image1 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/DSC_001.JPG";
-const image2 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/DSC_002.JPG";
-const image3 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/DSC_003.JPG";
-const image4 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/DSC_004.JPG";
+const prateek =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/prateek.jpg';
+const jubin =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/jubin.jpg';
+const image1 =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/DSC_001.JPG';
+const image2 =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/DSC_002.JPG';
+const image3 =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/DSC_003.JPG';
+const image4 =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/DSC_004.JPG';
 
-const glow1 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/glow1.mp4";
-const glow2 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/glow2.gif";
-const canteen1 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/canteen.PNG";
-const canteen2 = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/canteen_2.jpg";
-const imgInduction = "https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/induction.PNG";
+const glow1 =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/glow1.mp4';
+const glow2 =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/glow2.gif';
+const canteen1 =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/canteen.PNG';
+const canteen2 =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/canteen_2.jpg';
+const imgInduction =
+  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/NostalgiaPics/induction.PNG';
 
 function Nostalgia() {
   const [{ user, isSignedIn, userName }] = useStateValue();
@@ -42,36 +66,36 @@ function Nostalgia() {
   }, []);
 
   const portraits = [
-    { pic: image1, name: "18 January 2020" },
-    { pic: image2, name: "18 January 2020" },
-    { pic: image3, name: "19 January 2020" },
-    { pic: image4, name: "19 January 2020" },
-    { pic: jubin, name: "18 January 2020" },
-    { pic: jubin, name: "19 January 2020" },
-    { pic: prateek, name: "19 January 2020" },
-    { pic: jubin, name: "18 January 2020" },
+    { pic: image1, name: '18 January 2020' },
+    { pic: image2, name: '18 January 2020' },
+    { pic: image3, name: '19 January 2020' },
+    { pic: image4, name: '19 January 2020' },
+    { pic: jubin, name: '18 January 2020' },
+    { pic: jubin, name: '19 January 2020' },
+    { pic: prateek, name: '19 January 2020' },
+    { pic: jubin, name: '18 January 2020' },
   ];
 
   const vel = 25;
-  const da = "clockwise";
-  const db = "counterclockwise";
+  const da = 'clockwise';
+  const db = 'counterclockwise';
 
   return (
     <div>
       <Navbar
-        loggedIn={localStorage.getItem("isSignedIn")}
+        loggedIn={localStorage.getItem('isSignedIn')}
         colorStatus={false}
       />
-      <div id="nostalgiaCont">
-        <div id="stars_container">
+      <div id='nostalgiaCont'>
+        <div id='stars_container'>
           <Stars />
         </div>
 
-        <h1 className="heading_text">Down the memory lane</h1>
-        <h5 className="heading_desc">Remember the time when...</h5>
+        <h1 className='heading_text'>Down the memory lane</h1>
+        <h5 className='heading_desc'>Remember the time when...</h5>
 
         <Fade duration={2000}>
-          <div className="section">
+          <div className='section'>
             <h2>The Early Days</h2>
             <br></br>
             <p>
@@ -98,9 +122,9 @@ function Nostalgia() {
               <br />
               <br />
             </p>
-            <div className="section_media_2">
-              <video height="240" style={{ borderRadius: "10px" }} controls>
-                <source src={glow1} type="video/mp4"></source>
+            <div className='section_media_2'>
+              <video height='240' style={{ borderRadius: '10px' }} controls>
+                <source src={glow1} type='video/mp4'></source>
                 Your browser does not support the video tag.
               </video>
               <img src={glow2} />
@@ -126,7 +150,7 @@ function Nostalgia() {
         </Fade>
 
         <Fade duration={2000}>
-          <div className="section">
+          <div className='section'>
             <h2>The 11:59 Struggle</h2>
             <br></br>
             <p>
@@ -139,10 +163,10 @@ function Nostalgia() {
               <br />
               <br />
             </p>
-            <div className="section_media_2">
-              <img className="happiness_img" src={happiness_1} />
-              <img className="happiness_img" src={happiness_2} />
-              <img className="happiness_img" src={happiness_3} />
+            <div className='section_media_2'>
+              <img className='happiness_img' src={happiness_1} />
+              <img className='happiness_img' src={happiness_2} />
+              <img className='happiness_img' src={happiness_3} />
             </div>
             <p>
               This is when your first best friend comes to the rescue, “GOOGLE”.
@@ -163,7 +187,7 @@ function Nostalgia() {
         </Fade>
 
         <Fade duration={2000}>
-          <div className="section">
+          <div className='section'>
             <h2>3AM Maggi</h2>
             <br></br>
             <p>
@@ -185,7 +209,7 @@ function Nostalgia() {
               <br></br>
               <br></br>
             </p>
-            <div className="section_media">
+            <div className='section_media'>
               <img src={canteen} />
               <img src={canteen_2} />
             </div>
@@ -193,10 +217,10 @@ function Nostalgia() {
         </Fade>
 
         <Fade duration={2000}>
-          <div className="section">
+          <div className='section'>
             <h2>BCR</h2>
             <br></br>
-            <div className="section__body">
+            <div className='section__body'>
               <p>
                 Abandoned by day and Couples’ hotspot by night :)
                 <br></br>
@@ -211,7 +235,7 @@ function Nostalgia() {
                 outside the building.
               </p>
               <br></br>
-              <div className="section_media">
+              <div className='section_media'>
                 <img src={bcr} />
               </div>
             </div>
@@ -219,12 +243,12 @@ function Nostalgia() {
         </Fade>
 
         <Fade duration={2000}>
-          <div className="section">
+          <div className='section'>
             <h2>Ravi's Tapri</h2>
             <br></br>
-            <div className="section__body">
-              <div className="section_media">
-                <img id="ravi" src={chai_addaa} />
+            <div className='section__body'>
+              <div className='section_media'>
+                <img id='ravi' src={chai_addaa} />
               </div>
               <p>
                 “Next class 10 minute mein hai, chai peene chalein?” The newest
@@ -247,7 +271,7 @@ function Nostalgia() {
         </Fade>
 
         <Fade duration={2000}>
-          <div className="section">
+          <div className='section'>
             <h2>Exam Season Blues</h2>
             <br></br>
             <p>
@@ -262,7 +286,7 @@ function Nostalgia() {
               <br></br>
               <br></br>
             </p>
-            <div className="section__body">
+            <div className='section__body'>
               <p>
                 The night before the exam seems like the longest and the
                 toughest night. Feeling anxious and losing confidence with every
@@ -278,7 +302,7 @@ function Nostalgia() {
                 <br></br>
               </p>
 
-              <div className="section_media">
+              <div className='section_media'>
                 <img src={library} />
               </div>
             </div>
@@ -286,15 +310,15 @@ function Nostalgia() {
         </Fade>
 
         <Fade duration={2000}>
-          <div className="section">
+          <div className='section'>
             <h2>The Old Acad Lawn</h2>
             <br></br>
-            <div className="section__body">
-              <div className="section_media">
+            <div className='section__body'>
+              <div className='section_media'>
                 <img src={old_acad_lawn} />
               </div>
 
-              <p className="para_text">
+              <p className='para_text'>
                 The best place to enjoy the warm sun on a cold day, the old acad
                 lawn. From professors to students, everyone loves sitting on the
                 grass here and enjoying the sun. Feels good to connect to nature
@@ -311,12 +335,12 @@ function Nostalgia() {
         </Fade>
 
         <Fade duration={2000}>
-          <div className="section">
+          <div className='section'>
             <h2>
               The Delhi <strike>Safar</strike> Suffer
             </h2>
             <br></br>
-            <p className="para_text">
+            <p className='para_text'>
               Delhi air pollution. Living in the midst of a state with the
               highest air pollution, one has still got to relax and travel to
               have fun. Ordering food is always an option, but sometimes a walk
@@ -338,7 +362,7 @@ function Nostalgia() {
               <br></br>
               <br></br>
             </p>
-            <div className="section_media">
+            <div className='section_media'>
               <img src={epicuria} />
               <img src={hkv} />
             </div>
@@ -346,7 +370,7 @@ function Nostalgia() {
         </Fade>
 
         <Fade duration={2000}>
-          <div className="section">
+          <div className='section'>
             <h2>Cultural Fest</h2>
             <br></br>
             <p>
@@ -357,7 +381,7 @@ function Nostalgia() {
               FEST TIME. Even though there are 2 fests, everyone waits the
               entire year for just one of them, ODYSSEY, the cultural fest.
             </p>
-            <div className="ImageTesti">
+            <div className='ImageTesti'>
               <Testimonials
                 portraits={portraits}
                 vel={vel}
@@ -367,16 +391,16 @@ function Nostalgia() {
             </div>
             <br></br>
             <p>
-              {" "}
+              {' '}
               Everyone working day and night for 4-6 months (10 times the amount
               of hard work you put in completing a deadline) - hundreds of
               meetings, thousands of sponsorship calls, crazy publicity, and so
               much more, everything boiling down to one night, the NIRVANA
-              NIGHT. When artists like{" "}
-              <b id="textcolor">
+              NIGHT. When artists like{' '}
+              <b id='textcolor'>
                 Gajendra Verma, Prateek Kuhad, The Local Train, and Jubin
                 Nautiyal
-              </b>{" "}
+              </b>{' '}
               walk up on the stage, ready to perform in front of thousands of
               people from all over Delhi, in a fest that you helped build, the
               lights hitting your eyes, the sound from the speakers pumping your
