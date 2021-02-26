@@ -19,17 +19,17 @@ import Footer from '../Footer/Footer';
 import PhasesOfCollege from './PhasesOfCollege';
 
 const babyStepsImg =
-  'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/homepage_illustrations/baby_steps.png';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/homepage_illustrations/baby_steps.png';
 const exploringImg =
-  'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/homepage_illustrations/exploring.png';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/homepage_illustrations/exploring.png';
 const definingImg =
-  'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/homepage_illustrations/defining_point.png';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/homepage_illustrations/defining_point.png';
 const graduationImg =
-  'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/homepage_illustrations/graduation.png';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/homepage_illustrations/graduation.png';
 const nostalgiaImg =
-  'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/homepage_illustrations/nostalgia.png';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/homepage_illustrations/nostalgia.png';
 const iiitd = 
-  'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/homepage_illustrations/iiitd_pedestal.png';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/homepage_illustrations/iiitd_pedestal.png';
 
 function HomePage() {
   const [{ user, isSignedIn, userName }] = useStateValue();
