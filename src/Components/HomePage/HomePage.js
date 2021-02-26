@@ -19,7 +19,7 @@ import Footer from '../Footer/Footer';
 import PhasesOfCollege from './PhasesOfCollege';
 
 const babyStepsImg =
-  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/homepage_illustrations/baby_steps.png';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/79223f1e/src/Assets/homepage_illustrations/baby_steps.png';
 const exploringImg =
   'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/homepage_illustrations/exploring.png';
 const definingImg =
