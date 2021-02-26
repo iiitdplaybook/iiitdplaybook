@@ -38,9 +38,25 @@ canvas {
   z-index: 1;
 }
 
+.logo-image {
+  position: absolute;
+  height: 83vh;
+  /* top: 10vh; */
+  bottom: 0vh;
+  right: 4vw;
+  z-index: 100;
+}
+
+.imgHero {
+  max-width: 30vw;
+  max-height: 30vh;
+  margin-bottom: -80vh;
+  align-self: flex-end;
+}
+
 .welcome_text {
   color: white;
-  font-size: 6em;
+  font-size: 5em;
   z-index: 5;
 }
 
@@ -95,6 +111,8 @@ canvas {
 .section-text {
   text-align: right;
   padding-right: 8rem;
+  align-self: flex-end;
+  width: 40vw;
 }
 
 .section-text li {
@@ -191,6 +209,19 @@ canvas {
     flex-direction: column;
     justify-content: center !important;
     align-content: center !important;
+  }
+
+  .imgHero {
+    max-width: 85vw;
+    max-height: 85vh;
+    margin-bottom: -80vh;
+    align-self: flex-end;
+  }
+
+  .section_1 h4 {
+    font-size: x-small;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 
   .section-wrapper {

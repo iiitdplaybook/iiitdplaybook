@@ -28,6 +28,8 @@ const graduationImg =
   'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/homepage_illustrations/graduation.png';
 const nostalgiaImg =
   'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/homepage_illustrations/nostalgia.png';
+const iiitd = 
+  'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/homepage_illustrations/iiitd_pedestal.png';
 
 function HomePage() {
   const [{ user, isSignedIn, userName }] = useStateValue();
@@ -274,9 +276,11 @@ function HomePage() {
                     provides you with multiple strategies that other students
                     use, their experiences and stories, tools you can use to
                     help you along the way and much more!
-                  </h4>
-                </div>
-                {/* <img className="imgHero" src={imgWelcome}/>                                 */}
+                  </h4> 
+                </div>  
+                <div className='logo-image'>
+                  <img className="imgHero" src={iiitd}/>    
+                </div>                         
               </div>
               <div className='section phases-of-college'>
                 <PhasesOfCollege />
@@ -292,8 +296,9 @@ function HomePage() {
                   <div className='section-container'>
                     <h1 className='section-title'>Baby Steps</h1>
                     <p className='section-text'>
-                      You get the most time in your first year, to do literally
-                      ANYTHING!
+                      You've got all the time in the world in your first year. 
+                      Use it to pursue a hobby, join a club, polish your skillset, 
+                      hang out with friends- pretty much whatever you like!
                     </p>
                   </div>
                   <Testimonials portraits={portraits} />
@@ -311,22 +316,9 @@ function HomePage() {
                   <div className='section-container'>
                     <h1 className='section-title'>Exploring</h1>
                     <p className='section-text'>
-                      <ul>
-                        <li>
-                          Consume content (Podcasts, youtube videos, read books,
-                          follow people)
-                        </li>
-                        <li>Hackathons</li>
-                        <li>Network with people outside college</li>
-                        <li>
-                          Network with people within college (Relationships{' '}
-                          {'>'} Networking)
-                        </li>
-                        <li>
-                          Earn {'>'} Travel {'>'} Repeat (as much as you can)
-                        </li>
-                        <li>Learn how to google</li>
-                      </ul>
+                      Consume as much information as you can. 
+                      Participate in hackathons; get to know people in college, get to know people outside college, 
+                      travel to escape it all, explore relationships. There is so much to do! (Psst. learn how to Google).
                     </p>
                   </div>
                   <Testimonials portraits={exploring} />
@@ -343,13 +335,10 @@ function HomePage() {
                   <div className='section-container'>
                     <h1 className='section-title'>Defining Point</h1>
                     <p className='section-text'>
-                      <ul>
-                        <li>Finding your calling</li>
-                        <li>Live in the present</li>
-                        <li>Do not follow someone else’s dream</li>
-                        <li>Don’t confuse a job with a purpose</li>
-                        <li>Say yes to the things that intrigue you.</li>
-                      </ul>
+                    Do not shy away from trying whatever intrigues you. 
+                    Try to find something you are passionate about. 
+                    Follow your own path, find your purpose, find your own ambition and aspiration and don't 
+                    forget to live in the present.
                     </p>
                   </div>
                   <Testimonials portraits={definingPoint} />
@@ -391,7 +380,9 @@ function HomePage() {
                   <div className='section-container'>
                     <h1 className='section-title'>Nostalgia</h1>
                     <p className='section-text'>
-                      Let's take you down the memory lane
+                      From Odyssey to mid-sems, morning classes to late night movie sessions, mess to brew bakes, 
+                      impromptu travel plans to midnight parantha breaks - come take a trip down the memory lane
+                      with us and relive some of your favourite moments.
                     </p>
                   </div>
                   <Testimonials portraits={nostalgia} />
