@@ -52,6 +52,7 @@
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  width: 100vw;
 }
 
 .defaultClick {
@@ -62,6 +63,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: -4%;
 }
 
 .creators {
@@ -69,6 +71,7 @@
   align-items: center;
   justify-content: center;
   width: 50% !important;
+  margin-top: 3%;
 }
 
 .creators .creatorCard a {
@@ -234,10 +237,11 @@
   .creators {
     flex-wrap: wrap;
     width: 100% !important;
+    margin-top: 7%;
   }
 
   .creators .creatorCard p {
-    display: none;
+    padding-left: 10px;
   }
 
   .creators .creatorCard img {

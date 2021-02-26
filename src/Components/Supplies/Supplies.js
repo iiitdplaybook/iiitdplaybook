@@ -42,40 +42,40 @@ function Supplies() {
 
   const buttonClass = buttonStyles();
   const classes = useStyles();
-  // const itemCards = itemsList();
-  const [itemCards, setItemCards] = useState({ stationaryCards: [] });
-  const [stationaryCards, setStationaryCards] = useState([]);
+  const itemCards = itemsList();
+  // const [itemCards, setItemCards] = useState({ stationaryCards: [] });
+  // const [stationaryCards, setStationaryCards] = useState([]);
 
   const changeS = (s) => {
     setClickedButton(s);
   };
-  const getSupplies = async () => {
-    const stationaryRef = firebase.database().ref('Supplies/Stationary');
-    // var stationaryCards = [];
+  // const getSupplies = async () => {
+  //   // const stationaryRef = firebase.database().ref('Supplies/Stationary');
+  //   // var stationaryCards = [];
 
-    const snapshot = await stationaryRef.once('value');
+  //   const snapshot = await stationaryRef.once('value');
 
-    // console.log(stationaryCards);
-    // for (let index = 0; index < stationaryCards.length; index++) {
-    //   itemCards['stationaryCards'].push(SupplyCards(stationaryCards[index]));
-    // }
-    // console.log(itemCards['stationaryCards']);
-    // itemCards["allCards"]=stationaryCards;
-    return Object.values(snapshot.val());
-  };
+  //   // console.log(stationaryCards);
+  //   // for (let index = 0; index < stationaryCards.length; index++) {
+  //   //   itemCards['stationaryCards'].push(SupplyCards(stationaryCards[index]));
+  //   // }
+  //   // console.log(itemCards['stationaryCards']);
+  //   // itemCards["allCards"]=stationaryCards;
+  //   return Object.values(snapshot.val());
+  // };
 
-  React.useEffect(async () => {
-    const data = await getSupplies();
-    setStationaryCards(data);
-    console.log('STATIONERY: ', data);
-    let cards = [];
-    data.map((item) => {
-      cards.push(SupplyCards(item));
-    });
+  // React.useEffect(async () => {
+  //   const data = await getSupplies();
+  //   setStationaryCards(data);
+  //   console.log('STATIONERY: ', data);
+  //   let cards = [];
+  //   data.map((item) => {
+  //     cards.push(SupplyCards(item));
+  //   });
 
-    setItemCards({ stationaryCards: [...cards] });
-    return () => {};
-  }, []);
+  //   setItemCards({ stationaryCards: [...cards] });
+  //   return () => {};
+  // }, []);
 
   return (
     <div className='supplies'>

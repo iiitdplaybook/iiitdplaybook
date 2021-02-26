@@ -55,7 +55,7 @@ function ExploreCards(exploreCardInfo) {
     n_testimonies = 'N.A.';
     reading_time = 'N.A.';
     image =
-      'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/TimeManagement.svg';
+      'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/TimeManagement.svg';
     pathLink = 'explore';
     opacity = '1';
     guestFilter = false;

@@ -17,9 +17,9 @@ export default function AutoPlay({ portraits }) {
   `;
 
   const Review = styled.div`
-    width: ${(props) => props.scale * 375}px;
+    width: ${(props) => props.scale * 440}px;
     // display: flex;
-    padding: ${(props) => props.scale * 25}px;
+    padding: ${(props) => props.scale * 35}px;
     background: #fff;
     border-radius: 4px;
     min-height: 35vh;
@@ -70,12 +70,12 @@ export default function AutoPlay({ portraits }) {
   const slidesNum =
     window.innerWidth < 600
       ? Math.min(1, portraits.length)
-      : Math.min(5, portraits.length);
+      : Math.min(4, portraits.length);
 
   const slidesScroll =
     window.innerWidth < 600
       ? Math.min(1, portraits.length)
-      : Math.min(5, portraits.length);
+      : Math.min(4, portraits.length);
 
   // let width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
 
@@ -85,12 +85,12 @@ export default function AutoPlay({ portraits }) {
     slidesToShow: slidesNum,
     slidesToScroll: slidesScroll,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1500,
     cssEase: 'ease-in-out',
     pauseOnHover: true,
     arrows: window.innerWidth > 600 ? true : false,
     centerMode: true,
-    centerPadding: '70px',
+    centerPadding: '30px',
     adaptiveHeight: true,
   };
 

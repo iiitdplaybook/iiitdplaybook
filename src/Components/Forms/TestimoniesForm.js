@@ -79,12 +79,13 @@ export default function TestimoniesForm() {
       .ref('Testimonies/' + topic)
       .once('value', function (snapshot) {
         len = snapshot.numChildren();
+        firebase
+          .database()
+          .ref('Testimonies/' + topic + '/' + len)
+          .set(state);
       });
 
-    firebase
-      .database()
-      .ref('Testimonies/' + topic + '/' + len)
-      .set(state);
+    
     notify();
     settestimonies('');
   }
