@@ -380,7 +380,7 @@ function HomePage() {
                 </div>
               </div>
               {/* NOSTALGIA */}
-              <div className='section nostalgia'>
+              <div className='section nostalgia' id="stars_container">
                 <div className='section-wrapper'>
                   <img
                     className='section-image'
@@ -395,6 +395,7 @@ function HomePage() {
                   </div>
                   <Testimonials portraits={nostalgia} />
                 </div>
+                <Stars/>
               </div>
               <div className='section fp-auto-height'>
                 <Footer />
