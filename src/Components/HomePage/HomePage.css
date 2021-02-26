@@ -249,9 +249,16 @@ canvas {
   }
 
   .section-text {
-    text-align: center !important;
+    /* text-align: center !important;
     font-size: 1rem;
+    padding-right: 0 !important; */
+    /* Testing for Phone */
+    text-align: center !important; 
+    font-size: 2vh;
     padding-right: 0 !important;
+    align-self: center;
+    width: fit-content;
+    padding: 1.5rem;
   }
 
   .section-container {
