@@ -45,7 +45,7 @@ function HomePage() {
     ['Kabhi Padhliya Kar ',""],
     ["Did you turn in ","?"],
     ["Don't Sleep ",""],
-    ["Stop Procastinating ",""],//5
+    ["Stop Procrastinating ",""],//5
     ["run(",".py)"],//6
     ["Don't Cheat ",""],//7
     ["How you doin' ","?"],//8

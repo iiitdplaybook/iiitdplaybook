@@ -1,29 +1,192 @@
 /** @format */
 
 import './Supplies.css';
-import React, { useState, useEffect } from 'react';
-import { Button } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import itemsList from './itemsSupplies';
-import Navbar from '../Navbar/Navbar';
 import firebase from 'firebase';
-import ReactDOM from 'react-dom';
-import SuppliesCards from './SuppliesCards';
-import SupplyCards from './SuppliesCards';
+import React, { useState, useEffect } from 'react';
+import { Button, makeStyles } from '@material-ui/core';
+import Navbar from '../Navbar/Navbar';
+import SupplyCard from './SupplyCard';
 
 function Supplies() {
-  const [clickedButton, setClickedButton] = React.useState(1);
-  const useStyles = makeStyles({
-    root: {
-      background: '#fff',
-      borderRadius: '5px',
-      width: 250,
-      marginLeft: 10,
-    },
-    media: {
-      height: 250,
-    },
-  });
+  const [clickedButton, setClickedButton] = useState(1);
+  const [allCards, setAll] = useState([]);
+  const [stationaryCards, setStationary] = useState([]);
+  const [designCards, setDesign] = useState([]);
+  const [booksCards, setBook] = useState([]);
+  const [laptopsCards, setLaptop] = useState([]);
+  const [techotherCards, setTech] = useState([]);
+  const [roomCards, setRoom] = useState([]);
+  const [otherCards, setOther] = useState([]);
+
+  const getSupplies = async () => {
+
+    var tempAll = [];
+    var tempStationary = [];
+    var tempDesign = [];
+    var tempBook = [];
+    var tempLaptop = [];
+    var tempTech = [];
+    var tempRoom = [];
+    var tempOther = [];
+   
+    var allCardsRef = firebase
+      .database()
+      .ref('Supplies/AllCards');
+    await allCardsRef.once('value', (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+          var title= childSnapshot.val().title;
+          var desc = childSnapshot.val().description;
+          var image = childSnapshot.val().image;
+          var path = childSnapshot.val().pathLink;
+          var dict = {};
+          dict.Title = title;
+          dict.Desc = desc;
+          dict.Image = image;
+          dict.Path = path;
+          tempAll.push(dict);
+      });
+    });
+    setAll(tempAll);
+
+    var stationaryRef = firebase
+      .database()
+      .ref('Supplies/Stationary');
+    await stationaryRef.once('value', (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+          var title= childSnapshot.val().title;
+          var desc = childSnapshot.val().description;
+          var image = childSnapshot.val().image;
+          var path = childSnapshot.val().pathLink;
+          var dict = {};
+          dict.Title = title;
+          dict.Desc = desc;
+          dict.Image = image;
+          dict.Path = path;
+          tempStationary.push(dict);
+      });
+    });
+    setStationary(tempStationary);
+
+    var designRef = firebase
+      .database()
+      .ref('Supplies/Design');
+    await designRef.once('value', (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+          var title= childSnapshot.val().title;
+          var desc = childSnapshot.val().description;
+          var image = childSnapshot.val().image;
+          var path = childSnapshot.val().pathLink;
+          var dict = {};
+          dict.Title = title;
+          dict.Desc = desc;
+          dict.Image = image;
+          dict.Path = path;
+          tempDesign.push(dict);
+      });
+    });
+    setDesign(tempDesign);
+
+    var laptopRef = firebase
+      .database()
+      .ref('Supplies/Laptops');
+    await laptopRef.once('value', (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+          var title= childSnapshot.val().title;
+          var desc = childSnapshot.val().description;
+          var image = childSnapshot.val().image;
+          var path = childSnapshot.val().pathLink;
+          var dict = {};
+          dict.Title = title;
+          dict.Desc = desc;
+          dict.Image = image;
+          dict.Path = path;
+          tempLaptop.push(dict);
+      });
+    });
+    setLaptop(tempLaptop);
+
+    var bookRef = firebase
+      .database()
+      .ref('Supplies/Books');
+    await bookRef.once('value', (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+          var title= childSnapshot.val().title;
+          var desc = childSnapshot.val().description;
+          var image = childSnapshot.val().image;
+          var path = childSnapshot.val().pathLink;
+          var dict = {};
+          dict.Title = title;
+          dict.Desc = desc;
+          dict.Image = image;
+          dict.Path = path;
+          tempBook.push(dict);
+      });
+    });
+    setBook(tempBook);
+
+    var roomRef = firebase
+      .database()
+      .ref('Supplies/Room');
+    await roomRef.once('value', (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+          var title= childSnapshot.val().title;
+          var desc = childSnapshot.val().description;
+          var image = childSnapshot.val().image;
+          var path = childSnapshot.val().pathLink;
+          var dict = {};
+          dict.Title = title;
+          dict.Desc = desc;
+          dict.Image = image;
+          dict.Path = path;
+          tempRoom.push(dict);
+      });
+    });
+    setRoom(tempRoom);
+
+    var techotherRef = firebase
+      .database()
+      .ref('Supplies/Tech');
+    await techotherRef.once('value', (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+          var title= childSnapshot.val().title;
+          var desc = childSnapshot.val().description;
+          var image = childSnapshot.val().image;
+          var path = childSnapshot.val().pathLink;
+          var dict = {};
+          dict.Title = title;
+          dict.Desc = desc;
+          dict.Image = image;
+          dict.Path = path;
+          tempTech.push(dict);
+      });
+    });
+    setTech(tempTech);
+
+    var otherRef = firebase
+      .database()
+      .ref('Supplies/Other');
+    await otherRef.once('value', (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+          var title= childSnapshot.val().title;
+          var desc = childSnapshot.val().description;
+          var image = childSnapshot.val().image;
+          var path = childSnapshot.val().pathLink;
+          var dict = {};
+          dict.Title = title;
+          dict.Desc = desc;
+          dict.Image = image;
+          dict.Path = path;
+          tempOther.push(dict);
+      });
+    });
+    setOther(tempOther);
+
+  };
+
+  useEffect(() => {
+    getSupplies();
+    return () => {};
+  }, [])
 
   const buttonStyles = makeStyles({
     root: {
@@ -41,59 +204,28 @@ function Supplies() {
   });
 
   const buttonClass = buttonStyles();
-  const classes = useStyles();
-  const itemCards = itemsList();
-  // const [itemCards, setItemCards] = useState({ stationaryCards: [] });
-  // const [stationaryCards, setStationaryCards] = useState([]);
 
   const changeS = (s) => {
     setClickedButton(s);
   };
-  // const getSupplies = async () => {
-  //   // const stationaryRef = firebase.database().ref('Supplies/Stationary');
-  //   // var stationaryCards = [];
-
-  //   const snapshot = await stationaryRef.once('value');
-
-  //   // console.log(stationaryCards);
-  //   // for (let index = 0; index < stationaryCards.length; index++) {
-  //   //   itemCards['stationaryCards'].push(SupplyCards(stationaryCards[index]));
-  //   // }
-  //   // console.log(itemCards['stationaryCards']);
-  //   // itemCards["allCards"]=stationaryCards;
-  //   return Object.values(snapshot.val());
-  // };
-
-  // React.useEffect(async () => {
-  //   const data = await getSupplies();
-  //   setStationaryCards(data);
-  //   console.log('STATIONERY: ', data);
-  //   let cards = [];
-  //   data.map((item) => {
-  //     cards.push(SupplyCards(item));
-  //   });
-
-  //   setItemCards({ stationaryCards: [...cards] });
-  //   return () => {};
-  // }, []);
 
   return (
-    <div className='supplies'>
+    <div className="supplies">
       <Navbar
-        loggedIn={localStorage.getItem('isSignedIn')}
+        loggedIn={localStorage.getItem("isSignedIn")}
         colorStatus={true}
       />
       <h2
-        className='supplies_heading'
-        style={{ textAlign: 'center', margin: '4%' }}
+        className="supplies_heading"
+        style={{ textAlign: "center", margin: "4%" }}
       >
         A collection of things that students use in college
       </h2>
 
-      <div className='supplies__button'>
+      <div className="supplies__button">
         <Button
           onClick={() => changeS(1)}
-          variant={clickedButton === 1 ? 'contatined' : 'outlined'}
+          variant={clickedButton === 1 ? "contatined" : "outlined"}
           className={
             clickedButton === 1 ? buttonClass.root : buttonClass.notRoot
           }
@@ -102,16 +234,16 @@ function Supplies() {
         </Button>
         <Button
           onClick={() => changeS(2)}
-          variant={clickedButton === 2 ? 'contatined' : 'outlined'}
+          variant={clickedButton === 2 ? "contatined" : "outlined"}
           className={
             clickedButton === 2 ? buttonClass.root : buttonClass.notRoot
           }
         >
-          Stationery
+          Stationary
         </Button>
         <Button
           onClick={() => changeS(3)}
-          variant={clickedButton === 3 ? 'contatined' : 'outlined'}
+          variant={clickedButton === 3 ? "contatined" : "outlined"}
           className={
             clickedButton === 3 ? buttonClass.root : buttonClass.notRoot
           }
@@ -120,7 +252,7 @@ function Supplies() {
         </Button>
         <Button
           onClick={() => changeS(4)}
-          variant={clickedButton === 4 ? 'contatined' : 'outlined'}
+          variant={clickedButton === 4 ? "contatined" : "outlined"}
           className={
             clickedButton === 4 ? buttonClass.root : buttonClass.notRoot
           }
@@ -129,7 +261,7 @@ function Supplies() {
         </Button>
         <Button
           onClick={() => changeS(5)}
-          variant={clickedButton === 5 ? 'contatined' : 'outlined'}
+          variant={clickedButton === 5 ? "contatined" : "outlined"}
           className={
             clickedButton === 5 ? buttonClass.root : buttonClass.notRoot
           }
@@ -138,7 +270,7 @@ function Supplies() {
         </Button>
         <Button
           onClick={() => changeS(6)}
-          variant={clickedButton === 6 ? 'contatined' : 'outlined'}
+          variant={clickedButton === 6 ? "contatined" : "outlined"}
           className={
             clickedButton === 6 ? buttonClass.root : buttonClass.notRoot
           }
@@ -147,7 +279,7 @@ function Supplies() {
         </Button>
         <Button
           onClick={() => changeS(7)}
-          variant={clickedButton === 7 ? 'contatined' : 'outlined'}
+          variant={clickedButton === 7 ? "contatined" : "outlined"}
           className={
             clickedButton === 7 ? buttonClass.root : buttonClass.notRoot
           }
@@ -156,7 +288,7 @@ function Supplies() {
         </Button>
         <Button
           onClick={() => changeS(8)}
-          variant={clickedButton === 8 ? 'contatined' : 'outlined'}
+          variant={clickedButton === 8 ? "contatined" : "outlined"}
           className={
             clickedButton === 8 ? buttonClass.root : buttonClass.notRoot
           }
@@ -164,27 +296,29 @@ function Supplies() {
           Others
         </Button>
       </div>
-      <div className='explore__body'>
+      <div className="explore__body">
         {clickedButton === 1 ? (
-          <div className='cardsDiv_supply'>{itemCards['allCards']}</div>
+          <div className="cardsDiv_supply"><SupplyCard supplyCardList={allCards} /></div>
         ) : clickedButton === 2 ? (
-          <div className='cardsDiv_supply'>{itemCards['stationaryCards']}</div>
+          <div className="cardsDiv_supply"><SupplyCard supplyCardList={stationaryCards} /></div>
         ) : clickedButton === 3 ? (
-          <div className='cardsDiv_supply'>{itemCards['designCards']}</div>
+          <div className="cardsDiv_supply"><SupplyCard supplyCardList={designCards} /></div>
         ) : clickedButton === 4 ? (
-          <div className='cardsDiv_supply'>{itemCards['booksCards']}</div>
+          <div className="cardsDiv_supply"><SupplyCard supplyCardList={booksCards} /></div>
         ) : clickedButton === 5 ? (
-          <div className='cardsDiv_supply'>{itemCards['laptopsCards']}</div>
+          <div className="cardsDiv_supply"><SupplyCard supplyCardList={laptopsCards} /></div>
         ) : clickedButton === 6 ? (
-          <div className='cardsDiv_supply'>{itemCards['techotherCards']}</div>
+          <div className="cardsDiv_supply"><SupplyCard supplyCardList={techotherCards} /></div>
         ) : clickedButton === 7 ? (
-          <div className='cardsDiv_supply'>{itemCards['roomCards']}</div>
+          <div className="cardsDiv_supply"><SupplyCard supplyCardList={roomCards} /></div>
         ) : (
-          <div className='cardsDiv_supply'>{itemCards['otherCards']}</div>
+          <div className="cardsDiv_supply"><SupplyCard supplyCardList={otherCards} /></div>
         )}
       </div>
     </div>
   );
+ 
+ 
 }
 
 export default Supplies;
