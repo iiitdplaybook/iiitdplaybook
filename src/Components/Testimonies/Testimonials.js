@@ -103,7 +103,7 @@ export default function AutoPlay({ portraits }) {
         {times(portraits.length, String).map((id, index) => (
           // testimonies_data[id].isApproved?
           <div key={index}>
-            {console.log('size', window.innerWidth)}
+            {/* {console.log('size', window.innerWidth)} */}
             <Box key={`marquee-example-review-${id}`} scale={scale}>
               <Review scale={scale}>
                 <div id='containerHeader'>

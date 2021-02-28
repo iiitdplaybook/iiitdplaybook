@@ -9,7 +9,6 @@ import Stars from '../Stars/stars';
 import Clouds from '../Clouds/clouds';
 import Testimonials from '../Testimonies/Testimonials';
 import { useState, useEffect } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import ReactFullpage from '@fullpage/react-fullpage';
@@ -38,23 +37,25 @@ function HomePage() {
   const [definingPoint, setdefiningPoint] = useState([]);
   const [graduating, setgraduating] = useState([]);
   const [nostalgia, setnostalgia] = useState([]);
+  const [greetingList, setGreetingList] = useState([]);
   const [randi, setRandi] = useState(0);
 
-  const greetingList = [
-    ["Hello ", ""],
-    ['Kabhi Padhliya Kar ',""],
-    ["Did you turn in ","?"],
-    ["Don't Sleep ",""],
-    ["Stop Procrastinating ",""],//5
-    ["run(",".py)"],//6
-    ["Don't Cheat ",""],//7
-    ["How you doin' ","?"],//8
-    ["Padhlo ",""],//9
-    ["Hakuna Matata ",""],//10
-    ["Touché ",", Touché"],//11
-    ["C'est la vie ",""],//12
-    ["Dream Big ",""],//13
-  ]
+  const getGreetings = async () => {
+    var greetingList = []
+
+    let greetingsRef = firebase
+      .database()
+      .ref('Greetings');
+    await greetingsRef.once('value', (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+        const temp = [childSnapshot.val().prefix, childSnapshot.val().suffix];
+        greetingList.push(temp);
+      });
+    });
+    
+    setRandi(Math.floor(Math.random() * Math.floor(greetingList.length)));
+    setGreetingList(greetingList);
+  };
 
   const getTestimonies = async () => {
     let temp1 = [];
@@ -62,9 +63,6 @@ function HomePage() {
     let temp3 = [];
     let temp4 = [];
     let temp5 = [];
-    // let temp3 = definingPoint;
-    // let temp4 = graduating;
-    // let temp5 = nostalgia;
 
     /////////////////////////////////////////////////////////////////////////////////////////////
     let babyStepRef = firebase
@@ -169,22 +167,6 @@ function HomePage() {
 
     /////////////////////////////////////////////////////////////////////////////////////////////
 
-    // document1.docs.forEach((item) => {
-    //   temp1.push(item.data());
-    // });
-    // document2.docs.forEach((item) => {
-    //   temp2.push(item.data());
-    // });
-    // document3.docs.forEach((item) => {
-    //   temp3.push(item.data());
-    // });
-    // document4.docs.forEach((item) => {
-    //   temp4.push(item.data());
-    // });
-    // document5.docs.forEach((item) => {
-    //   temp5.push(item.data());
-    // });
-
     setportraits(temp1);
     setexploring(temp2);
     setdefiningPoint(temp3);
@@ -194,60 +176,10 @@ function HomePage() {
 
   useEffect(() => {
     getTestimonies();
-    setRandi(Math.floor(Math.random() * Math.floor(greetingList.length)));
+    getGreetings();
     return () => {};
   }, []);
-  // Don't delete below
-  // let portraits2 = [
-  //   {
-  //     UserAvatar: userProfile,
-  //     Text:
-  //       "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics",
-  //     Name: "Medhavi",
-  //   },
-  //   {
-  //     UserAvatar: userProfile,
-  //     Text:
-  //       "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.",
-  //     Name: "Sonali",
-  //   },
-  //   {
-  //     UserAvatar: userProfile,
-  //     Text:
-  //       "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics",
-  //     Name: "Medhavi",
-  //   },
-  //   {
-  //     UserAvatar: userProfile,
-  //     Text:
-  //       "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.",
-  //     Name: "Sonali",
-  //   },
-  //   {
-  //     UserAvatar: userProfile,
-  //     Text:
-  //       "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics",
-  //     Name: "Medhavi",
-  //   },
-  //   {
-  //     UserAvatar: userProfile,
-  //     Text:
-  //       "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.",
-  //     Name: "Sonali",
-  //   },
-  //   {
-  //     UserAvatar: userProfile,
-  //     Text:
-  //       "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics",
-  //     Name: "Medhavi",
-  //   },
-  //   {
-  //     UserAvatar: userProfile,
-  //     Text:
-  //       "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.",
-  //     Name: "Sonali",
-  //   },
-  // ];
+  
 
   return (
     <>
@@ -285,7 +217,8 @@ function HomePage() {
                           </h1>
                         ) : (
                           <h1 className='welcome_text'>
-                            {greetingList[randi][0]}{userName.split(' ')[0]}{greetingList[randi][1]}
+                            {greetingList?.[randi]?.[0]}{userName.split(' ')[0]}{greetingList?.[randi]?.[1]}
+                            {console.log(greetingList)}
                           </h1>
                       )
                     }
