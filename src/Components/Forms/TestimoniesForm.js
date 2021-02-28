@@ -200,7 +200,7 @@ export default function TestimoniesForm() {
     } else {
       setHint(defaultHint);
     }
-  }, []);
+  });
 
   const [testimonies, settestimonies] = useState('');
   const handleTestieChange = (event) => {
