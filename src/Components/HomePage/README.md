@@ -15,8 +15,6 @@ All the images used on this page are hosted on statically (to reduce http reques
 
 - The entire layout of the homepage is made using `react-fullpage`.
 - The documentation of `react-fullpage` can be found [here](https://github.com/alvarotrigo/react-fullpage) and the detailed description of all the options can be found [here](https://github.com/alvarotrigo/fullPage.js#options).
-- For options that may not seem intuitively obvious:
-  - `fitToSection={true}` ...
 - The `Footer` had to be included as a section of react-fullpage because otherwise, it's impossible to scroll below the fullpage sections. `fp-auto-height` here is essential to prevent the `Footer` component from being padded with whitespace.
 
 ### Sections of the Homepage
@@ -25,6 +23,7 @@ All the images used on this page are hosted on statically (to reduce http reques
 
 - The tilt on hover animation of the welcome text is given by the `Tilt` component from `react-parallax-tilt`.
 - The code for the `particles.js` animation can be found in `src/Components/ParticleAnim`.
+- A randomized greeting is displayed by the state variable `randi`.
 
 #### Phases Of College
 
@@ -50,3 +49,5 @@ The following JSX elements are enclosed within a flexbox div with `className='se
 - The testimonies stored in the state variables are displayed as a carousel of cards. The component `Testimonials` in `src/Components/Testimonies` takes care of this.
 
 \*Some sections have custom animations, for e.g. `Clouds` component in Exploring, `Stars` in Nostalgia.
+
+<sub><sup>Ananya Lohani (2019018) </sup></sub>

@@ -32,11 +32,11 @@ const iiitd =
 
 function HomePage() {
   const [{ user, isSignedIn, userName }] = useStateValue();
-  const [portraits, setportraits] = useState([]);
-  const [exploring, setexploring] = useState([]);
-  const [definingPoint, setdefiningPoint] = useState([]);
-  const [graduating, setgraduating] = useState([]);
-  const [nostalgia, setnostalgia] = useState([]);
+  const [portraits, setPortraits] = useState([]);
+  const [exploring, setExploring] = useState([]);
+  const [definingPoint, setDefiningPoint] = useState([]);
+  const [graduating, setGraduating] = useState([]);
+  const [nostalgia, setNostalgia] = useState([]);
   const [greetingList, setGreetingList] = useState([]);
   const [randi, setRandi] = useState(0);
 
@@ -179,7 +179,7 @@ function HomePage() {
     <>
       <Navbar loggedIn={true} colorStatus={false} stickyCond={true} />
       <ReactFullpage
-        fitToSection={false}
+        fitToSection={true}
         scrollingSpeed={1000}
         navigation={window.innerWidth > 600 ? true : false}
         navigationPosition='left'
@@ -192,7 +192,7 @@ function HomePage() {
           'Graduation',
           'Nostalgia',
         ]}
-        bigSectionsDestination='top'
+        bigSectionsDestination='bottom'
         recordHistory={false}
         touchSensitivity={10}
         fadingEffect={true}

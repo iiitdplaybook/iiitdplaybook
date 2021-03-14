@@ -87,6 +87,7 @@ canvas {
   color: #fff !important;
   font-weight: bolder;
   padding-right: 0;
+  max-height: 100vh !important;
 }
 
 .section-title {
@@ -255,7 +256,7 @@ canvas {
     font-size: 1rem;
     padding-right: 0 !important; */
     /* Testing for Phone */
-    text-align: center !important; 
+    text-align: center !important;
     font-size: 1.5vh;
     padding-right: 0 !important;
     align-self: center;

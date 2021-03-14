@@ -26,3 +26,5 @@ Find the documentation for the footer code in this file.
 - The `Marquee` component from [`react-marquee-slider`](https://github.com/mxmzb/react-marquee-slider) is used to display the member cards in a marquee.
 - Each member card is displayed in a div with `className='memberCard'` having the image, name, team name and a linkedin icon (fontawesome).
 - The `<a className='defaultClick'>` is for redirecting the click on the member card to the `defaultLink` stored in `memberData`
+
+<sub><sup>Ananya Lohani (2019018) </sup></sub>
