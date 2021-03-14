@@ -1,11 +1,13 @@
 import firebase from 'firebase';
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from '../Navbar/Navbar';
 import { makeStyles } from '@material-ui/core/styles';
 import { useStateValue } from '../../StateProvider';
 import './TestimoniesForm.css';
 // Material UI for Form
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
+
 import TextField from '@material-ui/core/TextField';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
@@ -23,6 +25,9 @@ import { ToastContainer, toast } from 'react-toastify';
 // import { handleUpload } from './ImgUpload';
 import '../../../node_modules/react-toastify/dist/ReactToastify.css';
 import ImgUpload from './ImgUpload';
+
+const confetti = 'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/6a71631d/src/Assets/confetti.json';
+
 
 const state = {
   UserAvatar:
@@ -54,10 +59,12 @@ export default function TestimoniesForm() {
       draggablePercent: 30,
     });
   const [{ user, isSignedIn, userName }] = useStateValue();
+  const [showConfetti, setShowConfetti] = useState('')
 
   function submitForm(event) {
+    
     event.preventDefault();
-    let topic = '';
+    let topic = ''; 
     if (value === 'Phases of College') {
       state.Topic = value + ' - ' + PoC_Value;
       topic = value + ' - ' + PoC_Value;
@@ -87,10 +94,32 @@ export default function TestimoniesForm() {
 
     
     notify();
+    setShowConfetti('confetti');
     settestimonies('');
   }
 
   const [progress, setProgress] = useState(0);
+
+  const doSomething = () => {
+    setShowConfetti(''); 
+    console.log("confetti ocmplet");
+    console.log(showConfetti);
+  }
+
+  const getConfetti = () => {
+    return (
+      <Player 
+        id="confettiBox" 
+        autoplay 
+        src={confetti} 
+        loop = {false}
+        onEvent={event => {
+          if (event === 'completed') doSomething()}} 
+        style={{ height: '500px', width: '700px', zIndex: '-1', position: 'absolute' }}
+      />
+    )
+    
+  }
 
   const handleUpload = (files) => {
     const storage = firebase.storage();
@@ -132,7 +161,7 @@ export default function TestimoniesForm() {
   const handleChange = (event) => {
     setValue(event.target.value);
   };
-  React.useEffect(() => {
+  useEffect(() => {
     if (value === 'Clubs') {
       setHint(clubHint);
     } else if (value === 'General') {
@@ -200,9 +229,9 @@ export default function TestimoniesForm() {
   const babyStepsHint =
     "How was your experience when you first entered college? How did you make friends/connect with people?";
   const exploringHint =
-    "How did you start exploring/experimenting/trying out new things? What was something your discovered or got to know about yourself?";
+    "How did you start exploring/experimenting/trying out new things? What was something you discovered or got to know about yourself?";
   const definingHint =
-    "How did you find your calling/what you wanted to do in life? What did you do during this phase? Any tips?";
+    "How did you find your calling/what you wanted to do in life? Or something that you figured out that built your personality for the better? (Can be non-academic/academic/career etc.)";
   const graduatingHint = 
      "How was your experience when you graduated? What is something you learned in college? Hindsight thoughts? What is something you missed out on? What are you looking forward to after college?";
   const nostalgiaHint =
@@ -225,6 +254,7 @@ export default function TestimoniesForm() {
   return (
     <div>
       <Navbar loggedIn={true} colorStatus={true} />
+      
       <form className={classes.root} noValidate autoComplete='off'>
         <div className='formdiv'>
           <h1 className='formlabel'>
@@ -319,10 +349,14 @@ export default function TestimoniesForm() {
                 </RadioGroup>
               </div>
             </div>
+            {showConfetti === 'confetti' && getConfetti()}
+            {/* {showConfetti === '' && <Player autoplay src={confetti} style={{ display: 'none'}}/>} */}
+            
           </FormControl>
           <br />
           <br />
           <br />
+          
           <TextField
             disabled
             id='outlined-disabled'
@@ -354,6 +388,7 @@ export default function TestimoniesForm() {
             </FormControl>
           ) : null}
           <br />
+          
           <br />
           {value === 'Images' ? (
             <div class='image_upload'>
@@ -374,6 +409,9 @@ export default function TestimoniesForm() {
                 variant='outlined'
                 className='testimonials'
                 color='secondary'
+                inputProps={{
+                  maxlength: 400
+                }}
                 value={testimonies}
                 onChange={handleTestieChange}
               />
@@ -385,6 +423,7 @@ export default function TestimoniesForm() {
             Name and your Testimony
           </p>
           <br />
+          
           <Button
             className='button'
             size='lg'
@@ -393,7 +432,9 @@ export default function TestimoniesForm() {
             onClick={word_count <= 400 ? submitForm : showError}
           >
             <span className='span2'>submit</span>
+
           </Button>
+          
         </div>
       </form>
     </div>

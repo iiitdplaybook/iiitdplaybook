@@ -19,7 +19,7 @@ export default function AutoPlay({ portraits }) {
   const Review = styled.div`
     width: ${(props) => props.scale * 440}px;
     // display: flex;
-    padding: ${(props) => props.scale * 25}px;
+    padding: ${(props) => props.scale * 35}px;
     background: #fff;
     border-radius: 4px;
     min-height: 35vh;
@@ -85,12 +85,12 @@ export default function AutoPlay({ portraits }) {
     slidesToShow: slidesNum,
     slidesToScroll: slidesScroll,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 1500,
     cssEase: 'ease-in-out',
     pauseOnHover: true,
     arrows: window.innerWidth > 600 ? true : false,
     centerMode: true,
-    centerPadding: '70px',
+    centerPadding: '30px',
     adaptiveHeight: true,
   };
 
@@ -103,7 +103,7 @@ export default function AutoPlay({ portraits }) {
         {times(portraits.length, String).map((id, index) => (
           // testimonies_data[id].isApproved?
           <div key={index}>
-            {console.log('size', window.innerWidth)}
+            {/* {console.log('size', window.innerWidth)} */}
             <Box key={`marquee-example-review-${id}`} scale={scale}>
               <Review scale={scale}>
                 <div id='containerHeader'>

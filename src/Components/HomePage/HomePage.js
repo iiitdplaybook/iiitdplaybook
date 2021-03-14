@@ -18,25 +18,42 @@ import Footer from '../Footer/Footer';
 import PhasesOfCollege from './PhasesOfCollege';
 
 const babyStepsImg =
-  'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/homepage_illustrations/baby_steps.png';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/79223f1e/src/Assets/homepage_illustrations/baby_steps.png';
 const exploringImg =
-  'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/homepage_illustrations/exploring.png';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/homepage_illustrations/exploring.png';
 const definingImg =
-  'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/homepage_illustrations/defining_point.png';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/homepage_illustrations/defining_point.png';
 const graduationImg =
-  'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/homepage_illustrations/graduation.png';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/homepage_illustrations/graduation.png';
 const nostalgiaImg =
-  'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/homepage_illustrations/nostalgia.png';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/homepage_illustrations/nostalgia.png';
 const iiitd =
-  'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/homepage_illustrations/iiitd_pedestal.png';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/homepage_illustrations/iiitd_pedestal.png';
 
 function HomePage() {
   const [{ user, isSignedIn, userName }] = useStateValue();
-  const [portraits, setPortraits] = useState([]);
-  const [exploring, setExploring] = useState([]);
-  const [definingPoint, setDefiningPoint] = useState([]);
-  const [graduating, setGraduating] = useState([]);
-  const [nostalgia, setNostalgia] = useState([]);
+  const [portraits, setportraits] = useState([]);
+  const [exploring, setexploring] = useState([]);
+  const [definingPoint, setdefiningPoint] = useState([]);
+  const [graduating, setgraduating] = useState([]);
+  const [nostalgia, setnostalgia] = useState([]);
+  const [greetingList, setGreetingList] = useState([]);
+  const [randi, setRandi] = useState(0);
+
+  const getGreetings = async () => {
+    var greetingList = [];
+
+    let greetingsRef = firebase.database().ref('Greetings');
+    await greetingsRef.once('value', (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+        const temp = [childSnapshot.val().prefix, childSnapshot.val().suffix];
+        greetingList.push(temp);
+      });
+    });
+
+    setRandi(Math.floor(Math.random() * Math.floor(greetingList.length)));
+    setGreetingList(greetingList);
+  };
 
   const getTestimonies = async () => {
     let temp1 = [];
@@ -154,59 +171,9 @@ function HomePage() {
 
   useEffect(() => {
     getTestimonies();
+    getGreetings();
     return () => {};
   }, []);
-  // Don't delete below
-  // let portraits2 = [
-  //   {
-  //     UserAvatar: userProfile,
-  //     Text:
-  //       "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics",
-  //     Name: "Medhavi",
-  //   },
-  //   {
-  //     UserAvatar: userProfile,
-  //     Text:
-  //       "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.",
-  //     Name: "Sonali",
-  //   },
-  //   {
-  //     UserAvatar: userProfile,
-  //     Text:
-  //       "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics",
-  //     Name: "Medhavi",
-  //   },
-  //   {
-  //     UserAvatar: userProfile,
-  //     Text:
-  //       "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.",
-  //     Name: "Sonali",
-  //   },
-  //   {
-  //     UserAvatar: userProfile,
-  //     Text:
-  //       "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics",
-  //     Name: "Medhavi",
-  //   },
-  //   {
-  //     UserAvatar: userProfile,
-  //     Text:
-  //       "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.",
-  //     Name: "Sonali",
-  //   },
-  //   {
-  //     UserAvatar: userProfile,
-  //     Text:
-  //       "Being from a non-science background, I honestly did not know what to expect from an engineering college but the induction made me feel at ease and love it. I just knew that I have to make the most of college life and try to be part of events and clubs that interest me because I couldn’t imagine a college life with only academics",
-  //     Name: "Medhavi",
-  //   },
-  //   {
-  //     UserAvatar: userProfile,
-  //     Text:
-  //       "Loved it. Loved the people, hanging out late night in groups, the induction program, huge lecture halls, the infrastructure, and the courses. It was a very new experience. I felt super independent. I could pursue what I liked, the  knew whatever I study would be meaningful.",
-  //     Name: "Sonali",
-  //   },
-  // ];
 
   return (
     <>
@@ -237,9 +204,16 @@ function HomePage() {
 
                 <div className='section_1'>
                   <Tilt trackOnWindow={true} perspective={500}>
-                    <h1 className='welcome_text'>
-                      Hello {userName.split(' ')[0]}
-                    </h1>
+                    {!isSignedIn ? (
+                      <h1 className='welcome_text'>Hello</h1>
+                    ) : (
+                      <h1 className='welcome_text'>
+                        {greetingList?.[randi]?.[0]}
+                        {userName.split(' ')[0]}
+                        {greetingList?.[randi]?.[1]}
+                        {console.log(greetingList)}
+                      </h1>
+                    )}
                   </Tilt>
                   <h4
                     style={{
@@ -335,15 +309,11 @@ function HomePage() {
                   <div className='section-container'>
                     <h1 className='section-title'>Graduation</h1>
                     <p className='section-text'>
-                      <ul>
-                        <li>Enjoying the last moments</li>
-                        <li>
-                          Your Degree Means Little; Experience Trounces All
-                        </li>
-                        <li>Invest In Evergreen Assets</li>
-                        <li>Remember, Your First Job Isn’t Your Last</li>
-                        <li>Be True To You</li>
-                      </ul>
+                      You may be leaving IIITD, but IIITD never leaves you. You
+                      cannot say goodbye just yet. All the lessons you've
+                      learnt, adventures you've embarked upon and most
+                      importantly, the friends you've made are gonna stay with
+                      you forever as you enter the next phase of your life.
                     </p>
                   </div>
                   <Testimonials portraits={graduating} />

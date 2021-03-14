@@ -81,7 +81,7 @@ function PhasesOfCollege() {
     <div className='college-phases'>
       <div className='items'>
         {itemList.map((item, index) => {
-          console.log(index);
+          // console.log(index);
           if (index === Math.floor(itemList.length / 2))
             return (
               <>
