@@ -8,7 +8,7 @@ import Stars from '../Stars/stars';
 
 import Clouds from '../Clouds/clouds';
 import Testimonials from '../Testimonies/Testimonials';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 
 import ReactFullpage from '@fullpage/react-fullpage';
@@ -175,14 +175,24 @@ function HomePage() {
     return () => {};
   }, []);
 
+  const sectionsRef = [];
+  const numSections = 7;
+
+  useEffect(() => {
+    for (let i = 0; i < numSections; i++) {
+      sectionsRef[i].setAttribute('style', 'height:100vh', '!important');
+      console.log(sectionsRef[i]);
+    }
+  });
+
   return (
     <>
       <Navbar loggedIn={true} colorStatus={false} stickyCond={true} />
       <ReactFullpage
-        fitToSection={true}
+        fitToSection={false}
         scrollingSpeed={1000}
         navigation={window.innerWidth > 600 ? true : false}
-        navigationPosition='left'
+        navigationPosition={'left'}
         navigationTooltips={[
           'Welcome',
           'Phases of College',
@@ -192,14 +202,16 @@ function HomePage() {
           'Graduation',
           'Nostalgia',
         ]}
-        bigSectionsDestination='bottom'
+        bigSectionsDestination={'bottom'}
         recordHistory={false}
         touchSensitivity={10}
-        fadingEffect={true}
         render={({ state, fullpageApi }) => {
           return (
             <ReactFullpage.Wrapper>
-              <div className='section section_0'>
+              <div
+                ref={(ref) => (sectionsRef[0] = ref)}
+                className='section section_0'
+              >
                 <ParticleAnim />
 
                 <div className='section_1'>
@@ -233,11 +245,17 @@ function HomePage() {
                   <img className='imgHero' src={iiitd} />
                 </div>
               </div>
-              <div className='section phases-of-college'>
+              <div
+                ref={(ref) => (sectionsRef[1] = ref)}
+                className='section phases-of-college'
+              >
                 <PhasesOfCollege />
               </div>
               {/* BABY STEPS */}
-              <div className='section baby-steps'>
+              <div
+                ref={(ref) => (sectionsRef[2] = ref)}
+                className='section baby-steps fp-auto-height'
+              >
                 <div className='section-wrapper'>
                   <img
                     className='section-image'
@@ -257,7 +275,10 @@ function HomePage() {
                 </div>
               </div>
               {/* EXPLORING */}
-              <div className='section exploring'>
+              <div
+                ref={(ref) => (sectionsRef[3] = ref)}
+                className='section exploring fp-auto-height'
+              >
                 <Clouds />
                 <div className='section-wrapper'>
                   <img
@@ -279,7 +300,10 @@ function HomePage() {
                 </div>
               </div>
               {/* DEFINING POINT */}
-              <div className='section defining-point'>
+              <div
+                ref={(ref) => (sectionsRef[4] = ref)}
+                className='section defining-point fp-auto-height'
+              >
                 <div className='section-wrapper'>
                   <img
                     className='section-image'
@@ -299,7 +323,10 @@ function HomePage() {
                 </div>
               </div>
               {/* GRADUATION */}
-              <div className='section graduation'>
+              <div
+                ref={(ref) => (sectionsRef[5] = ref)}
+                className='section graduation fp-auto-height'
+              >
                 <div className='section-wrapper'>
                   <img
                     className='section-image'
@@ -320,7 +347,11 @@ function HomePage() {
                 </div>
               </div>
               {/* NOSTALGIA */}
-              <div className='section nostalgia' id='stars_container'>
+              <div
+                ref={(ref) => (sectionsRef[6] = ref)}
+                className='section nostalgia fp-auto-height'
+                id='stars_container'
+              >
                 <div className='section-wrapper'>
                   <img
                     className='section-image'

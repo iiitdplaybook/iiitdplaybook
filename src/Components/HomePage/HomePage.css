@@ -12,7 +12,7 @@ canvas {
 }
 
 .section_0 {
-  height: 110vh;
+  /* height: 110vh; */
   margin-top: 0%;
   z-index: -1;
   position: relative;
@@ -27,7 +27,7 @@ canvas {
   align-items: center;
   flex-direction: column;
   /* background-image: url('../Assets/landscape.jpg'); */
-  min-height: 110vh;
+  /* min-height: 110vh; */
   /* position: relative; */
   /* width: 100vw; */
   margin-top: -15vh;
@@ -80,6 +80,11 @@ canvas {
   color: #23a6d5 !important;
 }
 
+.fp-section {
+  max-width: 100vw !important;
+  max-height: 100vh !important;
+}
+
 .section {
   display: flex;
   flex-direction: row;
@@ -88,6 +93,8 @@ canvas {
   font-weight: bolder;
   padding-right: 0;
   max-height: 100vh !important;
+  max-width: 100vw !important;
+  padding-top: 0.5rem;
 }
 
 .section-title {
