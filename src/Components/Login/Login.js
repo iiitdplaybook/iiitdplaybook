@@ -91,7 +91,7 @@ function Login() {
         <img id='logo' src={logo} />
         <Link className='login__link' to={{ pathname: "https://forms.gle/beJjnyQ9rkTTBGtq9" }} target="_blank">
           <Button className='login__form'>
-            Initiate playbook for your college form
+            Playbook for your college
           </Button>
         </Link>
       </div>
