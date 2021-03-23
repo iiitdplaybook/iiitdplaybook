@@ -5,6 +5,21 @@
   height: 60vh;
 }
 
+.login__logo {
+  display: flex;
+  justify-content: space-between;
+}
+
+#logo
+{
+  height: fit-content;
+}
+
+
+#login__form {
+  margin: 2%;
+}
+
 h5 {
   text-align: center;
 }
@@ -50,6 +65,23 @@ h5 {
   position: absolute;
   width: 100vw;
   bottom: 0;
+}
+
+.login__link {
+  margin: 2%;
+}
+
+.login__form {
+  background: -webkit-linear-gradient(
+    -45deg,
+    #ee7752,
+    #e73c7e,
+    #23a6d5,
+    #23d5ab
+  );
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
 }
 
 .testi {
