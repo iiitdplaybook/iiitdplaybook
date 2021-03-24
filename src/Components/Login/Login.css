@@ -78,6 +78,12 @@ h5 {
   font-family: 'Poppins', sans-serif !important;
 }
 
+.login__form:hover {
+  color: #ffffff !important;
+  background-color: #4a9bdb !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
 .testi {
   display: flex;
   align-items: center;

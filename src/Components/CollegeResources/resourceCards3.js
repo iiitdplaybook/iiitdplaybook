@@ -44,13 +44,13 @@ function SuppliesCards(supplyCardInfo) {
     root: {
       maxWidth: cardWidth,
       minWidth: cardWidth,
-      maxHeight: cardHeight,
+      maxHeight: (cardHeight * 4) / 3,
       background: `linear-gradient(45deg, ${gradientColor_1}, ${gradientColor_2})`,
       borderRadius: 10,
     },
     actionArea: {
       width: cardWidth,
-      height: cardHeight,
+      height: (cardHeight * 4) / 3,
     },
     a: {
       margin: '0%',
