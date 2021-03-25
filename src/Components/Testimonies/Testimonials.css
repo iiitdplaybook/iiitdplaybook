@@ -1,10 +1,21 @@
-#containerHeader{
-    display: flex;
-    height: 5%;
-    margin-left: 3%;
-    margin-top: 1%;
+#containerHeader {
+  display: flex;
+  height: 5%;
+  margin-left: 3%;
+  margin-top: 1%;
 }
 
-.Marquee:hover{
-    animation-play-state: paused !important;
+.Marquee:hover {
+  animation-play-state: paused !important;
+}
+
+.slick-dots li button:before {
+  color: #fff;
+  opacity: 0.5;
+}
+
+.slick-dots li.slick-active button:before {
+  opacity: 0.75;
+  color: #fff;
+  font-size: 12px;
 }

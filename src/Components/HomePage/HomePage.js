@@ -189,7 +189,7 @@ function HomePage() {
     <>
       <Navbar loggedIn={true} colorStatus={false} stickyCond={true} />
       <ReactFullpage
-        fitToSection={false}
+        fitToSection={true}
         scrollingSpeed={1000}
         navigation={window.innerWidth > 600 ? true : false}
         navigationPosition={'left'}
@@ -202,7 +202,7 @@ function HomePage() {
           'Graduation',
           'Nostalgia',
         ]}
-        bigSectionsDestination={'bottom'}
+        bigSectionsDestination={'top'}
         recordHistory={false}
         touchSensitivity={10}
         render={({ state, fullpageApi }) => {
@@ -254,7 +254,7 @@ function HomePage() {
               {/* BABY STEPS */}
               <div
                 ref={(ref) => (sectionsRef[2] = ref)}
-                className='section baby-steps fp-auto-height'
+                className='section baby-steps'
               >
                 <div className='section-wrapper'>
                   <img
@@ -277,7 +277,7 @@ function HomePage() {
               {/* EXPLORING */}
               <div
                 ref={(ref) => (sectionsRef[3] = ref)}
-                className='section exploring fp-auto-height'
+                className='section exploring'
               >
                 <Clouds />
                 <div className='section-wrapper'>
@@ -302,7 +302,7 @@ function HomePage() {
               {/* DEFINING POINT */}
               <div
                 ref={(ref) => (sectionsRef[4] = ref)}
-                className='section defining-point fp-auto-height'
+                className='section defining-point'
               >
                 <div className='section-wrapper'>
                   <img
@@ -325,7 +325,7 @@ function HomePage() {
               {/* GRADUATION */}
               <div
                 ref={(ref) => (sectionsRef[5] = ref)}
-                className='section graduation fp-auto-height'
+                className='section graduation'
               >
                 <div className='section-wrapper'>
                   <img
@@ -349,7 +349,7 @@ function HomePage() {
               {/* NOSTALGIA */}
               <div
                 ref={(ref) => (sectionsRef[6] = ref)}
-                className='section nostalgia fp-auto-height'
+                className='section nostalgia'
                 id='stars_container'
               >
                 <div className='section-wrapper'>

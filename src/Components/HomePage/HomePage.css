@@ -92,8 +92,8 @@ canvas {
   color: #fff !important;
   font-weight: bolder;
   padding-right: 0;
-  max-height: 100vh !important;
-  max-width: 100vw !important;
+  height: 100vh !important;
+  width: 100vw !important;
   padding-top: 0.5rem;
 }
 
@@ -200,6 +200,10 @@ canvas {
   display: none;
 }
 
+.fp-auto-height {
+  padding-top: 0 !important;
+}
+
 @media only screen and (max-width: 1170px) {
   .welcome_text {
     font-size: 3em;
@@ -214,6 +218,7 @@ canvas {
 @media only screen and (max-width: 600px) {
   .section {
     width: 100% !important;
+    height: 100% !important;
     display: flex;
     flex-direction: column;
     justify-content: center !important;
