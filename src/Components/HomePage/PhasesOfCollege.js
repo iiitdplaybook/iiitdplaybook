@@ -11,7 +11,7 @@ function PhasesOfCollege() {
     {
       title: 'graduation',
       img:
-        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/college_phases/graduation.gif',
+        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/cae94a65/src/Assets/college_phases/graduation.gif',
     },
     {
       title: 'holi',

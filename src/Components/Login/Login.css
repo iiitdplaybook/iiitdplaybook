@@ -5,6 +5,21 @@
   height: 60vh;
 }
 
+.login__logo {
+  display: flex;
+  justify-content: space-between;
+}
+
+#logo
+{
+  height: fit-content;
+}
+
+
+#login__form {
+  margin: 2%;
+}
+
 h5 {
   text-align: center;
 }
@@ -50,6 +65,23 @@ h5 {
   position: absolute;
   width: 100vw;
   bottom: 0;
+}
+
+.login__link {
+  margin: 2%;
+}
+
+.login__form {
+  border: 2px solid #4a9bdb !important;
+  color: #4a9bdb !important;
+  font-weight: 600 !important;
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.login__form:hover {
+  color: #ffffff !important;
+  background-color: #4a9bdb !important;
+  font-family: 'Poppins', sans-serif !important;
 }
 
 .testi {
@@ -180,6 +212,7 @@ a {
     line-height: 1.1;
     font-size: 4.1em;
     margin-bottom: 6%;
+    margin-top: 32%;
   }
 
   .textCard3 {

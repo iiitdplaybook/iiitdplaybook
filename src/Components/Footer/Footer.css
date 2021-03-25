@@ -53,6 +53,7 @@
   flex-direction: column;
   text-align: center;
   width: 100vw;
+  margin-left:-2%
 }
 
 .defaultClick {

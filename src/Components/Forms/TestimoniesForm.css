@@ -38,7 +38,9 @@
   width: 80% !important;
 }
 .nameLabel2 {
-  width: 50% !important;
+  width: 65% !important;
+  appearance: auto;
+  line-height: 1.5;
 }
 
 .testimonials {
@@ -122,5 +124,9 @@
 
   .MuiFormHelperText-root.helperlabel {
     margin: 7%;
+  }
+
+  #confettiBox{
+    /* left: 0; */
   }
 }

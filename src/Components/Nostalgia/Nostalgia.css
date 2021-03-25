@@ -26,7 +26,7 @@
   font-weight: 300;
 }
 
-.section {
+.nostalgia_section {
   border-radius: 10px;
   /* min-height: 100vh; */
   height: fit-content;
@@ -38,33 +38,33 @@
   overflow: hidden;
 }
 
-.section:nth-child(4) {
+.nostalgia_section:nth-child(4) {
   margin-top: 10%;
 }
 
-.section:nth-child(13) {
+.nostalgia_section:nth-child(13) {
   /* height: 200vh; */
   margin-bottom: 0%;
 }
 
-.section > h2 {
+.nostalgia_section > h2 {
   color: white;
   font-weight: bolder;
   font-size: 1.8em;
 }
 
-.section__body {
+.nostalgia_section__body {
   display: flex;
 }
 
-.section__body > p {
+.nostalgia_section__body > p {
   color: rgb(221, 221, 221);
   font-weight: 500;
   font-size: 1.1em;
   line-height: 30px;
 }
 
-.section_media {
+.nostalgia_section_media {
   display: grid;
   grid-gap: 10%;
   justify-content: center;
@@ -75,7 +75,7 @@
   margin-bottom: 3em;
 }
 
-.section_media_2 {
+.nostalgia_section_media_2 {
   display: grid;
   grid-gap: 10%;
   justify-content: center;
@@ -86,7 +86,7 @@
   margin-bottom: 3em;
 }
 
-.section > p {
+.nostalgia_section > p {
   color: rgb(221, 221, 221);
   font-weight: 500;
   font-size: 1.1em;
@@ -98,14 +98,14 @@
   margin-left: 50%;
 }
 
-.section img {
+.nostalgia_section img {
   width: auto;
   max-height: 240px;
   border-radius: 10px;
   margin: 1%;
 }
 
-.section video {
+.nostalgia_section video {
   width: auto;
   max-height: 240px;
   border-radius: 10px;
@@ -126,26 +126,26 @@
     /* margin-top: -25%; */
   }
 
-  .section {
+  .nostalgia_section {
     padding: 4%;
   }
 
-  .section:nth-child(4) {
+  .nostalgia_section:nth-child(4) {
     margin-top: 30%;
   }
 
-  .section > p {
+  .nostalgia_section > p {
     font-size: 1em;
     line-height: 30px;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .section_media_2 {
+  .nostalgia_section_media_2 {
     grid-gap: 3%;
   }
 
-  .section__body {
+  .nostalgia_section__body {
     flex-direction: column;
   }
 }

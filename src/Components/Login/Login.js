@@ -89,6 +89,11 @@ function Login() {
     <div className='login'>
       <div className='login__logo'>
         <img id='logo' src={logo} />
+        <Link className='login__link' to={{ pathname: "https://forms.gle/beJjnyQ9rkTTBGtq9" }} target="_blank">
+          <Button className='login__form'>
+            Playbook for your college?
+          </Button>
+        </Link>
       </div>
 
       <div className='login__action'>

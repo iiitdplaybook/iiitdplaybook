@@ -48,7 +48,7 @@ const image4 =
   'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/DSC_004.JPG';
 
 const glow1 =
-  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/glow1.mp4';
+  'https://cdn.jsdelivr.net/gh/iiitdplaybook/iiitdplaybook@master/src/Assets/NostalgiaPics/glow1.mp4';
 const glow2 =
   'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/glow2.gif';
 const canteen1 =
@@ -95,7 +95,7 @@ function Nostalgia() {
         <h5 className='heading_desc'>Remember the time when...</h5>
 
         <Fade duration={2000}>
-          <div className='section'>
+          <div className='nostalgia_section'>
             <h2>The Early Days</h2>
             <br></br>
             <p>
@@ -122,13 +122,12 @@ function Nostalgia() {
               <br />
               <br />
             </p>
-            <div className='section_media_2'>
+            <div className='nostalgia_section_media_2'>
               <video height='240' style={{ borderRadius: '10px' }} controls>
                 <source src={glow1} type='video/mp4'></source>
                 Your browser does not support the video tag.
               </video>
               <img src={glow2} />
-
               <img src={imgInduction} />
             </div>
             <p>
@@ -150,7 +149,7 @@ function Nostalgia() {
         </Fade>
 
         <Fade duration={2000}>
-          <div className='section'>
+          <div className='nostalgia_section'>
             <h2>The 11:59 Struggle</h2>
             <br></br>
             <p>
@@ -163,7 +162,7 @@ function Nostalgia() {
               <br />
               <br />
             </p>
-            <div className='section_media_2'>
+            <div className='nostalgia_section_media_2'>
               <img className='happiness_img' src={happiness_1} />
               <img className='happiness_img' src={happiness_2} />
               <img className='happiness_img' src={happiness_3} />
@@ -187,7 +186,7 @@ function Nostalgia() {
         </Fade>
 
         <Fade duration={2000}>
-          <div className='section'>
+          <div className='nostalgia_section'>
             <h2>3AM Maggi</h2>
             <br></br>
             <p>
@@ -209,7 +208,7 @@ function Nostalgia() {
               <br></br>
               <br></br>
             </p>
-            <div className='section_media'>
+            <div className='nostalgia_section_media'>
               <img src={canteen} />
               <img src={canteen_2} />
             </div>
@@ -217,10 +216,10 @@ function Nostalgia() {
         </Fade>
 
         <Fade duration={2000}>
-          <div className='section'>
+          <div className='nostalgia_section'>
             <h2>BCR</h2>
             <br></br>
-            <div className='section__body'>
+            <div className='nostalgia_section__body'>
               <p>
                 Abandoned by day and Couples’ hotspot by night :)
                 <br></br>
@@ -235,7 +234,7 @@ function Nostalgia() {
                 outside the building.
               </p>
               <br></br>
-              <div className='section_media'>
+              <div className='nostalgia_section_media'>
                 <img src={bcr} />
               </div>
             </div>
@@ -243,11 +242,11 @@ function Nostalgia() {
         </Fade>
 
         <Fade duration={2000}>
-          <div className='section'>
+          <div className='nostalgia_section'>
             <h2>Ravi's Tapri</h2>
             <br></br>
-            <div className='section__body'>
-              <div className='section_media'>
+            <div className='nostalgia_section__body'>
+              <div className='nostalgia_section_media'>
                 <img id='ravi' src={chai_addaa} />
               </div>
               <p>
@@ -271,7 +270,7 @@ function Nostalgia() {
         </Fade>
 
         <Fade duration={2000}>
-          <div className='section'>
+          <div className='nostalgia_section'>
             <h2>Exam Season Blues</h2>
             <br></br>
             <p>
@@ -286,7 +285,7 @@ function Nostalgia() {
               <br></br>
               <br></br>
             </p>
-            <div className='section__body'>
+            <div className='nostalgia_section__body'>
               <p>
                 The night before the exam seems like the longest and the
                 toughest night. Feeling anxious and losing confidence with every
@@ -302,7 +301,7 @@ function Nostalgia() {
                 <br></br>
               </p>
 
-              <div className='section_media'>
+              <div className='nostalgia_section_media'>
                 <img src={library} />
               </div>
             </div>
@@ -310,11 +309,11 @@ function Nostalgia() {
         </Fade>
 
         <Fade duration={2000}>
-          <div className='section'>
+          <div className='nostalgia_section'>
             <h2>The Old Acad Lawn</h2>
             <br></br>
-            <div className='section__body'>
-              <div className='section_media'>
+            <div className='nostalgia_section__body'>
+              <div className='nostalgia_section_media'>
                 <img src={old_acad_lawn} />
               </div>
 
@@ -335,7 +334,7 @@ function Nostalgia() {
         </Fade>
 
         <Fade duration={2000}>
-          <div className='section'>
+          <div className='nostalgia_section'>
             <h2>
               The Delhi <strike>Safar</strike> Suffer
             </h2>
@@ -362,7 +361,7 @@ function Nostalgia() {
               <br></br>
               <br></br>
             </p>
-            <div className='section_media'>
+            <div className='nostalgia_section_media'>
               <img src={epicuria} />
               <img src={hkv} />
             </div>
@@ -370,7 +369,7 @@ function Nostalgia() {
         </Fade>
 
         <Fade duration={2000}>
-          <div className='section'>
+          <div className='nostalgia_section'>
             <h2>Cultural Fest</h2>
             <br></br>
             <p>
