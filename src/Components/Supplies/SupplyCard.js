@@ -28,23 +28,19 @@ function SupplyCard({ supplyCardList, user, category }) {
   const color2 = '#fafafa';
 
   const initialiseData = () => {
-    console.log(supplyCardList);
     supplyCardList.forEach((element) => {
-      console.log(element.title);
       if (element.title) {
-        bbn.push(element.boughtBy.length);
+        bbn.push(element.boughtBy.length); 
       }
     });
-    console.log(bbn);
     setBoughtByNumber(bbn);
   };
 
   useEffect(() => {
-    console.log('hello');
     initialiseData();
-    console.log(boughtByNumber);
-    return () => {};
-  }, []);
+    setBoughtByNumber(bbn);
+  }, [supplyCardList]);
+
 
   const useStyles = makeStyles({
     root: {
@@ -118,10 +114,10 @@ function SupplyCard({ supplyCardList, user, category }) {
   const classes = useStyles();
 
   const userBoughtItem = (id) => {
-    // console.log(supplyCardList[id]);
-    // console.log(user);
 
     addUserItem(supplyCardList[id], user.uid, id);
+    bbn[id]++;
+    setBoughtByNumber(bbn);
   };
 
   const addUserItem = async (item, uid, id) => {
@@ -133,8 +129,6 @@ function SupplyCard({ supplyCardList, user, category }) {
     //   const data = snapshot.val();
     //   console.log(data.boughtBy);
     // });
-    bbn[id]++;
-    setBoughtByNumber(bbn);
     itemListRef.set({
       boughtBy: [...item.boughtBy, uid],
       description: item.description,

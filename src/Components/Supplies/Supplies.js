@@ -44,7 +44,7 @@ function Supplies() {
       });
     });
     setAll(tempAll);
-    console.log(allCards);
+    // console.log(allCards);
 
     const stationaryRef = firebase.database().ref('Supplies/Stationary');
     await stationaryRef.once('value', (snapshot) => {
@@ -268,7 +268,7 @@ function Supplies() {
       <div className='explore__body'>
         {clickedButton === 1 ? (
           <div className='cardsDiv_supply'>
-            {console.log(allCards)}
+            {/* {console.log(allCards)} */}
             <SupplyCard
               supplyCardList={allCards}
               user={user}
