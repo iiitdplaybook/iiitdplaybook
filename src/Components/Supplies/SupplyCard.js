@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Card,
   CardActionArea,
@@ -14,41 +14,37 @@ import times from 'lodash/times';
 import { makeStyles } from '@material-ui/core/styles';
 import image_svg from '../../Assets/SVG_for_cards/teamwork.svg';
 import { grey } from '@material-ui/core/colors';
+import firebase from 'firebase';
 
-function SupplyCard({ supplyCardList }) {
+function SupplyCard({ supplyCardList, user, category }) {
   const cardHeight = 280;
   const cardWidth = cardHeight * (2.5 / 3);
   const imgWidth = cardWidth - 30;
 
-  var gradientColor_1 = [];
-  var gradientColor_2 = [];
-  var title = [];
-  var description = [];
-  var image = [];
-  var pathLink = [];
+  const [boughtByNumber, setBoughtByNumber] = useState([]);
+  const bbn = [];
 
   const color1 = '#fff';
   const color2 = '#fafafa';
 
-  supplyCardList.forEach((element) => {
-    if (element.Title) {
-      // gradientColor_1.push(element["gradientColor_1"]);
-      // gradientColor_2.push(element["gradientColor_2"]);
-      gradientColor_1.push(color1);
-      gradientColor_2.push(color2);
-      title.push(element.Title);
-      description.push(element.Desc);
-      image.push(element.Image);
-      pathLink.push(element.Path);
-    } else {
-      gradientColor_1.push(color1);
-      gradientColor_2.push(color2);
-      title.push('No Title');
-      description.push('N.A');
-      image.push(image_svg);
-      pathLink.push('explore');
-    }
-  });
+  const initialiseData = () => {
+    console.log(supplyCardList);
+    supplyCardList.forEach((element) => {
+      console.log(element.title);
+      if (element.title) {
+        bbn.push(element.boughtBy.length);
+      }
+    });
+    console.log(bbn);
+    setBoughtByNumber(bbn);
+  };
+
+  useEffect(() => {
+    console.log('hello');
+    initialiseData();
+    console.log(boughtByNumber);
+    return () => {};
+  }, []);
 
   const useStyles = makeStyles({
     root: {
@@ -120,12 +116,42 @@ function SupplyCard({ supplyCardList }) {
     },
   });
   const classes = useStyles();
-  return times(supplyCardList.length, String).map((id) => {
+
+  const userBoughtItem = (id) => {
+    // console.log(supplyCardList[id]);
+    // console.log(user);
+
+    addUserItem(supplyCardList[id], user.uid, id);
+  };
+
+  const addUserItem = async (item, uid, id) => {
+    const itemListRef = firebase
+      .database()
+      .ref('Supplies/' + category + '/' + id);
+
+    // itemListRef.on('value', (snapshot) => {
+    //   const data = snapshot.val();
+    //   console.log(data.boughtBy);
+    // });
+    bbn[id]++;
+    setBoughtByNumber(bbn);
+    itemListRef.set({
+      boughtBy: [...item.boughtBy, uid],
+      description: item.description,
+      gradientColor_1: color1,
+      gradientColor_2: color2,
+      image: item.image,
+      pathLink: item.pathLink,
+      title: item.title,
+    });
+  };
+
+  return supplyCardList.map((item, id) => {
     return (
       <Card
         className={classes.root}
         style={{
-          background: `linear-gradient(45deg, ${gradientColor_1[id]}, ${gradientColor_2[id]})`,
+          background: `linear-gradient(45deg, ${color1}, ${color2})`,
         }}
       >
         {/* <Link className={classes.link} href={pathLink} > */}
@@ -134,26 +160,30 @@ function SupplyCard({ supplyCardList }) {
             <CardMedia
               className={classes.media}
               component='img'
-              src={image[id]}
-              title={title[id]}
+              src={item.image}
+              title={item.title}
             />
             <Tooltip title="I've bought this">
-              <Button size='small' className={classes.button}>
+              <Button
+                size='small'
+                className={classes.button}
+                onClick={() => userBoughtItem(id)}
+              >
                 +1
               </Button>
             </Tooltip>
           </div>
           <CardContent className={classes.content}>
-            <a href={pathLink[id]} target='_blank' style={{ margin: '0%' }}>
+            <a href={item.pathLink} target='_blank' style={{ margin: '0%' }}>
               <Typography
                 className={classes.title}
                 style={{ whiteSpace: 'pre-line' }}
               >
-                {title[id]}
+                {item.title}
               </Typography>
             </a>
             <Typography className={classes.info} color='textSecondary'>
-              {description[id]}
+              {'Bought by ' + boughtByNumber[id] + ' students'}
             </Typography>
           </CardContent>
         </CardActionArea>

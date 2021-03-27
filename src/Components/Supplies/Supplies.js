@@ -10,183 +10,152 @@ import SupplyCard from './SupplyCard';
 function Supplies() {
   const [clickedButton, setClickedButton] = useState(1);
   const [allCards, setAll] = useState([]);
-  const [stationaryCards, setStationary] = useState([]);
+  const [stationeryCards, setStationery] = useState([]);
   const [designCards, setDesign] = useState([]);
   const [booksCards, setBook] = useState([]);
   const [laptopsCards, setLaptop] = useState([]);
-  const [techotherCards, setTech] = useState([]);
+  const [techCards, setTech] = useState([]);
   const [roomCards, setRoom] = useState([]);
   const [otherCards, setOther] = useState([]);
 
   const getSupplies = async () => {
+    const tempAll = [];
+    const tempStationary = [];
+    const tempDesign = [];
+    const tempBook = [];
+    const tempLaptop = [];
+    const tempTech = [];
+    const tempRoom = [];
+    const tempOther = [];
 
-    var tempAll = [];
-    var tempStationary = [];
-    var tempDesign = [];
-    var tempBook = [];
-    var tempLaptop = [];
-    var tempTech = [];
-    var tempRoom = [];
-    var tempOther = [];
-   
-    var allCardsRef = firebase
-      .database()
-      .ref('Supplies/AllCards');
+    const allCardsRef = firebase.database().ref('Supplies/AllCards');
+    // const snapshot = await allCardsRef.once('value');
+    // setAll(Object.values(snapshot.val()));
     await allCardsRef.once('value', (snapshot) => {
       snapshot.forEach((childSnapshot) => {
-          var title= childSnapshot.val().title;
-          var desc = childSnapshot.val().description;
-          var image = childSnapshot.val().image;
-          var path = childSnapshot.val().pathLink;
-          var dict = {};
-          dict.Title = title;
-          dict.Desc = desc;
-          dict.Image = image;
-          dict.Path = path;
-          tempAll.push(dict);
+        // console.log(Object.values(childSnapshot.val()));
+        const dict = {};
+        dict.title = childSnapshot.val().title;
+        dict.description = childSnapshot.val().description;
+        dict.image = childSnapshot.val().image;
+        dict.pathLink = childSnapshot.val().pathLink;
+        dict.boughtBy = childSnapshot.val().boughtBy;
+        tempAll.push(dict);
       });
     });
     setAll(tempAll);
+    console.log(allCards);
 
-    var stationaryRef = firebase
-      .database()
-      .ref('Supplies/Stationary');
+    const stationaryRef = firebase.database().ref('Supplies/Stationary');
     await stationaryRef.once('value', (snapshot) => {
       snapshot.forEach((childSnapshot) => {
-          var title= childSnapshot.val().title;
-          var desc = childSnapshot.val().description;
-          var image = childSnapshot.val().image;
-          var path = childSnapshot.val().pathLink;
-          var dict = {};
-          dict.Title = title;
-          dict.Desc = desc;
-          dict.Image = image;
-          dict.Path = path;
-          tempStationary.push(dict);
+        const dict = {};
+        dict.title = childSnapshot.val().title;
+        dict.description = childSnapshot.val().description;
+        dict.image = childSnapshot.val().image;
+        dict.pathLink = childSnapshot.val().pathLink;
+        dict.boughtBy = childSnapshot.val().boughtBy;
+        tempStationary.push(dict);
       });
     });
-    setStationary(tempStationary);
+    setStationery(tempStationary);
 
-    var designRef = firebase
-      .database()
-      .ref('Supplies/Design');
+    const designRef = firebase.database().ref('Supplies/Design');
     await designRef.once('value', (snapshot) => {
       snapshot.forEach((childSnapshot) => {
-          var title= childSnapshot.val().title;
-          var desc = childSnapshot.val().description;
-          var image = childSnapshot.val().image;
-          var path = childSnapshot.val().pathLink;
-          var dict = {};
-          dict.Title = title;
-          dict.Desc = desc;
-          dict.Image = image;
-          dict.Path = path;
-          tempDesign.push(dict);
+        const dict = {};
+        dict.title = childSnapshot.val().title;
+        dict.description = childSnapshot.val().description;
+        dict.image = childSnapshot.val().image;
+        dict.pathLink = childSnapshot.val().pathLink;
+        dict.boughtBy = childSnapshot.val().boughtBy;
+        tempDesign.push(dict);
       });
     });
     setDesign(tempDesign);
 
-    var laptopRef = firebase
-      .database()
-      .ref('Supplies/Laptops');
+    const laptopRef = firebase.database().ref('Supplies/Laptops');
     await laptopRef.once('value', (snapshot) => {
       snapshot.forEach((childSnapshot) => {
-          var title= childSnapshot.val().title;
-          var desc = childSnapshot.val().description;
-          var image = childSnapshot.val().image;
-          var path = childSnapshot.val().pathLink;
-          var dict = {};
-          dict.Title = title;
-          dict.Desc = desc;
-          dict.Image = image;
-          dict.Path = path;
-          tempLaptop.push(dict);
+        const dict = {};
+        dict.title = childSnapshot.val().title;
+        dict.description = childSnapshot.val().description;
+        dict.image = childSnapshot.val().image;
+        dict.pathLink = childSnapshot.val().pathLink;
+        dict.boughtBy = childSnapshot.val().boughtBy;
+        tempLaptop.push(dict);
       });
     });
     setLaptop(tempLaptop);
 
-    var bookRef = firebase
-      .database()
-      .ref('Supplies/Books');
+    const bookRef = firebase.database().ref('Supplies/Books');
     await bookRef.once('value', (snapshot) => {
       snapshot.forEach((childSnapshot) => {
-          var title= childSnapshot.val().title;
-          var desc = childSnapshot.val().description;
-          var image = childSnapshot.val().image;
-          var path = childSnapshot.val().pathLink;
-          var dict = {};
-          dict.Title = title;
-          dict.Desc = desc;
-          dict.Image = image;
-          dict.Path = path;
-          tempBook.push(dict);
+        const dict = {};
+        dict.title = childSnapshot.val().title;
+        dict.description = childSnapshot.val().description;
+        dict.image = childSnapshot.val().image;
+        dict.pathLink = childSnapshot.val().pathLink;
+        dict.boughtBy = childSnapshot.val().boughtBy;
+        tempBook.push(dict);
       });
     });
     setBook(tempBook);
 
-    var roomRef = firebase
-      .database()
-      .ref('Supplies/Room');
+    const roomRef = firebase.database().ref('Supplies/Room');
     await roomRef.once('value', (snapshot) => {
       snapshot.forEach((childSnapshot) => {
-          var title= childSnapshot.val().title;
-          var desc = childSnapshot.val().description;
-          var image = childSnapshot.val().image;
-          var path = childSnapshot.val().pathLink;
-          var dict = {};
-          dict.Title = title;
-          dict.Desc = desc;
-          dict.Image = image;
-          dict.Path = path;
-          tempRoom.push(dict);
+        const dict = {};
+        dict.title = childSnapshot.val().title;
+        dict.description = childSnapshot.val().description;
+        dict.image = childSnapshot.val().image;
+        dict.pathLink = childSnapshot.val().pathLink;
+        dict.boughtBy = childSnapshot.val().boughtBy;
+        tempRoom.push(dict);
       });
     });
     setRoom(tempRoom);
 
-    var techotherRef = firebase
-      .database()
-      .ref('Supplies/Tech');
+    const techotherRef = firebase.database().ref('Supplies/Tech');
     await techotherRef.once('value', (snapshot) => {
       snapshot.forEach((childSnapshot) => {
-          var title= childSnapshot.val().title;
-          var desc = childSnapshot.val().description;
-          var image = childSnapshot.val().image;
-          var path = childSnapshot.val().pathLink;
-          var dict = {};
-          dict.Title = title;
-          dict.Desc = desc;
-          dict.Image = image;
-          dict.Path = path;
-          tempTech.push(dict);
+        const dict = {};
+        dict.title = childSnapshot.val().title;
+        dict.description = childSnapshot.val().description;
+        dict.image = childSnapshot.val().image;
+        dict.pathLink = childSnapshot.val().pathLink;
+        dict.boughtBy = childSnapshot.val().boughtBy;
+        tempTech.push(dict);
       });
     });
     setTech(tempTech);
 
-    var otherRef = firebase
-      .database()
-      .ref('Supplies/Other');
+    const otherRef = firebase.database().ref('Supplies/Other');
     await otherRef.once('value', (snapshot) => {
       snapshot.forEach((childSnapshot) => {
-          var title= childSnapshot.val().title;
-          var desc = childSnapshot.val().description;
-          var image = childSnapshot.val().image;
-          var path = childSnapshot.val().pathLink;
-          var dict = {};
-          dict.Title = title;
-          dict.Desc = desc;
-          dict.Image = image;
-          dict.Path = path;
-          tempOther.push(dict);
+        const dict = {};
+        dict.title = childSnapshot.val().title;
+        dict.description = childSnapshot.val().description;
+        dict.image = childSnapshot.val().image;
+        dict.pathLink = childSnapshot.val().pathLink;
+        dict.boughtBy = childSnapshot.val().boughtBy;
+        tempOther.push(dict);
       });
     });
     setOther(tempOther);
-
   };
 
   useEffect(() => {
     getSupplies();
     return () => {};
-  }, [])
+  }, []);
+
+  const user = firebase.auth().currentUser;
+  // const uid;
+
+  // if (user != null) {
+  //   uid = user.uid;
+  // }
 
   const buttonStyles = makeStyles({
     root: {
@@ -210,22 +179,22 @@ function Supplies() {
   };
 
   return (
-    <div className="supplies">
+    <div className='supplies'>
       <Navbar
-        loggedIn={localStorage.getItem("isSignedIn")}
+        loggedIn={localStorage.getItem('isSignedIn')}
         colorStatus={true}
       />
       <h2
-        className="supplies_heading"
-        style={{ textAlign: "center", margin: "4%" }}
+        className='supplies_heading'
+        style={{ textAlign: 'center', margin: '4%' }}
       >
         A collection of things that students use in college
       </h2>
 
-      <div className="supplies__button">
+      <div className='supplies__button'>
         <Button
           onClick={() => changeS(1)}
-          variant={clickedButton === 1 ? "contatined" : "outlined"}
+          variant={clickedButton === 1 ? 'contained' : 'outlined'}
           className={
             clickedButton === 1 ? buttonClass.root : buttonClass.notRoot
           }
@@ -234,16 +203,16 @@ function Supplies() {
         </Button>
         <Button
           onClick={() => changeS(2)}
-          variant={clickedButton === 2 ? "contatined" : "outlined"}
+          variant={clickedButton === 2 ? 'contained' : 'outlined'}
           className={
             clickedButton === 2 ? buttonClass.root : buttonClass.notRoot
           }
         >
-          Stationary
+          Stationery
         </Button>
         <Button
           onClick={() => changeS(3)}
-          variant={clickedButton === 3 ? "contatined" : "outlined"}
+          variant={clickedButton === 3 ? 'contained' : 'outlined'}
           className={
             clickedButton === 3 ? buttonClass.root : buttonClass.notRoot
           }
@@ -252,7 +221,7 @@ function Supplies() {
         </Button>
         <Button
           onClick={() => changeS(4)}
-          variant={clickedButton === 4 ? "contatined" : "outlined"}
+          variant={clickedButton === 4 ? 'contained' : 'outlined'}
           className={
             clickedButton === 4 ? buttonClass.root : buttonClass.notRoot
           }
@@ -261,7 +230,7 @@ function Supplies() {
         </Button>
         <Button
           onClick={() => changeS(5)}
-          variant={clickedButton === 5 ? "contatined" : "outlined"}
+          variant={clickedButton === 5 ? 'contained' : 'outlined'}
           className={
             clickedButton === 5 ? buttonClass.root : buttonClass.notRoot
           }
@@ -270,7 +239,7 @@ function Supplies() {
         </Button>
         <Button
           onClick={() => changeS(6)}
-          variant={clickedButton === 6 ? "contatined" : "outlined"}
+          variant={clickedButton === 6 ? 'contained' : 'outlined'}
           className={
             clickedButton === 6 ? buttonClass.root : buttonClass.notRoot
           }
@@ -279,7 +248,7 @@ function Supplies() {
         </Button>
         <Button
           onClick={() => changeS(7)}
-          variant={clickedButton === 7 ? "contatined" : "outlined"}
+          variant={clickedButton === 7 ? 'contained' : 'outlined'}
           className={
             clickedButton === 7 ? buttonClass.root : buttonClass.notRoot
           }
@@ -288,7 +257,7 @@ function Supplies() {
         </Button>
         <Button
           onClick={() => changeS(8)}
-          variant={clickedButton === 8 ? "contatined" : "outlined"}
+          variant={clickedButton === 8 ? 'contained' : 'outlined'}
           className={
             clickedButton === 8 ? buttonClass.root : buttonClass.notRoot
           }
@@ -296,29 +265,76 @@ function Supplies() {
           Others
         </Button>
       </div>
-      <div className="explore__body">
+      <div className='explore__body'>
         {clickedButton === 1 ? (
-          <div className="cardsDiv_supply"><SupplyCard supplyCardList={allCards} /></div>
+          <div className='cardsDiv_supply'>
+            {console.log(allCards)}
+            <SupplyCard
+              supplyCardList={allCards}
+              user={user}
+              category='AllCards'
+            />
+          </div>
         ) : clickedButton === 2 ? (
-          <div className="cardsDiv_supply"><SupplyCard supplyCardList={stationaryCards} /></div>
+          <div className='cardsDiv_supply'>
+            <SupplyCard
+              supplyCardList={stationeryCards}
+              user={user}
+              category='Stationary'
+            />
+          </div>
         ) : clickedButton === 3 ? (
-          <div className="cardsDiv_supply"><SupplyCard supplyCardList={designCards} /></div>
+          <div className='cardsDiv_supply'>
+            <SupplyCard
+              supplyCardList={designCards}
+              user={user}
+              category='Design'
+            />
+          </div>
         ) : clickedButton === 4 ? (
-          <div className="cardsDiv_supply"><SupplyCard supplyCardList={booksCards} /></div>
+          <div className='cardsDiv_supply'>
+            <SupplyCard
+              supplyCardList={booksCards}
+              user={user}
+              category='Books'
+            />
+          </div>
         ) : clickedButton === 5 ? (
-          <div className="cardsDiv_supply"><SupplyCard supplyCardList={laptopsCards} /></div>
+          <div className='cardsDiv_supply'>
+            <SupplyCard
+              supplyCardList={laptopsCards}
+              user={user}
+              category='Laptops'
+            />
+          </div>
         ) : clickedButton === 6 ? (
-          <div className="cardsDiv_supply"><SupplyCard supplyCardList={techotherCards} /></div>
+          <div className='cardsDiv_supply'>
+            <SupplyCard
+              supplyCardList={techCards}
+              user={user}
+              category='Tech'
+            />
+          </div>
         ) : clickedButton === 7 ? (
-          <div className="cardsDiv_supply"><SupplyCard supplyCardList={roomCards} /></div>
+          <div className='cardsDiv_supply'>
+            <SupplyCard
+              supplyCardList={roomCards}
+              user={user}
+              category='Room'
+            />
+          </div>
         ) : (
-          <div className="cardsDiv_supply"><SupplyCard supplyCardList={otherCards} /></div>
+          <div className='cardsDiv_supply'>
+            <SupplyCard
+              supplyCardList={otherCards}
+              user={user}
+              category='Other'
+            />
+          </div>
         )}
       </div>
     </div>
   );
- 
- 
 }
 
 export default Supplies;
