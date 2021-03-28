@@ -32,7 +32,7 @@ function SupplyCard({ item, uid }) {
 
   useEffect(() => {
     initialiseData();
-  }, []);
+  }, [item.boughtBy]);
 
   const useStyles = makeStyles({
     root: {
@@ -115,10 +115,19 @@ function SupplyCard({ item, uid }) {
   });
   const classes = useStyles();
 
-  const handleClick = () => {};
+  const handleClick = () => {
+    const clickState = !clicked;
+    setClicked(clickState);
+
+    if (clickState) addUserItem();
+    else deleteUserItem();
+  };
 
   const deleteUserItem = async () => {
     const ind = item.boughtBy.indexOf(uid);
+    setBoughtByNumber(boughtByNumber - 1);
+    item.boughtBy.splice(ind, 1);
+
     const userItemRef = firebase
       .database()
       .ref('Supplies/' + item.key + '/boughtBy');
@@ -126,10 +135,12 @@ function SupplyCard({ item, uid }) {
   };
 
   const addUserItem = async () => {
-    const itemListRef = firebase.database().ref('Supplies/' + item.key);
+    const userItemRef = firebase.database().ref('Supplies/' + item.key);
+    setBoughtByNumber(boughtByNumber + 1);
+    item.boughtBy.push(uid);
 
-    itemListRef.set({
-      boughtBy: [...item.boughtBy, uid],
+    userItemRef.set({
+      boughtBy: [...item.boughtBy],
       description: item.description,
       image: item.image,
       pathLink: item.pathLink,
