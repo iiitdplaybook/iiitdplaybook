@@ -9,41 +9,34 @@ import {
   CardMedia,
   Tooltip,
 } from '@material-ui/core';
-import { Link } from 'react-router-dom';
-import times from 'lodash/times';
 import { makeStyles } from '@material-ui/core/styles';
-import image_svg from '../../Assets/SVG_for_cards/teamwork.svg';
-import { grey } from '@material-ui/core/colors';
 import firebase from 'firebase';
+import './Supplies.css';
 
-function SupplyCard({ supplyCardList, user, category }) {
+function SupplyCard({ item, uid }) {
   const cardHeight = 280;
   const cardWidth = cardHeight * (2.5 / 3);
-  const imgWidth = cardWidth - 30;
 
-  const [boughtByNumber, setBoughtByNumber] = useState([]);
-  const bbn = [];
+  const [clicked, setClicked] = useState(false);
+  const [boughtByNumber, setBoughtByNumber] = useState(0);
 
   const color1 = '#fff';
   const color2 = '#fafafa';
 
   const initialiseData = () => {
-    supplyCardList.forEach((element) => {
-      if (element.title) {
-        bbn.push(element.boughtBy.length); 
-      }
-    });
-    setBoughtByNumber(bbn);
+    if (item.title) {
+      setBoughtByNumber(item.boughtBy.length);
+      setClicked(item.boughtBy.includes(uid));
+    }
   };
 
   useEffect(() => {
     initialiseData();
-    setBoughtByNumber(bbn);
-  }, [supplyCardList]);
-
+  }, []);
 
   const useStyles = makeStyles({
     root: {
+      display: 'inline-block',
       maxWidth: cardWidth,
       minWidth: cardWidth,
       maxHeight: cardHeight,
@@ -105,86 +98,88 @@ function SupplyCard({ supplyCardList, user, category }) {
       top: 3,
       right: 3,
     },
-    container: {
-      // width: '90%',
-      // display: 'flex',
-      // justifyContent: 'space-between',
+    activeButton: {
+      color: '#FFF',
+      background: '#48C854',
+      fontSize: '11px',
+      margin: '5px',
+      marginLeft: '10px',
+      marginBottom: '10px',
+      padding: '5px 7px !important',
+      minWidth: '30px !important',
+      maxHeight: '30px !important',
+      position: 'absolute',
+      top: 3,
+      right: 3,
     },
   });
   const classes = useStyles();
 
-  const userBoughtItem = (id) => {
+  const handleClick = () => {};
 
-    addUserItem(supplyCardList[id], user.uid, id);
-    bbn[id]++;
-    setBoughtByNumber(bbn);
+  const deleteUserItem = async () => {
+    const ind = item.boughtBy.indexOf(uid);
+    const userItemRef = firebase
+      .database()
+      .ref('Supplies/' + item.key + '/boughtBy');
+    userItemRef.child(ind).remove();
   };
 
-  const addUserItem = async (item, uid, id) => {
-    const itemListRef = firebase
-      .database()
-      .ref('Supplies/' + category + '/' + id);
+  const addUserItem = async () => {
+    const itemListRef = firebase.database().ref('Supplies/' + item.key);
 
-    // itemListRef.on('value', (snapshot) => {
-    //   const data = snapshot.val();
-    //   console.log(data.boughtBy);
-    // });
     itemListRef.set({
       boughtBy: [...item.boughtBy, uid],
       description: item.description,
-      gradientColor_1: color1,
-      gradientColor_2: color2,
       image: item.image,
       pathLink: item.pathLink,
       title: item.title,
+      category: item.category,
     });
   };
 
-  return supplyCardList.map((item, id) => {
-    return (
-      <Card
-        className={classes.root}
-        style={{
-          background: `linear-gradient(45deg, ${color1}, ${color2})`,
-        }}
-      >
-        {/* <Link className={classes.link} href={pathLink} > */}
-        <CardActionArea className={classes.actionArea}>
-          <div className={classes.container}>
-            <CardMedia
-              className={classes.media}
-              component='img'
-              src={item.image}
-              title={item.title}
-            />
-            <Tooltip title="I've bought this">
-              <Button
-                size='small'
-                className={classes.button}
-                onClick={() => userBoughtItem(id)}
-              >
-                +1
-              </Button>
-            </Tooltip>
-          </div>
-          <CardContent className={classes.content}>
-            <a href={item.pathLink} target='_blank' style={{ margin: '0%' }}>
-              <Typography
-                className={classes.title}
-                style={{ whiteSpace: 'pre-line' }}
-              >
-                {item.title}
-              </Typography>
-            </a>
-            <Typography className={classes.info} color='textSecondary'>
-              {'Bought by ' + boughtByNumber[id] + ' students'}
+  return (
+    <Card
+      className={classes.root}
+      style={{
+        background: `linear-gradient(45deg, ${color1}, ${color2})`,
+      }}
+    >
+      {/* <Link className={classes.link} href={pathLink} > */}
+      <CardActionArea className={classes.actionArea}>
+        <div className={classes.container}>
+          <CardMedia
+            className={classes.media}
+            component='img'
+            src={item.image}
+            title={item.title}
+          />
+          <Tooltip title="I've bought this">
+            <Button
+              size='small'
+              className={clicked ? classes.activeButton : classes.button}
+              onClick={handleClick}
+            >
+              +1
+            </Button>
+          </Tooltip>
+        </div>
+        <CardContent className={classes.content}>
+          <a href={item.pathLink} target='_blank' style={{ margin: '0%' }}>
+            <Typography
+              className={classes.title}
+              style={{ whiteSpace: 'pre-line' }}
+            >
+              {item.title}
             </Typography>
-          </CardContent>
-        </CardActionArea>
-        {/* </Link> */}
-      </Card>
-    );
-  });
+          </a>
+          <Typography className={classes.info} color='textSecondary'>
+            {'Bought by ' + boughtByNumber + ' students'}
+          </Typography>
+        </CardContent>
+      </CardActionArea>
+    </Card>
+  );
 }
 
 export default SupplyCard;
