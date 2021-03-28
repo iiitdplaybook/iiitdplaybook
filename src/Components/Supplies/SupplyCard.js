@@ -12,12 +12,14 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import firebase from 'firebase';
 import './Supplies.css';
+import { LiveTvOutlined } from '@material-ui/icons';
 
 function SupplyCard({ item, uid }) {
   const cardHeight = 280;
   const cardWidth = cardHeight * (2.5 / 3);
 
   const [clicked, setClicked] = useState(false);
+  const [disabled, setDisabled] = useState(false);
   const [boughtByNumber, setBoughtByNumber] = useState(0);
 
   const color1 = '#fff';
@@ -27,6 +29,7 @@ function SupplyCard({ item, uid }) {
     if (item.title) {
       setBoughtByNumber(item.boughtBy.length);
       setClicked(item.boughtBy.includes(uid));
+      setDisabled(uid === '');
     }
   };
 
@@ -112,15 +115,32 @@ function SupplyCard({ item, uid }) {
       top: 3,
       right: 3,
     },
+    disabledButton: {
+      color: 'grey',
+      background: '#eee',
+      border: '1px solid #C8C8C8',
+      fontSize: '11px',
+      margin: '5px',
+      marginLeft: '10px',
+      marginBottom: '10px',
+      padding: '5px 7px !important',
+      minWidth: '30px !important',
+      maxHeight: '30px !important',
+      position: 'absolute',
+      top: 3,
+      right: 3,
+    },
   });
   const classes = useStyles();
 
   const handleClick = () => {
-    const clickState = !clicked;
-    setClicked(clickState);
+    if (!disabled) {
+      const clickState = !clicked;
+      setClicked(clickState);
 
-    if (clickState) addUserItem();
-    else deleteUserItem();
+      if (clickState) addUserItem();
+      else deleteUserItem();
+    }
   };
 
   const deleteUserItem = async () => {
@@ -165,13 +185,19 @@ function SupplyCard({ item, uid }) {
             title={item.title}
           />
           <Tooltip title="I've bought this">
-            <Button
-              size='small'
-              className={clicked ? classes.activeButton : classes.button}
-              onClick={handleClick}
-            >
-              +1
-            </Button>
+            {disabled ? (
+              <Button size='small' className={classes.disabledButton} disabled>
+                +1
+              </Button>
+            ) : (
+              <Button
+                size='small'
+                className={clicked ? classes.activeButton : classes.button}
+                onClick={handleClick}
+              >
+                +1
+              </Button>
+            )}
           </Tooltip>
         </div>
         <CardContent className={classes.content}>
