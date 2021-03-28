@@ -134,13 +134,11 @@ function SupplyCard({ item, uid }) {
   const classes = useStyles();
 
   const handleClick = () => {
-    if (!disabled) {
-      const clickState = !clicked;
-      setClicked(clickState);
+    const clickState = !clicked;
+    setClicked(clickState);
 
-      if (clickState) addUserItem();
-      else deleteUserItem();
-    }
+    if (clickState) addUserItem();
+    else deleteUserItem();
   };
 
   const deleteUserItem = async () => {
