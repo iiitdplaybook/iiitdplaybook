@@ -145,7 +145,6 @@ function SupplyCard({ item, uid }) {
         background: `linear-gradient(45deg, ${color1}, ${color2})`,
       }}
     >
-      {/* <Link className={classes.link} href={pathLink} > */}
       <CardActionArea className={classes.actionArea}>
         <div className={classes.container}>
           <CardMedia
