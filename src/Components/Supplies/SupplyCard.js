@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import {
   Card,
   CardActionArea,
-  CardActions,
   CardContent,
   Button,
   Typography,
@@ -12,7 +11,6 @@ import {
 import { makeStyles } from '@material-ui/core/styles';
 import firebase from 'firebase';
 import './Supplies.css';
-import { LiveTvOutlined } from '@material-ui/icons';
 
 function SupplyCard({ item, uid }) {
   const cardHeight = 280;
@@ -70,7 +68,6 @@ function SupplyCard({ item, uid }) {
     },
     title: {
       fontSize: 15,
-      // fontFamily: 'Poppins',
       fontWeight: 'bold',
       textAlign: 'center',
       color: '#141414',
