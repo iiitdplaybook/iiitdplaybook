@@ -43,10 +43,8 @@ function SupplyCard({ item, uid }) {
       maxWidth: cardWidth,
       minWidth: cardWidth,
       maxHeight: cardHeight,
-      // minHeight:cardHeight,
-      // background:`linear-gradient(45deg, ${gradientColor_1}, ${gradientColor_2})`,
+      background: `linear-gradient(45deg, ${color1}, ${color2})`,
       borderRadius: 10,
-      // marginBottom: "10%",
     },
     actionArea: {
       width: cardWidth,
@@ -56,17 +54,13 @@ function SupplyCard({ item, uid }) {
       alignItems: 'center',
       justifyContent: 'center',
     },
-    a: {
-      margin: '0%',
-    },
     media: {
       maxWidth: 120,
       maxHeight: 120,
-      // minHeight: 100,
-      // maxHeight:100,
-      // height: 0,
-      margin: '10%',
-      marginBottom: '2%',
+      border: 'none',
+      display: 'block',
+      margin: '0 auto',
+      paddingTop: '30px',
     },
     content: {
       display: 'flex',
@@ -76,11 +70,10 @@ function SupplyCard({ item, uid }) {
     },
     title: {
       fontSize: 15,
-      fontFamily: 'Poppins',
+      // fontFamily: 'Poppins',
       fontWeight: 'bold',
       textAlign: 'center',
       color: '#141414',
-      // borderBottom: '1px solid',
     },
     info: {
       fontSize: 12,
@@ -97,38 +90,25 @@ function SupplyCard({ item, uid }) {
       padding: '5px 7px !important',
       minWidth: '30px !important',
       maxHeight: '30px !important',
+      float: 'right',
       position: 'absolute',
       top: 3,
       right: 3,
+      zIndex: '2',
+      '&:hover': {
+        backgroundColor: '#248fb6',
+        color: 'white',
+      },
     },
-    activeButton: {
+    active: {
       color: '#FFF',
       background: '#48C854',
-      fontSize: '11px',
-      margin: '5px',
-      marginLeft: '10px',
-      marginBottom: '10px',
-      padding: '5px 7px !important',
-      minWidth: '30px !important',
-      maxHeight: '30px !important',
-      position: 'absolute',
-      top: 3,
-      right: 3,
+      border: '1px solid #fff',
     },
-    disabledButton: {
+    disabled: {
       color: 'grey',
       background: '#eee',
       border: '1px solid #C8C8C8',
-      fontSize: '11px',
-      margin: '5px',
-      marginLeft: '10px',
-      marginBottom: '10px',
-      padding: '5px 7px !important',
-      minWidth: '30px !important',
-      maxHeight: '30px !important',
-      position: 'absolute',
-      top: 3,
-      right: 3,
     },
   });
   const classes = useStyles();
@@ -175,42 +155,46 @@ function SupplyCard({ item, uid }) {
       }}
     >
       <CardActionArea className={classes.actionArea}>
-        <div className={classes.container}>
+        <Tooltip title="I've bought this">
+          {disabled ? (
+            <Button
+              size='small'
+              className={`${classes.button} ${classes.disabled}`}
+              disabled
+            >
+              +1
+            </Button>
+          ) : (
+            <Button
+              size='small'
+              className={
+                clicked ? `${classes.button} ${classes.active}` : classes.button
+              }
+              onClick={handleClick}
+            >
+              +1
+            </Button>
+          )}
+        </Tooltip>
+        <a href={item.pathLink} target='_blank' style={{ margin: '0%' }}>
           <CardMedia
             className={classes.media}
             component='img'
             src={item.image}
             title={item.title}
           />
-          <Tooltip title="I've bought this">
-            {disabled ? (
-              <Button size='small' className={classes.disabledButton} disabled>
-                +1
-              </Button>
-            ) : (
-              <Button
-                size='small'
-                className={clicked ? classes.activeButton : classes.button}
-                onClick={handleClick}
-              >
-                +1
-              </Button>
-            )}
-          </Tooltip>
-        </div>
-        <CardContent className={classes.content}>
-          <a href={item.pathLink} target='_blank' style={{ margin: '0%' }}>
+          <CardContent className={classes.content}>
             <Typography
               className={classes.title}
               style={{ whiteSpace: 'pre-line' }}
             >
               {item.title}
             </Typography>
-          </a>
-          <Typography className={classes.info} color='textSecondary'>
-            {'Bought by ' + boughtByNumber + ' students'}
-          </Typography>
-        </CardContent>
+            <Typography className={classes.info} color='textSecondary'>
+              {'Bought by ' + boughtByNumber + ' students'}
+            </Typography>
+          </CardContent>
+        </a>
       </CardActionArea>
     </Card>
   );

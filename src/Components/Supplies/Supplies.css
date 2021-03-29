@@ -1,4 +1,21 @@
 /** @format */
+.main_heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  padding: 30px;
+  padding-bottom: 20px;
+}
+
+.sub_heading {
+  font-size: 20px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.63);
+  margin: 0;
+  padding-bottom: 20px;
+}
+
 .supplies__button {
   display: flex;
   justify-content: center;
@@ -23,6 +40,9 @@
 
 .cardsDiv_supply {
   display: grid;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 50px;
   grid-gap: 5px;
   grid-row-gap: 40px;
   justify-content: center;
@@ -30,16 +50,6 @@
   grid-template-rows: auto;
   grid-auto-rows: 300px !important;
   justify-items: center;
-}
-
-.MuiButton-root:hover {
-  background-color: #248fb6;
-  color: white;
-}
-
-.makeStyles-activeButton:hover {
-  background-color: #31863a !important;
-  color: white;
 }
 
 @media only screen and (max-width: 600px) {
@@ -60,5 +70,9 @@
 
   .supplies__button::-webkit-scrollbar {
     display: none;
+  }
+
+  .cardsDiv_supply {
+    width: 100%;
   }
 }

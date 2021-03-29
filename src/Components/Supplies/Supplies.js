@@ -72,12 +72,8 @@ function Supplies() {
         loggedIn={localStorage.getItem('isSignedIn')}
         colorStatus={true}
       />
-      <h2
-        className='supplies_heading'
-        style={{ textAlign: 'center', margin: '4%' }}
-      >
-        A collection of things that students use in college
-      </h2>
+      <h1 className='main_heading'>Supplies</h1>
+      <h2 className='sub_heading'>Common college supplies used by students</h2>
 
       <div className='supplies__button'>
         {categories.map((category, id) => (
