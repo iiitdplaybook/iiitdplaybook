@@ -1,55 +1,78 @@
 /** @format */
+.main_heading {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-family: 'Roboto', 'Helvetica', 'Arial', sans-serif;
+  padding: 30px;
+  padding-bottom: 20px;
+}
+
+.sub_heading {
+  font-size: 20px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.63);
+  margin: 0;
+  padding-bottom: 20px;
+}
+
 .supplies__button {
-    display: flex;
-    justify-content: center;
-    margin: 10px;
-    transition: ease-in-out .2s,
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  transition: ease-in-out 0.2s;
 }
 
 .supplies__button > button {
-    margin: 10px;
-    transition: ease-in-out .2s,
+  margin: 10px;
+  transition: ease-in-out 0.2s;
 }
 
 .supplies__body {
-    display: flex;
-    justify-content: center;
-    transition: ease-in-out .2s,
+  display: flex;
+  justify-content: center;
+  transition: ease-in-out 0.2s;
 }
 
-.MuiCardMedia-root{
-    background-size: contain !important;    
+.MuiCardMedia-root {
+  background-size: contain !important;
 }
 
-.cardsDiv_supply{
-    display: grid;
-    grid-gap: 5px;
-    grid-row-gap: 40px;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
-    grid-template-rows: auto;
-    grid-auto-rows: 300px !important;
-    justify-items: center;
+.cardsDiv_supply {
+  display: grid;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  grid-gap: 5px;
+  grid-row-gap: 40px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+  grid-template-rows: auto;
+  grid-auto-rows: 300px !important;
+  justify-items: center;
 }
 
 @media only screen and (max-width: 600px) {
+  .supplies__button .MuiButton-label {
+    font-size: 0.7em;
+    margin-left: 30%;
+    margin-right: 30%;
+  }
 
-    .supplies__button    .MuiButton-label{
-        font-size: .7em;
-        margin-left: 30%;
-        margin-right: 30%;
-    }
+  .supplies__button {
+    overflow-y: scroll !important;
+    justify-content: unset !important;
+  }
 
-    .supplies__button{
-        overflow-y: scroll !important;
-        justify-content: unset !important;
-    }
+  .supplies__button > button {
+    min-width: fit-content;
+  }
 
-    .supplies__button > button {
-        min-width: fit-content;
-    }
+  .supplies__button::-webkit-scrollbar {
+    display: none;
+  }
 
-    .supplies__button::-webkit-scrollbar {
-        display: none;
-    }
+  .cardsDiv_supply {
+    width: 100%;
+  }
 }
