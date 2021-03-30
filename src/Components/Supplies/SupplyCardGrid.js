@@ -5,7 +5,7 @@ import firebase from 'firebase';
 function SupplyCardGrid({ itemList }) {
   const user = firebase.auth().currentUser;
 
-  console.log(itemList);
+  // console.log(itemList);
   return itemList.map((item) => {
     return <SupplyCard item={item} uid={user === null ? '' : user.uid} />;
   });

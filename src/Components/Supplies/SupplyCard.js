@@ -58,6 +58,7 @@ function SupplyCard({ item, uid }) {
       border: 'none',
       display: 'block',
       margin: '0 auto',
+      objectFit: 'contain',
       paddingTop: '30px',
     },
     content: {
@@ -152,7 +153,7 @@ function SupplyCard({ item, uid }) {
       }}
     >
       <CardActionArea className={classes.actionArea}>
-        <Tooltip title="I've bought this">
+        <Tooltip title={item.title === 'Crocin Pain Relief Tablet' ? "We know" : "I've bought this"}>
           {disabled ? (
             <Button
               size='small'
@@ -173,7 +174,7 @@ function SupplyCard({ item, uid }) {
             </Button>
           )}
         </Tooltip>
-        <a href={item.pathLink} target='_blank' style={{ margin: '0%' }}>
+        <a href={item.pathLink} target='_blank' style={{ margin: '0%', opacity: '1' }}>
           <CardMedia
             className={classes.media}
             component='img'
@@ -188,7 +189,7 @@ function SupplyCard({ item, uid }) {
               {item.title}
             </Typography>
             <Typography className={classes.info} color='textSecondary'>
-              {'Bought by ' + boughtByNumber + ' students'}
+              { item.title === 'Crocin Pain Relief Tablet' ? 'Bought by everyone' : boughtByNumber === 1 ? 'Bought by ' + boughtByNumber + ' student' : 'Bought by ' + boughtByNumber + ' students' }
             </Typography>
           </CardContent>
         </a>

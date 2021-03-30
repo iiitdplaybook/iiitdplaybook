@@ -181,7 +181,7 @@ function HomePage() {
   useEffect(() => {
     for (let i = 0; i < numSections; i++) {
       sectionsRef[i].setAttribute('style', 'height:100vh', '!important');
-      console.log(sectionsRef[i]);
+      // console.log(sectionsRef[i]);
     }
   });
 
@@ -223,7 +223,7 @@ function HomePage() {
                         {greetingList?.[randi]?.[0]}
                         {userName.split(' ')[0]}
                         {greetingList?.[randi]?.[1]}
-                        {console.log(greetingList)}
+                        {/* {console.log(greetingList)} */}
                       </h1>
                     )}
                   </Tilt>

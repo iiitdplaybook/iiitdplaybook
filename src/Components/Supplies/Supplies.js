@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, makeStyles } from '@material-ui/core';
 import Navbar from '../Navbar/Navbar';
 import SupplyCardGrid from './SupplyCardGrid';
+import zIndex from '@material-ui/core/styles/zIndex';
 
 function Supplies() {
   const [clickedButton, setClickedButton] = useState(0);
@@ -89,10 +90,14 @@ function Supplies() {
         ))}
       </div>
       <div className='explore__body'>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfwv9CsW6ISTb4kPCjHRJ72S7UnqvEQtJZWI11YNrTvlkfmVg/viewform"  target='_blank' class="float">
+          <i class="fa fa-plus my-float"> Add a product</i>
+        </a>
         {clickedButton === 0 ? (
           <div className='cardsDiv_supply'>
             <SupplyCardGrid itemList={supplies} />
           </div>
+          
         ) : (
           <div className='cardsDiv_supply'>
             <SupplyCardGrid

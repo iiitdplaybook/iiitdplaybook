@@ -102,8 +102,8 @@ export default function TestimoniesForm() {
 
   const doSomething = () => {
     setShowConfetti(''); 
-    console.log("confetti ocmplet");
-    console.log(showConfetti);
+    // console.log("confetti ocmplet");
+    // console.log(showConfetti);
   }
 
   const getConfetti = () => {
@@ -138,7 +138,7 @@ export default function TestimoniesForm() {
           setProgress(progress);
         },
         (error) => {
-          console.log(error.code);
+          // console.log(error.code);
         },
         async () => {
           const downloadURL = await uploadTask.snapshot.ref.getDownloadURL();
