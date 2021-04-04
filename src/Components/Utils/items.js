@@ -19,6 +19,8 @@ const imageQuery =
   'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/SVG_for_cards/query.svg';
 const imageNetwork =
   'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/SVG_for_cards/network.svg';
+const qna =
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/SVG_for_cards/network.svg';
 
 function items() {
   // bottom left - color1
@@ -79,6 +81,17 @@ function items() {
       guestFilter: false,
     },
     {
+      gradientColor_1: color21,
+      gradientColor_2: color22,
+      title: 'QnA',
+      n_testimonies: 6,
+      reading_time: 3,
+      image: qna,
+      pathLink: 'qna',
+      opacity: 1,
+      guestFilter: false,
+    },
+    {
       gradientColor_1: color3,
       gradientColor_2: color4,
       title: 'Time Management',
@@ -90,19 +103,30 @@ function items() {
       guestFilter: guestVar,
     },
     {
-      gradientColor_1: color5,
-      gradientColor_2: color6,
-      title: '\nOnline Sem Tips',
+      gradientColor_1: color13,
+      gradientColor_2: color14,
+      title: 'Resources for college',
       n_testimonies: 6,
       reading_time: 3,
-      image: imageOnlinesem,
-      pathLink: 'explore',
-      opacity: opac,
+      image: imageResources,
+      pathLink: 'resources',
+      opacity: 1,
       guestFilter: guestVar,
     },
+    // {
+    //   gradientColor_1: color5,
+    //   gradientColor_2: color6,
+    //   title: '\nOnline Sem Tips',
+    //   n_testimonies: 6,
+    //   reading_time: 3,
+    //   image: imageOnlinesem,
+    //   pathLink: 'explore',
+    //   opacity: opac,
+    //   guestFilter: guestVar,
+    // },
     {
-      gradientColor_1: color7,
-      gradientColor_2: color8,
+      gradientColor_1: color15,
+      gradientColor_2: color16,
       title: '\nPlacements',
       n_testimonies: 6,
       reading_time: 3,
@@ -134,17 +158,6 @@ function items() {
       guestFilter: guestVar,
     },
     {
-      gradientColor_1: color13,
-      gradientColor_2: color14,
-      title: 'Resources for college',
-      n_testimonies: 6,
-      reading_time: 3,
-      image: imageResources,
-      pathLink: 'resources',
-      opacity: 1,
-      guestFilter: guestVar,
-    },
-    {
       gradientColor_1: color17,
       gradientColor_2: color18,
       title: 'Resolving \nQueries',
@@ -156,8 +169,8 @@ function items() {
       guestFilter: guestVar,
     },
     {
-      gradientColor_1: color15,
-      gradientColor_2: color16,
+      gradientColor_1: color7,
+      gradientColor_2: color8,
       title: '\nNetworking',
       n_testimonies: 6,
       reading_time: 3,
@@ -243,9 +256,9 @@ function items() {
   for (let index = 0; index < allCards.length; index++) {
     itemslist['allCards'].push(ExploreCards(allCards[index]));
   }
-  for (let index = 0; index < favCards.length; index++) {
-    itemslist['favCards'].push(ExploreCards(favCards[index]));
-  }
+  // for (let index = 0; index < favCards.length; index++) {
+  //   itemslist['favCards'].push(ExploreCards(favCards[index]));
+  // }
   for (let index = 0; index < recommendedCards.length; index++) {
     itemslist['recommendedCards'].push(ExploreCards(recommendedCards[index]));
   }

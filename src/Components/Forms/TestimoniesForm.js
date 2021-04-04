@@ -88,8 +88,8 @@ export default function TestimoniesForm() {
         len = snapshot.numChildren();
         firebase
           .database()
-          .ref('Testimonies/' + topic + '/' + len)
-          .set(state);
+          .ref('Testimonies/' + topic) // + '/' + len)
+          .push(state);
       });
 
     

@@ -60,7 +60,7 @@ function Explore() {
         >
           Recommended
         </Button>
-        <Button
+        {/* <Button
           onClick={() => changeS(3)}
           variant={clickedButton === 3 ? 'contatined' : 'outlined'}
           className={
@@ -68,17 +68,18 @@ function Explore() {
           }
         >
           Favourites
-        </Button>
+        </Button> */}
       </div>
 
       <div className='explore__body'>
         {clickedButton === 1 ? (
           <div className='cardsDiv'>{itemCards['allCards']}</div>
-        ) : clickedButton === 2 ? (
+        ) : clickedButton === 2 (
           <div className='cardsDiv'>{itemCards['recommendedCards']}</div>
-        ) : (
-          <div className='cardsDiv'>{itemCards['favCards']}</div>
         )}
+        {/* //  : (
+        //   <div className='cardsDiv'>{itemCards['favCards']}</div>
+        // )} */}
       </div>
     </div>
   );

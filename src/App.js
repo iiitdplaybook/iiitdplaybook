@@ -49,6 +49,9 @@ function App() {
   const Nostalgia = React.lazy(() =>
     import('./Components/Nostalgia/Nostalgia')
   );
+  const QnA = React.lazy(() =>
+    import('./Components/QnA/QnA')
+  );
 
   toast.configure();
   const notify = () =>
@@ -131,6 +134,11 @@ function App() {
                         <Nostalgia />
                         <Footer />
                       </Suspense>
+                    <Route path='/qna'>
+                      <Suspense fallback={<Spinner />}>
+                        <QnA />
+                      </Suspense>
+                    </Route>
                     </Route>
                     <Route path='/explore'>
                       <Suspense fallback={<Spinner />}>
@@ -184,6 +192,11 @@ function App() {
                     <Route path='/timemanagement'>
                       <Suspense fallback={<Spinner />}>
                         <TimeManagement />
+                      </Suspense>
+                    </Route>
+                    <Route path='/qna'>
+                      <Suspense fallback={<Spinner />}>
+                        <QnA />
                       </Suspense>
                     </Route>
                     <Route path='/tools'>
