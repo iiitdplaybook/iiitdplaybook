@@ -15,7 +15,7 @@ function TeamMembers() {
   React.useEffect(async () => {
     const data = await fetchMemberData();
     setMemberData(data);
-    console.log(data);
+    // console.log(data);
     return () => {};
   }, []);
 

@@ -36,9 +36,9 @@ import '../../../node_modules/react-toastify/dist/ReactToastify.css';
 import { useHistory } from 'react-router-dom';
 
 const logoWhite =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/SVG/Asset1.svg';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/SVG/Asset1.svg';
 const logoColored =
-  'https://cdn.statically.io/gh/PabitraBansal/StudentPlaybook/6d20d536/src/Assets/SVG/Asset2.svg';
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/SVG/Asset2.svg';
 
 const useStyles = makeStyles((theme) => ({
   root: {

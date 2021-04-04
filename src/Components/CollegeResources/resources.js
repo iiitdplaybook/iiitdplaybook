@@ -116,6 +116,7 @@ function Resources() {
               <div className='cardsDiv_resources3'>
                 {itemCards['chromeCards_acad']}
               </div>
+              <br/>
             </div>
           </div>
         ) : clickedButton === 2 ? (
@@ -136,13 +137,42 @@ function Resources() {
                 {itemCards['codingCards_YT']}
               </div>
             </div>
+            <br />
+            <br />
+            <h3>Project Ideas</h3>
+            <br />
+            <div className='resourceBox_Inner'>
+              <div className='cardsDiv_resources3'>
+                {itemCards['codingProjectCards']}
+              </div>
+            </div>
+            <br/>
           </div>
         ) : clickedButton === 3 ? (
           <div className='cardsDiv_resources'>
             {itemCards['networkingCards']}
           </div>
         ) : (
+          <div className='resourceBox'>
+          <h3>Learn design</h3>
+          <br/>
+          <div className='resourceBox_Inner'>
+          <div className='cardsDiv_resources2'>{itemCards['designCards_learn']}</div>
+          <br/><br/> 
+          </div>
+          <h3>Platforms to use</h3>
+          <br/>
+          <div className='resourceBox_Inner'>          
           <div className='cardsDiv_resources'>{itemCards['designCards']}</div>
+          <br/><br/>
+          </div>
+          <h3>Cool resources</h3>
+          <br/>
+          <div className='resourceBox_Inner'>
+          <div className='cardsDiv_resources3'>{itemCards['designCards_resources']}</div>
+          </div>
+          <br/>
+          </div>
         )}
       </div>
     </div>

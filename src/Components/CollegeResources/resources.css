@@ -25,10 +25,10 @@
 
 .cardsDiv_resources{
     display: grid;
-    grid-gap: 5px;
+    grid-gap: 6em;
     grid-row-gap: 40px;
     justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(22em, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(26em, 1fr));
     grid-template-rows: auto;
     grid-auto-rows: 300px !important;
     justify-items: center;

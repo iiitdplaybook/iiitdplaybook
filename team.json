@@ -1,0 +1,128 @@
+[
+  {
+    "firstName": "Ananya",
+    "lastName": "Lohani",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/AnanyaLohani.jpg",
+    "defaultLink": "https://www.ananyalohani.me/",
+    "linkedin": "https://www.linkedin.com/in/ananyalohani/",
+    "instagram": "https://www.instagram.com/ananyalohani_/",
+    "team": "Web Dev"
+  },
+  {
+    "firstName": "Meetakshi",
+    "lastName": "Setiya",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/MeetakshiSetiya.jpg",
+    "defaultLink": "https://www.linkedin.com/in/meetakshisetiya/",
+    "linkedin": "https://www.linkedin.com/in/meetakshisetiya/",
+    "instagram": "https://www.instagram.com/metsetwho/",
+    "team": "Content"
+  },
+  {
+    "firstName": "Aman",
+    "lastName": "Priyadarshi",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/AmanPriyadarshi.jpg",
+    "defaultLink": "https://dribbble.com/amanpriyadarshi",
+    "linkedin": "https://www.linkedin.com/in/amanpriyadarshiart/",
+    "instagram": "https://www.instagram.com/amanpriyadarshi_art/?hl=en",
+    "team": "Design"
+  },
+  {
+    "firstName": "Rahul",
+    "lastName": "Bansal",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/RahulBansal.jpg",
+    "defaultLink": "https://www.linkedin.com/in/rahul-bansal-66a9581a6//",
+    "linkedin": "https://www.linkedin.com/in/rahul-bansal-66a9581a6//",
+    "instagram": "https://www.instagram.com/rahul__bansal123/",
+    "team": "Web Dev"
+  },
+  {
+    "firstName": "Ayush",
+    "lastName": "Misra",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/AyushMisra.png",
+    "defaultLink": "https://www.linkedin.com/in/ayush-misra-1208321b0?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BOwRYfK8gRimvROXuHUkuFQ%3D%3D",
+    "linkedin": "https://www.linkedin.com/in/ayush-misra-1208321b0?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BOwRYfK8gRimvROXuHUkuFQ%3D%3D",
+    "instagram": "https://www.instagram.com/ayush01.misra/",
+    "team": "Design"
+  },
+  {
+    "firstName": "Mohit",
+    "lastName": "Dhattarwal",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/MohitDhattarwal.jpeg",
+    "defaultLink": "https://www.linkedin.com/in/mohit-dhattarwal-0485bb187/",
+    "linkedin": "https://www.linkedin.com/in/mohit-dhattarwal-0485bb187/",
+    "instagram": "https://www.instagram.com/dhattarwalmohit/?hl=en",
+    "team": "Content"
+  },
+  {
+    "firstName": "Sumanyu",
+    "lastName": "Bhatia",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/SumanyuBhatia.jpg",
+    "defaultLink": "https://www.linkedin.com/in/sumanyubhatia",
+    "linkedin": "https://www.linkedin.com/in/sumanyubhatia",
+    "instagram": "https://www.instagram.com/sumanyubhatia",
+    "team": "Web Dev"
+  },
+  {
+    "firstName": "Srishti",
+    "lastName": "Sehgal",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/SrishtiSehgal.jpg",
+    "defaultLink": "https://www.linkedin.com/in/srishti-sehgal-a55b771a6",
+    "linkedin": "https://www.linkedin.com/in/srishti-sehgal-a55b771a6",
+    "instagram": "https://instagram.com/_sriishti/",
+    "team": "Content"
+  },
+  {
+    "firstName": "Aflah",
+    "lastName": "Khan",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/AflahKhan.png",
+    "defaultLink": "https://www.linkedin.com/in/mohammad-aflah-khan/",
+    "linkedin": "https://www.linkedin.com/in/mohammad-aflah-khan/",
+    "instagram": "https://www.instagram.com/life_levelling/",
+    "team": "Web Dev"
+  },
+  {
+    "firstName": "Tushar",
+    "lastName": "Agarwal",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/TusharAgarwal.jpeg",
+    "defaultLink": "https://www.linkedin.com/in/tushar-agarwal-ba0b771a6",
+    "linkedin": "https://www.linkedin.com/in/tushar-agarwal-ba0b771a6",
+    "instagram": "https://www.instagram.com/tushar.agarwal18/",
+    "team": "Publicity"
+  },
+  {
+    "firstName": "Ishika",
+    "lastName": "Joshi",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/IshikaJoshi.jpg",
+    "defaultLink": "https://www.linkedin.com/in/ishika-joshi-0966441a5/",
+    "linkedin": "https://www.linkedin.com/in/ishika-joshi-0966441a5/",
+    "instagram": "https://www.instagram.com/ishikaajoshii/",
+    "team": "Design"
+  },
+  {
+    "firstName": "Hribhav",
+    "lastName": "",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/Hribhav.jpg",
+    "defaultLink": "https://www.linkedin.com/in/hribhav-panchal-5045551a7/",
+    "linkedin": "https://www.linkedin.com/in/hribhav-panchal-5045551a7/",
+    "instagram": "https://www.instagram.com/_hribhav/",
+    "team": "Publicity"
+  },
+  {
+    "firstName": "Rohan",
+    "lastName": "Hiranandani",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/RohanHiranandani.jpg",
+    "defaultLink": "https://www.linkedin.com/in/rohanhiranandani",
+    "linkedin": "https://www.linkedin.com/in/rohanhiranandani",
+    "instagram": "https://www.instagram.com/hiranandani.rohan/",
+    "team": "Content"
+  },
+  {
+    "firstName": "Prakhar",
+    "lastName": "Maurya",
+    "image": "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/kshitij/src/Assets/People/team/PrakharMaurya.jpg",
+    "defaultLink": "http://www.linkedin.com/in/prakharmaurya00",
+    "linkedin": "http://www.linkedin.com/in/prakharmaurya00",
+    "instagram": "https://www.instagram.com/prakharmaurya_/",
+    "team": "Content"
+  }
+]
