@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   Card,
   CardActionArea,
@@ -43,7 +43,7 @@ function QnACard({ card, colors }) {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      justifyContent: 'center',
+      justifyContent: 'space-between',
     },
     content: {
       display: 'flex',
@@ -52,11 +52,22 @@ function QnACard({ card, colors }) {
       justifyContent: 'center',
     },
     question: {
-      fontSize: '34px',
+      fontSize: '20px',
       color: '#fff',
       fontWeight: '900',
       textAlign: 'center',
       fontFamily: '"Poppins", "sans-serif"',
+    },
+    subheading: {
+      color: '#222',
+      alignSelf: 'baseline !important',
+    },
+    cardImg: {
+      marginTop: '10px',
+      maxWidth: '100%',
+      maxHeight: '100%',
+      width: '180px',
+      height: 'auto',
     },
     link: {
       textDecoration: 'none',
@@ -67,10 +78,16 @@ function QnACard({ card, colors }) {
     dialog: {
       margin: '0 auto',
     },
+    dialogText: {
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
     divider: {
       padding: '5px',
     },
     answer: {
+      width: '560px',
       position: 'relative',
       display: 'flex',
       flexDirection: 'row',
@@ -79,12 +96,16 @@ function QnACard({ card, colors }) {
       borderRadius: '5px',
       padding: '5px',
       margin: '10px 0',
-      color: '#222222',
+      color: '#000',
       fontSize: '13px',
       transition: 'all 0.2s ease-in-out',
       '&:hover': {
         textDecoration: 'none !important',
         background: '#d5d5d5',
+      },
+      ['@media (max-width:600px)']: {
+        width: 'auto',
+        flexDirection: 'column',
       },
     },
     invisible: {
@@ -116,6 +137,17 @@ function QnACard({ card, colors }) {
       <Tilt>
         <Card className={classes.root} onClick={handleClickOpen}>
           <CardActionArea className={classes.actionArea}>
+            <CardMedia
+              src={
+                'https://dummyimage.com/150x100/' +
+                colors[0].substring(1) +
+                '/' +
+                colors[1].substring(1) +
+                '.png&text=placeholder'
+              }
+              component='img'
+              className={classes.cardImg}
+            />
             <CardContent className={classes.content}>
               <Typography
                 className={classes.question}
@@ -136,8 +168,11 @@ function QnACard({ card, colors }) {
         <DialogTitle className={classes.title}>{card.question}</DialogTitle>
         <DialogContent className={classes.dialogContent} dividers={true}>
           <DialogContentText className={classes.dialogText}>
-            {card.answers.map((ans) => (
-              <Link href={ans.link} className={classes.link}>
+            <h4 className={classes.subheading}>
+              These resources might be helpful:
+            </h4>
+            {card.answers.map((ans, id) => (
+              <Link key={id} href={ans.link} className={classes.link}>
                 <div className={classes.answer}>
                   <img src={ans.image} className={classes.answerImage} />
                   <div className={classes.divider}>
