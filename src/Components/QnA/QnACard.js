@@ -11,6 +11,7 @@ import {
   Typography,
   CardMedia,
   Link,
+  Button,
 } from '@material-ui/core';
 import { GoVerified } from 'react-icons/go';
 import { IconContext } from 'react-icons';
@@ -57,12 +58,6 @@ function QnACard({ card, colors }) {
       textAlign: 'center',
       fontFamily: '"Poppins", "sans-serif"',
     },
-    subheading: {
-      fontFamily: 'Poppins, sans-serif !important',
-      fontWeight: '700',
-      color: '#222',
-      alignSelf: 'baseline !important',
-    },
     cardImg: {
       marginTop: '10px',
       maxWidth: '100%',
@@ -70,16 +65,17 @@ function QnACard({ card, colors }) {
       width: '180px',
       height: 'auto',
     },
-    dialog: {
-      fontFamily: 'Poppins, sans-serif !important',
-      margin: '0 auto',
-    },
+    // dialog: {
+    //   fontFamily: 'Poppins, sans-serif !important',
+    //   margin: '0 auto',
+    // },
     dialogText: {
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
     },
     title: {
+      paddingTop: '10px',
       fontFamily: 'Poppins, sans-serif !important',
       fontWeight: '700 !important',
       textAlign: 'center',
@@ -91,10 +87,6 @@ function QnACard({ card, colors }) {
       textAlign: 'center',
       color: '#3FADA8',
     },
-    divider: {
-      padding: '5px',
-      maxWidth: '350px',
-    },
     answer: {
       fontFamily: 'Poppins, sans-serif !important',
       width: '500px',
@@ -103,7 +95,7 @@ function QnACard({ card, colors }) {
       boxShadow: '2px 2px 10px rgba(0, 0, 0, 0.1)',
       borderRadius: '10px',
       padding: '10px',
-      margin: '10px 0',
+      margin: '10px 25px',
       color: '#000',
       fontSize: '12px',
       transition: 'all 0.2s ease-in-out',
@@ -112,7 +104,7 @@ function QnACard({ card, colors }) {
         background: '#eeeeee',
       },
       ['@media (max-width:600px)']: {
-        width: 'auto',
+        width: '100%',
       },
     },
     link: {
@@ -122,6 +114,7 @@ function QnACard({ card, colors }) {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'flex-start',
+      alignItems: 'center',
       '&:hover': {
         textDecoration: 'none',
       },
@@ -129,26 +122,49 @@ function QnACard({ card, colors }) {
         flexDirection: 'column',
       },
     },
-    invisible: {
-      visibility: 'hidden !important',
-    },
     answerImage: {
       display: 'block',
       objectFit: 'cover',
       maxWidth: '100%',
       maxHeight: '95px',
-      width: '-webkit-fill-available',
       height: 'auto',
       marginRight: '5px',
+      ['@media (max-width:600px)']: {
+        flexDirection: 'column',
+      },
+    },
+    divider: {
+      padding: '5px',
+      maxWidth: '350px',
+      height: '100%',
+      alignSelf: 'stretch',
     },
     verified: {
       position: 'absolute',
       top: '10px',
       right: '10px',
     },
-    subscribe: {
+    invisible: {
+      visibility: 'hidden !important',
+    },
+    button: {
       textAlign: 'center',
-      margin: '10px 0',
+      margin: '30px 0 15px 0',
+      background: '#fff',
+      padding: '20px',
+      border: 'none',
+      color: '#000',
+      fontSize: '14px',
+      lineHeight: '1.5',
+      fontFamily: 'Poppins, sans-serif !important',
+      boxShadow: '2px 2px 20px rgba(0, 0, 0, 0.1)',
+      borderRadius: '10px',
+      textTransform: 'none',
+      cursor: 'pointer',
+      transition: 'all 0.2s ease-in-out',
+      '&:hover': {
+        background: '#eeeeee',
+      },
     },
   });
   const classes = useStyles();
@@ -181,7 +197,10 @@ function QnACard({ card, colors }) {
       <Dialog
         open={open}
         onClose={handleClose}
-        className={classes.dialog}
+        style={{
+          fontFamily: 'Poppins, sans-serif !important',
+          margin: '0 auto',
+        }}
         aria-labelledby='alert-dialog-title'
         maxWidth={false}
       >
@@ -206,7 +225,7 @@ function QnACard({ card, colors }) {
                 >
                   <img src={ans.image} className={classes.answerImage} />
                   <div className={classes.divider}>
-                    <div className={classes.body}>
+                    <div>
                       <h4
                         style={{
                           color: '#FF5F5F',
@@ -238,10 +257,12 @@ function QnACard({ card, colors }) {
                 </Link>
               </div>
             ))}
-            <img
-              className={classes.subscribe}
-              src='https://dummyimage.com/400x200/eee/000.png&text=subscribe+card'
-            />
+            <button className={classes.button}>
+              <h4 style={{ color: '#21BAEF', fontSize: '16px' }}>
+                Subscribe Now
+              </h4>
+              <p>Get bi-weekly learnings right in your inbox</p>
+            </button>
           </DialogContentText>
         </DialogContent>
       </Dialog>
