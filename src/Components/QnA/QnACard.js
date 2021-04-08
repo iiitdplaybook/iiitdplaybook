@@ -10,15 +10,14 @@ import {
   DialogTitle,
   Typography,
   CardMedia,
-  Tooltip,
   Link,
 } from '@material-ui/core';
-import { FaRegCheckCircle } from 'react-icons/fa';
+import { GoVerified } from 'react-icons/go';
 import { IconContext } from 'react-icons';
 
 import { makeStyles } from '@material-ui/core/styles';
-import Tilt from 'react-parallax-tilt';
 import { truncate } from 'lodash';
+import './QnA.css';
 
 function QnACard({ card, colors }) {
   const cardHeight = 250;
@@ -59,6 +58,8 @@ function QnACard({ card, colors }) {
       fontFamily: '"Poppins", "sans-serif"',
     },
     subheading: {
+      fontFamily: 'Poppins, sans-serif !important',
+      fontWeight: '700',
       color: '#222',
       alignSelf: 'baseline !important',
     },
@@ -69,13 +70,8 @@ function QnACard({ card, colors }) {
       width: '180px',
       height: 'auto',
     },
-    link: {
-      textDecoration: 'none',
-      '&:hover': {
-        textDecoration: 'none',
-      },
-    },
     dialog: {
+      fontFamily: 'Poppins, sans-serif !important',
       margin: '0 auto',
     },
     dialogText: {
@@ -83,28 +79,53 @@ function QnACard({ card, colors }) {
       flexDirection: 'column',
       alignItems: 'center',
     },
+    title: {
+      fontFamily: 'Poppins, sans-serif !important',
+      fontWeight: '700 !important',
+      textAlign: 'center',
+      color: '#000',
+    },
+    subtitle: {
+      fontFamily: 'Poppins, sans-serif !important',
+      fontSize: '11px',
+      textAlign: 'center',
+      color: '#3FADA8',
+    },
     divider: {
       padding: '5px',
+      maxWidth: '350px',
     },
     answer: {
-      width: '560px',
+      fontFamily: 'Poppins, sans-serif !important',
+      width: '500px',
       position: 'relative',
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'flex-start',
-      background: '#e5e5e5',
-      borderRadius: '5px',
-      padding: '5px',
+      background: '#fff',
+      boxShadow: '2px 2px 10px rgba(0, 0, 0, 0.1)',
+      borderRadius: '10px',
+      padding: '10px',
       margin: '10px 0',
       color: '#000',
-      fontSize: '13px',
+      fontSize: '12px',
       transition: 'all 0.2s ease-in-out',
       '&:hover': {
         textDecoration: 'none !important',
-        background: '#d5d5d5',
+        background: '#eeeeee',
       },
       ['@media (max-width:600px)']: {
         width: 'auto',
+      },
+    },
+    link: {
+      textDecoration: 'none',
+      color: '#000',
+      opacity: '1',
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'flex-start',
+      '&:hover': {
+        textDecoration: 'none',
+      },
+      ['@media (max-width:600px)']: {
         flexDirection: 'column',
       },
     },
@@ -113,17 +134,17 @@ function QnACard({ card, colors }) {
     },
     answerImage: {
       display: 'block',
+      objectFit: 'cover',
       maxWidth: '100%',
-      maxHeight: '100%',
-      width: 'auto',
+      maxHeight: '95px',
+      width: '-webkit-fill-available',
       height: 'auto',
       marginRight: '5px',
     },
     verified: {
-      color: '#68C937',
       position: 'absolute',
-      top: '5px',
-      right: '5px',
+      top: '10px',
+      right: '10px',
     },
     subscribe: {
       textAlign: 'center',
@@ -134,57 +155,74 @@ function QnACard({ card, colors }) {
 
   return (
     <>
-      <Tilt>
-        <Card className={classes.root} onClick={handleClickOpen}>
-          <CardActionArea className={classes.actionArea}>
-            <CardMedia
-              src={
-                'https://dummyimage.com/150x100/' +
-                colors[0].substring(1) +
-                '/' +
-                colors[1].substring(1) +
-                '.png&text=placeholder'
-              }
-              component='img'
-              className={classes.cardImg}
-            />
-            <CardContent className={classes.content}>
-              <Typography
-                className={classes.question}
-                style={{ whiteSpace: 'pre-line' }}
-              >
-                {card.question}
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-      </Tilt>
+      <Card className={classes.root} onClick={handleClickOpen}>
+        <CardActionArea className={classes.actionArea}>
+          <CardMedia
+            src={
+              'https://dummyimage.com/150x100/' +
+              colors[0].substring(1) +
+              '/' +
+              colors[1].substring(1) +
+              '.png&text=placeholder'
+            }
+            component='img'
+            className={classes.cardImg}
+          />
+          <CardContent className={classes.content}>
+            <Typography
+              className={classes.question}
+              style={{ whiteSpace: 'pre-line' }}
+            >
+              {card.question}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
       <Dialog
         open={open}
         onClose={handleClose}
         className={classes.dialog}
         aria-labelledby='alert-dialog-title'
+        maxWidth={false}
       >
-        <DialogTitle className={classes.title}>{card.question}</DialogTitle>
-        <DialogContent className={classes.dialogContent} dividers={true}>
+        <DialogTitle>
+          <h3 className={classes.title}>{card.question}</h3>
+          <IconContext.Provider value={{ color: '#3FADA8' }}>
+            <div className={classes.subtitle}>
+              <GoVerified style={{ marginRight: '5px' }} />
+              Verified by IIITDians
+            </div>
+          </IconContext.Provider>
+        </DialogTitle>
+        <DialogContent className={classes.dialogContent} dividers={false}>
           <DialogContentText className={classes.dialogText}>
-            <h4 className={classes.subheading}>
-              These resources might be helpful:
-            </h4>
             {card.answers.map((ans, id) => (
-              <Link key={id} href={ans.link} className={classes.link}>
-                <div className={classes.answer}>
+              <div className={classes.answer}>
+                <Link
+                  key={id}
+                  href={ans.link}
+                  target='_blank'
+                  className={classes.link}
+                >
                   <img src={ans.image} className={classes.answerImage} />
                   <div className={classes.divider}>
                     <div className={classes.body}>
-                      <h4>{ans.heading}</h4>
+                      <h4
+                        style={{
+                          color: '#FF5F5F',
+                          fontSize: '13px',
+                          fontWeight: '600',
+                        }}
+                      >
+                        {ans.heading}
+                      </h4>
                       <p>
                         {ans.description}
                         <br />
                       </p>
                     </div>
                     <div>
-                      <IconContext.Provider value={{ color: '#68C937' }}>
+                      <IconContext.Provider value={{ color: '#3FADA8' }}>
                         <div
                           className={
                             ans.verified === 'True'
@@ -192,13 +230,13 @@ function QnACard({ card, colors }) {
                               : classes.invisible
                           }
                         >
-                          <FaRegCheckCircle />
+                          <GoVerified />
                         </div>
                       </IconContext.Provider>
                     </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </div>
             ))}
             <img
               className={classes.subscribe}
