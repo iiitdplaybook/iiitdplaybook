@@ -204,7 +204,7 @@ function QnACard({ card, colors }) {
                     <IconContext.Provider value={{ color: "#3FADA8" }}>
                         <div className={classes.subtitle}>
                             <GoVerified style={{ marginRight: "5px" }} />
-                            Verified by IIITDians
+                            Created by IIITDian
                         </div>
                     </IconContext.Provider>
                 </DialogTitle>
