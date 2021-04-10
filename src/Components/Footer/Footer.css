@@ -41,6 +41,7 @@
 
 .upper.invisible {
   display: none;
+  color: #051e36;
 }
 
 .support-us {
@@ -202,7 +203,7 @@
   text-align: center;
   margin-top: 0.5%;
   height: 100%;
-  color: #fff;
+  /* color: #fff; */
   bottom: 0;
   font-size: 13px;
 }

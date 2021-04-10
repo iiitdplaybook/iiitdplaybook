@@ -7,15 +7,17 @@ import TeamMembers from './Team';
 
 function Footer({ page }) {
   let signedIn = true;
+  let copyColor = '#fff';
 
   useEffect(() => {
-    signedIn = localStorage.getItem('isSignedIn');
+    signedIn = !(page === 'login');
+    if (page == 'login') copyColor = '#051e36';
   });
 
   return (
-    <div id={page === 'login' ? 'footer-login' : 'footer'}>
+    <div id={signedIn ? 'footer-login' : 'footer'}>
       <div className='upper'>
-        <div className='divider'>
+        <div className={signedIn ? 'divider' : 'invisible'}>
           <div className='support-us'>
             <div>
               <Button
@@ -40,12 +42,7 @@ function Footer({ page }) {
               component={Link}
               to={'/contribute/testimonies'}
             >
-              <img
-                className='buymeacoffeelogo'
-                src={
-                  'https://www.flaticon.com/svg/vstatic/svg/2057/2057748.svg?token=exp=1618041325~hmac=3ddd900cabe3b6220bb3ef682e1a15bb'
-                }
-              />
+              <img className='buymeacoffeelogo' src={contributeIcon} />
               Contribute
             </Button>
           </div>
@@ -57,7 +54,7 @@ function Footer({ page }) {
           <TeamMembers />
         </div>
       </div>
-      <div className={page === 'login' ? 'lower-login' : 'lower'}>
+      <div className='lower' style={{ color: `${copyColor}` }}>
         IIITD Student Playbook &copy; 2021
       </div>
     </div>
