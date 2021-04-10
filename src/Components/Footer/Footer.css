@@ -48,8 +48,14 @@
   text-align: left;
 }
 
-#supportBtn {
-  width: 300px;
+.footerBtn {
+  width: 250px;
+  background-color: #02103b0e !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.footerBtn:hover {
+  background-color: rgba(20, 20, 20, 0.123) !important;
 }
 
 .support-us-text-login {
@@ -198,33 +204,36 @@
   color: black;
 }
 
-.lower p {
+/* .lower p {
   color: #fff;
   bottom: 0;
-}
+  font-size: 13px;
+} */
 
 .lower {
   width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2%;
+  text-align: center;
+  margin-top: 0.5%;
   height: 100%;
+  color: #fff;
+  bottom: 0;
+  font-size: 13px;
 }
 
+/* 
 .button2 {
   width: 300px !important;
   margin: 1% !important;
   background-color: #000;
-}
-
+} */
+/* 
 .button2 .span2 {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
-}
-
+} */
+/* 
 .button2 .span2:after {
   content: '\263B';
   position: absolute;
@@ -232,8 +241,8 @@
   top: 0;
   right: -25px;
   transition: 0.5s;
-}
-
+} */
+/* 
 .button2:hover .span2 {
   padding-right: 25px;
 }
@@ -241,7 +250,7 @@
 .button2:hover .span2:after {
   opacity: 1;
   right: 0;
-}
+} */
 
 @media only screen and (max-width: 1100px) {
   .removeText {
@@ -269,8 +278,12 @@
     padding-right: 25px !important;
   }
 
-  .button2 .span2 {
+  /* .button2 .span2 {
     margin: 5px;
+  } */
+
+  .footerBtn:first-of-type {
+    margin-bottom: 10px !important;
   }
 
   .upper {
@@ -278,7 +291,8 @@
   }
 
   .lower {
-    margin-top: 5%;
+    margin-top: 2%;
+    margin-bottom: 1%;
   }
 
   .team .memberCard {
