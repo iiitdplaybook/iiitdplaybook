@@ -42,7 +42,10 @@ function Footer({ page }) {
               component={Link}
               to={'/contribute/testimonies'}
             >
-              <img className='buymeacoffeelogo' src={contributeIcon} />
+              <img
+                className='buymeacoffeelogo'
+                src='https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/footer/src/Assets/icons/contribute.png'
+              />
               Contribute
             </Button>
           </div>
