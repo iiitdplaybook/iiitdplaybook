@@ -20,7 +20,7 @@ const imageQuery =
 const imageNetwork =
     "https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/SVG_for_cards/network.svg";
 const qna =
-    "https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/SVG_for_cards/network.svg";
+    "https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/3d0bba54/src/Assets/undraw_Faq_re_31cw.svg";
 
 function items() {
     // bottom left - color1
@@ -83,7 +83,7 @@ function items() {
         {
             gradientColor_1: color21,
             gradientColor_2: color22,
-            title: "\nQnA",
+            title: "\nQuick Bites",
             n_testimonies: 6,
             reading_time: 3,
             image: qna,
