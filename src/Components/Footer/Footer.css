@@ -39,9 +39,8 @@
   flex-wrap: wrap;
 }
 
-.upper.invisible {
-  display: none;
-  color: #051e36;
+.upper .invisible {
+  display: none !important;
 }
 
 .support-us {
@@ -59,10 +58,6 @@
 }
 
 .support-us-text-login {
-  display: none;
-}
-
-.lower-login {
   display: none;
 }
 

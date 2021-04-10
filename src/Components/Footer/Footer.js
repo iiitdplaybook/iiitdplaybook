@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Creators from './Creators';
 import './Footer.css';
 import { Button } from '@material-ui/core';
@@ -6,16 +6,16 @@ import { Link } from 'react-router-dom';
 import TeamMembers from './Team';
 
 function Footer({ page }) {
-  let signedIn = true;
+  const [signedIn, setSignedIn] = useState(false);
   let copyColor = '#fff';
 
   useEffect(() => {
-    signedIn = !(page === 'login');
-    if (page == 'login') copyColor = '#051e36';
+    setSignedIn(page !== 'login');
+    if (page === 'login') copyColor = '#051e36';
   });
 
   return (
-    <div id={signedIn ? 'footer-login' : 'footer'}>
+    <div id={signedIn ? 'footer' : 'footer-login'}>
       <div className='upper'>
         <div className={signedIn ? 'divider' : 'invisible'}>
           <div className='support-us'>
