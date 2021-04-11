@@ -150,7 +150,6 @@ function QnACard({ card, colors }) {
         },
         button: {
             textAlign: "center",
-            margin: "30px 0 15px 0",
             background: "#fff",
             padding: "20px",
             border: "none",
@@ -260,12 +259,27 @@ function QnACard({ card, colors }) {
                                 </Link>
                             </div>
                         ))}
-                        <button className={classes.button}>
-                            <h4 style={{ color: "#21BAEF", fontSize: "16px" }}>
-                                Subscribe Now
-                            </h4>
-                            <p>Get bi-weekly learnings right in your inbox</p>
-                        </button>
+                        <a
+                            href="https://www.getrevue.co/profile/studentplaybook"
+                            target="_blank"
+                            style={{
+                                margin: "30px 0 15px 0",
+                            }}
+                        >
+                            <button className={classes.button}>
+                                <h4
+                                    style={{
+                                        color: "#21BAEF",
+                                        fontSize: "16px",
+                                    }}
+                                >
+                                    Subscribe Now
+                                </h4>
+                                <p>
+                                    Get bi-weekly learnings right in your inbox
+                                </p>
+                            </button>
+                        </a>
                     </DialogContentText>
                 </DialogContent>
             </Dialog>
