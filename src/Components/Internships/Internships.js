@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import './Internships.css';
 import { metadata } from './Metadata';
+import { FiChevronsDown } from 'react-icons/fi';
+import { IconContext } from 'react-icons';
 
 function Internships() {
   const [active, setActive] = useState('introduction');
@@ -26,6 +28,13 @@ function Internships() {
           <div className='nav_illustration'>
             <img src={metadata[active].image} />
           </div>
+        </div>
+        <div className='scroll_arrow bounce'>
+          <IconContext.Provider value={{ color: '#FFF' }}>
+            <div>
+              <FiChevronsDown />
+            </div>
+          </IconContext.Provider>
         </div>
       </div>
     </div>
