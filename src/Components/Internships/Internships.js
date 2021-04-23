@@ -4,9 +4,13 @@ import './Internships.css';
 import { metadata } from './Metadata';
 import { FiChevronsDown } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
+import Card from './Card';
 
 function Internships() {
   const [active, setActive] = useState('introduction');
+  const callback = (value) => {
+    setActive(value);
+  };
 
   return (
     <div className='internship_page'>
