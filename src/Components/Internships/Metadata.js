@@ -1,8 +1,8 @@
-import Experience from './Pages/Experience';
-import Introduction from './Pages/Introduction';
-import Resume from './Pages/Resume';
-import InterviewTips from './Pages/InterviewTips';
-import Preparation from './Pages/Preparation';
+import Experience from './Pages/Experience/Experience';
+import Introduction from './Pages/Introduction/Introduction';
+import Resume from './Pages/Resume/Resume';
+import InterviewTips from './Pages/InterviewTips/InterviewTips';
+import Preparation from './Pages/Preparation/Preparation';
 
 export const metadata = {
   introduction: {
