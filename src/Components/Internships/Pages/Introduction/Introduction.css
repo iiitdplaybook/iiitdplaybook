@@ -38,6 +38,10 @@
   margin-left: 30px;
 }
 
+.card img {
+  margin: 30px 0;
+}
+
 .vs {
   color: #03ccac !important;
   background: white;
