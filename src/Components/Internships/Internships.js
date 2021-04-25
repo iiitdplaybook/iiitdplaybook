@@ -4,7 +4,6 @@ import './Internships.css';
 import { metadata } from './Metadata';
 import { FiChevronsDown } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
-import Card from './Card';
 
 function Internships() {
   const [active, setActive] = useState('introduction');
@@ -18,7 +17,7 @@ function Internships() {
 
   useEffect(() => {
     const x = metadata[active];
-    setComponent(<x.component />);
+    setComponent(<x.component callback={callback} />);
   }, [active]);
 
   return (

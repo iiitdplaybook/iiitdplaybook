@@ -1,8 +1,10 @@
 import React from 'react';
+import PageFooter from '../../PageFooter';
+import { metadata } from '../../Metadata';
 import '../global.css';
 import './Introduction.css';
 
-const Introduction = () => {
+const Introduction = ({ callback }) => {
   return (
     <div className='introduction'>
       <h1 className='heading'>Why Internship?</h1>
@@ -59,7 +61,30 @@ const Introduction = () => {
           <img src='https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/rvi_internship.png' />
         </div>
       </div>
-      <div></div>
+      <PageFooter
+        settings={{
+          left: {
+            alignment: 'left',
+            colors: ['#236FDC', ' #43AEDA'],
+            image: metadata['preparation'].image,
+            redirect: {
+              linkType: 'link',
+              link: 'https://iiitdplaybook.web.app/homepage',
+            },
+            title: 'Research with Professors',
+          },
+          right: {
+            alignment: 'right',
+            image: metadata['preparation'].image,
+            redirect: {
+              linkType: 'component',
+              componentName: 'resume',
+            },
+            setActive: callback,
+            title: 'Get started with internship preparation',
+          },
+        }}
+      />
     </div>
   );
 };
