@@ -14,6 +14,9 @@
 .card {
   background: rgba(239, 239, 239, 0.5);
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 40px 65px;
   border-radius: 20px;
   line-height: 28px;
@@ -37,12 +40,15 @@
 
 .vs {
   color: #03ccac !important;
-  position: absolute;
   background: white;
   padding: 40px;
   border-radius: 50%;
   font-size: 50px;
   font-weight: 900;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .card li {

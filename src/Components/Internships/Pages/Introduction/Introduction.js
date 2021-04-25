@@ -1,24 +1,14 @@
-
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import '../global.css';
 import './Introduction.css';
 
 const Introduction = () => {
-  const sectionRef = useRef(null);
-  const top = 0;
-  const right = 0;
-
-  useEffect(() => {
-    top = sectionRef.current.offsetHeight / 2;
-    right = sectionRef.current.offsetWidth / 2;
-  })
-
   return (
     <div className='introduction'>
       <h1 className='heading'>Why Internship?</h1>
       <h1 className='heading'>Rules and Regulations</h1>
       <h1 className='heading'>Is CP important?</h1>
-      <div className='research_vs_internship' ref={sectionRef}>
+      <div className='research_vs_internship'>
         <div className='card'>
           <h1>Research</h1>
           <ul>
@@ -41,6 +31,7 @@ const Introduction = () => {
               occaecat ad.
             </li>
           </ul>
+          <img src='https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/rvi_research.png' />
         </div>
         <div className='vs'>v/s</div>
         <div className='card'>
@@ -65,6 +56,7 @@ const Introduction = () => {
               occaecat ad.
             </li>
           </ul>
+          <img src='https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/rvi_internship.png' />
         </div>
       </div>
       <div></div>

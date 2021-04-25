@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from '../Navbar/Navbar';
 import './Internships.css';
 import { metadata } from './Metadata';
@@ -8,9 +8,18 @@ import Card from './Card';
 
 function Internships() {
   const [active, setActive] = useState('introduction');
+  const [component, setComponent] = useState(
+    <metadata.introduction.component />
+  );
+
   const callback = (value) => {
     setActive(value);
   };
+
+  useEffect(() => {
+    const x = metadata[active];
+    setComponent(<x.component />);
+  }, [active]);
 
   return (
     <div className='internship_page'>
@@ -41,6 +50,7 @@ function Internships() {
           </IconContext.Provider>
         </div>
       </div>
+      {component}
     </div>
   );
 }
