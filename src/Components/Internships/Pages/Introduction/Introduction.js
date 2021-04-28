@@ -75,13 +75,13 @@ const Introduction = ({ callback }) => {
           },
           right: {
             alignment: 'right',
-            image: metadata['preparation'].image,
+            image: metadata['resume'].image,
             redirect: {
               linkType: 'component',
               componentName: 'resume',
             },
             setActive: callback,
-            title: 'Get started with internship preparation',
+            title: 'Build Your Resume',
           },
         }}
       />

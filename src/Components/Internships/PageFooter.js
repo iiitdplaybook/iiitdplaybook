@@ -25,6 +25,10 @@ const PageFooter = ({ settings }) => {
         }}
       >
         <NavCard {...settings.left} />
+        {/* <img
+          src='https://media1.giphy.com/media/9PvkZLdw8C8hzq5R0O/source.gif'
+          style={{ width: '200px' }}
+        /> */}
         <NavCard {...settings.right} />
       </div>
     </div>
