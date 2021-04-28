@@ -1,0 +1,26 @@
+.resume {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.download {
+  background: white;
+  color: #03ccac;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  border: solid 1px #03ccac;
+  border-radius: 8px;
+  padding: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex: content !important;
+}
+
+.download .icon {
+  margin-right: 5px;
+  margin-bottom: -3px;
+}

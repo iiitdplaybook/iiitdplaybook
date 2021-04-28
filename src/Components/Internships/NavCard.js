@@ -58,6 +58,7 @@ const Card = ({
       maxHeight: cardHeight,
       width: '90%',
       margin: '0 auto',
+      opacity: '1 !important',
     },
     image: {
       maxWidth: '120px',
