@@ -1,88 +1,221 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
-import styled from 'styled-components';
 import { HiDownload } from 'react-icons/hi';
+import { FaLinkedinIn } from 'react-icons/fa';
+import { AiOutlineRightCircle, AiOutlineLeftCircle } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
-import { Document, Page, pdfjs } from 'react-pdf';
 import PageFooter from '../../PageFooter';
 import { metadata } from '../../Metadata';
 import '../global.css';
 import './Resume.css';
-import { times } from 'lodash';
-import edsall from '../../../../Assets/Internships/sample_resume/edsall.pdf';
-pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
+function PrevArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <IconContext.Provider value={{ color: '#03ccac', display: 'block' }}>
+      <div
+        className={className}
+        style={{ ...style, color: '#03ccac', display: 'block' }}
+        onClick={onClick}
+      >
+        <AiOutlineLeftCircle />
+      </div>
+    </IconContext.Provider>
+  );
+}
+
+function NextArrow(props) {
+  const { className, style, onClick } = props;
+  return (
+    <IconContext.Provider value={{ color: '#03ccac', display: 'block' }}>
+      <div
+        className={className}
+        style={{ ...style, color: '#03ccac', display: 'block' }}
+        onClick={onClick}
+      >
+        <AiOutlineRightCircle />
+      </div>
+    </IconContext.Provider>
+  );
+}
 
 const Resume = ({ callback }) => {
   const resumeList = [
     {
+      name: 'Thomas Thompson',
+      image:
+        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/a5034bfc/src/Assets/user.png',
+      // linkedin: ,
+      batch: 2022,
+      companies: ['Apple (2020)', 'Fantasy (2021)', 'Microsoft (2021)'],
       link:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/edsall.pdf',
+        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/edsall.png',
     },
     {
+      name: 'Thomas Thompson',
+      image:
+        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/a5034bfc/src/Assets/user.png',
+      // linkedin: ,
+      batch: 2022,
+      companies: ['Apple (2020)', 'Fantasy (2021)', 'Microsoft (2021)'],
       link:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/manila.pdf',
+        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/manila.png',
     },
     {
+      name: 'Thomas Thompson',
+      image:
+        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/a5034bfc/src/Assets/user.png',
+      // linkedin: ,
+      batch: 2022,
+      companies: ['Apple (2020)', 'Fantasy (2021)', 'Microsoft (2021)'],
       link:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/marianas.pdf',
+        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/marianas.png',
     },
     {
+      name: 'Thomas Thompson',
+      image:
+        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/a5034bfc/src/Assets/user.png',
+      // linkedin: ,
+      batch: 2022,
+      companies: ['Apple (2020)', 'Fantasy (2021)', 'Microsoft (2021)'],
       link:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/urbana.pdf',
+        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/urbana.png',
+    },
+    {
+      name: 'Thomas Thompson',
+      image:
+        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/a5034bfc/src/Assets/user.png',
+      // linkedin: ,
+      batch: 2022,
+      companies: ['Apple (2020)', 'Fantasy (2021)', 'Microsoft (2021)'],
+      link:
+        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/edsall.png',
+    },
+    {
+      name: 'Thomas Thompson',
+      image:
+        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/a5034bfc/src/Assets/user.png',
+      // linkedin: ,
+      batch: 2022,
+      companies: ['Apple (2020)', 'Fantasy (2021)', 'Microsoft (2021)'],
+      link:
+        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/manila.png',
+    },
+    {
+      name: 'Thomas Thompson',
+      image:
+        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/a5034bfc/src/Assets/user.png',
+      // linkedin: ,
+      batch: 2022,
+      companies: ['Apple (2020)', 'Fantasy (2021)', 'Microsoft (2021)'],
+      link:
+        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/marianas.png',
+    },
+    {
+      name: 'Thomas Thompson',
+      image:
+        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/a5034bfc/src/Assets/user.png',
+      // linkedin: ,
+      batch: 2022,
+      companies: ['Apple (2020)', 'Fantasy (2021)', 'Microsoft (2021)'],
+      link:
+        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/urbana.png',
     },
   ];
 
   const [focus, setFocus] = useState(0);
 
-  const handleClick = (num) => {
-    setFocus((focus + num) % resumeList.length);
-  };
-
   const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: Math.min(4, resumeList.length),
-    slidesToScroll: Math.min(4, resumeList.length),
-    autoplay: false,
-    cssEase: 'ease-in-out',
-    arrows: true,
+    className: 'center',
     centerMode: true,
+    infinite: true,
+    slidesToShow: 4,
+    speed: 500,
+    arrows: true,
+    focusOnSelect: true,
+    dots: true,
+    beforeChange: (current, next) => setFocus(next),
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
   };
-
-  const Box = styled.div`
-    padding: 10px;
-    vertical-align: middle;
-  `;
 
   return (
     <div className='resume' style={{ width: '85%', margin: '0 auto' }}>
-      <p style={{ textAlign: 'center', fontSize: '24px', marginTop: '40px' }}>
-        As recommended by students, for students.
-      </p>
-      <div style={{ width: 'auto', marginTop: '40px' }}>
-        <button className='download'>
-          <IconContext.Provider
-            value={{ color: '#03ccac', display: 'inline', marginRight: '5px' }}
-          >
-            <div className='icon'>
-              <HiDownload />
-            </div>
-          </IconContext.Provider>
-          Download the IIITD template
-        </button>
+      <div className='upper_container'>
+        <p style={{ textAlign: 'center', fontSize: '24px', marginTop: '40px' }}>
+          As recommended by students, for students.
+        </p>
+        <div style={{ width: 'auto', marginTop: '40px' }}>
+          <button className='download'>
+            <IconContext.Provider
+              value={{
+                color: '#03ccac',
+                display: 'inline',
+                marginRight: '5px',
+              }}
+            >
+              <div className='icon'>
+                <HiDownload />
+              </div>
+            </IconContext.Provider>
+            Download the IIITD template
+          </button>
+        </div>
       </div>
-      <div className='resume-slider'>
+      <div className='resume_slider'>
         <Slider {...settings}>
-          {times(resumeList.length, String).map((id, index) => (
-            <div key={index}>
-              <Box key={`resumes-${id}`}>
-                <Document file={resumeList[id].link} />
-              </Box>
+          {resumeList.map((item, index) => (
+            <div className='container'>
+              <img
+                className={focus === index ? 'resume_img active' : 'resume_img'}
+                src={item.link}
+              />
             </div>
           ))}
         </Slider>
       </div>
-      <Document file={edsall} />
+      <div className='resume_details'>
+        <div className='profile'>
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            <img src={resumeList[focus].image} className='avatar' />
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <div className='header'>
+                <h1>{resumeList[focus].name}</h1>
+                <IconContext.Provider
+                  value={{
+                    color: 'black',
+                    display: 'inline',
+                  }}
+                >
+                  <div
+                    style={{
+                      background: '#E6E6E6',
+                      padding: '10px',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      verticalAlign: 'middle',
+                      marginLeft: '10px',
+                    }}
+                  >
+                    <FaLinkedinIn style={{ height: '20px', width: '20px' }} />
+                  </div>
+                </IconContext.Provider>
+              </div>
+              <div>Batch of {resumeList[focus].batch}</div>
+            </div>
+          </div>
+          <div style={{ marginTop: '20px' }}>The resume below worked for:</div>
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            {resumeList[focus].companies.map((item) => (
+              <div className='company_tag'>{item}</div>
+            ))}
+          </div>
+        </div>
+        <div className='full_resume'>
+          <img src={resumeList[focus].link} />
+        </div>
+      </div>
       <PageFooter
         settings={{
           left: {

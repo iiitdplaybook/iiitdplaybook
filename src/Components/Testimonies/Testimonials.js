@@ -110,7 +110,6 @@ export default function AutoPlay({ portraits }) {
 
   return (
     <div style={{ margin: '5%' }}>
-      {/* <h2>Auto Play</h2> */}
       <Slider {...settings}>
         {times(portraits.length, String).map((id, index) => (
           // testimonies_data[id].isApproved?
