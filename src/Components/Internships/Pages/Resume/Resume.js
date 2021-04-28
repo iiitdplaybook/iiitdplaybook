@@ -2,42 +2,42 @@ import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import { HiDownload } from 'react-icons/hi';
 import { FaLinkedinIn } from 'react-icons/fa';
-import { AiOutlineRightCircle, AiOutlineLeftCircle } from 'react-icons/ai';
+// import { AiOutlineRightCircle, AiOutlineLeftCircle } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 import PageFooter from '../../PageFooter';
 import { metadata } from '../../Metadata';
 import '../global.css';
 import './Resume.css';
 
-function PrevArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <IconContext.Provider value={{ color: '#03ccac', display: 'block' }}>
-      <div
-        className={className}
-        style={{ ...style, color: '#03ccac', display: 'block' }}
-        onClick={onClick}
-      >
-        <AiOutlineLeftCircle />
-      </div>
-    </IconContext.Provider>
-  );
-}
+// function PrevArrow(props) {
+//   const { className, style, onClick } = props;
+//   return (
+//     <IconContext.Provider value={{ color: '#03ccac', display: 'block' }}>
+//       <div
+//         className={className}
+//         style={{ ...style, color: '#03ccac', display: 'block' }}
+//         onClick={onClick}
+//       >
+//         <AiOutlineLeftCircle />
+//       </div>
+//     </IconContext.Provider>
+//   );
+// }
 
-function NextArrow(props) {
-  const { className, style, onClick } = props;
-  return (
-    <IconContext.Provider value={{ color: '#03ccac', display: 'block' }}>
-      <div
-        className={className}
-        style={{ ...style, color: '#03ccac', display: 'block' }}
-        onClick={onClick}
-      >
-        <AiOutlineRightCircle />
-      </div>
-    </IconContext.Provider>
-  );
-}
+// function NextArrow(props) {
+//   const { className, style, onClick } = props;
+//   return (
+//     <IconContext.Provider value={{ color: '#03ccac', display: 'block' }}>
+//       <div
+//         className={className}
+//         style={{ ...style, color: '#03ccac', display: 'block' }}
+//         onClick={onClick}
+//       >
+//         <AiOutlineRightCircle />
+//       </div>
+//     </IconContext.Provider>
+//   );
+// }
 
 const Resume = ({ callback }) => {
   const resumeList = [
@@ -135,8 +135,8 @@ const Resume = ({ callback }) => {
     focusOnSelect: true,
     dots: true,
     beforeChange: (current, next) => setFocus(next),
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
+    // nextArrow: <NextArrow />,
+    // prevArrow: <PrevArrow />,
   };
 
   return (
@@ -154,9 +154,11 @@ const Resume = ({ callback }) => {
                 marginRight: '5px',
               }}
             >
+              {/* <a href={resumeList[focus].linkedin}> */}
               <div className='icon'>
                 <HiDownload />
               </div>
+              {/* </a> */}
             </IconContext.Provider>
             Download the IIITD template
           </button>
@@ -187,17 +189,7 @@ const Resume = ({ callback }) => {
                     display: 'inline',
                   }}
                 >
-                  <div
-                    style={{
-                      background: '#E6E6E6',
-                      padding: '10px',
-                      borderRadius: '50%',
-                      display: 'flex',
-                      alignItems: 'center',
-                      verticalAlign: 'middle',
-                      marginLeft: '10px',
-                    }}
-                  >
+                  <div className='linkedin_icon'>
                     <FaLinkedinIn style={{ height: '20px', width: '20px' }} />
                   </div>
                 </IconContext.Provider>

@@ -44,6 +44,7 @@
   /* width: 150px; */
   border: 1px solid rgba(0, 0, 0, 0.212);
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .resume_img.active {
