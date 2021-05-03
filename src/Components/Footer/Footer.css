@@ -1,178 +1,249 @@
-#bg{
-    background: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
-    position: relative;
-    left:0;
-    bottom:0;
-    right:0;
-    padding: 2%;
-    padding-bottom: 1%;
+#footer {
+  background: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%);
+  position: relative;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 2%;
+  padding-bottom: 1%;
+  z-index: 10;
 }
 
-.buymeacoffeelogo{
-    height: 20px;
-    margin-right: 1%;
+#footer-login {
+  background: #fff;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 2%;
+  padding-bottom: 1%;
 }
 
-#supportBtn{
-    margin-top: 1%;
-    width: 500px;
-}
-.upper{
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    text-align: center;
+.upper {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100vw;
+  margin-left: -2%;
 }
 
-.defaultClick{
-    opacity: 1;
+.divider {
+  font-size: 14px;
+  width: 80%;
+  text-align: left;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.testi2{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.upper .invisible {
+  display: none !important;
 }
 
-.testi2 .creatorCard a{
-    text-decoration: none;
-    color: #141414;
-    opacity: .8;
-    margin: 4%;
-    transition: ease-out .4s;
+.support-us {
+  text-align: left;
 }
 
-.testi2 .creatorCard a:hover{
-    transform: scale(1.2);
+.footerBtn {
+  width: 250px;
+  background-color: #02103b0e !important;
+  transition: all 0.2s ease-in-out;
 }
 
-.testi2 .creatorCard{
-    width: fit-content;
-    margin: 2%;
-    display: flex;
-    padding: 12px;
-    padding-right: 40px;
-    background: rgba(255,255,255,.4);
-    /* // background: rgba(255,255,255,.2); */
-    /* // backdrop-filter: blur(100px); */
-    border-radius: 65px;
-    border-color: linear-gradient(90deg, #1EB0F6 6.32%, #2BD4DF 100%);
-    box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
+.footerBtn:hover {
+  background-color: rgba(20, 20, 20, 0.123) !important;
 }
 
-.testi2 .creatorCard img{
-    border-radius: 50%;
-    width: 32px;
-    height: 32px;
-    overflow: hidden;
-    flex-shrink: 0;
-    /* max-width: 100%; */
+.support-us-text-login {
+  display: none;
 }
 
-.testi2 .creatorCard p{
-    /* margin: 5px; */
-    color: #382f70;
-    font-family: Poppins, sans-serif;
-    font-size: .9em;
-    font-weight: 100;
-    text-align: left;
-    display: flex;
-    flex-direction: row;
+.memberText {
+  padding: 10px auto !important;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
 }
 
-
-.form_button{
-    background: white;
-    color: black;
+.buymeacoffeelogo {
+  height: 20px;
+  margin-right: 1%;
 }
 
-.lower p{
-    color: #fff;
-    bottom: 0;
+.defaultClick {
+  opacity: 1;
 }
 
-.lower{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 2%;
-    height: 100%;
+.team {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -4%;
 }
 
-.button2{
-    width: 25%;
-    margin: 1% !important;
-    background-color: #000;
-    /* -webkit-background-clip: text; */
-    /* -webkit-text-fill-color: transparent; */
-	 
+.creators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50% !important;
+  margin-top: 1%;
 }
 
+.creators .creatorCard a {
+  text-decoration: none;
+  color: #141414;
+  opacity: 0.8;
+  margin-right: -10px;
+  transition: ease-out 0.4s;
+}
 
-.button2 .span2 {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-  .button2 .span2:after {
-    content: '\263B';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -25px;
-    transition: 0.5s;
-  }
-  
-  .button2:hover .span2 {
-    padding-right: 25px;
-  }
-  
-  .button2:hover .span2:after {
-    opacity: 1;
-    right: 0;
-  }
+.creators .creatorCard a:hover {
+  transform: scale(1.2);
+}
 
+.creators .creatorCard {
+  width: fit-content;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 12px 40px 12px 12px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 65px;
+  border-color: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%);
+  box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
+}
+
+.creators .creatorCard img {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  flex-shrink: 0;
+  margin-right: 0;
+}
+
+.creators .creatorCard p {
+  margin: 0px;
+  color: #382f70;
+  font-family: Poppins, sans-serif;
+  font-size: 0.9em;
+  font-weight: 100;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+
+.teamName {
+  font-size: 0.7em !important;
+}
+
+.memberCard {
+  margin: 15px !important;
+}
+
+.team .memberCard a {
+  text-decoration: none;
+  color: #141414;
+  opacity: 0.8;
+  margin-right: -12px;
+  transition: ease-out 0.4s;
+}
+
+.team .memberCard a:hover {
+  transform: scale(1.2);
+}
+
+.team .memberCard {
+  width: fit-content;
+  min-width: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px;
+  padding-right: 40px !important;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 65px;
+  border-color: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%);
+  box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
+}
+
+.team .memberCard img {
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.team .memberCard p {
+  color: #382f70;
+  font-family: Poppins, sans-serif;
+  font-size: 0.9em;
+  font-weight: 100;
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+}
+
+.form_button {
+  background: white;
+  color: black;
+}
+
+.lower {
+  width: 100%;
+  text-align: center;
+  margin-top: 0.5%;
+  height: 100%;
+  /* color: #fff; */
+  bottom: 0;
+  font-size: 13px;
+}
 
 @media only screen and (max-width: 1100px) {
-    .removeText{
-        display: none;
-    }
+  .removeText {
+    display: none;
+  }
 }
 
-@media only screen and (max-width: 500px) {
-    .testi2 .creatorCard p{
-        display: none;
-    }
-
-    .testi2 .creatorCard a{
-        display: none;
-    }
-
-    .testi2 .creatorCard img{
-        margin-right: -15px;    
-    }
-
-    
-.testi2 .creatorCard{
-
-    padding-right: 27px;
-}
-
-.button2 .span2 {
-    min-width: 350%;
-    margin-bottom: 25%;
+@media only screen and (max-width: 600px) {
+  .creators {
+    flex-wrap: wrap;
+    width: 100% !important;
+    margin-top: 7%;
   }
 
-  .upper{
-      margin-top: 8%;
+  .creators .creatorCard p {
+    padding-left: 10px;
   }
 
-  .lower{
-      margin-top: 5%;
+  .creators .creatorCard img {
+    margin-right: -15px;
+  }
+
+  .creators .creatorCard {
+    padding: 12px !important;
+    padding-right: 25px !important;
+  }
+
+  .footerBtn:first-of-type {
+    margin-bottom: 10px !important;
+  }
+
+  .upper {
+    margin-top: 8%;
+  }
+
+  .lower {
+    margin-top: 2%;
+    margin-bottom: 1%;
+  }
+
+  .team .memberCard {
+    padding: 12px !important;
+    padding-right: 25px !important;
   }
 }

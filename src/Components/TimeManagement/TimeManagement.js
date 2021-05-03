@@ -1,35 +1,39 @@
-import React from "react";
-import { useState } from "react";
-import Navbar from "../Navbar";
-import "./TimeManagement.css";
-import { Button } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import itemsList from "../items";
-import Card from "@material-ui/core/Card";
-import CardContent from "@material-ui/core/CardContent";
-import PropTypes from "prop-types";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
-import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
-import ReactCardFlip from "react-card-flip";
+import React from 'react';
+import { useState } from 'react';
+import Navbar from '../Navbar/Navbar';
+import './TimeManagement.css';
+import { Button } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import itemsList from '../Utils/items';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import PropTypes from 'prop-types';
+import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
+import ReactCardFlip from 'react-card-flip';
 
-import { useStateValue } from "../../StateProvider";
-import dog from "../../Assets/cardPics/dogFire.png";
-import tear from "../../Assets/cardPics/tearSmile.png";
-import plag from "../../Assets/cardPics/plag.png";
-import dark from "../../Assets/cardPics/darkSide.png";
+import { useStateValue } from '../../StateProvider';
+import TinderCard from '../CardSwipe/CardSwipe';
 
-import TinderCard from "../CardSwipe/CardSwipe";
+const dog =
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/cardPics/dogFire.png';
+const tear =
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/cardPics/tearSmile.png';
+const plag =
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/cardPics/plag.png';
+const dark =
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/cardPics/darkSide.png';
 
-var isFav = false;
+let isFav = false;
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
   return (
     <div
-      role="tabpanel"
+      role='tabpanel'
       hidden={value !== index}
       id={`vertical-tabpanel-${index}`}
       aria-labelledby={`vertical-tab-${index}`}
@@ -53,20 +57,20 @@ TabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: `vertical-tab-${index}`,
-    "aria-controls": `vertical-tabpanel-${index}`,
+    'aria-controls': `vertical-tabpanel-${index}`,
   };
 }
 
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    display: "flex",
+    display: 'flex',
     height: 240,
-    alignSelf: "start",
+    alignSelf: 'start',
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
-    minWidth: "fit-content",
+    minWidth: 'fit-content',
   },
 }));
 
@@ -82,7 +86,7 @@ export default function TimeManagement() {
     window.scrollTo({
       top: 0,
       left: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
@@ -92,35 +96,35 @@ export default function TimeManagement() {
 
   const buttonStyles = makeStyles({
     root: {
-      background: "linear-gradient(90deg,#1EB0F6 6.32%, #2BD4DF 100%)",
-      borderRadius: "15px",
-      border: "none",
-      color: "white",
+      background: 'linear-gradient(90deg,#1EB0F6 6.32%, #2BD4DF 100%)',
+      borderRadius: '15px',
+      border: 'none',
+      color: 'white',
     },
     notRoot: {
-      borderRadius: "15px",
-      background: "#f0f0f0",
-      border: "none",
+      borderRadius: '15px',
+      background: '#f0f0f0',
+      border: 'none',
     },
   });
 
   const cardStyles = makeStyles({
     root: {
-      marginTop: "2%",
+      marginTop: '2%',
       minWidth: 275,
-      backgroundColor: "#C4C4C4",
-      borderRadius: "10px",
+      backgroundColor: '#C4C4C4',
+      borderRadius: '10px',
     },
     bullet: {
-      display: "inline-block",
-      margin: "0 1%",
-      fontFamily: "Poppins",
+      display: 'inline-block',
+      margin: '0 1%',
+      fontFamily: 'Poppins',
     },
     title: {
       fontSize: 20,
       fontWeight: 800,
-      fontFamily: "Poppins",
-      textAlign: "center",
+      fontFamily: 'Poppins',
+      textAlign: 'center',
     },
   });
 
@@ -139,110 +143,110 @@ export default function TimeManagement() {
     dog,
     dark,
     plag,
-    "https://image.freepik.com/free-vector/deadline-concept-business-man-sinking-sand-watch_48369-18371.jpg",
+    'https://image.freepik.com/free-vector/deadline-concept-business-man-sinking-sand-watch_48369-18371.jpg',
   ];
 
   return (
-    <div className="timeManagement">
+    <div className='timeManagement'>
       <Navbar loggedIn={true} colorStatus={true} />
 
       <ReactCardFlip
-        className="mainCard"
+        className='mainCard'
         isFlipped={isFlipped}
-        flipDirection="horizontal"
+        flipDirection='horizontal'
       >
-        <Card className="frontpage">
+        <Card className='frontpage'>
           <div
-            className="mainDiv"
-            style={{ visibility: !isFlipped ? "visible" : "hidden" }}
+            className='mainDiv'
+            style={{ visibility: !isFlipped ? 'visible' : 'hidden' }}
           >
-            <div id="cardsBox">
+            <div id='cardsBox'>
               <h2
-                style={{ textAlign: "center", margin: "2%", marginTop: "5%" }}
+                style={{ textAlign: 'center', margin: '2%', marginTop: '5%' }}
               >
-                This is where the "fun" begins{" "}
+                This is where the "fun" begins{' '}
               </h2>
               <h4
-                style={{ textAlign: "center", margin: "0%", fontWeight: "500" }}
+                style={{ textAlign: 'center', margin: '0%', fontWeight: '500' }}
               >
                 Here's the deck of cards that IIITD has in store for YOU <br />
-                <i>(Flick left/right to see other cards)</i>{" "}
+                <i>(Flick left/right to see other cards)</i>{' '}
               </h4>
               <TinderCard />
             </div>
 
-            <div id="cardsBox2">
+            <div id='cardsBox2'>
               <h2
-                style={{ textAlign: "center", margin: "2%", marginTop: "0%" }}
+                style={{ textAlign: 'center', margin: '2%', marginTop: '0%' }}
               >
                 But don't worry, we have a special card to reverse your
-                situation!{" "}
+                situation!{' '}
               </h2>
               <h2
-                style={{ textAlign: "center", margin: "2%", marginTop: "0%" }}
+                style={{ textAlign: 'center', margin: '2%', marginTop: '0%' }}
               >
-                It's your turn {userName.split(" ")[0]}
+                It's your turn {userName.split(' ')[0]}
               </h2>
-              <h2 className="textCard">&#x25BE;Play your card&#x25BE;</h2>
+              <h2 className='textCard'>&#x25BE;Play your card&#x25BE;</h2>
               <h4
-                style={{ textAlign: "center", margin: "0%", fontWeight: "500" }}
+                style={{ textAlign: 'center', margin: '0%', fontWeight: '500' }}
               >
-                <i>(Click on the card below)</i>{" "}
+                <i>(Click on the card below)</i>{' '}
               </h4>
               <Button
-                className="reverseButton"
-                id="unoReverse"
-                variant="contained"
+                className='reverseButton'
+                id='unoReverse'
+                variant='contained'
                 onClick={handleClick}
               >
                 <img
-                  src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5ef95353-9f74-45ba-a400-5494417ca165/ddmcdqs-ecd2b865-fa25-4550-adf0-f5962af5484f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNWVmOTUzNTMtOWY3NC00NWJhLWE0MDAtNTQ5NDQxN2NhMTY1XC9kZG1jZHFzLWVjZDJiODY1LWZhMjUtNDU1MC1hZGYwLWY1OTYyYWY1NDg0Zi5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.JASe6g-Qonkdhm7GQ5H-qEyH-bM7sh6lPp60apDiUUo"
-                  height="300px"
+                  src='https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5ef95353-9f74-45ba-a400-5494417ca165/ddmcdqs-ecd2b865-fa25-4550-adf0-f5962af5484f.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3sicGF0aCI6IlwvZlwvNWVmOTUzNTMtOWY3NC00NWJhLWE0MDAtNTQ5NDQxN2NhMTY1XC9kZG1jZHFzLWVjZDJiODY1LWZhMjUtNDU1MC1hZGYwLWY1OTYyYWY1NDg0Zi5wbmcifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6ZmlsZS5kb3dubG9hZCJdfQ.JASe6g-Qonkdhm7GQ5H-qEyH-bM7sh6lPp60apDiUUo'
+                  height='300px'
                 ></img>
               </Button>
             </div>
           </div>
         </Card>
-        <Card className="backpage">
-          <div className="timeManagement__back">
-            <div className="timeManagement__back__heading">
-              <h1 style={{ zIndex: "50" }}>
+        <Card className='backpage'>
+          <div className='timeManagement__back'>
+            <div className='timeManagement__back__heading'>
+              <h1 style={{ zIndex: '50' }}>
                 GUIDE TO BECOMING A PRODUCTIVITY NINJA
               </h1>
               <img
-                src="https://cdn.dribbble.com/users/1175431/screenshots/5483835/2018-10-30__1_.gif"
-                height="10%"
-                style={{ position: "absolute", zIndex: "0", marginTop: "-2%" }}
+                src='https://cdn.dribbble.com/users/1175431/screenshots/5483835/2018-10-30__1_.gif'
+                height='10%'
+                style={{ position: 'absolute', zIndex: '0', marginTop: '-2%' }}
               ></img>
             </div>
 
             <div
-              className="timeManagement__back__content"
-              style={{ zIndex: "50" }}
+              className='timeManagement__back__content'
+              style={{ zIndex: '50' }}
             >
-              <h2 style={{ margin: "1%" }}>
+              <h2 style={{ margin: '1%' }}>
                 CCORE (Capture, Clarify, Organize, Reflect, Engage)
               </h2>
 
               <div className={classes.root}>
                 <Tabs
-                  orientation="vertical"
-                  variant="scrollable"
+                  orientation='vertical'
+                  variant='scrollable'
                   value={value}
                   onChange={handleChange}
-                  aria-label="Vertical tabs example"
+                  aria-label='Vertical tabs example'
                   className={classes.tabs}
                 >
-                  <Tab label="Capture" {...a11yProps(0)} />
-                  <Tab label="Clarify" {...a11yProps(1)} />
-                  <Tab label="Organize" {...a11yProps(2)} />
-                  <Tab label="Reflect" {...a11yProps(3)} />
-                  <Tab label="Engage" {...a11yProps(4)} />
+                  <Tab label='Capture' {...a11yProps(0)} />
+                  <Tab label='Clarify' {...a11yProps(1)} />
+                  <Tab label='Organize' {...a11yProps(2)} />
+                  <Tab label='Reflect' {...a11yProps(3)} />
+                  <Tab label='Engage' {...a11yProps(4)} />
                 </Tabs>
                 <TabPanel
                   value={value}
                   index={0}
-                  style={{ marginTop: "-15px" }}
+                  style={{ marginTop: '-15px' }}
                 >
                   <h3>Capture</h3>
                   <br />
@@ -267,7 +271,7 @@ export default function TimeManagement() {
                 <TabPanel
                   value={value}
                   index={1}
-                  style={{ marginTop: "-15px" }}
+                  style={{ marginTop: '-15px' }}
                 >
                   <h3>Clarify</h3>
                   <br />
@@ -283,7 +287,7 @@ export default function TimeManagement() {
                 <TabPanel
                   value={value}
                   index={2}
-                  style={{ marginTop: "-15px" }}
+                  style={{ marginTop: '-15px' }}
                 >
                   <h3>Organize</h3>
                   <br />
@@ -308,7 +312,7 @@ export default function TimeManagement() {
                 <TabPanel
                   value={value}
                   index={3}
-                  style={{ marginTop: "-15px" }}
+                  style={{ marginTop: '-15px' }}
                 >
                   <h3>Reflect</h3>
                   <br />
@@ -329,23 +333,23 @@ export default function TimeManagement() {
                 <TabPanel
                   value={value}
                   index={4}
-                  style={{ marginTop: "-15px" }}
+                  style={{ marginTop: '-15px' }}
                 >
                   <h3>Engage</h3>
                   <br />
                   <p>Browse through the list in front of you, choose and...</p>
                   <img
-                    src="https://www.vectorkhazana.com/assets/images/products/Nike-Just-Do-It.jpg"
-                    style={{ width: "40%", height: "40%", marginLeft: "30%" }}
+                    src='https://www.vectorkhazana.com/assets/images/products/Nike-Just-Do-It.jpg'
+                    style={{ width: '40%', height: '40%', marginLeft: '30%' }}
                   />
                 </TabPanel>
               </div>
             </div>
 
-            <div className="timeManagement__back__content">
+            <div className='timeManagement__back__content'>
               <Card
                 className={cardClass.root}
-                style={{ backgroundColor: "black", color: "white" }}
+                style={{ backgroundColor: 'black', color: 'white' }}
               >
                 <CardContent>
                   <Typography className={cardClass.title}>
@@ -384,30 +388,30 @@ export default function TimeManagement() {
             </div>
 
             <div
-              className="timeManagement__back__content"
-              style={{ marginTop: "0%" }}
+              className='timeManagement__back__content'
+              style={{ marginTop: '0%' }}
             >
               <h2>The Eisenhower Decision Matrix</h2>
-              <h6 style={{ fontWeight: "500" }}>
+              <h6 style={{ fontWeight: '500' }}>
                 <i>(Hover for more information)</i>
               </h6>
               <img
-                className="matrix_image_col"
-                src="https://cdn.discordapp.com/attachments/782980728207310849/793886812040462376/Capture7.PNG"
+                className='matrix_image_col'
+                src='https://cdn.discordapp.com/attachments/782980728207310849/793886812040462376/Capture7.PNG'
               />
               <img
-                className="matrix_image_row"
-                src="https://cdn.discordapp.com/attachments/782980728207310849/793890179508469770/Capture6.PNG"
+                className='matrix_image_row'
+                src='https://cdn.discordapp.com/attachments/782980728207310849/793890179508469770/Capture6.PNG'
               />
-              <div className="grid-wrapper">
-                <div className="grid-row">
-                  <div className="square-wrapper">
-                    <div className="square green">
-                      <div className="mainText">
+              <div className='grid-wrapper'>
+                <div className='grid-row'>
+                  <div className='square-wrapper'>
+                    <div className='square green'>
+                      <div className='mainText'>
                         <h2>Do</h2>
                         <p>Do it now</p>
                       </div>
-                      <div className="hiddenText">
+                      <div className='hiddenText'>
                         <br />
                         <ul>
                           <li>Tasks that are both urgent and important.</li>
@@ -432,13 +436,13 @@ export default function TimeManagement() {
                       </div>
                     </div>
                   </div>
-                  <div className="square-wrapper">
-                    <div className="square blue">
-                      <div className="mainText">
+                  <div className='square-wrapper'>
+                    <div className='square blue'>
+                      <div className='mainText'>
                         <h2>Decide</h2>
                         <p>Schedule a time to do it</p>
                       </div>
-                      <div className="hiddenText">
+                      <div className='hiddenText'>
                         <br />
                         <ul>
                           <li>
@@ -462,14 +466,14 @@ export default function TimeManagement() {
                   </div>
                 </div>
 
-                <div className="grid-row">
-                  <div className="square-wrapper">
-                    <div className="square red">
-                      <div className="mainText">
+                <div className='grid-row'>
+                  <div className='square-wrapper'>
+                    <div className='square red'>
+                      <div className='mainText'>
                         <h2>Delegate</h2>
                         <p>Who can do it for you?</p>
                       </div>
-                      <div className="hiddenText">
+                      <div className='hiddenText'>
                         <br />
                         <ul>
                           <li>
@@ -491,13 +495,13 @@ export default function TimeManagement() {
                       </div>
                     </div>
                   </div>
-                  <div className="square-wrapper">
-                    <div className="square grey">
-                      <div className="mainText">
+                  <div className='square-wrapper'>
+                    <div className='square grey'>
+                      <div className='mainText'>
                         <h2>Delete</h2>
                         <p>Eliminate it</p>
                       </div>
-                      <div className="hiddenText">
+                      <div className='hiddenText'>
                         <br />
                         <ul>
                           <li>
@@ -523,11 +527,11 @@ export default function TimeManagement() {
               </div>
             </div>
 
-            <div className="timeManagement__back__content">
-              <h2 className="textCard" style={{ marginTop: "0%" }}>
+            <div className='timeManagement__back__content'>
+              <h2 className='textCard' style={{ marginTop: '0%' }}>
                 &#x25D6;Special Tips&#x25D7;
               </h2>
-              <Card className={cardClass.root} id="inboxCard">
+              <Card className={cardClass.root} id='inboxCard'>
                 <CardContent>
                   <Typography className={cardClass.title}>
                     Reach Inbox Zero
@@ -542,8 +546,8 @@ export default function TimeManagement() {
                     &#x25CF; Do this on the VERY FIRST day! You won't be able to
                     come back to this situation (@Freshers you have a chance!)
                     <img
-                      className="memeImage"
-                      src="https://memegenerator.net/img/instances/47021039.jpg"
+                      className='memeImage'
+                      src='https://memegenerator.net/img/instances/47021039.jpg'
                     ></img>
                     <br />
                     &#x25CF; Add a mail tracker
@@ -552,10 +556,10 @@ export default function TimeManagement() {
               </Card>
             </div>
           </div>
-          <div className="button_div">
+          <div className='button_div'>
             <Button
-              className="reverseButton"
-              variant="contained"
+              className='reverseButton'
+              variant='contained'
               onClick={handleClick}
             >
               I don't belong here

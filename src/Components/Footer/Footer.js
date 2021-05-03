@@ -1,146 +1,64 @@
-import React from "react";
-import "./Footer.css";
-import { Button } from "@material-ui/core";
-import { Link } from "react-router-dom";
-import yashwin from "../../Assets/yashwin.png";
-import kshitij from "../../Assets/kshitij.jpg";
-import pabitra from "../../Assets/pabitra.jpeg";
-import rahul from "../../Assets/rahul.png";
+import React, { useEffect, useState } from 'react';
+import Creators from './Creators';
+import './Footer.css';
+import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
+import TeamMembers from './Team';
 
-function Footer() {
+function Footer({ page }) {
+  const [signedIn, setSignedIn] = useState(false);
+  let copyColor = '#fff';
+
+  useEffect(() => {
+    setSignedIn(page !== 'login');
+    if (page === 'login') copyColor = '#051e36';
+  });
+
   return (
-    <div id="bg">
-      <div className="upper">
-        {localStorage.getItem("isSignedIn") ? (
-          <>
-            <p>
-              Want to contribute? It can as small as 2 lines or big as 2 pages.
-              Your contribution matters
-            </p>
-
+    <div id={signedIn ? 'footer' : 'footer-login'}>
+      <div className='upper'>
+        <div className={signedIn ? 'divider' : 'invisible'}>
+          <div className='support-us'>
+            <div>
+              <Button
+                className='footerBtn'
+                target='_blank'
+                href='https://www.buymeacoffee.com/iiitdplaybook'
+              >
+                <img
+                  className='buymeacoffeelogo'
+                  src={
+                    'https://bmc-dev.s3.us-east-2.amazonaws.com/assets/icons/bmc_icon_black.png'
+                  }
+                />
+                Support Us
+              </Button>
+            </div>
+          </div>
+          <div className='contribute'>
             <Button
-              className="button2"
+              className='footerBtn'
+              // className='button2'
               component={Link}
-              to={"/contribute/testimonies"}
+              to={'/contribute/testimonies'}
             >
-              <span className="span2">YES! I'd like to contribute</span>
+              <img
+                className='buymeacoffeelogo'
+                src='https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/footer/src/Assets/icons/contribute.png'
+              />
+              Contribute
             </Button>
-          </>
-        ) : (
-          <></>
-        )}
-        <p>Support Us</p>
-        <div className="supportUsButtons">
-          <Button
-            id="supportBtn"
-            target="_blank"
-            href="https://www.buymeacoffee.com/iiitdplaybook"
-          >
-            <img
-              className="buymeacoffeelogo"
-              src={
-                "https://bmc-dev.s3.us-east-2.amazonaws.com/assets/icons/bmc_icon_black.png"
-              }
-            />{" "}
-            Buy me a coffee
-          </Button>
+          </div>
         </div>
-        <div className="testi2">
-          <a
-            className="defaultClick"
-            href="https://www.instagram.com/okkshitij/"
-            target="_blank"
-          >
-            <div className="creatorCard">
-              <img src={kshitij} />
-              <p>
-                Kshitij <div className="removeText">&nbsp;Agrawal</div>
-              </p>
-              <a
-                className="fa fa-linkedin fa-lg"
-                href="https://www.linkedin.com/in/kshitij16/"
-                target="_blank"
-              ></a>
-              <a
-                className="fa fa-instagram fa-lg"
-                href="https://www.instagram.com/okkshitij/"
-                target="_blank"
-              ></a>
-            </div>
-          </a>
-
-          <a
-            className="defaultClick"
-            href="https://www.instagram.com/pabitrabansal/"
-            target="_blank"
-          >
-            <div className="creatorCard">
-              <img src={pabitra} />
-              <p>
-                Pabitra <div className="removeText">&nbsp;Bansal</div>{" "}
-              </p>
-              <a
-                className="fa fa-linkedin fa-lg"
-                href="https://www.linkedin.com/in/pabitra-bansal-06039616a/"
-                target="_blank"
-              ></a>
-              <a
-                className="fa fa-instagram fa-lg"
-                href="https://www.instagram.com/pabitrabansal/"
-                target="_blank"
-              ></a>
-            </div>
-          </a>
-
-          <a
-            className="defaultClick"
-            href="https://www.instagram.com/am.i.a.normie.now/"
-            target="_blank"
-          >
-            <div className="creatorCard">
-              <img src={rahul} />
-              <p>
-                Rahul <div className="removeText">&nbsp;Singh</div>{" "}
-              </p>
-              <a
-                className="fa fa-linkedin fa-lg"
-                href="https://www.linkedin.com/in/rahul-singh-7aa84697/"
-                target="_blank"
-              ></a>
-              <a
-                className="fa fa-instagram fa-lg"
-                href="https://www.instagram.com/am.i.a.normie.now/"
-                target="_blank"
-              ></a>
-            </div>
-          </a>
-
-          <a
-            className="defaultClick"
-            href="https://www.instagram.com/yashwin_1/"
-            target="_blank"
-          >
-            <div className="creatorCard">
-              <img src={yashwin} />
-              <p>
-                Yashwin <div className="removeText">&nbsp;Agrawal</div>{" "}
-              </p>
-              <a
-                className="fa fa-linkedin fa-lg"
-                href="https://www.linkedin.com/in/yashwin-agrawal-6b28bb176/"
-                target="_blank"
-              ></a>
-              <a
-                className="fa fa-instagram fa-lg"
-                href="https://www.instagram.com/yashwin_1/"
-                target="_blank"
-              ></a>
-            </div>
-          </a>
+        <div className='creators'>
+          <Creators />
+        </div>
+        <div className='team'>
+          <TeamMembers />
         </div>
       </div>
-      <div className="lower">
-        <p>IIITD Student Playbook &copy; 2021</p>
+      <div className='lower' style={{ color: `${copyColor}` }}>
+        IIITD Student Playbook &copy; 2021
       </div>
     </div>
   );

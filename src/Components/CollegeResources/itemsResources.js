@@ -1,8 +1,9 @@
-import addItem from "../../Assets/SVG_for_cards/addItem.svg";
 import ResourceCards from "./resourceCards"
 import ResourceCards_Mix from "./resourceCards2"
 import ResourceCards_Small from "./resourceCards3"
 import ExploreCards from "../ExploreCards/ExploreCards"
+
+const addItem = "https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/SVG_for_cards/addItem.svg";
 
 function items(){
 
@@ -14,9 +15,12 @@ function items(){
         "chromeCards_acad":[],
         "chromeCards_cool":[],
         "codingCards":[],
+        "codingProjectCards":[],
         "codingCards_YT":[],
         "networkingCards":[],
         "designCards":[],
+        "designCards_resources":[],
+        "designCards_learn":[],
         "otherCards":[]
     };
 
@@ -240,12 +244,42 @@ function items(){
         "pathLink":"https://www.interviewbit.com/",
     }];
 
+    const codingProjectCards = [{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"What to Code?",
+        "description": "Ideas for Your Next Coding Project",
+        "image":"https://what-to-code.com/img/idea.svg",
+        "pathLink":"https://what-to-code.com/",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Codementor",
+        "description": "Become Better Developers Together",
+        "image":"https://lite-cdn.codementor.io/static/images/Icons/blue/cm_community_blue.png",
+        "pathLink":"https://www.codementor.io/@npostolovski/40-side-project-ideas-for-software-engineers-g8xckyxef",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"freeCodeCamp.org",
+        "description": "Free Coding Guide for Beginners",
+        "image":"https://yt3.ggpht.com/ytc/AAUvwnifaQZvAunS0OFb2y_cieoVjLCVjqQW8Exf3BC1gg=s88-c-k-c0x00ffffff-no-rj",
+        "pathLink":"https://www.freecodecamp.org/news/more-project-ideas-to-improve-your-coding-skills-99f48d09bb4b/",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Codeconquest",
+        "description": "Build projects",
+        "image":"https://pbs.twimg.com/profile_images/497049145908011008/2ib43OId_400x400.png",
+        "pathLink":"https://www.codeconquest.com/programming-projects/ideas-for-programming-projects/",
+    }];
+
     const networkingCards = [{
         "gradientColor_1":color1,
         "gradientColor_2":color2,
         "title":"Women In Tech IIITD (WiT)",
         "description": "WiT is the tech society of IIITD managed by women. The aim is to provide the alumni and seniors a chance to share amazing opportunities with students.",
-        "image":"https://cdn5.telesco.pe/file/A92l1iFm48PMisyxb26W-PmOiMW14zNCzrPEw_arnt__j11T93c3AqmSCJ1EyRmyuFewCum1vvL0uk8kw0WM5IDQ7q_EXTBIeSdQjaWgzgOx8UfpV-m-b9FnnwCqAIykZwbUvfJqgXVoI9zM1-cLTlfT7D9w5kTo56jAp1VJk0hRxMyV0TdO-GQr4FJ8NVcfUQfkjnq9fsuPeptVZJxe5q18uzlm9Q8v-acvSispuUoeDDncszU-U4RoxyXnSb84-elU6ADpsr_QtBpWK6NQpH-8WbAcsib_Z_RyQuDsv41N58gefC9feFgVkLiTB4Nzo5o7rxszAXMKCoshmSn3KA.jpg",
+        "image":"https://media-exp1.licdn.com/dms/image/C560BAQEeaboE6VDoWw/company-logo_200_200/0/1595244718329?e=2159024400&v=beta&t=ZrzZSxH-1q4K5-Eb8W2ivZqT1V5QoEopH0repnngUh0",
         "pathLink":"http://wit.iiitd.edu.in/",
     },{
         "gradientColor_1":color1,
@@ -266,7 +300,7 @@ function items(){
         "gradientColor_2":color2,
         "title":"Lean In IIITD",
         "description": "We help women achieve their ambitions and work to create an equal world.",
-        "image":"https://instagram.fkwi1-2.fna.fbcdn.net/v/t51.2885-19/s320x320/118364078_796367157840384_9093164501332894747_n.jpg?_nc_ht=instagram.fkwi1-2.fna.fbcdn.net&_nc_ohc=Sex0p1Re-0YAX9fl45e&tp=1&oh=9a2fa0f8d9b6d98e1e7cc54f5795b0b7&oe=6014A4D4",
+        "image":"https://instagram.fkwi2-2.fna.fbcdn.net/v/t51.2885-19/s320x320/118364078_796367157840384_9093164501332894747_n.jpg?tp=1&_nc_ht=instagram.fkwi2-2.fna.fbcdn.net&_nc_ohc=oFyhcbgal5MAX8mvl7G&ccb=7-4&oh=488e8f4f54ad8fe016866d213b14602e&oe=608362D4&_nc_sid=7bff83",
         "pathLink":"http://t.me/leaniniiitd",
     },{
         "gradientColor_1":color1,
@@ -282,7 +316,7 @@ function items(){
         "gradientColor_2":color2,
         "title":"DesignHub - IIITD Design community",
         "description": "IIITD's design community to create a positive design culture amongst students.",
-        "image":"https://instagram.fkwi6-1.fna.fbcdn.net/v/t51.2885-19/s320x320/132294221_752715192262986_5766191329215450894_n.jpg?_nc_ht=instagram.fkwi6-1.fna.fbcdn.net&_nc_ohc=ACPOXJxw-jQAX__b5AW&tp=1&oh=15fa5393f28c5bcbf1850dc75be48aee&oe=601472B9",
+        "image":"https://instagram.fdel1-2.fna.fbcdn.net/v/t51.2885-19/s320x320/132294221_752715192262986_5766191329215450894_n.jpg?tp=1&_nc_ht=instagram.fdel1-2.fna.fbcdn.net&_nc_ohc=ENyoLpa4CF4AX98VAqt&ccb=7-4&oh=b0f8e806ef43a160b3f0c5fee1b62a88&oe=608330B9&_nc_sid=7bff83",
         "pathLink":"https://discord.com/invite/FU2KTtJ",
     },{
         "gradientColor_1":color1,
@@ -298,6 +332,38 @@ function items(){
         "description": "Shots from popular and up and coming designers in the Dribbble community.",
         "image":"https://i.pinimg.com/originals/ed/64/b8/ed64b813c2f084721ca65048978f7bb9.gif",
         "pathLink":"https://dribbble.com/",
+    }];
+
+    const designCards_resources = [{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Remove image background",
+        "description": "Life sorted",
+        "image":"https://static.remove.bg/remove-bg-web/bf023cd87829b02caf45d8634cbf60bd4529e647/assets/logo-nav-22aab70183946de3d717620adef36247aca127c1a0f04885d786c6be1d2cf9fa.svg",
+        "pathLink":"https://www.remove.bg/",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Design Notes",
+        "description": "Collection of all design resources",
+        "image":"https://uploads-ssl.webflow.com/5aa3c4fc80d0970001ec334f/5b793082319ab772ca43bdbf_1-p-500.png",
+        "pathLink":"https://www.designnotes.co/",
+    },{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Illustrations",
+        "description": "Collection of all illustrations",
+        "image":"https://image.freepik.com/free-vector/creativity-concept-illustration_114360-1083.jpg",
+        "pathLink":"https://www.reddit.com/r/webdev/comments/eejh52/websites_i_use_for_free_svg_illustrations/?utm_medium=android_app&utm_source=share",
+    }];
+
+    const designCards_learn = [{
+        "gradientColor_1":color1,
+        "gradientColor_2":color2,
+        "title":"Degreeless design",
+        "description": "A good platform to start learning design",
+        "image":"https://uploads-ssl.webflow.com/5bef676f3a50d163bacb06e6/5bf38f939f58cfb03f605e6f_degreeless.svg",
+        "pathLink":"https://www.degreeless.design/",
     }];
 
     const otherCards = [{
@@ -403,6 +469,12 @@ function items(){
             ResourceCards_Small(codingCards[index])
         );
     }
+
+    for (let index=0; index<codingProjectCards.length;index++){
+        itemslist["codingProjectCards"].push(
+            ResourceCards_Small(codingProjectCards[index])
+        );
+    }
  
     for (let index=0; index<networkingCards.length;index++){
         itemslist["networkingCards"].push(
@@ -413,9 +485,21 @@ function items(){
     for (let index=0; index<designCards.length;index++){
         itemslist["designCards"].push(
             ResourceCards(designCards[index])
-        );
-        
+        );  
     }
+
+    for (let index=0; index<designCards_learn.length;index++){
+        itemslist["designCards_learn"].push(
+            ResourceCards_Small(designCards_learn[index])
+        );  
+    }
+
+    for (let index=0; index<designCards_resources.length;index++){
+        itemslist["designCards_resources"].push(
+            ResourceCards_Small(designCards_resources[index])
+        );  
+    }
+
 
     for (let index=0; index<otherCards.length;index++){
         itemslist["otherCards"].push(
