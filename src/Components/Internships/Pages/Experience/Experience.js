@@ -19,7 +19,7 @@ const Experience = ({ callback }) => {
     },
     {
       type: 'video',
-      url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
       image: 'https://dummyimage.com/360x300/04ABB0/fff.png&text=article+image',
       tags: ['Microsoft', 'UI/UX'],
       title: 'Life at Microsoft - a UX design remote experience',
@@ -40,7 +40,7 @@ const Experience = ({ callback }) => {
     },
     {
       type: 'video',
-      url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      url: 'https://www.youtube.com/embed/4tLoF8mdsDU',
       image: 'https://dummyimage.com/360x300/04ABB0/fff.png&text=article+image',
       tags: ['Microsoft', 'UI/UX'],
       title: 'Life at Microsoft - a UX design remote experience',
@@ -61,7 +61,7 @@ const Experience = ({ callback }) => {
     },
     {
       type: 'video',
-      url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
       image: 'https://dummyimage.com/360x300/04ABB0/fff.png&text=article+image',
       tags: ['Microsoft', 'UI/UX'],
       title: 'Life at Microsoft - a UX design remote experience',
@@ -82,7 +82,7 @@ const Experience = ({ callback }) => {
     },
     {
       type: 'video',
-      url: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+      url: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
       image: 'https://dummyimage.com/360x300/04ABB0/fff.png&text=article+image',
       tags: ['Microsoft', 'UI/UX'],
       title: 'Life at Microsoft - a UX design remote experience',
@@ -112,8 +112,21 @@ const Experience = ({ callback }) => {
         {articles.map((item) => {
           return (
             <div className='article_card'>
-              <a href={item.url}>
-                <img className='article_image' src={item.image} />
+              <a href={item.url} target='_blank'>
+                {item.type === 'article' ? (
+                  <img className='article_image' src={item.image} />
+                ) : (
+                  <iframe
+                    className='article_video'
+                    width='560'
+                    height='315'
+                    src={item.url}
+                    title='YouTube video player'
+                    frameborder='0'
+                    allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                    allowfullscreen
+                  />
+                )}
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
                   {item.tags.map((tag) => (
                     <div className='article_tag'>{tag}</div>

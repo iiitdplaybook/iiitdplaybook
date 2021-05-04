@@ -55,3 +55,8 @@
   display: block;
   margin-bottom: 10px;
 }
+
+.article_video {
+  width: 100%;
+  display: block;
+}

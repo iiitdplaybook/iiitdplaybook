@@ -105,19 +105,19 @@
   margin-top: 20px;
 }
 
-.slick-next:before,
-.slick-prev:before {
+.resume .slick-next:before,
+.resume .slick-prev:before {
   color: #03ccac;
   opacity: 1;
 }
 
-.slick-dots li.slick-active button:before {
+.resume .slick-dots li.slick-active button:before {
   color: #03ccac;
   opacity: 0.75;
   font-size: 9px;
 }
 
-.slick-dots li button:before {
+.resume .slick-dots li button:before {
   color: #e6e6e6;
   opacity: 0.75;
   font-size: 9px;
