@@ -1,0 +1,57 @@
+.article_grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 30px;
+}
+
+.article_card {
+  margin: 10px;
+  flex: 1;
+  width: auto;
+  min-width: 300px;
+  max-width: 400px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s ease-in-out;
+}
+
+.article_card:hover {
+  background: #f7f7f7;
+  border-radius: 5px;
+}
+
+.article_card p {
+  font-size: 14px;
+  margin: 10px 0;
+}
+
+.article_card a {
+  opacity: 1;
+}
+
+.article_tag {
+  background: #03ccac;
+  padding: 5px 8px;
+  color: white;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+.article_title {
+  font-size: 22px;
+}
+
+.article_author {
+  opacity: 0.6;
+}
+
+.article_image {
+  width: 100%;
+  display: block;
+  margin-bottom: 10px;
+}
