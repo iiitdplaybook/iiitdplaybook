@@ -3,6 +3,7 @@ import Introduction from './Pages/Introduction/Introduction';
 import Resume from './Pages/Resume/Resume';
 import InterviewTips from './Pages/InterviewTips/InterviewTips';
 import Preparation from './Pages/Preparation/Preparation';
+import { fetchResume, fetchExperience } from './FetchData';
 
 export const metadata = {
   introduction: {

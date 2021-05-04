@@ -4,6 +4,8 @@ import './Internships.css';
 import { metadata } from './Metadata';
 import { FiChevronsDown } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
+// import firebase from 'firebase';
+import { fetchResume, fetchExperience } from './FetchData';
 
 function Internships() {
   const [active, setActive] = useState('introduction');
@@ -11,14 +13,25 @@ function Internships() {
     <metadata.introduction.component />
   );
 
+  const [resumeList, setResumeList] = useState([]);
+  const [expList, setExpList] = useState([]);
+
+  useEffect(() => {
+    fetchResume({ setResumeList });
+    fetchExperience({ setExpList });
+  }, []);
+
+  useEffect(() => {
+    console.log(expList);
+    metadata.resume.list = resumeList;
+    metadata.experience.list = expList;
+    const x = metadata[active];
+    setComponent(<x.component callback={callback} list={x.list} />);
+  }, [active, resumeList, expList]);
+
   const callback = (value) => {
     setActive(value);
   };
-
-  useEffect(() => {
-    const x = metadata[active];
-    setComponent(<x.component callback={callback} />);
-  }, [active]);
 
   return (
     <div className='internship_page'>

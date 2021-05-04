@@ -6,6 +6,7 @@ import { FaLinkedinIn } from 'react-icons/fa';
 import { IconContext } from 'react-icons';
 import PageFooter from '../../PageFooter';
 import { metadata } from '../../Metadata';
+import firebase from 'firebase';
 import '../global.css';
 import './Resume.css';
 
@@ -39,90 +40,7 @@ import './Resume.css';
 //   );
 // }
 
-const Resume = ({ callback }) => {
-  const resumeList = [
-    {
-      name: 'Thomas Thompson',
-      image:
-        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/a5034bfc/src/Assets/user.png',
-      // linkedin: ,
-      batch: 2022,
-      companies: ['Apple (2020)', 'Fantasy (2021)', 'Microsoft (2021)'],
-      link:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/edsall.png',
-    },
-    {
-      name: 'Thomas Thompson',
-      image:
-        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/a5034bfc/src/Assets/user.png',
-      // linkedin: ,
-      batch: 2022,
-      companies: ['Apple (2020)', 'Fantasy (2021)', 'Microsoft (2021)'],
-      link:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/manila.png',
-    },
-    {
-      name: 'Thomas Thompson',
-      image:
-        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/a5034bfc/src/Assets/user.png',
-      // linkedin: ,
-      batch: 2022,
-      companies: ['Apple (2020)', 'Fantasy (2021)', 'Microsoft (2021)'],
-      link:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/marianas.png',
-    },
-    {
-      name: 'Thomas Thompson',
-      image:
-        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/a5034bfc/src/Assets/user.png',
-      // linkedin: ,
-      batch: 2022,
-      companies: ['Apple (2020)', 'Fantasy (2021)', 'Microsoft (2021)'],
-      link:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/urbana.png',
-    },
-    {
-      name: 'Thomas Thompson',
-      image:
-        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/a5034bfc/src/Assets/user.png',
-      // linkedin: ,
-      batch: 2022,
-      companies: ['Apple (2020)', 'Fantasy (2021)', 'Microsoft (2021)'],
-      link:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/edsall.png',
-    },
-    {
-      name: 'Thomas Thompson',
-      image:
-        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/a5034bfc/src/Assets/user.png',
-      // linkedin: ,
-      batch: 2022,
-      companies: ['Apple (2020)', 'Fantasy (2021)', 'Microsoft (2021)'],
-      link:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/manila.png',
-    },
-    {
-      name: 'Thomas Thompson',
-      image:
-        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/a5034bfc/src/Assets/user.png',
-      // linkedin: ,
-      batch: 2022,
-      companies: ['Apple (2020)', 'Fantasy (2021)', 'Microsoft (2021)'],
-      link:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/marianas.png',
-    },
-    {
-      name: 'Thomas Thompson',
-      image:
-        'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/a5034bfc/src/Assets/user.png',
-      // linkedin: ,
-      batch: 2022,
-      companies: ['Apple (2020)', 'Fantasy (2021)', 'Microsoft (2021)'],
-      link:
-        'https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/internships/src/Assets/Internships/sample_resume/urbana.png',
-    },
-  ];
-
+const Resume = ({ callback, list }) => {
   const [focus, setFocus] = useState(0);
 
   const settings = {
@@ -154,7 +72,7 @@ const Resume = ({ callback }) => {
                 marginRight: '5px',
               }}
             >
-              {/* <a href={resumeList[focus].linkedin}> */}
+              {/* <a href={list[focus].linkedin}> */}
               <div className='icon'>
                 <HiDownload />
               </div>
@@ -166,7 +84,7 @@ const Resume = ({ callback }) => {
       </div>
       <div className='resume_slider'>
         <Slider {...settings}>
-          {resumeList.map((item, index) => (
+          {list.map((item, index) => (
             <div className='container'>
               <img
                 className={focus === index ? 'resume_img active' : 'resume_img'}
@@ -179,10 +97,10 @@ const Resume = ({ callback }) => {
       <div className='resume_details'>
         <div className='profile'>
           <div style={{ display: 'flex', flexDirection: 'row' }}>
-            <img src={resumeList[focus].image} className='avatar' />
+            <img src={list[focus].image} className='avatar' />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <div className='header'>
-                <h1>{resumeList[focus].name}</h1>
+                <h1>{list[focus].name}</h1>
                 <IconContext.Provider
                   value={{
                     color: 'black',
@@ -194,18 +112,18 @@ const Resume = ({ callback }) => {
                   </div>
                 </IconContext.Provider>
               </div>
-              <div>Batch of {resumeList[focus].batch}</div>
+              <div>Batch of {list[focus].batch}</div>
             </div>
           </div>
           <div style={{ marginTop: '20px' }}>The resume below worked for:</div>
           <div style={{ display: 'flex', flexDirection: 'row' }}>
-            {resumeList[focus].companies.map((item) => (
+            {list[focus].tags.map((item) => (
               <div className='company_tag'>{item}</div>
             ))}
           </div>
         </div>
         <div className='full_resume'>
-          <img src={resumeList[focus].link} />
+          <img src={list[focus].link} />
         </div>
       </div>
       <PageFooter
