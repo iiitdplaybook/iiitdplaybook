@@ -81,7 +81,7 @@ const Introduction = ({ callback }) => {
     infinite: true,
     slidesToShow: slidesNum,
     speed: 600,
-    arrows: true,
+    arrows: window.innerWidth < 600 ? false : true,
     dots: true,
   };
 

@@ -11,13 +11,18 @@ import './Resume.css';
 const Resume = ({ callback, list }) => {
   const [focus, setFocus] = useState(0);
 
+  const slidesNum =
+    window.innerWidth < 600
+      ? Math.min(1, list.length)
+      : Math.min(4, list.length);
+
   const settings = {
     className: 'center',
     centerMode: true,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: slidesNum,
     speed: 500,
-    arrows: true,
+    arrows: window.innerWidth < 600 ? false : true,
     focusOnSelect: true,
     dots: true,
     beforeChange: (current, next) => setFocus(next),
@@ -26,9 +31,7 @@ const Resume = ({ callback, list }) => {
   return (
     <div className='resume' style={{ width: '85%', margin: '0 auto' }}>
       <div className='upper_container'>
-        <p style={{ textAlign: 'center', fontSize: '24px', marginTop: '40px' }}>
-          As recommended by students, for students.
-        </p>
+        <p className='page_title'>As recommended by students, for students.</p>
         <div style={{ width: 'auto', marginTop: '40px' }}>
           <button className='download'>
             <IconContext.Provider
@@ -74,15 +77,17 @@ const Resume = ({ callback, list }) => {
                   }}
                 >
                   <div className='linkedin_icon'>
-                    <FaLinkedinIn style={{ height: '20px', width: '20px' }} />
+                    <FaLinkedinIn className='icon' />
                   </div>
                 </IconContext.Provider>
               </div>
-              <div>Batch of {list[focus].batch}</div>
+              <div className='batch'>Batch of {list[focus].batch}</div>
             </div>
           </div>
           <div style={{ marginTop: '20px' }}>The resume below worked for:</div>
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
+          <div
+            style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}
+          >
             {list[focus].tags.map((item) => (
               <div className='company_tag'>{item}</div>
             ))}
