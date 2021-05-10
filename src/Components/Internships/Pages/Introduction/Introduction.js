@@ -70,11 +70,16 @@ const Introduction = ({ callback }) => {
     },
   ];
 
+  const slidesNum =
+    window.innerWidth < 600
+      ? Math.min(1, rulesCards.length)
+      : Math.min(3, rulesCards.length);
+
   const settings = {
     className: 'center',
     centerMode: true,
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: slidesNum,
     speed: 600,
     arrows: true,
     dots: true,

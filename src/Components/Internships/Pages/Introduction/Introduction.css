@@ -129,3 +129,59 @@
 .tip_card:last-of-type {
   margin-right: 30px;
 }
+
+@media only screen and (max-width: 600px) {
+  .research_vs_internship {
+    margin-top: 20px;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .card {
+    padding: 30px 20px;
+    line-height: 20px;
+  }
+
+  .card h1 {
+    font-size: 28px;
+  }
+
+  .card:first-of-type {
+    margin-right: 0;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+  }
+  .card:last-of-type {
+    margin-left: 0;
+    padding-top: 60px;
+  }
+
+  .card img {
+    display: block;
+    width: 150px;
+  }
+
+  .vs {
+    color: #03ccac !important;
+    padding: 30px;
+    font-size: 30px;
+    top: 49%;
+  }
+
+  .card li {
+    font-size: 12px;
+  }
+
+  .rules_card img {
+    max-width: 200px;
+  }
+
+  .rules_card p {
+    position: absolute;
+    font-weight: 600;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    font-size: 24px;
+  }
+}

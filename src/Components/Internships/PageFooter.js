@@ -22,6 +22,7 @@ const PageFooter = ({ settings }) => {
           justifyContent: 'space-between',
           width: '100%',
           marginBottom: '60px',
+          flexWrap: 'wrap',
         }}
       >
         <NavCard {...settings.left} />

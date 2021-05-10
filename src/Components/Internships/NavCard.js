@@ -48,6 +48,7 @@ const Card = ({
       height: cardHeight,
       color: '#FFF',
       cursor: 'pointer',
+      marginTop: 20,
     },
     link: {
       display: 'flex',
