@@ -107,6 +107,7 @@
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+  width: max-content;
 }
 
 .tip_card {
@@ -124,4 +125,8 @@
   align-items: flex-start;
   justify-content: center;
   padding: 15px;
+}
+
+.tip_card:last-of-type {
+  margin-right: 30px;
 }
