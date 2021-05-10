@@ -14,8 +14,8 @@ const RulesCard = ({ card }) => {
 
   return (
     <>
-      <div className='rules_card' onClick={handleClickOpen}>
-        <img src={card.image} />
+      <div className='rules_card'>
+        <img onClick={handleClickOpen} src={card.image} />
         <p>{card.title}</p>
       </div>
       <Dialog
