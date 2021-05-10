@@ -3,7 +3,7 @@ import Navbar from '../Navbar/Navbar';
 import { FiChevronsDown } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
 import { metadata } from './metadata';
-import { fetchResume, fetchExperience } from './fetchData';
+import { fetchResume, fetchExperience } from './fetchData.js';
 import './Internships.css';
 
 function Internships() {
