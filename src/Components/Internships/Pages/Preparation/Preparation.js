@@ -1,6 +1,6 @@
 import React from 'react';
 import PageFooter from '../../PageFooter';
-import { metadata } from '../../Metadata';
+import { metadata } from '../../metadata';
 import '../global.css';
 
 const Preparation = ({ callback }) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 import PageFooter from '../../PageFooter';
-import { metadata } from '../../Metadata';
+import { metadata } from '../../metadata';
 import './Experience.css';
 import '../global.css';
 

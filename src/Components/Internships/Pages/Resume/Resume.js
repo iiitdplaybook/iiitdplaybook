@@ -2,43 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import { HiDownload } from 'react-icons/hi';
 import { FaLinkedinIn } from 'react-icons/fa';
-// import { AiOutlineRightCircle, AiOutlineLeftCircle } from 'react-icons/ai';
 import { IconContext } from 'react-icons';
 import PageFooter from '../../PageFooter';
-import { metadata } from '../../Metadata';
-import firebase from 'firebase';
+import { metadata } from '../../metadata';
 import '../global.css';
 import './Resume.css';
-
-// function PrevArrow(props) {
-//   const { className, style, onClick } = props;
-//   return (
-//     <IconContext.Provider value={{ color: '#03ccac', display: 'block' }}>
-//       <div
-//         className={className}
-//         style={{ ...style, color: '#03ccac', display: 'block' }}
-//         onClick={onClick}
-//       >
-//         <AiOutlineLeftCircle />
-//       </div>
-//     </IconContext.Provider>
-//   );
-// }
-
-// function NextArrow(props) {
-//   const { className, style, onClick } = props;
-//   return (
-//     <IconContext.Provider value={{ color: '#03ccac', display: 'block' }}>
-//       <div
-//         className={className}
-//         style={{ ...style, color: '#03ccac', display: 'block' }}
-//         onClick={onClick}
-//       >
-//         <AiOutlineRightCircle />
-//       </div>
-//     </IconContext.Provider>
-//   );
-// }
 
 const Resume = ({ callback, list }) => {
   const [focus, setFocus] = useState(0);
@@ -53,8 +21,6 @@ const Resume = ({ callback, list }) => {
     focusOnSelect: true,
     dots: true,
     beforeChange: (current, next) => setFocus(next),
-    // nextArrow: <NextArrow />,
-    // prevArrow: <PrevArrow />,
   };
 
   return (

@@ -3,6 +3,10 @@
   margin: 0 auto;
 }
 
+.heading {
+  margin-bottom: 30px;
+}
+
 .research_vs_internship {
   margin-top: 20px;
   display: flex;
@@ -57,4 +61,67 @@
 
 .card li {
   margin: 10px 0;
+}
+
+.rules_card {
+  position: relative;
+  color: white;
+  cursor: pointer;
+}
+
+.rules_card img {
+  max-width: 24vw;
+  display: block;
+  cursor: pointer;
+}
+
+.rules_card p {
+  position: absolute;
+  font-weight: 600;
+  bottom: 40px;
+  left: 50px;
+  color: white;
+  font-size: 32px;
+}
+
+.introduction .slick-next:before,
+.introduction .slick-prev:before {
+  color: #9494946e;
+  opacity: 1;
+}
+
+.introduction .slick-dots li.slick-active button:before {
+  color: #03ccac;
+  opacity: 0.75;
+  font-size: 9px;
+}
+
+.introduction .slick-dots li button:before {
+  color: #e6e6e6;
+  opacity: 0.75;
+  font-size: 9px;
+}
+
+.tips_grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.tip_card {
+  background-color: #04abb0;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  min-height: 200px;
+  min-width: 180px;
+  width: 200px;
+  margin: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 15px;
 }

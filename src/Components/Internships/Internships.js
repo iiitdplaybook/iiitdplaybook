@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../Navbar/Navbar';
-import './Internships.css';
-import { metadata } from './Metadata';
 import { FiChevronsDown } from 'react-icons/fi';
 import { IconContext } from 'react-icons';
-// import firebase from 'firebase';
-import { fetchResume, fetchExperience } from './FetchData';
+import { metadata } from './metadata';
+import { fetchResume, fetchExperience } from './fetchData';
+import './Internships.css';
 
 function Internships() {
   const [active, setActive] = useState('introduction');

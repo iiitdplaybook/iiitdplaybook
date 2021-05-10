@@ -1,0 +1,37 @@
+
+
+  .row{
+      
+      
+      margin: 8% 0% 10% 10%;
+      width: 80%;
+      height: fit-content;
+      align-self: center;
+      
+      overflow-x: scroll;
+     
+      
+  }
+
+
+  .image{
+
+  }
+
+  .left{
+
+  }
+
+  .right{
+
+  }
+
+  .center{
+
+    border: 2px solid black;
+
+  }
+
+  .inactive{
+    display: none;
+  }

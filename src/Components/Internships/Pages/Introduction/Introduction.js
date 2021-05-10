@@ -1,14 +1,96 @@
 import React from 'react';
 import PageFooter from '../../PageFooter';
-import { metadata } from '../../Metadata';
+import { metadata } from '../../metadata';
 import '../global.css';
 import './Introduction.css';
+import Slider from 'react-slick';
+import pic1 from '../../../../Assets/Internships/rules/pic1.png';
+import pic2 from '../../../../Assets/Internships/rules/pic2.png';
+import pic3 from '../../../../Assets/Internships/rules/pic3.png';
+import RulesCard from './RulesCard';
 
 const Introduction = ({ callback }) => {
+  const rulesCards = [
+    {
+      image: pic1,
+      title: 'Top 10 internship tips',
+      tips: {
+        tip1: 'Tip #11',
+        tip2: 'Tip #12',
+        tip3: 'Tip #13',
+        tip4: 'Tip #14',
+        tip5: 'Tip #15',
+        tip6: 'Tip #16',
+      },
+    },
+    {
+      image: pic2,
+      title: 'Top 10 internship tips',
+      tips: {
+        tip1: 'Tip #21',
+        tip2: 'Tip #22',
+        tip3: 'Tip #23',
+      },
+    },
+    {
+      image: pic3,
+      title: 'Top 10 internship tips',
+      tips: {
+        tip1: 'Tip #31',
+        tip2: 'Tip #32',
+        tip3: 'Tip #33',
+      },
+    },
+    {
+      image: pic1,
+      title: 'Top 10 internship tips',
+      tips: {
+        tip1: 'Tip #41',
+        tip2: 'Tip #42',
+        tip3: 'Tip #43',
+      },
+    },
+    {
+      image: pic2,
+      title: 'Top 10 internship tips',
+      tips: {
+        tip1: 'Tip #51',
+        tip2: 'Tip #52',
+        tip3: 'Tip #53',
+      },
+    },
+    {
+      image: pic3,
+      title: 'Top 10 internship tips',
+      tips: {
+        tip1: 'Tip #61',
+        tip2: 'Tip #62',
+        tip3: 'Tip #63',
+      },
+    },
+  ];
+
+  const settings = {
+    className: 'center',
+    centerMode: true,
+    infinite: true,
+    slidesToShow: 3,
+    speed: 600,
+    arrows: true,
+    dots: true,
+  };
+
   return (
     <div className='introduction'>
       <h1 className='heading'>Why Internship?</h1>
-      <h1 className='heading'>Rules and Regulations</h1>
+      <div className='rules_reg'>
+        <h1 className='heading'>Rules and Regulations</h1>
+        <Slider {...settings}>
+          {rulesCards.map((card) => (
+            <RulesCard card={card} />
+          ))}
+        </Slider>
+      </div>
       <h1 className='heading'>Is CP important?</h1>
       <div className='research_vs_internship'>
         <div className='card'>
