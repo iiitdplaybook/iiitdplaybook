@@ -124,7 +124,8 @@
   }
 
   .nav_illustration img {
-    width: 100px;
+    display: block;
+    max-height: 120px;
     margin-top: 20px;
   }
 }

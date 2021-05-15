@@ -1,3 +1,8 @@
+.resume {
+  width: 85%;
+  margin: 0 auto;
+}
+
 .upper_container {
   display: flex;
   flex-direction: column;
@@ -135,6 +140,10 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .resume {
+    width: 100%;
+  }
+
   .resume_img {
     height: 250px;
   }
@@ -153,6 +162,10 @@
     font-size: 18px;
     display: inline;
     /* width: min-content; */
+  }
+
+  .profile .header {
+    justify-content: space-between;
   }
 
   .profile .batch {

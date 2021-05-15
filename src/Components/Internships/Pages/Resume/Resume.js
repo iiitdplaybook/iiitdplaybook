@@ -29,7 +29,7 @@ const Resume = ({ callback, list }) => {
   };
 
   return (
-    <div className='resume' style={{ width: '85%', margin: '0 auto' }}>
+    <div className='resume'>
       <div className='upper_container'>
         <p className='page_title'>As recommended by students, for students.</p>
         <div style={{ width: 'auto', marginTop: '40px' }}>
@@ -67,7 +67,9 @@ const Resume = ({ callback, list }) => {
         <div className='profile'>
           <div style={{ display: 'flex', flexDirection: 'row' }}>
             <img src={list[focus].image} className='avatar' />
-            <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div
+              style={{ display: 'flex', flexDirection: 'column', flex: '1' }}
+            >
               <div className='header'>
                 <h1>{list[focus].name}</h1>
                 <IconContext.Provider

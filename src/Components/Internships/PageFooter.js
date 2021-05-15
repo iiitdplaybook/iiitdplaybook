@@ -19,7 +19,7 @@ const PageFooter = ({ settings }) => {
         style={{
           display: 'flex',
           flexDirection: 'row',
-          justifyContent: 'space-between',
+          justifyContent: window.innerWidth > 600 ? 'space-between' : 'center',
           width: '100%',
           marginBottom: '60px',
           flexWrap: 'wrap',
