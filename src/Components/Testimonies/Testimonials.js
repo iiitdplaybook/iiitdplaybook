@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
 import './Testimonials.css';
@@ -110,7 +110,6 @@ export default function AutoPlay({ portraits }) {
 
   return (
     <div style={{ margin: '5%' }}>
-      {/* <h2>Auto Play</h2> */}
       <Slider {...settings}>
         {times(portraits.length, String).map((id, index) => (
           // testimonies_data[id].isApproved?

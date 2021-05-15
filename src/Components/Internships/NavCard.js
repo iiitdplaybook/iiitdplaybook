@@ -5,7 +5,7 @@ import Internships from './Internships';
 import { makeStyles } from '@material-ui/core/styles';
 
 {
-  /* <Card
+  /* <NavCard
       alignment='left'
       colors={['#236FDC', ' #43AEDA']}
       image={metadata['preparation'].image}
@@ -15,7 +15,7 @@ import { makeStyles } from '@material-ui/core/styles';
       }}
       title={'Research with Professors'}
     />
-    <Card
+    <NavCard
       alignment='right'
       image={metadata['preparation'].image}
       redirect={{
@@ -35,7 +35,7 @@ const Card = ({
   setActive,
   title,
 }) => {
-  const cardWidth = '320px';
+  const cardWidth = '350px';
   const cardHeight = '200px';
   const [redirectLink, setRedirectLink] = useState(null);
 
@@ -48,6 +48,7 @@ const Card = ({
       height: cardHeight,
       color: '#FFF',
       cursor: 'pointer',
+      marginTop: 20,
     },
     link: {
       display: 'flex',
@@ -58,6 +59,7 @@ const Card = ({
       maxHeight: cardHeight,
       width: '90%',
       margin: '0 auto',
+      opacity: '1 !important',
     },
     image: {
       maxWidth: '120px',
@@ -72,6 +74,8 @@ const Card = ({
       justifyContent: 'space-around',
       height: '80%',
       alignItems: alignment === 'right' ? 'flex-start' : 'flex-end',
+      marginRight: alignment === 'right' ? '0' : '20px',
+      marginLeft: alignment === 'left' ? '0' : '20px',
     },
     title: {
       fontSize: '20px',
@@ -102,7 +106,7 @@ const Card = ({
 
   return (
     <div className={classes.root}>
-      <a
+      <a // change this to Link (react-router-dom)
         href={redirectLink}
         className={classes.link}
         onClick={(e) => handleClick(e)}

@@ -25,6 +25,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap;
   width: 70%;
 }
 
@@ -52,11 +53,20 @@
   color: #04abb0;
 }
 
+.scroll_arrow {
+  width: 100vw;
+}
+
 .scroll_arrow svg {
   margin-top: 10px;
   width: 60px;
   height: 50px;
   stroke-width: 2px;
+}
+
+.scroll_arrow div {
+  position: absolute;
+  left: 50%;
 }
 
 .bounce {
@@ -78,5 +88,44 @@
   }
   60% {
     transform: translateY(30px);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .nav_heading {
+    font-size: 1.5rem;
+    margin-top: 100px;
+  }
+
+  .nav_divider {
+    flex: 1;
+    margin-top: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .scroll_arrow {
+    width: 60px;
+    height: 100px;
+  }
+
+  .scroll_arrow div {
+    left: 0;
+  }
+
+  .nav_button_container {
+    align-items: center;
+  }
+
+  .nav_button {
+    font-size: 18px;
+    width: 250px;
+  }
+
+  .nav_illustration img {
+    display: block;
+    max-height: 120px;
+    margin-top: 20px;
   }
 }
