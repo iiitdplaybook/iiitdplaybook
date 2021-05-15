@@ -52,13 +52,13 @@ function Internships() {
           <div className='nav_illustration'>
             <img src={metadata[active].image} />
           </div>
-        </div>
-        <div className='scroll_arrow bounce'>
-          <IconContext.Provider value={{ color: '#FFF' }}>
-            <div>
-              <FiChevronsDown />
-            </div>
-          </IconContext.Provider>
+          <div className='scroll_arrow bounce'>
+            <IconContext.Provider value={{ color: '#FFF' }}>
+              <div>
+                <FiChevronsDown />
+              </div>
+            </IconContext.Provider>
+          </div>
         </div>
       </div>
       {component}
