@@ -131,8 +131,8 @@ function items() {
             n_testimonies: 6,
             reading_time: 3,
             image: imagePlacements,
-            pathLink: "explore",
-            opacity: opac,
+            pathLink: "internships",
+            opacity: 1,
             guestFilter: guestVar,
         },
         {

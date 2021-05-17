@@ -1,12 +1,12 @@
 .heading {
-  color: #04abb0;
-  font-size: 36px;
-  margin-top: 40px;
-  font-weight: 900;
+    color: #04abb0;
+    font-size: 26px;
+    margin-top: 40px;
+    font-weight: 900;
 }
 
 @media only screen and (max-width: 600px) {
-  .heading {
-    font-size: 24px;
-  }
+    .heading {
+        font-size: 24px;
+    }
 }
