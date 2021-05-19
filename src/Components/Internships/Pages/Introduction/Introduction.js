@@ -32,42 +32,6 @@ const Introduction = ({ callback }) => {
                 tip3: "Tip #23",
             },
         },
-        {
-            image: pic3,
-            title: "Top 10 internship tips",
-            tips: {
-                tip1: "Tip #31",
-                tip2: "Tip #32",
-                tip3: "Tip #33",
-            },
-        },
-        {
-            image: pic1,
-            title: "Top 10 internship tips",
-            tips: {
-                tip1: "Tip #41",
-                tip2: "Tip #42",
-                tip3: "Tip #43",
-            },
-        },
-        {
-            image: pic2,
-            title: "Top 10 internship tips",
-            tips: {
-                tip1: "Tip #51",
-                tip2: "Tip #52",
-                tip3: "Tip #53",
-            },
-        },
-        {
-            image: pic3,
-            title: "Top 10 internship tips",
-            tips: {
-                tip1: "Tip #61",
-                tip2: "Tip #62",
-                tip3: "Tip #63",
-            },
-        },
     ];
 
     const slidesNum =
