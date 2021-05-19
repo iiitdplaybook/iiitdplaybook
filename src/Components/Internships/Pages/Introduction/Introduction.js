@@ -3,16 +3,17 @@ import PageFooter from "../../PageFooter";
 import { metadata } from "../../metadata";
 import "../global.css";
 import "./Introduction.css";
+import Testimonials from "../../../Testimonies/Testimonials";
 import Slider from "react-slick";
 // import pic1 from "../../../../Assets/Internships/rules/pic1.png";
 // import pic2 from "../../../../Assets/Internships/rules/pic2.png";
 // import pic3 from "../../../../Assets/Internships/rules/pic3.png";
 import RulesCard from "./RulesCard";
 
-const Introduction = ({ callback }) => {
+const Introduction = ({ callback, list }) => {
     const rulesCards = [
         {
-            image: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/5ba1baa2/src/Assets/Internships/Internship_rules/internship_rule.png",
+            image: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/aa156e0d/src/Assets/Internships/Internship_rules/internship_rule.png",
             title: "Internship Rules",
             tips: {
                 tip1: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/739a8083/src/Assets/Internships/Internship_rules/intership_rule1.png",
@@ -23,7 +24,7 @@ const Introduction = ({ callback }) => {
             },
         },
         {
-            image: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/5ba1baa2/src/Assets/Internships/Placement_rules/placement_rule.png",
+            image: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/aa156e0d/src/Assets/Internships/Placement_rules/placement_rule.png",
             title: "Placement Rules",
             tips: {
                 tip1: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/739a8083/src/Assets/Internships/Placement_rules/placement_rule1.png",
@@ -104,13 +105,14 @@ const Introduction = ({ callback }) => {
             </div>
             <div className="rules_reg">
                 <h1 className="heading">Rules and Regulations</h1>
-                <Slider className="slider" {...settings}>
+                <Slider {...settings}>
                     {rulesCards.map((card) => (
                         <RulesCard card={card} />
                     ))}
                 </Slider>
             </div>
             <h1 className="heading">Is CP important?</h1>
+            <Testimonials portraits={list} />
             <div className="research_vs_internship">
                 <div className="card">
                     <h1>Internship</h1>

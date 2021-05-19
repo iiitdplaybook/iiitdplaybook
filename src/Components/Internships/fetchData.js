@@ -82,3 +82,28 @@ export const fetchExperience = async ({ setExpList }) => {
 
     setExpList(expData);
 };
+
+export const fetchCP = async ({ setCpList }) => {
+    let CpData = [];
+    const cpRef = firebase
+        .database()
+        .ref("Testimonies/Placement-Is CP Important");
+    await cpRef.once("value", (snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+            if (childSnapshot.val().isApproved == true) {
+                let name = childSnapshot.val().Name;
+                let text = childSnapshot.val().Text;
+                let userProfile = childSnapshot.val().UserAvatar;
+                let dict = {};
+                dict.UserAvatar = userProfile;
+                dict.Text = text;
+                dict.Name = name;
+                dict.Topic = "Placement-Is CP Important";
+                dict.isApproved = true;
+                CpData.push(dict);
+            }
+        });
+    });
+    console.log(CpData);
+    setCpList(CpData);
+};
