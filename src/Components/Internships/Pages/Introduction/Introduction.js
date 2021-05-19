@@ -4,15 +4,15 @@ import { metadata } from "../../metadata";
 import "../global.css";
 import "./Introduction.css";
 import Slider from "react-slick";
-import pic1 from "../../../../Assets/Internships/rules/pic1.png";
-import pic2 from "../../../../Assets/Internships/rules/pic2.png";
-import pic3 from "../../../../Assets/Internships/rules/pic3.png";
+// import pic1 from "../../../../Assets/Internships/rules/pic1.png";
+// import pic2 from "../../../../Assets/Internships/rules/pic2.png";
+// import pic3 from "../../../../Assets/Internships/rules/pic3.png";
 import RulesCard from "./RulesCard";
 
 const Introduction = ({ callback }) => {
     const rulesCards = [
         {
-            image: pic1,
+            image: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/5ba1baa2/src/Assets/Internships/Internship_rules/internship_rule.png",
             title: "Internship Rules",
             tips: {
                 tip1: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/739a8083/src/Assets/Internships/Internship_rules/intership_rule1.png",
@@ -23,7 +23,7 @@ const Introduction = ({ callback }) => {
             },
         },
         {
-            image: pic2,
+            image: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/5ba1baa2/src/Assets/Internships/Placement_rules/placement_rule.png",
             title: "Placement Rules",
             tips: {
                 tip1: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/739a8083/src/Assets/Internships/Placement_rules/placement_rule1.png",
@@ -104,7 +104,7 @@ const Introduction = ({ callback }) => {
             </div>
             <div className="rules_reg">
                 <h1 className="heading">Rules and Regulations</h1>
-                <Slider {...settings}>
+                <Slider className="slider" {...settings}>
                     {rulesCards.map((card) => (
                         <RulesCard card={card} />
                     ))}

@@ -46,6 +46,10 @@
     margin: 30px 0;
 }
 
+.slick-active {
+    width: auto !important;
+}
+
 .vs {
     color: #03ccac !important;
     background: white;
@@ -66,12 +70,16 @@
 .rules_card {
     position: relative;
     color: white;
+    margin: 1em;
+    box-shadow: 6px 8px 20px -8px grey;
+    border-radius: 20px;
 }
 
 .rules_card img {
     max-width: 20vw;
     display: block;
     cursor: pointer;
+    border-radius: 20px;
 }
 
 .rules_card p {
@@ -110,15 +118,10 @@
 }
 
 .tip_card {
-    background-color: #04abb0;
-    color: white;
-    font-family: "Poppins", sans-serif;
-    font-weight: 600;
-    font-size: 36px;
     min-height: 200px;
     min-width: 180px;
-    width: 200px;
-    margin: 20px;
+    width: 18em;
+    margin: 0em 5em;
     border-radius: 8px;
     display: flex;
     align-items: flex-start;
@@ -126,8 +129,9 @@
     padding: 15px;
 }
 
-.tip_card:last-of-type {
-    margin-right: 30px;
+.tip_card img {
+    max-width: 25em;
+    border-radius: 8px;
 }
 
 @media only screen and (max-width: 600px) {

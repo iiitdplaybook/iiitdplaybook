@@ -16,7 +16,6 @@ const RulesCard = ({ card }) => {
         <>
             <div className="rules_card">
                 <img onClick={handleClickOpen} src={card.image} />
-                <p>{card.title}</p>
             </div>
             <Dialog
                 open={open}
@@ -29,9 +28,9 @@ const RulesCard = ({ card }) => {
                 maxWidth={false}
             >
                 <DialogTitle>
-                    <h3 style={{ color: "#04ABB0", textAlign: "center" }}>
+                    <h2 style={{ color: "#04ABB0", textAlign: "center" }}>
                         {card.title}
-                    </h3>
+                    </h2>
                 </DialogTitle>
                 <DialogContent dividers={false}>
                     <div style={{ display: "block" }}>
