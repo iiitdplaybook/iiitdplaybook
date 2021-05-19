@@ -13,23 +13,26 @@ const Introduction = ({ callback }) => {
     const rulesCards = [
         {
             image: pic1,
-            title: "Top 10 internship tips",
+            title: "Internship Rules",
             tips: {
-                tip1: "Tip #11",
-                tip2: "Tip #12",
-                tip3: "Tip #13",
-                tip4: "Tip #14",
-                tip5: "Tip #15",
-                tip6: "Tip #16",
+                tip1: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/739a8083/src/Assets/Internships/Internship_rules/intership_rule1.png",
+                tip2: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/739a8083/src/Assets/Internships/Internship_rules/intership_rule2.png",
+                tip3: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/739a8083/src/Assets/Internships/Internship_rules/intership_rule3.png",
+                tip4: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/739a8083/src/Assets/Internships/Internship_rules/intership_rule4.png",
+                tip5: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/739a8083/src/Assets/Internships/Internship_rules/intership_rule5.png",
             },
         },
         {
             image: pic2,
-            title: "Top 10 internship tips",
+            title: "Placement Rules",
             tips: {
-                tip1: "Tip #21",
-                tip2: "Tip #22",
-                tip3: "Tip #23",
+                tip1: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/739a8083/src/Assets/Internships/Placement_rules/placement_rule1.png",
+                tip2: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/739a8083/src/Assets/Internships/Placement_rules/placement_rule2.png",
+                tip3: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/739a8083/src/Assets/Internships/Placement_rules/placement_rule3.png",
+                tip4: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/739a8083/src/Assets/Internships/Placement_rules/placement_rule4.png",
+                tip5: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/739a8083/src/Assets/Internships/Placement_rules/placement_rule5.png",
+                tip6: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/739a8083/src/Assets/Internships/Placement_rules/placement_rule6.png",
+                tip7: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/739a8083/src/Assets/Internships/Placement_rules/placement_rule7.png",
             },
         },
     ];
