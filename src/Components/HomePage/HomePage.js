@@ -16,6 +16,8 @@ import ParticleAnim from '../ParticleAnim/ParticleAnim';
 import Tilt from 'react-parallax-tilt';
 import Footer from '../Footer/Footer';
 import PhasesOfCollege from './PhasesOfCollege';
+import TestimonialsAlt from '../Testimonies 2.0/TestimonialsAlt';
+import TextCard from '../TextCard/TextCard';
 
 const babyStepsImg =
   'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/79223f1e/src/Assets/homepage_illustrations/baby_steps.png';
@@ -40,6 +42,10 @@ function HomePage() {
   const [greetingList, setGreetingList] = useState([]);
   const [randi, setRandi] = useState(0);
 
+
+  const [tData, tFunc] = useState([]);
+
+
   const getGreetings = async () => {
     var greetingList = [];
 
@@ -56,6 +62,25 @@ function HomePage() {
   };
 
   const getTestimonies = async () => {
+
+
+    let d1 = {};
+    let tempDataF = [];
+    d1.img='https://www.myamcat.com/blog/wp-content/uploads/2019/09/job-interview-isometric-illustration_1284-17974.jpg';
+    d1.text='Be Confident';
+    tempDataF.push(d1);
+    d1.text='Be ';
+    tempDataF.push(d1);
+    tempDataF.push(d1);
+    tempDataF.push(d1);
+    tFunc(tempDataF);
+
+
+
+
+
+
+
     let temp1 = [];
     let temp2 = [];
     let temp3 = [];
@@ -144,7 +169,7 @@ function HomePage() {
 
     let nostalgiaRef = firebase
       .database()
-      .ref('Testimonies/Phases of College - Nostalgia');
+      .ref('Placements/Is CP Important');
     await nostalgiaRef.once('value', (snapshot) => {
       snapshot.forEach((childSnapshot) => {
         if (childSnapshot.val().isApproved == true) {
@@ -353,22 +378,7 @@ function HomePage() {
                 id='stars_container'
               >
                 <div className='section-wrapper'>
-                  <img
-                    className='section-image'
-                    src={nostalgiaImg}
-                    alt='Nostalgia'
-                  />
-                  <div className='section-container'>
-                    <h1 className='section-title'>Nostalgia</h1>
-                    <p className='section-text'>
-                      From Odyssey to mid-sems, morning classes to late night
-                      movie sessions, mess to brew bakes, impromptu travel plans
-                      to midnight parantha breaks - come take a trip down the
-                      memory lane with us and relive some of your favourite
-                      moments.
-                    </p>
-                  </div>
-                  <Testimonials portraits={nostalgia} />
+                  <TextCard props={tData} />
                 </div>
                 <Stars />
               </div>
