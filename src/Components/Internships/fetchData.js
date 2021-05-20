@@ -104,6 +104,19 @@ export const fetchCP = async ({ setCpList }) => {
             }
         });
     });
-    console.log(CpData);
     setCpList(CpData);
+};
+
+export const fetchTips = async ({ setTipsList }) => {
+    let TipsData = [];
+    const tipsRef = firebase.database().ref("Placements/Interview Tips Cards");
+    await tipsRef.once("value", (snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+            let dict = {};
+            dict.img = childSnapshot.val().img;
+            dict.text = childSnapshot.val().text;
+            TipsData.push(dict);
+        });
+    });
+    setTipsList(TipsData);
 };
