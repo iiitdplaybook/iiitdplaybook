@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import PageFooter from "../../PageFooter";
 import { metadata } from "../../metadata";
 import "../global.css";
@@ -9,8 +9,15 @@ import Slider from "react-slick";
 // import pic2 from "../../../../Assets/Internships/rules/pic2.png";
 // import pic3 from "../../../../Assets/Internships/rules/pic3.png";
 import RulesCard from "./RulesCard";
+import { fetchCP } from "../../fetchData";
 
-const Introduction = ({ callback, list }) => {
+const Introduction = ({ callback }) => {
+    const [cpList, setCpList] = useState([]);
+
+    useEffect(() => {
+        fetchCP({ setCpList });
+    });
+
     const rulesCards = [
         {
             image: "https://cdn.statically.io/gh/ananyalohani/iiitdplaybook/aa156e0d/src/Assets/Internships/Internship_rules/internship_rule.png",
@@ -112,7 +119,7 @@ const Introduction = ({ callback, list }) => {
                 </Slider>
             </div>
             <h1 className="heading">Is CP important?</h1>
-            <Testimonials portraits={list} />
+            <Testimonials portraits={cpList} />
             <div className="research_vs_internship">
                 <div className="card">
                     <h1>Internship</h1>

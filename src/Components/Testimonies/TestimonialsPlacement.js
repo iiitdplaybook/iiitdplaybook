@@ -11,14 +11,17 @@ export default function AutoPlay({ portraits }) {
         // min-height: ${(props) =>
             props.height ? props.height + "px" : "auto"};
         height: 350px;
+        // height: 100em;
     `;
 
     const Box = styled.div`
         // padding: ${(props) => props.scale * 20}px;
-        padding: 10px;
+        // padding: 10px;
+        padding: 0.5em;
         vertical-align: middle;
         font-family: Poppins;
-        height: 250px;
+        // height: 250px;
+        height: 22em;
     `;
 
     const Review = styled.div`
@@ -40,8 +43,10 @@ export default function AutoPlay({ portraits }) {
         border-radius: 50%;
         // width: ${(props) => props.scale * 35}px;
         // height: ${(props) => props.scale * 35}px;
-        width: 36px;
-        height: 36px;
+        // width: 36px;
+        // height: 36px;
+        width: 2.8em;
+        height: 2.8em;
         overflow: hidden;
         flex-shrink: 0;
         // background: red;
@@ -54,7 +59,8 @@ export default function AutoPlay({ portraits }) {
 
     const Content = styled.div`
         p {
-            margin-top: 40px;
+            // margin-top: 40px;
+            margin-top: 3.5em;
             color: #382f70;
             font-family: Poppins, sans-serif;
             // font-size: ${(props) => props.scale * 21}px !important;
@@ -68,7 +74,8 @@ export default function AutoPlay({ portraits }) {
 
     const Name = styled.div`
         p {
-            margin: 6px;
+            // margin: 6px;
+            margin: 0.5em;
             // margin-left: -12px;
             color: red;
             // background: black;

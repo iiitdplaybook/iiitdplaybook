@@ -34,7 +34,6 @@ div {
 }
 
 .TextCardCardText {
-    visibility: visible;
     position: absolute;
     text-align: center;
     color: #ffffff;
@@ -47,13 +46,11 @@ div {
     font-family: Poppins;
     font-style: normal;
     font-weight: 600;
-    font-size: 2.5vw;
+    font-size: 2.3vw;
 }
 
-.TextCardCardText:hover,
-.TextCardCardText:active,
-.TextCardCardText:focus {
-    visibility: hidden;
+.TextCardCardText:hover {
+    opacity: 0;
 }
 
 .TextCardCardText > span {
