@@ -25,12 +25,6 @@ export default function InternshipTips(){
         dict.Resources = childSnapshot.val().Resources;
         dict.Tips = childSnapshot.val().Tips;
         temp1.push(dict);
-        temp1.push(dict);
-        temp1.push(dict);
-        temp1.push(dict);
-        temp1.push(dict);
-        temp1.push(dict);
-        temp1.push(dict);
       });
     });
     setTips(temp1);

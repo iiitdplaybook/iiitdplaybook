@@ -26,42 +26,42 @@ export default function VerticalSlickSlider ({properties}) {
             {(window.innerWidth>600) ? (
                 <div style={{display:'flex',justifyContent: 'space-around',flexWrap: 'nowrap'}}>
                     <div style={{width:'27vw'}}>
-                    <Slider {...settings} {...{autoplaySpeed:1000}}>
+                    <div>
                         {properties.slice(0,Math.floor(properties.length/3)).map((id,index)=>(
                             <>
                             <Card cardsData={properties[index]} key={id}/>
                             <div style={{height:'120px'}}></div>
                             </>
                         ))}
-                    </Slider>
+                    </div>
                     </div>
                     <div style={{width:'27vw'}}>
-                    <Slider {...settings} {...{autoplaySpeed:2000}}>
+                    <div>
                         {properties.slice(Math.floor(properties.length/3),2*Math.floor(properties.length/3)).map((id,index)=>(
                             <>
                             <div style={{height:'120px'}}></div>
                             <Card cardsData={properties.slice(Math.floor(properties.length/3),2*Math.floor(properties.length/3))[index]} key={id}/>
                             </>
                         ))}
-                    </Slider>
+                    </div>
                     </div>
                     <div style={{width:'27vw'}}>
-                    <Slider {...settings} {...{autoplaySpeed:3000}}>
+                    <div>
                         {properties.slice(2*Math.floor(properties.length/3)).map((id,index)=>(
                             <>
                             <Card cardsData={properties.slice(2*Math.floor(properties.length/3))[index]} key={id}/>
                             <div style={{height:'120px'}}></div>
                             </>
                         ))}
-                    </Slider>
+                    </div>
                     </div>
                 </div>
             ):(
-                <Slider {...settings} {...{autoplaySpeed:1000}} >
+                <div>
                 {properties.map((id,index) => (
                     <Card cardsData={properties[index]} key={id}/>
                 ))}
-            </Slider>
+            </div>
             )}
         </div>
     );
