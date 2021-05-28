@@ -3,7 +3,12 @@ import Navbar from "../Navbar/Navbar";
 import { FiChevronsDown } from "react-icons/fi";
 import { IconContext } from "react-icons";
 import { metadata } from "./metadata";
-import { fetchResume, fetchExperience, fetchTips } from "./fetchData";
+import {
+    fetchResume,
+    fetchExperience,
+    fetchTips,
+    fetchPreparation,
+} from "./fetchData";
 import "./Internships.css";
 
 function Internships() {
@@ -15,21 +20,23 @@ function Internships() {
     const [resumeList, setResumeList] = useState([]);
     const [expList, setExpList] = useState([]);
     const [tipsList, setTipsList] = useState([]);
+    const [prepList, setPrepList] = useState([]);
 
     useEffect(() => {
         fetchResume({ setResumeList });
         fetchExperience({ setExpList });
         fetchTips({ setTipsList });
+        fetchPreparation({ setPrepList });
     }, []);
 
     useEffect(() => {
-        console.log(expList);
         metadata.resume.list = resumeList;
         metadata.experience.list = expList;
+        metadata.preparation.list = prepList;
         metadata.interviewTips.list = tipsList;
         const x = metadata[active];
         setComponent(<x.component callback={callback} list={x.list} />);
-    }, [active, resumeList, expList]);
+    }, [active, resumeList, expList, prepList, tipsList]);
 
     const callback = (value) => {
         setActive(value);

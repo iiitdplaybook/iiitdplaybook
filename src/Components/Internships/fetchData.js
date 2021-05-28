@@ -120,3 +120,22 @@ export const fetchTips = async ({ setTipsList }) => {
     });
     setTipsList(TipsData);
 };
+
+export const fetchPreparation = async ({ setPrepList }) => {
+    let PrepData = [];
+    const prepRef = firebase.database().ref("Testimonies/Preparation");
+    await prepRef.once("value", (snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+            let dict = {};
+            dict.Name = childSnapshot.val().Name;
+            dict.Designation = childSnapshot.val().Designation;
+            dict.LinkedIN = childSnapshot.val().LinkedIn;
+            dict.Organization = childSnapshot.val().Organization;
+            dict.Profile_Pic = childSnapshot.val().Profile_Pic;
+            dict.Resources = childSnapshot.val().Resources;
+            dict.Tips = childSnapshot.val().Tips;
+            PrepData.push(dict);
+        });
+    });
+    setPrepList(PrepData);
+};
