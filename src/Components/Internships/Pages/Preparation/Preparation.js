@@ -1,13 +1,11 @@
 import React from "react";
 import PageFooter from "../../PageFooter";
 import { metadata } from "../../metadata";
-import TextCard from "../../../TextCard/TextCard";
 import "../global.css";
 
-const Preparation = ({ callback, list }) => {
+const Preparation = ({ callback }) => {
     return (
         <div className="preparation" style={{ width: "85%", margin: "0 auto" }}>
-            <TextCard props={list.slice(0, Math.min(4, list.length))} />
             <PageFooter
                 settings={{
                     left: {

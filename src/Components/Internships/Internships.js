@@ -26,7 +26,7 @@ function Internships() {
         console.log(expList);
         metadata.resume.list = resumeList;
         metadata.experience.list = expList;
-        metadata.preparation.list = tipsList;
+        metadata.interviewTips.list = tipsList;
         const x = metadata[active];
         setComponent(<x.component callback={callback} list={x.list} />);
     }, [active, resumeList, expList]);
