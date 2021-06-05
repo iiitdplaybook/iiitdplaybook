@@ -4,10 +4,12 @@ import TestimonialsAlt from '../Testimonies 2.0/TestimonialsAlt';
 import firebase from 'firebase';
 import VerticalSlickSlider from '../VerticalSlickSlider/VerticalSlickSlider';
 import InternshipTips from '../VerticalSlickSlider/InternshipTips';
+import YtBar from '../YtBar/YtBar';
 
 function ComingSoonTools() {
   const [textCardData, setTextCardData] = useState([]);
   const [testimoniesAltData, setTestimoniesAltData] = useState([]);
+  const [ytData, setYtData] = useState([{"source":"https://www.youtube.com/embed/6qTghUgMOeY"},{"source":"https://www.youtube.com/embed/6qTghUgMOeY"},{"source":"https://www.youtube.com/embed/6qTghUgMOeY"},{"source":"https://www.youtube.com/embed/6qTghUgMOeY"}])
 
   const getTestimonies = async () => {
 
@@ -60,6 +62,7 @@ function ComingSoonTools() {
     { textCardData.length > 4 ? (<TextCard props={textCardData.slice(4)} />) : <div></div>}
     <div className="Margin" style={{height:"50px"}}></div>*/}
     <InternshipTips/>
+    <YtBar portraits={ytData} />
     </>
   );
 }
