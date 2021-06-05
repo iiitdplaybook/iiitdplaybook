@@ -119,7 +119,7 @@ const Introduction = ({ callback }) => {
                 </Slider>
             </div>
             <h1 className="heading">Is CP important?</h1>
-            <Testimonials portraits={cpList} />
+            {/* <Testimonials portraits={cpList} /> */}
             <div className="research_vs_internship">
                 <div className="card">
                     <h1>Internship</h1>

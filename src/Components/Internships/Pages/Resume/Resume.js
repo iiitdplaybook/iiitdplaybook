@@ -76,7 +76,7 @@ const Resume = ({ callback, list }) => {
                                         ? "resume_img active"
                                         : "resume_img"
                                 }
-                                src={item.link}
+                                src={item.cover}
                             />
                         </div>
                     ))}
@@ -129,7 +129,7 @@ const Resume = ({ callback, list }) => {
                 <div className="full_resume">
                     {/* <img src={list[focus].link} /> */}
                     <Document
-                        file="https://cdn.jsdelivr.net/gh/ananyalohani/iiitdplaybook@master/src/Assets/Internships/sample_resume/manila.pdf"
+                        file={list[focus].link}
                         onLoadSuccess={onDocumentLoadSuccess}
                         options={options}
                     >

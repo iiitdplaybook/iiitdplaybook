@@ -13,6 +13,7 @@ export const fetchResume = async ({ setResumeList }) => {
             dict.id = child.val().id;
             dict.image = child.val().image;
             dict.link = child.val().link;
+            dict.cover = child.val().cover;
             dict.linkedin = child.val().linkedin;
             dict.tags = [];
             resData.push(dict);
