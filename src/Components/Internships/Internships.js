@@ -8,6 +8,8 @@ import {
     fetchExperience,
     fetchTips,
     fetchPreparation,
+    fetchExpVideos,
+    fetchPrepVideos,
 } from "./fetchData";
 import "./Internships.css";
 
@@ -21,22 +23,38 @@ function Internships() {
     const [expList, setExpList] = useState([]);
     const [tipsList, setTipsList] = useState([]);
     const [prepList, setPrepList] = useState([]);
+    const [expVideos, setExpVideos] = useState([]);
+    const [prepVideos, setPrepVideos] = useState([]);
 
     useEffect(() => {
         fetchResume({ setResumeList });
         fetchExperience({ setExpList });
         fetchTips({ setTipsList });
         fetchPreparation({ setPrepList });
+        fetchExpVideos({ setExpVideos });
+        fetchPrepVideos({ setPrepVideos });
     }, []);
 
     useEffect(() => {
         metadata.resume.list = resumeList;
         metadata.experience.list = expList;
+        metadata.experience.video = expVideos;
         metadata.preparation.list = prepList;
+        metadata.preparation.video = prepVideos;
         metadata.interviewTips.list = tipsList;
         const x = metadata[active];
-        setComponent(<x.component callback={callback} list={x.list} />);
-    }, [active, resumeList, expList, prepList, tipsList]);
+        setComponent(
+            <x.component callback={callback} list={x.list} video={x.video} />
+        );
+    }, [
+        active,
+        resumeList,
+        expList,
+        prepList,
+        tipsList,
+        expVideos,
+        prepVideos,
+    ]);
 
     const callback = (value) => {
         setActive(value);

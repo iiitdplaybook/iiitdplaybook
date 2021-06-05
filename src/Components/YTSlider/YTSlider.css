@@ -20,7 +20,7 @@
     font-size: 12px;
 }
 
-/* .slick-prev:before,
+.slick-prev:before,
 .slick-next:before {
     color: #e6e6e6;
 }
@@ -34,4 +34,4 @@
 
 .slick-dots li.slick-active button:before {
     color: rgba(4, 171, 176, 0.51) !important;
-} */
+}

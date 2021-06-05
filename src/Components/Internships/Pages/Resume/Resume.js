@@ -6,23 +6,12 @@ import { IconContext } from "react-icons";
 import PageFooter from "../../PageFooter";
 import { metadata } from "../../metadata";
 import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
-import edsall from "../../../../Assets/Internships/sample_resume/edsall.pdf";
+import PdfViewer from "./pdfViewer";
 import "../global.css";
 import "./Resume.css";
 
-const options = {
-    cMapUrl: "cmaps/",
-    cMapPacked: true,
-    // workerSrc: "/pdf.worker.js",
-};
-
 const Resume = ({ callback, list }) => {
     const [focus, setFocus] = useState(0);
-    const [numPages, setNumPages] = useState(null);
-
-    function onDocumentLoadSuccess({ numPages }) {
-        setNumPages(numPages);
-    }
 
     const slidesNum =
         window.innerWidth < 600
@@ -101,9 +90,15 @@ const Resume = ({ callback, list }) => {
                                         display: "inline",
                                     }}
                                 >
-                                    <div className="linkedin_icon">
-                                        <FaLinkedinIn className="icon" />
-                                    </div>
+                                    <a
+                                        href={list[focus].linkedin}
+                                        target="_blank"
+                                        className="linkedin_link"
+                                    >
+                                        <div className="linkedin_icon">
+                                            <FaLinkedinIn className="icon" />
+                                        </div>
+                                    </a>
                                 </IconContext.Provider>
                             </div>
                             <div className="batch">
@@ -128,19 +123,7 @@ const Resume = ({ callback, list }) => {
                 </div>
                 <div className="full_resume">
                     {/* <img src={list[focus].link} /> */}
-                    <Document
-                        file={list[focus].link}
-                        onLoadSuccess={onDocumentLoadSuccess}
-                        options={options}
-                    >
-                        {Array.from(new Array(numPages), (el, index) => (
-                            <Page
-                                scale="1.3"
-                                key={`page_${index + 1}`}
-                                pageNumber={index + 1}
-                            />
-                        ))}
-                    </Document>
+                    <PdfViewer file={list[focus].link} />
                 </div>
             </div>
             <PageFooter

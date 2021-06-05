@@ -58,6 +58,9 @@ const Introduction = ({ callback }) => {
         speed: 600,
         arrows: window.innerWidth < 600 ? false : true,
         dots: true,
+        centerMode: true,
+        centerPadding: "30px",
+        adaptiveHeight: true,
     };
 
     return (
@@ -119,7 +122,7 @@ const Introduction = ({ callback }) => {
                 </Slider>
             </div>
             <h1 className="heading">Is CP important?</h1>
-            {/* <Testimonials portraits={cpList} /> */}
+            <Testimonials portraits={cpList} />
             <div className="research_vs_internship">
                 <div className="card">
                     <h1>Internship</h1>

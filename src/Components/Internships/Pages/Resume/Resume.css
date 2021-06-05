@@ -87,6 +87,7 @@
 .avatar {
     width: 80px;
     margin-right: 10px;
+    border-radius: 6px;
 }
 
 .linkedin_icon {
@@ -99,6 +100,10 @@
     margin-left: 10px;
 }
 
+.linkedin_link {
+    margin: 0px;
+}
+
 .icon {
     height: 20px;
     width: 20px;
@@ -108,8 +113,9 @@
     background: #03ccac;
     padding: 5px 8px;
     color: white;
-    margin: 5px;
     border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .full_resume img {

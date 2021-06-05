@@ -140,3 +140,31 @@ export const fetchPreparation = async ({ setPrepList }) => {
     });
     setPrepList(PrepData);
 };
+
+export const fetchExpVideos = async ({ setExpVideos }) => {
+    let ExpVideos = [];
+    const expRef = firebase.database().ref("Placements/ExperienceVideos");
+    await expRef.once("value", (snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+            let dict = {};
+            dict.name = childSnapshot.val().name;
+            dict.source = childSnapshot.val().link;
+            ExpVideos.push(dict);
+        });
+    });
+    setExpVideos(ExpVideos);
+};
+
+export const fetchPrepVideos = async ({ setPrepVideos }) => {
+    let PrepVideos = [];
+    const expRef = firebase.database().ref("Placements/PreparationVideos");
+    await expRef.once("value", (snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+            let dict = {};
+            dict.name = childSnapshot.val().name;
+            dict.source = childSnapshot.val().link;
+            PrepVideos.push(dict);
+        });
+    });
+    setPrepVideos(PrepVideos);
+};
