@@ -1,6 +1,6 @@
 .slider-card {
     width: 85%;
-    border-radius: 16px;
+    border-radius: 26px;
     padding: 4%;
     background-color: #efefef;
 }
@@ -51,6 +51,11 @@
 .slider-button {
     display: flex;
     justify-content: flex-end;
+}
+
+.slider-button > button:hover {
+    color: white;
+    background-color: #03ccac;
 }
 
 .slider-b {

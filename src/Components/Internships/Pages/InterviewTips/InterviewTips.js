@@ -4,7 +4,8 @@ import { metadata } from "../../metadata";
 import "../global.css";
 import TextCard from "../../../TextCard/TextCard";
 import { fetchCP } from "../../fetchData";
-import Testimonials from "../../../Testimonies/TestimonialsPlacement";
+// import Testimonials from "../../../Testimonies/TestimonialsPlacement";
+import Testimonials from "../../../Testimonies/Testimonials";
 
 const InterviewTips = ({ callback, list }) => {
     const [cpList, setCpList] = useState([]);

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
-import { HiDownload } from "react-icons/hi";
+import { HiUpload } from "react-icons/hi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import PageFooter from "../../PageFooter";
@@ -47,11 +47,11 @@ const Resume = ({ callback, list }) => {
                         >
                             {/* <a href={list[focus].linkedin}> */}
                             <div className="icon">
-                                <HiDownload />
+                                <HiUpload />
                             </div>
                             {/* </a> */}
                         </IconContext.Provider>
-                        Download the IIITD template
+                        Share my resume
                     </button>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import { metadata } from "../../metadata";
 import "../global.css";
 import "./Introduction.css";
 import Testimonials from "../../../Testimonies/TestimonialsPlacement";
+// import Testimonials from "../../../Testimonies/Testimonials";
 import Slider from "react-slick";
 // import pic1 from "../../../../Assets/Internships/rules/pic1.png";
 // import pic2 from "../../../../Assets/Internships/rules/pic2.png";

@@ -18,6 +18,18 @@ export default function VerticalSlickSlider({ properties }) {
         vertical: true,
     };
 
+    let c1 = 0,
+        c2 = 0;
+    if (properties.length % 3 == 1) {
+        c1 = (properties.length + 1) / 3;
+        c2 = 2 * c1;
+    } else if (properties.length % 3 == 2) {
+        c1 = (properties.length + 2) / 3;
+        c2 = c1 + Math.floor(properties.length / 3);
+    } else {
+        c1 = properties.length / 3;
+        c2 = 2 * c1;
+    }
     return (
         <div>
             {window.innerWidth > 600 ? (
@@ -30,76 +42,42 @@ export default function VerticalSlickSlider({ properties }) {
                 >
                     <div style={{ width: "27vw" }}>
                         <div>
-                            {properties
-                                .slice(0, Math.floor(properties.length / 3))
-                                .map((id, index) => (
-                                    <>
-                                        <Card
-                                            cardsData={properties[index]}
-                                            key={id}
-                                        />
-                                        <div style={{ height: "120px" }}></div>
-                                    </>
-                                ))}
+                            {console.log(properties.slice(0, c1))}
+                            {properties.slice(0, c1).map((element) => (
+                                <>
+                                    <Card cardsData={element} />
+                                    <div style={{ height: "120px" }}></div>
+                                </>
+                            ))}
                         </div>
                     </div>
                     <div style={{ width: "27vw" }}>
                         <div>
-                            {properties
-                                .slice(
-                                    Math.floor(properties.length / 3),
-                                    2 * Math.floor(properties.length / 3)
-                                )
-                                .map((id, index) => (
-                                    <>
-                                        <div style={{ height: "120px" }}></div>
-                                        <Card
-                                            cardsData={
-                                                properties.slice(
-                                                    Math.floor(
-                                                        properties.length / 3
-                                                    ),
-                                                    2 *
-                                                        Math.floor(
-                                                            properties.length /
-                                                                3
-                                                        )
-                                                )[index]
-                                            }
-                                            key={id}
-                                        />
-                                    </>
-                                ))}
+                            {console.log(properties.slice(c1, c2))}
+                            {properties.slice(c1, c2).map((element) => (
+                                <>
+                                    <div style={{ height: "120px" }}></div>
+                                    <Card cardsData={element} />
+                                </>
+                            ))}
                         </div>
                     </div>
                     <div style={{ width: "27vw" }}>
                         <div>
-                            {properties
-                                .slice(2 * Math.floor(properties.length / 3))
-                                .map((id, index) => (
-                                    <>
-                                        <Card
-                                            cardsData={
-                                                properties.slice(
-                                                    2 *
-                                                        Math.floor(
-                                                            properties.length /
-                                                                3
-                                                        )
-                                                )[index]
-                                            }
-                                            key={id}
-                                        />
-                                        <div style={{ height: "120px" }}></div>
-                                    </>
-                                ))}
+                            {console.log(properties.slice(c2))}
+                            {properties.slice(c2).map((element) => (
+                                <>
+                                    <Card cardsData={element} />
+                                    <div style={{ height: "120px" }}></div>
+                                </>
+                            ))}
                         </div>
                     </div>
                 </div>
             ) : (
                 <div>
-                    {properties.map((id, index) => (
-                        <Card cardsData={properties[index]} key={id} />
+                    {properties.map((element) => (
+                        <Card cardsData={element} />
                     ))}
                 </div>
             )}

@@ -128,13 +128,14 @@ export const fetchPreparation = async ({ setPrepList }) => {
     await prepRef.once("value", (snapshot) => {
         snapshot.forEach((childSnapshot) => {
             let dict = {};
-            dict.Name = childSnapshot.val().Name;
-            dict.Designation = childSnapshot.val().Designation;
-            dict.LinkedIN = childSnapshot.val().LinkedIn;
-            dict.Organization = childSnapshot.val().Organization;
-            dict.Profile_Pic = childSnapshot.val().Profile_Pic;
-            dict.Resources = childSnapshot.val().Resources;
-            dict.Tips = childSnapshot.val().Tips;
+            dict.name = childSnapshot.val().name;
+            dict.designation = childSnapshot.val().designation;
+            dict.linkedin = childSnapshot.val().linkedin;
+            dict.organisation = childSnapshot.val().organisation;
+            dict.profilePic = childSnapshot.val().profilePic;
+            dict.resources = childSnapshot.val().resources;
+            dict.tipsLong = childSnapshot.val().tipsLong;
+            dict.tipsShort = childSnapshot.val().tipsShort;
             PrepData.push(dict);
         });
     });
