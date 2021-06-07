@@ -1,0 +1,30 @@
+.dialogImage{
+    margin:5px;
+    height: 40vh;
+    width:auto;
+    display: flex;
+    margin-right: 10px;
+}
+
+
+.image{
+    margin:10px;
+    width: 40vw;
+    position: relative;
+    right: 20%;
+    float: left;
+}
+
+.container{
+    
+    position: relative;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.Caption{
+    position: absolute;
+    top:75%;
+}

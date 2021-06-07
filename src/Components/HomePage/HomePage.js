@@ -8,7 +8,7 @@ import Stars from '../Stars/stars';
 
 import Clouds from '../Clouds/clouds';
 import Testimonials from '../Testimonies/Testimonials';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 
 import ReactFullpage from '@fullpage/react-fullpage';

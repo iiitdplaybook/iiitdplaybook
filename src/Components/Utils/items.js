@@ -127,12 +127,12 @@ function items() {
         {
             gradientColor_1: color15,
             gradientColor_2: color16,
-            title: "\nPlacements",
+            title: "\nInternships",
             n_testimonies: 6,
             reading_time: 3,
             image: imagePlacements,
-            pathLink: "explore",
-            opacity: opac,
+            pathLink: "internships",
+            opacity: 1,
             guestFilter: guestVar,
         },
         {

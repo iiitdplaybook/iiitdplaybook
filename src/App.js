@@ -33,6 +33,9 @@ function App() {
         import("./Components/TalkingToFriendsSeniors/TalkingToFriendsSeniors")
     );
     const Supplies = React.lazy(() => import("./Components/Supplies/Supplies"));
+    const Internships = React.lazy(() =>
+        import("./Components/Internships/Internships")
+    );
     const Explore = React.lazy(() => import("./Components/Explore/Explore"));
     const ComingSoonTools = React.lazy(() =>
         import("./Components/ComingSoon/ComingSoonTools")
@@ -171,6 +174,11 @@ function App() {
                                         <Route path="/supplies">
                                             <Suspense fallback={<Spinner />}>
                                                 <Supplies />
+                                            </Suspense>
+                                        </Route>
+                                        <Route path="/internships">
+                                            <Suspense fallback={<Spinner />}>
+                                                <Internships />
                                             </Suspense>
                                         </Route>
                                         <Route path="/nostalgia">

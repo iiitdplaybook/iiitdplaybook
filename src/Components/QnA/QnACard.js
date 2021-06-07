@@ -4,20 +4,16 @@ import {
     CardActionArea,
     CardContent,
     Dialog,
-    DialogActions,
     DialogContent,
     DialogContentText,
     DialogTitle,
     Typography,
     CardMedia,
     Link,
-    Button,
 } from "@material-ui/core";
 import { GoVerified } from "react-icons/go";
 import { IconContext } from "react-icons";
-
 import { makeStyles } from "@material-ui/core/styles";
-import { truncate } from "lodash";
 import "./QnA.css";
 
 function QnACard({ card, colors }) {
