@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from "react";
+// import React, { useState, useEffect } from "react";
+import React from "react";
 import PageFooter from "../../PageFooter";
 import { metadata } from "../../metadata";
 import "../global.css";
 import TextCard from "../../../TextCard/TextCard";
 import { fetchCP } from "../../fetchData";
 // import Testimonials from "../../../Testimonies/TestimonialsPlacement";
-import Testimonials from "../../../Testimonies/Testimonials";
+// import Testimonials from "../../../Testimonies/Testimonials";
 
 const InterviewTips = ({ callback, list }) => {
-    const [cpList, setCpList] = useState([]);
+    // const [cpList, setCpList] = useState([]);
 
-    useEffect(() => {
-        fetchCP({ setCpList });
-    });
+    // useEffect(() => {
+    //     fetchCP({ setCpList });
+    // });
 
     return (
         <div
@@ -20,7 +21,7 @@ const InterviewTips = ({ callback, list }) => {
             style={{ width: "85%", margin: "0 auto" }}
         >
             <TextCard props={list.slice(0, Math.min(4, list.length))} />
-            <Testimonials portraits={cpList} />
+            {/* <Testimonials portraits={cpList} /> */}
             <TextCard props={list.slice(4, list.length)} />
 
             <PageFooter
