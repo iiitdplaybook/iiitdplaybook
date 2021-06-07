@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
+import { Document, Page, pdfjs } from "react-pdf";
 import "./pdfViewer.css";
+pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 export default function PdfViewer({ file }) {
     const [numPages, setNumPages] = useState(null);

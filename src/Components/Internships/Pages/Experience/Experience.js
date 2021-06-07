@@ -18,10 +18,17 @@ const Experience = ({ callback, list, video }) => {
                         <div className="article_card">
                             <a href={item.url} target="_blank">
                                 {item.type === "article" ? (
-                                    <img
-                                        className="article_image"
-                                        src={item.image}
-                                    />
+                                    <div
+                                        style={{
+                                            display: "flex",
+                                            justifyContent: "center",
+                                        }}
+                                    >
+                                        <img
+                                            className="article_image"
+                                            src={item.image}
+                                        />
+                                    </div>
                                 ) : (
                                     <iframe
                                         className="article_video"

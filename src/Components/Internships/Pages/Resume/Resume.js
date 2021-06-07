@@ -5,7 +5,6 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import PageFooter from "../../PageFooter";
 import { metadata } from "../../metadata";
-import { Document, Page } from "react-pdf/dist/esm/entry.webpack";
 import PdfViewer from "./pdfViewer";
 import "../global.css";
 import "./Resume.css";
@@ -37,22 +36,27 @@ const Resume = ({ callback, list }) => {
                     As recommended by students, for students.
                 </p>
                 <div style={{ width: "auto", marginTop: "40px" }}>
-                    <button className="download">
-                        <IconContext.Provider
-                            value={{
-                                color: "#03ccac",
-                                display: "inline",
-                                marginRight: "5px",
-                            }}
-                        >
-                            {/* <a href={list[focus].linkedin}> */}
-                            <div className="icon">
-                                <HiUpload />
-                            </div>
-                            {/* </a> */}
-                        </IconContext.Provider>
-                        Share my resume
-                    </button>
+                    <a
+                        href={"https://forms.gle/tW6YTaeDzXV6FKif6"}
+                        target="_blank"
+                    >
+                        <button className="download">
+                            <IconContext.Provider
+                                value={{
+                                    color: "#03ccac",
+                                    display: "inline",
+                                    marginRight: "5px",
+                                }}
+                            >
+                                {/* <a href={list[focus].linkedin}> */}
+                                <div className="icon">
+                                    <HiUpload />
+                                </div>
+                                {/* </a> */}
+                            </IconContext.Provider>
+                            Share your resume
+                        </button>
+                    </a>
                 </div>
             </div>
             <div className="resume_slider">
@@ -74,7 +78,10 @@ const Resume = ({ callback, list }) => {
             <div className="resume_details">
                 <div className="profile">
                     <div style={{ display: "flex", flexDirection: "row" }}>
-                        <img src={list[focus].image} className="avatar" />
+                        <img
+                            src={list[focus].image}
+                            className="resume_avatar"
+                        />
                         <div
                             style={{
                                 display: "flex",

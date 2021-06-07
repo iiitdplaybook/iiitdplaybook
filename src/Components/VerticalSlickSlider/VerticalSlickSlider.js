@@ -42,7 +42,6 @@ export default function VerticalSlickSlider({ properties }) {
                 >
                     <div style={{ width: "27vw" }}>
                         <div>
-                            {console.log(properties.slice(0, c1))}
                             {properties.slice(0, c1).map((element) => (
                                 <>
                                     <Card cardsData={element} />
@@ -53,7 +52,6 @@ export default function VerticalSlickSlider({ properties }) {
                     </div>
                     <div style={{ width: "27vw" }}>
                         <div>
-                            {console.log(properties.slice(c1, c2))}
                             {properties.slice(c1, c2).map((element) => (
                                 <>
                                     <div style={{ height: "120px" }}></div>
@@ -64,7 +62,6 @@ export default function VerticalSlickSlider({ properties }) {
                     </div>
                     <div style={{ width: "27vw" }}>
                         <div>
-                            {console.log(properties.slice(c2))}
                             {properties.slice(c2).map((element) => (
                                 <>
                                     <Card cardsData={element} />

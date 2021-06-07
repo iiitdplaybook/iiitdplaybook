@@ -5,9 +5,9 @@
     justify-content: center;
     grid-template-columns: repeat(auto-fill, minmax(23em, 1fr));
     grid-template-rows: auto;
-    grid-auto-rows: 264.4px;
+    grid-auto-rows: max-content;
     justify-items: center;
-    margin-bottom: 15em;
+    margin-bottom: 5em;
 }
 
 .article_card {
@@ -55,7 +55,7 @@
 }
 
 .article_image {
-    width: 100%;
+    width: 80%;
     display: block;
     margin-bottom: 10px;
 }
