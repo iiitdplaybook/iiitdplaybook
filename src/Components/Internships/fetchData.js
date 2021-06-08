@@ -169,3 +169,66 @@ export const fetchPrepVideos = async ({ setPrepVideos }) => {
     });
     setPrepVideos(PrepVideos);
 };
+
+export const fetchExpTest = async ({ setExpTest }) => {
+    let testData = [];
+    const expRef = firebase
+        .database()
+        .ref("Testimonies/Placement-Internship Experience");
+    await expRef.once("value", (snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+            if (childSnapshot.val().isApproved == "true") {
+                let dict = {};
+                dict.UserAvatar = childSnapshot.val().userAvatar;
+                dict.Text = childSnapshot.val().text;
+                dict.Name = childSnapshot.val().name;
+                dict.Topic = "Placement-Internship Experience";
+                dict.isApproved = true;
+                testData.push(dict);
+            }
+        });
+    });
+    setExpTest(testData);
+};
+
+export const fetchtipsTest = async ({ setTipsTest }) => {
+    let tipsData = [];
+    const tipsRef = firebase
+        .database()
+        .ref("Testimonies/Placement-Interview Tips");
+    await tipsRef.once("value", (snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+            if (childSnapshot.val().isApproved == "true") {
+                let dict = {};
+                dict.UserAvatar = childSnapshot.val().userAvatar;
+                dict.Text = childSnapshot.val().text;
+                dict.Name = childSnapshot.val().name;
+                dict.Topic = "Placement-Interview Tips";
+                dict.isApproved = true;
+                tipsData.push(dict);
+            }
+        });
+    });
+    setTipsTest(tipsData);
+};
+
+export const fetchResumeTest = async ({ setResumeTest }) => {
+    let resumeData = [];
+    const resumeRef = firebase
+        .database()
+        .ref("Testimonies/Placement-Resume Tips");
+    await resumeRef.once("value", (snapshot) => {
+        snapshot.forEach((childSnapshot) => {
+            if (childSnapshot.val().isApproved == "true") {
+                let dict = {};
+                dict.UserAvatar = childSnapshot.val().userAvatar;
+                dict.Text = childSnapshot.val().text;
+                dict.Name = childSnapshot.val().name;
+                dict.Topic = "Placement-Resume Tips";
+                dict.isApproved = true;
+                resumeData.push(dict);
+            }
+        });
+    });
+    setResumeTest(resumeData);
+};

@@ -8,10 +8,10 @@ import { metadata } from "../../metadata";
 import PdfViewer from "./pdfViewer";
 import "../global.css";
 import "./Resume.css";
+import Testimonials from "../../../Testimonies/TestimonialsPlacement";
 
-const Resume = ({ callback, list }) => {
+const Resume = ({ callback, list, testimonials }) => {
     const [focus, setFocus] = useState(0);
-
     const slidesNum =
         window.innerWidth < 600
             ? Math.min(1, list.length)
@@ -133,6 +133,7 @@ const Resume = ({ callback, list }) => {
                     <PdfViewer file={list[focus].link} />
                 </div>
             </div>
+            <Testimonials portraits={testimonials} />
             <PageFooter
                 settings={{
                     left: {

@@ -4,8 +4,9 @@ import { metadata } from "../../metadata";
 import "./Experience.css";
 import "../global.css";
 import YTSlider from "../../../YTSlider/YTSlider";
+import Testimonials from "../../../Testimonies/TestimonialsPlacement";
 
-const Experience = ({ callback, list, video }) => {
+const Experience = ({ callback, list, video, testimonials }) => {
     return (
         <div
             className="experience"
@@ -85,6 +86,7 @@ const Experience = ({ callback, list, video }) => {
                     },
                 }}
             />
+            <Testimonials portraits={testimonials} />
         </div>
     );
 };

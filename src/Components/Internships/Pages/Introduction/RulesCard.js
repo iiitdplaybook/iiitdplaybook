@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Dialog, DialogContent, DialogTitle } from "@material-ui/core";
 import "./Introduction.css";
 
 const RulesCard = ({ card }) => {
-    useEffect(() => {
-        console.log(`url('${card.image}')`);
-    }, [card.image]);
-
     const [open, setOpen] = useState(false);
 
     const handleClickOpen = () => setOpen(true);
