@@ -62,6 +62,7 @@ const Experience = ({ callback, list, video, testimonials }) => {
                     );
                 })}
             </div>
+            <Testimonials portraits={testimonials} />
             <PageFooter
                 settings={{
                     left: {
@@ -86,7 +87,6 @@ const Experience = ({ callback, list, video, testimonials }) => {
                     },
                 }}
             />
-            <Testimonials portraits={testimonials} />
         </div>
     );
 };
