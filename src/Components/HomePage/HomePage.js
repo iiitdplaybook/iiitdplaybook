@@ -16,6 +16,8 @@ import ParticleAnim from '../ParticleAnim/ParticleAnim';
 import Tilt from 'react-parallax-tilt';
 import Footer from '../Footer/Footer';
 import PhasesOfCollege from './PhasesOfCollege';
+import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const babyStepsImg =
   'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/79223f1e/src/Assets/homepage_illustrations/baby_steps.png';
@@ -240,6 +242,10 @@ function HomePage() {
                     use, their experiences and stories, tools you can use to
                     help you along the way and much more!
                   </h4>
+                  <Button className='explore_button' component={Link} to={'/explore'}>
+                    {/* <Button id="guest" component={Link} to={"/"}> */}
+                    Explore The Playbook {'>'}
+                  </Button>
                 </div>
                 <div className='logo-image'>
                   <img className='imgHero' src={iiitd} />

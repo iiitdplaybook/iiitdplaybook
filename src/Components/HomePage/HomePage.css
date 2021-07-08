@@ -3,6 +3,14 @@ body {
   background: white;
 }
 
+.explore_button {
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  font-family: 'Poppins', sans-serif !important;
+  margin-top: 2% !important;
+}
+
 canvas {
   display: block;
   width: 100vw;
