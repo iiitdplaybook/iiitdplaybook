@@ -192,7 +192,7 @@ function HomePage() {
       <Navbar loggedIn={true} colorStatus={false} stickyCond={true} />
       <ReactFullpage
         fitToSection={true}
-        scrollingSpeed={1000}
+        scrollingSpeed={500}
         navigation={window.innerWidth > 600 ? true : false}
         navigationPosition={'left'}
         navigationTooltips={[

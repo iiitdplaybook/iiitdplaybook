@@ -124,6 +124,17 @@ function items() {
             opacity: 1,
             guestFilter: guestVar,
         },
+        {
+            gradientColor_1: color17,
+            gradientColor_2: color18,
+            title: "Opportunities",
+            n_testimonies: 6,
+            reading_time: 3,
+            image: imageProfproject,
+            pathLink: "explore",
+            opacity: 1,
+            guestFilter: guestVar,
+        },
         // {
         //   gradientColor_1: color5,
         //   gradientColor_2: color6,
