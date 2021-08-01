@@ -1,10 +1,10 @@
 /** @format */
-import './Explore.css';
-import React, { useState } from 'react';
-import { Button, GridList, GridListTile } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
-import itemsList from '../Utils/items';
-import Navbar from '../Navbar/Navbar';
+import "./Explore.css";
+import React, { useState } from "react";
+import { Button, GridList, GridListTile } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import itemsList from "../Utils/items";
+import Navbar from "../Navbar/Navbar";
 
 function Explore() {
   const [clickedButton, setClickedButton] = useState(1);
@@ -17,16 +17,16 @@ function Explore() {
 
   const buttonStyles = makeStyles({
     root: {
-      background: 'linear-gradient(90deg,#1EB0F6 6.32%, #2BD4DF 100%)',
+      background: "linear-gradient(90deg,#1EB0F6 6.32%, #2BD4DF 100%)",
       // boxShadow: "0px 10px 20px -2px rgba(37, 197, 233, 0.25)",
-      borderRadius: '15px',
-      border: 'none',
-      color: 'white',
+      borderRadius: "15px",
+      border: "none",
+      color: "white",
     },
     notRoot: {
-      borderRadius: '15px',
-      background: '#f0f0f0',
-      border: 'none',
+      borderRadius: "15px",
+      background: "#f0f0f0",
+      border: "none",
     },
   });
   const buttonClass = buttonStyles();
@@ -39,12 +39,12 @@ function Explore() {
   const itemCards = itemsList();
 
   return (
-    <div className='explore'>
+    <div className="explore">
       <Navbar loggedIn={true} colorStatus={true} />
-      <div className='explore__button'>
+      <div className="explore__button">
         <Button
           onClick={() => changeS(1)}
-          variant={clickedButton === 1 ? 'contatined' : 'outlined'}
+          variant={clickedButton === 1 ? "contatined" : "outlined"}
           className={
             clickedButton === 1 ? buttonClass.root : buttonClass.notRoot
           }
@@ -53,7 +53,7 @@ function Explore() {
         </Button>
         <Button
           onClick={() => changeS(2)}
-          variant={clickedButton === 2 ? 'contatined' : 'outlined'}
+          variant={clickedButton === 2 ? "contatined" : "outlined"}
           className={
             clickedButton === 2 ? buttonClass.root : buttonClass.notRoot
           }
@@ -71,13 +71,13 @@ function Explore() {
         </Button> */}
       </div>
 
-      <div className='explore__body'>
+      <div className="explore__body">
         {clickedButton === 1 ? (
-          <div className='cardsDiv'>{itemCards['allCards']}</div>
-        ) : clickedButton === 2 (
-          <div className='cardsDiv'>{itemCards['recommendedCards']}</div>
+          <div className="cardsDiv">{itemCards["allCards"]}</div>
+        ) : (
+          <div className="cardsDiv">{itemCards["recommendedCards"]}</div>
         )}
-        {/* //  : (
+        {/* //  : clickedButton === 2 (
         //   <div className='cardsDiv'>{itemCards['favCards']}</div>
         // )} */}
       </div>
