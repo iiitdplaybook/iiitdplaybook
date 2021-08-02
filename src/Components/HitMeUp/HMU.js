@@ -10,37 +10,37 @@ import zIndex from "@material-ui/core/styles/zIndex";
 
 function HMU() {
   const [clickedButton, setClickedButton] = useState(0);
-  const [supplies, setSupplies] = useState([]);
-  const categories = ["All", "Career", "Design", "Resume", "Journey"];
+  const [hitmeups, setHitmeups] = useState([]);
+  const categories = ["All", "Career", "Design", "Resume", "Research"];
 
-  const getSupplies = async () => {
-    const allHMURef = firebase.database().ref("hitmeup");
+  const getHitmeups = async () => {
+    const allHMURef = firebase.database().ref("HitMeUp");
     await allHMURef.once("value", (snapshot) => {
       let items = [];
       snapshot.forEach((child) => {
         const dict = {};
         dict.name = child.val().name;
-        dict.tags = child.val().tags;
+        dict.category = child.val().category;
         dict.image = child.val().imageURL;
         dict.linkedin = child.val().linkedin;
         dict.contact = child.val().contact;
         dict.expertise = child.val().expertise;
-        dict.batch = child.val().Batch;
+        dict.batch = child.val().batch;
         dict.key = child.key;
         items.push(dict);
       });
-      setSupplies(items);
+      setHitmeups(items);
     });
-    return supplies;
+    return hitmeups;
   };
 
   useEffect(() => {
-    getSupplies();
+    getHitmeups();
   }, []);
 
-  const getSuppliesByCategory = (category) =>
-    supplies.filter((supply) => {
-      return supply.category ? supply.category.includes(category) : false;
+  const getHitmeupsByCategory = (category) =>
+    hitmeups.filter((item) => {
+      return item.category ? item.category.includes(category) : false;
     });
 
   const buttonStyles = makeStyles({
@@ -94,12 +94,12 @@ function HMU() {
         </a>
         {clickedButton === 0 ? (
           <div className="cardsDiv_supply">
-            <HMUCardGrid itemList={supplies} />
+            <HMUCardGrid itemList={hitmeups} />
           </div>
         ) : (
           <div className="cardsDiv_supply">
             <HMUCardGrid
-              itemList={getSuppliesByCategory(
+              itemList={getHitmeupsByCategory(
                 categories[clickedButton].split(" ")[0]
               )}
             />

@@ -7,6 +7,7 @@ import {
   Typography,
   CardMedia,
   Tooltip,
+  Link,
 } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import firebase from "firebase";
@@ -115,7 +116,8 @@ function HMUCard({ item, uid }) {
             <Button
               size="small"
               className={classes.button}
-              onClick={handleClick}
+              target="_blank"
+              href={item.linkedin}
             >
               <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>
             </Button>
@@ -124,7 +126,8 @@ function HMUCard({ item, uid }) {
             <Button
               size="small"
               className={classes.button}
-              onClick={handleClick}
+              target="_blank"
+              href={item.contact}
             >
               <i class="fa fa-calendar fa-lg" aria-hidden="true"></i>
             </Button>
@@ -162,7 +165,7 @@ function HMUCard({ item, uid }) {
             <Typography className={classes.info} color="textSecondary">
               <i class="fa fa-comments"></i>
               &nbsp;
-              {item.tags}
+              {item.category.join(", ")}
             </Typography>
           </CardContent>
         </a>
