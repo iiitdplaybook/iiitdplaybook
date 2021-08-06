@@ -12,6 +12,9 @@ import {
 import { makeStyles } from "@material-ui/core/styles";
 import firebase from "firebase";
 import "./HMU.css";
+import mixpanel from 'mixpanel-browser';
+import mixpanel_secret from '../../#secret/mixpanel_secret';
+
 
 function HMUCard({ item, uid }) {
   const cardHeight = 280;
@@ -97,7 +100,12 @@ function HMUCard({ item, uid }) {
   });
   const classes = useStyles();
 
-  const handleClick = () => {};
+  mixpanel.init(mixpanel_secret.PROJECT_TOKEN, {debug:true, ignore_dnt: true})
+  mixpanel.identify(firebase.auth().currentUser.uid)
+
+  function handleCalendarClick(link){
+    mixpanel.track('Calendly Link Clicked', {'link':link})
+  }
 
   return (
     <Card
@@ -113,6 +121,7 @@ function HMUCard({ item, uid }) {
               size="small"
               className={classes.button}
               target="_blank"
+              rel="noreferrer"
               href={item.linkedin}
             >
               <i class="fa fa-linkedin fa-lg" aria-hidden="true"></i>
@@ -123,7 +132,9 @@ function HMUCard({ item, uid }) {
               size="small"
               className={classes.button}
               target="_blank"
+              rel="noreferrer"
               href={item.contact}
+              onClick={()=>handleCalendarClick(item.contact)}
             >
               <i class="fa fa-calendar fa-lg" aria-hidden="true"></i>
             </Button>
