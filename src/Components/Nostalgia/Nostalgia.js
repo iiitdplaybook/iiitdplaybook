@@ -38,6 +38,10 @@ const prateek =
   'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/prateek.jpg';
 const jubin =
   'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/jubin.jpg';
+const jubin2 =
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/58b5123f/src/Assets/NostalgiaPics/jubin2.jpg';
+const progressivebrothers =
+  'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/58b5123f/src/Assets/NostalgiaPics/odyssey_2017.jpg';
 const image1 =
   'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/NostalgiaPics/DSC_001.JPG';
 const image2 =
@@ -70,6 +74,8 @@ function Nostalgia() {
     { pic: image2, name: '18 January 2020' },
     { pic: image3, name: '19 January 2020' },
     { pic: image4, name: '19 January 2020' },
+    { pic: jubin2, name: '19 January 2020' },
+    { pic: progressivebrothers, name: '24 March 2017' },
     { pic: jubin, name: '18 January 2020' },
     { pic: jubin, name: '19 January 2020' },
     { pic: prateek, name: '19 January 2020' },
