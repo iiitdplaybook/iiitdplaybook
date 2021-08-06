@@ -1,0 +1,195 @@
+.introduction {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.heading {
+    margin-bottom: 30px;
+}
+
+.research_vs_internship {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+}
+
+.card {
+    background: rgba(239, 239, 239, 0.5);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 65px;
+    border-radius: 20px;
+    line-height: 28px;
+}
+
+.card h1 {
+    text-align: center;
+    font-size: 34px;
+    color: #04abb0;
+    font-weight: 900;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.card:first-of-type {
+    margin-right: 30px;
+}
+.card:last-of-type {
+    margin-left: 30px;
+}
+
+.card img {
+    margin: 30px 0;
+}
+
+.slick-active {
+    width: auto !important;
+}
+
+.vs {
+    color: #03ccac !important;
+    background: white;
+    padding: 40px;
+    border-radius: 50%;
+    font-size: 50px;
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card li {
+    margin: 10px 0;
+}
+
+.rules_card {
+    position: relative;
+    color: white;
+    margin: 1em;
+    box-shadow: 6px 8px 20px -8px grey;
+    border-radius: 20px;
+}
+
+.rules_card img {
+    max-width: 20vw;
+    display: block;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+.rules_card p {
+    position: absolute;
+    font-weight: 600;
+    bottom: 40px;
+    left: 50px;
+    color: white;
+    font-size: 32px;
+}
+
+.introduction .slick-next:before,
+.introduction .slick-prev:before {
+    color: #9494946e;
+    opacity: 1;
+}
+
+.introduction .slick-dots li.slick-active button:before {
+    color: #03ccac;
+    opacity: 0.75;
+    font-size: 9px;
+}
+
+.introduction .slick-dots li button:before {
+    color: #e6e6e6;
+    opacity: 0.75;
+    font-size: 9px;
+}
+
+.tips_grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: max-content;
+}
+
+.tip_card {
+    min-height: 200px;
+    min-width: 180px;
+    width: 18em;
+    margin: 0em 5em;
+    border-radius: 8px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 15px;
+}
+
+.tip_card img {
+    max-width: 25em;
+    border-radius: 8px;
+}
+
+@media only screen and (max-width: 600px) {
+    .research_vs_internship {
+        margin-top: 20px;
+        flex-direction: column;
+        position: relative;
+    }
+
+    .card {
+        padding: 30px 20px;
+        line-height: 20px;
+    }
+
+    .card h1 {
+        font-size: 28px;
+    }
+
+    .card:first-of-type {
+        margin-right: 0;
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+    }
+    .card:last-of-type {
+        margin-left: 0;
+        padding-top: 60px;
+    }
+
+    .card img {
+        display: block;
+        width: 150px;
+    }
+
+    .vs {
+        color: #03ccac !important;
+        padding: 30px;
+        font-size: 30px;
+        top: 45%;
+    }
+
+    .card li {
+        font-size: 12px;
+    }
+
+    .rules_card img {
+        max-width: 200px;
+    }
+
+    .rules_card p {
+        position: absolute;
+        font-weight: 600;
+        bottom: 20px;
+        left: 20px;
+        color: white;
+        font-size: 24px;
+    }
+
+    .nav_illustration {
+        display: none;
+    }
+}

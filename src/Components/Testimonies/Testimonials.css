@@ -1,21 +1,71 @@
 #containerHeader {
-  display: flex;
-  height: 5%;
-  margin-left: 3%;
-  margin-top: 1%;
+    display: flex;
+    height: 5%;
+    margin-left: 3%;
+    margin-top: 1%;
 }
 
 .Marquee:hover {
-  animation-play-state: paused !important;
+    animation-play-state: paused !important;
 }
 
 .slick-dots li button:before {
-  color: #fff;
-  opacity: 0.5;
+    color: #fff;
+    opacity: 0.5;
 }
 
 .slick-dots li.slick-active button:before {
-  opacity: 0.75;
-  color: #fff;
-  font-size: 12px;
+    opacity: 0.75;
+    color: #fff;
+    font-size: 12px;
+}
+
+.box {
+    padding: 10px;
+    vertical-align: middle;
+}
+
+.review {
+    width: 200px;
+    padding: 17px;
+    background: #fff;
+    border-radius: 4px;
+    height: 250px;
+    border-color: linear-gradient(90deg, #1eb0f6 6.32%, #2bd4df 100%);
+    box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 1.5em;
+    height: 1.5em;
+    overflow: hidden;
+    flex-shrink: 0;
+    margin-right: 3px;
+}
+
+#containerHeader .avatar img {
+    width: 100%;
+}
+
+#containerHeader .name p {
+    margin: 0.5em;
+    color: red;
+    font-family: Poppins, sans-serif;
+    font-size: 14px;
+    line-height: 7px;
+    font-weight: 100;
+    text-align: left;
+}
+
+.content p {
+    margin-top: 20px;
+    /* margin: 8px; */
+    color: #382f70;
+    font-family: Poppins, sans-serif;
+    font-size: 11px;
+    line-height: 16px;
+    font-weight: 100;
+    text-align: left;
 }

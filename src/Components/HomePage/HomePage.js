@@ -8,7 +8,7 @@ import Stars from '../Stars/stars';
 
 import Clouds from '../Clouds/clouds';
 import Testimonials from '../Testimonies/Testimonials';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 
 import ReactFullpage from '@fullpage/react-fullpage';
@@ -16,6 +16,8 @@ import ParticleAnim from '../ParticleAnim/ParticleAnim';
 import Tilt from 'react-parallax-tilt';
 import Footer from '../Footer/Footer';
 import PhasesOfCollege from './PhasesOfCollege';
+import { Button } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 const babyStepsImg =
   'https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/79223f1e/src/Assets/homepage_illustrations/baby_steps.png';
@@ -181,7 +183,7 @@ function HomePage() {
   useEffect(() => {
     for (let i = 0; i < numSections; i++) {
       sectionsRef[i].setAttribute('style', 'height:100vh', '!important');
-      console.log(sectionsRef[i]);
+      // console.log(sectionsRef[i]);
     }
   });
 
@@ -190,7 +192,7 @@ function HomePage() {
       <Navbar loggedIn={true} colorStatus={false} stickyCond={true} />
       <ReactFullpage
         fitToSection={true}
-        scrollingSpeed={1000}
+        scrollingSpeed={500}
         navigation={window.innerWidth > 600 ? true : false}
         navigationPosition={'left'}
         navigationTooltips={[
@@ -223,7 +225,7 @@ function HomePage() {
                         {greetingList?.[randi]?.[0]}
                         {userName.split(' ')[0]}
                         {greetingList?.[randi]?.[1]}
-                        {console.log(greetingList)}
+                        {/* {console.log(greetingList)} */}
                       </h1>
                     )}
                   </Tilt>
@@ -240,6 +242,10 @@ function HomePage() {
                     use, their experiences and stories, tools you can use to
                     help you along the way and much more!
                   </h4>
+                  <Button className='explore_button' component={Link} to={'/explore'}>
+                    {/* <Button id="guest" component={Link} to={"/"}> */}
+                    Explore The Playbook {'>'}
+                  </Button>
                 </div>
                 <div className='logo-image'>
                   <img className='imgHero' src={iiitd} />

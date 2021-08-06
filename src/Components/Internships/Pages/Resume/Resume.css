@@ -1,0 +1,207 @@
+.resume {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.upper_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page_title {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 40px;
+}
+
+.download {
+    background: white;
+    color: #03ccac;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    border: solid 1px #03ccac;
+    border-radius: 8px;
+    padding: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex: content !important;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.download:hover {
+    background: #03ccab17;
+}
+
+.download .icon {
+    margin-right: 5px;
+    margin-bottom: -3px;
+}
+
+.resume_slider {
+    margin-top: 40px;
+}
+
+.container {
+    margin: 20px;
+}
+
+.resume_img {
+    height: 300px;
+    /* width: 150px; */
+    border: 1px solid rgba(0, 0, 0, 0.212);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.resume_img.active {
+    border: 3px solid #03ccac;
+}
+
+.resume_details {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile .header {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile .header h1 {
+    font-size: 28px;
+}
+
+.resume_avatar {
+    width: 80px;
+    margin-right: 10px;
+    border-radius: 6px;
+}
+
+.linkedin_icon {
+    background: #e6e6e6;
+    padding: 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    vertical-align: middle;
+    margin-left: 10px;
+}
+
+.linkedin_link {
+    margin: 0px;
+}
+
+.icon {
+    height: 20px;
+    width: 20px;
+}
+
+.company_tag {
+    background: #03ccac;
+    padding: 5px 8px;
+    color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+
+.full_resume img {
+    max-width: 1000px;
+    filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
+}
+
+.full_resume {
+    align-self: center;
+    margin-top: 20px;
+}
+
+.resume .slick-next:before,
+.resume .slick-prev:before {
+    color: #03ccac;
+    opacity: 1;
+}
+
+.resume .slick-dots li.slick-active button:before {
+    color: #03ccac;
+    opacity: 0.75;
+    font-size: 9px;
+}
+
+.resume .slick-dots li button:before {
+    color: #e6e6e6;
+    opacity: 0.75;
+    font-size: 9px;
+}
+
+@media only screen and (max-width: 600px) {
+    .resume {
+        width: 100%;
+    }
+
+    .resume_img {
+        height: 250px;
+    }
+
+    .page_title {
+        font-size: 22px;
+    }
+
+    .avatar {
+        display: block;
+        max-width: 60px;
+        max-height: 60px;
+    }
+
+    .profile .header h1 {
+        font-size: 18px;
+        display: inline;
+        /* width: min-content; */
+    }
+
+    .profile .header {
+        justify-content: space-between;
+    }
+
+    .profile .batch {
+        font-size: 14px;
+    }
+
+    .linkedin_icon {
+        padding: 8px;
+        height: min-content;
+    }
+
+    .icon {
+        display: block;
+        height: 15px;
+        width: 15px;
+    }
+
+    .company_tag {
+        font-size: 13px;
+    }
+
+    .full_resume img {
+        max-width: 700px;
+        filter: drop-shadow(0px 4px 20px rgba(0, 0, 0, 0.15));
+    }
+
+    .full_resume {
+        overflow: scroll;
+        width: 90vw;
+    }
+}

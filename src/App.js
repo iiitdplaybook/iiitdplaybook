@@ -1,63 +1,68 @@
 /** @format */
 
-import './App.css';
-import React, { Suspense, useEffect, useState } from 'react';
-import HomePage from './Components/HomePage/HomePage';
-import Footer from './Components/Footer/Footer';
-import Login from './Components/Login/Login';
+import "./App.css";
+import React, { Suspense, useEffect, useState } from "react";
+import HomePage from "./Components/HomePage/HomePage";
+import Footer from "./Components/Footer/Footer";
+import Login from "./Components/Login/Login";
 
-import firebase from 'firebase';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import { useStateValue } from './StateProvider';
+import firebase from "firebase";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { useStateValue } from "./StateProvider";
 
-import LoadingScreen from './Components/Utils/loading';
+import LoadingScreen from "./Components/Utils/loading";
 
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
-import { isMobile } from 'react-device-detect';
-import ScrollToTop from './Components/Utils/ScrollToTop';
-import Spinner from './Components/Utils/loading';
-import { ToastContainer, toast } from 'react-toastify';
-import '../node_modules/react-toastify/dist/ReactToastify.css';
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { isMobile } from "react-device-detect";
+import ScrollToTop from "./Components/Utils/ScrollToTop";
+import Spinner from "./Components/Utils/loading";
+import { ToastContainer, toast } from "react-toastify";
+import "../node_modules/react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [{}, dispatch] = useStateValue();
   const [loading, setLoading] = useState(true);
 
   const TestimoniesForm = React.lazy(() =>
-    import('./Components/Forms/TestimoniesForm')
+    import("./Components/Forms/TestimoniesForm")
   );
   const Testimonials = React.lazy(() =>
-    import('./Components/Testimonies/Testimonials')
+    import("./Components/Testimonies/Testimonials")
   );
   const TalkingToFriendsSeniors = React.lazy(() =>
-    import('./Components/TalkingToFriendsSeniors/TalkingToFriendsSeniors')
+    import("./Components/TalkingToFriendsSeniors/TalkingToFriendsSeniors")
   );
-  const Supplies = React.lazy(() => import('./Components/Supplies/Supplies'));
-  const Explore = React.lazy(() => import('./Components/Explore/Explore'));
+  const Supplies = React.lazy(() => import("./Components/Supplies/Supplies"));
+  const Internships = React.lazy(() =>
+    import("./Components/Internships/Internships")
+  );
+  const Explore = React.lazy(() => import("./Components/Explore/Explore"));
   const ComingSoonTools = React.lazy(() =>
-    import('./Components/ComingSoon/ComingSoonTools')
+    import("./Components/ComingSoon/ComingSoonTools")
   );
   const TimeManagement = React.lazy(() =>
-    import('./Components/TimeManagement/TimeManagement')
+    import("./Components/TimeManagement/TimeManagement")
   );
   const Tools = React.lazy(() =>
-    import('./Components/CollegeResources/resources')
+    import("./Components/CollegeResources/resources")
   );
   const Resources = React.lazy(() =>
-    import('./Components/CollegeResources/resources')
+    import("./Components/CollegeResources/resources")
   );
   const Nostalgia = React.lazy(() =>
-    import('./Components/Nostalgia/Nostalgia')
+    import("./Components/Nostalgia/Nostalgia")
   );
+  const QnA = React.lazy(() => import("./Components/QnA/QnA"));
+  const HMU = React.lazy(() => import("./Components/HitMeUp/HMU"));
 
   toast.configure();
   const notify = () =>
-    toast.info('Sign in with IIITD mail to access', {
+    toast.info("Sign in with IIITD mail to access", {
       draggablePercent: 30,
     });
 
   function showError() {
-    toast.error('Sign in with IIITD mail to access');
+    toast.error("Sign in with IIITD mail to access");
   }
 
   useEffect(() => {
@@ -68,17 +73,17 @@ function App() {
     firebase.auth().onAuthStateChanged((authUser) => {
       if (authUser) {
         dispatch({
-          type: 'SET_USER',
+          type: "SET_USER",
           user: authUser,
           isSignedIn: true,
           userName: authUser.displayName,
         });
       } else {
         dispatch({
-          type: 'SET_USER',
+          type: "SET_USER",
           user: null,
           isSignedIn: false,
-          userName: '',
+          userName: "",
         });
       }
     });
@@ -87,7 +92,7 @@ function App() {
   const themeMain = createMuiTheme({
     palette: {
       primary: {
-        main: '#fff',
+        main: "#fff",
       },
     },
   });
@@ -95,7 +100,7 @@ function App() {
   function ifisMobile() {
     if (isMobile) {
       return (
-        <div className='popup'>
+        <div className="popup">
           <p>Hello, you are using phone so get off. Use laptop</p>
         </div>
       );
@@ -106,49 +111,55 @@ function App() {
     <>
       <ThemeProvider theme={themeMain}>
         {loading === false ? (
-          <div className='app'>
+          <div className="app">
             {ifisMobile()}
-            <div className='popup'>
-              <div className='modal_content'>
-                <span className='close'>&times;</span>
+            <div className="popup">
+              <div className="modal_content">
+                <span className="close">&times;</span>
                 <p>I'm A Pop Up!!!</p>
               </div>
             </div>
             <Router>
               <ScrollToTop />
-              {!localStorage.getItem('isSignedIn') ? (
+              {!localStorage.getItem("isSignedIn") ? (
                 <div>
                   <Switch>
                     {/* <Route path="/supplies" component={Supplies} /> */}
-                    <Route path='/supplies'>
+                    <Route path="/supplies">
                       <Suspense fallback={<Spinner />}>
                         <Supplies />
                         <Footer />
                       </Suspense>
                     </Route>
-                    <Route path='/nostalgia'>
+                    <Route path="/nostalgia">
                       <Suspense fallback={<Spinner />}>
                         <Nostalgia />
                         <Footer />
                       </Suspense>
                     </Route>
-                    <Route path='/explore'>
+                    <Route path="/quickbites">
+                      <Suspense fallback={<Spinner />}>
+                        <QnA />
+                        <Footer />
+                      </Suspense>
+                    </Route>
+                    <Route path="/explore">
                       <Suspense fallback={<Spinner />}>
                         <Explore />
                         <Footer />
                       </Suspense>
                     </Route>
-                    <Route path='/homepage'>
+                    <Route path="/homepage">
                       <Suspense fallback={<Spinner />}>
-                        <div className='app__body'>
+                        <div className="app__body">
                           <HomePage />
                         </div>
                       </Suspense>
                     </Route>
-                    <Route path='/'>
+                    <Route path="/">
                       <Suspense fallback={<Spinner />}>
                         <Login />
-                        <Footer page='login' />
+                        <Footer page="login" />
                       </Suspense>
                     </Route>
                   </Switch>
@@ -156,59 +167,76 @@ function App() {
               ) : (
                 <div>
                   <Switch>
-                    <Route path='/explore'>
+                    <Route path="/explore">
                       <Suspense fallback={<Spinner />}>
                         <Explore />
                       </Suspense>
                     </Route>
-                    <Route path='/supplies'>
+                    <Route path="/supplies">
                       <Suspense fallback={<Spinner />}>
                         <Supplies />
                       </Suspense>
                     </Route>
-                    <Route path='/nostalgia'>
+                    <Route path="/internships">
+                      <Suspense fallback={<Spinner />}>
+                        <Internships />
+                      </Suspense>
+                    </Route>
+                    <Route path="/nostalgia">
                       <Suspense fallback={<Spinner />}>
                         <Nostalgia />
                       </Suspense>
                     </Route>
-                    <Route path='/friends'>
+                    <Route path="/friends">
                       <Suspense fallback={<Spinner />}>
                         <TalkingToFriendsSeniors />
                       </Suspense>
                     </Route>
-                    <Route path='/test'>
+                    <Route path="/test">
                       <Suspense fallback={<Spinner />}>
                         <Testimonials />
                       </Suspense>
                     </Route>
-                    <Route path='/timemanagement'>
+                    <Route path="/timemanagement">
                       <Suspense fallback={<Spinner />}>
                         <TimeManagement />
                       </Suspense>
                     </Route>
-                    <Route path='/tools'>
+                    <Route path="/quickbites">
+                      <Suspense fallback={<Spinner />}>
+                        <QnA />
+                      </Suspense>
+                    </Route>
+                    <Route path="/tools">
                       <Suspense fallback={<Spinner />}>
                         <Tools />
                       </Suspense>
                     </Route>
-                    <Route path='/ComingSoonTools'>
+                    <Route path="/ComingSoonTools">
                       <Suspense fallback={<Spinner />}>
                         <ComingSoonTools />
                       </Suspense>
                     </Route>
-                    <Route path='/resources'>
+                    <Route path="/resources">
                       <Suspense fallback={<Spinner />}>
                         <Resources />
                       </Suspense>
                     </Route>
-                    <Route path='/contribute/testimonies'>
+                    <Route path="/contribute/testimonies">
                       <Suspense fallback={<Spinner />}>
                         <TestimoniesForm />
                       </Suspense>
                     </Route>
-                    <Route path='/'>
+                    <Route path="/hmu">
                       <Suspense fallback={<Spinner />}>
-                        <div className='app__body'>
+                        <div className="app__body">
+                          <HMU />
+                        </div>
+                      </Suspense>
+                    </Route>
+                    <Route path="/">
+                      <Suspense fallback={<Spinner />}>
+                        <div className="app__body">
                           <HomePage />
                         </div>
                       </Suspense>
