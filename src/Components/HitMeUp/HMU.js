@@ -11,7 +11,7 @@ import zIndex from "@material-ui/core/styles/zIndex";
 function HMU() {
   const [clickedButton, setClickedButton] = useState(0);
   const [hitmeups, setHitmeups] = useState([]);
-  const categories = ["All", "Career", "Design", "Resume", "Research"];
+  const categories = ["All"];
 
   const getHitmeups = async () => {
     const allHMURef = firebase.database().ref("HitMeUp");
