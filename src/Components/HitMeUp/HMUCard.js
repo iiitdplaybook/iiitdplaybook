@@ -13,7 +13,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import firebase from "firebase";
 import "./HMU.css";
 import mixpanel from 'mixpanel-browser';
-import mixpanel_secret from '../../#secret/mixpanel_secret';
+import mixpanel_secret from '../../secret/mixpanel_secret';
 
 
 function HMUCard({ item, uid }) {
