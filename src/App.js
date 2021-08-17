@@ -61,6 +61,9 @@ function App() {
         import("./Components/ResolvingQueries/ResolvingQueries")
     );
     const Clubs = React.lazy(() => import("./Components/Clubs/Clubs"));
+    const Opportunities = React.lazy(() =>
+        import("./Components/Opportunities/Opportunities")
+    );
 
     toast.configure();
     const notify = () =>
@@ -259,6 +262,13 @@ function App() {
                                             <Suspense fallback={<Spinner />}>
                                                 <div className="app__body">
                                                     <Clubs />
+                                                </div>
+                                            </Suspense>
+                                        </Route>
+                                        <Route path="/opportunities">
+                                            <Suspense fallback={<Spinner />}>
+                                                <div className="app__body">
+                                                    <Opportunities />
                                                 </div>
                                             </Suspense>
                                         </Route>
