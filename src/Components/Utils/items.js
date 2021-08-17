@@ -165,8 +165,8 @@ function items() {
             n_testimonies: 6,
             reading_time: 3,
             image: imageClubs,
-            pathLink: "explore",
-            opacity: opac,
+            pathLink: "clubs",
+            opacity: 1,
             guestFilter: guestVar,
         },
         {
