@@ -40,6 +40,16 @@ const Opportunities = () => {
                     </div>
                 </div>
             </div>
+
+            {/* <div className="introduction">
+                <div className="card">
+                    <b>Google Summer of code</b>
+                    <div className="tagContainter">
+                        <div className="tag">Coding</div>
+                        <div className="tag">Development</div>
+                    </div>
+                </div>
+            </div> */}
         </div>
     );
 };

@@ -64,6 +64,7 @@ function App() {
     const Opportunities = React.lazy(() =>
         import("./Components/Opportunities/Opportunities")
     );
+    const Talking = React.lazy(() => import("./Components/Talking/Talking"));
 
     toast.configure();
     const notify = () =>
@@ -269,6 +270,13 @@ function App() {
                                             <Suspense fallback={<Spinner />}>
                                                 <div className="app__body">
                                                     <Opportunities />
+                                                </div>
+                                            </Suspense>
+                                        </Route>
+                                        <Route path="/talking">
+                                            <Suspense fallback={<Spinner />}>
+                                                <div className="app__body">
+                                                    <Talking />
                                                 </div>
                                             </Suspense>
                                         </Route>
