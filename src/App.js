@@ -57,6 +57,9 @@ function App() {
     const ProjectWithProfs = React.lazy(() =>
         import("./Components/ProjectWithProfs/ProjectWithProfs")
     );
+    const ResolvingQueries = React.lazy(() =>
+        import("./Components/ResolvingQueries/ResolvingQueries")
+    );
 
     toast.configure();
     const notify = () =>
@@ -241,6 +244,13 @@ function App() {
                                             <Suspense fallback={<Spinner />}>
                                                 <div className="app__body">
                                                     <ProjectWithProfs />
+                                                </div>
+                                            </Suspense>
+                                        </Route>
+                                        <Route path="/queries">
+                                            <Suspense fallback={<Spinner />}>
+                                                <div className="app__body">
+                                                    <ResolvingQueries />
                                                 </div>
                                             </Suspense>
                                         </Route>

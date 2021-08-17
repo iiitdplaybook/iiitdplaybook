@@ -187,8 +187,8 @@ function items() {
             n_testimonies: 6,
             reading_time: 3,
             image: imageQuery,
-            pathLink: "explore",
-            opacity: opac,
+            pathLink: "queries",
+            opacity: 1,
             guestFilter: guestVar,
         },
         {
