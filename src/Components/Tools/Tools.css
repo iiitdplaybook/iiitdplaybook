@@ -1,0 +1,68 @@
+.tools__button {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  transition: ease-in-out 0.2s;
+  font-family: "Poppins", sans-serif;
+}
+
+.tools__button > button {
+  margin: 10px;
+  transition: ease-in-out 0.2s;
+}
+
+.tools__body {
+  transition: ease-in-out 0.3s;
+  font-family: "Poppins", sans-serif;
+  margin: 5%;
+}
+
+.tools__body .MuiButton-label {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+}
+
+.CardActionArea {
+  margin-top: 1%;
+}
+
+.cardsDiv {
+  display: grid;
+  grid-gap: 5px;
+  grid-row-gap: 40px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(16em, 1fr));
+  grid-template-rows: auto;
+  grid-auto-rows: 264.4px;
+  justify-items: center;
+}
+
+.embedContainer {
+  box-shadow: 0 12.5px 50px -10px rgb(50 50 73 / 30%),
+    0 10px 10px -10px rgb(50 50 73 / 20%);
+  border-radius: 12px;
+  width: 90vw;
+  min-height: 90vh;
+}
+
+.embedContainer p {
+  text-align: center;
+  padding: 2%;
+}
+
+.docEmbed {
+  width: 100%;
+  min-height: 100vh;
+  border: none;
+  border-radius: 12px;
+}
+
+@media only screen and (max-width: 600px) {
+  .tools__button .MuiButton-label {
+    font-size: 0.7em;
+  }
+
+  .tools__body {
+    margin-bottom: 20%;
+  }
+}
