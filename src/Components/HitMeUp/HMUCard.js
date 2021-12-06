@@ -41,12 +41,8 @@ function HMUCard({ item, uid }) {
       justifyContent: "center",
     },
     media: {
-      minWidth: "100%",
-      border: "none",
-      margin: "0",
-      objectFit: "contain",
+      height: "100%",
       position: "absolute",
-      zIndex: "0",
     },
     content: {
       display: "flex",
