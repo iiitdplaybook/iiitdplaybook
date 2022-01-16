@@ -92,7 +92,7 @@ export default function Tools() {
           </div>
         ) : (
           <div className="embedContainer">
-            <p>Creators - Kshitij Agrawal</p>
+            <p>Creators - Kshitij Agrawal (click to edit the sheet)</p>
             <a href="https://docs.google.com/spreadsheets/d/1aMWCxWWUuGYMMMbub6ah_Y8oGt6N3azj4lUSEag2XsQ/edit?usp=sharing">
               <img
                 target="_blank"
