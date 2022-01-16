@@ -95,8 +95,9 @@ export default function Tools() {
             <p>Creators - Kshitij Agrawal</p>
             <a href="https://docs.google.com/spreadsheets/d/1aMWCxWWUuGYMMMbub6ah_Y8oGt6N3azj4lUSEag2XsQ/edit?usp=sharing">
               <img
+                target="_blank"
                 class="docEmbed"
-                src="https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/tools/collegecredits.png"
+                src="https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/e0e24ee4/src/Assets/tools/collegecredits.png"
               ></img>
             </a>
           </div>
