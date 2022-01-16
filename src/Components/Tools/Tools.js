@@ -94,7 +94,10 @@ export default function Tools() {
           <div className="embedContainer">
             <p>Creators - Kshitij Agrawal</p>
             <a href="https://docs.google.com/spreadsheets/d/1aMWCxWWUuGYMMMbub6ah_Y8oGt6N3azj4lUSEag2XsQ/edit?usp=sharing">
-              <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRsEI0yaF_ijoMDUss80GQycrcVO9gXQezURxXLWGIZeJ1zs3kQD5-HL3qjECGN-SLRNcTZ4CvZVg1p/pubhtml?widget=true&amp;headers=false"></iframe>
+              <img
+                class="docEmbed"
+                src="https://cdn.statically.io/gh/iiitdplaybook/iiitdplaybook/7a661570/src/Assets/tools/collegecredits.png"
+              ></img>
             </a>
           </div>
         )}
