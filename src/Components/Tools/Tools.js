@@ -83,18 +83,19 @@ export default function Tools() {
         ) : clickedButton === 2 ? (
           <div className="embedContainer">
             <p>Creators - Sahil Yadav and Abhishek Goyal</p>
-            <iframe
-              class="docEmbed"
-              src="https://docs.google.com/document/d/e/2PACX-1vQXQ0Vc6hvTp7UM8ZGL3tQZZOIv3L8rickxVwfpSINkOglsZ7vw0VhNmbLB6CfHFcPb3cZJpz9KkoUH/pub?embedded=true"
-            ></iframe>
+            <a href="https://docs.google.com/document/d/1v8EJcxPvXgtNYNFtnUjrvdiP3F5UZMM3vqw7HcDsN7A/edit">
+              <iframe
+                class="docEmbed"
+                src="https://docs.google.com/document/d/e/2PACX-1vQXQ0Vc6hvTp7UM8ZGL3tQZZOIv3L8rickxVwfpSINkOglsZ7vw0VhNmbLB6CfHFcPb3cZJpz9KkoUH/pub?embedded=true"
+              ></iframe>
+            </a>
           </div>
         ) : (
           <div className="embedContainer">
-            <p>
-              Coming soon. <br />
-              <br />
-              Do you have more ideas? Reach out to us!
-            </p>
+            <p>Creators - Kshitij Agrawal</p>
+            <a href="https://docs.google.com/spreadsheets/d/1aMWCxWWUuGYMMMbub6ah_Y8oGt6N3azj4lUSEag2XsQ/edit?usp=sharing">
+              <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRsEI0yaF_ijoMDUss80GQycrcVO9gXQezURxXLWGIZeJ1zs3kQD5-HL3qjECGN-SLRNcTZ4CvZVg1p/pubhtml?widget=true&amp;headers=false"></iframe>
+            </a>
           </div>
         )}
       </div>
