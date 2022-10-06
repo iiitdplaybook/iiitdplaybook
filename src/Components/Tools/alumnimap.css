@@ -1,0 +1,82 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+.marker {
+  display: block;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  background-size: cover;
+  transition: padding 0.3s linear;
+}
+
+.marker:hover {
+  border: solid 2px white;
+  padding: 0.3%;
+  z-index: 100;
+}
+
+.mapbox-logo {
+  display: none;
+}
+.mapboxgl-ctrl-logo {
+  display: none !important;
+}
+.mapbox-improve-map {
+  display: none;
+}
+.mapboxgl-ctrl-compass {
+  display: none;
+}
+
+#btn-spin {
+  font: bold 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+  background-color: #3386c0;
+  color: #fff;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  z-index: 1;
+  border: none;
+  width: 200px;
+  margin-left: -100px;
+  display: block;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 3px;
+}
+#btn-spin:hover {
+  background-color: #4ea0da;
+}
+
+.mapboxgl-popup {
+  max-width: 400px;
+  border-radius: 12px;
+  font: 12px/20px "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.mapboxgl-popup-close-button {
+  display: none;
+}
+
+.sidebar {
+  background-color: rgba(35, 55, 75, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  font-family: monospace;
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 12px;
+  border-radius: 4px;
+}

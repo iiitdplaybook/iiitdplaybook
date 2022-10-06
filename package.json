@@ -17,6 +17,7 @@
         "firebase": "^8.1.1",
         "framer-motion": "^2.9.5",
         "lodash": "^4.17.20",
+        "mapbox-gl": "^2.10.0",
         "material-ui-icons": "^1.0.0-beta.36",
         "mixpanel-browser": "^2.41.0",
         "node-sass": "4.14.1",
@@ -82,5 +83,8 @@
             "last 1 firefox version",
             "last 1 safari version"
         ]
+    },
+    "devDependencies": {
+        "html-loader": "^4.2.0"
     }
 }
