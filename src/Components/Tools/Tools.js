@@ -161,8 +161,11 @@ export default function Tools() {
           </div>
         ) : clickedButton === 5 ? (
           <div className="embedContainer">
-            Hello
-            {/* <Alumnimap /> */}
+            <iframe
+              title="Alumni Map"
+              class="docEmbed"
+              src="https://alumnimapiiitd.netlify.app/"
+            ></iframe>
             <p>Creators - Playbook</p>
           </div>
         ) : (
