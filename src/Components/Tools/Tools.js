@@ -2,7 +2,7 @@ import "./Tools.css";
 import React, { useState } from "react";
 import { Button, GridList, GridListTile } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
-import itemsList from "../Utils/items";
+// import itemsList from "../Utils/items";
 import Navbar from "../Navbar/Navbar";
 import Alumnimap from "./Alumnimap";
 
@@ -44,7 +44,7 @@ export default function Tools() {
     setClickedButton(s);
   };
 
-  const itemCards = itemsList();
+  // const itemCards = itemsList();
 
   return (
     <div className="tools">
@@ -134,7 +134,9 @@ export default function Tools() {
         ) : clickedButton === 3 ? (
           <div className="embedContainer">
             <p>
-              <i>('Make a copy' of the excel file to edit)</i>
+              <div class="warning">
+                ('Make a copy' of the excel file to edit)
+              </div>
             </p>
             {/* <a
               target="_blank"
@@ -161,18 +163,28 @@ export default function Tools() {
           </div>
         ) : clickedButton === 5 ? (
           <div className="embedContainer">
+            <p>
+              <div class="info">
+                <strong>Want to be a part of the Alumni map?</strong> Fill out
+                <a target="_blank" href="https://forms.gle/cX4f2BF5bNkz6nZY7">
+                  this form.
+                </a>
+                Thank you!
+              </div>
+            </p>
             <iframe
               title="Alumni Map"
               class="docEmbed"
               src="https://alumnimapiiitd.netlify.app/"
             ></iframe>
-            <p>Creators - Playbook</p>
+
+            <p>Creators - Kshitij Agrawal and Rahul Singh</p>
           </div>
         ) : (
           <div className="embedContainer">
             <iframe
               class="airtableClass docEmed"
-              src="https://airtable.com/embed/shr8jbLprRXRV1omD?backgroundColor=yellow&layout=card&viewControls=on"
+              src="https://airtable.com/embed/shr1psDKOIuw2e6T6?backgroundColor=yellow&layout=card&viewControls=on"
               frameBorder="0"
               onmousewheel=""
               width="100%"

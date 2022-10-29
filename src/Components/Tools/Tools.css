@@ -59,7 +59,7 @@
     0 10px 10px -10px rgb(50 50 73 / 20%);
   border-radius: 12px;
   width: 90vw;
-  min-height: 90vh;
+  min-height: 100vh;
 }
 
 .embedContainer p {
@@ -69,13 +69,27 @@
 
 .docEmbed {
   width: 100%;
-  min-height: 100vh;
+  min-height: 120vh;
   border: none;
   border-radius: 12px;
 }
 
 .docEmbed body a {
   display: none;
+}
+
+.info {
+  margin-bottom: 15px;
+  padding: 4px 12px;
+  background-color: #e7f3fe;
+  border-left: 6px solid #2196f3;
+}
+
+.warning {
+  margin-bottom: 15px;
+  padding: 4px 12px;
+  background-color: #ffffcc;
+  border-left: 6px solid #ffeb3b;
 }
 
 @media only screen and (max-width: 600px) {
