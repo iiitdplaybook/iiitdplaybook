@@ -120,7 +120,7 @@ export default function Tools() {
           <div className="embedContainer">
             <iframe
               class="docEmbed"
-              src="https://v1.embednotion.com/embed/345b9519715b4debbe06b018f6dbddde"
+              src="https://v1.embednotion.com/embed/2fc43b0a2a9544609b52be3370e91e30"
             ></iframe>
 
             {/* <a href="https://docs.google.com/document/d/1v8EJcxPvXgtNYNFtnUjrvdiP3F5UZMM3vqw7HcDsN7A/edit">
